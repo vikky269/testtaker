@@ -100,6 +100,10 @@ export default function Quiz() {
 
   const currentQuestion = quizQuestions[currentQuestionIndex];
 
+  function handleGoHome(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
+    router.push("/");
+  }
+
   return (
     <div className="max-w-2xl mx-auto my-20 p-5 text-gray-900 bg-white rounded-lg shadow-lg">
       <h1 className="text-2xl font-bold text-center mb-4 capitalize">
@@ -174,12 +178,20 @@ export default function Quiz() {
           </div>
         </div>
       ) : (
-        <div className="text-center">
-          <h2 className="text-xl font-bold">Your Score: {calculateScore()}%</h2>
-          <button className="mt-4 p-2 bg-green-600 text-white rounded-lg" onClick={handleReview}>
-            Review Test
-          </button>
-        </div>
+          <div className="text-center">
+            <h2 className="text-xl font-bold">Your Score: {calculateScore()}%</h2>
+
+            {calculateScore() === 100 ? (
+              <button className="mt-4 p-2 bg-blue-600 cursor-pointer text-white rounded-lg" onClick={handleGoHome}>
+                Back to Home
+              </button>
+            ) : (
+              <button className="mt-4 p-2 bg-green-600 cursor-pointer text-white rounded-lg" onClick={handleReview}>
+                Review Test
+              </button>
+            )}
+          </div>
+
       )}
     </div>
   );

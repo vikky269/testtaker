@@ -1,15 +1,111 @@
 const quizData: Record<string, { question: string; options: string[]; answer: string }[]> = {
     "asvab": [
-        { question: "What is 5 + 3?", options: ["5", "8", "12", "15"], answer: "8" },
-        { question: "What is the capital of France?", options: ["Berlin", "Madrid", "Paris", "Rome"], answer: "Paris" },
-        { question: "Solve for x: 2x = 10", options: ["2", "5", "10", "20"], answer: "5" },
-        { question: "Which planet is known as the Red Planet?", options: ["Earth", "Mars", "Jupiter", "Venus"], answer: "Mars" },
-        { question: "What is the square root of 64?", options: ["6", "7", "8", "9"], answer: "8" },
-        { question: "Who wrote 'Hamlet'?", options: ["Shakespeare", "Dickens", "Hemingway", "Tolkien"], answer: "Shakespeare" },
-        { question: "What is 12 * 12?", options: ["124", "120", "144", "148"], answer: "144" },
-        { question: "How many continents are there?", options: ["5", "6", "7", "8"], answer: "7" },
-        { question: "What is the boiling point of water in Celsius?", options: ["50", "100", "150", "200"], answer: "100" },
-        { question: "Who discovered gravity?", options: ["Newton", "Einstein", "Galileo", "Darwin"], answer: "Newton" },
+
+        { question: "The adrenal glands are part of the _________?", 
+          options: ["Immune system", "Endocrine system", "Emphatic system", "Respiratory system"], 
+          answer: "Endocrine system"
+         },
+
+        { question: "Which of the following is exchanged between two or more atoms that undergo ionic bonding?", 
+          options: ["Neutrons", "Transitory electrons", "Valence electrons", "Electrical charges"], 
+          answer: "Valence electrons" 
+        },
+
+        { question: "Which of the following statements is NOT true of metals?",
+           options: ["Most of them are good conductors of heat", "Most of them are gases at room temperature", "Most of them are ductile", "They make up the majority of elements on the periodic table"], 
+           answer: "Most of them are gases at room temperature"
+           },
+
+        { question: "Select the answer that is closest in meaning to the underlined portion, The group hiked along a (precipitous) slope that many found unnerving.",
+           options: ["Rugged", "Dangerous", "Steep", "Wet"],
+           answer: "Steep" 
+          },
+
+        { question: "Select the answer that is closest in meaning to the underlined portion, Stanley was so (besotted) with his prom date that he spent most of the dance gazing at her adoringly.", 
+           options: ["Infatuated", "Infuriated", "Perplexed", "Engrossed"],
+           answer: "Infatuated" 
+          },
+
+        { question: "Select the answer that is closest in meaning to the underlined portion,    Saline is taking a philosophy class but finds most of the readings to be very (obscure) so she has not benefitted much from them.", 
+          options: ["Opinionated", "Unclear", "Offensive", "Benign"], 
+          answer: "Unclear" 
+        },
+
+        { question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1743182128/Picture1_zgirym.png", 
+          options: ["Discus the major risks associated with internet use", "Talk about the importance of anti-virus programs", "Outline important considerations for passwords", "Discuss why certain types of passwords shouldn’t be used"],
+           answer: "Outline important considerations for passwords" 
+          },
+
+        { question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1743187045/Picture2_yqt7jk.png", 
+           options: ["Research Paper", "Book", "Eyewitness interview", "Magazine article"],
+           answer: "Eyewitness interview" 
+          },
+
+        { question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1743187492/Picture3_jclu2w.png", 
+          options: ["Gardner believed that linguistic intelligence was the most desirable type to have", "Most people who have a high level of intrapersonal intelligence do well in school", "People who have a high level of interpersonal intelligence work well in groups", "People who have mathematical intelligence would do the best on a standard IQ test"], 
+          answer: "People who have a high level of interpersonal intelligence work well in groups" 
+        },
+
+        { question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1743188898/Picture4_npvkbv.png", 
+          options: ["To talk about the benefits of sleep", "To discuss how much sleep people should get", "To identify which hormones can boost immunity", "To present strategies for improving memory and concentration"], 
+          answer: "To talk about the benefits of sleep"
+         },
+
+        { question: "If 16x + 4 = 100, what is the value of x?", 
+          options: ["6", "7", "8", "9"], 
+          answer: "6"
+         },
+
+        { question: "If x is 20% of 200, what is the value of x?",
+           options: ["40", "80", "100", "150"], 
+           answer: "40" 
+          },
+
+        { question: "Simplify the following expression:  ((2x^4)^3 + 2(y^5)^5)", 
+          options: [
+            "\\(8x^{64} + 2y^{3125}\\)",
+            "\\(6x^7 + 2y^{10}\\)",
+            "\\(6x^{12} + 2y^{25}\\)",
+            "\\(8x^{12} + 2y^{25}\\)"
+          ],
+          answer: "\\(8x^{12} + 2y^{25}\\)"
+          },
+
+        { question: "What is the midpoint of a line segment that runs from the point (6, 20) to the point (10, 40)?", 
+          options: ["(30, 8)", "(16, 60)", "(8, 30)", "(7, 15)"], 
+          answer: "(8, 30)" 
+        },
+       
+
+        { question: "A six-sided die has sides numbered 1 through 6. What is the probability of throwing a 3 or a 4?", 
+          options: ["1 in 6", "1 in 3", "1 in 2", "1 in 4"],
+           answer: "1 in 3" 
+          },
+
+        { question: "What is the resistance of the circuit formed by a 40W lightbulb plugged into a wall outlet with a 120V differential?",
+           options: ["360Ω", "30Ω", "4,800Ω", "13.3Ω"],
+            answer: "360Ω"
+           },
+
+        { question: "What is another term for the insulation between the electrode plates of a capacitor?", 
+          options: ["Synapse", "Dielectric", "Flux capacitor", "Dielectric cage"], 
+          answer: "Dielectric"
+         },
+
+        { question: "All of the following are parts of a bipolar junction transistor except:",
+           options: ["Emitter", "Collector", "Base", "Transformer"], 
+           answer: "Transformer" 
+          },
+
+        { question: "Which of the following is the least likely sign of catalytic converter trouble?", 
+          options: ["Reduced acceleration", "Dark exhaust smoke", "Exhaust that smells like sulfur", "Rough engine idle"], 
+          answer: "Dark exhaust smoke" 
+        },
+
+        { question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1743215352/Picture5_r4o8ze.png", 
+          options: ["A", "B", "C",], 
+          answer: "B" 
+        },
     ],
     "geometry-regent": [
       { question: "What is the slope-intercept form of a line?", options: ["ax² + bx + c = 0", "y = mx + b", "a² + b² = c²"], answer: "y = mx + b" },

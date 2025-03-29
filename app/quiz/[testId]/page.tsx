@@ -44,6 +44,8 @@ import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import quizData from "@/app/data/quizdata";
 import { useQuiz } from "@/app/context/QuizContext";
+import Latex from "react-latex-next";
+import Timer from "@/app/components/Timer/Timer";
 
 export default function Quiz() {
   const pathname = usePathname();
@@ -100,23 +102,36 @@ export default function Quiz() {
   const currentQuestion = quizQuestions[currentQuestionIndex];
 
   return (
-    <div className="max-w-xl mx-auto my-40 p-5 text-gray-900 bg-white rounded-lg shadow-lg">
+    <div className="max-w-2xl mx-auto my-20 p-5 text-gray-900 bg-white rounded-lg shadow-lg">
       <h1 className="text-2xl font-bold text-center mb-4 capitalize">
         {testid} Practice Test
       </h1>
 
+      {!submitted && <Timer duration={660} onTimeUp={handleSubmit}  />}
+
       {!submitted ? (
         <div>
           {/* Question Tracker */}
-          <div className="text-center text-lg font-semibold mb-3">
+          <div className="text-center text-lg font-semibold mt-6 mb-3">
             Question {currentQuestionIndex + 1} of {quizQuestions.length}
           </div>
 
           {/* Current Question */}
-          <p className="font-semibold">{currentQuestion.question}</p>
+          {/* <p className="font-semibold">{currentQuestion.question}</p> */}
+
+          {/* Current Question */}
+          
+           {currentQuestion.question.startsWith("https://res.cloudinary.com/") ? (
+            <img src={currentQuestion.question} alt="Quiz Question" className="w-full max-w-2xl" />
+          ) : (
+             <p className="font-semibold">{currentQuestion.question}</p>
+            )} 
+
+       
+
 
           {/* Options */}
-          <div className="grid grid-cols-2 gap-2 mt-2">
+          <div className="grid grid-cols-2 gap-2 mt-4">
             {currentQuestion.options.map((option) => (
               <button
                 key={option}
@@ -133,9 +148,9 @@ export default function Quiz() {
           </div>
 
           {/* Navigation Buttons */}
-          <div className="flex justify-between mt-4">
+          <div className="flex justify-between mt-8">
             <button
-              className={`p-2 bg-gray-500 text-white rounded-lg ${
+              className={`p-2 cursor-pointer bg-gray-500 text-white rounded-lg ${
                 currentQuestionIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
               }`}
               onClick={handlePrev}
@@ -146,14 +161,14 @@ export default function Quiz() {
 
             {currentQuestionIndex < quizQuestions.length - 1 ? (
               <button
-                className="p-2 bg-blue-600 text-white rounded-lg"
+                className="py-2 px-6 bg-blue-600 text-white rounded-lg cursor-pointer"
                 onClick={handleNext}
               >
                 Next
               </button>
             ) : (
               <button
-                className="p-2 bg-red-600 text-white rounded-lg"
+                className="py-2 px-6 bg-red-600 text-white rounded-lg cursor-pointer"
                 onClick={handleSubmit}
               >
                 Submit Quiz

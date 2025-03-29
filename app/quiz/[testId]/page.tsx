@@ -44,7 +44,6 @@ import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import quizData from "@/app/data/quizdata";
 import { useQuiz } from "@/app/context/QuizContext";
-import Latex from "react-latex-next";
 import Timer from "@/app/components/Timer/Timer";
 
 export default function Quiz() {
@@ -126,8 +125,6 @@ export default function Quiz() {
           ) : (
              <p className="font-semibold">{currentQuestion.question}</p>
             )} 
-
-       
 
 
           {/* Options */}

@@ -61,14 +61,14 @@ const quizData: Record<string, { question: string; options: string[]; answer: st
            answer: "40" 
           },
 
-        { question: "Simplify the following expression:  (2x^4)^3 + 2(y^5)^5", 
+        { question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1743343937/indicies_jyenms.jpg", 
           options: [
-            "8x^(64) + 2y^(3125)",
-            "6x^(7) + 2y^(10)",
-            "6x^(12) + 2y^(25)",
-            "8x^(12) + 2y^(25)"
+            "A",
+            "B",
+            "C",
+            "D"
           ],
-          answer: "8x^(12) + 2y^(25)"
+          answer: "D"
           },
 
         { question: "What is the midpoint of a line segment that runs from the point (6, 20) to the point (10, 40)?", 

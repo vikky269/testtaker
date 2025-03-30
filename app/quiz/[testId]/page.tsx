@@ -110,7 +110,7 @@ export default function Quiz() {
         {testid} Practice Test
       </h1>
 
-      {!submitted && <Timer duration={660} onTimeUp={handleSubmit}  />}
+      {!submitted && <Timer duration={1200} onTimeUp={handleSubmit}  />}
 
       {!submitted ? (
         <div>

@@ -20,7 +20,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-10">
+    <div className="min-h-screen  p-10">
       <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
         <h1 className="text-3xl font-bold text-center text-gray-900 mb-6">SmartMathz Test Taker</h1>
         <p className="text-center text-gray-700 mb-6">Select a test to begin your preparation.</p>
@@ -37,19 +37,19 @@ export default function Home() {
         </div>
       </div>
       {selectedTest && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-100 bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow-lg text-center w-80">
-             Ready to take the {quizTests.find((test) => test.id === selectedTest)?.name} test?
+             Ready to take the <span className="font-semibold">{quizTests.find((test) => test.id === selectedTest)?.name}</span> test?
             <div className="mt-4">
               <button
-                className="p-2 bg-red-600 text-white rounded-lg mr-2"
+                className="p-2 bg-red-600 text-white rounded-lg mr-5 cursor-pointer"
                 onClick={() => setSelectedTest(null)}
               >
                 Cancel
               </button>
               
                 <button 
-                className="p-2 bg-green-600 text-white rounded-lg"
+                className="py-2 px-4 bg-green-600 text-white rounded-lg cursor-pointer"
                 onClick={handleStartTest}
                 >
                     Start

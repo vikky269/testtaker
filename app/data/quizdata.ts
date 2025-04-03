@@ -106,6 +106,134 @@ const quizData: Record<string, { question: string; options: string[]; answer: st
           options: ["A", "B", "C",], 
           answer: "B" 
         },
+
+        // dummy questions for testing
+        
+        {
+          "question": "What is the square root of 144?",
+          "options": ["10", "11", "12", "13"],
+          "answer": "12"
+        },
+        {
+          "question": "Which planet is known as the Red Planet?",
+          "options": ["Earth", "Venus", "Mars", "Jupiter"],
+          "answer": "Mars"
+        },
+        {
+          "question": "What is the chemical symbol for gold?",
+          "options": ["Ag", "Au", "Pb", "Pt"],
+          "answer": "Au"
+        },
+        {
+          "question": "How many sides does a hexagon have?",
+          "options": ["5", "6", "7", "8"],
+          "answer": "6"
+        },
+        {
+          "question": "Who wrote the play 'Romeo and Juliet'?",
+          "options": ["Charles Dickens", "William Shakespeare", "Mark Twain", "Jane Austen"],
+          "answer": "William Shakespeare"
+        },
+        {
+          "question": "What is the powerhouse of the cell?",
+          "options": ["Nucleus", "Ribosome", "Mitochondrion", "Golgi apparatus"],
+          "answer": "Mitochondrion"
+        },
+        {
+          "question": "What gas do plants primarily use for photosynthesis?",
+          "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+          "answer": "Carbon Dioxide"
+        },
+        {
+          "question": "Which U.S. president issued the Emancipation Proclamation?",
+          "options": ["George Washington", "Thomas Jefferson", "Abraham Lincoln", "Theodore Roosevelt"],
+          "answer": "Abraham Lincoln"
+        },
+        {
+          "question": "What is the largest ocean on Earth?",
+          "options": ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
+          "answer": "Pacific Ocean"
+        },
+        {
+          "question": "What is the capital of France?",
+          "options": ["Madrid", "Berlin", "Paris", "Rome"],
+          "answer": "Paris"
+        },
+        {
+          "question": "Which element is found in all organic compounds?",
+          "options": ["Oxygen", "Carbon", "Nitrogen", "Hydrogen"],
+          "answer": "Carbon"
+        },
+        {
+          "question": "What is the freezing point of water in Fahrenheit?",
+          "options": ["0°F", "32°F", "100°F", "212°F"],
+          "answer": "32°F"
+        },
+        {
+          "question": "Who developed the theory of relativity?",
+          "options": ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Nikola Tesla"],
+          "answer": "Albert Einstein"
+        },
+        {
+          "question": "What is the longest river in the world?",
+          "options": ["Amazon River", "Nile River", "Yangtze River", "Mississippi River"],
+          "answer": "Nile River"
+        },
+        {
+          "question": "Which country is known as the Land of the Rising Sun?",
+          "options": ["China", "South Korea", "Japan", "Thailand"],
+          "answer": "Japan"
+        },
+        {
+          "question": "What is the SI unit of force?",
+          "options": ["Joule", "Watt", "Newton", "Pascal"],
+          "answer": "Newton"
+        },
+        {
+          "question": "Which gas makes up the majority of Earth's atmosphere?",
+          "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Helium"],
+          "answer": "Nitrogen"
+        },
+        {
+          "question": "Which blood type is known as the universal donor?",
+          "options": ["A", "B", "O", "AB"],
+          "answer": "O"
+        },
+        {
+          "question": "How many continents are there on Earth?",
+          "options": ["5", "6", "7", "8"],
+          "answer": "7"
+        },
+        {
+          "question": "What is the capital of the United States?",
+          "options": ["New York", "Washington, D.C.", "Los Angeles", "Chicago"],
+          "answer": "Washington, D.C."
+        },
+        {
+          "question": "What is the name of the largest bone in the human body?",
+          "options": ["Humerus", "Femur", "Tibia", "Fibula"],
+          "answer": "Femur"
+        },
+        {
+          "question": "What is the speed of light in a vacuum?",
+          "options": ["300,000 km/s", "150,000 km/s", "3,000 km/s", "30,000 km/s"],
+          "answer": "300,000 km/s"
+        },
+        {
+          "question": "Which of these elements is a noble gas?",
+          "options": ["Oxygen", "Nitrogen", "Helium", "Carbon"],
+          "answer": "Helium"
+        },
+        {
+          "question": "Which country is home to the Great Pyramid of Giza?",
+          "options": ["Mexico", "Greece", "India", "Egypt"],
+          "answer": "Egypt"
+        },
+        {
+          "question": "What is the smallest unit of life?",
+          "options": ["Organ", "Tissue", "Cell", "Molecule"],
+          "answer": "Cell"
+        }
     ],
     "geometry-regent": [
       { question: "What is the slope-intercept form of a line?", options: ["ax² + bx + c = 0", "y = mx + b", "a² + b² = c²"], answer: "y = mx + b" },

@@ -1,70 +1,217 @@
-// import { notFound } from "next/navigation";
+// "use client";
 
-// const quizTests = [
-//   { id: "sat", name: "SAT" },
-//   { id: "asvab", name: "ASVAB" },
-//   { id: "ssat", name: "SSAT" },
-//   { id: "shat", name: "SHAT" },
-//   { id: "state-test", name: "STATE TEST" },
-//   { id: "algebra-1-regent", name: "ALGEBRA 1 REGENT" },
-//   { id: "algebra-2-regent", name: "ALGEBRA 2 REGENT" },
-//   { id: "geometry-regent", name: "GEOMETRY REGENT" },
-//   { id: "ap-calculus", name: "AP CALCULUS" },
-//   { id: "ap-calculus-ab", name: "AP CALCULUS AB" },
-//   { id: "psat", name: "PSAT" },
-// ];
+// import { useState } from "react";
+// import { usePathname } from "next/navigation";
+// import { useRouter } from "next/navigation";
+// import quizData from "@/app/data/quizdata";
+// import { useQuiz } from "@/app/context/QuizContext";
+// import Timer from "@/app/components/Timer/Timer";
 
-// export default function QuizPage({ params }: { params: { testId: string } }) {
-//   const test = quizTests.find((t) => t.id === params.testId);
+// export default function Quiz() {
+//   const pathname = usePathname();
+//   const router = useRouter()
+//   const testid = pathname.split("/").pop(); // Extract test ID from URL
+//   const { answers, setAnswers } = useQuiz();
 
-//   if (!test) {
-//     return notFound();
+//   // Get quiz questions dynamically
+//   const quizQuestions = quizData[testid as string];
+
+//   // Handle case when testid is invalid
+//   if (!quizQuestions) {
+//     return <div className="text-center text-red-500 my-30 text-7xl">Quiz not found!</div>;
+//   }
+
+//  // const [answers, setAnswers] = useState<Record<string, string>>({});
+//   const [submitted, setSubmitted] = useState(false);
+//   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Track current question index
+
+//  const handleSelect = (question: string, option: string) => {
+//     setAnswers({ ...answers, [question]: option });
+//   };
+
+//   const handleNext = () => {
+//     if (currentQuestionIndex < quizQuestions.length - 1) {
+//       setCurrentQuestionIndex((prev) => prev + 1);
+//     }
+//   };
+
+//   const handlePrev = () => {
+//     if (currentQuestionIndex > 0) {
+//       setCurrentQuestionIndex((prev) => prev - 1);
+//     }
+//   };
+
+//   const handleSubmit = () => {
+//     setSubmitted(true);
+//   };
+
+//   const calculateScore = () => {
+//     let correctAnswers = 0;
+//     quizQuestions.forEach(q => {
+//       if (answers[q.question] === q.answer) correctAnswers++;
+//     });
+//     return (correctAnswers / quizQuestions.length) * 100;
+//   };
+
+//   const handleReview = () => {
+//     router.push(`/quiz/${testid}/review`);
+//   };
+
+
+
+//   const currentQuestion = quizQuestions[currentQuestionIndex];
+
+//   function handleGoHome(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
+//     router.push("/");
 //   }
 
 //   return (
-//     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-10">
-//       <div className="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg text-center">
-//         <h1 className="text-3xl font-bold text-gray-900 mb-6">
-//           {test.name} Test
-//         </h1>
-//         <p className="text-gray-700">
-//           Welcome to the {test.name} test. Click below to begin.
-//         </p>
-//         <button className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg">
-//           Start Test
-//         </button>
-//       </div>
+//     <div className="max-w-2xl mx-auto my-20 p-5 text-gray-900 bg-white rounded-lg shadow-lg">
+//       <h1 className="text-2xl font-bold text-center mb-4 capitalize">
+//         {testid} Practice Test
+//       </h1>
+
+//       {!submitted && <Timer duration={1200} onTimeUp={handleSubmit}  />}
+
+//       {!submitted ? (
+//         <div>
+//           {/* Question Tracker */}
+//           <div className="text-center text-lg font-semibold mt-6 mb-3">
+//             Question {currentQuestionIndex + 1} of {quizQuestions.length}
+//           </div>
+
+//           {/* Current Question */}
+//           {/* <p className="font-semibold">{currentQuestion.question}</p> */}
+
+//           {/* Current Question */}
+          
+//            {currentQuestion.question.startsWith("https://res.cloudinary.com/") ? (
+//             <img src={currentQuestion.question} alt="Quiz Question" className="w-full max-w-2xl" />
+//           ) : (
+//              <p className="font-semibold">{currentQuestion.question}</p>
+//             )} 
+
+
+//           {/* Options */}
+//           <div className="grid grid-cols-2 gap-2 mt-4">
+//             {currentQuestion.options.map((option) => (
+//               <button
+//                 key={option}
+//                 className={`p-2 border rounded-lg ${
+//                   answers[currentQuestion.question] === option
+//                     ? "bg-green-500 text-white"
+//                     : "bg-gray-200"
+//                 }`}
+//                 onClick={() => handleSelect(currentQuestion.question, option)}
+//               >
+//                 {option}
+//               </button>
+//             ))}
+//           </div>
+
+//           {/* Navigation Buttons */}
+//           <div className="flex justify-between mt-8">
+//             <button
+//               className={`p-2 cursor-pointer bg-gray-500 text-white rounded-lg ${
+//                 currentQuestionIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
+//               }`}
+//               onClick={handlePrev}
+//               disabled={currentQuestionIndex === 0}
+//             >
+//               Previous
+//             </button>
+
+//             {currentQuestionIndex < quizQuestions.length - 1 ? (
+//               <button
+//                 className="py-2 px-6 bg-blue-600 text-white rounded-lg cursor-pointer"
+//                 onClick={handleNext}
+//               >
+//                 Next
+//               </button>
+//             ) : (
+//               <button
+//                 className="py-2 px-6 bg-red-600 text-white rounded-lg cursor-pointer"
+//                 onClick={handleSubmit}
+//               >
+//                 Submit Quiz
+//               </button>
+//             )}
+//           </div>
+//         </div>
+//       ) : (
+//           <div className="text-center">
+//             <h2 className="text-xl font-bold">Your Score: {calculateScore()}%</h2>
+
+//             {calculateScore() === 100 ? (
+//               <button className="mt-4 p-2 bg-blue-600 cursor-pointer text-white rounded-lg" onClick={handleGoHome}>
+//                 Back to Home
+//               </button>
+//             ) : (
+//               <button className="mt-4 p-2 bg-green-600 cursor-pointer text-white rounded-lg" onClick={handleReview}>
+//                 Review Test
+//               </button>
+//             )}
+//           </div>
+
+//       )}
 //     </div>
 //   );
 // }
+
+
 "use client";
 
-import { useState } from "react";
-import { usePathname } from "next/navigation";
-import { useRouter } from "next/navigation";
-import quizData from "@/app/data/quizdata";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import quizData from "@/app/data/quizdata"; // regular quizzes
+import standardsData from "@/app/data/statetestdata"; // state tests
 import { useQuiz } from "@/app/context/QuizContext";
 import Timer from "@/app/components/Timer/Timer";
 
 export default function Quiz() {
   const pathname = usePathname();
-  const router = useRouter()
-  const testid = pathname.split("/").pop(); // Extract test ID from URL
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const testid = pathname.split("/").pop(); // e.g. 'math' or 'state-test'
+  const stateParam = searchParams.get("state")?.toLowerCase(); // e.g. 'ohio'
+  const gradeParam = searchParams.get("grade"); // e.g. 'K-2'
+
   const { answers, setAnswers } = useQuiz();
 
-  // Get quiz questions dynamically
-  const quizQuestions = quizData[testid as string];
+  const [quizQuestions, setQuizQuestions] = useState<any[]>([]);
+  const [submitted, setSubmitted] = useState(false);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
-  // Handle case when testid is invalid
-  if (!quizQuestions) {
-    return <div className="text-center text-red-500 my-30 text-7xl">Quiz not found!</div>;
+
+  useEffect(() => {
+    if (testid === "state-test" && stateParam && gradeParam) {
+      const normalizedGrade = gradeParam?.toLowerCase().replace(/\s+/g, "");
+      const key = `${stateParam}-${normalizedGrade}`;
+      console.log("Looking for key:", key); // Debugging
+      const regularQuiz = standardsData[key];
+      setQuizQuestions(regularQuiz || []);
+      setAnswers({}); // Reset answers when loading a new quiz
+    } else {
+      const regularQuiz = quizData[testid as string];
+      setQuizQuestions(regularQuiz || []);
+    }
+  }, [testid, stateParam, gradeParam]);
+  
+ 
+
+  // Handle invalid quiz
+  if (!quizQuestions || quizQuestions.length === 0) {
+    return (
+      <div className="text-center text-red-500 my-20 text-4xl">
+        No quiz found for this test.
+      </div>
+    );
   }
 
- // const [answers, setAnswers] = useState<Record<string, string>>({});
-  const [submitted, setSubmitted] = useState(false);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Track current question index
+  const currentQuestion = quizQuestions[currentQuestionIndex];
 
- const handleSelect = (question: string, option: string) => {
+  const handleSelect = (question: string, option: string) => {
     setAnswers({ ...answers, [question]: option });
   };
 
@@ -86,54 +233,53 @@ export default function Quiz() {
 
   const calculateScore = () => {
     let correctAnswers = 0;
-    quizQuestions.forEach(q => {
+    quizQuestions.forEach((q) => {
       if (answers[q.question] === q.answer) correctAnswers++;
     });
     return (correctAnswers / quizQuestions.length) * 100;
   };
 
+  const handleGoHome = () => router.push("/");
   const handleReview = () => {
-    router.push(`/quiz/${testid}/review`);
+    if (testid === "state-test" && stateParam && gradeParam) {
+      const url = new URLSearchParams();
+      url.append("state", stateParam);
+      url.append("grade", gradeParam);
+      router.push(`/quiz/${testid}/review?${url.toString()}`);
+    } else {
+      router.push(`/quiz/${testid}/review`);
+    }
   };
-
-
-
-  const currentQuestion = quizQuestions[currentQuestionIndex];
-
-  function handleGoHome(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
-    router.push("/");
-  }
+  
 
   return (
     <div className="max-w-2xl mx-auto my-20 p-5 text-gray-900 bg-white rounded-lg shadow-lg">
       <h1 className="text-2xl font-bold text-center mb-4 capitalize">
-        {testid} Practice Test
+        {testid === "state-test" && stateParam && gradeParam
+          ? `${stateParam.toUpperCase()} ${gradeParam} Practice Test`
+          : `${testid} Practice Test`}
       </h1>
 
-      {!submitted && <Timer duration={1200} onTimeUp={handleSubmit}  />}
+      {!submitted && <Timer duration={1200} onTimeUp={handleSubmit} />}
 
       {!submitted ? (
         <div>
-          {/* Question Tracker */}
           <div className="text-center text-lg font-semibold mt-6 mb-3">
             Question {currentQuestionIndex + 1} of {quizQuestions.length}
           </div>
 
-          {/* Current Question */}
-          {/* <p className="font-semibold">{currentQuestion.question}</p> */}
-
-          {/* Current Question */}
-          
-           {currentQuestion.question.startsWith("https://res.cloudinary.com/") ? (
-            <img src={currentQuestion.question} alt="Quiz Question" className="w-full max-w-2xl" />
+          {currentQuestion.question.startsWith("https://res.cloudinary.com/") ? (
+            <img
+              src={currentQuestion.question}
+              alt="Quiz Question"
+              className="w-full max-w-2xl"
+            />
           ) : (
-             <p className="font-semibold">{currentQuestion.question}</p>
-            )} 
+            <p className="font-semibold">{currentQuestion.question}</p>
+          )}
 
-
-          {/* Options */}
           <div className="grid grid-cols-2 gap-2 mt-4">
-            {currentQuestion.options.map((option) => (
+            {currentQuestion.options.map((option:any) => (
               <button
                 key={option}
                 className={`p-2 border rounded-lg ${
@@ -148,7 +294,6 @@ export default function Quiz() {
             ))}
           </div>
 
-          {/* Navigation Buttons */}
           <div className="flex justify-between mt-8">
             <button
               className={`p-2 cursor-pointer bg-gray-500 text-white rounded-lg ${
@@ -178,20 +323,25 @@ export default function Quiz() {
           </div>
         </div>
       ) : (
-          <div className="text-center">
-            <h2 className="text-xl font-bold">Your Score: {calculateScore()}%</h2>
+        <div className="text-center">
+          <h2 className="text-xl font-bold">Your Score: {calculateScore()}%</h2>
 
-            {calculateScore() === 100 ? (
-              <button className="mt-4 p-2 bg-blue-600 cursor-pointer text-white rounded-lg" onClick={handleGoHome}>
-                Back to Home
-              </button>
-            ) : (
-              <button className="mt-4 p-2 bg-green-600 cursor-pointer text-white rounded-lg" onClick={handleReview}>
-                Review Test
-              </button>
-            )}
-          </div>
-
+          {calculateScore() === 100 ? (
+            <button
+              className="mt-4 p-2 bg-blue-600 cursor-pointer text-white rounded-lg"
+              onClick={handleGoHome}
+            >
+              Back to Home
+            </button>
+          ) : (
+            <button
+              className="mt-4 p-2 bg-green-600 cursor-pointer text-white rounded-lg"
+              onClick={handleReview}
+            >
+              Review Test
+            </button>
+          )}
+        </div>
       )}
     </div>
   );

@@ -39,7 +39,7 @@
 // }
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import quizData from "@/app/data/quizdata";
@@ -52,8 +52,57 @@ export default function Quiz() {
   const testid = pathname.split("/").pop(); // Extract test ID from URL
   const { answers, setAnswers } = useQuiz();
 
+  const { setSelectedQuestions } = useQuiz();
+
+  const [quizQuestions, setQuizQuestions] = useState<Question[]>(() =>
+    testid
+      ? quizData[testid].map((q) => ({
+          ...q,
+          correctAnswer: q.answer, // Add correctAnswer property
+        }))
+      : []
+  );
+
+
+  // useEffect(() => {
+  //   if (testid && quizData[testid]) {
+  //     setQuizQuestions(getRandomQuestions(quizData[testid])); // Only update when valid data exists
+  //   }
+  // }, [testid]);
+
+
+  
+  interface Question {
+    question: string;
+    options: string[];
+    answer: string;
+    correctAnswer: string; // Add the correctAnswer property
+  }
+
+  const getRandomQuestions = (questions: Question[], num: number = 20): Question[] => {
+    const shuffled = [...questions].sort(() => 0.5 - Math.random()); // Shuffle array
+    return shuffled.slice(0, num); // Select first 20 questions
+  };
+  
+  
+  useEffect(() => {
+    if (testid && quizData[testid]) {
+      const randomQuestions = getRandomQuestions(
+        quizData[testid].map((q) => ({
+          ...q,
+          correctAnswer: q.answer, // Add correctAnswer property
+        }))
+      );
+      setQuizQuestions(randomQuestions);
+      setSelectedQuestions(randomQuestions); // Store only selected 20 questions
+      setAnswers({}); // Reset answers when test ID changes
+    }
+  }, [testid]);
+
+
+
   // Get quiz questions dynamically
-  const quizQuestions = quizData[testid as string];
+ // const quizQuestions = quizData[testid as string];
 
   // Handle case when testid is invalid
   if (!quizQuestions) {
@@ -98,7 +147,10 @@ export default function Quiz() {
 
 
 
-  const currentQuestion = quizQuestions[currentQuestionIndex];
+  const currentQuestion = quizQuestions.length > 0 ? quizQuestions[currentQuestionIndex] : null;
+  if (!currentQuestion) {
+    return <div className="text-center text-red-500 my-30 text-7xl">No questions available!</div>;
+  }
 
   function handleGoHome(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
     router.push("/");

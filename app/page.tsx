@@ -4,10 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import quizTests from "./data/quiztest";
 
-// const quizTests = [
-//   "SAT", "ASVAB", "SSAT", "SHAT", "STATE TEST", "ALGEBRA 1 REGENT", "ALGEBRA 2 REGENT",
-//   "GEOMETRY REGENT", "AP CALCULUS", "AP CALCULUS AB", "PSAT"
-// ];
+
 
 export default function Home() {
   const [selectedTest, setSelectedTest] = useState<string | null>(null);

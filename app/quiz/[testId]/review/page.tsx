@@ -6,25 +6,33 @@ import quizData from "@/app/data/quizdata";
 import { useRouter } from "next/navigation";
 
 export default function ReviewPage() {
-  const { answers } = useQuiz();
+  //const { answers } = useQuiz();
+  const { answers, selectedQuestions } = useQuiz();
   const { testId } = useParams();
   const router = useRouter()
 
   // Ensure testId exists in quizData
-  const selectedQuiz = testId ? quizData[testId as string] : undefined;
+  //const selectedQuiz = testId ? quizData[testId as string] : undefined;
 
-  if (!selectedQuiz || !Array.isArray(selectedQuiz) || selectedQuiz.length === 0) {
+  // if (!selectedQuiz || !Array.isArray(selectedQuiz) || selectedQuiz.length === 0) {
+  //   return <p>Loading quiz data...</p>;
+  // }
+
+  if (!selectedQuestions || selectedQuestions.length === 0) {
     return <p>Loading quiz data...</p>;
   }
-
+  
   const handleFinishReview = () => {
     router.push("/")
   }
 
   // Calculate the user's score
-  const correctAnswersCount = selectedQuiz.filter(q => answers?.[q.question] === q.answer).length;
-  const totalQuestions = selectedQuiz.length;
-  const score = ((correctAnswersCount / totalQuestions) * 100).toFixed(2); // Show 2 decimal places
+  // const correctAnswersCount = selectedQuiz.filter(q => answers?.[q.question] === q.answer).length;
+  // const totalQuestions = selectedQuiz.length;
+  // const score = ((correctAnswersCount / totalQuestions) * 100).toFixed(2); // Show 2 decimal places
+  const correctAnswersCount = selectedQuestions.filter(q => answers?.[q.question] === q.correctAnswer).length;
+  const totalQuestions = selectedQuestions.length;
+  const score = ((correctAnswersCount / totalQuestions) * 100).toFixed(2);
 
   return (
     <div className="container mx-auto p-5">
@@ -42,7 +50,7 @@ export default function ReviewPage() {
       </div>
 
       {/* Questions Review */}
-      {selectedQuiz.map((questionData, index) => {
+      {selectedQuestions.map((questionData, index) => {
         const selectedAnswer = answers?.[questionData.question]; // Get user's selected answer
 
         return (
@@ -62,7 +70,7 @@ export default function ReviewPage() {
 
             <ul className="grid grid-cols-2 gap-2 mt-2">
               {questionData.options.map((option, i) => {
-                const isCorrect = option === questionData.answer;
+                const isCorrect = option === questionData.correctAnswer;
                 const isSelected = option === selectedAnswer;
                 return (
                   <li
@@ -87,6 +95,6 @@ export default function ReviewPage() {
         </button>
       </div>
     </div>
-  );
+  )
 }
 

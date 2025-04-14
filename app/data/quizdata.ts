@@ -108,7 +108,7 @@ const quizData: Record<string, { question: string; options: string[]; answer: st
         },
 
         // dummy questions for testing
-        
+
         {
           "question": "What is the square root of 144?",
           "options": ["10", "11", "12", "13"],
@@ -271,6 +271,15 @@ const quizData: Record<string, { question: string; options: string[]; answer: st
       { question: "What is L'Hôpital's Rule used for?", options: ["Evaluating limits", "Finding derivatives", "Solving integrals"], answer: "Evaluating limits" },
       { question: "What does the fundamental theorem of calculus connect?", options: ["Differentiation and Integration", "Limits and Sequences", "Algebra and Geometry"], answer: "Differentiation and Integration" },
     ],
+    "ssat": [],
+    "njgpa": [],
+    "psat": [],
+    "ap-calculus-ab": [],
+    "algebra-1-regent": [],
+    "algebra-2-regent": [],
+    "state-test": [],
+    "shat": [],
+
   };
 
   export default quizData;

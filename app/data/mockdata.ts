@@ -123,7 +123,7 @@ export interface QuizCardProps {
     },
     {
         id: "sat",
-      imageSrc: "/imthree.png",
+      imageSrc: "/sat1.png",
       title: "SAT",
       level: "Grade 9",
       category: "Maths",

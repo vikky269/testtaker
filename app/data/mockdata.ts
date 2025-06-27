@@ -142,6 +142,17 @@ export interface QuizCardProps {
       time: "30 min",
       questions: 15,
       onStart: () => console.log("Started Civics Awareness")
+    },
+    {
+      id: "quiz-assessment",
+      imageSrc: "/imseven.png",
+      title: "QUIZ ASSESSMENT",
+      level: "",
+      category: "General",
+      difficulty: "Hard",
+      time: "15 min",
+      questions: 10,
+      onStart: () => console.log("Started Civics Awareness")
     }
   ];
   

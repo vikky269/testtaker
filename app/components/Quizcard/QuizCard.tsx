@@ -17,12 +17,14 @@ const lato = Lato({
 
 const stateOptions = ["New York", "New Jersey", "Georgia", "Texas", "Maryland", "Ohio"];
 const gradeOptions = ["Grade 3", "Grade 4", "Grade 5", "Grade 6", "Grade 7", "Grade 8"];
+const quizassesmentOptions = ["Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5", "Grade 6", "Grade 7", "Grade 8", "Grade 9", "Grade 10", "Grade 11", "Grade 12"];
 
 
 function QuizCard({ id, imageSrc, title, level, category, difficulty, time, questions, onStart,}: QuizCardProps) {
 
   const [selectedTest, setSelectedTest] = useState<string | null>(null);
   const [isStateTest, setIsStateTest] = useState(false);
+  const [isQuizAssessment, setIsQuizAssessment] = useState(false);
   const [selectedState, setSelectedState] = useState<string | null>(null);
   const [selectedGrade, setSelectedGrade] = useState<string | null>(null);
   const [step, setStep] = useState<1 | 2>(1);
@@ -33,9 +35,17 @@ function QuizCard({ id, imageSrc, title, level, category, difficulty, time, ques
   const handleTestClick = (testId: string) => {
     if (testId === "state-test") {
       setIsStateTest(true);
+      setIsQuizAssessment(false);
       setSelectedTest(testId);
       setStep(1); // Reset to first step
+    } else if (testId === "quiz-assessment") {
+      setIsQuizAssessment(true);
+      setIsStateTest(false);
+      setSelectedTest(testId);
+      setStep(1);
     } else {
+      setIsStateTest(false);
+      setIsQuizAssessment(false);
       setSelectedTest(testId);
     }
   };
@@ -45,9 +55,13 @@ function QuizCard({ id, imageSrc, title, level, category, difficulty, time, ques
       const state = selectedState.toLowerCase().replace(/\s/g, "-");
       const grade = selectedGrade.toLowerCase().replace(" ", "-");
       router.push(`/quiz/state-test?state=${state}&grade=${grade}`);
-    } else if (!isStateTest && selectedTest) {
+    } else if (isQuizAssessment && selectedGrade) {
+      const grade = selectedGrade.toLowerCase().replace(" ", "-");
+      router.push(`/quiz/quiz-assessment?grade=${grade}`);
+    } else if (!isStateTest && !isQuizAssessment && selectedTest) {
       router.push(`/quiz/${selectedTest}`);
     }
+
   };
 
   const resetSelection = () => {
@@ -92,88 +106,107 @@ function QuizCard({ id, imageSrc, title, level, category, difficulty, time, ques
         </div>
 
         {selectedTest && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-100 bg-opacity-70 z-50">
-          <div className="bg-white p-6 rounded-lg shadow-xl text-center w-80">
-            {isStateTest ? (
-              <>
-                {step === 1 && (
-                  <>
-                    <p className="font-semibold mb-3">Select your state:</p>
-                    <div className="space-y-2">
-                      {stateOptions.map((state) => (
-                        <button
-                          key={state}
-                          className={`block w-full cursor-pointer p-2 border rounded-md ${selectedState === state ? "bg-blue-600 font-semibold text-white" : ""
-                            }`}
-                          onClick={() => setSelectedState(state)}
-                        >
-                          {state}
-                        </button>
-                      ))}
-                    </div>
-                    <button
-                      className="mt-4 py-2 px-8 bg-blue-600 cursor-pointer text-white rounded-lg disabled:opacity-50"
-                      onClick={() => setStep(2)}
-                      disabled={!selectedState}
-                    >
-                      Next
-                    </button>
-                  </>
-                )}
+          <div className="fixed inset-0 flex items-center justify-center bg-gray-100 bg-opacity-70 z-50">
+            <div className="bg-white p-6 rounded-lg shadow-xl text-center w-[900px]">
+              {isStateTest || isQuizAssessment ? (
+                <>
+                  <p className="font-semibold mb-3">Select your grade{isStateTest ? " and state" : ""}:</p>
 
-                {step === 2 && (
-                  <>
-                    <p className="font-semibold mb-3">Select your grade:</p>
-                    <div className="space-y-2">
-                      {gradeOptions.map((grade) => (
-                        <button
-                          key={grade}
-                          className={`block cursor-pointer w-full p-2 border rounded-md  ${selectedGrade === grade ? "bg-blue-600 font-semibold text-white" : ""
-                            }`}
-                          onClick={() => setSelectedGrade(grade)}
-                        >
-                          {grade}
-                        </button>
-                      ))}
-                    </div>
-                    <div className="mt-6 flex justify-between">
+                  {isStateTest && step === 1 && (
+                    <>
+                      <div className="space-y-2 mb-4">
+                        {stateOptions.map((state) => (
+                          <button
+                            key={state}
+                            className={`block w-full p-2 border rounded-md cursor-pointer ${selectedState === state ? "bg-blue-600 text-white font-semibold" : ""}`}
+                            onClick={() => setSelectedState(state)}
+                          >
+                            {state}
+                          </button>
+                        ))}
+                      </div>
                       <button
-                        className="py-2 px-6 bg-gray-400 text-white rounded-lg cursor-pointer"
-                        onClick={() => setStep(1)}
+                        className="py-2 px-8 bg-blue-600 text-white rounded-lg disabled:opacity-50"
+                        onClick={() => setStep(2)}
+                        disabled={!selectedState}
                       >
-                        Prev
+                        Next
                       </button>
-                      <button
-                        className="py-2 px-6 bg-green-600 text-white cursor-pointer rounded-lg disabled:opacity-50"
-                        onClick={handleStartTest}
-                        disabled={!selectedGrade}
-                      >
+                    </>
+                  )}
+
+                  {(isQuizAssessment || step === 2) && (
+                    <>
+                      {/* <p className="font-semibold mb-3">Select your grade:</p> */}
+                      <div className="flex flex-row gap-2 p-6  text-center">
+                        {(isStateTest ? gradeOptions : quizassesmentOptions).map((grade) => (
+                          <button
+                            key={grade}
+                            className={`block w-full p-2 border rounded-md cursor-pointer ${selectedGrade === grade ? "bg-blue-600 text-white font-semibold" : ""}`}
+                            onClick={() => setSelectedGrade(grade)}
+                          >
+                            {grade}
+                          </button>
+                        ))}
+                      </div>
+
+                      {isStateTest && (
+                        <div className="mt-6 flex justify-between">
+                          <button
+                            className="py-2 px-6 bg-gray-400 text-white rounded-lg cursor-pointer"
+                            onClick={() => setStep(1)}
+                          >
+                            Prev
+                          </button>
+                          <button
+                            className="py-2 px-6 bg-green-600 text-white rounded-lg disabled:opacity-50"
+                            onClick={handleStartTest}
+                            disabled={!selectedGrade}
+                          >
+                            Start
+                          </button>
+                        </div>
+                      )}
+
+                      {isQuizAssessment && (
+                        <div className="mt-4 flex justify-around items-center">
+                          <button
+                            className="py-2 px-6 bg-green-600 text-white cursor-pointer rounded-lg disabled:opacity-50"
+                            onClick={handleStartTest}
+                            disabled={!selectedGrade}
+                          >
+                            Start
+                          </button>
+
+                          <button className="p-2 cursor-pointer bg-red-600 text-white rounded-lg mr-5" onClick={resetSelection}>
+                            Cancel
+                          </button>
+                        </div>
+                      )}
+                    </>
+                  )}
+                </>
+              )
+                : (
+                  <>
+                    <p>
+                      Ready to take the{" "}
+                      <span className="font-semibold">{quizData.find((test) => test.id === selectedTest)?.title}</span>{" "}
+                      test?
+                    </p>
+                    <div className="mt-4">
+                      <button className="p-2 cursor-pointer bg-red-600 text-white rounded-lg mr-5" onClick={resetSelection}>
+                        Cancel
+                      </button>
+                      <button className="py-2 px-4 cursor-pointer bg-green-600 text-white rounded-lg" onClick={handleStartTest}>
                         Start
                       </button>
                     </div>
                   </>
                 )}
-              </>
-            ) : (
-              <>
-                <p>
-                  Ready to take the{" "}
-                  <span className="font-semibold">{quizData.find((test) => test.id === selectedTest)?.title}</span>{" "}
-                  test?
-                </p>
-                <div className="mt-4">
-                  <button className="p-2 cursor-pointer bg-red-600 text-white rounded-lg mr-5" onClick={resetSelection}>
-                    Cancel
-                  </button>
-                  <button className="py-2 px-4 cursor-pointer bg-green-600 text-white rounded-lg" onClick={handleStartTest}>
-                    Start
-                  </button>
-                </div>
-              </>
-            )}
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
         <hr className='shadow inset-3'></hr>
 
@@ -192,16 +225,12 @@ function QuizCard({ id, imageSrc, title, level, category, difficulty, time, ques
 
 export default function QuizCardGrid() {
   return (
-    // <div className="grid grid-cols-1 md:grid-cols-2 md:gap-14 lg:grid-cols-3 xl:gap-20 border-2 border-red-800 lg:gap-12 2xl:grid-cols-4 2xl:gap-12 gap-5">
-    //   {quizData.map((quiz, index) => (
-    //     <QuizCard key={index} {...quiz} />
-    //   ))}
-    // </div>
 
-    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-10 xl:grid-cols-3 2xl:grid-cols-4  xl:gap-12 2xl:gap-14">
-    {quizData.map((quiz, index) => (
-      <QuizCard key={index} {...quiz} />
-    ))}
-  </div>
+
+    <div className="grid grid-cols-1 justify-center items-center gap-5  md:grid-cols-1 md:gap-8 p-12 lg:grid-cols-2 lg:space-x-16 xl:grid-cols-3 2xl:grid-cols-4  xl:gap-12 2xl:gap-16">
+      {quizData.map((quiz, index) => (
+        <QuizCard key={index} {...quiz} />
+      ))}
+    </div>
   )
 }

@@ -4,9 +4,9 @@ import QuizCardGrid from './components/Quizcard/QuizCard'
 
 const newUI = () => {
   return (
-    <div>
+    <div className="min-h-screen">
         <NavHeader />
-         <div className='mt-12 flex max-sm:justify-center max-sm:items-center lg:px-16 md:px-12 p-4'>
+         <div className='mt-12 flex justify-evenly max-sm:justify-center max-sm:items-center p-4 border-amber-900 border-2'>
             <QuizCardGrid />
          </div>
     </div>

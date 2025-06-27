@@ -192,10 +192,16 @@ function QuizCard({ id, imageSrc, title, level, category, difficulty, time, ques
 
 export default function QuizCardGrid() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 md:gap-14 lg:grid-cols-3 lg:gap-12 2xl:grid-cols-4 2xl:gap-12 gap-5 space-y-3">
-      {quizData.map((quiz, index) => (
-        <QuizCard key={index} {...quiz} />
-      ))}
-    </div>
+    // <div className="grid grid-cols-1 md:grid-cols-2 md:gap-14 lg:grid-cols-3 xl:gap-20 border-2 border-red-800 lg:gap-12 2xl:grid-cols-4 2xl:gap-12 gap-5">
+    //   {quizData.map((quiz, index) => (
+    //     <QuizCard key={index} {...quiz} />
+    //   ))}
+    // </div>
+
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-10 xl:grid-cols-3 2xl:grid-cols-4  xl:gap-12 2xl:gap-14">
+    {quizData.map((quiz, index) => (
+      <QuizCard key={index} {...quiz} />
+    ))}
+  </div>
   )
 }

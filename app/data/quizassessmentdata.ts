@@ -89,7 +89,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         id: "q7",
         question: "Which fraction is the same as one-half?",
         options: ["3/4", "2/4", "2/2", "1/3"],
-        correctAnswer: "7",
+        correctAnswer: "2/4",
       },
       {
         id: "q8",

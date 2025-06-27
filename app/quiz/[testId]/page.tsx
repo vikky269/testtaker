@@ -214,7 +214,8 @@ useEffect(() => {
               className="w-full max-w-2xl"
             />
           ) : (
-            <p className="font-semibold">{currentQuestion.question}</p>
+            <p className="font-semibold" dangerouslySetInnerHTML={{ __html: currentQuestion.question }}></p>
+            //  <p className="font-semibold" dangerouslySetInnerHTML={{ __html: currentQuestion.question }}>{currentQuestion.question}</p>
           )}
 
           <div className="grid grid-cols-2 gap-2 mt-4">

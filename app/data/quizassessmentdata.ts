@@ -128,19 +128,19 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       },
       {
         id: "q3",
-        question: "A rectangle has a length of 9 cm and a width that is 2/3 of the length. What is the area of the rectangle?",
+        question: "A rectangle has a length of 9 cm and a width that is <sup>2</sup>&frasl;<sub>3</sub> of the length. What is the area of the rectangle?",
         options: ["60 cm²", "54 cm²", "36 cm²", "48 cm²"],
         correctAnswer: "54 cm²",
       },
       {
         id: "q4",
-        question: "Compare using >, <, or =:  choose what best fill in the box 3/4 ☐ 5/8",
+        question: "Compare using >, <, or =:  choose what best fill in the box <sup>3</sup>&frasl;<sub>4</sub> ☐ <sup>5</sup>&frasl;<sub>8</sub>",
         options: [">", "<", "=", "Not Enough Information"],
         correctAnswer: ">",
       },
       {
         id: "q5",
-        question: "In a class of 32 students, 3/8 are wearing glasses. How many students are wearing glasses?",
+        question: "In a class of 32 students, <sup>3</sup>&frasl;<sub>8</sub> are wearing glasses. How many students are wearing glasses?",
         options: ["10", "12", "14", "16"],
         correctAnswer: "12",
       },
@@ -164,7 +164,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       },
       {
         id: "q9",
-        question: "Jenny read 1/3 of her book on Monday, 1/4 on Tuesday, and 1/6 on Wednesday. What fraction of the book has she read in total? Has she finished the book?",
+        question: "Jenny read <sup>1</sup>&frasl;<sub>3</sub> of her book on Monday, <sup>1</sup>&frasl;<sub>4</sub> on Tuesday, and <sup>1</sup>&frasl;<sub>6</sub> on Wednesday. What fraction of the book has she read in total? Has she finished the book?",
         options: ["Yes, 1 whole", "No, 3/4", "No, 2/3", "Yes, 7/6"],
         correctAnswer: "No, 3/4",
       },
@@ -181,7 +181,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     questions: [
       {
         id: "q1",
-        question: "What is 3/5 of 45?",
+        question: "What is <sup>3</sup>&frasl;<sub>5</sub> of 45?",
         options: ["27", "15", "18", "30"],
         correctAnswer: "27",
       },
@@ -223,13 +223,13 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       },
       {
         id: "q8",
-        question: "A recipe calls for 2/3 cup of sugar. If you want to make 1.5 times the recipe, how much sugar do you need?",
+        question: "A recipe calls for <sup>2</sup>&frasl;<sub>3</sub> cup of sugar. If you want to make 1.5 times the recipe, how much sugar do you need?",
         options: ["1 1/3 cups", "1 1/4 cups", "1 1/2 cups", "1 cup"],
         correctAnswer: "1 cup",
       },
       {
         id: "q9",
-        question: "Which decimal is equal to 3/4?",
+        question: "Which decimal is equal to <sup>3</sup>&frasl;<sub>4</sub>?",
         options: ["0.25", "0.50", "0.75", "1.25"],
         correctAnswer: "0.75",
       },

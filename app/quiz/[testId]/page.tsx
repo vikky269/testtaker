@@ -6,6 +6,8 @@ import quizData from "@/app/data/quizdata"; // regular quizzes
 import standardsData from "@/app/data/statetestdata"; // state tests
 import { useQuiz } from "@/app/context/QuizContext";
 import Timer from "@/app/components/Timer/Timer";
+import { quizAssessmentData } from "@/app/data/quizassessmentdata";
+
 
 export default function Quiz() {
   const pathname = usePathname();
@@ -22,22 +24,97 @@ export default function Quiz() {
   const [submitted, setSubmitted] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
-
   useEffect(() => {
-    if (testid === "state-test" && stateParam && gradeParam) {
-      const normalizedGrade = gradeParam?.toLowerCase().replace(/\s+/g, "");
-      const key = `${stateParam}-${normalizedGrade}`;
-      console.log("Looking for key:", key); // Debugging
-      const regularQuiz = standardsData[key];
-      setQuizQuestions(regularQuiz || []);
-      setAnswers({}); // Reset answers when loading a new quiz
-    } else {
-      const regularQuiz = quizData[testid as string];
-      setQuizQuestions(regularQuiz || []);
+  const savedState = localStorage.getItem("quizState");
+  if (savedState) {
+    const parsed = JSON.parse(savedState);
+    if (
+      parsed.testid === testid &&
+      parsed.gradeParam === gradeParam
+    ) {
+      setAnswers(parsed.answers || {});
+      setCurrentQuestionIndex(parsed.currentQuestionIndex || 0);
+      setSubmitted(parsed.submitted || false);
     }
-  }, [testid, stateParam, gradeParam]);
-  
- 
+  }
+}, [testid, gradeParam, setAnswers]);
+
+
+// useEffect(() => {
+//   const savedState = localStorage.getItem("quizState");
+//   const hasSavedAnswers = savedState
+//     ? JSON.parse(savedState).answers
+//     : null;
+
+//   if (testid === "state-test" && stateParam && gradeParam) {
+//     const normalizedGrade = gradeParam?.toLowerCase().replace(/\s+/g, "");
+//     const key = `${stateParam}-${normalizedGrade}`;
+//     const regularQuiz = standardsData[key];
+//     setQuizQuestions(regularQuiz || []);
+//     if (!hasSavedAnswers) setAnswers({}); // ✅ only clear if nothing saved
+//   } else if (testid === "quiz-assessment" && gradeParam) {
+//     const normalizedGrade = gradeParam.toLowerCase().replace(/\s+/g, "-");
+//     const gradeQuiz = quizAssessmentData.find(
+//       (entry) => entry.grade === normalizedGrade
+//     );
+//     setQuizQuestions(gradeQuiz?.questions || []);
+//     if (!hasSavedAnswers) setAnswers({}); // ✅ only clear if nothing saved
+//   } else {
+//     const regularQuiz = quizData[testid as string];
+//     setQuizQuestions(regularQuiz || []);
+//     if (!hasSavedAnswers) setAnswers({}); // ✅ only clear if nothing saved
+//   }
+// }, [testid, stateParam, gradeParam]);
+
+useEffect(() => {
+  const savedState = localStorage.getItem("quizState");
+  const hasSavedAnswers = savedState
+    ? JSON.parse(savedState).answers
+    : null;
+
+  if (testid === "state-test" && stateParam && gradeParam) {
+    const normalizedGrade = gradeParam?.toLowerCase().replace(/\s+/g, "");
+    const key = `${stateParam}-${normalizedGrade}`;
+    const regularQuiz = standardsData[key];
+    setQuizQuestions(regularQuiz || []);
+    if (!hasSavedAnswers) {
+      setAnswers({});
+      localStorage.removeItem("quiz-end-time"); // 🧼 Clear stale timer
+    }
+  } else if (testid === "quiz-assessment" && gradeParam) {
+    const normalizedGrade = gradeParam.toLowerCase().replace(/\s+/g, "-");
+    const gradeQuiz = quizAssessmentData.find(
+      (entry) => entry.grade === normalizedGrade
+    );
+    setQuizQuestions(gradeQuiz?.questions || []);
+    if (!hasSavedAnswers) {
+      setAnswers({});
+      localStorage.removeItem("quiz-end-time"); // 🧼 Clear stale timer
+    }
+  } else {
+    const regularQuiz = quizData[testid as string];
+    setQuizQuestions(regularQuiz || []);
+    if (!hasSavedAnswers) {
+      setAnswers({});
+      localStorage.removeItem("quiz-end-time"); // 🧼 Clear stale timer
+    }
+  }
+}, [testid, stateParam, gradeParam]);
+
+
+
+
+ useEffect(() => {
+  const quizState = {
+    testid,
+    gradeParam,
+    answers,
+    currentQuestionIndex,
+    submitted,
+  };
+  localStorage.setItem("quizState", JSON.stringify(quizState));
+}, [testid, gradeParam, answers, currentQuestionIndex, submitted]);
+
 
   // Handle invalid quiz
   if (!quizQuestions || quizQuestions.length === 0) {
@@ -66,29 +143,49 @@ export default function Quiz() {
     }
   };
 
+ 
   const handleSubmit = () => {
-    setSubmitted(true);
-  };
+  setSubmitted(true);
+  localStorage.removeItem("quizState"); // ✅ wipe on submit
+  localStorage.removeItem("quiz-end-time"); // ✅ wipe timer
+};
+
 
   const calculateScore = () => {
     let correctAnswers = 0;
     quizQuestions.forEach((q) => {
-      if (answers[q.question] === q.answer) correctAnswers++;
+       if (answers[q.question] === q.answer) correctAnswers++;
+      if (answers[q.question] === q.correctAnswer) correctAnswers++;
     });
     return (correctAnswers / quizQuestions.length) * 100;
   };
 
-  const handleGoHome = () => router.push("/");
+  const handleGoHome = () => {
+  localStorage.removeItem("quizState");
+  localStorage.removeItem("quiz-end-time"); // reset timer on exit
+  setAnswers({});
+  setCurrentQuestionIndex(0);
+  setSubmitted(false);
+  router.push("/");
+};
+
+
+
   const handleReview = () => {
+    const url = new URLSearchParams();
+
     if (testid === "state-test" && stateParam && gradeParam) {
-      const url = new URLSearchParams();
       url.append("state", stateParam);
+      url.append("grade", gradeParam);
+      router.push(`/quiz/${testid}/review?${url.toString()}`);
+    } else if (testid === "quiz-assessment" && gradeParam) {
       url.append("grade", gradeParam);
       router.push(`/quiz/${testid}/review?${url.toString()}`);
     } else {
       router.push(`/quiz/${testid}/review`);
     }
   };
+
   
 
   return (
@@ -96,10 +193,13 @@ export default function Quiz() {
       <h1 className="text-2xl font-bold text-center mb-4 capitalize">
         {testid === "state-test" && stateParam && gradeParam
           ? `${stateParam.toUpperCase()} ${gradeParam} Practice Test`
-          : `${testid} Practice Test`}
+          : testid === "quiz-assessment" && gradeParam
+            ? `Quiz Assessment for ${gradeParam.replace(/-/g, " ").toUpperCase()}`
+            : `${testid} Practice Test`}
       </h1>
 
-      {!submitted && <Timer duration={1200} onTimeUp={handleSubmit} />}
+
+      {!submitted && <Timer duration={900} onTimeUp={handleSubmit} />}
 
       {!submitted ? (
         <div>

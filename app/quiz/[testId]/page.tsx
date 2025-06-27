@@ -19,6 +19,9 @@ export default function Quiz() {
   const gradeParam = searchParams.get("grade"); // e.g. 'K-2'
 
   const { answers, setAnswers } = useQuiz();
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const [unansweredCount, setUnansweredCount] = useState(0);
+
 
   const [quizQuestions, setQuizQuestions] = useState<any[]>([]);
   const [submitted, setSubmitted] = useState(false);
@@ -119,12 +122,38 @@ useEffect(() => {
   };
 
  
-  const handleSubmit = () => {
-  setSubmitted(true);
-  localStorage.removeItem("quizState"); // ✅ wipe on submit
-  localStorage.removeItem("quiz-end-time"); // ✅ wipe timer
+//  const handleSubmit = () => {
+//   const unanswered = quizQuestions.filter(q => !answers[q.question]);
+
+//   if (unanswered.length > 0) {
+//     const confirm = window.confirm(
+//       `You have ${unanswered.length} unanswered question(s). Do you want to submit anyway?`
+//     );
+//     if (!confirm) return;
+//   }
+
+//   setSubmitted(true);
+//   localStorage.removeItem("quizState");
+//   localStorage.removeItem("quiz-end-time");
+// };
+const handleSubmit = () => {
+  const unanswered = quizQuestions.filter(q => !answers[q.question]);
+
+  if (unanswered.length > 0) {
+    setUnansweredCount(unanswered.length);
+    setShowConfirmModal(true); // 👈 Show custom modal
+    return;
+  }
+
+  // If all questions are answered, just submit
+  finalizeSubmit();
 };
 
+const finalizeSubmit = () => {
+  setSubmitted(true);
+  localStorage.removeItem("quizState");
+  localStorage.removeItem("quiz-end-time");
+};
 
   const calculateScore = () => {
     let correctAnswers = 0;
@@ -171,7 +200,11 @@ useEffect(() => {
     }
   };
 
-  
+  const totalQuestions = quizQuestions.length;
+  const answeredCount = Object.keys(answers).filter((key) =>
+    quizQuestions.find((q) => q.question === key)
+  ).length;
+
 
   return (
     <div className="max-w-2xl mx-auto my-20 p-5 text-gray-900 bg-white rounded-lg shadow-lg">
@@ -182,6 +215,10 @@ useEffect(() => {
             ? `Quiz Assessment for ${gradeParam.replace(/-/g, " ").toUpperCase()}`
             : `${testid} Practice Test`}
       </h1>
+    
+      <div className="text-center font-medium text-sm text-gray-600 mt-2 mb-8">
+        {answeredCount} of {totalQuestions} questions answered
+      </div>
 
 
       {!submitted && <Timer duration={60} onTimeUp={handleSubmit} />}
@@ -200,7 +237,6 @@ useEffect(() => {
             />
           ) : (
             <p className="font-semibold" dangerouslySetInnerHTML={{ __html: currentQuestion.question }}></p>
-            //  <p className="font-semibold" dangerouslySetInnerHTML={{ __html: currentQuestion.question }}>{currentQuestion.question}</p>
           )}
 
           <div className="grid grid-cols-2 gap-2 mt-4">
@@ -238,14 +274,56 @@ useEffect(() => {
                 Next
               </button>
             ) : (
-              <button
-                className="py-2 px-6 bg-red-600 text-white rounded-lg cursor-pointer"
-                onClick={handleSubmit}
-              >
-                Submit Quiz
-              </button>
+              <div className="flex gap-6 items-center mt-6">
+                  <button
+                    className="py-2 px-6 bg-yellow-500 text-white rounded-lg cursor-pointer"
+                    onClick={() => setCurrentQuestionIndex(0)} // Start review from Q1
+                  >
+                    Review All
+                  </button>
+
+                  <button
+                    className="py-2 px-6 bg-red-600 text-white rounded-lg cursor-pointer"
+                    onClick={handleSubmit}
+                  >
+                    Submit Quiz
+                  </button>
+                </div>
+
             )}
           </div>
+
+          {showConfirmModal && (
+            <div className="fixed inset-0 bg-black/70 bg-opacity-10 flex items-center justify-center z-50">
+              <div className="bg-white rounded-lg p-6 max-w-md w-full shadow-lg">
+                <h2 className="text-lg font-semibold mb-4">Unanswered Questions</h2>
+                <p className="mb-4 text-gray-700">
+                  You have <strong>{unansweredCount}</strong> unanswered question{unansweredCount > 1 ? "s" : ""}.
+                  Are you sure you want to submit?
+                </p>
+                <div className="flex justify-end gap-4">
+                  <button
+                    onClick={() => setShowConfirmModal(false)}
+                    className="px-4 py-2 bg-gray-300 text-gray-800 rounded cursor-pointer"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={() => {
+                      setShowConfirmModal(false);
+                      finalizeSubmit();
+                    }}
+                    className="px-4 py-2 bg-red-600 text-white rounded cursor-pointer"
+                  >
+                    Yes, Submit
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+
+
         </div>
       ) : (
         <div className="text-center">

@@ -17,7 +17,7 @@ const lato = Lato({
 
 const stateOptions = ["New York", "New Jersey", "Georgia", "Texas", "Maryland", "Ohio"];
 const gradeOptions = ["Grade 3", "Grade 4", "Grade 5", "Grade 6", "Grade 7", "Grade 8"];
-const quizassesmentOptions = ["Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5", "Grade 6", "Grade 7", "Grade 8", "Grade 9", "Grade 10", "Grade 11", "Grade 12"];
+const quizassesmentOptions = ["1st Grade", "2nd Grade", "3rd Grade", "4th Grade", "5th Grade", "6th Grade", "7th Grade", "8th Grade", "9th Grade", "10th Grade", "11th Grade", "12th Grade"];
 
 
 function QuizCard({ id, imageSrc, title, level, category, difficulty, time, questions, onStart,}: QuizCardProps) {
@@ -138,7 +138,7 @@ function QuizCard({ id, imageSrc, title, level, category, difficulty, time, ques
                   {(isQuizAssessment || step === 2) && (
                     <>
                       {/* <p className="font-semibold mb-3">Select your grade:</p> */}
-                      <div className="flex flex-row gap-2 p-6  text-center">
+                      <div className="flex flex-col md:flex-row gap-2 p-6 text-center">
                         {(isStateTest ? gradeOptions : quizassesmentOptions).map((grade) => (
                           <button
                             key={grade}

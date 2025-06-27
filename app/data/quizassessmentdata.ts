@@ -12,7 +12,7 @@ export interface GradeLevelQuiz {
 
 export const quizAssessmentData: GradeLevelQuiz[] = [
   {
-    grade: "grade-1",
+    grade: "1st-grade",
     questions: [
       {
         id: "q1",
@@ -30,7 +30,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
   },
 
    {
-    grade: "grade-2",
+    grade: "2nd-grade",
     questions: [
       {
         id: "q1",
@@ -47,7 +47,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     ],
   },
    {
-    grade: "grade-3",
+    grade: "3rd-grade",
     questions: [
       {
         id: "q1",
@@ -112,7 +112,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     ],
   },
    {
-    grade: "grade-4",
+    grade: "4th-grade",
     questions: [
       {
         id: "q1",
@@ -177,7 +177,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     ],
   },
    {
-    grade: "grade-5",
+    grade: "5th-grade",
     questions: [
       {
         id: "q1",
@@ -242,7 +242,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     ],
   },
   {
-    grade: "grade-6",
+    grade: "6th-grade",
     questions: [
       {
         id: "q1",
@@ -259,7 +259,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     ],
   },
    {
-    grade: "grade-7",
+    grade: "7th-grade",
     questions: [
       {
         id: "q1",
@@ -276,7 +276,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     ],
   },
    {
-    grade: "grade-8",
+    grade: "8th-grade",
     questions: [
       {
         id: "q1",
@@ -293,7 +293,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     ],
   },
    {
-    grade: "grade-9",
+    grade: "9th-grade",
     questions: [
       {
         id: "q1",
@@ -310,7 +310,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     ],
   },
    {
-    grade: "grade-10",
+    grade: "10th-grade",
     questions: [
       {
         id: "q1",
@@ -327,7 +327,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     ],
   },
   {
-    grade: "grade-11",
+    grade: "11th-grade",
     questions: [
       {
         id: "q1",
@@ -344,7 +344,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     ],
   },
    {
-    grade: "grade-12",
+    grade: "12th-grade",
     questions: [
       {
         id: "q1",

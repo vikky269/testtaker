@@ -40,31 +40,6 @@ export default function Quiz() {
 }, [testid, gradeParam, setAnswers]);
 
 
-// useEffect(() => {
-//   const savedState = localStorage.getItem("quizState");
-//   const hasSavedAnswers = savedState
-//     ? JSON.parse(savedState).answers
-//     : null;
-
-//   if (testid === "state-test" && stateParam && gradeParam) {
-//     const normalizedGrade = gradeParam?.toLowerCase().replace(/\s+/g, "");
-//     const key = `${stateParam}-${normalizedGrade}`;
-//     const regularQuiz = standardsData[key];
-//     setQuizQuestions(regularQuiz || []);
-//     if (!hasSavedAnswers) setAnswers({}); // ✅ only clear if nothing saved
-//   } else if (testid === "quiz-assessment" && gradeParam) {
-//     const normalizedGrade = gradeParam.toLowerCase().replace(/\s+/g, "-");
-//     const gradeQuiz = quizAssessmentData.find(
-//       (entry) => entry.grade === normalizedGrade
-//     );
-//     setQuizQuestions(gradeQuiz?.questions || []);
-//     if (!hasSavedAnswers) setAnswers({}); // ✅ only clear if nothing saved
-//   } else {
-//     const regularQuiz = quizData[testid as string];
-//     setQuizQuestions(regularQuiz || []);
-//     if (!hasSavedAnswers) setAnswers({}); // ✅ only clear if nothing saved
-//   }
-// }, [testid, stateParam, gradeParam]);
 
 useEffect(() => {
   const savedState = localStorage.getItem("quizState");
@@ -153,12 +128,22 @@ useEffect(() => {
 
   const calculateScore = () => {
     let correctAnswers = 0;
+
     quizQuestions.forEach((q) => {
-       if (answers[q.question] === q.answer) correctAnswers++;
-      if (answers[q.question] === q.correctAnswer) correctAnswers++;
+      const userAnswer = answers[q.question];
+      const correct = q.correctAnswer || q.answer;
+
+      if (userAnswer && userAnswer === correct) {
+        correctAnswers++;
+      }
     });
+
+    const attemptedQuestions = Object.keys(answers || {}).length;
+    if (attemptedQuestions === 0) return 0; // Explicitly return 0 if no question was answered
+
     return (correctAnswers / quizQuestions.length) * 100;
   };
+
 
   const handleGoHome = () => {
   localStorage.removeItem("quizState");
@@ -199,7 +184,7 @@ useEffect(() => {
       </h1>
 
 
-      {!submitted && <Timer duration={900} onTimeUp={handleSubmit} />}
+      {!submitted && <Timer duration={60} onTimeUp={handleSubmit} />}
 
       {!submitted ? (
         <div>

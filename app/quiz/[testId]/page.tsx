@@ -221,7 +221,7 @@ const finalizeSubmit = () => {
       </div>
 
 
-      {!submitted && <Timer duration={60} onTimeUp={handleSubmit} />}
+      {!submitted && <Timer duration={900} onTimeUp={handleSubmit} />}
 
       {!submitted ? (
         <div>

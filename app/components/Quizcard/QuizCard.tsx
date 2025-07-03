@@ -256,12 +256,12 @@ const lato = Lato({
 
 const stateOptions = ["New York", "New Jersey", "Georgia", "Texas", "Maryland", "Ohio"];
 const gradeOptions = ["Grade 3", "Grade 4", "Grade 5", "Grade 6", "Grade 7", "Grade 8"];
-const quizassesmentOptions = ["Prekindergarten","Kindergarten", "1st Grade", "2nd Grade", "3rd Grade", "4th Grade", "5th Grade", "6th Grade", "7th Grade", "8th Grade", "9th Grade", "10th Grade", "11th Grade", "12th Grade"];
+const quizassesmentOptions = ["Pre-K","Kindergarten", "1st Grade", "2nd Grade", "3rd Grade", "4th Grade", "5th Grade", "6th Grade", "7th Grade", "8th Grade", "9th Grade", "10th Grade", "11th Grade", "12th Grade"];
 
 function generatePasscode(grade: string): string {
   const normalized = grade.toLowerCase().replace(" ", "");
   if (normalized === "kindergarten") return "SMTTK";
-  if (normalized === "prekindergarten") return "SMTTPK";
+  if (normalized === "pre-k") return "SMTTPK";
   const match = grade.match(/(\d+)/);
   return match ? `SMTT${match[1]}` : "";
 }

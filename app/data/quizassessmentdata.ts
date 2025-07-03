@@ -12,7 +12,7 @@ export interface GradeLevelQuiz {
 
 export const quizAssessmentData: GradeLevelQuiz[] = [
   {
-    grade: "PreKindergarten",
+    grade: "pre-k",
     questions: [
       {
         id: "q1",
@@ -22,13 +22,13 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       },
       {
         id: "q2",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751555340/Screenshot_2025-07-03_160838_pzs8sq.png",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751576131/Screenshot_2025-07-03_215504_ljo8rp.png",
         options: ["5", "7", "3", "10"],
         correctAnswer: "10",
       },
       {
         id: "q3",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751555458/Screenshot_2025-07-03_161041_mqlvce.png",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751576281/Screenshot_2025-07-03_215731_d7jxfa.png",
         options: ["5", "7", "3", "10"],
         correctAnswer: "5",
       },

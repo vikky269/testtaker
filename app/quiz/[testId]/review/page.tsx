@@ -19,14 +19,38 @@ export default function ReviewPage() {
   const [selectedQuiz, setSelectedQuiz] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
+ 
+
+
+  // useEffect(() => {
+  //   let quiz;
+
+  //   if (testId === "state-test" && stateParam && gradeParam) {
+  //     const key = `${stateParam}-${gradeParam}`;
+  //     quiz = standardsData[key];
+  //   } else if (testId === "quiz-assessment" && gradeParam) {
+  //     const found = quizAssessmentData.find(q => q.grade === gradeParam);
+  //     quiz = found?.questions || [];
+  //   } else {
+  //     quiz = quizData[testId as string];
+  //   }
+
+  //   setSelectedQuiz(quiz || []);
+  //   setLoading(false);
+  // }, [testId, stateParam, gradeParam]);
+
   useEffect(() => {
+    const normalize = (str: string) => str.toLowerCase().replace(/\s+/g, "");
+
     let quiz;
 
     if (testId === "state-test" && stateParam && gradeParam) {
       const key = `${stateParam}-${gradeParam}`;
       quiz = standardsData[key];
     } else if (testId === "quiz-assessment" && gradeParam) {
-      const found = quizAssessmentData.find(q => q.grade === gradeParam);
+      const found = quizAssessmentData.find(
+        (q) => normalize(q.grade) === gradeParam
+      );
       quiz = found?.questions || [];
     } else {
       quiz = quizData[testId as string];
@@ -35,6 +59,7 @@ export default function ReviewPage() {
     setSelectedQuiz(quiz || []);
     setLoading(false);
   }, [testId, stateParam, gradeParam]);
+
 
   const handleFinishReview = () => {
     localStorage.removeItem("quizState");        // Clear quiz answers + index
@@ -104,20 +129,23 @@ export default function ReviewPage() {
                 return (
                   <li
                     key={i}
-                    className={`p-2 text-center border rounded-lg ${
-                      isCorrect
+                    className={`p-2 text-center border rounded-lg ${isCorrect
                         ? "bg-green-500 text-white"
                         : isSelected
-                        ? "bg-red-500 text-white"
-                        : "bg-gray-200"
-                    }`}
+                          ? "bg-red-500 text-white"
+                          : "bg-gray-200"
+                      }`}
                   >
-                    {option} {isSelected ? "(Your Answer)" : ""}
-                    {isCorrect ? " ✅" : ""}
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: `${option} ${isSelected ? "(Your Answer)" : ""} ${isCorrect ? "✅" : ""}`,
+                      }}
+                    />
                   </li>
                 );
               })}
             </ul>
+
           </div>
         );
       })}

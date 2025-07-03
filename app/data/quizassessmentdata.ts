@@ -12,19 +12,197 @@ export interface GradeLevelQuiz {
 
 export const quizAssessmentData: GradeLevelQuiz[] = [
   {
+    grade: "PreKindergarten",
+    questions: [
+      {
+        id: "q1",
+        question: "Subtract 5 – 5 ",
+        options: ["0", "1", "2", "5"],
+        correctAnswer: "0",
+      },
+      {
+        id: "q2",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751555340/Screenshot_2025-07-03_160838_pzs8sq.png",
+        options: ["5", "7", "3", "10"],
+        correctAnswer: "10",
+      },
+      {
+        id: "q3",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751555458/Screenshot_2025-07-03_161041_mqlvce.png",
+        options: ["5", "7", "3", "10"],
+        correctAnswer: "5",
+      },
+      {
+        id: "q4",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751555566/Screenshot_2025-07-03_161228_snytqb.png",
+        options: ["3", "4", "5", "6"],
+        correctAnswer: "4",
+      },
+      {
+        id: "q5",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751555683/Screenshot_2025-07-03_161430_rk9zqz.png",
+        options: ["A", "B", "C", "D"],
+        correctAnswer: "D",
+      },
+      {
+        id: "q6",
+        question: "How many sides does a triangle have?",
+        options: ["2", "3", "4", "5"],
+        correctAnswer: "3",
+      },
+      {
+        id: "q7",
+        question: "What number comes before 8?",
+        options: ["6", "7", "9", "10"],
+        correctAnswer: "7",
+      },
+      {
+        id: "q8",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751555983/Screenshot_2025-07-03_161925_f59za6.png",
+        options: ["3 bananas", "5 bananas", "4 bananas", "2 bananas"],
+        correctAnswer: "4 bananas",
+      },
+      {
+        id: "q9",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751556129/Picture2_txgxxx.png",
+        options: ["10", "5", "15", "51"],
+        correctAnswer: "5",
+      },
+      {
+        id: "q10",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751556244/Picture3_x1kdnp.png",
+        options: ["6", "4", "2", "24"],
+        correctAnswer: "6",
+      }
+    ],
+  },
+  {
+    grade: "Kindergarten",
+    questions: [
+      {
+        id: "q1",
+        question: "Write the missing number: 1, 2, 3, __, 5",
+        options: ["4", "5", "-6", "-4"],
+        correctAnswer: "4",
+      },
+      {
+        id: "q2",
+        question: "9 - 3 = ?",
+        options: ["12", "6", "5", "7"],
+        correctAnswer: "6",
+      },
+      {
+        id: "q3",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751515197/Screenshot_2025-07-03_045932_k2t6tj.png",
+        options: ["16", "18", "20", "12"],
+        correctAnswer: "16",
+      },
+      {
+        id: "q4",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751515371/Screenshot_2025-07-03_050233_yk1dbu.png",
+        options: ["Circle", "Dot", "Triangle", "None of the above"],
+        correctAnswer: "Circle",
+      },
+      {
+        id: "q5",
+        question: "Mrs. Gabbie served 5 trays of cheese breads, 9 trays of caramel breads and 5 trays of drinks for her family reunion. How many trays of bread were there altogether?",
+        options: ["19", "10", "14", "5"],
+        correctAnswer: "14",
+      },
+      {
+        id: "q6",
+        question: "8 tens and 5 ones is equal to what number?",
+        options: ["805", "85", "58", "81051"],
+        correctAnswer: "85",
+      },
+      {
+        id: "q7",
+        question: "The old sewing machine is 12 inches wide, and the brand-new sewing machine is 14 inches wide. How much wider is the new machine than the old one?",
+        options: ["1", "2", "3", "4"],
+        correctAnswer: "2",
+      },
+      {
+        id: "q8",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751516014/Screenshot_2025-07-03_051315_aovhxv.png",
+        options: ["Square", "Cuboid", "Rectangle", "Cube"],
+        correctAnswer: "Cube",
+      },
+      {
+        id: "q9",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751516157/Screenshot_2025-07-03_051543_ewo27i.png",
+        options: ["Cylinder", "Circle", "Cone", "Sphere"],
+        correctAnswer: "Cylinder",
+      },
+      {
+        id: "q10",
+        question: "What number is missing?  (Sequence: 8, 9, __, 11, 12)",
+        options: ["7", "9", "10", "9.5"],
+        correctAnswer: "10",
+      }
+    ],
+  },
+  {
     grade: "1st-grade",
     questions: [
       {
         id: "q1",
-        question: "What is 2 + 3?",
-        options: ["4", "5", "6", "7"],
-        correctAnswer: "5",
+        question: "Emma has 3 packs of stickers. Each pack has 6 stickers. She gives 5 stickers to her friend. How many stickers does she have now?",
+        options: ["13", "18", "15", "11"],
+        correctAnswer: "13",
       },
       {
         id: "q2",
-        question: "Which number comes after 6?",
-        options: ["5", "7", "8", "9"],
+        question: "Which number is the largest?",
+        options: ["84", "48", "74", "64"],
+        correctAnswer: "84",
+      },
+       {
+        id: "q3",
+        question: "What number is 10 more than 37?",
+        options: ["47", "27", "36", "57"],
+        correctAnswer: "47",
+      },
+       {
+        id: "q4",
+        question: "A toy costs 85 cents. You have one 50¢ coin and two 20¢ coins. How much money do you have?",
+        options: ["85¢", "90¢", "70¢", "80¢"],
+        correctAnswer: "90¢",
+      },
+       {
+        id: "q5",
+        question: "What is the missing number?  ___ + 15 = 28",
+        options: ["12", "11", "13", "14"],
+        correctAnswer: "13",
+      },
+       {
+        id: "q6",
+        question: "Which shape has 4 sides and 4 corners but is not a square?",
+        options: ["Triangle", "Rectangle", "Circle", "Pentagon"],
+        correctAnswer: "Rectangle",
+      },
+       {
+        id: "q7",
+        question: "There are 20 apples. 8 are green, and the rest are red. How many are red?",
+        options: ["10", "12", "14", "18"],
+        correctAnswer: "12",
+      },
+       {
+        id: "q8",
+        question: "What is <sup>1</sup>&frasl;<sub>2</sub> of 12?",
+        options: ["5", "6", "4", "8"],
+        correctAnswer: "6",
+      },
+       {
+        id: "q9",
+        question: "Which number is in the tens place in 74?",
+        options: ["4", "0", "7", "1"],
         correctAnswer: "7",
+      },
+       {
+        id: "q10",
+        question: "You skip count by 5 starting at 10.What are the first 4 numbers?",
+        options: ["10, 15, 20, 25", "10, 20, 30, 40", "5, 10, 15, 20", "15, 20, 25, 30"],
+        correctAnswer: "10, 15, 20, 25",
       }
     ],
   },
@@ -34,15 +212,63 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     questions: [
       {
         id: "q1",
-        question: "What is 2 + 3?",
-        options: ["4", "5", "6", "7"],
-        correctAnswer: "5",
+        question: ". A class collected 286 cans for recycling. Another class collected 179 cans. How many more cans did the first class collect?",
+        options: ["97", "107", "117", "109"],
+        correctAnswer: "97",
       },
       {
         id: "q2",
-        question: "Which number comes after 6?",
-        options: ["5", "7", "8", "9"],
-        correctAnswer: "7",
+        question: "You have 3 quarters, 2 dimes, and 4 pennies. How much money do you have?",
+        options: ["99¢", "94¢", "89¢", "79¢"],
+        correctAnswer: "94¢",
+      },
+       {
+        id: "q3",
+        question: "What is the value of the missing number in this equation: 45 + ___ = 120?",
+        options: ["65", "75", "85", "95"],
+        correctAnswer: "85",
+      },
+      {
+        id: "q4",
+        question: "A bakery made 325 cookies. They sold 198. How many cookies were left?",
+        options: ["127", "132", "117", "137"],
+        correctAnswer: "127",
+      },
+      {
+        id: "q5",
+        question: "Which number sentence shows the correct regrouping for 403 - 176?",
+        options: ["400 - 100 = 300", "403 - 176 = 227", "403 - 176 = 237", "403 - 176 = 217"],
+        correctAnswer: "403 - 176 = 227",
+      },
+      {
+        id: "q6",
+        question: "Which number sentence is true?",
+        options: ["48 < 84", "125 > 512", "39 = 93", "401 < 104"],
+        correctAnswer: "48 < 84",
+      },
+      {
+        id: "q7",
+        question: "A triangle has 3 sides.How many sides do 4 triangles have in total?",
+        options: ["9", "10", "12", "15"],
+        correctAnswer: "12",
+      },
+      {
+        id: "q8",
+        question: "If you skip count by 4s starting from 8, what is the 5th number in the sequence?",
+        options: ["24", "28", "32", "36"],
+        correctAnswer: "24",
+      },
+      {
+        id: "q9",
+        question: "A farmer has 7 rows of corn. Each row has 8 corn plants. How many corn plants are there?",
+        options: ["48", "54", "56", "64"],
+        correctAnswer: "56",
+      },
+      {
+        id: "q10",
+        question: "Which number is halfway between 400 and 500?",
+        options: ["440", "450", "460", "470"],
+        correctAnswer: "450",
       }
     ],
   },
@@ -246,16 +472,65 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     questions: [
       {
         id: "q1",
-        question: "Simplify: 2x + 3x - 5x",
-        options: ["0", "5x", "-5x", "2x"],
-        correctAnswer: "0",
+        question: "A baker uses 2<sup>3</sup>&frasl;<sub>4</sub> cups of flour for one batch of cookies. How much flour is needed for 3<sup>1</sup>&frasl;<sub>2</sub> batches?",
+        options: ["9<sup>5</sup>&frasl;<sub>8</sub> cups", "9<sup>7</sup>&frasl;<sub>8</sub> cups", "8<sup>1</sup>&frasl;<sub>2</sub> cups", "10 cups"],
+        correctAnswer: "9<sup>7</sup>&frasl;<sub>8</sub> cups",
       },
       {
         id: "q2",
-        question: "What is the solution to the equation 2x = 10?",
-        options: ["2", "5", "10", "20"],
+        question: "The expression (2x – 3)(x + 4) is expanded. What is the coefficient of the x-term in the expanded form?",
+        options: ["2", "5", "-3", "5x"],
         correctAnswer: "5",
-      }
+      },
+      {
+        id: "q3",
+        question: "A number is divisible by both 6 and 8. What is the least possible positive number that meets this condition?",
+        options: ["24", "48", "12", "36"],
+        correctAnswer: "48",
+      },
+      {
+        id: "q4",
+        question: "A regular hexagon has a perimeter of 48 cm. What is the length of one side?",
+        options: ["8 cm", "6 cm", "12 cm", "7 cm"],
+        correctAnswer: "8 cm",
+      },
+      {
+        id: "q5",
+        question: "Which of the following has the greatest value?",
+        options: ["<sup>3</sup>&frasl;<sub>4</sub>", "0.82", "<sup>8</sup>&frasl;<sub>10</sub>", "81%"],
+        correctAnswer: "0.82",
+      },
+      {
+        id: "q6",
+        question: "Solve for x in the equation: <sup>2</sup>&frasl;<sub>3</sub>x - 5 = 7.",
+        options: ["15", "18", "12", "9"],
+        correctAnswer: "18",
+      },
+      {
+        id: "q7",
+        question: "A box contains 3 red, 4 blue, and 5 green marbles. If one marble is randomly selected, what is the probability it is not green?",
+        options: ["<sup>3</sup>&frasl;<sub>4</sub>", "<sup>7</sup>&frasl;<sub>12</sub>", "<sup>5</sup>&frasl;<sub>12</sub>", "<sup>1</sup>&frasl;<sub>4</sub>"],
+        correctAnswer: "<sup>3</sup>&frasl;<sub>4</sub>",
+      },
+      {
+        id: "q8",
+        question: "The equation y = 5x + 2 represents a pattern. What is the value of y when x = –3?",
+        options: ["-13", "-15", "-12", "-17"],
+        correctAnswer: "-13",
+      },
+      {
+        id: "q9",
+        question: "A store is offering a 25% discount on an item that costs $84. What is the sale price?",
+        options: ["$63.00", "$62.50", "$65.00", "$67.00"],
+        correctAnswer: "$63.00",
+      },
+      {
+        id: "q10",
+        question: "If a triangle has side lengths of 7 cm, 24 cm, and 25 cm, is it a right triangle?",
+        options: ["Yes, because 7² + 24² = 25²", "No, because 7 + 24 < 25", "No, because 24² + 25² ≠ 7²", "Yes, because it's isosceles"],
+        correctAnswer: "Yes, because 7² + 24² = 25²",
+      },
+
     ],
   },
    {
@@ -263,15 +538,63 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     questions: [
       {
         id: "q1",
-        question: "What is 2 + 3?",
-        options: ["4", "5", "6", "7"],
-        correctAnswer: "5",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751552188/Screenshot_2025-07-03_151607_vht1lb.png",
+        options: ["6", "5", "4", "2"],
+        correctAnswer: "6",
       },
       {
         id: "q2",
-        question: "Which number comes after 6?",
-        options: ["5", "7", "8", "9"],
-        correctAnswer: "7",
+        question: "A jacket originally costs $80. It is marked up by 30%, then discounted by 20%. What is the final price?",
+        options: ["$76.80", "$83.20", "$96.00", "$84.00"],
+        correctAnswer: "$83.20",
+      },
+      {
+        id: "q3",
+        question: "The probability of spinning a red section on a spinner is <sup>2</sup>&frasl;<sub>5</sub>. What is the probability of not spinning red after two independent spins?",
+        options: ["<sup>3</sup>&frasl;<sub>5</sub>", "<sup>9</sup>&frasl;<sub>25</sub>", "<sup>6</sup>&frasl;<sub>25</sub>", "<sup>12</sup>&frasl;<sub>25</sub>"],
+        correctAnswer: "<sup>9</sup>&frasl;<sub>25</sub>",
+      },
+      {
+        id: "q4",
+        question: "Simplify the expression -4<sup>2</sup> + 3 × (2 - 7)",
+        options: ["-31", "-29", "-25", "-19"],
+        correctAnswer: "-31",
+      },
+      {
+        id: "q5",
+        question: "The dimensions of a rectangular prism are doubled. By what factor does the volume increase?",
+        options: ["2", "4", "6", "8"],
+        correctAnswer: "8",
+      },
+      {
+        id: "q6",
+        question: "What is the percent error if a student estimates a value to be 180, but the actual value is 200?",
+        options: ["10%", "15%", "20%", "25%"],
+        correctAnswer: "10%",
+      },
+      {
+        id: "q7",
+        question: "Which of the following is irrational?",
+        options: ["&radic;81", "<sup>16</sup>&frasl;<sub>4</sub>", "π", "0.75"],
+        correctAnswer: "π",
+      },
+      {
+        id: "q8",
+        question: "A triangle has two angles measuring 35° and 75°. What is the measure of the third angle?",
+        options: ["65°", "70°", "80°", "85°"],
+        correctAnswer: "70°",
+      },
+      {
+        id: "q9",
+        question: "Convert 3.61 into a fraction in simplest form.",
+        options: ["<sup>361</sup>&frasl;<sub>100</sub>", "<sup>325</sup>&frasl;<sub>90</sub>", "<sup>358</sup>&frasl;<sub>99</sub>", "<sup>356</sup>&frasl;<sub>99</sub>"],
+        correctAnswer: "<sup>361</sup>&frasl;<sub>100</sub>",
+      },
+      {
+        id: "q10",
+        question: "A car travels 160 miles in 2 hours 40 minutes. What is its average speed in miles per hour?",
+        options: ["60 mph", "64 mph", "65 mph", "66 mph"],
+        correctAnswer: "60 mph",
       }
     ],
   },
@@ -280,16 +603,65 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     questions: [
       {
         id: "q1",
-        question: "What is 2 + 3?",
-        options: ["4", "5", "6", "7"],
-        correctAnswer: "5",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751552865/Screenshot_2025-07-03_152729_oh10fh.png",
+        options: ["7", "6", "8", "5"],
+        correctAnswer: "7",
       },
       {
         id: "q2",
-        question: "Which number comes after 6?",
-        options: ["5", "7", "8", "9"],
-        correctAnswer: "7",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751553086/Screenshot_2025-07-03_153109_vvs0zy.png",
+        options: ["(1, 5)", "(2, 7)", "(3, 9)", "(1, 4)"],
+        correctAnswer: "(1, 5)",
+      },
+      {
+        id: "q3",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751553357/Screenshot_2025-07-03_153543_spyqlm.png",
+        options: ["16", "-16", "<sup>1</sup>&frasl;<sub>16</sub>", "<sup>1</sup>&frasl;<sub>8</sub>"],
+        correctAnswer: "<sup>1</sup>&frasl;<sub>16</sub>",
+      },
+      {
+        id: "q4",
+        question: "What is the distance between the points A(–3, 2) and B(4, –2)?",
+        options: ["6", "7", "&radic;65", "&radic;49"],
+        correctAnswer: "&radic;65",
+      },
+      {
+        id: "q5",
+        question: "A cylinder has a height of 10 cm and a radius of 3 cm. What is the volume? (Use π ≈ 3.14)",
+        options: ["282.6 cm³", "94.2 cm³", "314.0 cm³", "188.4 cm³"],
+        correctAnswer: "282.6 cm³",
+      },
+      {
+        id: "q6",
+        question: "Simplify the expression: 3x² – 2x + 5x² – 4 + 6x",
+        options: ["8x² + 4x – 4", "8x² + 4x + 4", "8x² + 6x – 4", "8x² + 6x + 4"],
+        correctAnswer: "8x² + 6x – 4",
+      },
+      {
+        id: "q7",
+        question: "Which number is irrational?",
+        options: ["<sup>4</sup>&frasl;<sub>7</sub>", "&radic;36", "&radic;50", "3.25"],
+        correctAnswer: "&radic;50",
+      },
+      {
+        id: "q8",
+        question: "The function f(x) = 2x² – 3x + 1. What is the value of f(–2)?",
+        options: ["15", "17", "9", "11"],
+        correctAnswer: "15",
+      },
+      {
+        id: "q9",
+        question: "Which equation has no solution?",
+        options: ["2x + 5 = 2x + 5", "4x – 1 = 4x + 3", "x – 2 = 2x – 2", "3x + 6 = 3(x + 2)"],
+        correctAnswer: "4x – 1 = 4x + 3",
+      },
+      {
+        id: "q10",
+        question: "The sum of two numbers is 20. Their difference is 4. What is the product of the two numbers?",
+        options: ["96", "99", "104", "100"],
+        correctAnswer: "96",
       }
+
     ],
   },
    {

@@ -61,9 +61,11 @@ useEffect(() => {
     }
   } else if (testid === "quiz-assessment" && gradeParam) {
     const normalizedGrade = gradeParam.toLowerCase().replace(/\s+/g, "-");
+
     const gradeQuiz = quizAssessmentData.find(
-      (entry) => entry.grade === normalizedGrade
+      (entry) => entry.grade.toLowerCase().replace(/\s+/g, "-") === normalizedGrade
     );
+
     setQuizQuestions(gradeQuiz?.questions || []);
     if (!hasSavedAnswers) {
       setAnswers({});
@@ -121,21 +123,6 @@ useEffect(() => {
     }
   };
 
- 
-//  const handleSubmit = () => {
-//   const unanswered = quizQuestions.filter(q => !answers[q.question]);
-
-//   if (unanswered.length > 0) {
-//     const confirm = window.confirm(
-//       `You have ${unanswered.length} unanswered question(s). Do you want to submit anyway?`
-//     );
-//     if (!confirm) return;
-//   }
-
-//   setSubmitted(true);
-//   localStorage.removeItem("quizState");
-//   localStorage.removeItem("quiz-end-time");
-// };
 const handleSubmit = () => {
   const unanswered = quizQuestions.filter(q => !answers[q.question]);
 
@@ -148,6 +135,10 @@ const handleSubmit = () => {
   // If all questions are answered, just submit
   finalizeSubmit();
 };
+
+const handletimeupSubmit = ()=> {
+  finalizeSubmit();
+}
 
 const finalizeSubmit = () => {
   setSubmitted(true);
@@ -221,7 +212,7 @@ const finalizeSubmit = () => {
       </div>
 
 
-      {!submitted && <Timer duration={900} onTimeUp={handleSubmit} />}
+      {!submitted && <Timer duration={900} onTimeUp={handletimeupSubmit} />}
 
       {!submitted ? (
         <div>
@@ -243,14 +234,15 @@ const finalizeSubmit = () => {
             {currentQuestion.options.map((option:any) => (
               <button
                 key={option}
-                className={`p-2 border rounded-lg ${
+                className={`p-2 border rounded-lg cursor-pointer ${
                   answers[currentQuestion.question] === option
                     ? "bg-green-500 text-white"
                     : "bg-gray-200"
                 }`}
                 onClick={() => handleSelect(currentQuestion.question, option)}
               >
-                {option}
+                {/* {option} */}
+                <p className="font-semibold" dangerouslySetInnerHTML={{ __html: option }}></p>
               </button>
             ))}
           </div>

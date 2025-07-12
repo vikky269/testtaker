@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { QuizProvider } from "./context/QuizContext";
 import Navbar from "./components/Navbar/Navbar";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Navbar />
         <QuizProvider>
           <main className="">
+             <Toaster position="top-right" reverseOrder={false} />
             {children}
           </main>
         </QuizProvider>

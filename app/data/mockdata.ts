@@ -148,8 +148,8 @@ export interface QuizCardProps {
       imageSrc: "/imseven.png",
       title: "QUIZ ASSESSMENT",
       level: "k-12",
-      category: "General",
-      difficulty: "Hard",
+      category: "Maths",
+      difficulty: "Medium",
       time: "15 min",
       questions: 10,
       onStart: () => console.log("Started Civics Awareness")

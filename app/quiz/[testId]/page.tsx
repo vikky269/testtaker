@@ -243,7 +243,7 @@ const finalizeSubmit = () => {
               className="w-full max-w-5xl h-full mx-auto block mt-6"
             />
           ) : (
-            <p className="font-semibold text-xl md:text-2xl" dangerouslySetInnerHTML={{ __html: currentQuestion.question }}></p>
+            <p className="leading-12 text-xl md:text-2xl" dangerouslySetInnerHTML={{ __html: currentQuestion.question }}></p>
           )}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
@@ -257,7 +257,7 @@ const finalizeSubmit = () => {
                 onClick={() => handleSelect(currentQuestion.question, option)}
               >
                 {/* {option} */}
-                <p className="font-semibold text-2xl" dangerouslySetInnerHTML={{ __html: option }}></p>
+                <p className="text-2xl leading-11" dangerouslySetInnerHTML={{ __html: option }}></p>
               </button>
             ))}
           </div>

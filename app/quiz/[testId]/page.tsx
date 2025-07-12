@@ -701,7 +701,7 @@ export default function Quiz() {
               Back to Home
             </button>
           ) : (
-            <button className="mt-4 p-2 bg-green-600 cursor-pointer text-white rounded-lg" onClick={handleReview}>
+            <button className="mt-6 p-2 bg-green-600 cursor-pointer text-white rounded-lg" onClick={handleReview}>
               Review Test
             </button>
           )}

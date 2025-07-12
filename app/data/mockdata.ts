@@ -147,7 +147,7 @@ export interface QuizCardProps {
       id: "quiz-assessment",
       imageSrc: "/imseven.png",
       title: "QUIZ ASSESSMENT",
-      level: "",
+      level: "k-12",
       category: "General",
       difficulty: "Hard",
       time: "15 min",

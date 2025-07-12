@@ -7,6 +7,7 @@ import standardsData from "@/app/data/statetestdata"; // state tests
 import { useQuiz } from "@/app/context/QuizContext";
 import Timer from "@/app/components/Timer/Timer";
 import { quizAssessmentData } from "@/app/data/quizassessmentdata";
+import { useRef } from "react";
 
 
 export default function Quiz() {
@@ -26,6 +27,16 @@ export default function Quiz() {
   const [quizQuestions, setQuizQuestions] = useState<any[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+
+  const questionRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+  if (questionRef.current) {
+    questionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}, [currentQuestionIndex]);
+
+
 
   useEffect(() => {
   const savedState = localStorage.getItem("quizState");
@@ -198,7 +209,7 @@ const finalizeSubmit = () => {
 
 
   return (
-    <div className="max-w-2xl mx-auto my-20 p-5 text-gray-900 bg-white rounded-lg shadow-lg">
+    <div ref={questionRef} className="mx-5 my-10 px-5 py-10 text-gray-900 border-2 border-black rounded-lg shadow-lg">
       <h1 className="text-2xl font-bold text-center mb-4 capitalize">
         {testid === "state-test" && stateParam && gradeParam
           ? `${stateParam.toUpperCase()} ${gradeParam} Practice Test`
@@ -206,52 +217,55 @@ const finalizeSubmit = () => {
             ? `Quiz Assessment for ${gradeParam.replace(/-/g, " ").toUpperCase()}`
             : `${testid} Practice Test`}
       </h1>
-    
-      <div className="text-center font-medium text-sm text-gray-600 mt-2 mb-8">
+
+      <div className="text-center font-medium text-md text-gray-600 mt-4 mb-8">
         {answeredCount} of {totalQuestions} questions answered
       </div>
 
+      {/* <div className="fixed top-54 right-8  px-4 py-2 rounded-lg z-50">
+        <Timer duration={7200} onTimeUp={handletimeupSubmit} />
+      </div> */}
 
-      {!submitted && <Timer duration={900} onTimeUp={handletimeupSubmit} />}
+      {!submitted && <Timer duration={1200} onTimeUp={handletimeupSubmit} />}
 
       {!submitted ? (
         <div>
-          <div className="text-center text-lg font-semibold mt-6 mb-3">
+          <div className="text-center text-lg md:text-3xl font-semibold mt-6 mb-6">
             Question {currentQuestionIndex + 1} of {quizQuestions.length}
           </div>
+
+
 
           {currentQuestion.question.startsWith("https://res.cloudinary.com/") ? (
             <img
               src={currentQuestion.question}
               alt="Quiz Question"
-              className="w-full max-w-2xl"
+              className="w-full max-w-5xl h-full mx-auto block mt-6"
             />
           ) : (
-            <p className="font-semibold" dangerouslySetInnerHTML={{ __html: currentQuestion.question }}></p>
+            <p className="font-semibold text-xl md:text-2xl" dangerouslySetInnerHTML={{ __html: currentQuestion.question }}></p>
           )}
 
-          <div className="grid grid-cols-2 gap-2 mt-4">
-            {currentQuestion.options.map((option:any) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+            {currentQuestion.options.map((option: any) => (
               <button
                 key={option}
-                className={`p-2 border rounded-lg cursor-pointer ${
-                  answers[currentQuestion.question] === option
-                    ? "bg-green-500 text-white"
+                className={`px-4 py-8 border rounded-lg cursor-pointer ${answers[currentQuestion.question] === option
+                    ? "bg-[#7FB509] text-white"
                     : "bg-gray-200"
-                }`}
+                  }`}
                 onClick={() => handleSelect(currentQuestion.question, option)}
               >
                 {/* {option} */}
-                <p className="font-semibold" dangerouslySetInnerHTML={{ __html: option }}></p>
+                <p className="font-semibold text-2xl" dangerouslySetInnerHTML={{ __html: option }}></p>
               </button>
             ))}
           </div>
 
-          <div className="flex justify-between mt-8">
+          <div className="flex flex-col space-y-4 md:flex-row justify-between items-center mt-8">
             <button
-              className={`p-2 cursor-pointer bg-gray-500 text-white rounded-lg ${
-                currentQuestionIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
-              }`}
+              className={`py-2 px-6 cursor-pointer bg-[#7FB509] text-white rounded-lg ${currentQuestionIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
+                }`}
               onClick={handlePrev}
               disabled={currentQuestionIndex === 0}
             >
@@ -260,30 +274,67 @@ const finalizeSubmit = () => {
 
             {currentQuestionIndex < quizQuestions.length - 1 ? (
               <button
-                className="py-2 px-6 bg-blue-600 text-white rounded-lg cursor-pointer"
+                className="py-2 px-6 bg-[#7FB509] text-white rounded-lg cursor-pointer"
                 onClick={handleNext}
               >
                 Next
               </button>
             ) : (
-              <div className="flex gap-6 items-center mt-6">
-                  <button
-                    className="py-2 px-6 bg-yellow-500 text-white rounded-lg cursor-pointer"
-                    onClick={() => setCurrentQuestionIndex(0)} // Start review from Q1
-                  >
-                    Review All
-                  </button>
+              <div className="flex gap-6 items-center">
+                <button
+                  className="py-3 px-6 bg-yellow-500 text-white rounded-lg cursor-pointer"
+                  onClick={() => setCurrentQuestionIndex(0)} // Start review from Q1
+                >
+                  Review All
+                </button>
 
-                  <button
-                    className="py-2 px-6 bg-red-600 text-white rounded-lg cursor-pointer"
-                    onClick={handleSubmit}
-                  >
-                    Submit Quiz
-                  </button>
-                </div>
+                <button
+                  className="py-3 px-6 bg-red-600 text-white rounded-lg cursor-pointer"
+                  onClick={handleSubmit}
+                >
+                  Submit Quiz
+                </button>
+              </div>
 
             )}
           </div>
+{/* 
+          <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-6 justify-between items-center mt-8 px-4 py-4">
+            <button
+              className={`py-2  px-6 cursor-pointer bg-[#7FB509] text-white rounded-lg ${currentQuestionIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+              onClick={handlePrev}
+              disabled={currentQuestionIndex === 0}
+            >
+              Previous
+            </button>
+
+            {currentQuestionIndex < quizQuestions.length - 1 ? (
+              <button
+                className="py-2 px-6 bg-[#7FB509] text-white rounded-lg cursor-pointer"
+                onClick={handleNext}
+              >
+                Next
+              </button>
+            ) : (
+              <>
+                <button
+                  className="py-3 px-6 bg-[#7FB509] text-white rounded-lg cursor-pointer"
+                  onClick={() => setCurrentQuestionIndex(0)}
+                >
+                  Review All
+                </button>
+
+                <button
+                  className="py-3 px-6 bg-red-600 text-white rounded-lg cursor-pointer"
+                  onClick={handleSubmit}
+                >
+                  Submit Quiz
+                </button>
+              </>
+            )}
+          </div> */}
+
 
           {showConfirmModal && (
             <div className="fixed inset-0 bg-black/70 bg-opacity-10 flex items-center justify-center z-50">

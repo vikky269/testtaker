@@ -731,5 +731,130 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         correctAnswer: "x² + C",
       }
     ],
-  }
+  },
+   {
+    grade: "sat",
+    questions: [
+      {
+        id: "q1",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752217874/Screenshot_2025-07-11_080932_v19q6s.png",
+        options: ["NO CHANGE", "pounds", "pounds, however", "pounds, yet"],
+        correctAnswer: "pounds, yet",
+      },
+      {
+        id: "q2",
+        question: "György Buzsáki, the Biggs Professor of Neuroscience at the New York University Grossman School of Medicine, conducted a study of mice brain cells to investigate ______ According to Buzsáki’s research, certain experiences are immediately followed by five to twenty “sharp wave ripples” of neurons that linger in the brain until sleep, during which the ripples are reactivated and consolidated into a lasting memory.Which choice completes the text so that it conforms to the conventions of Standard English?",
+        options: ["how are mammalian experiences converted into permanent memories?", "how are mammalian experiences converted into permanent memories.", "how mammalian experiences are converted into permanent memories?", "how mammalian experiences are converted into permanent memories."],
+        correctAnswer: "how mammalian experiences are converted into permanent memories.",
+      },
+      {
+        id: "q3",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752218267/Screenshot_2025-07-11_081725_mulbao.png",
+        options: ["NO CHANGE", "It ranks", "Those rank", "Theirs rank"],
+        correctAnswer: "It ranks",
+      },
+      {
+        id: "q4",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752218466/Screenshot_2025-07-11_082049_yafz3g.png",
+        options: ["the declaration actually had several intended audiences", "many Haitian people opposed the revolution and the declaration", "aspects of the declaration were modeled on similar documents from other countries.", "the French government may have been surprised by the declaration"],
+        correctAnswer: "the declaration actually had several intended audiences",
+      },
+      {
+        id: "q5",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752218773/Screenshot_2025-07-11_082556_lbjow6.png",
+        options: ["Canada and Australia have similar precipitation levels but very different amounts of freshwater resources per capita.", "Sierra Leone and Brazil have similar precipitation levels and similar amounts of freshwater resources per capita.", "Brazil has the second highest precipitation level and the second highest amount of freshwater resources per capita.", "Sierra Leone and Australia have very similar amounts of freshwater resources per capita but very different precipitation levels."],
+        correctAnswer: "Canada and Australia have similar precipitation levels but very different amounts of freshwater resources per capita.",
+      },
+      {
+        id: "q6",
+        question: "In 2008 a complete set of ancient pessoi (glass game pieces) was uncovered from beneath a paving stone in modern-day Israel. Due to their small size, pessoi were easily misplaced, making a whole set a rare find. This has led some experts to suggest that the set may have been buried intentionally; however, without clear evidence, archaeologists are left to ______ what happened. Which choice completes the text with the most logical and precise word or phrase?",
+        options: ["dismiss", "catalog", "speculate about", "expand on"],
+        correctAnswer: "speculate about",
+      },
+      {
+        id: "q7",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752219798/Screenshot_2025-07-11_084300_ttrdxp.png",
+        options: ["To show Jane’s regret after her outburst against Mrs. Reed", "To portray Jane as a rebellious and angry child who deserves punishment", "To explore Jane’s complex feelings of love and hate towards Mrs. Reed", "To reveal the source of Jane’s resentment toward Mrs. Reed"],
+        correctAnswer: "To show Jane’s regret after her outburst against Mrs. Reed",
+      },
+      {
+        id: "q8",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752220124/Screenshot_2025-07-11_084825_e3h4fo.png",
+        options: ["redress", "exacerbate", "reimburse", "commemorate"],
+        correctAnswer: "exacerbate",
+      },
+      {
+        id: "q9",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752220277/Screenshot_2025-07-11_085103_tse7vi.png",
+        options: ["They may have written about different topics, but Equiano and Sinclair both influenced readers.", "The 1807 Slave Trade Act resulted in part from a book by Equiano, while the 1906 Pure Food and Drug Act resulted in part from a book by Sinclair.", "The Interesting Narrative of the Life of Olaudah Equiano and The Jungle are two works of literature that contributed to new legislation (concerning the slave trade and food safety, respectively).", "Although both are powerful works of literature that contributed to new legislation, Equiano’s book is an autobiography, while Sinclair’s is fictional."],
+        correctAnswer: "Although both are powerful works of literature that contributed to new legislation, Equiano’s book is an autobiography, while Sinclair’s is fictional.",
+      },
+      {
+        id: "q10",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752220623/Screenshot_2025-07-11_085645_kx0fel.png",
+        options: ["Muscari is primarily known for his culinary tastes, as indicated by is favorite restaurant.", "Muscari carries himself with a modest and understated demeanor in public settings.", "Muscari has a deep appreciation for nature.", "Muscari adopts a dramatic and confident presence."],
+        correctAnswer: "Muscari adopts a dramatic and confident presence.",
+      },
+      {
+        id: "q11",
+        question: "The state fair sells food coupons for $2 each and ride coupons for $3 each. If Marlon wants to buy at least 15 coupons and spend no more than $40, what is the largest number of ride coupons he can buy?",
+        options: ["9", "10", "11", "12"],
+        correctAnswer: "10",
+      },
+      {
+        id: "q12",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752322733/Screenshot_2025-07-12_130947_zv2oee.png",
+        options: ["{-2, -6}", "{-2}", "{3}", "There are no solutions to the given equation."],
+        correctAnswer: "{3}",
+      },
+      {
+        id: "q13",
+        question: "The graph of a line in the xy-plane is totally vertical and has a negative x-intercept. Which of the following could represent a line with these conditions?",
+        options: ["x = -5", "y = -4", "y = -x – 2", "x = -4y"],
+        correctAnswer: "x = -5",
+      },
+      {
+        id: "q14",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752323071/Screenshot_2025-07-12_132412_pxjwwj.png",
+        options: ["It would be twice the original force.", "It would be four times the original force", "It would be ½ of the original force.", "It would be ¼ of the original force."],
+        correctAnswer: "It would be ¼ of the original force.",
+      },
+      {
+        id: "q15",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752323255/Screenshot_2025-07-12_132720_qmoogl.png",
+        options: ["<sup>40</sup>&frasl;<sub>188</sub>", "<sup>40</sup>&frasl;<sub>100</sub>", "<sup>60</sup>&frasl;<sub>188</sub>", "<sup>40</sup>&frasl;<sub>78</sub>"],
+        correctAnswer: "<sup>40</sup>&frasl;<sub>78</sub>",
+      },
+      {
+        id: "q16",
+        question: "Triangle ABC has a right angle B. If side AB has a length of 7 units and side BC has a length of 24 units, what is the length in units of side AC?",
+        options: ["25 units", "30 units", "35 units", "40 units"],
+        correctAnswer: "25 units",
+      },
+      {
+        id: "q17",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752323652/Screenshot_2025-07-12_133355_reiroq.png",
+        options: ["a", "b", "c", "d"],
+        correctAnswer: "c",
+      },
+      {
+        id: "q18",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752323826/Screenshot_2025-07-12_133651_tbnz5i.png",
+        options: ["a", "b", "c", "d"],
+        correctAnswer: "d",
+      },
+      {
+        id: "q19",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752324070/Screenshot_2025-07-12_134056_pxr3bt.png",
+        options: ["a", "b", "c", "d"],
+        correctAnswer: "b",
+      },
+      {
+        id: "q20",
+        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752324183/Screenshot_2025-07-12_134249_dwlkfq.png",
+        options: ["a", "b", "c", "d"],
+        correctAnswer: "a",
+      },
+    ],
+  },
 ];

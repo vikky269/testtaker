@@ -870,7 +870,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         id: "q2",
         question: "The tone of the author toward the Marshall Plan is",
         options: ["objective", "Excited", "Insistent", "Anxious"],
-        correctAnswer: "Objective",
+        correctAnswer: "objective",
       },
       {
         id: "q3",
@@ -886,19 +886,19 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       },
       {
         id: "q5",
-        question: "SECURE: ",
+        question: "Select the one word or phrase whose meaning is closest to the word in capital letters. SECURE: ",
         options: ["Unssen", "Aware", "Safe",  "Knotty"],
         correctAnswer: "Safe",
       },
       {
         id: "q6",
-        question: "CHRONIC:",
+        question: "Select the one word or phrase whose meaning is closest to the word in capital letters. CHRONIC:",
         options: ["meet with", "look at", "help with", "point out"],
         correctAnswer: "meet with",
       },
       {
         id: "q7",
-        question: "QUENCH:",
+        question: "Select the one word or phrase whose meaning is closest to the word in capital letters. QUENCH:",
         options: ["unknown", "quiet", "cheerless", "trembling"],
         correctAnswer: "trembling",
       },
@@ -918,7 +918,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         id: "q10",
         question: "Cartographer is to map as chef is to",
         options: ["Silverware", "Table", "Meal", "Ingredient"],
-        correctAnswer: "Ingredient.",
+        correctAnswer: "Ingredient",
       },
       {
         id: "q11",

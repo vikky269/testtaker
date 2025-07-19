@@ -17,7 +17,9 @@ export default function Quiz() {
   const testid = pathname.split("/").pop();
   const stateParam = searchParams.get("state")?.toLowerCase();
   const gradeParam = searchParams.get("grade");
-  const isSATQuiz = gradeParam?.toLowerCase() === "sat" && testid !== "state-test";
+ // const isSATQuiz = gradeParam?.toLowerCase() === "sat" && testid !== "state-test";
+ const isSATQuiz = (gradeParam?.toLowerCase() === "sat" || gradeParam?.toLowerCase() === "ssat") && testid !== "state-test";
+
 
   const { answers, setAnswers } = useQuiz();
   const [quizQuestions, setQuizQuestions] = useState<any[]>([]);
@@ -102,7 +104,9 @@ export default function Quiz() {
     localStorage.setItem("quizState", JSON.stringify(quizState));
   }, [testid, gradeParam, answers, currentQuestionIndex, submitted, satSection]);
 
-  const isSat = gradeParam?.toLowerCase() === 'sat';
+  //const isSat = gradeParam?.toLowerCase() === 'sat';
+  const isSat = gradeParam?.toLowerCase() === 'sat' || gradeParam?.toLowerCase() === 'ssat';
+
   const readingQuestions = isSat ? quizQuestions.slice(0, 10) : quizQuestions;
   const mathQuestions = isSat ? quizQuestions.slice(10) : [];
   const activeQuestions = isSat ? (satSection === 'reading' ? readingQuestions : mathQuestions) : quizQuestions;
@@ -192,10 +196,23 @@ export default function Quiz() {
     }
   };
 
-  const totalQuestions = activeQuestions.length;
-  const answeredCount = Object.keys(answers).filter((key) =>
-    activeQuestions.find((q) => q.question === key)
-  ).length;
+  // const totalQuestions = activeQuestions.length;
+  // const answeredCount = Object.keys(answers).filter((key) =>
+  //   activeQuestions.find((q) => q.question === key)
+  // ).length;
+
+  const totalQuestions = submitted && isSATQuiz
+  ? quizQuestions.length
+  : activeQuestions.length;
+
+const answeredCount = submitted && isSATQuiz
+  ? Object.keys(answers).filter((key) =>
+      quizQuestions.find((q) => q.question === key)
+    ).length
+  : Object.keys(answers).filter((key) =>
+      activeQuestions.find((q) => q.question === key)
+    ).length;
+
 
   if (!quizQuestions || quizQuestions.length === 0) {
     return <div className="text-center text-red-500 my-20 text-4xl">No quiz found for this test.</div>;
@@ -211,24 +228,23 @@ export default function Quiz() {
           : `${testid} Practice Test`}
       </h1>
 
-      {isSATQuiz && !submitted && (
+      {/* {isSATQuiz && !submitted && (
         <div className="text-center text-lg text-blue-700 font-semibold mt-2 mb-4">
           {isSatReading ? "SAT Section: Reading & Verbal" : "SAT Section: Math"}
         </div>
+      )} */}
+
+      {isSATQuiz && !submitted && (
+        <div className="text-center text-lg text-blue-700 font-semibold mt-2 mb-4">
+          {(gradeParam?.toLowerCase() === 'sat' ? 'SAT' : 'SSAT')} Section: {satSection === 'reading' ? "Reading & Verbal" : "Math"}
+        </div>
       )}
+
 
       <div className="text-center font-medium text-md text-gray-600 mt-4 mb-8">
         {answeredCount} of {totalQuestions} questions answered
       </div>
 
-      {/* {!submitted && <Timer duration={1680} onTimeUp={handletimeupSubmit} />} */}
-      {/* {!submitted && (
-        <Timer
-          key={isSATQuiz ? (isSatReading ? 'sat-reading' : 'sat-math') : 'regular'}
-          duration={isSATQuiz ? (isSatReading ? 960 : 720) : 1200}
-          onTimeUp={handletimeupSubmit}
-        />
-      )} */}
 
       {!submitted && (
         <Timer
@@ -337,5 +353,7 @@ export default function Quiz() {
     </div>
   );
 }
+
+
 
 

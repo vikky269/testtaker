@@ -870,7 +870,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         id: "q2",
         question: "The tone of the author toward the Marshall Plan is",
         options: ["objective", "Excited", "Insistent", "Anxious"],
-        correctAnswer: "Objective",
+        correctAnswer: "objective",
       },
       {
         id: "q3",

@@ -18,7 +18,10 @@ export default function Quiz() {
   const stateParam = searchParams.get("state")?.toLowerCase();
   const gradeParam = searchParams.get("grade");
  // const isSATQuiz = gradeParam?.toLowerCase() === "sat" && testid !== "state-test";
- const isSATQuiz = (gradeParam?.toLowerCase() === "sat" || gradeParam?.toLowerCase() === "ssat") && testid !== "state-test";
+ //const isSATQuiz = (gradeParam?.toLowerCase() === "sat" || gradeParam?.toLowerCase() === "ssat") && testid !== "state-test";
+  const normalizedGrade = gradeParam?.toLowerCase().replace(/\s+/g, "") ?? "";
+ const isSATQuiz = ['sat', 'ssat', '2nd-grade'].includes(normalizedGrade) && testid !== "state-test";
+
 
 
   const { answers, setAnswers } = useQuiz();
@@ -105,7 +108,10 @@ export default function Quiz() {
   }, [testid, gradeParam, answers, currentQuestionIndex, submitted, satSection]);
 
   //const isSat = gradeParam?.toLowerCase() === 'sat';
-  const isSat = gradeParam?.toLowerCase() === 'sat' || gradeParam?.toLowerCase() === 'ssat';
+  //const isSat = gradeParam?.toLowerCase() === 'sat' || gradeParam?.toLowerCase() === 'ssat';
+  //const normalizedGrade = gradeParam?.toLowerCase().replace(/\s+/g, "") ?? "";
+  const isSat = ['sat', 'ssat', '2nd-grade'].includes(normalizedGrade);
+
 
   const readingQuestions = isSat ? quizQuestions.slice(0, 10) : quizQuestions;
   const mathQuestions = isSat ? quizQuestions.slice(10) : [];
@@ -228,17 +234,28 @@ const answeredCount = submitted && isSATQuiz
           : `${testid} Practice Test`}
       </h1>
 
+   
+
       {/* {isSATQuiz && !submitted && (
-        <div className="text-center text-lg text-blue-700 font-semibold mt-2 mb-4">
-          {isSatReading ? "SAT Section: Reading & Verbal" : "SAT Section: Math"}
+        <div className="text-center text-2xl text-[#7FB509] font-bold mt-2 mb-4">
+          {normalizedGrade === 'sat' && 'SAT'}
+          {normalizedGrade === 'ssat' && 'SSAT'}
+          {normalizedGrade === '2nd-grade' && 'ELA'}
+          Section: {satSection === 'reading' ? (normalizedGrade === '2nd-grade' ? 'ELA' : 'Reading & Verbal') : 'Math'}
         </div>
       )} */}
 
+
+
       {isSATQuiz && !submitted && (
-        <div className="text-center text-lg text-blue-700 font-semibold mt-2 mb-4">
-          {(gradeParam?.toLowerCase() === 'sat' ? 'SAT' : 'SSAT')} Section: {satSection === 'reading' ? "Reading & Verbal" : "Math"}
+        <div className="text-center text-2xl text-[#7FB509] font-bold mt-2 mb-4">
+          {normalizedGrade === '2nd-grade'
+            ? `${satSection === 'reading' ? 'ELA' : 'Math'} Section`
+            : `${normalizedGrade === 'sat' ? 'SAT' : 'SSAT'} Section: ${satSection === 'reading' ? 'Reading & Verbal' : 'Math'}`
+          }
         </div>
       )}
+
 
 
       <div className="text-center font-medium text-md text-gray-600 mt-4 mb-8">

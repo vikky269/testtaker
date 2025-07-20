@@ -123,8 +123,8 @@ function QuizCard({ id, imageSrc, title, level, category, difficulty, time, ques
         </div>
 
         {selectedTest && (
-          <div className="fixed inset-0 flex items-center justify-center bg-gray-100 bg-opacity-70 z-50">
-            <div className="bg-white p-6 rounded-lg shadow-xl w-full max-w-xl">
+          <div className="fixed  bottom-0 right-0 inset-0 flex items-center justify-center bg-gray-200 bg-opacity-70 z-50">
+            <div className="bg-white p-6 rounded-lg shadow-2xl w-full max-w-3xl">
               {step === 1 && isStateTest && (
                 <>
                   <p className="font-bold mb-4">Select your state:</p>

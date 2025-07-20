@@ -119,7 +119,7 @@ export default function ReviewPage() {
                 className="w-full max-w-2xl mb-6"
               />
             ) : (
-              <p className="leading-12 mb-5" dangerouslySetInnerHTML={{ __html: questionData.question }}></p>
+              <p className="leading-12 mb-5 text-xl" dangerouslySetInnerHTML={{ __html: questionData.question }}></p>
             )}
 
             <ul className="grid grid-cols-2 gap-2 mt-2">
@@ -137,6 +137,7 @@ export default function ReviewPage() {
                       }`}
                   >
                     <span
+                    className="text-lg"
                       dangerouslySetInnerHTML={{
                         __html: `${option} ${isSelected ? "(Your Answer)" : ""} ${isCorrect ? "✅" : ""}`,
                       }}

@@ -274,19 +274,19 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         id: "q11",
         question: "A class collected 286 cans for recycling. Another class collected 179 cans. How many more cans did the first class collect?",
         options: ["97", "107", "117", "109"],
-        correctAnswer: "97",
+        correctAnswer: "107",
       },
       {
         id: "q12",
         question: "You have 3 quarters, 2 dimes, and 4 pennies. How much money do you have?",
         options: ["99¢", "94¢", "89¢", "79¢"],
-        correctAnswer: "94¢",
+        correctAnswer: "99¢",
       },
        {
         id: "q13",
         question: "What is the value of the missing number in this equation: 45 + ___ = 120?",
         options: ["65", "75", "85", "95"],
-        correctAnswer: "85",
+        correctAnswer: "75",
       },
       {
         id: "q14",

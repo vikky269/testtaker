@@ -122,19 +122,19 @@ export default function Timer({ duration, onTimeUp, identifier = "default" }: Ti
 
   return (
     <div className="w-full max-w-md mx-auto mt-4">
-      <div className="flex justify-between text-sm font-medium text-gray-700 mb-2">
+      <div className="flex justify-center items-center text-sm font-medium text-gray-700 mb-2">
         <span className="bg-[#7FB509] text-white px-2 py-1 rounded-md text-xl">
           ⏳ Time Left: {minutes}:{seconds.toString().padStart(2, "0")}
         </span>
         {/* <span>{Math.round(progress)}%</span> */}
       </div>
-      <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+    
         {/* <div
           className="h-full bg-[#7FB509] transition-all duration-500 ease-linear"
           style={{ width: `${100 - progress}%` }}
         />
       </div> */}
-    </div>
+   
     </div>
   );
 }

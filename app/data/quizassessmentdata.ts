@@ -729,16 +729,124 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     questions: [
       {
         id: "q1",
-        question: "What is 2 + 3?",
-        options: ["4", "5", "6", "7"],
-        correctAnswer: "5",
+        question: "Solve the quadratic equation: x² - 6x + 8 = 0",
+        options: ["x = 2 or x = 4", "x = -2 or x = -4", "x = 1 or x = 8", "x = 3 or x = 5"],
+        correctAnswer: "x = 2 or x = 4",
       },
       {
         id: "q2",
-        question: "Which number comes after 6?",
-        options: ["5", "7", "8", "9"],
-        correctAnswer: "7",
-      }
+        question: "Which expression is equivalent to (3x - 2)(x + 4)?",
+        options: ["3x² + 10x - 8", "3x² + 14x + 8", "3x² - 2x + 8", "3x² + 12x - 8"],
+        correctAnswer: "3x² + 12x - 8",
+      },
+      {
+        id: "q3",
+        question: "A line has a slope of 3 and passes through the point (2, -1). What is its equation?",
+        options: ["y = 3x - 5", "y = 3x + 5", "y = 3x + 1", "y = 3x - 7"],
+        correctAnswer: "y = 3x - 5",
+      },
+      {
+        id: "q4",
+        question: "If f(x) = 2x² - 3x + 1, what is f(-2)?",
+        options: ["15", "19", "8", "7"],
+        correctAnswer: "15",
+      },
+      {
+        id: "q5",
+        question: "Which system of equations has no solution?",
+        options: ["y = 2x + 3 and y = -x + 1", "y = 3x - 1 and y = 3x + 2", " y = x² and y = -x²", "y = x + 1 and y = 2x - 5"],
+        correctAnswer: "y = 3x - 1 and y = 3x + 2",
+      },
+      {
+        id: "q6",
+        question: "What is the axis of symmetry of the function f(x) = x² - 6x + 5?",
+        options: ["x = 3", "x = -3", "x = 2", "x = 1"],
+        correctAnswer: "x = 3",
+      },
+      {
+        id: "q7",
+        question: "Which inequality represents all real values of x for which the expression √(x - 4) is defined?",
+        options: ["x > 4", "x ≤ 4", "x ≥ 4", "x < 4"],
+        correctAnswer: "x ≥ 4",
+      },
+      {
+        id: "q8",
+        question: "What is the solution to the system: y = x² and y = 2x + 3?",
+        options: ["x = 1, x = 3", "x = -1, x = 3", "x = -1, x = -3", "x = 2, x = -1"],
+        correctAnswer: "x = -1, x = 3",
+      },
+      {
+        id: "q9",
+        question: "If a triangle has sides of lengths 6, 8, and 10, what type of triangle is it?",
+        options: ["Equilateral", "Isosceles", "Right", "Obtuse"],
+        correctAnswer: "Right",
+      },
+      {
+        id: "q10",
+        question: "Find the x-intercepts of the graph y = x² - 4x - 5.",
+        options: ["x = -5, x = 1", "x = -1, x = 5", "x = -4, x = 5", "x = -5, x = 4"],
+        correctAnswer: "x = -5, x = 1",
+      },
+            {
+        id: "q11",
+        question: "Which sentence contains an example of dramatic irony?",
+        options: ["The thunderstorm roared above.", "The audience knows Juliet is alive, but Romeo does not.", "The trees whispered secrets.", "The sun rose above the horizon."],
+        correctAnswer: "The audience knows Juliet is alive, but Romeo does not.",
+      },
+      {
+        id: "q12",
+        question: "Which of the following best defines an allusion?",
+        options: ["A comparison using 'like' or 'as'", "A reference to a historical or literary figure", "An exaggeration", "A humorous statement"],
+        correctAnswer: "A reference to a historical or literary figure",
+      },
+      {
+        id: "q13",
+        question: "In literary analysis, what does the term 'tone' refer to?",
+        options: ["The sound of the words", "The author's attitude toward the subject", "The point of view", "The setting"],
+        correctAnswer: "The author's attitude toward the subject",
+      },
+      {
+        id: "q14",
+        question: "Which line from a poem is an example of iambic pentameter?",
+        options: ["The night was dark and full of dreadful sounds.", "Shall I compare thee to a summer's day?", "I wandered lonely as a cloud that floats", "The wind blew cold across the silent lake."],
+        correctAnswer: "Shall I compare thee to a summer's day?",
+      },
+      {
+        id: "q15",
+        question: "What is the primary function of counterclaims in an argumentative essay?",
+        options: ["To discredit the argument", "To present an alternative view", "To support the claim",  "To conclude the argument"],
+        correctAnswer: "To present an alternative view",
+      },
+      {
+        id: "q16",
+        question: "Which of the following best represents a theme in 'Of Mice and Men'?",
+        options: ["The pursuit of justice", "The power of dreams and isolation", "The value of education", "The celebration of wealth"],
+        correctAnswer: "The power of dreams and isolation",
+      },
+      {
+        id: "q17",
+        question: "What is the effect of using second-person point of view in writing?",
+        options: ["Creates intimacy with the reader", "Offers full insight into all characters", "Builds suspense", "Provides emotional detachment"],
+        correctAnswer: "Creates intimacy with the reader",
+      },
+      {
+        id: "q18",
+        question: "Which literary device is used when inanimate objects are given human traits?",
+        options: ["Metaphor", "Simile", "Personification", "Irony"],
+        correctAnswer: "Personification",
+      },
+      {
+        id: "q19",
+        question: "In informational texts, what is the purpose of a text feature such as a sidebar?",
+        options: ["To distract the reader", "To present off-topic ideas", "To provide additional or related information", "To replace the main text"],
+        correctAnswer: "To provide additional or related information",
+      },
+      {
+        id: "q20",
+        question: "What is a motif in literature?",
+        options: ["A character’s internal conflict", "A recurring element with symbolic meaning", "The plot’s turning point", "The central antagonist"],
+        correctAnswer: "A recurring element with symbolic meaning",
+      },
     ],
   },
    {
@@ -746,16 +854,124 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     questions: [
       {
         id: "q1",
-        question: "What is 2 + 3?",
-        options: ["4", "5", "6", "7"],
-        correctAnswer: "5",
+        question: "What is the solution to the system of equations: 3x - 2y = 7 and 2x + y = 1?",
+        options: ["(1, -1)", "(2, -1)", "(3, 2)", "(4, 1)"],
+        correctAnswer: "(2, -1)",
       },
       {
         id: "q2",
-        question: "Which number comes after 6?",
-        options: ["5", "7", "8", "9"],
-        correctAnswer: "7",
-      }
+        question: "What is the discriminant of the quadratic equation 2x² - 4x + 1 = 0?",
+        options: ["8", "0", "4", "12"],
+        correctAnswer: "8",
+      },
+      {
+        id: "q3",
+        question: "Which of the following functions represents exponential growth",
+        options: ["y = 2x + 3", "y = 3x² - 1", "y = 5<sup>x<sup>", "y = <sup>x</sup>&frasl;<sub>2</sub>"],
+        correctAnswer: "y = 5<sup>x<sup>",
+      },
+      {
+        id: "q4",
+        question: "What is the domain of the function f(x) = √(x - 3)?",
+        options: ["x ≥ 0", "x ≤ 3", "x > 3", "x ≥ 3"],
+        correctAnswer: "x ≥ 3",
+      },
+      {
+        id: "q5",
+        question: "What is the value of sin(30°)?",
+        options: ["0", "1", "1/2", "√3/2"],
+        correctAnswer: "1/2",
+      },
+      {
+        id: "q6",
+        question: "What is the solution to |2x - 1| = 5?",
+        options: ["x = 3 or x = -2", "x = 2 or x = -3", "x = 2 or x = -1", "x = 3 or x = 1"],
+        correctAnswer: "x = 3 or x = -2",
+      },
+      {
+        id: "q7",
+        question: "Which of the following is a characteristic of a linear function?",
+        options: ["Constant rate of change", "Variable exponents", "No y-intercept", "Curved graph"],
+        correctAnswer: "Constant rate of change",
+      },
+      {
+        id: "q8",
+        question: "The volume of a cylinder is given by V = πr²h. What is the volume when r = 3 and h = 4?",
+        options: ["36π", "27π", "12π", "48π"],
+        correctAnswer: "36π",
+      },
+      {
+        id: "q9",
+        question: "What transformation occurs to the graph of y = x² if we graph y = (x - 2)² + 3?",
+        options: ["Shift right 2, up 3", "Shift left 2, up 3", "Shift right 2, down 3", "Shift left 2, down 3"],
+        correctAnswer: "Shift right 2, up 3",
+      },
+      {
+        id: "q10",
+        question: "A line passes through points (1,2) and (3,6). What is its slope?",
+        options: ["1", "2", "3", "4"],
+        correctAnswer: "2",
+      },
+      {
+        id: "q11",
+        question: "Which sentence contains an example of a metaphor?",
+        options: ["The clouds were like cotton candy.", "The thunder roared angrily.", "Time is a thief.", "He ran as fast as lightning."],
+        correctAnswer: "Time is a thief.",
+      },
+      {
+        id: "q12",
+        question: "What is the central theme of George Orwell’s 'Animal Farm'?",
+        options: ["Animal behavior", "The corrupting influence of power", "Environmental justice", "Rural life in England"],
+        correctAnswer: "The corrupting influence of power",
+      },
+      {
+        id: "q13",
+        question: "What is the purpose of a counterclaim in argumentative writing?",
+        options: ["To confuse the reader", "To introduce a new topic", "To acknowledge opposing views", "To restate the claim"],
+        correctAnswer: "To acknowledge opposing views",
+      },
+      {
+        id: "q14",
+        question: "Which of the following best describes the tone of the narrator in 'Of Mice and Men'?",
+        options: ["Sarcastic", "Hopeful", "Objective", "Jubilant"],
+        correctAnswer: "Objective",
+      },
+      {
+        id: "q15",
+        question: "What does the word 'elated' most likely mean in the sentence: <br> 'She was elated when she heard the good news'? ",
+        options: ["Sad", "Joyful", "Angry",  "Nervous"],
+        correctAnswer: "Joyful",
+      },
+      {
+        id: "q16",
+        question: "What is the main function of a thesis statement in an essay?",
+        options: ["To introduce the conclusion", "To provide background information", "To state the main argument", "To list the sources"],
+        correctAnswer: "To state the main argument",
+      },
+      {
+        id: "q17",
+        question: "In literature, what is foreshadowing?",
+        options: ["A hint of what is to come", "A detailed character analysis", "A flashback to earlier events", "A summary of the story"],
+        correctAnswer: "A hint of what is to come",
+      },
+      {
+        id: "q18",
+        question: "Which sentence uses correct parallel structure?",
+        options: ["She likes reading, to swim, and biking.", "He enjoys running, jumping, and to swim.", "They like to hike, to bike, and to swim.", "We went shopping, to the movies, and ate dinner."],
+        correctAnswer: "They like to hike, to bike, and to swim.",
+      },
+      {
+        id: "q19",
+        question: "Which figure of speech is used in the sentence: <br> 'The wind whispered through the trees'?",
+        options: ["Metaphor", "Simile", "Hyperbole", "Personification"],
+        correctAnswer: "Personification",
+      },
+      {
+        id: "q20",
+        question: "What is the point of view in 'The Great Gatsby'?",
+        options: ["First person", "Second person", "Third-person limited", "Omniscient"],
+        correctAnswer: "First person",
+      },
     ],
   },
   {
@@ -1040,6 +1256,57 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         options: ["150", "135", "120", "105"],
         correctAnswer: "150",
       },
+    ],
+  },
+   {
+    grade: "algebra-1",
+    questions: [
+      {
+        id: "q1",
+        question: "What is 2 + 3?",
+        options: ["4", "5", "6", "7"],
+        correctAnswer: "5",
+      },
+      {
+        id: "q2",
+        question: "Which number comes after 6?",
+        options: ["5", "7", "8", "9"],
+        correctAnswer: "7",
+      }
+    ],
+  },
+   {
+    grade: "geometry",
+    questions: [
+      {
+        id: "q1",
+        question: "What is 2 + 3?",
+        options: ["4", "5", "6", "7"],
+        correctAnswer: "5",
+      },
+      {
+        id: "q2",
+        question: "Which number comes after 6?",
+        options: ["5", "7", "8", "9"],
+        correctAnswer: "7",
+      }
+    ],
+  },
+   {
+    grade: "algebra-2",
+    questions: [
+      {
+        id: "q1",
+        question: "What is 2 + 3?",
+        options: ["4", "5", "6", "7"],
+        correctAnswer: "5",
+      },
+      {
+        id: "q2",
+        question: "Which number comes after 6?",
+        options: ["5", "7", "8", "9"],
+        correctAnswer: "7",
+      }
     ],
   },
 ];

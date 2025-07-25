@@ -18,17 +18,23 @@ const lato = Lato({
 
 const stateOptions = ["New York", "New Jersey", "Georgia", "Texas", "Maryland", "Ohio"];
 const gradeOptions = ["Grade 3", "Grade 4", "Grade 5", "Grade 6", "Grade 7", "Grade 8"];
-const quizassesmentOptions = ["Pre-K","Kindergarten", "1st Grade", "2nd Grade", "3rd Grade", "4th Grade", "5th Grade", "6th Grade", "7th Grade", "8th Grade", "9th Grade", "10th Grade", "11th Grade", "12th Grade", "SAT", "SSAT"];
+const quizassesmentOptions = ["Pre-K","Kindergarten", "1st Grade", "2nd Grade", "3rd Grade", "4th Grade", "5th Grade", "6th Grade", "7th Grade", "8th Grade", "9th Grade", "10th Grade", "11th Grade", "12th Grade", "SSAT", "ALGEBRA 1", "GEOMETRY", "ALGEBRA 2", "SAT"];
 
 
 
 function generatePasscode(grade: string): string {
-  const normalized = grade.toLowerCase().replace(/\s+/g, "");
+  let normalized = grade.toLowerCase().replace(/\s+/g, "");
+
+   if (normalized === "algebra1") normalized = "algebra-1";
+  if (normalized === "algebra2") normalized = "algebra-2";
 
   if (normalized === "kindergarten") return "SMTTK";
   if (normalized === "pre-k") return "SMTTPK";
   if (normalized === "sat") return "SMTTS";
    if (normalized === "ssat") return "SMTTSS";
+   if (normalized === "algebra-2") return "SMTTA2";
+  if (normalized === "algebra-1") return "SMTTA1";
+  if (normalized === "geometry") return "SMTTG";  
 
   const match = grade.match(/(\d+)/);
   return match ? `SMTT${match[1]}` : "";

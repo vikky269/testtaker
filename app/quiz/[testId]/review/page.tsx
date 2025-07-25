@@ -19,27 +19,10 @@ export default function ReviewPage() {
   const [selectedQuiz, setSelectedQuiz] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
- 
+  // Determine if user skipped ELA (for Grade 9 or 10)
+  const isGrade9Or10 = gradeParam === "grade9" || gradeParam === "grade10";
 
-
-  // useEffect(() => {
-  //   let quiz;
-
-  //   if (testId === "state-test" && stateParam && gradeParam) {
-  //     const key = `${stateParam}-${gradeParam}`;
-  //     quiz = standardsData[key];
-  //   } else if (testId === "quiz-assessment" && gradeParam) {
-  //     const found = quizAssessmentData.find(q => q.grade === gradeParam);
-  //     quiz = found?.questions || [];
-  //   } else {
-  //     quiz = quizData[testId as string];
-  //   }
-
-  //   setSelectedQuiz(quiz || []);
-  //   setLoading(false);
-  // }, [testId, stateParam, gradeParam]);
-
-  useEffect(() => {
+ useEffect(() => {
     const normalize = (str: string) => str.toLowerCase().replace(/\s+/g, "");
 
     let quiz;
@@ -56,14 +39,32 @@ export default function ReviewPage() {
       quiz = quizData[testId as string];
     }
 
-    setSelectedQuiz(quiz || []);
-    setLoading(false);
-  }, [testId, stateParam, gradeParam]);
+   // After loading `quiz` from data
+   const isGrade9Or10 = gradeParam === "grade9" || gradeParam === "grade10";
+   const mathQuestions = quiz?.slice(0, 10) || [];
+   const elaQuestions = quiz?.slice(10) || [];
+
+   let filteredQuiz = quiz;
+
+   if (isGrade9Or10) {
+     const elaAnswered = elaQuestions.some((q) => answers[q.question]);
+     filteredQuiz = elaAnswered ? quiz : mathQuestions;
+   }
+
+   setSelectedQuiz(filteredQuiz || []);
+
+   setLoading(false);
+ }, [testId, stateParam, gradeParam]);
 
 
   const handleFinishReview = () => {
     localStorage.removeItem("quizState");        // Clear quiz answers + index
-    localStorage.removeItem("quiz-end-time");    // Clear saved timer end time
+    //localStorage.removeItem("quiz-end-time");    // Clear saved timer end time
+    Object.keys(localStorage).forEach((key) => {
+    if (key.startsWith("quiz-end-time")) {
+      localStorage.removeItem(key);
+    }
+  });
     setAnswers({});                              // Clear context answers
     router.push("/");                            // Navigate back home
   };
@@ -74,7 +75,9 @@ export default function ReviewPage() {
   ).length;
 
   const totalQuestions = selectedQuiz.length;
+  //const score = ((correctAnswersCount / totalQuestions) * 100).toFixed(2);
   const score = ((correctAnswersCount / totalQuestions) * 100).toFixed(2);
+
 
   if (loading) return <p className="text-center text-gray-600">Loading quiz data...</p>;
   if (!selectedQuiz || selectedQuiz.length === 0)
@@ -94,6 +97,14 @@ export default function ReviewPage() {
           ? `Assessment - ${gradeParam?.toUpperCase()}`
           : `Test`}
       </h1>
+
+      {isGrade9Or10 && (
+        <p className="text-center text-sm italic text-gray-600">
+          Showing {selectedQuiz.length > 10 ? "Full Review" : "Math Section Only"}
+        </p>
+      )}
+
+
 
       {/* Score */}
       <div className="text-center my-4 p-4 bg-blue-100 border border-blue-400 rounded-lg">
@@ -121,7 +132,7 @@ export default function ReviewPage() {
             ) : (
               <p className="leading-12 mb-5 text-xl" dangerouslySetInnerHTML={{ __html: questionData.question }}></p>
             )}
-
+{/* 
             <ul className="grid grid-cols-2 gap-2 mt-2">
               {questionData.options.map((option: string, i: number) => {
                 const isCorrect = option === correct;
@@ -145,7 +156,44 @@ export default function ReviewPage() {
                   </li>
                 );
               })}
+            </ul> */}
+
+
+            <ul className="grid grid-cols-2 gap-2 mt-2">
+              {questionData.options.map((option: string, i: number) => {
+                const isCorrect = option === correct;
+                const isSelected = option === selectedAnswer;
+                const noAnswerSelected = !selectedAnswer;
+
+                return (
+                  <li
+                    key={i}
+                    className={`p-2 text-center border rounded-lg
+          ${isCorrect && noAnswerSelected ? "bg-green-200 text-green-800"
+                        : isCorrect ? "bg-green-500 text-white"
+                          : isSelected ? "bg-red-500 text-white"
+                            : "bg-gray-200"}`}
+                  >
+                    <span
+                      className="text-lg"
+                      dangerouslySetInnerHTML={{
+                        __html: `${option}
+              ${isSelected ? " (Your Answer)" : ""}
+              ${isCorrect ? " ✅" : ""}`
+                      }}
+                    />
+                  </li>
+                );
+              })}
             </ul>
+
+{/* Show a message if no answer was selected */}
+            {!selectedAnswer && (
+              <p className="mt-2 text-sm text-yellow-700 bg-yellow-100 p-2 rounded">
+                ⚠️ You did not select an answer for this question.
+              </p>
+            )}
+
 
           </div>
         );

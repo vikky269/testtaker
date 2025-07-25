@@ -346,7 +346,7 @@ const answeredCount = submitted && isSATQuiz
             isSATQuiz
               ? isSatReading ? 960 : 720
               : isGrade9Or10
-                ? quizSection === 'math' ? 600 : 600
+                ? quizSection === 'math' ? 960 : 720
                 : 1200
           }
           onTimeUp={handletimeupSubmit}

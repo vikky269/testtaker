@@ -1,4 +1,3 @@
-
 "use client";
 
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
@@ -17,11 +16,9 @@ export default function Quiz() {
   const testid = pathname.split("/").pop();
   const stateParam = searchParams.get("state")?.toLowerCase();
   const gradeParam = searchParams.get("grade");
- // const isSATQuiz = gradeParam?.toLowerCase() === "sat" && testid !== "state-test";
- //const isSATQuiz = (gradeParam?.toLowerCase() === "sat" || gradeParam?.toLowerCase() === "ssat") && testid !== "state-test";
   const normalizedGrade = gradeParam?.toLowerCase().replace(/\s+/g, "") ?? "";
- const isSATQuiz = ['sat', 'ssat', '2nd-grade'].includes(normalizedGrade) && testid !== "state-test";
-
+  const isSATQuiz = ['sat', 'ssat', '2nd-grade'].includes(normalizedGrade) && testid !== "state-test";
+  //const isGrade9Or10 = ['grade9', 'grade10'].includes(normalizedGrade);
 
 
   const { answers, setAnswers } = useQuiz();
@@ -33,6 +30,12 @@ export default function Quiz() {
   const [satSection, setSatSection] = useState<'reading' | 'math'>('reading');
   const [showSatModal, setShowSatModal] = useState(false);
   const [isSatReading, setIsSatReading] = useState(true);
+
+  const [quizSection, setQuizSection] = useState<'math' | 'ela'>('math');
+  const [showGradeModal, setShowGradeModal] = useState(false);
+  
+
+
 
   const questionRef = useRef<HTMLDivElement | null>(null);
 
@@ -58,43 +61,44 @@ export default function Quiz() {
     }
   }, [testid, gradeParam, setAnswers]);
 
+  
   useEffect(() => {
-    const savedState = localStorage.getItem("quizState");
-    const hasSavedAnswers = savedState
-      ? JSON.parse(savedState).answers
-      : null;
+  const savedState = localStorage.getItem("quizState");
+  const parsed = savedState ? JSON.parse(savedState) : {};
+  const hasSavedAnswers = parsed.answers;
+  const wasSubmitted = parsed.submitted;
 
-    if (testid === "state-test" && stateParam && gradeParam) {
-      const normalizedGrade = gradeParam?.toLowerCase().replace(/\s+/g, "");
-      const key = `${stateParam}-${normalizedGrade}`;
-      const regularQuiz = standardsData[key];
-      setQuizQuestions(regularQuiz || []);
-      if (!hasSavedAnswers) {
-        setAnswers({});
-        localStorage.removeItem("quiz-end-time");
-      }
-    } else if (testid === "quiz-assessment" && gradeParam) {
-      const normalizedGrade = gradeParam.toLowerCase().replace(/\s+/g, "-");
-
-      const gradeQuiz = quizAssessmentData.find(
-        (entry) => entry.grade.toLowerCase().replace(/\s+/g, "-") === normalizedGrade
-      );
-
-      setQuizQuestions(gradeQuiz?.questions || []);
-      if (!hasSavedAnswers) {
-        setAnswers({});
-        localStorage.removeItem("quiz-end-time");
-      }
-    } else {
-      const regularQuiz = quizData[testid as string];
-      setQuizQuestions(regularQuiz || []);
-      if (!hasSavedAnswers) {
-        setAnswers({});
-        localStorage.removeItem("quiz-end-time");
-      }
+  if (testid === "state-test" && stateParam && gradeParam) {
+    const normalizedGrade = gradeParam?.toLowerCase().replace(/\s+/g, "");
+    const key = `${stateParam}-${normalizedGrade}`;
+    const regularQuiz = standardsData[key];
+    setQuizQuestions(regularQuiz || []);
+    if (!hasSavedAnswers || wasSubmitted) {
+      setAnswers({});
+      localStorage.removeItem("quiz-end-time");
     }
-  }, [testid, stateParam, gradeParam]);
+  } else if (testid === "quiz-assessment" && gradeParam) {
+    const normalizedGrade = gradeParam.toLowerCase().replace(/\s+/g, "-");
+    const gradeQuiz = quizAssessmentData.find(
+      (entry) => entry.grade.toLowerCase().replace(/\s+/g, "-") === normalizedGrade
+    );
+    setQuizQuestions(gradeQuiz?.questions || []);
+    if (!hasSavedAnswers || wasSubmitted) {
+      setAnswers({});
+      localStorage.removeItem("quiz-end-time");
+    }
+  } else {
+    const regularQuiz = quizData[testid as string];
+    setQuizQuestions(regularQuiz || []);
+    if (!hasSavedAnswers || wasSubmitted) {
+      setAnswers({});
+      localStorage.removeItem("quiz-end-time");
+    }
+  }
+}, [testid, stateParam, gradeParam, setAnswers]);
 
+ 
+ 
   useEffect(() => {
     const quizState = {
       testid,
@@ -107,21 +111,56 @@ export default function Quiz() {
     localStorage.setItem("quizState", JSON.stringify(quizState));
   }, [testid, gradeParam, answers, currentQuestionIndex, submitted, satSection]);
 
-  //const isSat = gradeParam?.toLowerCase() === 'sat';
-  //const isSat = gradeParam?.toLowerCase() === 'sat' || gradeParam?.toLowerCase() === 'ssat';
-  //const normalizedGrade = gradeParam?.toLowerCase().replace(/\s+/g, "") ?? "";
+ 
+  // const isSat = ['sat', 'ssat', '2nd-grade'].includes(normalizedGrade);
+
+
+  // const readingQuestions = isSat ? quizQuestions.slice(0, 10) : quizQuestions;
+  // const mathQuestions = isSat ? quizQuestions.slice(10) : [];
+  // const activeQuestions = isSat ? (satSection === 'reading' ? readingQuestions : mathQuestions) : quizQuestions;
+  // const currentQuestion = activeQuestions[currentQuestionIndex];
+
+
+  // Determine what quiz type we're dealing with
   const isSat = ['sat', 'ssat', '2nd-grade'].includes(normalizedGrade);
+  const isGrade9Or10 = normalizedGrade === "9th-grade" || normalizedGrade === "10th-grade";
 
-
-  const readingQuestions = isSat ? quizQuestions.slice(0, 10) : quizQuestions;
+  // Slice up questions for SAT
+  const readingQuestions = isSat ? quizQuestions.slice(0, 10) : [];
   const mathQuestions = isSat ? quizQuestions.slice(10) : [];
-  const activeQuestions = isSat ? (satSection === 'reading' ? readingQuestions : mathQuestions) : quizQuestions;
+
+  // Slice up questions for Grade 9/10
+  const mathSectionQuestions = isGrade9Or10 ? quizQuestions.slice(0, 10) : [];
+  const elaSectionQuestions = isGrade9Or10 ? quizQuestions.slice(10) : [];
+
+  // Determine which questions are active
+  const activeQuestions = isSat
+    ? (satSection === 'reading' ? readingQuestions : mathQuestions)
+    : isGrade9Or10
+      ? (quizSection === 'math' ? mathSectionQuestions : elaSectionQuestions)
+      : quizQuestions;
+
+  // Finally, get the current question
   const currentQuestion = activeQuestions[currentQuestionIndex];
 
-  const handleSelect = (question: string, option: string) => {
-    setAnswers({ ...answers, [question]: option });
-  };
 
+  
+
+  const handleSelect = (question: string, option: string) => {
+  const currentAnswer = answers[question];
+  if (currentAnswer === option) {
+    const updatedAnswers = { ...answers };
+    delete updatedAnswers[question];
+    setAnswers(updatedAnswers);
+  } else {
+    setAnswers({
+      ...answers,
+      [question]: option,
+    });
+  }
+};
+
+  
   const handleNext = () => {
     if (currentQuestionIndex < activeQuestions.length - 1) {
       setCurrentQuestionIndex((prev) => prev + 1);
@@ -136,17 +175,41 @@ export default function Quiz() {
 
   const handleSubmit = () => {
     const unanswered = activeQuestions.filter(q => !answers[q.question]);
-    if (unanswered.length > 0) {
+    if (unanswered.length > 0 ) {
       setUnansweredCount(unanswered.length);
       setShowConfirmModal(true);
       return;
     }
+    
+    //if its grade 9 or 10, show modal
+    if (isGrade9Or10 && quizSection === 'math') {
+      setShowGradeModal(true);
+      return;
+    }
+
+
 
     if (isSat && satSection === 'reading') {
       setShowSatModal(true);
     } else {
       finalizeSubmit();
     }
+  };
+
+  const handleSubmitAfterConfirm = () => {
+    setShowConfirmModal(false); 
+    finalizeSubmit();
+  };
+
+  const handleSubmitAfterConfirm2 = () => {
+    // setShowConfirmModal(false); 
+    // finalizeSubmit();
+
+     if (isGrade9Or10 && quizSection === 'math') {
+      setShowGradeModal(true);
+      return;
+    }
+    finalizeSubmit();
   };
 
   const handleContinueMath = () => {
@@ -167,17 +230,41 @@ export default function Quiz() {
 
   };
 
-  const calculateScore = () => {
-    let correctAnswers = 0;
-    quizQuestions.forEach((q) => {
-      const userAnswer = answers[q.question];
-      const correct = q.correctAnswer || q.answer;
-      if (userAnswer && userAnswer === correct) {
-        correctAnswers++;
-      }
-    });
-    return (correctAnswers / quizQuestions.length) * 100;
-  };
+ 
+ const calculateScore = () => {
+  let correctAnswers = 0;
+
+  const isGrade9Or10 = gradeParam === "grade9" || gradeParam === "grade10";
+  const totalQuizQuestions = quizQuestions;
+
+  // Section split
+  const mathQuestions = quizQuestions.slice(0, 10);
+  const elaQuestions = quizQuestions.slice(10);
+
+  // Check if any ELA question was answered
+  const elaAnswered = elaQuestions.some((q) => answers[q.question]);
+
+  // Only include answered section(s)
+  const relevantQuestions = isGrade9Or10
+    ? elaAnswered
+      ? [...mathQuestions, ...elaQuestions] // Did both sections
+      : mathQuestions // Only did math
+    : totalQuizQuestions; // other grades
+
+  relevantQuestions.forEach((q) => {
+    const userAnswer = answers[q.question];
+    const correct = q.correctAnswer || q.answer;
+    if (userAnswer === correct) {
+      correctAnswers++;
+    }
+  });
+
+  const score = (correctAnswers / relevantQuestions.length) * 100;
+  return score;
+};
+
+
+
 
   const handleGoHome = () => {
     localStorage.removeItem("quizState");
@@ -202,10 +289,6 @@ export default function Quiz() {
     }
   };
 
-  // const totalQuestions = activeQuestions.length;
-  // const answeredCount = Object.keys(answers).filter((key) =>
-  //   activeQuestions.find((q) => q.question === key)
-  // ).length;
 
   const totalQuestions = submitted && isSATQuiz
   ? quizQuestions.length
@@ -234,27 +317,27 @@ const answeredCount = submitted && isSATQuiz
           : `${testid} Practice Test`}
       </h1>
 
-   
 
       {/* {isSATQuiz && !submitted && (
-        <div className="text-center text-2xl text-[#7FB509] font-bold mt-2 mb-4">
-          {normalizedGrade === 'sat' && 'SAT'}
-          {normalizedGrade === 'ssat' && 'SSAT'}
-          {normalizedGrade === '2nd-grade' && 'ELA'}
-          Section: {satSection === 'reading' ? (normalizedGrade === '2nd-grade' ? 'ELA' : 'Reading & Verbal') : 'Math'}
-        </div>
-      )} */}
-
-
-
-      {isSATQuiz && !submitted && (
         <div className="text-center text-2xl text-[#7FB509] font-bold mt-2 mb-4">
           {normalizedGrade === '2nd-grade'
             ? `${satSection === 'reading' ? 'ELA' : 'Math'} Section`
             : `${normalizedGrade === 'sat' ? 'SAT' : 'SSAT'} Section: ${satSection === 'reading' ? 'Reading & Verbal' : 'Math'}`
           }
         </div>
+      )} */}
+
+
+      {(isSATQuiz || isGrade9Or10) && !submitted && (
+        <div className="text-center text-2xl text-[#7FB509] font-bold mt-2 mb-4">
+          {isSATQuiz
+            ? normalizedGrade === '2nd-grade'
+              ? `${satSection === 'reading' ? 'ELA' : 'Math'} Section`
+              : `${normalizedGrade === 'sat' ? 'SAT' : 'SSAT'} Section: ${satSection === 'reading' ? 'Reading & Verbal' : 'Math'}`
+            : `${quizSection === 'math' ? 'Math' : 'ELA'} Section`}
+        </div>
       )}
+
 
 
 
@@ -264,11 +347,30 @@ const answeredCount = submitted && isSATQuiz
 
 
       {!submitted && (
+        // <Timer
+        //   duration={isSATQuiz ? (isSatReading ? 960 : 720) : 1200}
+        //   onTimeUp={handletimeupSubmit}
+        //   identifier={isSATQuiz ? (isSatReading ? 'sat-reading' : 'sat-math') : 'regular'}
+        // />
+
         <Timer
-          duration={isSATQuiz ? (isSatReading ? 960 : 720) : 1200}
+          duration={
+            isSATQuiz
+              ? isSatReading ? 960 : 720
+              : isGrade9Or10
+                ? quizSection === 'math' ? 600 : 600
+                : 1200
+          }
           onTimeUp={handletimeupSubmit}
-          identifier={isSATQuiz ? (isSatReading ? 'sat-reading' : 'sat-math') : 'regular'}
+          identifier={
+            isSATQuiz
+              ? isSatReading ? 'sat-reading' : 'sat-math'
+              : isGrade9Or10
+                ? quizSection === 'math' ? 'grade-math' : 'grade-ela'
+                : 'regular'
+          }
         />
+
       )}
 
 
@@ -328,7 +430,7 @@ const answeredCount = submitted && isSATQuiz
                   <button onClick={() => setShowConfirmModal(false)} className="px-4 py-2 bg-gray-300 text-gray-800 rounded cursor-pointer">
                     Cancel
                   </button>
-                  <button onClick={() => { setShowConfirmModal(false); handleSubmit(); }} className="px-4 py-2 bg-red-600 text-white rounded cursor-pointer">
+                  <button onClick={() => handleSubmitAfterConfirm2() } className="px-4 py-2 bg-red-600 text-white rounded cursor-pointer">
                     Yes, Submit
                   </button>
                 </div>
@@ -349,6 +451,39 @@ const answeredCount = submitted && isSATQuiz
               </div>
             </div>
           )}
+
+
+          {showGradeModal && (
+            <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+              <div className="bg-white rounded-lg p-6 max-w-md w-full shadow-lg">
+                <h2 className="text-xl font-bold mb-4">Math Section Complete</h2>
+                <p className="mb-4">You’ve finished the Math section. Would you like to continue with ELA?</p>
+                <div className="flex justify-end gap-4">
+                  <button
+                    onClick={() => {
+                      setShowGradeModal(false);
+                      finalizeSubmit(); // Skip ELA
+                    }}
+                    className="px-4 py-2 bg-gray-400 text-white rounded cursor-pointer"
+                  >
+                    Skip ELA
+                  </button>
+                  <button
+                    onClick={() => {
+                      setShowGradeModal(false);
+                      setShowConfirmModal(false);
+                      setQuizSection('ela');
+                      setCurrentQuestionIndex(0);
+                    }}
+                    className="px-4 py-2 bg-green-600 text-white rounded cursor-pointer"
+                  >
+                    Take ELA
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
 
          
 

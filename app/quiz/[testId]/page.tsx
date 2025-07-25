@@ -35,6 +35,9 @@ export default function Quiz() {
   const [showGradeModal, setShowGradeModal] = useState(false);
   
 
+  const [selectedQuiz, setSelectedQuiz] = useState<any[]>([]);
+
+
 
 
   const questionRef = useRef<HTMLDivElement | null>(null);
@@ -266,6 +269,10 @@ export default function Quiz() {
 
 
 
+
+
+
+
   const handleGoHome = () => {
     localStorage.removeItem("quizState");
     localStorage.removeItem("quiz-end-time");
@@ -318,17 +325,7 @@ const answeredCount = submitted && isSATQuiz
       </h1>
 
 
-      {/* {isSATQuiz && !submitted && (
-        <div className="text-center text-2xl text-[#7FB509] font-bold mt-2 mb-4">
-          {normalizedGrade === '2nd-grade'
-            ? `${satSection === 'reading' ? 'ELA' : 'Math'} Section`
-            : `${normalizedGrade === 'sat' ? 'SAT' : 'SSAT'} Section: ${satSection === 'reading' ? 'Reading & Verbal' : 'Math'}`
-          }
-        </div>
-      )} */}
-
-
-      {(isSATQuiz || isGrade9Or10) && !submitted && (
+       {(isSATQuiz || isGrade9Or10) && !submitted && (
         <div className="text-center text-2xl text-[#7FB509] font-bold mt-2 mb-4">
           {isSATQuiz
             ? normalizedGrade === '2nd-grade'
@@ -338,22 +335,13 @@ const answeredCount = submitted && isSATQuiz
         </div>
       )}
 
-
-
-
-      <div className="text-center font-medium text-md text-gray-600 mt-4 mb-8">
+     <div className="text-center font-medium text-md text-gray-600 mt-4 mb-8">
         {answeredCount} of {totalQuestions} questions answered
       </div>
 
 
       {!submitted && (
-        // <Timer
-        //   duration={isSATQuiz ? (isSatReading ? 960 : 720) : 1200}
-        //   onTimeUp={handletimeupSubmit}
-        //   identifier={isSATQuiz ? (isSatReading ? 'sat-reading' : 'sat-math') : 'regular'}
-        // />
-
-        <Timer
+       <Timer
           duration={
             isSATQuiz
               ? isSatReading ? 960 : 720
@@ -491,7 +479,7 @@ const answeredCount = submitted && isSATQuiz
       ) : (
         <div className="text-center">
           <h2 className="text-xl font-bold">Your Score: {calculateScore()}%</h2>
-          {calculateScore() === 100 ? (
+          {Number(calculateScore()) === 100 ? (
             <button className="mt-4 p-2 bg-blue-600 cursor-pointer text-white rounded-lg" onClick={handleGoHome}>
               Back to Home
             </button>

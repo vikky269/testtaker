@@ -35,7 +35,7 @@ export default function Quiz() {
   const [showGradeModal, setShowGradeModal] = useState(false);
   
 
-  const [selectedQuiz, setSelectedQuiz] = useState<any[]>([]);
+  // const [selectedQuiz, setSelectedQuiz] = useState<any[]>([]);
 
 
 
@@ -115,18 +115,9 @@ export default function Quiz() {
   }, [testid, gradeParam, answers, currentQuestionIndex, submitted, satSection]);
 
  
-  // const isSat = ['sat', 'ssat', '2nd-grade'].includes(normalizedGrade);
-
-
-  // const readingQuestions = isSat ? quizQuestions.slice(0, 10) : quizQuestions;
-  // const mathQuestions = isSat ? quizQuestions.slice(10) : [];
-  // const activeQuestions = isSat ? (satSection === 'reading' ? readingQuestions : mathQuestions) : quizQuestions;
-  // const currentQuestion = activeQuestions[currentQuestionIndex];
-
-
   // Determine what quiz type we're dealing with
   const isSat = ['sat', 'ssat', '2nd-grade'].includes(normalizedGrade);
-  const isGrade9Or10 = normalizedGrade === "9th-grade" || normalizedGrade === "10th-grade";
+  const isGrade9Or10 = normalizedGrade === "9th-grade" || normalizedGrade === "10th-grade"|| normalizedGrade === "7th-grade" || normalizedGrade === "8th-grade";
 
   // Slice up questions for SAT
   const readingQuestions = isSat ? quizQuestions.slice(0, 10) : [];
@@ -233,42 +224,112 @@ export default function Quiz() {
 
   };
 
- 
- const calculateScore = () => {
-  let correctAnswers = 0;
 
+// const calculateScore = () => {
+//   const isGrade9Or10 = gradeParam === "grade9" || gradeParam === "grade10";
+
+//   if (!isGrade9Or10) {
+//     // For other grades, return combined score
+//     const total = quizQuestions.length;
+//     const correct = quizQuestions.filter(
+//       (q) => answers[q.question] === (q.correctAnswer || q.answer)
+//     ).length;
+//     return { combined: ((correct / total) * 100).toFixed(2) };
+//   }
+
+//   const mathQuestions = quizQuestions.slice(0, 10);
+//   const elaQuestions = quizQuestions.slice(10);
+
+//   const mathCorrect = mathQuestions.filter(
+//     (q) => answers[q.question] === (q.correctAnswer || q.answer)
+//   ).length;
+
+//   const elaCorrect = elaQuestions.filter(
+//     (q) => answers[q.question] === (q.correctAnswer || q.answer)
+//   ).length;
+
+//   const mathScore = ((mathCorrect / mathQuestions.length) * 100).toFixed(2);
+//   const elaAnswered = elaQuestions.some((q) => answers[q.question]);
+//   const elaScore = elaAnswered
+//     ? ((elaCorrect / elaQuestions.length) * 100).toFixed(2)
+//     : "0.00";
+
+//   return {
+//     mathScore,
+//     elaScore,
+//   };
+// };
+
+
+const calculateScore = () => {
   const isGrade9Or10 = gradeParam === "grade9" || gradeParam === "grade10";
-  const totalQuizQuestions = quizQuestions;
 
-  // Section split
+  if (!isGrade9Or10) {
+    const total = quizQuestions.length;
+    const correct = quizQuestions.filter(
+      (q) => answers[q.question] === (q.correctAnswer || q.answer)
+    ).length;
+    return { combined: ((correct / total) * 100).toFixed(2) };
+  }
+
   const mathQuestions = quizQuestions.slice(0, 10);
-  const elaQuestions = quizQuestions.slice(10);
+  const elaQuestions = quizQuestions.slice(10, 20);
 
-  // Check if any ELA question was answered
-  const elaAnswered = elaQuestions.some((q) => answers[q.question]);
+  const mathCorrect = mathQuestions.filter(
+    (q) => answers[q.question] === (q.correctAnswer || q.answer)
+  ).length;
 
-  // Only include answered section(s)
-  const relevantQuestions = isGrade9Or10
-    ? elaAnswered
-      ? [...mathQuestions, ...elaQuestions] // Did both sections
-      : mathQuestions // Only did math
-    : totalQuizQuestions; // other grades
+  const mathScore = ((mathCorrect / mathQuestions.length) * 100).toFixed(2);
 
-  relevantQuestions.forEach((q) => {
-    const userAnswer = answers[q.question];
-    const correct = q.correctAnswer || q.answer;
-    if (userAnswer === correct) {
-      correctAnswers++;
-    }
-  });
+  const elaAnsweredCount = elaQuestions.filter(q => q.question in answers).length;
 
-  const score = (correctAnswers / relevantQuestions.length) * 100;
-  return score;
+  const elaScore = elaAnsweredCount > 0
+    ? (
+        (elaQuestions.filter(q => answers[q.question] === (q.correctAnswer || q.answer)).length /
+          elaQuestions.length) *
+        100
+      ).toFixed(2)
+    : "0.00";
+
+  return {
+    mathScore,
+    elaScore,
+    combinedScore: (
+      (mathCorrect + (elaAnsweredCount > 0 ? parseFloat(elaScore) / 100 * elaQuestions.length : 0)) /
+      (elaAnsweredCount > 0 ? 20 : 10) *
+      100
+    ).toFixed(2),
+  };
 };
 
 
 
+const calculateSectionScore = (section: "math" | "ela") => {
+  const isGrade9Or10 = gradeParam === "grade9" || gradeParam === "grade10";
+  // const questions = selectedQuiz;
+  const questions = isGrade9Or10
+    ? section === "math"
+      ? quizQuestions.slice(0, 10)
+      : quizQuestions.slice(10, 20)
+    : quizQuestions;
 
+  // Handle based on how many questions are available
+  const sectionQuestions =
+    section === "math"
+      ? questions.slice(0, Math.min(10, questions.length))
+      : questions.length > 10
+      ? questions.slice(10, 20)
+      : [];
+
+  const total = sectionQuestions.length;
+  if (total === 0) return "0.00";
+
+  const correct = sectionQuestions.filter(
+    (q) => answers?.[q.question] === (q.correctAnswer || q.answer)
+  ).length;
+
+  return ((correct / total) * 100).toFixed(2);
+};
 
 
 
@@ -282,19 +343,81 @@ export default function Quiz() {
     router.push("/");
   };
 
+ 
+
+  // const handleReview = () => {
+  //   const url = new URLSearchParams();
+
+  //   const isGrade9Or10 = gradeParam === "9" || gradeParam === "10";
+
+  //   if (isGrade9Or10) {
+  //     const mathScore = calculateSectionScore("math");
+  //     const elaScore = calculateSectionScore("ela");
+  //     url.append("mathScore", mathScore.toString());
+  //     url.append("elaScore", elaScore.toString());
+  //   }
+
+  //   if (testid === "state-test" && stateParam && gradeParam) {
+  //     url.append("state", stateParam);
+  //     url.append("grade", gradeParam);
+  //     router.push(`/quiz/${testid}/review?${url.toString()}`);
+  //   } else if (testid === "quiz-assessment" && gradeParam) {
+  //     url.append("grade", gradeParam);
+  //     router.push(`/quiz/${testid}/review?${url.toString()}`);
+  //   } else {
+  //     router.push(`/quiz/${testid}/review?${url.toString()}`);
+  //   }
+  // };
+
+
+
+
   const handleReview = () => {
-    const url = new URLSearchParams();
-    if (testid === "state-test" && stateParam && gradeParam) {
-      url.append("state", stateParam);
-      url.append("grade", gradeParam);
-      router.push(`/quiz/${testid}/review?${url.toString()}`);
-    } else if (testid === "quiz-assessment" && gradeParam) {
-      url.append("grade", gradeParam);
-      router.push(`/quiz/${testid}/review?${url.toString()}`);
-    } else {
-      router.push(`/quiz/${testid}/review`);
-    }
-  };
+    console.log("Handling review for testid:", testid);
+  const url = new URLSearchParams();
+
+  if (testid === "state-test" && stateParam && gradeParam) {
+    url.append("state", stateParam);
+    url.append("grade", gradeParam);
+  } else if (testid === "quiz-assessment" && gradeParam) {
+    url.append("grade", gradeParam);
+  }
+
+  const mathScore = calculateSectionScore("math");
+  const elaScore = calculateSectionScore("ela");
+  console.log("Math Score:", mathScore);
+  console.log("ELA Score:", elaScore);
+
+
+ // const isGrade9Or10 = gradeParam === "grade9" || gradeParam === "grade10";
+
+  const isGrade9Or10 =
+    gradeParam === "9th-grade" || gradeParam === "10th-grade" ||  gradeParam === "8th-grade" || gradeParam === "7th-grade";
+
+    console.log("isGrade9Or10:", isGrade9Or10);
+
+  if (isGrade9Or10) {
+    url.append("mathScore", mathScore.toString());
+    url.append("elaScore", elaScore.toString());
+  }
+
+    localStorage.setItem("mathScore", mathScore.toString());
+    localStorage.setItem("elaScore", elaScore.toString());
+
+
+  router.push(`/quiz/${testid}/review?${url.toString()}`);
+};
+
+
+
+
+
+
+
+
+
+
+
 
 
   const totalQuestions = submitted && isSATQuiz
@@ -308,6 +431,9 @@ const answeredCount = submitted && isSATQuiz
   : Object.keys(answers).filter((key) =>
       activeQuestions.find((q) => q.question === key)
     ).length;
+
+
+
 
 
   if (!quizQuestions || quizQuestions.length === 0) {
@@ -471,24 +597,43 @@ const answeredCount = submitted && isSATQuiz
               </div>
             </div>
           )}
-
-
-         
-
         </div>
       ) : (
-        <div className="text-center">
-          <h2 className="text-xl font-bold">Your Score: {calculateScore()}%</h2>
-          {Number(calculateScore()) === 100 ? (
-            <button className="mt-4 p-2 bg-blue-600 cursor-pointer text-white rounded-lg" onClick={handleGoHome}>
-              Back to Home
-            </button>
-          ) : (
-            <button className="mt-6 p-2 bg-green-600 cursor-pointer text-white rounded-lg" onClick={handleReview}>
-              Review Test
-            </button>
-          )}
-        </div>
+          <div className="text-center">
+            {isGrade9Or10 ? (
+              <>
+                <h2 className="text-xl font-bold mb-2">Section Scores:</h2>
+                <div className="mb-4">
+                  <p className="text-lg text-blue-700">
+                    Math Score: {calculateSectionScore("math")}%
+                  </p>
+                  <p className="text-lg text-purple-700">
+                    ELA Score: {calculateSectionScore("ela")}%
+                  </p>
+                </div>
+              </>
+            ) : (
+              <>
+                <h2 className="text-xl font-bold">Your Score: {Number(calculateScore())}%</h2>
+              </>
+            )}
+
+            {Number(calculateScore()) === 100 ? (
+              <button
+                className="mt-4 p-2 bg-blue-600 cursor-pointer text-white rounded-lg"
+                onClick={handleGoHome}
+              >
+                Back to Home
+              </button>
+            ) : (
+              <button
+                className="mt-6 p-2 bg-green-600 cursor-pointer text-white rounded-lg"
+                onClick={handleReview}
+              >
+                Review Test
+              </button>
+            )}
+          </div>
       )}
     </div>
   );

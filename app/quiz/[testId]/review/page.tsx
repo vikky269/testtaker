@@ -20,83 +20,65 @@ export default function ReviewPage() {
   const [loading, setLoading] = useState(true);
 
   // Determine if user skipped ELA (for Grade 9 or 10)
-  const isGrade9Or10 = gradeParam === "grade9" || gradeParam === "grade10";
-
-//  useEffect(() => {
-//     const normalize = (str: string) => str.toLowerCase().replace(/\s+/g, "");
-
-//     let quiz;
-
-//     if (testId === "state-test" && stateParam && gradeParam) {
-//       const key = `${stateParam}-${gradeParam}`;
-//       quiz = standardsData[key];
-//     } else if (testId === "quiz-assessment" && gradeParam) {
-//       const found = quizAssessmentData.find(
-//         (q) => normalize(q.grade) === gradeParam
-//       );
-//       quiz = found?.questions || [];
-//     } else {
-//       quiz = quizData[testId as string];
-//     }
-
-//    // After loading `quiz` from data
-//    const isGrade9Or10 = gradeParam === "grade9" || gradeParam === "grade10";
-//    const mathQuestions = quiz?.slice(0, 10) || [];
-//    const elaQuestions = quiz?.slice(10) || [];
-
-//    let filteredQuiz = quiz;
-
-//    if (isGrade9Or10) {
-//      const elaAnswered = elaQuestions.some((q) => answers[q.question]);
-//      filteredQuiz = elaAnswered ? quiz : mathQuestions;
-//    }
-
-//    setSelectedQuiz(filteredQuiz || []);
-
-//    setLoading(false);
-//  }, [testId, stateParam, gradeParam]);
+  const isGrade9Or10 = gradeParam === "9th-grade" || gradeParam === "10th-grade" || gradeParam === "8th-grade" || gradeParam === "7th-grade";
 
 
-useEffect(() => {
-  const normalize = (str: string) => str.toLowerCase().replace(/\s+/g, "");
+  useEffect(() => {
+    const normalize = (str: string) => str.toLowerCase().replace(/\s+/g, "");
 
-  let quiz: any[] = [];
+    let quiz: any[] = [];
 
-  if (testId === "state-test" && stateParam && gradeParam) {
-    const key = `${stateParam}-${gradeParam}`;
-    quiz = standardsData[key] || [];
-  } else if (testId === "quiz-assessment" && gradeParam) {
-    const found = quizAssessmentData.find(
-      (q) => normalize(q.grade) === gradeParam
-    );
-    quiz = found?.questions || [];
-  } else {
-    quiz = quizData[testId as string] || [];
-  }
+    if (testId === "state-test" && stateParam && gradeParam) {
+      const key = `${stateParam}-${gradeParam}`;
+      quiz = standardsData[key] || [];
+    } else if (testId === "quiz-assessment" && gradeParam) {
+      const found = quizAssessmentData.find(
+        (q) => normalize(q.grade) === gradeParam
+      );
+      quiz = found?.questions || [];
+    } else {
+      quiz = quizData[testId as string] || [];
+    }
 
-  // Only apply ELA skip logic for grade 9 or 10
-  const isGrade9Or10 = gradeParam === "grade9" || gradeParam === "grade10";
-  if (isGrade9Or10) {
+    const mathScoreParam = searchParams.get("mathScore");
+    const elaScoreParam = searchParams.get("elaScore");
+
+    console.log("Math Score from query:", mathScoreParam);
+    console.log("ELA Score from query:", elaScoreParam);
+
+    const mathScore = mathScoreParam ? parseFloat(mathScoreParam) : null;
+    const elaScore = elaScoreParam ? parseFloat(elaScoreParam) : null;
+
     const mathQuestions = quiz.slice(0, 10);
     const elaQuestions = quiz.slice(10);
-    const elaAnswered = elaQuestions.some((q) => answers[q.question]);
 
-    // If no ELA answered, only show math section
-    setSelectedQuiz(elaAnswered ? quiz : mathQuestions);
-  } else {
-    // For all other grades, show full quiz
-    setSelectedQuiz(quiz);
-  }
+    // Only apply skip logic for grades 9 or 10
+    if (isGrade9Or10) {
+      if (elaScore !== null) {
+        // Use score from query string
+        setSelectedQuiz(elaScore === 0 ? mathQuestions : quiz);
+      } else {
+        // Fallback logic based on whether any ELA questions were answered
+        const elaAnswered = elaQuestions.some((q) => {
+          const ans = answers[q.question];
+          return ans && ans.trim() !== "";
+        });
+        setSelectedQuiz(elaAnswered ? quiz : mathQuestions);
+      }
+    } else {
+      // All other grades: show full quiz
+      setSelectedQuiz(quiz);
+    }
 
-  setLoading(false);
-}, [testId, stateParam, gradeParam, answers]);
-
-
-
+    setLoading(false);
+  }, [testId, stateParam, gradeParam, answers, searchParams]);
 
 
   const handleFinishReview = () => {
     localStorage.removeItem("quizState");        // Clear quiz answers + index
+    localStorage.removeItem("mathScore");
+    localStorage.removeItem("elaScore");
+
     //localStorage.removeItem("quiz-end-time");    // Clear saved timer end time
     Object.keys(localStorage).forEach((key) => {
     if (key.startsWith("quiz-end-time")) {
@@ -138,10 +120,19 @@ useEffect(() => {
 
       {isGrade9Or10 && (
         <p className="text-center text-sm italic text-gray-600">
-          Showing {selectedQuiz.length > 10 ? "Full Review" : "Math Section Only"}
+          {searchParams.get("elaScore") === "0.00"
+            ? "Only Math section attempted — showing Math Review"
+            : "Showing Full Review"}
         </p>
       )}
 
+      {/* {isGrade9Or10 && (
+        <p className="text-center text-sm italic text-gray-600">
+          {localStorage.getItem("elaScore") === "0"
+            ? "Only Math section attempted — showing Math Review"
+            : "Showing Full Review"}
+        </p>
+      )} */}
 
 
       {/* Score */}

@@ -655,7 +655,67 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         question: "A car travels 160 miles in 2 hours 40 minutes. What is its average speed in miles per hour?",
         options: ["60 mph", "64 mph", "65 mph", "66 mph"],
         correctAnswer: "60 mph",
-      }
+      },
+      {
+        id: "q11",
+        question: "Which sentence contains an example of a metaphor?",
+        options: ["The clouds were like cotton candy.", "The thunder roared angrily.", "Time is a thief.", "He ran as fast as lightning."],
+        correctAnswer: "Time is a thief.",
+      },
+      {
+        id: "q12",
+        question: "What is the central theme of George Orwell’s 'Animal Farm'?",
+        options: ["Animal behavior", "The corrupting influence of power", "Environmental justice", "Rural life in England"],
+        correctAnswer: "The corrupting influence of power",
+      },
+      {
+        id: "q13",
+        question: "What is the purpose of a counterclaim in argumentative writing?",
+        options: ["To confuse the reader", "To introduce a new topic", "To acknowledge opposing views", "To restate the claim"],
+        correctAnswer: "To acknowledge opposing views",
+      },
+      {
+        id: "q14",
+        question: "Which of the following best describes the tone of the narrator in 'Of Mice and Men'?",
+        options: ["Sarcastic", "Hopeful", "Objective", "Jubilant"],
+        correctAnswer: "Objective",
+      },
+      {
+        id: "q15",
+        question: "What does the word 'elated' most likely mean in the sentence: <br> 'She was elated when she heard the good news'? ",
+        options: ["Sad", "Joyful", "Angry",  "Nervous"],
+        correctAnswer: "Joyful",
+      },
+      {
+        id: "q16",
+        question: "What is the main function of a thesis statement in an essay?",
+        options: ["To introduce the conclusion", "To provide background information", "To state the main argument", "To list the sources"],
+        correctAnswer: "To state the main argument",
+      },
+      {
+        id: "q17",
+        question: "In literature, what is foreshadowing?",
+        options: ["A hint of what is to come", "A detailed character analysis", "A flashback to earlier events", "A summary of the story"],
+        correctAnswer: "A hint of what is to come",
+      },
+      {
+        id: "q18",
+        question: "Which sentence uses correct parallel structure?",
+        options: ["She likes reading, to swim, and biking.", "He enjoys running, jumping, and to swim.", "They like to hike, to bike, and to swim.", "We went shopping, to the movies, and ate dinner."],
+        correctAnswer: "They like to hike, to bike, and to swim.",
+      },
+      {
+        id: "q19",
+        question: "Which figure of speech is used in the sentence: <br> 'The wind whispered through the trees'?",
+        options: ["Metaphor", "Simile", "Hyperbole", "Personification"],
+        correctAnswer: "Personification",
+      },
+      {
+        id: "q20",
+        question: "What is the point of view in 'The Great Gatsby'?",
+        options: ["First person", "Second person", "Third-person limited", "Omniscient"],
+        correctAnswer: "First person",
+      },
     ],
   },
    {
@@ -720,8 +780,67 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         question: "The sum of two numbers is 20. Their difference is 4. What is the product of the two numbers?",
         options: ["96", "99", "104", "100"],
         correctAnswer: "96",
-      }
-
+      },
+      {
+        id: "q11",
+        question: "Which sentence contains an example of a metaphor?",
+        options: ["The clouds were like cotton candy.", "The thunder roared angrily.", "Time is a thief.", "He ran as fast as lightning."],
+        correctAnswer: "Time is a thief.",
+      },
+      {
+        id: "q12",
+        question: "What is the central theme of George Orwell’s 'Animal Farm'?",
+        options: ["Animal behavior", "The corrupting influence of power", "Environmental justice", "Rural life in England"],
+        correctAnswer: "The corrupting influence of power",
+      },
+      {
+        id: "q13",
+        question: "What is the purpose of a counterclaim in argumentative writing?",
+        options: ["To confuse the reader", "To introduce a new topic", "To acknowledge opposing views", "To restate the claim"],
+        correctAnswer: "To acknowledge opposing views",
+      },
+      {
+        id: "q14",
+        question: "Which of the following best describes the tone of the narrator in 'Of Mice and Men'?",
+        options: ["Sarcastic", "Hopeful", "Objective", "Jubilant"],
+        correctAnswer: "Objective",
+      },
+      {
+        id: "q15",
+        question: "What does the word 'elated' most likely mean in the sentence: <br> 'She was elated when she heard the good news'? ",
+        options: ["Sad", "Joyful", "Angry",  "Nervous"],
+        correctAnswer: "Joyful",
+      },
+      {
+        id: "q16",
+        question: "What is the main function of a thesis statement in an essay?",
+        options: ["To introduce the conclusion", "To provide background information", "To state the main argument", "To list the sources"],
+        correctAnswer: "To state the main argument",
+      },
+      {
+        id: "q17",
+        question: "In literature, what is foreshadowing?",
+        options: ["A hint of what is to come", "A detailed character analysis", "A flashback to earlier events", "A summary of the story"],
+        correctAnswer: "A hint of what is to come",
+      },
+      {
+        id: "q18",
+        question: "Which sentence uses correct parallel structure?",
+        options: ["She likes reading, to swim, and biking.", "He enjoys running, jumping, and to swim.", "They like to hike, to bike, and to swim.", "We went shopping, to the movies, and ate dinner."],
+        correctAnswer: "They like to hike, to bike, and to swim.",
+      },
+      {
+        id: "q19",
+        question: "Which figure of speech is used in the sentence: <br> 'The wind whispered through the trees'?",
+        options: ["Metaphor", "Simile", "Hyperbole", "Personification"],
+        correctAnswer: "Personification",
+      },
+      {
+        id: "q20",
+        question: "What is the point of view in 'The Great Gatsby'?",
+        options: ["First person", "Second person", "Third-person limited", "Omniscient"],
+        correctAnswer: "First person",
+      },
     ],
   },
    {

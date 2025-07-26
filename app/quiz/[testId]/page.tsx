@@ -213,7 +213,16 @@ export default function Quiz() {
     setCurrentQuestionIndex(0);
   };
 
-  const handletimeupSubmit = () => finalizeSubmit();
+  //const handletimeupSubmit = () => finalizeSubmit();
+ 
+  const handletimeupSubmit = () => {
+  if (isGrade9Or10 && quizSection === 'math') {
+    setShowGradeModal(true); // show the modal to choose ELA or Skip
+  } else {
+    finalizeSubmit(); // submit immediately for other grades
+  }
+};
+
 
   const finalizeSubmit = () => {
     setSubmitted(true);
@@ -472,7 +481,7 @@ const answeredCount = submitted && isSATQuiz
             isSATQuiz
               ? isSatReading ? 960 : 720
               : isGrade9Or10
-                ? quizSection === 'math' ? 960 : 720
+                ? quizSection === 'math' ? 60 : 720
                 : 1200
           }
           onTimeUp={handletimeupSubmit}

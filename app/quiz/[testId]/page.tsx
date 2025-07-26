@@ -481,7 +481,7 @@ const answeredCount = submitted && isSATQuiz
             isSATQuiz
               ? isSatReading ? 960 : 720
               : isGrade9Or10
-                ? quizSection === 'math' ? 60 : 720
+                ? quizSection === 'math' ? 960 : 720
                 : 1200
           }
           onTimeUp={handletimeupSubmit}
@@ -623,7 +623,11 @@ const answeredCount = submitted && isSATQuiz
               </>
             ) : (
               <>
-                <h2 className="text-xl font-bold">Your Score: {Number(calculateScore())}%</h2>
+                {/* <h2 className="text-xl font-bold">Your Score: {Number(calculateScore())}%</h2> */}
+                  <h2 className="text-xl font-bold">
+                    Your Score: {Number(calculateScore().combined).toFixed(2)}%
+                  </h2>
+
               </>
             )}
 

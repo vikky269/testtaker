@@ -20,7 +20,7 @@ export default function ReviewPage() {
   const [loading, setLoading] = useState(true);
 
   // Determine if user skipped ELA (for Grade 9 or 10)
-  const isGrade9Or10 = gradeParam === "9th-grade" || gradeParam === "10th-grade" || gradeParam === "8th-grade" || gradeParam === "7th-grade";
+  const isGrade9Or10 = gradeParam === "9th-grade" || gradeParam === "10th-grade" || gradeParam === "8th-grade" || gradeParam === "7th-grade" || gradeParam === "6th-grade" || gradeParam === "5th-grade" || gradeParam === "4th-grade" || gradeParam === "3rd-grade" || gradeParam === "11th-grade" || gradeParam === "12th-grade" || gradeParam === "2nd-grade" || gradeParam === "1st-grade";
 
 
   useEffect(() => {

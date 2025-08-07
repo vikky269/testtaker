@@ -203,132 +203,191 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         question: "You skip count by 5 starting at 10.What are the first 4 numbers?",
         options: ["10, 15, 20, 25", "10, 20, 30, 40", "5, 10, 15, 20", "15, 20, 25, 30"],
         correctAnswer: "10, 15, 20, 25",
-      }
+      },
+      {
+        id: "q11",
+        question: "Which word best completes the sentence: 'The cat ___ on the mat.'",
+        options: ["sat", "run", "jump", "swim"],
+        correctAnswer: "sat",
+      },
+      {
+        id: "q12",
+        question: "What is the main idea of a story?",
+        options: ["The place it happens", "The most important message", "The name of the character", "The pictures"],
+        correctAnswer: "The most important message",
+      },
+      {
+        id: "q13",
+        question: "Which of these is a complete sentence?",
+        options: ["Running fast.", "The big dog.", "She reads books.", "On the mat."],
+        correctAnswer: "She reads books.",
+      },
+      {
+        id: "q14",
+        question: "Which word is a noun?",
+        options: ["Quickly", "Happy", "Chair", "Blue"],
+        correctAnswer: "Chair",
+      },
+      {
+        id: "q15",
+        question: "What is the opposite of 'cold'?",
+        options: ["Warm", "Big", "Fast",  "Wet"],
+        correctAnswer: "Warm",
+      },
+      {
+        id: "q16",
+        question: "Which word rhymes with 'light'?",
+        options: ["Bit", "Fight", "Lot", "Cat"],
+        correctAnswer: "Fight",
+      },
+      {
+        id: "q17",
+        question: "What do we call the person who tells the story?",
+        options: ["Reader", " Illustrator", "Author", "Narrator"],
+        correctAnswer: "Narrator",
+      },
+      {
+        id: "q18",
+        question: "Which word is an action word?",
+        options: ["Apple", "Run", "Green", "Chair"],
+        correctAnswer: "Run",
+      },
+      {
+        id: "q19",
+        question: "What do you call the place and time a story happens?",
+        options: ["Plot", "Theme", "Setting", "Title"],
+        correctAnswer: "Setting",
+      },
+      {
+        id: "q20",
+        question: "Choose the correct punctuation for the sentence: 'Where is my hat___'",
+        options: ["A. .", "B. !", "C. ?", "D. ,"],
+        correctAnswer: "C. ?",
+      },
     ],
   },
-
    {
     grade: "2nd-grade",
     questions: [
       {
         id: "q1",
-        question: "Instructions: Read each question carefully and choose the correct answer. <br> What is the main idea of a story?",
-        options: ["Where the story takes place", "What the story is mostly about", "The name of the characters", "How long the story is"],
-        correctAnswer: "What the story is mostly about",
-      },
-      {
-        id: "q2",
-        question: "Which word means the opposite of “joyful”?",
-        options: ["Happy", "Excited", "Sad", "Smiling"],
-        correctAnswer: "Sad",
-      },
-       {
-        id: "q3",
-        question: "Read this sentence:  Maria ran quickly to catch the bus. <br> What does the word “quickly” describe?",
-        options: ["The bus", "How Maria ran", "Who Maria is", "Where she ran"],
-        correctAnswer: "How Maria ran",
-      },
-      {
-        id: "q4",
-        question: "Which sentence uses correct punctuation?",
-        options: ["what time is it", "I like to read books.", "can you help me", "I like Ice cream"],
-        correctAnswer: "I like to read books.",
-      },
-      {
-        id: "q5",
-        question: "Choose the correct past tense of the verb: <br> Yesterday, I ___ to the park.",
-        options: ["go", "went", "going", "gone"],
-        correctAnswer: "went",
-      },
-      {
-        id: "q6",
-        question: "What is a noun?",
-        options: ["A describing word", "A word that shows action", "A person, place, or thing", "A feeling"],
-        correctAnswer: "A person, place, or thing",
-      },
-      {
-        id: "q7",
-        question: "Which word is a compound word?",
-        options: ["Running", "Cupcake", "Quickly", "Tallest"],
-        correctAnswer: "Cupcake",
-      },
-      {
-        id: "q8",
-        question: "What is the author's purpose if they are trying to teach you something?",
-        options: ["To entertain", "To inform", "To persuade", "To confuse"],
-        correctAnswer: "To inform",
-      },
-      {
-        id: "q9",
-        question: "Choose the sentence with the correct capitalization",
-        options: ["my mom and i went to the zoo.", "My mom and I went to the zoo.", "My Mom and i went to the Zoo.", "My mom And I went to the zoo."],
-        correctAnswer: "My mom and I went to the zoo.",
-      },
-      {
-        id: "q10",
-        question: "What does the word 'enormous' mean in this sentence? <br> The elephant was enormous!",
-        options: ["Very small", "Very fast", "Very big", "Very tall"],
-        correctAnswer: "Very big",
-      },
-      {
-        id: "q11",
         question: "A class collected 286 cans for recycling. Another class collected 179 cans. How many more cans did the first class collect?",
         options: ["97", "107", "117", "109"],
         correctAnswer: "107",
       },
       {
-        id: "q12",
+        id: "q2",
         question: "You have 3 quarters, 2 dimes, and 4 pennies. How much money do you have?",
         options: ["99¢", "94¢", "89¢", "79¢"],
         correctAnswer: "99¢",
       },
        {
-        id: "q13",
+        id: "q3",
         question: "What is the value of the missing number in this equation: 45 + ___ = 120?",
         options: ["65", "75", "85", "95"],
         correctAnswer: "75",
       },
       {
-        id: "q14",
+        id: "q4",
         question: "A bakery made 325 cookies. They sold 198. How many cookies were left?",
         options: ["127", "132", "117", "137"],
         correctAnswer: "127",
       },
       {
-        id: "q15",
+        id: "q5",
         question: "Which number sentence shows the correct regrouping for 403 - 176?",
         options: ["400 - 100 = 300", "403 - 176 = 227", "403 - 176 = 237", "403 - 176 = 217"],
         correctAnswer: "403 - 176 = 227",
       },
       {
-        id: "q16",
+        id: "q6",
         question: "Which number sentence is true?",
         options: ["48 < 84", "125 > 512", "39 = 93", "401 < 104"],
         correctAnswer: "48 < 84",
       },
       {
-        id: "q17",
+        id: "q7",
         question: "A triangle has 3 sides.How many sides do 4 triangles have in total?",
         options: ["9", "10", "12", "15"],
         correctAnswer: "12",
       },
       {
-        id: "q18",
+        id: "q8",
         question: "If you skip count by 4s starting from 8, what is the 5th number in the sequence?",
         options: ["24", "28", "32", "36"],
         correctAnswer: "24",
       },
       {
-        id: "q19",
+        id: "q9",
         question: "A farmer has 7 rows of corn. Each row has 8 corn plants. How many corn plants are there?",
         options: ["48", "54", "56", "64"],
         correctAnswer: "56",
       },
       {
-        id: "q20",
+        id: "q10",
         question: "Which number is halfway between 400 and 500?",
         options: ["440", "450", "460", "470"],
         correctAnswer: "450",
+      },
+       {
+        id: "q11",
+        question: "What is the main idea of the passage?",
+        options: ["It gives details only", "It describes one event", "It explains the whole point", "It shows a timeline"],
+        correctAnswer: "It explains the whole point",
+      },
+      {
+        id: "q12",
+        question: "Which of these words is a synonym for 'happy'?",
+        options: ["Sad", "Angry", "Joyful", "Loud"],
+        correctAnswer: "Joyful",
+      },
+       {
+        id: "q13",
+        question: "What part of speech is the word 'quietly'?",
+        options: ["Noun", "Verb", "Adjective", "Adverb"],
+        correctAnswer: "Adverb",
+      },
+      {
+        id: "q14",
+        question: "Which sentence uses correct punctuation?",
+        options: ["He went to the store", "He went to the store.", "He went, to the store.", "He went to the store?"],
+        correctAnswer: "He went to the store.",
+      },
+      {
+        id: "q15",
+        question: "What does the word 'predict' mean?",
+        options: ["To look back", "To say what will happen", "To ask a question", "To end something"],
+        correctAnswer: "To say what will happen",
+      },
+      {
+        id: "q16",
+        question: "Which sentence best supports the theme of friendship?",
+        options: ["She gave her lunch to her friend.", "She left the class early.", "She wrote a test.", "She forgot her pencil."],
+        correctAnswer: "She gave her lunch to her friend.",
+      },
+      {
+        id: "q17",
+        question: "Which word is spelled correctly?",
+        options: ["Freind", "Friend", "Frend", "Frind"],
+        correctAnswer: "Friend",
+      },
+      {
+        id: "q18",
+        question: "Choose the correct homophone: 'I can ___ the music.'",
+        options: ["here", "hear", "hare", "heir"],
+        correctAnswer: "hear",
+      },
+      {
+        id: "q19",
+        question: "What is a theme in a story?",
+        options: ["The characters", "The lesson or message", "The setting", "The plot twist"],
+        correctAnswer: "The lesson or message",
+      },
+      {
+        id: "q20",
+        question: "Which of the following is a metaphor?",
+        options: ["She is as fast as a cheetah.", "She runs like the wind.", "She is a shining star.", "She jumped high."],
+        correctAnswer: "She is a shining star.",
       },
     ],
   },
@@ -394,6 +453,66 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         question: "A car travels 60 miles in 1 hour. How far will it travel in 2 hours and 30 minutes?",
         options: ["120 miles", "130 miles", "150 miles", "160 miles"],
         correctAnswer: "150 miles",
+      },
+      {
+        id: "q11",
+        question: "What is the title of a story?",
+        options: ["The last word", "The name of the story", "The author's name", "A chapter"],
+        correctAnswer: "The name of the story",
+      },
+      {
+        id: "q12",
+        question: "Who is the main character?",
+        options: ["The person who draws pictures", "The person who reads", "The most important character", "The animal in the story"],
+        correctAnswer: "The most important character",
+      },
+       {
+        id: "q13",
+        question: "What is the setting of a story?",
+        options: ["The problem", "The place and time of the story", "The title", "The page number"],
+        correctAnswer: "The place and time of the story",
+      },
+      {
+        id: "q14",
+        question: "What happens at the beginning of a story?",
+        options: ["The ending", "The middle part", "The first events", "The author’s name"],
+        correctAnswer: "The first events",
+      },
+      {
+        id: "q15",
+        question: "Which word is a verb?",
+        options: ["Run", "Happy", "School", "Blue"],
+        correctAnswer: "Run",
+      },
+      {
+        id: "q16",
+        question: "What does 'illustrator' mean?",
+        options: ["The person who writes the book", "A person who draws pictures in a book", "A character in the story", "A kind of story"],
+        correctAnswer: "A person who draws pictures in a book",
+      },
+      {
+        id: "q17",
+        question: "Why is it important to identify the narrator's point of view?",
+        options: ["To memorize the story", "To better understand how the events are told and interpreted", "To count the characters", "To find rhyming words"],
+        correctAnswer: "To better understand how the events are told and interpreted",
+      },
+      {
+        id: "q18",
+        question: "What does the word 'reluctantly' mean in the sentence: <br> 'She reluctantly agreed to help with the chores.'?",
+        options: ["Happily", "Without interest", "Willingly", "Unwillingly but agreeing"],
+        correctAnswer: "Unwillingly but agreeing",
+      },
+      {
+        id: "q19",
+        question: "Which statement best describes a character trait?",
+        options: ["Where the character lives", "What the character does for a job", "A quality that shows how the character thinks or acts", "The name of the character"],
+        correctAnswer: "A quality that shows how the character thinks or acts",
+      },
+      {
+        id: "q20",
+        question: "What question should a reader ask to identify the theme of a story?",
+        options: ["What did the character wear?", "Where did the story happen?", "What lesson did the character learn?", "How many pages are in the story?"],
+        correctAnswer: "What lesson did the character learn?",
       }
     ],
   },
@@ -459,10 +578,70 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         question: "Fill in the missing number: 6 × ___ = (3 × 4) + (1 × 6)",
         options: ["4", "2", "3", "6"],
         correctAnswer: "3",
+      },
+      {
+        id: "q11",
+        question: "What is the main idea of a paragraph?",
+        options: ["The title of the story", "The most important idea", "A fun word", "A quote from a character"],
+        correctAnswer: "The most important idea",
+      },
+      {
+        id: "q12",
+        question: "Which sentence contains a simile?",
+        options: ["He is a lion in battle.", "She runs fast.", "He was as quiet as a mouse.", "They walked together."],
+        correctAnswer: "He was as quiet as a mouse.",
+      },
+       {
+        id: "q13",
+        question: "Why is it important to use evidence from a text?",
+        options: ["To copy the story", "To guess the theme", "To support your answers with proof", "To make it longer"],
+        correctAnswer: "To support your answers with proof",
+      },
+      {
+        id: "q14",
+        question: "Which of the following is an example of a first-person point of view?",
+        options: ["He ran to the store.", "They wanted to leave.", "I was nervous before the test.", "She opened the door."],
+        correctAnswer: "I was nervous before the test.",
+      },
+      {
+        id: "q15",
+        question: "What does the word 'precious' mean in this sentence: <br> 'She kept her necklace in a box because it was very precious to her.'?",
+        options: ["Cheap", "Not useful", "Very valuable or special", "Broken"],
+        correctAnswer: "Very valuable or special",
+      },
+      {
+        id: "q16",
+        question: "How can the setting of a story affect the plot?",
+        options: ["It changes the title", "It tells the ending", "It helps shape the events and mood", "It adds more characters"],
+        correctAnswer: "It helps shape the events and mood",
+      },
+      {
+        id: "q17",
+        question: "Which of these is a theme found in many stories?",
+        options: ["The dog is fast", "Never give up", "Blue is a nice color", "The story takes place in a park"],
+        correctAnswer: "Never give up",
+      },
+      {
+        id: "q18",
+        question: "Which sentence uses correct punctuation for dialogue?",
+        options: ["“I love reading. said Maya.", "I love reading,” said Maya.", "“I love reading,” said Maya.", "“I love reading” said Maya"],
+        correctAnswer: "“I love reading,” said Maya.",
+      },
+      {
+        id: "q19",
+        question: "What is the purpose of the conclusion in a nonfiction text?",
+        options: ["To introduce characters", "To tell jokes", "To wrap up and restate key points", "To describe the setting"],
+        correctAnswer: "To wrap up and restate key points",
+      },
+      {
+        id: "q20",
+        question: "Which of the following best describes a character trait?",
+        options: ["The name of the character", "A quality that describes how a character thinks or acts", "The color of the character’s hair", "The number of friends they have"],
+        correctAnswer: "A quality that describes how a character thinks or acts",
       }
     ],
   },
-   {
+  {
     grade: "5th-grade",
     questions: [
       {
@@ -491,7 +670,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       },
       {
         id: "q5",
-        question:"What is the product of 234 and 6?",
+        question: "What is the product of 234 and 6?",
         options: ["1404", "1344", "1254", "1320"],
         correctAnswer: "1404",
       },
@@ -525,6 +704,66 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         options: ["10", "12", "14", "16"],
         correctAnswer: "12",
       },
+      {
+        id: "q11",
+        question: "What is the theme of a story?",
+        options: ["The location of the story", "The author’s name", "The lesson or message in the story", "The number of pages"],
+        correctAnswer: "The lesson or message in the story"
+      },
+      {
+        id: "q12",
+        question: "Which of the following is an example of personification?",
+        options: ["The wind whispered through the trees.", "The car is fast.", "She ran quickly.", "He shouted loudly."],
+        correctAnswer: "The wind whispered through the trees."
+      },
+      {
+        id: "q13",
+        question: "How does an author support their main idea in nonfiction?",
+        options: ["By adding jokes", "By using characters", "With facts, examples, and explanations", "With a colorful title"],
+        correctAnswer: "With facts, examples, and explanations"
+      },
+      {
+        id: "q14",
+        question: "Which point of view uses 'he' and 'she' and is told by a narrator?",
+        options: ["First person", "Second person", "Third person", "Author’s view"],
+        correctAnswer: "Third person"
+      },
+      {
+        id: "q15",
+        question: "What is the function of a conclusion in an informational text?",
+        options: ["To begin the text", "To describe the setting", "To end the story with a joke", "To summarize and restate key points"],
+        correctAnswer: "To summarize and restate key points"
+      },
+      {
+        id: "q16",
+        question: "Which sentence contains a metaphor?",
+        options: ["The clouds were like cotton.", "The clouds were cotton in the sky.", "The clouds moved.", "The sky was blue."],
+        correctAnswer: "The clouds were cotton in the sky."
+      },
+      {
+        id: "q17",
+        question: "What does the phrase 'break the ice' mean in this sentence: <br> 'He told a joke to break the ice at the meeting.'?",
+        options: ["To shatter something cold", "To start a conversation and make people feel comfortable", "To stop talking", "To leave the room"],
+        correctAnswer: "To start a conversation and make people feel comfortable"
+      },
+      {
+        id: "q18",
+        question: "Which sentence is written in the passive voice?",
+        options: ["The teacher gave the students homework.", "The students completed the test.", "The book was read by the class.", "She played the piano."],
+        correctAnswer: "The book was read by the class."
+      },
+      {
+        id: "q19",
+        question: "Why do authors use descriptive language?",
+        options: ["To confuse the reader", "To add color and detail to the text", "To end the story faster", "To change the setting"],
+        correctAnswer: "To add color and detail to the text"
+      },
+      {
+        id: "q20",
+        question: "What is the best strategy to figure out the meaning of an unknown word?",
+        options: ["Skip it", "Look at pictures", "Use context clues in the sentence", "Ask someone else"],
+        correctAnswer: "Use context clues in the sentence"
+      }
     ],
   },
   {
@@ -590,6 +829,66 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         options: ["Yes, because 7² + 24² = 25²", "No, because 7 + 24 < 25", "No, because 24² + 25² ≠ 7²", "Yes, because it's isosceles"],
         correctAnswer: "Yes, because 7² + 24² = 25²",
       },
+      {
+        id: "q11",
+        question: "What is a central idea in nonfiction text?",
+        options: ["The main topic or point the author is making", "The first sentence", "The caption", "The last fact listed"],
+        correctAnswer: "The main topic or point the author is making"
+      },
+      {
+        id: "q12",
+        question: "Which sentence contains an example of a hyperbole?",
+        options: ["She cried for hours.", "I have a million things to do today.", "He ran to the store.", "The sun is bright."],
+        correctAnswer: "I have a million things to do today."
+      },
+      {
+        id: "q13",
+        question: "Why do authors use foreshadowing in fiction?",
+        options: ["To confuse the reader", "To hint at events that will happen later", "To introduce new characters", "To change the point of view"],
+        correctAnswer: "To hint at events that will happen later"
+      },
+      {
+        id: "q14",
+        question: "What is a claim in argumentative writing?",
+        options: ["A story from the past", "A personal feeling", "The main opinion or position the author takes", "A character’s name"],
+        correctAnswer: "The main opinion or position the author takes"
+      },
+      {
+        id: "q15",
+        question: "Which of the following best describes an objective summary?",
+        options: ["A summary with personal opinions", "A detailed retelling with emotions", "A brief, neutral restatement of main ideas", "A summary written like a poem"],
+        correctAnswer: "A brief, neutral restatement of main ideas"
+      },
+      {
+        id: "q16",
+        question: "What is the difference between tone and mood?",
+        options: ["Tone is the reader’s feeling; mood is the author’s word choice", "Tone is how the author feels; mood is how the reader feels", "They are the same", "Mood is used only in poems"],
+        correctAnswer: "Tone is how the author feels; mood is how the reader feels"
+      },
+      {
+        id: "q17",
+        question: "How does dialogue help develop a character?",
+        options: ["It shows the setting", "It lists their job", "It reveals thoughts, feelings, and relationships", "It creates a plot twist"],
+        correctAnswer: "It reveals thoughts, feelings, and relationships"
+      },
+      {
+        id: "q18",
+        question: "Which sentence is written in active voice?",
+        options: ["The homework was completed by Jake.", "The test was taken by the class.", "Jake completed the homework.", "The paper was torn."],
+        correctAnswer: "Jake completed the homework."
+      },
+      {
+        id: "q19",
+        question: "What does the word 'elaborate' mean in this sentence: 'Can you elaborate on your idea?'",
+        options: ["Change your idea", "Say it more clearly", "Explain it with more detail", "Delete your idea"],
+        correctAnswer: "Explain it with more detail"
+      },
+      {
+        id: "q20",
+        question: "Why is it important to analyze how a text is structured?",
+        options: ["To ignore confusing parts", "To see if it's fiction or nonfiction", "To understand how ideas connect and support meaning", "To find spelling mistakes"],
+        correctAnswer: "To understand how ideas connect and support meaning"
+      }
 
     ],
   },
@@ -1098,15 +1397,123 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     questions: [
       {
         id: "q1",
-        question: "What is the derivative of x²?",
-        options: ["x", "2x", "x²", "2"],
-        correctAnswer: "2x",
+        question: "Determine the derivative of the function f(x) = 3x³ − 5x² + 2x − 7.",
+        options: ["f'(x) = 9x² − 10x + 2", "f'(x) = 6x − 10 + 2", "f'(x) = 9x² − 5x + 2", "f'(x) = 3x² − 10x + 2"],
+        correctAnswer: "f'(x) = 9x² − 10x + 2"
       },
       {
         id: "q2",
-        question: "Evaluate: ∫2x dx",
-        options: ["x² + C", "2x + C", "x + C", "2x² + C"],
-        correctAnswer: "x² + C",
+        question: "Solve for x in the exponential equation: 2<sup>(x + 1)</sup> = 16",
+        options: ["x = 4", "x = 3", "x = 5", "x = 2"],
+        correctAnswer: "x = 3"
+      },
+      {
+        id: "q3",
+        question: "Given f(x) = <sup>x − 4</sup>&frasl;<sub>3</sub>, identify the inverse function f⁻¹(x).",
+        options: ["f⁻¹(x) = 3x + 4", "f⁻¹(x) = 3x − 4", "f⁻¹(x) = x/3 − 4", "f⁻¹(x) = x/3 + 4"],
+        correctAnswer: "f⁻¹(x) = 3x + 4"
+      },
+      {
+        id: "q4",
+        question: "Solve the system: 2x + 3y = 12 and x − y = 1.",
+        options: ["x = 3, y = 1", "x = 2, y = 2", "x = 3, y = 2", "x = 4, y = 1"],
+        correctAnswer: "x = 3, y = 2"
+      },
+      {
+        id: "q5",
+        question: "What are the roots of the quadratic equation: x² − 6x + 8 = 0?",
+        options: ["x = 2, x = 4", "x = −2, x = −4", "x = 1, x = 8", "x = 3, x = −3"],
+        correctAnswer: "x = 2, x = 4"
+      },
+      {
+        id: "q6",
+        question: "If sin(θ) = 3/5 and θ lies in the second quadrant, determine the value of cos(θ).",
+        options: ["cos(θ) = −4/5", "cos(θ) = 4/5", "cos(θ) = −3/5", "cos(θ) = 3/5"],
+        correctAnswer: "cos(θ) = −4/5"
+      },
+      {
+        id: "q7",
+        question: "Identify the domain of the function f(x) = √(2x − 6).",
+        options: ["x ≥ 3", "x > 3", "x ≤ 3", "x ≤ −3"],
+        correctAnswer: "x ≥ 3"
+      },
+      {
+        id: "q8",
+        question: "Simplify the expression: (2x² − 3x + 5) − (x² + x − 2).",
+        options: ["x² − 4x + 7", "x² − 4x + 3", "3x² − 2x + 3", "3x² − 4x + 3"],
+        correctAnswer: "x² − 4x + 3"
+      },
+      {
+        id: "q9",
+        question: "Which of the following functions represents exponential decay?",
+        options: ["f(x) = 2<sup>x</sup>", "f(x) = 3x + 1", "f(x) = 0.5<sup>x</sup>", "f(x) = x²"],
+        correctAnswer: "f(x) = 0.5<sup>x</sup>"
+      },
+      {
+        id: "q10",
+        question: "Determine the equation of a line passing through (2, 5) with slope −3.",
+        options: ["y = −3x + 11", "y = 3x + 5", "y = −2x + 3", "y = −3x − 1"],
+        correctAnswer: "y = −3x + 11"
+      },
+      {
+        id: "q11",
+        question: "Passage 1: <br> The forest was unusually silent that morning, save for the occasional rustle of leaves stirred by a gentle wind. Sunlight filtered through the canopy, casting golden rays on the damp earth. As Clara walked deeper into the woods, she felt both a sense of wonder and a prickling unease, as if the forest itself was holding its breath.<br>  What is the tone of this passage?",
+        options: ["Cheerful", "Tense", "Humorous", "Indifferent"],
+        correctAnswer: "Tense"
+      },
+      {
+        id: "q12",
+        question: "Which literary device is used in the phrase 'the forest itself was holding its breath'?",
+        options: ["Simile", "Hyperbole", "Personification", "Alliteration"],
+        correctAnswer: "Personification"
+      },
+      {
+        id: "q13",
+        question: "Passage 2: <br> Throughout history, scientific discovery has relied not only on brilliant minds, but also on the collaboration of diverse teams. From the laboratories of Marie Curie to the engineering marvels of NASA, innovation thrives when ideas intersect and evolve. The future of science depends not solely on individual intellect, but on shared pursuit. <br> What is the main idea of this passage?",
+        options: ["Marie Curie discovered radiation.", "Scientific innovation depends on individual effort.", "Collaboration enhances scientific discovery.", "NASA is the greatest scientific organization."],
+        correctAnswer: "Collaboration enhances scientific discovery."
+      },
+      {
+        id: "q14",
+        question: "What is the author's tone in this Passage 2?",
+        options: ["Critical", "Reflective", "Sarcastic", "Indifferent"],
+        correctAnswer: "Reflective"
+      },
+      {
+        id: "q15",
+        question: 'Passage 3: <br> "We must learn to live together as brothers or perish together as fools". These words, spoken by Dr. Martin Luther King Jr., remain relevant in a world still grappling with division and conflict. The quote is a timeless call to unity, underscoring the urgent need for empathy, dialogue, and mutual respect. <br>   What rhetorical device is most evident in the quote by Dr. King?',
+        options: ["Irony", "Repetition", "Metaphor", "Antithesis"],
+        correctAnswer: "Antithesis"
+      },
+      {
+        id: "q16",
+        question: "What is the purpose of including this quote in the Passage 3?",
+        options: ["To emphasize conflict", "To support an argument about unity", "To highlight political instability", "To question authority"],
+        correctAnswer: "To support an argument about unity"
+      },
+      {
+        id: "q17",
+        question: "What is the purpose of an anecdote in persuasive writing?",
+        options: ["To confuse the reader", "To entertain with fiction", "To add humor", "To provide a personal example that supports a point"],
+        correctAnswer: "To provide a personal example that supports a point"
+      },
+      {
+        id: "q18",
+        question: "Which of the following sentences contains a misplaced modifier?",
+        options: ["Running to the store, the rain began to fall.", "The dog chased the cat.", "She opened the door quickly.", "He made a delicious cake for dessert."],
+        correctAnswer: "Running to the store, the rain began to fall."
+      },
+      {
+        id: "q19",
+        question: "What is the meaning of connotation?",
+        options: ["The dictionary definition of a word", "The emotional or cultural meaning associated with a word", "The part of speech of a word", "The root word"],
+        correctAnswer: "The emotional or cultural meaning associated with a word"
+      },
+      {
+        id: "q20",
+        question: "What is the most effective way to revise a vague thesis statement?",
+        options: ["Make it longer", "Add emotional language", "Be specific and clearly state your position", "Start with a question"],
+        correctAnswer: "Be specific and clearly state your position"
       }
     ],
   },

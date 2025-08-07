@@ -17,7 +17,7 @@ export default function Quiz() {
   const stateParam = searchParams.get("state")?.toLowerCase();
   const gradeParam = searchParams.get("grade");
   const normalizedGrade = gradeParam?.toLowerCase().replace(/\s+/g, "") ?? "";
-  const isSATQuiz = ['sat', 'ssat', '2nd-grade'].includes(normalizedGrade) && testid !== "state-test";
+  const isSATQuiz = ['sat', 'ssat'].includes(normalizedGrade) && testid !== "state-test";
   //const isGrade9Or10 = ['grade9', 'grade10'].includes(normalizedGrade);
 
 
@@ -116,8 +116,8 @@ export default function Quiz() {
 
  
   // Determine what quiz type we're dealing with
-  const isSat = ['sat', 'ssat', '2nd-grade'].includes(normalizedGrade);
-  const isGrade9Or10 = normalizedGrade === "9th-grade" || normalizedGrade === "10th-grade"|| normalizedGrade === "7th-grade" || normalizedGrade === "8th-grade";
+  const isSat = ['sat', 'ssat'].includes(normalizedGrade);
+  const isGrade9Or10 = normalizedGrade === "9th-grade" || normalizedGrade === "10th-grade"|| normalizedGrade === "7th-grade" || normalizedGrade === "8th-grade" || normalizedGrade === "6th-grade" || normalizedGrade === "5th-grade" || normalizedGrade === "4th-grade" || normalizedGrade === "3rd-grade" || normalizedGrade === "11th-grade" || normalizedGrade === "12th-grade" || normalizedGrade === "2nd-grade" || normalizedGrade === "1st-grade";
 
   // Slice up questions for SAT
   const readingQuestions = isSat ? quizQuestions.slice(0, 10) : [];
@@ -401,7 +401,7 @@ const calculateSectionScore = (section: "math" | "ela") => {
  // const isGrade9Or10 = gradeParam === "grade9" || gradeParam === "grade10";
 
   const isGrade9Or10 =
-    gradeParam === "9th-grade" || gradeParam === "10th-grade" ||  gradeParam === "8th-grade" || gradeParam === "7th-grade";
+    gradeParam === "9th-grade" || gradeParam === "10th-grade" ||  gradeParam === "8th-grade" || gradeParam === "7th-grade" || gradeParam === "6th-grade" || gradeParam === "5th-grade" || gradeParam === "4th-grade" || gradeParam === "3rd-grade" || gradeParam === "11th-grade" || gradeParam === "12th-grade" || gradeParam === "2nd-grade" || gradeParam === "1st-grade";
 
     console.log("isGrade9Or10:", isGrade9Or10);
 

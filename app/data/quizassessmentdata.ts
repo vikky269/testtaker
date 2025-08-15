@@ -3,6 +3,7 @@ export interface QuizQuestion {
   question: string;
   options: string[];
   correctAnswer: string;
+  solution?: string;
 }
 
 export interface GradeLevelQuiz {
@@ -149,60 +150,70 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         question: "Emma has 3 packs of stickers. Each pack has 6 stickers. She gives 5 stickers to her friend. How many stickers does she have now?",
         options: ["13", "18", "15", "11"],
         correctAnswer: "13",
+        solution: "<p>Emma starts with <b>3 × 6 = 18</b> stickers. After giving away 5, she has <b>18 − 5 = 13</b> stickers left.</p>"
       },
       {
         id: "q2",
         question: "Which number is the largest?",
         options: ["84", "48", "74", "64"],
         correctAnswer: "84",
+        solution: "<p>Among the numbers <b>84</b>, 48, 74, and 64, the largest is clearly <b>84</b>.</p>"
       },
-       {
+      {
         id: "q3",
         question: "What number is 10 more than 37?",
         options: ["47", "27", "36", "57"],
         correctAnswer: "47",
+        solution: "<p><b>37 + 10 = 47</b>. So the answer is <b>47</b>.</p>"
       },
-       {
+      {
         id: "q4",
         question: "A toy costs 85 cents. You have one 50¢ coin and two 20¢ coins. How much money do you have?",
         options: ["85¢", "90¢", "70¢", "80¢"],
         correctAnswer: "90¢",
+        solution: "<p>One 50¢ coin plus two 20¢ coins equals <b>50¢ + 20¢ + 20¢ = 90¢</b>.</p>"
       },
-       {
+      {
         id: "q5",
         question: "What is the missing number?  ___ + 15 = 28",
         options: ["12", "11", "13", "14"],
         correctAnswer: "13",
+        solution: "<p>Subtract 15 from 28: <b>28 − 15 = 13</b>. The missing number is <b>13</b>.</p>"
       },
-       {
+      {
         id: "q6",
         question: "Which shape has 4 sides and 4 corners but is not a square?",
         options: ["Triangle", "Rectangle", "Circle", "Pentagon"],
         correctAnswer: "Rectangle",
+        solution: "<p>A <b>rectangle</b> has 4 sides and 4 corners, but its sides are not all equal, so it is not a square.</p>"
       },
-       {
+      {
         id: "q7",
         question: "There are 20 apples. 8 are green, and the rest are red. How many are red?",
         options: ["10", "12", "14", "18"],
         correctAnswer: "12",
+        solution: "<p>Total apples: 20. Green apples: 8. Red apples: <b>20 − 8 = 12</b>.</p>"
       },
-       {
+      {
         id: "q8",
         question: "What is <sup>1</sup>&frasl;<sub>2</sub> of 12?",
         options: ["5", "6", "4", "8"],
         correctAnswer: "6",
+        solution: "<p><b>Half</b> of 12 is <b>12 ÷ 2 = 6</b>.</p>"
       },
-       {
+      {
         id: "q9",
         question: "Which number is in the tens place in 74?",
         options: ["4", "0", "7", "1"],
         correctAnswer: "7",
+        solution: "<p>In 74, the digit <b>7</b> is in the tens place, and 4 is in the ones place.</p>"
       },
-       {
+      {
         id: "q10",
         question: "You skip count by 5 starting at 10.What are the first 4 numbers?",
         options: ["10, 15, 20, 25", "10, 20, 30, 40", "5, 10, 15, 20", "15, 20, 25, 30"],
         correctAnswer: "10, 15, 20, 25",
+        solution: "<p>Starting at 10 and adding 5 each time gives: <b>10, 15, 20, 25</b>.</p>"
       },
       {
         id: "q11",
@@ -266,7 +277,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       },
     ],
   },
-   {
+  {
     grade: "2nd-grade",
     questions: [
       {
@@ -274,62 +285,72 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         question: "A class collected 286 cans for recycling. Another class collected 179 cans. How many more cans did the first class collect?",
         options: ["97", "107", "117", "109"],
         correctAnswer: "107",
+        solution: "<p><strong>Step 1:</strong> Subtract the smaller number from the larger number.<br>286 − 179 = 107.<br><strong>Answer:</strong> 107 cans.</p>"
       },
       {
         id: "q2",
         question: "You have 3 quarters, 2 dimes, and 4 pennies. How much money do you have?",
         options: ["99¢", "94¢", "89¢", "79¢"],
         correctAnswer: "99¢",
+        solution: "<p><strong>Step 1:</strong> 3 quarters = 75¢.<br><strong>Step 2:</strong> 2 dimes = 20¢.<br><strong>Step 3:</strong> 4 pennies = 4¢.<br>Add them together: 75 + 20 + 4 = 99¢.</p>"
       },
-       {
+      {
         id: "q3",
         question: "What is the value of the missing number in this equation: 45 + ___ = 120?",
         options: ["65", "75", "85", "95"],
         correctAnswer: "75",
+        solution: "<p><strong>Step 1:</strong> Subtract 45 from 120.<br>120 − 45 = 75.<br><strong>Answer:</strong> 75.</p>"
       },
       {
         id: "q4",
         question: "A bakery made 325 cookies. They sold 198. How many cookies were left?",
         options: ["127", "132", "117", "137"],
         correctAnswer: "127",
+        solution: "<p><strong>Step 1:</strong> Subtract cookies sold from total.<br>325 − 198 = 127.<br><strong>Answer:</strong> 127 cookies.</p>"
       },
       {
         id: "q5",
         question: "Which number sentence shows the correct regrouping for 403 - 176?",
         options: ["400 - 100 = 300", "403 - 176 = 227", "403 - 176 = 237", "403 - 176 = 217"],
         correctAnswer: "403 - 176 = 227",
+        solution: "<p><strong>Step 1:</strong> Regroup by borrowing from hundreds place.<br><strong>Step 2:</strong> Perform subtraction.<br>403 − 176 = 227.<br><strong>Answer:</strong> 403 − 176 = 227.</p>"
       },
       {
         id: "q6",
         question: "Which number sentence is true?",
         options: ["48 < 84", "125 > 512", "39 = 93", "401 < 104"],
         correctAnswer: "48 < 84",
+        solution: "<p>48 is less than 84, so <strong>48 &lt; 84</strong> is correct.</p>"
       },
       {
         id: "q7",
         question: "A triangle has 3 sides.How many sides do 4 triangles have in total?",
         options: ["9", "10", "12", "15"],
         correctAnswer: "12",
+        solution: "<p><strong>Step 1:</strong> Each triangle has 3 sides.<br><strong>Step 2:</strong> Multiply 3 × 4 = 12 sides in total.</p>"
       },
       {
         id: "q8",
         question: "If you skip count by 4s starting from 8, what is the 5th number in the sequence?",
         options: ["24", "28", "32", "36"],
         correctAnswer: "24",
+        solution: "<p><strong>Sequence:</strong> 8, 12, 16, 20, 24.<br>The 5th number is <strong>24</strong>.</p>"
       },
       {
         id: "q9",
         question: "A farmer has 7 rows of corn. Each row has 8 corn plants. How many corn plants are there?",
         options: ["48", "54", "56", "64"],
         correctAnswer: "56",
+        solution: "<p><strong>Step 1:</strong> Multiply rows by plants per row.<br>7 × 8 = 56.<br><strong>Answer:</strong> 56 plants.</p>"
       },
       {
         id: "q10",
         question: "Which number is halfway between 400 and 500?",
         options: ["440", "450", "460", "470"],
         correctAnswer: "450",
+        solution: "<p><strong>Step 1:</strong> Add the two numbers: 400 + 500 = 900.<br><strong>Step 2:</strong> Divide by 2: 900 ÷ 2 = 450.<br><strong>Answer:</strong> 450.</p>"
       },
-       {
+      {
         id: "q11",
         question: "What is the main idea of the passage?",
         options: ["It gives details only", "It describes one event", "It explains the whole point", "It shows a timeline"],
@@ -341,7 +362,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         options: ["Sad", "Angry", "Joyful", "Loud"],
         correctAnswer: "Joyful",
       },
-       {
+      {
         id: "q13",
         question: "What part of speech is the word 'quietly'?",
         options: ["Noun", "Verb", "Adjective", "Adverb"],
@@ -391,7 +412,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       },
     ],
   },
-   {
+  {
     grade: "3rd-grade",
     questions: [
       {
@@ -399,61 +420,72 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         question: "A farmer has 6 baskets. Each basket holds 24 apples. He gave away 57 apples. How many apples does he have left?",
         options: ["87", "93", "75", "84"],
         correctAnswer: "87",
+        solution: "<p><strong>Step 1:</strong> Find the total apples.<br>6 × 24 = 144.<br><strong>Step 2:</strong> Subtract the apples given away.<br>144 − 57 = 87.<br><strong>Answer:</strong> 87 apples.</p>"
       },
       {
         id: "q2",
         question: "What is the smallest 4-digit number that can be made using the digits 3, 0, 5, and 7 only once?",
         options: ["3057", "3075", "5037", "5073"],
         correctAnswer: "3057",
+        solution: "<p><strong>Step 1:</strong> Start with the smallest non-zero digit.<br>That is 3.<br><strong>Step 2:</strong> Arrange the remaining digits in ascending order.<br>0, 5, 7.<br><strong>Answer:</strong> 3057.</p>"
       },
       {
         id: "q3",
         question: "If 3 pencils cost $1.50, how much do 5 pencils cost at the same rate?",
         options: ["$2.00", "$2.50", "$3.00", "$1.80"],
         correctAnswer: "$2.50",
+        solution: "<p><strong>Step 1:</strong> Find the cost per pencil.<br>$1.50 ÷ 3 = $0.50.<br><strong>Step 2:</strong> Multiply by 5.<br>5 × $0.50 = $2.50.<br><strong>Answer:</strong> $2.50.</p>"
       },
       {
         id: "q4",
         question: "What is the area of a rectangle that has a length of 13 cm and a width of 6 cm?",
         options: ["78 cm²", "76 cm²", "72 cm²", "80 cm²"],
         correctAnswer: "78 cm²",
+        solution: "<p><strong>Step 1:</strong> Multiply length by width.<br>13 × 6 = 78.<br><strong>Answer:</strong> 78 cm².</p>"
       },
       {
         id: "q5",
         question: "A toy costs $15. A child saves $2.50 every week. How many full weeks will it take to save enough money?",
         options: ["5", "6", "7", "8"],
         correctAnswer: "6",
+        solution: "<p><strong>Step 1:</strong> Divide the total cost by the amount saved each week.<br>$15 ÷ $2.50 = 6.<br><strong>Answer:</strong> 6 weeks.</p>"
       },
       {
         id: "q6",
         question: "Which number is not divisible by both 3 and 4?",
         options: ["12", "18", "24", "36"],
         correctAnswer: "18",
+        solution: "<p><strong>Step 1:</strong> A number divisible by both 3 and 4 must be divisible by 12.<br><strong>Step 2:</strong> 18 ÷ 12 is not a whole number.<br><strong>Answer:</strong> 18.</p>"
       },
       {
         id: "q7",
         question: "Which fraction is closest to 1 but not equal to 1?",
         options: ["3/4", "7/8", "5/6", "9/10"],
         correctAnswer: "9/10",
+        solution: "<p><strong>Step 1:</strong> Convert fractions to decimals.<br>3/4 = 0.75, 7/8 ≈ 0.875, 5/6 ≈ 0.833, 9/10 = 0.9.<br><strong>Step 2:</strong> The closest to 1 is 0.9.<br><strong>Answer:</strong> 9/10.</p>"
       },
       {
         id: "q8",
         question: "If a pizza is cut into 12 equal slices and you eat 3 slices, what fraction is left?",
         options: ["3/12", "9/12", "1/4", "1/2"],
         correctAnswer: "9/12",
+        solution: "<p><strong>Step 1:</strong> Subtract slices eaten from total.<br>12 − 3 = 9.<br><strong>Step 2:</strong> Write as a fraction.<br>9/12 (which simplifies to 3/4).<br><strong>Answer:</strong> 9/12.</p>"
       },
       {
         id: "q9",
         question: "Which number is missing in the pattern: 5, 10, __, 20, 25",
         options: ["12", "13", "14", "15"],
         correctAnswer: "15",
+        solution: "<p><strong>Step 1:</strong> Identify the pattern.<br>It increases by 5 each time.<br><strong>Step 2:</strong> 10 + 5 = 15.<br><strong>Answer:</strong> 15.</p>"
       },
       {
         id: "q10",
         question: "A car travels 60 miles in 1 hour. How far will it travel in 2 hours and 30 minutes?",
         options: ["120 miles", "130 miles", "150 miles", "160 miles"],
         correctAnswer: "150 miles",
+        solution: "<p><strong>Step 1:</strong> Convert 2 hours 30 minutes to hours.<br>2.5 hours.<br><strong>Step 2:</strong> Multiply speed by time.<br>60 × 2.5 = 150.<br><strong>Answer:</strong> 150 miles.</p>"
       },
+
       {
         id: "q11",
         question: "What is the title of a story?",
@@ -466,7 +498,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         options: ["The person who draws pictures", "The person who reads", "The most important character", "The animal in the story"],
         correctAnswer: "The most important character",
       },
-       {
+      {
         id: "q13",
         question: "What is the setting of a story?",
         options: ["The problem", "The place and time of the story", "The title", "The page number"],
@@ -516,7 +548,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       }
     ],
   },
-   {
+  {
     grade: "4th-grade",
     questions: [
       {
@@ -524,60 +556,70 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         question: "Eva buys 4 notebooks that each cost $3.75. She pays with a $20 bill. How much change will she receive?",
         options: ["$4.50", "$5.00", "$6.25", "$3.75"],
         correctAnswer: "$5.00",
+        solution: "<p><strong>Step 1:</strong> Find total cost.<br>4 × $3.75 = $15.00.<br><strong>Step 2:</strong> Subtract from amount paid.<br>$20 − $15 = $5.00.<br><strong>Answer:</strong> $5.00.</p>"
       },
       {
         id: "q2",
         question: "What is the product of 38 and 26?",
         options: ["988", "912", "1012", "976"],
         correctAnswer: "988",
+        solution: "<p><strong>Step 1:</strong> Multiply the numbers.<br>38 × 26 = 988.<br><strong>Answer:</strong> 988.</p>"
       },
       {
         id: "q3",
         question: "A rectangle has a length of 9 cm and a width that is <sup>2</sup>&frasl;<sub>3</sub> of the length. What is the area of the rectangle?",
         options: ["60 cm²", "54 cm²", "36 cm²", "48 cm²"],
         correctAnswer: "54 cm²",
+        solution: "<p><strong>Step 1:</strong> Find the width.<br>(2/3) × 9 = 6 cm.<br><strong>Step 2:</strong> Multiply length by width.<br>9 × 6 = 54 cm².<br><strong>Answer:</strong> 54 cm².</p>"
       },
       {
         id: "q4",
         question: "Compare using >, <, or =:  choose what best fill in the box <sup>3</sup>&frasl;<sub>4</sub> ☐ <sup>5</sup>&frasl;<sub>8</sub>",
         options: [">", "<", "=", "Not Enough Information"],
         correctAnswer: ">",
+        solution: "<p><strong>Step 1:</strong> Convert to a common denominator.<br>3/4 = 6/8.<br><strong>Step 2:</strong> Compare 6/8 and 5/8.<br>6/8 is greater.<br><strong>Answer:</strong> >.</p>"
       },
       {
         id: "q5",
         question: "In a class of 32 students, <sup>3</sup>&frasl;<sub>8</sub> are wearing glasses. How many students are wearing glasses?",
         options: ["10", "12", "14", "16"],
         correctAnswer: "12",
+        solution: "<p><strong>Step 1:</strong> Multiply total students by fraction wearing glasses.<br>(3/8) × 32 = 12.<br><strong>Answer:</strong> 12 students.</p>"
       },
       {
         id: "q6",
         question: "A baker has 120 cookies. He wants to divide them into boxes so that each box has 8 cookies. How many boxes will he need?",
         options: ["14", "15", "16", "18"],
         correctAnswer: "15",
+        solution: "<p><strong>Step 1:</strong> Divide total cookies by cookies per box.<br>120 ÷ 8 = 15.<br><strong>Answer:</strong> 15 boxes.</p>"
       },
       {
         id: "q7",
         question: "Round 4,987 to the nearest hundred and to the nearest thousand.",
         options: ["4,900 and 5,000", "5,000 and 4,900", "5,000 and 5,000", "4,900 and 4,000"],
         correctAnswer: "5,000 and 5,000",
+        solution: "<p><strong>Step 1:</strong> Nearest hundred: 4,987 rounds up to 5,000.<br><strong>Step 2:</strong> Nearest thousand: 4,987 rounds up to 5,000.<br><strong>Answer:</strong> 5,000 and 5,000.</p>"
       },
       {
         id: "q8",
         question: "What is the perimeter of a square whose area is 81 square inches?",
         options: ["18 inches", "27 inches", "36 inches", "81 inches"],
         correctAnswer: "36 inches",
+        solution: "<p><strong>Step 1:</strong> Find the side length.<br>√81 = 9 inches.<br><strong>Step 2:</strong> Multiply side by 4.<br>9 × 4 = 36 inches.<br><strong>Answer:</strong> 36 inches.</p>"
       },
       {
         id: "q9",
         question: "Jenny read <sup>1</sup>&frasl;<sub>3</sub> of her book on Monday, <sup>1</sup>&frasl;<sub>4</sub> on Tuesday, and <sup>1</sup>&frasl;<sub>6</sub> on Wednesday. What fraction of the book has she read in total? Has she finished the book?",
         options: ["Yes, 1 whole", "No, 3/4", "No, 2/3", "Yes, 7/6"],
         correctAnswer: "No, 3/4",
+        solution: "<p><strong>Step 1:</strong> Find a common denominator (12).<br>1/3 = 4/12, 1/4 = 3/12, 1/6 = 2/12.<br><strong>Step 2:</strong> Add them.<br>4/12 + 3/12 + 2/12 = 9/12 = 3/4.<br><strong>Step 3:</strong> 3/4 is less than 1, so she has not finished.<br><strong>Answer:</strong> No, 3/4.</p>"
       },
       {
         id: "q10",
         question: "Fill in the missing number: 6 × ___ = (3 × 4) + (1 × 6)",
         options: ["4", "2", "3", "6"],
         correctAnswer: "3",
+        solution: "<p><strong>Step 1:</strong> Simplify the right side.<br>(3 × 4) + (1 × 6) = 12 + 6 = 18.<br><strong>Step 2:</strong> Solve for the blank.<br>6 × ___ = 18 → ___ = 3.<br><strong>Answer:</strong> 3.</p>"
       },
       {
         id: "q11",
@@ -591,7 +633,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         options: ["He is a lion in battle.", "She runs fast.", "He was as quiet as a mouse.", "They walked together."],
         correctAnswer: "He was as quiet as a mouse.",
       },
-       {
+      {
         id: "q13",
         question: "Why is it important to use evidence from a text?",
         options: ["To copy the story", "To guess the theme", "To support your answers with proof", "To make it longer"],
@@ -649,60 +691,70 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         question: "What is <sup>3</sup>&frasl;<sub>5</sub> of 45?",
         options: ["27", "15", "18", "30"],
         correctAnswer: "27",
+        solution: "<p><strong>Step 1:</strong> Multiply 45 by 3.<br>45 × 3 = 135.<br><strong>Step 2:</strong> Divide by 5.<br>135 ÷ 5 = 27.<br><strong>Answer:</strong> 27.</p>"
       },
       {
         id: "q2",
         question: "A bag holds 3.75 pounds of flour. How many pounds are in 4 such bags?",
         options: ["15", "14.25", "12.5", "13.5"],
         correctAnswer: "15",
+        solution: "<p><strong>Step 1:</strong> Multiply weight per bag by number of bags.<br>3.75 × 4 = 15.<br><strong>Answer:</strong> 15 pounds.</p>"
       },
       {
         id: "q3",
         question: "What is the volume of a box that is 5 cm long, 3 cm wide, and 4 cm high?",
         options: ["60 cm³", "12 cm³", "20 cm³", "70 cm³"],
         correctAnswer: "60 cm³",
+        solution: "<p><strong>Step 1:</strong> Multiply length × width × height.<br>5 × 3 × 4 = 60 cm³.<br><strong>Answer:</strong> 60 cm³.</p>"
       },
       {
         id: "q4",
         question: "Which of the following numbers is a prime number?",
         options: ["15", "18", "13", "21"],
         correctAnswer: "13",
+        solution: "<p><strong>Step 1:</strong> A prime number has only two factors: 1 and itself.<br><strong>Step 2:</strong> 13 is divisible only by 1 and 13.<br><strong>Answer:</strong> 13.</p>"
       },
       {
         id: "q5",
         question: "What is the product of 234 and 6?",
         options: ["1404", "1344", "1254", "1320"],
         correctAnswer: "1404",
+        solution: "<p><strong>Step 1:</strong> Multiply the numbers.<br>234 × 6 = 1404.<br><strong>Answer:</strong> 1404.</p>"
       },
       {
         id: "q6",
         question: "Which expression is equivalent to (2 × 5) + (3 × 4)?",
         options: ["10 + 12 = 22", "7 × 4 = 28", "2 + 5 + 3 + 4 = 14", "8 × 2 = 16"],
         correctAnswer: "10 + 12 = 22",
+        solution: "<p><strong>Step 1:</strong> Multiply first part.<br>2 × 5 = 10.<br><strong>Step 2:</strong> Multiply second part.<br>3 × 4 = 12.<br><strong>Step 3:</strong> Add them.<br>10 + 12 = 22.<br><strong>Answer:</strong> 10 + 12 = 22.</p>"
       },
       {
         id: "q7",
         question: "Round 7,496 to the nearest thousand.",
         options: ["7000", "7500", "8000", "7400"],
         correctAnswer: "7000",
+        solution: "<p><strong>Step 1:</strong> Look at the hundreds digit (4).<br><strong>Step 2:</strong> Since 4 is less than 5, round down.<br>7,496 → 7,000.<br><strong>Answer:</strong> 7,000.</p>"
       },
       {
         id: "q8",
         question: "A recipe calls for <sup>2</sup>&frasl;<sub>3</sub> cup of sugar. If you want to make 1.5 times the recipe, how much sugar do you need?",
         options: ["1 1/3 cups", "1 1/4 cups", "1 1/2 cups", "1 cup"],
         correctAnswer: "1 cup",
+        solution: "<p><strong>Step 1:</strong> Convert 1.5 to fraction (3/2).<br><strong>Step 2:</strong> Multiply (2/3) × (3/2) = 6/6 = 1.<br><strong>Answer:</strong> 1 cup.</p>"
       },
       {
         id: "q9",
         question: "Which decimal is equal to <sup>3</sup>&frasl;<sub>4</sub>?",
         options: ["0.25", "0.50", "0.75", "1.25"],
         correctAnswer: "0.75",
+        solution: "<p><strong>Step 1:</strong> Divide numerator by denominator.<br>3 ÷ 4 = 0.75.<br><strong>Answer:</strong> 0.75.</p>"
       },
       {
         id: "q10",
         question: "What is the value of the expression: (6 × 8) ÷ 4?",
         options: ["10", "12", "14", "16"],
         correctAnswer: "12",
+        solution: "<p><strong>Step 1:</strong> Multiply inside parentheses.<br>6 × 8 = 48.<br><strong>Step 2:</strong> Divide by 4.<br>48 ÷ 4 = 12.<br><strong>Answer:</strong> 12.</p>"
       },
       {
         id: "q11",
@@ -774,60 +826,70 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         question: "A baker uses 2<sup>3</sup>&frasl;<sub>4</sub> cups of flour for one batch of cookies. How much flour is needed for 3<sup>1</sup>&frasl;<sub>2</sub> batches?",
         options: ["9<sup>5</sup>&frasl;<sub>8</sub> cups", "9<sup>7</sup>&frasl;<sub>8</sub> cups", "8<sup>1</sup>&frasl;<sub>2</sub> cups", "10 cups"],
         correctAnswer: "9<sup>7</sup>&frasl;<sub>8</sub> cups",
+        solution: "<p><strong>Step 1:</strong> Convert to improper fractions.<br>2<sup>3</sup>&frasl;<sub>4</sub> = 11/4, 3<sup>1</sup>&frasl;<sub>2</sub> = 7/2.<br><strong>Step 2:</strong> Multiply.<br>(11/4) × (7/2) = 77/8.<br><strong>Step 3:</strong> Convert to mixed number.<br>77/8 = 9<sup>5</sup>&frasl;<sub>8</sub> cups.<br><strong>Answer:</strong> 9<sup>5</sup>&frasl;<sub>8</sub> cups.</p>"
       },
       {
         id: "q2",
         question: "The expression (2x – 3)(x + 4) is expanded. What is the coefficient of the x-term in the expanded form?",
         options: ["2", "5", "-3", "5x"],
         correctAnswer: "5",
+        solution: "<p><strong>Step 1:</strong> Expand using distributive property.<br>(2x)(x) = 2x², (2x)(4) = 8x, (-3)(x) = -3x, (-3)(4) = -12.<br><strong>Step 2:</strong> Combine like terms.<br>8x - 3x = 5x.<br><strong>Answer:</strong> Coefficient is 5.</p>"
       },
       {
         id: "q3",
         question: "A number is divisible by both 6 and 8. What is the least possible positive number that meets this condition?",
         options: ["24", "48", "12", "36"],
-        correctAnswer: "48",
+        correctAnswer: "24",
+        solution: "<p><strong>Step 1:</strong> Find LCM of 6 and 8.<br>6 = 2 × 3, 8 = 2³.<br><strong>Step 2:</strong> LCM = 2³ × 3 = 24.<br><strong>Step 3:</strong> But 24 is not divisible by both? (Yes it is). Wait — actually, 24 works, but 'least possible' means LCM → 24 is correct</p>"
       },
       {
         id: "q4",
         question: "A regular hexagon has a perimeter of 48 cm. What is the length of one side?",
         options: ["8 cm", "6 cm", "12 cm", "7 cm"],
         correctAnswer: "8 cm",
+        solution: "<p><strong>Step 1:</strong> A hexagon has 6 equal sides.<br><strong>Step 2:</strong> Side length = perimeter ÷ number of sides.<br>48 ÷ 6 = 8 cm.<br><strong>Answer:</strong> 8 cm.</p>"
       },
       {
         id: "q5",
         question: "Which of the following has the greatest value?",
         options: ["<sup>3</sup>&frasl;<sub>4</sub>", "0.82", "<sup>8</sup>&frasl;<sub>10</sub>", "81%"],
         correctAnswer: "0.82",
+        solution: "<p><strong>Step 1:</strong> Convert all to decimals.<br>3/4 = 0.75, 0.82 stays same, 8/10 = 0.8, 81% = 0.81.<br><strong>Step 2:</strong> Compare: 0.82 is the largest.<br><strong>Answer:</strong> 0.82.</p>"
       },
       {
         id: "q6",
         question: "Solve for x in the equation: <sup>2</sup>&frasl;<sub>3</sub>x - 5 = 7.",
         options: ["15", "18", "12", "9"],
         correctAnswer: "18",
+        solution: "<p><strong>Step 1:</strong> Add 5 to both sides.<br>(2/3)x = 12.<br><strong>Step 2:</strong> Multiply by 3/2.<br>x = 12 × (3/2) = 18.<br><strong>Answer:</strong> 18.</p>"
       },
       {
         id: "q7",
         question: "A box contains 3 red, 4 blue, and 5 green marbles. If one marble is randomly selected, what is the probability it is not green?",
         options: ["<sup>3</sup>&frasl;<sub>4</sub>", "<sup>7</sup>&frasl;<sub>12</sub>", "<sup>5</sup>&frasl;<sub>12</sub>", "<sup>1</sup>&frasl;<sub>4</sub>"],
-        correctAnswer: "<sup>3</sup>&frasl;<sub>4</sub>",
+        correctAnswer: "<sup>7</sup>&frasl;<sub>12</sub>",
+        solution: "<p><strong>Step 1:</strong> Total marbles = 3 + 4 + 5 = 12.<br><strong>Step 2:</strong> Not green = red + blue = 3 + 4 = 7.<br><strong>Step 3:</strong> Probability = 7/12 ≈ 0.583</p>"
       },
       {
         id: "q8",
         question: "The equation y = 5x + 2 represents a pattern. What is the value of y when x = –3?",
         options: ["-13", "-15", "-12", "-17"],
         correctAnswer: "-13",
+        solution: "<p><strong>Step 1:</strong> Substitute x = -3.<br>y = 5(-3) + 2 = -15 + 2 = -13.<br><strong>Answer:</strong> -13.</p>"
       },
       {
         id: "q9",
         question: "A store is offering a 25% discount on an item that costs $84. What is the sale price?",
         options: ["$63.00", "$62.50", "$65.00", "$67.00"],
         correctAnswer: "$63.00",
+        solution: "<p><strong>Step 1:</strong> Find 25% of $84.<br>0.25 × 84 = 21.<br><strong>Step 2:</strong> Subtract from original price.<br>84 - 21 = 63.<br><strong>Answer:</strong> $63.00.</p>"
       },
       {
         id: "q10",
         question: "If a triangle has side lengths of 7 cm, 24 cm, and 25 cm, is it a right triangle?",
         options: ["Yes, because 7² + 24² = 25²", "No, because 7 + 24 < 25", "No, because 24² + 25² ≠ 7²", "Yes, because it's isosceles"],
         correctAnswer: "Yes, because 7² + 24² = 25²",
+        solution: "<p><strong>Step 1:</strong> Check Pythagoras.<br>7² + 24² = 49 + 576 = 625.<br><strong>Step 2:</strong> 25² = 625.<br><strong>Step 3:</strong> They match, so it’s a right triangle.<br><strong>Answer:</strong> Yes, because 7² + 24² = 25².</p>"
       },
       {
         id: "q11",
@@ -892,7 +954,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
 
     ],
   },
-   {
+  {
     grade: "7th-grade",
     questions: [
       {
@@ -900,60 +962,70 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751552188/Screenshot_2025-07-03_151607_vht1lb.png",
         options: ["6", "5", "4", "2"],
         correctAnswer: "6",
+        solution: "<p><strong>Step 1:</strong> Start with the equation:<br>(3x + 2) / 5 = 4.<br><strong>Step 2:</strong> Multiply both sides by 5:<br>3x + 2 = 20.<br><strong>Step 3:</strong> Subtract 2 from both sides:<br>3x = 18.<br><strong>Step 4:</strong> Divide by 3:<br>x = 6.<br><strong>Answer:</strong> 6.</p>"
       },
       {
         id: "q2",
         question: "A jacket originally costs $80. It is marked up by 30%, then discounted by 20%. What is the final price?",
         options: ["$76.80", "$83.20", "$96.00", "$84.00"],
         correctAnswer: "$83.20",
+        solution: "<p><strong>Step 1:</strong> Markup 30%:<br>80 × 1.3 = $104.<br><strong>Step 2:</strong> Apply 20% discount:<br>104 × 0.8 = $83.20.<br><strong>Answer:</strong> $83.20.</p>"
       },
       {
         id: "q3",
         question: "The probability of spinning a red section on a spinner is <sup>2</sup>&frasl;<sub>5</sub>. What is the probability of not spinning red after two independent spins?",
         options: ["<sup>3</sup>&frasl;<sub>5</sub>", "<sup>9</sup>&frasl;<sub>25</sub>", "<sup>6</sup>&frasl;<sub>25</sub>", "<sup>12</sup>&frasl;<sub>25</sub>"],
         correctAnswer: "<sup>9</sup>&frasl;<sub>25</sub>",
+        solution: "<p><strong>Step 1:</strong> Probability of not red = 1 - 2/5 = 3/5.<br><strong>Step 2:</strong> For two spins:<br>(3/5) × (3/5) = 9/25.<br><strong>Answer:</strong> <sup>9</sup>&frasl;<sub>25</sub>.</p>"
       },
       {
         id: "q4",
         question: "Simplify the expression -4<sup>2</sup> + 3 × (2 - 7)",
         options: ["-31", "-29", "-25", "-19"],
         correctAnswer: "-31",
+        solution: "<p><strong>Step 1:</strong> -4<sup>2</sup> means -(4 × 4) = -16.<br><strong>Step 2:</strong> (2 - 7) = -5.<br><strong>Step 3:</strong> 3 × (-5) = -15.<br><strong>Step 4:</strong> -16 + (-15) = -31.<br><strong>Answer:</strong> -31.</p>"
       },
       {
         id: "q5",
         question: "The dimensions of a rectangular prism are doubled. By what factor does the volume increase?",
         options: ["2", "4", "6", "8"],
         correctAnswer: "8",
+        solution: "<p><strong>Step 1:</strong> Volume formula: length × width × height.<br><strong>Step 2:</strong> Doubling each dimension multiplies volume by 2 × 2 × 2 = 8.<br><strong>Answer:</strong> 8.</p>"
       },
       {
         id: "q6",
         question: "What is the percent error if a student estimates a value to be 180, but the actual value is 200?",
         options: ["10%", "15%", "20%", "25%"],
         correctAnswer: "10%",
+        solution: "<p><strong>Step 1:</strong> Difference = |200 - 180| = 20.<br><strong>Step 2:</strong> Percent error = (20 / 200) × 100% = 10%.<br><strong>Answer:</strong> 10%.</p>"
       },
       {
         id: "q7",
         question: "Which of the following is irrational?",
         options: ["&radic;81", "<sup>16</sup>&frasl;<sub>4</sub>", "π", "0.75"],
         correctAnswer: "π",
+        solution: "<p><strong>Step 1:</strong> &radic;81 = 9 (rational), 16/4 = 4 (rational), 0.75 = 3/4 (rational).<br><strong>Step 2:</strong> π cannot be expressed as a fraction — irrational.<br><strong>Answer:</strong> π.</p>"
       },
       {
         id: "q8",
         question: "A triangle has two angles measuring 35° and 75°. What is the measure of the third angle?",
         options: ["65°", "70°", "80°", "85°"],
         correctAnswer: "70°",
+        solution: "<p><strong>Step 1:</strong> Sum of angles in a triangle = 180°.<br><strong>Step 2:</strong> Third angle = 180 - (35 + 75) = 70°.<br><strong>Answer:</strong> 70°.</p>"
       },
       {
         id: "q9",
         question: "Convert 3.61 into a fraction in simplest form.",
         options: ["<sup>361</sup>&frasl;<sub>100</sub>", "<sup>325</sup>&frasl;<sub>90</sub>", "<sup>358</sup>&frasl;<sub>99</sub>", "<sup>356</sup>&frasl;<sub>99</sub>"],
         correctAnswer: "<sup>361</sup>&frasl;<sub>100</sub>",
+        solution: "<p><strong>Step 1:</strong> 3.61 = 361/100.<br><strong>Step 2:</strong> 361 and 100 have no common factor except 1.<br><strong>Answer:</strong> <sup>361</sup>&frasl;<sub>100</sub>.</p>"
       },
       {
         id: "q10",
         question: "A car travels 160 miles in 2 hours 40 minutes. What is its average speed in miles per hour?",
         options: ["60 mph", "64 mph", "65 mph", "66 mph"],
         correctAnswer: "60 mph",
+        solution: "<p><strong>Step 1:</strong> Convert time to hours: 2 h 40 m = 2 + 40/60 = 2.666... h.<br><strong>Step 2:</strong> Speed = 160 ÷ 2.666... ≈ 60 mph.<br><strong>Answer:</strong> 60 mph.</p>"
       },
       {
         id: "q11",
@@ -982,7 +1054,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       {
         id: "q15",
         question: "What is the effect of first-person point of view in a narrative?",
-        options: ["It allows the reader to know everything about all characters.", "It gives a limited and personal view of events.", "It removes all emotional connection.",  "It uses the pronouns “he” and “she” to tell the story."],
+        options: ["It allows the reader to know everything about all characters.", "It gives a limited and personal view of events.", "It removes all emotional connection.", "It uses the pronouns “he” and “she” to tell the story."],
         correctAnswer: "It gives a limited and personal view of events.",
       },
       {
@@ -1017,68 +1089,78 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       },
     ],
   },
-   {
+  {
     grade: "8th-grade",
     questions: [
       {
         id: "q1",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751552865/Screenshot_2025-07-03_152729_oh10fh.png",
-        options: ["7", "6", "8", "5"],
-        correctAnswer: "7",
+        question: "<img src='https://res.cloudinary.com/dhoecxgs7/image/upload/v1751552865/Screenshot_2025-07-03_152729_oh10fh.png' alt='Solve for x' />",
+        options: ["37", "26", "38", "35"],
+        correctAnswer: "38",
+        solution: "<p><strong>Step 1:</strong> Start with the equation:<br>(2(x - 3)) / 5 = (x + 4) / 3.<br><strong>Step 2:</strong> Cross-multiply:<br>3 × 2(x - 3) = 5(x + 4).<br><strong>Step 3:</strong> Expand both sides:<br>6x - 18 = 5x + 20.<br><strong>Step 4:</strong> Subtract 5x from both sides:<br>x - 18 = 20.<br><strong>Step 5:</strong> Add 18 to both sides:<br>x = 20 + 18 <br> x = 38.<br><strong>Step 6:</strong> Final answer: x = 38.</p>"
       },
       {
         id: "q2",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751553086/Screenshot_2025-07-03_153109_vvs0zy.png",
+        question: "<img src='https://res.cloudinary.com/dhoecxgs7/image/upload/v1751553086/Screenshot_2025-07-03_153109_vvs0zy.png' alt='Coordinate question' />",
         options: ["(1, 5)", "(2, 7)", "(3, 9)", "(1, 4)"],
         correctAnswer: "(1, 5)",
+        solution: "<p><strong>Step 1:</strong> Since both equal y, set them equal: 2x + 3 = -x + 6<br><strong>Step 2:</strong> Combine like terms: 2x + x = 6 - 3 ⇒ 3x = 3<br><strong>Step 3:</strong> Solve for x: x = 3/3 = 1<br><strong>Step 4:</strong> Substitute x into y = 2x + 3: y = 2(1) + 3 = 5 (also y = -1 + 6 = 5)<br><strong>Step 5:</strong> Final answer: (x, y) = (1, 5)</p>"
       },
       {
         id: "q3",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751553357/Screenshot_2025-07-03_153543_spyqlm.png",
+        question: "<img src='https://res.cloudinary.com/dhoecxgs7/image/upload/v1751553357/Screenshot_2025-07-03_153543_spyqlm.png' alt='Exponent question' />",
         options: ["16", "-16", "<sup>1</sup>&frasl;<sub>16</sub>", "<sup>1</sup>&frasl;<sub>8</sub>"],
         correctAnswer: "<sup>1</sup>&frasl;<sub>16</sub>",
+        solution: "<p><strong>Step 1:</strong> Apply negative exponent rule: a<sup>-n</sup> = 1/a<sup>n</sup>.<br><strong>Step 2:</strong> 4<sup>-2</sup> = 1 / 4<sup>2</sup> = 1/16 <br><strong>Answer:</strong> <sup>1</sup>&frasl;<sub>16</sub>.</p>"
       },
       {
         id: "q4",
         question: "What is the distance between the points A(–3, 2) and B(4, –2)?",
         options: ["6", "7", "&radic;65", "&radic;49"],
         correctAnswer: "&radic;65",
+        solution: "<p><strong>Step 1:</strong> Use distance formula: √[(x₂ - x₁)² + (y₂ - y₁)²].<br><strong>Step 2:</strong> Difference in x: 4 - (-3) = 7.<br>Difference in y: -2 - 2 = -4.<br><strong>Step 3:</strong> √(7² + (-4)²) = √(49 + 16) = √65.<br><strong>Answer:</strong> &radic;65.</p>"
       },
       {
         id: "q5",
         question: "A cylinder has a height of 10 cm and a radius of 3 cm. What is the volume? (Use π ≈ 3.14)",
         options: ["282.6 cm³", "94.2 cm³", "314.0 cm³", "188.4 cm³"],
         correctAnswer: "282.6 cm³",
+        solution: "<p><strong>Step 1:</strong> Volume formula: V = πr²h.<br><strong>Step 2:</strong> r = 3, h = 10 → V = 3.14 × 9 × 10 = 282.6 cm³.<br><strong>Answer:</strong> 282.6 cm³.</p>"
       },
       {
         id: "q6",
         question: "Simplify the expression: 3x² – 2x + 5x² – 4 + 6x",
         options: ["8x² + 4x – 4", "8x² + 4x + 4", "8x² + 6x – 4", "8x² + 6x + 4"],
-        correctAnswer: "8x² + 6x – 4",
+        correctAnswer: "8x² + 4x – 4",
+        solution: "<p><strong>Step 1:</strong> Combine like terms: 3x² + 5x² = 8x².<br><strong>Step 2:</strong> -2x + 6x = 4x  — <br> this would give 8x² + 4x, <br><strong>Step 3:</strong> Add the constant which is -4  we have <br> <strong>Answer:</strong> 8x² + 4x - 4 </p>"
       },
       {
         id: "q7",
         question: "Which number is irrational?",
         options: ["<sup>4</sup>&frasl;<sub>7</sub>", "&radic;36", "&radic;50", "3.25"],
         correctAnswer: "&radic;50",
+        solution: "<p><strong>Step 1:</strong> √36 = 6 (rational).<br>4/7 (rational), 3.25 = 13/4 (rational).<br><strong>Step 2:</strong> √50 = √(25 × 2) = 5√2, irrational.<br><strong>Answer:</strong> &radic;50.</p>"
       },
       {
         id: "q8",
         question: "The function f(x) = 2x² – 3x + 1. What is the value of f(–2)?",
         options: ["15", "17", "9", "11"],
         correctAnswer: "15",
+        solution: "<p><strong>Step 1:</strong> Substitute x = -2:<br>f(-2) = 2(-2)<sup>2</sup> - 3(-2) + 1.<br><strong>Step 2:</strong> = 8 + 6 + 1 = 15.<br><strong>Answer:</strong> 15.</p>"
       },
       {
         id: "q9",
         question: "Which equation has no solution?",
         options: ["2x + 5 = 2x + 5", "4x – 1 = 4x + 3", "x – 2 = 2x – 2", "3x + 6 = 3(x + 2)"],
         correctAnswer: "4x – 1 = 4x + 3",
+        solution: "<p><strong>Step 1:</strong> Subtract 4x from both sides:<br>-1 = 3 → false.<br><strong>Step 2:</strong> A false statement means no solution.<br><strong>Answer:</strong> 4x – 1 = 4x + 3.</p>"
       },
       {
         id: "q10",
         question: "The sum of two numbers is 20. Their difference is 4. What is the product of the two numbers?",
         options: ["96", "99", "104", "100"],
         correctAnswer: "96",
+        solution: "<p><strong>Step 1:</strong> Let the numbers be a and b.<br>a + b = 20 -----(1), <br> a - b = 4 --------(2)<br><strong>Step 2:</strong> Add the equations: 2a = 24 → a = 12.<br> Substitute a = 12 in equation (1) <br> <strong>Step 3:</strong> b = 20 - 12 = 8.<br><strong>Step 4:</strong> Product = 12 × 8 = 96.<br><strong>Answer:</strong> 96.</p>"
       },
       {
         id: "q11",
@@ -1107,7 +1189,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       {
         id: "q15",
         question: "Which of the following best explains a counterargument in argumentative writing?",
-        options: ["A statement that weakens your own claim.", "An opposing viewpoint presented and addressed to strengthen your argument.", "A summary of your conclusion.",  "A rhetorical question meant to distract."],
+        options: ["A statement that weakens your own claim.", "An opposing viewpoint presented and addressed to strengthen your argument.", "A summary of your conclusion.", "A rhetorical question meant to distract."],
         correctAnswer: "An opposing viewpoint presented and addressed to strengthen your argument.",
       },
       {
@@ -1142,7 +1224,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       },
     ],
   },
-   {
+  {
     grade: "9th-grade",
     questions: [
       {
@@ -1150,62 +1232,72 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         question: "Solve the quadratic equation: x² - 6x + 8 = 0",
         options: ["x = 2 or x = 4", "x = -2 or x = -4", "x = 1 or x = 8", "x = 3 or x = 5"],
         correctAnswer: "x = 2 or x = 4",
+        solution: "<p><strong>Step 1:</strong> Factorize: x² - 6x + 8 = 0.<br><strong>Step 2:</strong> Find two numbers whose product is 8 and sum is -6 → -2 and -4.<br><strong>Step 3:</strong> (x - 2)(x - 4) = 0.<br><strong>Step 4:</strong> x - 2 = 0 → x = 2; x - 4 = 0 → x = 4.<br><strong>Answer:</strong> x = 2 or x = 4.</p>"
       },
       {
         id: "q2",
         question: "Which expression is equivalent to (3x - 2)(x + 4)?",
         options: ["3x² + 10x - 8", "3x² + 14x + 8", "3x² - 2x + 8", "3x² + 12x - 8"],
-        correctAnswer: "3x² + 12x - 8",
+        correctAnswer: "3x² + 10x - 8",
+        solution: "<p><strong>Step 1:</strong> Expand using distributive property:<br>3x . x = 3x², 3x × 4 = 12x, -2 × x = -2x, -2 × 4 = -8.<br><strong>Step 2:</strong> Combine like terms: 3x² + (12x - 2x) - 8 = 3x² + 10x - 8."
       },
       {
         id: "q3",
         question: "A line has a slope of 3 and passes through the point (2, -1). What is its equation?",
         options: ["y = 3x - 5", "y = 3x + 5", "y = 3x + 1", "y = 3x - 7"],
-        correctAnswer: "y = 3x - 5",
+        correctAnswer: "y = 3x - 7",
+        solution: "<p><strong>Step 1:</strong> Point-slope form: y - y₁ = m(x - x₁).<br><strong>Step 2:</strong> m = 3, (x₁, y₁) = (2, -1).<br>y - (-1) = 3(x - 2).<br><strong>Step 3:</strong> y + 1 = 3x - 6.<br><strong>Step 4:</strong> y = 3x - 7</p>"
       },
       {
         id: "q4",
         question: "If f(x) = 2x² - 3x + 1, what is f(-2)?",
         options: ["15", "19", "8", "7"],
         correctAnswer: "15",
+        solution: "<p><strong>Step 1:</strong> Substitute x = -2:<br>f(-2) = 2(4) - 3(-2) + 1.<br><strong>Step 2:</strong> 8 + 6 + 1 = 15.<br><strong>Answer:</strong> 15.</p>"
       },
       {
         id: "q5",
         question: "Which system of equations has no solution?",
         options: ["y = 2x + 3 and y = -x + 1", "y = 3x - 1 and y = 3x + 2", " y = x² and y = -x²", "y = x + 1 and y = 2x - 5"],
         correctAnswer: "y = 3x - 1 and y = 3x + 2",
+        solution: "<p><strong>Step 1:</strong> Both lines have the same slope m = 3 but different intercepts (-1 and 2).<br><strong>Step 2:</strong> Parallel lines never intersect → no solution.<br><strong>Answer:</strong> y = 3x - 1 and y = 3x + 2.</p>"
       },
       {
         id: "q6",
         question: "What is the axis of symmetry of the function f(x) = x² - 6x + 5?",
         options: ["x = 3", "x = -3", "x = 2", "x = 1"],
         correctAnswer: "x = 3",
+        solution: "<p><strong>Step 1:</strong> Formula: Axis of symmetry = -b / 2a.<br><strong>Step 2:</strong> a = 1, b = -6 → -(-6) / 2(1) = 6 / 2 = 3.<br><strong>Answer:</strong> x = 3.</p>"
       },
       {
         id: "q7",
         question: "Which inequality represents all real values of x for which the expression √(x - 4) is defined?",
         options: ["x > 4", "x ≤ 4", "x ≥ 4", "x < 4"],
         correctAnswer: "x ≥ 4",
+        solution: "<p><strong>Step 1:</strong> Inside of square root must be ≥ 0: x - 4 ≥ 0.<br><strong>Step 2:</strong> Solve: x ≥ 4.<br><strong>Answer:</strong> x ≥ 4.</p>"
       },
       {
         id: "q8",
         question: "What is the solution to the system: y = x² and y = 2x + 3?",
         options: ["x = 1, x = 3", "x = -1, x = 3", "x = -1, x = -3", "x = 2, x = -1"],
         correctAnswer: "x = -1, x = 3",
+        solution: "<p><strong>Step 1:</strong> Set x² = 2x + 3.<br><strong>Step 2:</strong> x² - 2x - 3 = 0.<br><strong>Step 3:</strong> Factor: (x - 3)(x + 1) = 0.<br><strong>Step 4:</strong> x = 3 or x = -1.<br><strong>Answer:</strong> x = -1, x = 3.</p>"
       },
       {
         id: "q9",
         question: "If a triangle has sides of lengths 6, 8, and 10, what type of triangle is it?",
         options: ["Equilateral", "Isosceles", "Right", "Obtuse"],
         correctAnswer: "Right",
+        solution: "<p><strong>Step 1:</strong> Check Pythagoras: 6² + 8² = 36 + 64 = 100.<br><strong>Step 2:</strong> 10² = 100 → satisfies theorem.<br><strong>Answer:</strong> Right triangle.</p>"
       },
       {
         id: "q10",
         question: "Find the x-intercepts of the graph y = x² - 4x - 5.",
         options: ["x = -5, x = 1", "x = -1, x = 5", "x = -4, x = 5", "x = -5, x = 4"],
-        correctAnswer: "x = -5, x = 1",
+        correctAnswer: "x = -1, x = 5",
+        solution: "<p><strong>Step 1:</strong> Set y = 0 → x² - 4x - 5 = 0.<br><strong>Step 2:</strong> Factor: (x - 5)(x + 1) = 0.<br><strong>Step 3:</strong> x = 5 or x = -1.<br><strong>Answer:</strong> x = -1, x = 5.</p>"
       },
-            {
+      {
         id: "q11",
         question: "Which sentence contains an example of dramatic irony?",
         options: ["The thunderstorm roared above.", "The audience knows Juliet is alive, but Romeo does not.", "The trees whispered secrets.", "The sun rose above the horizon."],
@@ -1232,7 +1324,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       {
         id: "q15",
         question: "What is the primary function of counterclaims in an argumentative essay?",
-        options: ["To discredit the argument", "To present an alternative view", "To support the claim",  "To conclude the argument"],
+        options: ["To discredit the argument", "To present an alternative view", "To support the claim", "To conclude the argument"],
         correctAnswer: "To present an alternative view",
       },
       {
@@ -1267,68 +1359,101 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       },
     ],
   },
-   {
+  {
     grade: "10th-grade",
     questions: [
       {
         id: "q1",
-        question: "What is the solution to the system of equations: 3x - 2y = 7 and 2x + y = 1?",
+        question: "What is the solution to the system of equations: 3x - 2y = 8 and 2x + y = 3?",
         options: ["(1, -1)", "(2, -1)", "(3, 2)", "(4, 1)"],
         correctAnswer: "(2, -1)",
+        solution: `<p>
+<strong>Step 1:</strong> From 2x + y = 3, get y = 3 − 2x.<br>
+<strong>Step 2:</strong> Substitute into 3x − 2y = 8  <br> 3x − 2(3 − 2x) = 8 <br> 3x − 6 + 4x = 8 <br> 7x = 14<br> x = 14/7.<br> x =2.<br>
+<strong>Step 3:</strong> Substitute x = 2 in  y = 3 - 2x <br>
+<strong>Step 4:</strong> y = 3 − 2(2) = 3 - 4 = −1<br>
+<strong>Solution for the system as written:</strong> (2, −1).<br>
+<strong>Answer:</strong> (2, -1).</p>`
       },
       {
         id: "q2",
         question: "What is the discriminant of the quadratic equation 2x² - 4x + 1 = 0?",
         options: ["8", "0", "4", "12"],
         correctAnswer: "8",
+        solution: `<p><strong>Step 1:</strong> For ax² + bx + c, the discriminant is Δ = b² − 4ac.<br>
+<strong>Step 2:</strong> a = 2, b = −4, c = 1 <br> Δ = (−4)² − 4(2)(1) = 16 − 8 = 8.<br>
+<strong>Answer:</strong> 8.</p>`
       },
       {
         id: "q3",
         question: "Which of the following functions represents exponential growth",
         options: ["y = 2x + 3", "y = 3x² - 1", "y = 5<sup>x<sup>", "y = <sup>x</sup>&frasl;<sub>2</sub>"],
         correctAnswer: "y = 5<sup>x<sup>",
+        solution: `<p><strong>Step 1:</strong> Exponential growth has the variable in the exponent and base &gt; 1.<br>
+<strong>Step 2:</strong> y = 5<sup>x</sup> matches this pattern (base 5 &gt; 1).<br>
+<strong>Answer:</strong> y = 5<sup>x</sup>.</p>`
       },
       {
         id: "q4",
         question: "What is the domain of the function f(x) = √(x - 3)?",
         options: ["x ≥ 0", "x ≤ 3", "x > 3", "x ≥ 3"],
         correctAnswer: "x ≥ 3",
+        solution: `<p><strong>Step 1:</strong> The radicand must be non-negative: x − 3 ≥ 0.<br>
+<strong>Step 2:</strong> Therefore x ≥ 3.<br>
+<strong>Answer:</strong> x ≥ 3.</p>`
       },
       {
         id: "q5",
         question: "What is the value of sin(30°)?",
         options: ["0", "1", "1/2", "√3/2"],
         correctAnswer: "1/2",
+        solution: `<p><strong>Step 1:</strong> From special angles, sin(30°) = 1/2.<br>
+<strong>Answer:</strong> 1/2.</p>`
       },
       {
         id: "q6",
         question: "What is the solution to |2x - 1| = 5?",
         options: ["x = 3 or x = -2", "x = 2 or x = -3", "x = 2 or x = -1", "x = 3 or x = 1"],
         correctAnswer: "x = 3 or x = -2",
+        solution: `<p><strong>Step 1:</strong> Solve 2x − 1 = 5 <br> 2x = 6 <br> x = 3.<br>
+<strong>Step 2:</strong> Solve 2x − 1 = −5 <br> 2x = −4 <br> x = −2.<br>
+<strong>Answer:</strong> x = 3 or x = −2.</p>`
       },
       {
         id: "q7",
         question: "Which of the following is a characteristic of a linear function?",
         options: ["Constant rate of change", "Variable exponents", "No y-intercept", "Curved graph"],
         correctAnswer: "Constant rate of change",
+        solution: `<p><strong>Step 1:</strong> Linear functions have the form y = mx + b.<br>
+<strong>Step 2:</strong> Their key feature is a <em>constant</em> rate of change (slope m).<br>
+<strong>Answer:</strong> Constant rate of change.</p>`
       },
       {
         id: "q8",
         question: "The volume of a cylinder is given by V = πr²h. What is the volume when r = 3 and h = 4?",
         options: ["36π", "27π", "12π", "48π"],
         correctAnswer: "36π",
+        solution: `<p><strong>Step 1:</strong> Use V = πr²h.<br>
+<strong>Step 2:</strong> r = 3 <br> r² = 9; <br> h = 4 <br> V = π(9)(4) = 36π.<br>
+<strong>Answer:</strong> 36π.</p>`
       },
       {
         id: "q9",
         question: "What transformation occurs to the graph of y = x² if we graph y = (x - 2)² + 3?",
         options: ["Shift right 2, up 3", "Shift left 2, up 3", "Shift right 2, down 3", "Shift left 2, down 3"],
         correctAnswer: "Shift right 2, up 3",
+        solution: `<p><strong>Step 1:</strong> (x − 2) shifts the graph right by 2.<br>
+<strong>Step 2:</strong> +3 shifts the graph up by 3.<br>
+<strong>Answer:</strong> Shift right 2, up 3.</p>`
       },
       {
         id: "q10",
         question: "A line passes through points (1,2) and (3,6). What is its slope?",
         options: ["1", "2", "3", "4"],
         correctAnswer: "2",
+        solution: `<p><strong>Step 1:</strong> Use slope formula m = (y₂ − y₁)/(x₂ − x₁).<br>
+<strong>Step 2:</strong> m = (6 − 2)/(3 − 1) = 4/2 = 2.<br>
+<strong>Answer:</strong> 2.</p>`
       },
       {
         id: "q11",
@@ -1357,7 +1482,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       {
         id: "q15",
         question: "What does the word 'elated' most likely mean in the sentence: <br> 'She was elated when she heard the good news'? ",
-        options: ["Sad", "Joyful", "Angry",  "Nervous"],
+        options: ["Sad", "Joyful", "Angry", "Nervous"],
         correctAnswer: "Joyful",
       },
       {
@@ -1395,65 +1520,115 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
   {
     grade: "11th-grade",
     questions: [
+
       {
         id: "q1",
         question: "Determine the derivative of the function f(x) = 3x³ − 5x² + 2x − 7.",
         options: ["f'(x) = 9x² − 10x + 2", "f'(x) = 6x − 10 + 2", "f'(x) = 9x² − 5x + 2", "f'(x) = 3x² − 10x + 2"],
-        correctAnswer: "f'(x) = 9x² − 10x + 2"
+        correctAnswer: "f'(x) = 9x² − 10x + 2",
+        solution: "<strong>Step 1:</strong> Differentiate term-by-term:<br>3x³ → 9x²,<br> −5x² → −10x,<br> 2x → 2, <br> constant → 0.<br><strong>Final Answer:</strong> 9x² − 10x + 2"
       },
       {
         id: "q2",
         question: "Solve for x in the exponential equation: 2<sup>(x + 1)</sup> = 16",
         options: ["x = 4", "x = 3", "x = 5", "x = 2"],
-        correctAnswer: "x = 3"
+        correctAnswer: "x = 3",
+        solution: "<strong>Step 1:</strong> Rewrite 16 as 2⁴:<br>2<sup>x+1</sup> = 2⁴ <br> x + 1 = 4 <br> <strong>x = 3</strong>"
       },
       {
         id: "q3",
         question: "Given f(x) = <sup>x − 4</sup>&frasl;<sub>3</sub>, identify the inverse function f⁻¹(x).",
         options: ["f⁻¹(x) = 3x + 4", "f⁻¹(x) = 3x − 4", "f⁻¹(x) = x/3 − 4", "f⁻¹(x) = x/3 + 4"],
-        correctAnswer: "f⁻¹(x) = 3x + 4"
+        correctAnswer: "f⁻¹(x) = 3x + 4",
+        solution: "<strong>Solution:</strong> Let y = (x − 4)/3,<br>  swap x and y <br> x = (y − 4)/3 <br> 3x = y − 4 <br> y = 3x + 4.<br><strong>Inverse:</strong> f⁻¹(x) = 3x + 4"
       },
       {
         id: "q4",
         question: "Solve the system: 2x + 3y = 12 and x − y = 1.",
         options: ["x = 3, y = 1", "x = 2, y = 2", "x = 3, y = 2", "x = 4, y = 1"],
-        correctAnswer: "x = 3, y = 2"
+        correctAnswer: "x = 3, y = 2",
+        solution: "<strong>Step 1:</strong> From x − y = 1 <br> Make x the subject of the formula <br> x = y + 1.<br> <strong>Step 2:</strong> Sub into 2x + 3y = 12 <br> 2(y+1) + 3y = 12 <br> 2y + 2 + 3y = 12 <br> 5y = 10 <br> y = 2.<br><strong>Step 3:</strong> Substitute y = 2 into x = y + 1 <br> x = 2 + 1 = 3.<br><strong>Final Answer:</strong> x = 3, y = 2."
       },
       {
         id: "q5",
         question: "What are the roots of the quadratic equation: x² − 6x + 8 = 0?",
         options: ["x = 2, x = 4", "x = −2, x = −4", "x = 1, x = 8", "x = 3, x = −3"],
-        correctAnswer: "x = 2, x = 4"
+        correctAnswer: "x = 2, x = 4",
+        solution: `<strong>Step 1:</strong> Factorize: x² − 6x + 8 <br>
+        <strong>Step 2:</strong> We find two numbers which when added gives us -6 and multiplied gives +8 <br>
+        <strong>Step 3:</strong> The factors are -2 and -4 <br>
+        <strong>Step 4:</strong> Factorize: (x − 2)(x − 4) = 0 <br>
+        <strong>Step 5:</strong> Set each factor to zero: x − 2 = 0 or x − 4 = 0 <br>
+        <strong>Step 6:</strong> Solve for x: x = 2 or x = 4.<br>
+        <strong>Final Answer:</strong> x = 2 or x = 4.`
       },
       {
         id: "q6",
         question: "If sin(θ) = 3/5 and θ lies in the second quadrant, determine the value of cos(θ).",
         options: ["cos(θ) = −4/5", "cos(θ) = 4/5", "cos(θ) = −3/5", "cos(θ) = 3/5"],
-        correctAnswer: "cos(θ) = −4/5"
+        correctAnswer: "cos(θ) = −4/5",
+        solution: `
+    <strong>Step 1:</strong> Recall cos²θ = 1 − sin²θ <br>
+    1 − <sup>9</sup>&frasl;<sub>25</sub> = <sup>16</sup>&frasl;<sub>25</sub> <br>
+    cosθ = ±<sup>4</sup>&frasl;<sub>5</sub>.<br>
+    In Q2, cos is negative <br>
+    <strong>cos(θ) = −<sup>4</sup>&frasl;<sub>5</sub></strong>.
+  `
       },
+
       {
         id: "q7",
         question: "Identify the domain of the function f(x) = √(2x − 6).",
         options: ["x ≥ 3", "x > 3", "x ≤ 3", "x ≤ −3"],
-        correctAnswer: "x ≥ 3"
+        correctAnswer: "x ≥ 3",
+        solution: `
+        <strong>Step 1:</strong>The value inside the sqrt must be ≥ 0: <br>
+        2x − 6 ≥ 0 <br>
+        <strong>Step 2:</strong> Solve for x: <br>
+        2x ≥ 6 <br>
+        x ≥ 3.<br>
+        <strong>Final Answer:</strong> x ≥ 3.
+          `
       },
       {
         id: "q8",
         question: "Simplify the expression: (2x² − 3x + 5) − (x² + x − 2).",
         options: ["x² − 4x + 7", "x² − 4x + 3", "3x² − 2x + 3", "3x² − 4x + 3"],
-        correctAnswer: "x² − 4x + 3"
+        correctAnswer: "x² − 4x + 7",
+        solution:
+        `
+        <strong>Step 1:</strong> 
+        Distribute the negative sign: <br>
+        (2x² − 3x + 5) − x² − x + 2 <br>
+        <strong>Step 2:</strong> Combine like terms: <br> 
+        (2x² − x²) + (−3x − x) + (5 + 2) <br>
+        <strong>Step 3:</strong>
+        x² − 4x + 7.<br>
+        <strong>Final Answer:</strong> x² − 4x + 7. 
+        `
       },
       {
         id: "q9",
         question: "Which of the following functions represents exponential decay?",
         options: ["f(x) = 2<sup>x</sup>", "f(x) = 3x + 1", "f(x) = 0.5<sup>x</sup>", "f(x) = x²"],
-        correctAnswer: "f(x) = 0.5<sup>x</sup>"
+        correctAnswer: "f(x) = 0.5<sup>x</sup>",
+        solution: "<strong>Step 1:</strong> Exponential decay occurs when 0 < base < 1. <br> Here base = 0.5 <br> Therefore it is an exponential decay."
       },
       {
         id: "q10",
         question: "Determine the equation of a line passing through (2, 5) with slope −3.",
         options: ["y = −3x + 11", "y = 3x + 5", "y = −2x + 3", "y = −3x − 1"],
-        correctAnswer: "y = −3x + 11"
+        correctAnswer: "y = −3x + 11",
+        solution: `
+        <strong>Step 1:</strong> Use point-slope form: y − y₁ = m(x − x₁).<br>
+        <strong>Step 2:</strong> Substitute (x₁, y₁) = (2, 5) and m = −3: <br>
+        y − 5 = −3(x − 2) <br>
+        <strong>Step 3:</strong> Distribute: <br>
+        y − 5 = −3x + 6 <br>
+        <strong>Step 4:</strong> Add 5 to both sides: <br
+        y = −3x + 11.<br>
+        <strong>Final Answer:</strong> y = −3x + 11.
+        `
       },
       {
         id: "q11",

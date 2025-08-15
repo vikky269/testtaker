@@ -19,6 +19,9 @@ export default function ReviewPage() {
   const [selectedQuiz, setSelectedQuiz] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
+  const [showSolutionIndex, setShowSolutionIndex] = useState<number | null>(null);
+
+
   // Determine if user skipped ELA (for Grade 9 or 10)
   const isGrade9Or10 = gradeParam === "9th-grade" || gradeParam === "10th-grade" || gradeParam === "8th-grade" || gradeParam === "7th-grade" || gradeParam === "6th-grade" || gradeParam === "5th-grade" || gradeParam === "4th-grade" || gradeParam === "3rd-grade" || gradeParam === "11th-grade" || gradeParam === "12th-grade" || gradeParam === "2nd-grade" || gradeParam === "1st-grade";
 
@@ -126,14 +129,7 @@ export default function ReviewPage() {
         </p>
       )}
 
-      {/* {isGrade9Or10 && (
-        <p className="text-center text-sm italic text-gray-600">
-          {localStorage.getItem("elaScore") === "0"
-            ? "Only Math section attempted — showing Math Review"
-            : "Showing Full Review"}
-        </p>
-      )} */}
-
+     
 
       {/* Score */}
       <div className="text-center my-4 p-4 bg-blue-100 border border-blue-400 rounded-lg">
@@ -144,6 +140,7 @@ export default function ReviewPage() {
       </div>
 
       {/* Questions Review */}
+
       {selectedQuiz.map((questionData, index) => {
         const selectedAnswer = answers?.[questionData.question];
         const correct = questionData.correctAnswer || questionData.answer;
@@ -161,31 +158,6 @@ export default function ReviewPage() {
             ) : (
               <p className="leading-12 mb-5 text-xl" dangerouslySetInnerHTML={{ __html: questionData.question }}></p>
             )}
-{/* 
-            <ul className="grid grid-cols-2 gap-2 mt-2">
-              {questionData.options.map((option: string, i: number) => {
-                const isCorrect = option === correct;
-                const isSelected = option === selectedAnswer;
-                return (
-                  <li
-                    key={i}
-                    className={`p-2 text-center border rounded-lg ${isCorrect
-                        ? "bg-green-500 text-white"
-                        : isSelected
-                          ? "bg-red-500 text-white"
-                          : "bg-gray-200"
-                      }`}
-                  >
-                    <span
-                    className="text-lg"
-                      dangerouslySetInnerHTML={{
-                        __html: `${option} ${isSelected ? "(Your Answer)" : ""} ${isCorrect ? "✅" : ""}`,
-                      }}
-                    />
-                  </li>
-                );
-              })}
-            </ul> */}
 
 
             <ul className="grid grid-cols-2 gap-2 mt-2">
@@ -198,7 +170,7 @@ export default function ReviewPage() {
                   <li
                     key={i}
                     className={`p-2 text-center border rounded-lg
-          ${isCorrect && noAnswerSelected ? "bg-green-200 text-green-800"
+                     ${isCorrect && noAnswerSelected ? "bg-green-200 text-green-800"
                         : isCorrect ? "bg-green-500 text-white"
                           : isSelected ? "bg-red-500 text-white"
                             : "bg-gray-200"}`}
@@ -216,18 +188,41 @@ export default function ReviewPage() {
               })}
             </ul>
 
-{/* Show a message if no answer was selected */}
+            {/* Show a message if no answer was selected */}
             {!selectedAnswer && (
               <p className="mt-2 text-sm text-yellow-700 bg-yellow-100 p-2 rounded">
                 ⚠️ You did not select an answer for this question.
               </p>
             )}
+            <button
+              className={`mt-5 cursor-pointer px-4 py-2 rounded-lg font-semibold shadow-md transition-colors duration-200
+    ${showSolutionIndex === index
+                  ? "bg-green-600 hover:bg-green-700 text-white"
+                  : "bg-green-400 hover:bg-green-500 text-white"
+                }`}
+              onClick={() =>
+                setShowSolutionIndex(showSolutionIndex === index ? null : index)
+              }
+            >
+              {showSolutionIndex === index ? "Hide Solution" : "Show Solution"}
+            </button>
 
+            {showSolutionIndex === index && (
+              <div className="mt-4 p-3 bg-gray-100 border border-gray-300 rounded">
+                <h3 className="font-semibold mb-2">Solution:</h3>
+                <p dangerouslySetInnerHTML={{ __html: questionData.solution }} className="leading-9"></p>
+              </div>
+            )}
 
           </div>
         );
+
+
       })}
 
+
+
+      {/* Finish Review Button */}
       <div className="flex justify-center items-center">
         <button
           className="mt-4 p-2 bg-green-600 cursor-pointer text-white rounded-lg"

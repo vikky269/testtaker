@@ -64,6 +64,10 @@ export default function Quiz() {
     }
   }, [testid, gradeParam, setAnswers]);
 
+
+  localStorage.setItem(`quiz-${testid}-start-time`, Date.now().toString());
+  
+
   
   useEffect(() => {
   const savedState = localStorage.getItem("quizState");

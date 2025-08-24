@@ -121,7 +121,7 @@ export default function Quiz() {
  
   // Determine what quiz type we're dealing with
   const isSat = ['sat', 'ssat'].includes(normalizedGrade);
-  const isGrade9Or10 = normalizedGrade === "9th-grade" || normalizedGrade === "10th-grade"|| normalizedGrade === "7th-grade" || normalizedGrade === "8th-grade" || normalizedGrade === "6th-grade" || normalizedGrade === "5th-grade" || normalizedGrade === "4th-grade" || normalizedGrade === "3rd-grade" || normalizedGrade === "11th-grade" || normalizedGrade === "12th-grade" || normalizedGrade === "2nd-grade" || normalizedGrade === "1st-grade";
+  const isGrade9Or10 = normalizedGrade === "9th-grade" || normalizedGrade === "10th-grade"|| normalizedGrade === "7th-grade" || normalizedGrade === "8th-grade" || normalizedGrade === "6th-grade" || normalizedGrade === "5th-grade" || normalizedGrade === "4th-grade" || normalizedGrade === "3rd-grade" || normalizedGrade === "11th-grade" || normalizedGrade === "12th-grade" || normalizedGrade === "2nd-grade" || normalizedGrade === "1st-grade" || normalizedGrade === "pre-k" || normalizedGrade === "kindergarten";
 
   // Slice up questions for SAT
   const readingQuestions = isSat ? quizQuestions.slice(0, 10) : [];
@@ -238,42 +238,6 @@ export default function Quiz() {
   };
 
 
-// const calculateScore = () => {
-//   const isGrade9Or10 = gradeParam === "grade9" || gradeParam === "grade10";
-
-//   if (!isGrade9Or10) {
-//     // For other grades, return combined score
-//     const total = quizQuestions.length;
-//     const correct = quizQuestions.filter(
-//       (q) => answers[q.question] === (q.correctAnswer || q.answer)
-//     ).length;
-//     return { combined: ((correct / total) * 100).toFixed(2) };
-//   }
-
-//   const mathQuestions = quizQuestions.slice(0, 10);
-//   const elaQuestions = quizQuestions.slice(10);
-
-//   const mathCorrect = mathQuestions.filter(
-//     (q) => answers[q.question] === (q.correctAnswer || q.answer)
-//   ).length;
-
-//   const elaCorrect = elaQuestions.filter(
-//     (q) => answers[q.question] === (q.correctAnswer || q.answer)
-//   ).length;
-
-//   const mathScore = ((mathCorrect / mathQuestions.length) * 100).toFixed(2);
-//   const elaAnswered = elaQuestions.some((q) => answers[q.question]);
-//   const elaScore = elaAnswered
-//     ? ((elaCorrect / elaQuestions.length) * 100).toFixed(2)
-//     : "0.00";
-
-//   return {
-//     mathScore,
-//     elaScore,
-//   };
-// };
-
-
 const calculateScore = () => {
   const isGrade9Or10 = gradeParam === "grade9" || gradeParam === "grade10";
 
@@ -358,33 +322,6 @@ const calculateSectionScore = (section: "math" | "ela") => {
 
  
 
-  // const handleReview = () => {
-  //   const url = new URLSearchParams();
-
-  //   const isGrade9Or10 = gradeParam === "9" || gradeParam === "10";
-
-  //   if (isGrade9Or10) {
-  //     const mathScore = calculateSectionScore("math");
-  //     const elaScore = calculateSectionScore("ela");
-  //     url.append("mathScore", mathScore.toString());
-  //     url.append("elaScore", elaScore.toString());
-  //   }
-
-  //   if (testid === "state-test" && stateParam && gradeParam) {
-  //     url.append("state", stateParam);
-  //     url.append("grade", gradeParam);
-  //     router.push(`/quiz/${testid}/review?${url.toString()}`);
-  //   } else if (testid === "quiz-assessment" && gradeParam) {
-  //     url.append("grade", gradeParam);
-  //     router.push(`/quiz/${testid}/review?${url.toString()}`);
-  //   } else {
-  //     router.push(`/quiz/${testid}/review?${url.toString()}`);
-  //   }
-  // };
-
-
-
-
   const handleReview = () => {
     console.log("Handling review for testid:", testid);
   const url = new URLSearchParams();
@@ -405,7 +342,7 @@ const calculateSectionScore = (section: "math" | "ela") => {
  // const isGrade9Or10 = gradeParam === "grade9" || gradeParam === "grade10";
 
   const isGrade9Or10 =
-    gradeParam === "9th-grade" || gradeParam === "10th-grade" ||  gradeParam === "8th-grade" || gradeParam === "7th-grade" || gradeParam === "6th-grade" || gradeParam === "5th-grade" || gradeParam === "4th-grade" || gradeParam === "3rd-grade" || gradeParam === "11th-grade" || gradeParam === "12th-grade" || gradeParam === "2nd-grade" || gradeParam === "1st-grade";
+    gradeParam === "9th-grade" || gradeParam === "10th-grade" ||  gradeParam === "8th-grade" || gradeParam === "7th-grade" || gradeParam === "6th-grade" || gradeParam === "5th-grade" || gradeParam === "4th-grade" || gradeParam === "3rd-grade" || gradeParam === "11th-grade" || gradeParam === "12th-grade" || gradeParam === "2nd-grade" || gradeParam === "1st-grade"|| gradeParam === "pre-k" || gradeParam === "kindergarten";
 
     console.log("isGrade9Or10:", isGrade9Or10);
 

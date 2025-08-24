@@ -157,7 +157,7 @@ import autoTable from "jspdf-autotable";
 
      // Report title below the logo
      doc.setFontSize(18);
-     doc.text("SmartMathz Enrollment Pre-Assessment Report", 105, 40,  { align: "center" })
+     doc.text("SmartMathz Evaluation Assessment Report", 105, 40,  { align: "center" })
 
      // === STUDENT INFORMATION TABLE ===
      const studentInfo: any[] = [

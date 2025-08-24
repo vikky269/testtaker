@@ -74,6 +74,76 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751556244/Picture3_x1kdnp.png",
         options: ["6", "4", "2", "24"],
         correctAnswer: "6",
+      },
+      {
+        id: "q11",
+        question: "What letter comes after A?",
+        options: ["B", "C", "D"],
+        correctAnswer: "B",
+        solution: "The alphabet goes A, B, C, D… so the letter after A is B."
+      },
+      {
+        id: "q12",
+        question: "Which word rhymes with cat?",
+        options: ["Dog", "Hat", "Bird"],
+        correctAnswer: "Hat",
+        solution: "Cat and hat sound alike at the end, so they rhyme."
+      },
+      {
+        id: "q13",
+        question: "What sound does the letter S make?",
+        options: ["/mmm/", "/sss/", "/buh/"],
+        correctAnswer: "/sss/",
+        solution: "The letter S makes a 'sss' sound, like in 'sun' or 'snake'."
+      },
+      {
+        id: "q14",
+        question: "Which of these is a fruit?",
+        options: ["Carrot", "Apple", "Bread"],
+        correctAnswer: "Apple",
+        solution: "Apple is a fruit, while carrot is a vegetable and bread is not a fruit."
+      },
+      {
+        id: "q15",
+        question: "Which picture shows something you can read?",
+        options: ["Book", "Ball", "Shoe"],
+        correctAnswer: "Book",
+        solution: "We read books because they have words and stories inside."
+      },
+      {
+        id: "q16",
+        question: "What is the opposite of big?",
+        options: ["Small", "Tall", "Long"],
+        correctAnswer: "Small",
+        solution: "The opposite of big is small."
+      },
+      {
+        id: "q17",
+        question: "Finish the sentence: 'The sun is in the ___.",
+        options: ["Sky", "Ocean", "House"],
+        correctAnswer: "Sky",
+        solution: "The sun is found in the sky, not in the ocean or house."
+      },
+      {
+        id: "q18",
+        question: "Which word starts with the same sound as ball?",
+        options: ["Dog", "Bat", "Cat"],
+        correctAnswer: "Bat",
+        solution: "Ball and bat both start with the /b/ sound."
+      },
+      {
+        id: "q19",
+        question: "Point to the word that means happy.",
+        options: ["Sad", "Glad", "Mad"],
+        correctAnswer: "Glad",
+        solution: "Glad means happy, while sad means unhappy and mad means angry."
+      },
+      {
+        id: "q20",
+        question: "What do we do with a pencil?",
+        options: ["Eat it", "Draw or write", "Throw it"],
+        correctAnswer: "Draw or write",
+        solution: "We use a pencil to draw or write, not to eat or throw."
       }
     ],
   },
@@ -139,7 +209,78 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         question: "What number is missing?  (Sequence: 8, 9, __, 11, 12)",
         options: ["7", "9", "10", "9.5"],
         correctAnswer: "10",
+      },
+      {
+        id: "q11",
+        question: "Which word is spelled correctly?",
+        options: ["Kat", "Cat", "Cet"],
+        correctAnswer: "Cat",
+        solution: "Cat is the correct spelling; 'Kat' and 'Cet' are spelled incorrectly."
+      },
+      {
+        id: "q12",
+        question: "Which word rhymes with tree?",
+        options: ["Bee", "Top", "Book"],
+        correctAnswer: "Bee",
+        solution: "Tree and bee sound alike at the end, so they rhyme."
+      },
+      {
+        id: "q13",
+        question: "What is the plural of dog?",
+        options: ["Doges", "Dogs", "Dogz"],
+        correctAnswer: "Dogs",
+        solution: "The plural of dog is dogs; we just add 's'."
+      },
+      {
+        id: "q14",
+        question: "Fill in the blank: 'We like to play in the ___.'",
+        options: ["Park", "Spoon", "Chair"],
+        correctAnswer: "Park",
+        solution: "The correct sentence is 'We like to play in the park.'"
+      },
+      {
+        id: "q15",
+        question: "Which word means the opposite of fast?",
+        options: ["Slow", "Run", "Quick"],
+        correctAnswer: "Slow",
+        solution: "Slow is the opposite of fast."
+      },
+      {
+        id: "q16",
+        question: "Which sentence is correct?",
+        options: ["i like pizza.", "I Like pizza.", "I like pizza."],
+        correctAnswer: "I like pizza.",
+        solution: "The sentence 'I like pizza.' is correct because it starts with a capital letter and ends with a period."
+      },
+      {
+        id: "q17",
+        question: "Which of these is a question?",
+        options: ["I like candy.", "Do you like candy?", "Candy is sweet."],
+        correctAnswer: "Do you like candy?",
+        solution: "A question ends with a question mark, like 'Do you like candy?'"
+      },
+      {
+        id: "q18",
+        question: "Which word begins with the same sound as fish?",
+        options: ["Fan", "Sun", "Man"],
+        correctAnswer: "Fan",
+        solution: "Fish and fan both start with the /f/ sound."
+      },
+      {
+        id: "q19",
+        question: "Which word is a verb (an action word)?",
+        options: ["Jump", "Table", "Book"],
+        correctAnswer: "Jump",
+        solution: "Jump is an action word; table and book are nouns."
+      },
+      {
+        id: "q20",
+        question: "Read this short passage: 'Tom has a red ball. He likes to play with it in the yard.' What color is Tom’s ball?",
+        options: ["Blue", "Red", "Green"],
+        correctAnswer: "Red",
+        solution: "The passage says 'Tom has a red ball,' so the ball is red."
       }
+
     ],
   },
   {

@@ -105,7 +105,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       },
       {
         id: "q15",
-        question: "Which picture shows something you can read?",
+        question: "Which of these shows something we can read?",
         options: ["Book", "Ball", "Shoe"],
         correctAnswer: "Book",
         solution: "We read books because they have words and stories inside."

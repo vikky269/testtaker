@@ -12,60 +12,60 @@ const outfit = Outfit({
 });
 
 export default function Navbar() {
-  // const [user, setUser] = useState<any>(null);
-  // const [profile, setProfile] = useState<any>(null);
-  // const [showDropdown, setShowDropdown] = useState(false);
+  const [user, setUser] = useState<any>(null);
+  const [profile, setProfile] = useState<any>(null);
+  const [showDropdown, setShowDropdown] = useState(false);
 
-  // useEffect(() => {
-  //   const getUser = async () => {
-  //     const {
-  //       data: { session },
-  //     } = await supabase.auth.getSession();
-  //     const currentUser = session?.user || null;
-  //     setUser(currentUser);
+  useEffect(() => {
+    const getUser = async () => {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+      const currentUser = session?.user || null;
+      setUser(currentUser);
 
-  //     if (currentUser) {
-  //       const { data: profileData, error } = await supabase
-  //         .from('student_profile')
-  //         .select('full_name, grade')
-  //         .eq('id', currentUser.id)
-  //         .single();
+      if (currentUser) {
+        const { data: profileData, error } = await supabase
+          .from('student_profile')
+          .select('full_name, grade')
+          .eq('id', currentUser.id)
+          .single();
 
-  //       if (!error) {
-  //         setProfile(profileData);
-  //       }
-  //     }
-  //   };
+        if (!error) {
+          setProfile(profileData);
+        }
+      }
+    };
 
-  //   getUser();
+    getUser();
 
-  //   const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
-  //     const currentUser = session?.user || null;
-  //     setUser(currentUser);
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      const currentUser = session?.user || null;
+      setUser(currentUser);
 
-  //     if (currentUser) {
-  //       supabase
-  //         .from('student_profile')
-  //         .select('full_name, grade')
-  //         .eq('id', currentUser.id)
-  //         .single()
-  //         .then(({ data, error }) => {
-  //           if (!error) setProfile(data);
-  //         });
-  //     }
-  //   });
+      if (currentUser) {
+        supabase
+          .from('student_profile')
+          .select('full_name, grade')
+          .eq('id', currentUser.id)
+          .single()
+          .then(({ data, error }) => {
+            if (!error) setProfile(data);
+          });
+      }
+    });
 
-  //   return () => {
-  //     listener.subscription.unsubscribe();
-  //   };
-  // }, []);
+    return () => {
+      listener.subscription.unsubscribe();
+    };
+  }, []);
 
-  // const handleLogout = async () => {
-  //   await supabase.auth.signOut();
-  //   setUser(null);
-  //   setProfile(null);
-  //   window.location.href = '/login';
-  // };
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setUser(null);
+    setProfile(null);
+    window.location.href = '/login';
+  };
 
   return (
     <nav
@@ -85,7 +85,7 @@ export default function Navbar() {
         <Link href="/contact">Contact Us</Link>
       </div>
 
-{/*       
+      
       <div className="relative flex items-center">
         {user ? (
           <div
@@ -100,14 +100,14 @@ export default function Navbar() {
 
             
             {showDropdown && (
-              <div className="absolute right-0 top-12 bg-white shadow-lg rounded p-4 w-52 z-50 border">
+              <div className="absolute right-0 top-12 bg-white shadow-lg rounded py-6 px-4 w-52 z-50 border">
                 <p className="font-semibold text-sm mb-1">{profile?.full_name}</p>
                 <p className="text-sm text-gray-500">{user.email}</p>
-                <p className="text-xs mt-1">Grade: {profile?.grade}</p>
+                {/* <p className="text-xs mt-1">Grade: {profile?.grade}</p> */}
 
                 <button
                   onClick={handleLogout}
-                  className="mt-2 w-full bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600 text-sm"
+                  className="mt-2 w-full bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600 text-sm cursor-pointer"
                 >
                   Logout
                 </button>
@@ -122,7 +122,7 @@ export default function Navbar() {
             Login
           </Link>
         )}
-      </div> */}
+      </div>
     </nav>
   );
 }

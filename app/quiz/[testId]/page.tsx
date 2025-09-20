@@ -18,7 +18,6 @@ export default function Quiz() {
   const gradeParam = searchParams.get("grade");
   const normalizedGrade = gradeParam?.toLowerCase().replace(/\s+/g, "") ?? "";
   const isSATQuiz = ['sat', 'ssat'].includes(normalizedGrade) && testid !== "state-test";
-  //const isGrade9Or10 = ['grade9', 'grade10'].includes(normalizedGrade);
 
 
   const { answers, setAnswers } = useQuiz();
@@ -33,13 +32,16 @@ export default function Quiz() {
 
   const [quizSection, setQuizSection] = useState<'math' | 'ela'>('math');
   const [showGradeModal, setShowGradeModal] = useState(false);
+
+ //NEW STATE MANAGEMENT CODE ADDED HERE FOR TIME TRACKING
+  const [mathStartTime, setMathStartTime] = useState<number | null>(null);
+  const [mathEndTime, setMathEndTime] = useState<number | null>(null);
+  const [elaStartTime, setElaStartTime] = useState<number | null>(null);
+  const [elaEndTime, setElaEndTime] = useState<number | null>(null);
+  const [totalTestStartTime, setTotalTestStartTime] = useState<number | null>(null);
+  const [totalTestEndTime, setTotalTestEndTime] = useState<number | null>(null);
+
   
-
-  // const [selectedQuiz, setSelectedQuiz] = useState<any[]>([]);
-
-
-
-
   const questionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -65,10 +67,7 @@ export default function Quiz() {
   }, [testid, gradeParam, setAnswers]);
 
 
-  localStorage.setItem(`quiz-${testid}-start-time`, Date.now().toString());
-  
-
-  
+ 
   useEffect(() => {
   const savedState = localStorage.getItem("quizState");
   const parsed = savedState ? JSON.parse(savedState) : {};
@@ -118,7 +117,6 @@ export default function Quiz() {
     localStorage.setItem("quizState", JSON.stringify(quizState));
   }, [testid, gradeParam, answers, currentQuestionIndex, submitted, satSection]);
 
- 
   // Determine what quiz type we're dealing with
   const isSat = ['sat', 'ssat'].includes(normalizedGrade);
   const isGrade9Or10 = normalizedGrade === "9th-grade" || normalizedGrade === "10th-grade"|| normalizedGrade === "7th-grade" || normalizedGrade === "8th-grade" || normalizedGrade === "6th-grade" || normalizedGrade === "5th-grade" || normalizedGrade === "4th-grade" || normalizedGrade === "3rd-grade" || normalizedGrade === "11th-grade" || normalizedGrade === "12th-grade" || normalizedGrade === "2nd-grade" || normalizedGrade === "1st-grade" || normalizedGrade === "pre-k" || normalizedGrade === "kindergarten";
@@ -142,9 +140,217 @@ export default function Quiz() {
   const currentQuestion = activeQuestions[currentQuestionIndex];
 
 
-  
+   //FIRST TIME TRACKING USEEFFECT
+   // Initialize test start time when component mounts
 
-  const handleSelect = (question: string, option: string) => {
+
+  // useEffect(() => {
+  //   const savedTimeData = localStorage.getItem("quizTimeData");
+  //   if (savedTimeData) {
+  //     const parsed = JSON.parse(savedTimeData);
+  //     if (parsed.testid === testid && parsed.gradeParam === gradeParam && !parsed.completed) {
+  //       // Restore saved time data
+  //       setMathStartTime(parsed.mathStartTime);
+  //       setMathEndTime(parsed.mathEndTime);
+  //       setElaStartTime(parsed.elaStartTime);
+  //       setElaEndTime(parsed.elaEndTime);
+  //       setTotalTestStartTime(parsed.totalTestStartTime);
+  //       setTotalTestEndTime(parsed.totalTestEndTime);
+  //     } else {
+  //       // New test session
+  //       const now = Date.now();
+  //       setTotalTestStartTime(now);
+  //       if (isGrade9Or10 || isSat) {
+  //         setMathStartTime(now);
+  //       }
+  //     }
+  //   } else {
+  //     // First time starting
+  //     const now = Date.now();
+  //     setTotalTestStartTime(now);
+  //     if (isGrade9Or10 || isSat) {
+  //       setMathStartTime(now);
+  //     }
+  //   }
+  // }, [testid, gradeParam, isGrade9Or10, isSat]);
+
+ useEffect(() => {
+  const savedTimeData = localStorage.getItem("quizTimeData");
+  if (savedTimeData) {
+    const parsed = JSON.parse(savedTimeData);
+    if (parsed.testid === testid && parsed.gradeParam === gradeParam && !parsed.completed) {
+      // Restore saved time data
+      setMathStartTime(parsed.mathStartTime);
+      setMathEndTime(parsed.mathEndTime);
+      setElaStartTime(parsed.elaStartTime);
+      setElaEndTime(parsed.elaEndTime);
+      setTotalTestStartTime(parsed.totalTestStartTime);
+      setTotalTestEndTime(parsed.totalTestEndTime);
+    } else {
+      // New test session
+      const now = Date.now();
+      setTotalTestStartTime(now);
+      if (isGrade9Or10) {
+        setMathStartTime(now);
+      } else if (isSat) {
+        // For SAT, start with reading section
+        setElaStartTime(now);
+      }
+    }
+  } else {
+    // First time starting
+    const now = Date.now();
+    setTotalTestStartTime(now);
+    if (isGrade9Or10) {
+      setMathStartTime(now);
+    } else if (isSat) {
+      // For SAT, start with reading section
+      setElaStartTime(now);
+    }
+  }
+}, [testid, gradeParam, isGrade9Or10, isSat]);
+
+
+//TRACK MATH END TIME AND ELA START TIME
+// Save time data to localStorage
+useEffect(() => {
+  const timeData = {
+    testid,
+    gradeParam,
+    mathStartTime,
+    mathEndTime,
+    elaStartTime,
+    elaEndTime,
+    totalTestStartTime,
+    totalTestEndTime,
+    completed: submitted
+  };
+  localStorage.setItem("quizTimeData", JSON.stringify(timeData));
+}, [testid, gradeParam, mathStartTime, mathEndTime, elaStartTime, elaEndTime, totalTestStartTime, totalTestEndTime, submitted]);
+
+// Add this useEffect to properly initialize math start time
+useEffect(() => {
+  console.log("Checking math timing initialization...", {
+    isGrade9Or10,
+    quizSection,
+    mathStartTime
+  });
+
+  // Initialize math start time when math section begins
+  if (isGrade9Or10 && quizSection === 'math' && mathStartTime === null) {
+    const now = Date.now();
+    console.log("Initializing math start time:", now);
+    setMathStartTime(now);
+    
+    // Also set total test start time if not set
+    if (totalTestStartTime === null) {
+      setTotalTestStartTime(now);
+    }
+  }
+
+  // Initialize ELA start time when ELA section begins  
+  if (isGrade9Or10 && quizSection === 'ela' && elaStartTime === null) {
+    const now = Date.now();
+    console.log("Initializing ELA start time:", now);
+    setElaStartTime(now);
+  }
+}, [isGrade9Or10, quizSection, mathStartTime, elaStartTime, totalTestStartTime]);
+
+//3RD TIME TRACKING USEEFFECT
+// Calculate time durations
+
+// const calculateDurations = () => {
+//   const durations: any = {};
+//   const now = Date.now();
+  
+//  console.log("=== CALCULATE DURATIONS DEBUG ===");
+//   console.log("Current time state:", {
+//     mathStartTime,
+//     mathEndTime,
+//     elaStartTime, 
+//     elaEndTime,
+//     totalTestStartTime,
+//     totalTestEndTime,
+//     isGrade9Or10,
+//     isSat,
+//     quizSection,
+//     satSection
+//   });
+
+//   if (isGrade9Or10) {
+//     // For Grade 9/10: Math and ELA sections
+//     if (mathStartTime) {
+//       const endTime = mathEndTime || now;
+//       durations.mathDuration = Math.round((endTime - mathStartTime) / 1000);
+//     }
+//     if (elaStartTime) {
+//       const endTime = elaEndTime || now;
+//       durations.elaDuration = Math.round((endTime - elaStartTime) / 1000);
+//     }
+//   } else if (isSat) {
+//     // For SAT: Reading and Math sections
+//     if (elaStartTime) {
+//       const endTime = elaEndTime || now;
+//       durations.readingDuration = Math.round((endTime - elaStartTime) / 1000);
+//     }
+//     if (mathStartTime) {
+//       const endTime = mathEndTime || now;
+//       durations.mathDuration = Math.round((endTime - mathStartTime) / 1000);
+//     }
+//     durations.elaDuration = durations.readingDuration;
+//   }
+  
+//   // Calculate total test duration
+//   if (totalTestStartTime) {
+//     const endTime = totalTestEndTime || now;
+//     durations.totalDuration = Math.round((endTime - totalTestStartTime) / 1000);
+//   }
+  
+//   return durations;
+// };
+
+const calculateDurations = () => {
+  const durations: any = {};
+  const now = Date.now();
+  
+  console.log("Calculating durations with:", {
+    mathStartTime, mathEndTime,
+    elaStartTime, elaEndTime,
+    totalTestStartTime, totalTestEndTime
+  });
+
+  // Calculate math duration - handle missing start time
+  if (mathEndTime) {
+    // If we have end time but no start time, estimate start time
+    const startTime = mathStartTime || (mathEndTime - (elaStartTime ? (elaStartTime - (totalTestStartTime ?? 0)) : 600000));
+    durations.mathDuration = Math.round((mathEndTime - startTime) / 1000);
+    console.log("Math duration (estimated):", durations.mathDuration, "seconds");
+  } else if (mathStartTime) {
+    // If we have start time but no end time, use current time
+    durations.mathDuration = Math.round((now - mathStartTime) / 1000);
+    console.log("Math duration (current):", durations.mathDuration, "seconds");
+  }
+
+  // Calculate ELA duration
+  if (elaStartTime) {
+    const endTime = elaEndTime || now;
+    durations.elaDuration = Math.round((endTime - elaStartTime) / 1000);
+    console.log("ELA duration:", durations.elaDuration, "seconds");
+  }
+
+  // Calculate total test duration
+  if (totalTestStartTime) {
+    const endTime = totalTestEndTime || now;
+    durations.totalDuration = Math.round((endTime - totalTestStartTime) / 1000);
+    console.log("Total duration:", durations.totalDuration, "seconds");
+  }
+
+  console.log("Final durations:", durations);
+  return durations;
+};
+
+
+const handleSelect = (question: string, option: string) => {
   const currentAnswer = answers[question];
   if (currentAnswer === option) {
     const updatedAnswers = { ...answers };
@@ -171,33 +377,82 @@ export default function Quiz() {
     }
   };
 
-  const handleSubmit = () => {
-    const unanswered = activeQuestions.filter(q => !answers[q.question]);
-    if (unanswered.length > 0 ) {
-      setUnansweredCount(unanswered.length);
-      setShowConfirmModal(true);
-      return;
+  
+//NEW HANDLE SUBMIT FUNCTION TO HANDLE GRADE 9/10 AND SAT MODALS
+
+
+
+const handleSubmit = () => {
+  const now = Date.now();
+  
+  if (isGrade9Or10) {
+    if (quizSection === 'math' && !mathEndTime) {
+      setMathEndTime(now);
+    } else if (quizSection === 'ela' && !elaEndTime) {
+      setElaEndTime(now);
     }
-    
-    //if its grade 9 or 10, show modal
-    if (isGrade9Or10 && quizSection === 'math') {
-      setShowGradeModal(true);
-      return;
+  } else if (isSat) {
+    // Fixed SAT timing
+    if (satSection === 'reading' && !elaEndTime) {
+      setElaEndTime(now); // End reading section
+    } else if (satSection === 'math' && !mathEndTime) {
+      setMathEndTime(now); // End math section
     }
+  }
+  
+  const unanswered = activeQuestions.filter(q => !answers[q.question]);
+  if (unanswered.length > 0) {
+    setUnansweredCount(unanswered.length);
+    setShowConfirmModal(true);
+    return;
+  }
+  
+  if (isGrade9Or10 && quizSection === 'math') {
+    setShowGradeModal(true);
+    return;
+  }
 
-
-
-    if (isSat && satSection === 'reading') {
-      setShowSatModal(true);
-    } else {
-      finalizeSubmit();
-    }
-  };
-
-  const handleSubmitAfterConfirm = () => {
-    setShowConfirmModal(false); 
+  if (isSat && satSection === 'reading') {
+    setShowSatModal(true);
+  } else {
     finalizeSubmit();
+  }
+};
+
+
+//handle take and skip ela functions
+
+
+  // Update grade modal handlers
+  const handleTakeEla = () => {
+     const now = Date.now();
+  if (!mathEndTime) {
+    setMathEndTime(now);
+  }
+    setShowGradeModal(false);
+    setShowConfirmModal(false);
+    setQuizSection('ela');
+    setCurrentQuestionIndex(0);
+
+    // Start ELA timing
+    setElaStartTime(Date.now());
   };
+
+
+  const handleSkipEla = () => {
+  const now = Date.now();
+  if (!mathEndTime) {
+    setMathEndTime(now);
+  }
+  setShowGradeModal(false);
+  setTotalTestEndTime(now);
+
+ // Set a special flag to indicate ELA was skipped
+  localStorage.setItem("elaSkipped", "true");
+
+  finalizeSubmit();
+};
+
 
   const handleSubmitAfterConfirm2 = () => {
     // setShowConfirmModal(false); 
@@ -210,33 +465,129 @@ export default function Quiz() {
     finalizeSubmit();
   };
 
-  const handleContinueMath = () => {
-    setShowSatModal(false);
-    setIsSatReading(false);
-    setSatSection('math');
-    setCurrentQuestionIndex(0);
-  };
-
-  //const handletimeupSubmit = () => finalizeSubmit();
- 
-  const handletimeupSubmit = () => {
-  if (isGrade9Or10 && quizSection === 'math') {
-    setShowGradeModal(true); // show the modal to choose ELA or Skip
-  } else {
-    finalizeSubmit(); // submit immediately for other grades
+ //THE NEW FUCTION TO HANDLE CONTINUE MATH AND TIME TRACKING
+ const handleContinueMath = () => {
+  const now = Date.now();
+  
+  // For SAT: End reading section time (store in elaEndTime)
+  if (!elaEndTime && isSat) {
+    setElaEndTime(now);
   }
+  
+  setShowSatModal(false);
+  setIsSatReading(false);
+  setSatSection('math');
+  setCurrentQuestionIndex(0);
+  
+  // Start math section timing
+  setMathStartTime(now);
 };
+  
 
 
-  const finalizeSubmit = () => {
+// const finalizeSubmit = () => {
+//   const now = Date.now();
+
+//   if (!totalTestEndTime) {
+//     setTotalTestEndTime(now);
+//   }
+
+//   if (isGrade9Or10) {
+//     if (quizSection === 'math' && !mathEndTime) {
+//       setMathEndTime(now);
+//     }
+//     if (quizSection === 'ela' && !elaEndTime) {
+//       setElaEndTime(now);
+//     }
+//   } else if (isSat) {
+//     if (satSection === 'reading' && !elaEndTime) {
+//       setElaEndTime(now);
+//     } else if (satSection === 'math' && !mathEndTime) {
+//       setMathEndTime(now);
+//     }
+//   }
+
+//   const durations = calculateDurations();
+//   console.log("Calculated durations:", durations); // Debug log
+//   localStorage.setItem("quizDurations", JSON.stringify(durations));
+//   localStorage.setItem("testDurations", JSON.stringify(durations));
+
+//   setSubmitted(true);
+//   localStorage.removeItem("quizState");
+//   localStorage.removeItem("quiz-end-time");
+//   localStorage.removeItem("quiz-end-time-sat-reading");
+//   localStorage.removeItem("quiz-end-time-sat-math");
+// };
+
+
+
+
+const finalizeSubmit = () => {
+  const now = Date.now();
+  console.log("Finalizing submit with current state:", {
+    mathStartTime, mathEndTime,
+    elaStartTime, elaEndTime,
+    totalTestStartTime, totalTestEndTime
+  });
+
+  // Ensure all end times are set
+  if (!mathEndTime && mathStartTime) {
+    setMathEndTime(now);
+    console.log("Set mathEndTime to now");
+  }
+
+  if (!elaEndTime && elaStartTime) {
+    setElaEndTime(now);
+    console.log("Set elaEndTime to now");
+  }
+
+  if (!totalTestEndTime && totalTestStartTime) {
+    setTotalTestEndTime(now);
+    console.log("Set totalTestEndTime to now");
+  }
+
+  // Use setTimeout to allow state updates to complete, then calculate
+  setTimeout(() => {
+    const durations = calculateDurations();
+    console.log("Final durations after state updates:", durations);
+    localStorage.setItem("quizDurations", JSON.stringify(durations));
+    localStorage.setItem("testDurations", JSON.stringify(durations));
+
     setSubmitted(true);
     localStorage.removeItem("quizState");
     localStorage.removeItem("quiz-end-time");
     localStorage.removeItem("quiz-end-time-sat-reading");
     localStorage.removeItem("quiz-end-time-sat-math");
+  }, 100);
+};
 
-  };
 
+const handletimeupSubmit = () => {
+  const now = Date.now();
+  
+  if (isGrade9Or10) {
+    if (quizSection === 'math') {
+      setMathEndTime(now);
+      setShowGradeModal(true);
+    } else {
+      setElaEndTime(now);
+      setTotalTestEndTime(now);
+      finalizeSubmit();
+    }
+  } else if (isSat) {
+    if (satSection === 'reading') {
+      setElaEndTime(now); // End reading section
+      setShowSatModal(true);
+    } else {
+      setMathEndTime(now); // End math section
+      setTotalTestEndTime(now);
+      finalizeSubmit();
+    }
+  } else {
+    setTotalTestEndTime(now);
+    finalizeSubmit();
+  }
+};
 
 const calculateScore = () => {
   const isGrade9Or10 = gradeParam === "grade9" || gradeParam === "grade10";
@@ -282,6 +633,16 @@ const calculateScore = () => {
 
 
 const calculateSectionScore = (section: "math" | "ela") => {
+
+// First, check if ELA was skipped
+  const elaSkipped = localStorage.getItem("elaSkipped") === "true";
+  
+  // If it's the ELA section and it was skipped, return null instead of calculating
+  if (section === "ela" && elaSkipped) {
+    return null;
+  }
+
+
   const isGrade9Or10 = gradeParam === "grade9" || gradeParam === "grade10";
   // const questions = selectedQuiz;
   const questions = isGrade9Or10
@@ -320,10 +681,8 @@ const calculateSectionScore = (section: "math" | "ela") => {
     router.push("/");
   };
 
- 
-
-  const handleReview = () => {
-    console.log("Handling review for testid:", testid);
+const handleReview = () => {
+  console.log("Handling review for testid:", testid);
   const url = new URLSearchParams();
 
   if (testid === "state-test" && stateParam && gradeParam) {
@@ -335,40 +694,87 @@ const calculateSectionScore = (section: "math" | "ela") => {
 
   const mathScore = calculateSectionScore("math");
   const elaScore = calculateSectionScore("ela");
-  console.log("Math Score:", mathScore);
-  console.log("ELA Score:", elaScore);
-
-
- // const isGrade9Or10 = gradeParam === "grade9" || gradeParam === "grade10";
-
-  const isGrade9Or10 =
-    gradeParam === "9th-grade" || gradeParam === "10th-grade" ||  gradeParam === "8th-grade" || gradeParam === "7th-grade" || gradeParam === "6th-grade" || gradeParam === "5th-grade" || gradeParam === "4th-grade" || gradeParam === "3rd-grade" || gradeParam === "11th-grade" || gradeParam === "12th-grade" || gradeParam === "2nd-grade" || gradeParam === "1st-grade"|| gradeParam === "pre-k" || gradeParam === "kindergarten";
-
-    console.log("isGrade9Or10:", isGrade9Or10);
-
-  if (isGrade9Or10) {
-    url.append("mathScore", mathScore.toString());
-    url.append("elaScore", elaScore.toString());
+  
+  // Ensure we have the latest time data by calculating synchronously
+  const now = Date.now();
+  
+  // For Grade 9/10: If math section was completed but end time not set
+  if (isGrade9Or10 && quizSection === 'ela' && mathEndTime === null && mathStartTime !== null) {
+    setMathEndTime(now);
+  }
+  
+  // For SAT: If math section was completed but end time not set
+  if (isSat && satSection === 'math' && mathEndTime === null && mathStartTime !== null) {
+    setMathEndTime(now);
   }
 
-    localStorage.setItem("mathScore", mathScore.toString());
-    localStorage.setItem("elaScore", elaScore.toString());
+  // Get time durations - use a synchronous calculation
+  const durations: any = {};
+  
+  // Calculate math duration
+  if (mathStartTime && (mathEndTime || now)) {
+    const endTime = mathEndTime || now;
+    durations.mathDuration = Math.round((endTime - mathStartTime) / 1000);
+  }
+  
+  // Calculate ELA duration
+  if (elaStartTime && (elaEndTime || now)) {
+    const endTime = elaEndTime || now;
+    durations.elaDuration = Math.round((endTime - elaStartTime) / 1000);
+  }
+  
+  // Calculate total test duration
+  if (totalTestStartTime && (totalTestEndTime || now)) {
+    const endTime = totalTestEndTime || now;
+    durations.totalDuration = Math.round((endTime - totalTestStartTime) / 1000);
+  }
+  
+  // Add time data to URL params
+  if (durations.mathDuration) {
+    url.append("mathTime", durations.mathDuration.toString());
+    console.log("Adding mathTime to URL:", durations.mathDuration);
+  }
+  
+  if (durations.elaDuration) {
+    url.append("elaTime", durations.elaDuration.toString());
+  }
+  
+  if (durations.totalDuration) {
+    url.append("totalTime", durations.totalDuration.toString());
+  }
+  
+  if (durations.actualTestTime) {
+    url.append("actualTime", durations.actualTestTime.toString());
+  }
 
+  const isGrade9Or10Test = 
+    gradeParam === "9th-grade" || gradeParam === "10th-grade" ||  
+    gradeParam === "8th-grade" || gradeParam === "7th-grade" || 
+    gradeParam === "6th-grade" || gradeParam === "5th-grade" || 
+    gradeParam === "4th-grade" || gradeParam === "3rd-grade" || 
+    gradeParam === "11th-grade" || gradeParam === "12th-grade" || 
+    gradeParam === "2nd-grade" || gradeParam === "1st-grade" || 
+    gradeParam === "pre-k" || gradeParam === "kindergarten";
+
+  if (isGrade9Or10Test) {
+    if (mathScore !== null && mathScore !== undefined) {
+      url.append("mathScore", mathScore.toString());
+    }
+    if (elaScore !== null && elaScore !== undefined) {
+      url.append("elaScore", elaScore.toString());
+    }
+  }
+
+  if (mathScore !== null && mathScore !== undefined) {
+    localStorage.setItem("mathScore", mathScore.toString());
+  }
+  if (elaScore !== null && elaScore !== undefined) {
+    localStorage.setItem("elaScore", elaScore.toString());
+  }
+  localStorage.setItem("testDurations", JSON.stringify(durations));
 
   router.push(`/quiz/${testid}/review?${url.toString()}`);
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
   const totalQuestions = submitted && isSATQuiz
   ? quizQuestions.length
@@ -383,7 +789,15 @@ const answeredCount = submitted && isSATQuiz
     ).length;
 
 
+  
 
+
+  // Helper function to format time for display
+  const formatDuration = (seconds: number): string => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}m ${remainingSeconds}s`;
+  }
 
 
   if (!quizQuestions || quizQuestions.length === 0) {
@@ -524,21 +938,13 @@ const answeredCount = submitted && isSATQuiz
                 <p className="mb-4">You’ve finished the Math section. Would you like to continue with ELA?</p>
                 <div className="flex justify-end gap-4">
                   <button
-                    onClick={() => {
-                      setShowGradeModal(false);
-                      finalizeSubmit(); // Skip ELA
-                    }}
+                    onClick={handleSkipEla}
                     className="px-4 py-2 bg-gray-400 text-white rounded cursor-pointer"
                   >
                     Skip ELA
                   </button>
                   <button
-                    onClick={() => {
-                      setShowGradeModal(false);
-                      setShowConfirmModal(false);
-                      setQuizSection('ela');
-                      setCurrentQuestionIndex(0);
-                    }}
+                    onClick={handleTakeEla}
                     className="px-4 py-2 bg-green-600 text-white rounded cursor-pointer"
                   >
                     Take ELA
@@ -558,13 +964,26 @@ const answeredCount = submitted && isSATQuiz
                     Math Score: {calculateSectionScore("math")}%
                   </p>
                   <p className="text-lg text-purple-700">
-                    ELA Score: {calculateSectionScore("ela")}%
+                   {/* ELA Score: {calculateSectionScore("ela")}%
+                    ELA Score: {
+                      calculateSectionScore("ela") === "ELA Skipped"
+                        ? "Skipped"
+                        : `${calculateSectionScore("ela")}%`
+                    } */}
+                    {/* ELA Score:{" "}
+                    {calculateSectionScore("ela") === "ELA Skipped"
+                      ? "Skipped"
+                      : `${calculateSectionScore("ela")}%`} */}
+
+                    ELA Score:{" "}
+                    {localStorage.getItem("elaSkipped") === "true"
+                      ? "Skipped"
+                      : `${calculateSectionScore("ela")}%`}
                   </p>
                 </div>
               </>
             ) : (
               <>
-                {/* <h2 className="text-xl font-bold">Your Score: {Number(calculateScore())}%</h2> */}
                   <h2 className="text-xl font-bold">
                     Your Score: {Number(calculateScore().combined).toFixed(2)}%
                   </h2>
@@ -592,7 +1011,4 @@ const answeredCount = submitted && isSATQuiz
     </div>
   );
 }
-
-
-
 

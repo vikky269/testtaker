@@ -1,3 +1,4 @@
+
 "use client";
 import { useQuiz } from "@/app/context/QuizContext";
 import { useParams, useSearchParams, useRouter } from "next/navigation";
@@ -7,8 +8,9 @@ import { quizAssessmentData } from "@/app/data/quizassessmentdata";
 import { useEffect, useState } from "react";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
+import { supabase } from "@/lib/supabaseClient";
 
- export default function ReviewPage() {
+export default function ReviewPage() {
   const { answers, setAnswers } = useQuiz();
   const { testId } = useParams();
   const searchParams = useSearchParams();
@@ -17,18 +19,106 @@ import autoTable from "jspdf-autotable";
   const stateParam = searchParams.get("state")?.toLowerCase();
   const gradeParam = searchParams.get("grade")?.toLowerCase().replace(/\s+/g, "");
 
+
+  //new state variables added to my component
+
+  const mathScoreParam = searchParams.get("mathScore");
+  const elaScoreParam = searchParams.get("elaScore");
+  const mathScore = mathScoreParam ? parseFloat(mathScoreParam) : null;
+  const elaScore = elaScoreParam ? parseFloat(elaScoreParam) : null;
+
+  const [userName, setUserName] = useState<string>("");
+  const [userEmail, setUserEmail] = useState("");
   const [selectedQuiz, setSelectedQuiz] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-
   const [showSolutionIndex, setShowSolutionIndex] = useState<number | null>(null);
+  const [elaSkipped, setElaSkipped] = useState(false);
 
+
+// Fetch the logged-in user's profile
+useEffect(() => {
+  const getUserProfile = async () => {
+    const { data: { session } } = await supabase.auth.getSession();
+    const user = session?.user;
+
+    if (user) {
+      // Fetch profile from student_profile
+      const { data: profile, error } = await supabase
+        .from("student_profile")
+        .select("full_name")
+        .eq("id", user.id)
+        .single();
+
+      if (!error && profile) {
+        setUserName(profile.full_name);
+        console.log("User's full name from profile:", profile.full_name);
+      } else {
+        // fallback to email or placeholder
+        setUserName(user.email ?? "Student");
+      }
+      setUserEmail(user.email ?? "");
+    } else {
+      setUserName("Guest");
+      setUserEmail("");
+    }
+
+  };
+
+  getUserProfile();
+}, []);
+
+
+
+
+  // Add state for time data
+  const [timeData, setTimeData] = useState<{
+    mathDuration?: number;
+    elaDuration?: number;
+    totalDuration?: number;
+    actualTestTime?: number;
+  }>({});
 
   // Determine if user skipped ELA (for Grade 9 or 10)
-  const isGrade9Or10 = gradeParam === "9th-grade" || gradeParam === "10th-grade" || gradeParam === "8th-grade" || gradeParam === "7th-grade" || gradeParam === "6th-grade" || gradeParam === "5th-grade" || gradeParam === "4th-grade" || gradeParam === "3rd-grade" || gradeParam === "11th-grade" || gradeParam === "12th-grade" || gradeParam === "2nd-grade" || gradeParam === "1st-grade"|| gradeParam === "pre-k" || gradeParam === "kindergarten";
+  const isGrade9Or10 = gradeParam === "9th-grade" || gradeParam === "10th-grade" || 
+    gradeParam === "8th-grade" || gradeParam === "7th-grade" || gradeParam === "6th-grade" || 
+    gradeParam === "5th-grade" || gradeParam === "4th-grade" || gradeParam === "3rd-grade" || 
+    gradeParam === "11th-grade" || gradeParam === "12th-grade" || gradeParam === "2nd-grade" || 
+    gradeParam === "1st-grade"|| gradeParam === "pre-k" || gradeParam === "kindergarten";
 
 
- 
+// Check if ELA was skipped
+useEffect(() => {
+  const skipped = localStorage.getItem("elaSkipped") === "true";
+  setElaSkipped(skipped);
+  console.log("ELA skipped:", skipped);
+}, []);
 
+
+
+
+  // Retrieve time data on mount
+  useEffect(() => {
+    // Try to get time data from URL params first
+    const mathTime = searchParams.get("mathTime");
+    const elaTime = searchParams.get("elaTime");
+    const totalTime = searchParams.get("totalTime");
+    const actualTime = searchParams.get("actualTime");
+
+    if (mathTime || elaTime || totalTime || actualTime) {
+      setTimeData({
+        mathDuration: mathTime ? parseInt(mathTime) : undefined,
+        elaDuration: elaTime ? parseInt(elaTime) : undefined,
+        totalDuration: totalTime ? parseInt(totalTime) : undefined,
+        actualTestTime: actualTime ? parseInt(actualTime) : undefined,
+      });
+    } else {
+      // Fallback to localStorage
+      const storedDurations = localStorage.getItem("testDurations");
+      if (storedDurations) {
+        setTimeData(JSON.parse(storedDurations));
+      }
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     const normalize = (str: string) => str.toLowerCase().replace(/\s+/g, "");
@@ -80,22 +170,25 @@ import autoTable from "jspdf-autotable";
     setLoading(false);
   }, [testId, stateParam, gradeParam, answers, searchParams]);
 
-
   const handleFinishReview = () => {
-    localStorage.removeItem("quizState");        // Clear quiz answers + index
+    localStorage.removeItem("quizState");
     localStorage.removeItem("mathScore");
     localStorage.removeItem("elaScore");
-
-    //localStorage.removeItem("quiz-end-time");    // Clear saved timer end time
+    localStorage.removeItem("quizTimeData");
+    localStorage.removeItem("testDurations");
+    localStorage.removeItem("quizDurations");
+    localStorage.removeItem("elaSkipped"); // Clean up the skip flag
+    
+    // Clear all quiz-end-time keys
     Object.keys(localStorage).forEach((key) => {
-    if (key.startsWith("quiz-end-time")) {
-      localStorage.removeItem(key);
-    }
-  });
-    setAnswers({});                              // Clear context answers
-    router.push("/");                            // Navigate back home
+      if (key.startsWith("quiz-end-time")) {
+        localStorage.removeItem(key);
+      }
+    });
+    
+    setAnswers({});
+    router.push("/");
   };
-
 
   const correctAnswersCount = selectedQuiz.filter(
     (q) => answers?.[q.question] === (q.correctAnswer || q.answer)
@@ -103,6 +196,44 @@ import autoTable from "jspdf-autotable";
 
   const totalQuestions = selectedQuiz.length;
   const score = ((correctAnswersCount / totalQuestions) * 100).toFixed(2);
+
+  // Helper function to format time
+  const formatDuration = (seconds: number): string => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+    return `${minutes}m ${remainingSeconds}s`;
+  };
+
+
+const getFormattedTimeData = () => {
+  // Get time from URL params first, then fallback to state
+  const mathTimeFromParams = searchParams.get("mathTime");
+  const elaTimeFromParams = searchParams.get("elaTime");
+  const totalTimeFromParams = searchParams.get("totalTime");
+
+  const mathTime = mathTimeFromParams ? parseInt(mathTimeFromParams) : timeData.mathDuration || 0;
+  const elaTime = elaTimeFromParams ? parseInt(elaTimeFromParams) : timeData.elaDuration || 0;
+  const totalTime = totalTimeFromParams ? parseInt(totalTimeFromParams) : timeData.totalDuration || 0;
+
+  const tookMath = mathTime > 0;
+  const tookELA = elaTime > 0;
+
+  // Calculate total time
+  const calculatedTotalTime = (tookMath || tookELA) ? (mathTime + elaTime) : totalTime;
+
+  // Format values
+  const mathFormatted = tookMath ? formatDuration(mathTime) : "0m 0s";
+  const elaFormatted = tookELA ? formatDuration(elaTime) : "0m 0s";
+  const totalFormatted = calculatedTotalTime > 0 ? formatDuration(calculatedTotalTime) : "Time not available";
+
+  // Return all three as an object
+  return {
+    math: mathFormatted,
+    ela: elaFormatted,
+    total: totalFormatted
+  };
+};
+
 
 
 
@@ -114,103 +245,168 @@ import autoTable from "jspdf-autotable";
       </p>
     );
 
-   const handleDownloadReport = () => {
-     const wrongAnswers = totalQuestions - correctAnswersCount;
-
-     // Retrieve user name if available
-     const userName = localStorage.getItem("userName") || "Amune Victor";
-
-     // Retrieve time taken
-    //  const startTime = localStorage.getItem("quiz-start-time");
-    //  const endTime = localStorage.getItem(`quiz-end-time-${testId}`);
-     const startTime = localStorage.getItem(`quiz-${testId}-start-time`);
-     const endTime = localStorage.getItem(`quiz-${testId}-end-time`);
-     let timeTaken = "Not available";
-     if (startTime && endTime) {
-       const duration = (parseInt(endTime) - parseInt(startTime)) / 1000;
-       const minutes = Math.floor(duration / 60);
-       const seconds = duration % 60;
-       timeTaken = `${minutes}m ${seconds}s`;
-     }
-
-     const elaScore = parseFloat(searchParams.get("elaScore") || "0");
-
-     const doc = new jsPDF();
-
-     // === HEADER WITH LOGO (GREEN) ===
-     doc.setFillColor(34, 139, 34); // Green header
-     doc.rect(0, 0, 210, 50, "F"); // Full-width rectangle for A4 header
-     doc.setTextColor(255, 255, 255); // White text for header
-
-     // Load the logo (centered and larger)
-     const logo = "/logo.png"; // Place your logo in /public/logo.png
-     const logoWidth = 40; // bigger logo width
-     const logoHeight = 40; // bigger logo height
-     const pageWidth = doc.internal.pageSize.getWidth();
-     const logoX = (pageWidth - logoWidth) / 2; // center horizontally
-      const logoY = 10; // some top margin
-     doc.addImage(logo, "PNG", logoX,  5, logoWidth, logoHeight);
-
-
-     const marginBelowLogo = 6; // Adjust this for more/less space
-     const textY = logoY + logoHeight + marginBelowLogo;
-
-     // Report title below the logo
-     doc.setFontSize(18);
-     doc.text("SmartMathz Evaluation Assessment Report", 105, 40,  { align: "center" })
-
-     // === STUDENT INFORMATION TABLE ===
-     const studentInfo: any[] = [
-       ["Name", userName],
-       ["Grade", gradeParam?.toUpperCase() || "N/A"],
-       ["Test Type", testId],
-       ["Math Score", `${searchParams.get("mathScore") || "N/A"}%`],
-     ];
-
-     if (elaScore > 0) {
-       studentInfo.push(["ELA Score", `${elaScore.toFixed(2)}%`]);
-     }
-
-     studentInfo.push(
-       ["Overall Score", `${score}%`],
-       ["Correct Answers", `${correctAnswersCount}`],
-       ["Wrong Answers", `${wrongAnswers}`],
-       ["Time Taken", timeTaken],
-       ["Date", new Date().toLocaleString()]
-     );
-
-     autoTable(doc, {
-       startY: 60,
-       head: [["Category", "Data"]],
-       body: studentInfo,
-       theme: "striped",
-       headStyles: { fillColor: [34, 139, 34] }, // match header green
-       styles: { fontSize: 12, cellPadding: 4 },
-       columnStyles: {
-         0: { fontStyle: "bold" }, // Field column bold
-       },
-     });
-
-     // === FOOTER WITH LOGO & TEXT ===
-     const footerY = doc.internal.pageSize.getHeight() - 25;
-     doc.setFontSize(12);
-     doc.setTextColor(100);
-    
-     // Add logo at footer (centered)
-     const footerLogoWidth = 20;
-     const footerLogoHeight = 20;
-     const footerLogoX = (pageWidth - footerLogoWidth) / 2;
-     doc.addImage(logo, "PNG", footerLogoX, footerY - 15, footerLogoWidth, footerLogoHeight);
-
-     // Add footer text below the logo
-     doc.text("Generated by SmartMathz", pageWidth / 2, footerY + 10, { align: "center" });
-
-     doc.save("SmartMathz_Pre-Assessment_Report.pdf");
-   };
-
  
- 
+  const handleDownloadReport = () => {
+  const wrongAnswers = totalQuestions - correctAnswersCount;
+  const nameToUse = userName || "Student";
+
+  // Get time data - use both URL params and localStorage as fallback
+  const mathTimeFromParams = searchParams.get("mathTime");
+  const elaTimeFromParams = searchParams.get("elaTime");
+  const totalTimeFromParams = searchParams.get("totalTime");
+  
+  const mathDuration = mathTimeFromParams ? parseInt(mathTimeFromParams) : timeData.mathDuration;
+  const elaDuration = elaTimeFromParams ? parseInt(elaTimeFromParams) : timeData.elaDuration;
+  const totalDuration = totalTimeFromParams ? parseInt(totalTimeFromParams) : timeData.totalDuration;
+
+  const doc = new jsPDF();
+
+  // === HEADER WITH LOGO (GREEN) ===
+  doc.setFillColor(34, 139, 34);
+  doc.rect(0, 0, 210, 50, "F");
+  doc.setTextColor(255, 255, 255);
+
+  // Load the logo
+  const logo = "/logo.png";
+  const logoWidth = 40;
+  const logoHeight = 40;
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const logoX = (pageWidth - logoWidth) / 2;
+  const logoY = 10;
+  doc.addImage(logo, "PNG", logoX, 5, logoWidth, logoHeight);
+
+  const marginBelowLogo = 6;
+  const textY = logoY + logoHeight + marginBelowLogo;
+
+  // Report title
+  doc.setFontSize(18);
+  doc.text("SmartMathz Evaluation Assessment Report", 105, 40, { align: "center" });
+
+  // === STUDENT INFORMATION TABLE ===
+  const studentInfo: any[] = [
+    ["Name", nameToUse],
+    ["Email", userEmail || "N/A"],
+    ["Grade", gradeParam?.toUpperCase() || "N/A"],
+    ["Test Type", testId === "state-test" ? "State Test" : testId === "quiz-assessment" ? "Evaluation" : testId],
+  ];
+
+  // Add scores and timing information
+  if (isGrade9Or10) {
+    // Math Score and Time
+    studentInfo.push(["Math Score", mathScore !== null ? `${mathScore.toFixed(2)}%` : "N/A"]);
+    if (mathDuration) {
+      studentInfo.push(["Math Time", formatDuration(mathDuration)]);
+    }
+
+
+    // Handle ELA score - show "Skipped" if skipped, otherwise show percentage
+    studentInfo.push(["ELA Score", elaSkipped ? "Skipped" : (elaScore !== null ? `${elaScore}%` : "N/A")]);
+
+    if (elaDuration && !elaSkipped) {
+      studentInfo.push(["ELA Time", formatDuration(elaDuration)]);
+    } else if (elaSkipped) {
+      studentInfo.push(["ELA Time", "Skipped"]);
+    } else {
+      studentInfo.push(["ELA Time", "Not recorded"]);
+    }
+
     
+  } else {
+    // For non-Grade 9/10 tests, show overall score and total time
+    studentInfo.push(["Overall Score", `${score}%`]);
+    if (totalDuration) {
+      studentInfo.push(["Total Time", formatDuration(totalDuration)]);
+    }
+  }
+
+   const times = getFormattedTimeData();
+
+
+  // Add general performance metrics
+  studentInfo.push(
+    ["Overall Score", `${score}%`],
+    ["Correct Answers", `${correctAnswersCount}`],
+    ["Wrong Answers", `${wrongAnswers}`],
+    ["Total Questions", `${totalQuestions}`],
+    //["Total Time Taken", totalDuration ? formatDuration(totalDuration) : "Time not available"],
+    ["Total Time Taken", times.total],
+    //["Test Duration", getFormattedTimeData() ? getFormattedTimeData() : "N/A"],
+    ["Date", new Date().toLocaleString()]
+  );
+
+  // Add section times if available for all test types
+  if (mathDuration && !isGrade9Or10) {
+    studentInfo.push(["Math Section Time", formatDuration(mathDuration)]);
+  }
+  if (elaDuration && !isGrade9Or10) {
+    studentInfo.push(["ELA Section Time", formatDuration(elaDuration)]);
+  }
+
+  autoTable(doc, {
+    startY: 60,
+    head: [["Category", "Data"]],
+    body: studentInfo,
+    theme: "striped",
+    headStyles: { fillColor: [34, 139, 34] },
+    styles: { fontSize: 12, cellPadding: 4 },
+    columnStyles: {
+      0: { fontStyle: "bold" },
+    },
+  });
+
+  // === DETAILED SECTION PERFORMANCE (FOR GRADE 9/10) ===
+  if (isGrade9Or10 && (mathScore !== null || elaScore !== null)) {
+    const sectionData = [];
+    
+
+    if (mathScore !== null) {
+      sectionData.push([
+        "Math", 
+        `${mathScore}%`, 
+        mathDuration ? formatDuration(mathDuration) : "Not recorded",
+        mathScore >= 70 ? "Good" : "Needs Improvement"
+      ]);
+    }
+    
+    if (elaSkipped) {
+      sectionData.push(["ELA", "Skipped", "Skipped", "Skipped"]);
+    } else if (elaScore !== null) {
+      sectionData.push([
+        "ELA", 
+        `${elaScore}%`, 
+        elaDuration ? formatDuration(elaDuration) : "Not recorded",
+        elaScore >= 70 ? "Good" : "Needs Improvement"
+      ]);
+    }
+
+    autoTable(doc, {
+      startY: (doc as any).lastAutoTable.finalY + 20,
+      head: [["Section", "Score", "Time", "Performance"]],
+      body: sectionData,
+      theme: "striped",
+      headStyles: { fillColor: [34, 139, 34] },
+      styles: { fontSize: 10, cellPadding: 3 },
+    });
+  }
+
+  // === FOOTER WITH LOGO & TEXT ===
+  const footerY = doc.internal.pageSize.getHeight() - 25;
+  doc.setFontSize(12);
+  doc.setTextColor(100);
+ 
+  // Add logo at footer
+  const footerLogoWidth = 20;
+  const footerLogoHeight = 20;
+  const footerLogoX = (pageWidth - footerLogoWidth) / 2;
+  doc.addImage(logo, "PNG", footerLogoX, footerY - 2, footerLogoWidth, footerLogoHeight);
+
+  // Add footer text
+  doc.text("Generated by SmartMathz", pageWidth / 2, footerY + 16, { align: "center" });
+
+  doc.save("SmartMathz_Evaluation_Report.pdf");
+
+};
+
 
   return (
     <div className="container mx-auto p-5">
@@ -223,15 +419,31 @@ import autoTable from "jspdf-autotable";
           : `Test`}
       </h1>
 
-      {isGrade9Or10 && (
+      {/* {isGrade9Or10 && (
         <p className="text-center text-sm italic text-gray-600">
           {searchParams.get("elaScore") === "0.00"
             ? "Only Math section attempted — showing Math Review"
             : "Showing Full Review"}
         </p>
+      )} */}
+ 
+
+      {isGrade9Or10 && (
+        <p className="text-center text-sm italic text-gray-600">
+          {localStorage.getItem("elaSkipped") === "true"
+            ? "Only Math section attempted — showing Math Review"
+            : "Showing Full Review"}
+        </p>
       )}
 
-     
+
+      {isGrade9Or10 && (
+        <div className="mt-2 text-center">
+          <p className="text-sm text-gray-700">
+            Math: {mathScore}%{elaSkipped ? " | ELA: Skipped" : ` | ELA: ${elaScore}%`}
+          </p>
+        </div>
+      )}
 
       {/* Score */}
       <div className="text-center my-4 p-4 bg-blue-100 border border-blue-400 rounded-lg">
@@ -239,10 +451,12 @@ import autoTable from "jspdf-autotable";
         <p className="text-gray-600">
           {correctAnswersCount} out of {totalQuestions} questions correct
         </p>
+        <p className="text-sm text-gray-500 mt-2">
+          Time Taken: {getFormattedTimeData().total} |  Math time: {getFormattedTimeData().math} | ELA time: {getFormattedTimeData().ela}
+        </p>
       </div>
 
       {/* Questions Review */}
-
       {selectedQuiz.map((questionData, index) => {
         const selectedAnswer = answers?.[questionData.question];
         const correct = questionData.correctAnswer || questionData.answer;
@@ -260,7 +474,6 @@ import autoTable from "jspdf-autotable";
             ) : (
               <p className="leading-12 mb-5 text-xl" dangerouslySetInnerHTML={{ __html: questionData.question }}></p>
             )}
-
 
             <ul className="grid grid-cols-2 gap-2 mt-2">
               {questionData.options.map((option: string, i: number) => {
@@ -290,12 +503,12 @@ import autoTable from "jspdf-autotable";
               })}
             </ul>
 
-            {/* Show a message if no answer was selected */}
             {!selectedAnswer && (
               <p className="mt-2 text-sm text-yellow-700 bg-yellow-100 p-2 rounded">
                 ⚠️ You did not select an answer for this question.
               </p>
             )}
+
             <button
               className={`mt-5 cursor-pointer px-4 py-2 rounded-lg font-semibold shadow-md transition-colors duration-200
     ${showSolutionIndex === index
@@ -315,14 +528,9 @@ import autoTable from "jspdf-autotable";
                 <p dangerouslySetInnerHTML={{ __html: questionData.solution }} className="leading-9"></p>
               </div>
             )}
-
           </div>
         );
-
-
       })}
-
-
 
       {/* Finish Review Button */}
       <div className="flex justify-center items-center">
@@ -332,7 +540,6 @@ import autoTable from "jspdf-autotable";
         >
           Finish Review
         </button>
-
 
         <button
           className="mt-4 ml-4 p-2 bg-green-600 cursor-pointer text-white rounded-lg hover:translate-y-[-1px] transition-transform duration-200"

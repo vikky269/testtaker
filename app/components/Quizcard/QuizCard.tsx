@@ -148,23 +148,24 @@ function QuizCard({ id, imageSrc, title, level, category, difficulty, time, ques
 
               {step === 2 && (
                 <>
-                  <p className="font-bold mb-4">Select your grade:</p>
+                  <p className="font-bold mb-4 text-[#7FB509]">Select your grade:</p>
                   <div className="grid max-sm:grid-cols-1 grid-cols-2 md:grid-cols-3 gap-2 mb-4">
                     {(isStateTest ? gradeOptions : quizassesmentOptions).map((grade) => (
-                      <button key={grade} onClick={() => setSelectedGrade(grade)} className={`p-2 cursor-pointer border rounded ${selectedGrade === grade ? "bg-blue-600 text-white" : ""}`}>{grade}</button>
+                      <button key={grade} onClick={() => setSelectedGrade(grade)} className={`p-2 cursor-pointer border rounded ${selectedGrade === grade ? "bg-[#7FB509] text-white" : ""}`}>{grade}</button>
                     ))}
                   </div>
                   <div className="flex justify-between">
                     {isStateTest && <Button className="cursor-pointer" onClick={() => setStep(1)}>Back</Button>}
-                    {!isStateTest && <Button className="cursor-pointer"  onClick={resetSelection}>Back</Button>}
-                    <Button className="cursor-pointer" onClick={() => selectedGrade && setStep(3)} disabled={!selectedGrade}>Next</Button>
+                    {!isStateTest && <Button className="cursor-pointer bg-[#7FB509] hover:bg-[#689703]"  onClick={resetSelection}>Back</Button>}
+                    <Button className="cursor-pointer bg-[#7FB509] hover:bg-[#689703]" onClick={() => selectedGrade && setStep(3)} disabled={!selectedGrade}>Next</Button>
                   </div>
                 </>
               )}
 
+
               {step === 3 && (
                 <>
-                  <p className="font-bold mb-2">Enter Passcode for {selectedGrade}:</p>
+                  <p className="font-bold mb-2 text-[#557d00]">Enter Passcode for {selectedGrade}:</p>
                   <input
                     type="text"
                     value={passcodeInput}
@@ -174,8 +175,8 @@ function QuizCard({ id, imageSrc, title, level, category, difficulty, time, ques
                   />
                   {passcodeError && <p className="text-red-500 text-sm mb-2">{passcodeError}</p>}
                   <div className="flex justify-between">
-                    <Button className="cursor-pointer bg-black text-white"  onClick={() => setStep(2)}>Back</Button>
-                    <Button className="cursor-pointer" onClick={validatePasscodeAndStart} disabled={!passcodeInput}>Start Test</Button>
+                    <Button className="cursor-pointer bg-[#7FB509] hover:bg-[#5d820d] text-white"  onClick={() => setStep(2)}>Back</Button>
+                    <Button className="cursor-pointer bg-[#7FB509] hover:bg-[#5d820d]" onClick={validatePasscodeAndStart} disabled={!passcodeInput}>Start Test</Button>
                   </div>
                 </>
               )}

@@ -9,12 +9,15 @@ import { useEffect, useState } from "react";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import { supabase } from "@/lib/supabaseClient";
+import { useRef } from "react";
 
 export default function ReviewPage() {
   const { answers, setAnswers } = useQuiz();
   const { testId } = useParams();
   const searchParams = useSearchParams();
   const router = useRouter();
+  const hasSavedRef = useRef(false);
+
   
   const stateParam = searchParams.get("state")?.toLowerCase();
   const gradeParam = searchParams.get("grade")?.toLowerCase().replace(/\s+/g, "");
@@ -178,6 +181,7 @@ useEffect(() => {
     localStorage.removeItem("testDurations");
     localStorage.removeItem("quizDurations");
     localStorage.removeItem("elaSkipped"); // Clean up the skip flag
+
     
     // Clear all quiz-end-time keys
     Object.keys(localStorage).forEach((key) => {
@@ -236,16 +240,9 @@ const getFormattedTimeData = () => {
 
 
 
+ // Function to generate and download PDF report
 
-  if (loading) return <p className="text-center text-gray-600">Loading quiz data...</p>;
-  if (!selectedQuiz || selectedQuiz.length === 0)
-    return (
-      <p className="text-center text-red-500 mt-10">
-        No review data found for this test.
-      </p>
-    );
 
- 
   const handleDownloadReport = () => {
   const wrongAnswers = totalQuestions - correctAnswersCount;
   const nameToUse = userName || "Student";
@@ -328,7 +325,6 @@ const getFormattedTimeData = () => {
     ["Correct Answers", `${correctAnswersCount}`],
     ["Wrong Answers", `${wrongAnswers}`],
     ["Total Questions", `${totalQuestions}`],
-    //["Total Time Taken", totalDuration ? formatDuration(totalDuration) : "Time not available"],
     ["Total Time Taken", times.total],
     //["Test Duration", getFormattedTimeData() ? getFormattedTimeData() : "N/A"],
     ["Date", new Date().toLocaleString()]
@@ -407,6 +403,164 @@ const getFormattedTimeData = () => {
 
 };
 
+
+// 🏁 Save results to leaderboard once everything is ready
+// useEffect(() => {
+//   console.log("🔥 Leaderboard useEffect triggered");
+
+//   console.log("DEBUG VALUES:", {
+//     userName,
+//     userEmail,
+//     gradeParam,
+//     loading,
+//   });
+
+
+//   // Prevent duplicates
+//   const hasSaved = sessionStorage.getItem("leaderboardSaved");
+   
+//   if (hasSaved) {
+//     console.warn("⚠️ Leaderboard already saved for this session.");
+//     return;
+//   }
+
+//   // Check data readiness
+//   if (!userName || !userEmail || !gradeParam|| loading) {
+//     console.log("⏸ Waiting for user/profile data before saving leaderboard...");
+//     return;
+//   }
+
+//   const saveToLeaderboard = async () => {
+//     console.log("⚙️ Running saveToLeaderboard()...");
+
+//     // Get raw times
+//     const mathSeconds =
+//       parseInt(searchParams.get("mathTime") || "") ||
+//       timeData.mathDuration ||
+//       0;
+//     const elaSeconds =
+//       parseInt(searchParams.get("elaTime") || "") ||
+//       timeData.elaDuration ||
+//       0;
+//     const totalSeconds =
+//       parseInt(searchParams.get("totalTime") || "") ||
+//       timeData.totalDuration ||
+//       0;
+
+//     const leaderboardEntry = {
+//       full_name: userName,
+//       email: userEmail,
+//       grade: gradeParam,
+//       math_score: mathScore ?? 0,
+//       ela_score: elaScore ?? 0,
+//       overall_score: parseFloat(score),
+//       total_time: totalSeconds,
+//       test_type: testId,
+//       created_at: new Date().toISOString(),
+//     };
+
+//     console.log("📤 Data being sent to Supabase:", leaderboardEntry);
+
+//     const {
+//       data: { user },
+//     } = await supabase.auth.getUser();
+//     console.log("👤 Current Supabase auth user:", user);
+
+
+//     const { data, error } = await supabase
+//       .from("leaderboard")
+//       .insert([leaderboardEntry])
+//       .select();
+
+//     if (error) {
+//       console.error("❌ Supabase insert error:", error);
+//     } else {
+//       console.log("✅ Saved to leaderboard:", data);
+//       sessionStorage.setItem("leaderboardSaved", "true");
+//     }
+//   };
+
+//   saveToLeaderboard();
+// }, [
+//   userName,
+//   userEmail,
+//   gradeParam,
+//   loading,
+//   score,
+//   mathScore,
+//   elaScore,
+//   timeData,
+//   testId,
+// ]);
+
+useEffect(() => {
+  console.log("🔥 Leaderboard useEffect triggered");
+
+  if (hasSavedRef.current) {
+    console.log("⚠️ Already saved — skipping");
+    return;
+  }
+
+  if (!userName || !userEmail || !gradeParam || loading) {
+    console.log("⏸ Waiting for user/profile data…");
+    return;
+  }
+
+  const saveToLeaderboard = async () => {
+    console.log("⚙️ Running saveToLeaderboard()...");
+
+    const totalSeconds =
+      parseInt(searchParams.get("totalTime") || "") ||
+      timeData.totalDuration ||
+      0;
+
+    const entry = {
+      full_name: userName,
+      email: userEmail,
+      grade: gradeParam,
+      math_score: mathScore ?? 0,
+      ela_score: elaScore ?? 0,
+      overall_score: parseFloat(score),
+      total_time: totalSeconds,
+      test_type: testId,
+      created_at: new Date().toISOString(),
+    };
+
+    const { data, error } = await supabase
+      .from("leaderboard")
+      .insert([entry])
+      .select();
+
+    if (error) {
+      console.error("🔥 Supabase error:", error);
+    } else {
+      console.log("✅ Saved to leaderboard:", data);
+      hasSavedRef.current = true; // 🔥 prevents duplicates
+    }
+  };
+
+  saveToLeaderboard();
+}, [
+  userName,
+  userEmail,
+  gradeParam,
+  loading,
+  score,
+  mathScore,
+  elaScore,
+  timeData,
+  testId,
+]);
+
+
+
+if (loading) return <p className="text-center text-gray-600">Loading quiz data...</p>;
+  if (!selectedQuiz || selectedQuiz.length === 0)
+    return (
+      <p className="text-center text-red-500 mt-10">
+        No review data found for this test.
+      </p>
+    );
 
   return (
     <div className="container mx-auto p-5">

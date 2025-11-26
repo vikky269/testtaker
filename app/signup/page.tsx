@@ -101,7 +101,7 @@ const handleSubmit = async () => {
     return;
   }
    
-  toast.success("Signup successful! Please log in to access your dashboard.");
+  toast.success("Signup successful! Please log in to access your test.");
   router.push("/login");
 };
 

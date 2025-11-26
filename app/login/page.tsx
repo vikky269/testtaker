@@ -4,8 +4,9 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabaseClient';
 import { toast } from 'react-hot-toast';
-import ClipLoader from 'react-spinners/ClipLoader'; // import spinner
+import ClipLoader from 'react-spinners/ClipLoader';
 import { Outfit } from 'next/font/google';
+import { FaEye, FaEyeSlash } from "react-icons/fa"; 
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -17,7 +18,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false); // loading state
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = async () => {
     setLoading(true);

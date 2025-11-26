@@ -78,11 +78,12 @@ export default function Navbar() {
 
       {/* Nav Links */}
       <div className="hidden md:flex items-center space-x-12 font-semibold text-[#181818]">
-        <Link href="/">Home</Link>
-        <Link href="/learning">Learning</Link>
-        <Link href="/services">Services</Link>
-        <Link href="/academy">SM Academy</Link>
-        <Link href="/contact">Contact Us</Link>
+        <Link className='hover:text-green-700 hover:border-b-2 border-green-700 transition-all' href="/">Home</Link>
+        <Link className='hover:text-green-700 hover:border-b-2 border-green-700 transition-all' href="/">Learning</Link>
+        <Link className='hover:text-green-700 hover:border-b-2 border-green-700 transition-all' href="/">Services</Link>
+        <Link className='hover:text-green-700 hover:border-b-2 border-green-700 transition-all' href="/">SM Academy</Link>
+        <Link className='hover:text-green-700 hover:border-b-2 border-green-700 transition-all' href="/">Contact Us</Link>
+         <Link className='hover:text-green-700 hover:border-b-2 border-green-700 transition-all' href="/leaderboard">Leaderboard</Link>
       </div>
 
       
@@ -100,14 +101,13 @@ export default function Navbar() {
 
             
             {showDropdown && (
-              <div className="absolute right-0 top-12 bg-white shadow-lg rounded py-6 px-4 w-52 z-50 border">
+              <div className="absolute right-0 top-12 bg-white shadow-lg rounded py-6 px-4 w-56 z-50 border">
                 <p className="font-semibold text-sm mb-1">{profile?.full_name}</p>
                 <p className="text-sm text-gray-500">{user.email}</p>
-                {/* <p className="text-xs mt-1">Grade: {profile?.grade}</p> */}
 
                 <button
                   onClick={handleLogout}
-                  className="mt-2 w-full bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600 text-sm cursor-pointer"
+                  className="mt-2 w-full bg-[#7FB509] text-white px-4 py-1 rounded hover:bg-[#6b970a] text-sm cursor-pointer"
                 >
                   Logout
                 </button>

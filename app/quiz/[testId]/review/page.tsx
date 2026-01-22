@@ -794,6 +794,7 @@ useEffect(() => {
   const [timeData, setTimeData] = useState<{
     mathDuration?: number;
     elaDuration?: number;
+    scienceDuration?: number;
     totalDuration?: number;
     actualTestTime?: number;
   }>({});
@@ -803,7 +804,7 @@ useEffect(() => {
     gradeParam === "8th-grade" || gradeParam === "7th-grade" || gradeParam === "6th-grade" || 
     gradeParam === "5th-grade" || gradeParam === "4th-grade" || gradeParam === "3rd-grade" || 
     gradeParam === "11th-grade" || gradeParam === "12th-grade" || gradeParam === "2nd-grade" || 
-    gradeParam === "1st-grade"|| gradeParam === "pre-k" || gradeParam === "kindergarten";
+    gradeParam === "1st-grade"|| gradeParam === "pre-k" || gradeParam === "kindergarten" || gradeParam ==="year-7";
 
 
 // Check if ELA was skipped
@@ -821,6 +822,8 @@ useEffect(() => {
     // Try to get time data from URL params first
     const mathTime = searchParams.get("mathTime");
     const elaTime = searchParams.get("elaTime");
+    const scienceTime = searchParams.get("scienceTime");
+
     const totalTime = searchParams.get("totalTime");
     const actualTime = searchParams.get("actualTime");
 
@@ -828,9 +831,11 @@ useEffect(() => {
       setTimeData({
         mathDuration: mathTime ? parseInt(mathTime) : undefined,
         elaDuration: elaTime ? parseInt(elaTime) : undefined,
+        scienceDuration: scienceTime ? parseInt(scienceTime) : undefined,
         totalDuration: totalTime ? parseInt(totalTime) : undefined,
         actualTestTime: actualTime ? parseInt(actualTime) : undefined,
       });
+
     } else {
       // Fallback to localStorage
       const storedDurations = localStorage.getItem("testDurations");
@@ -859,6 +864,12 @@ useEffect(() => {
 
     const mathScoreParam = searchParams.get("mathScore");
     const elaScoreParam = searchParams.get("elaScore");
+    const scienceScoreParam = searchParams.get("scienceScore");
+    const scienceTimeFromParams = searchParams.get("scienceTime");
+    const scienceDuration = scienceTimeFromParams
+      ? parseInt(scienceTimeFromParams)
+      : timeData.scienceDuration;
+
 
     console.log("Math Score from query:", mathScoreParam);
     console.log("ELA Score from query:", elaScoreParam);
@@ -926,38 +937,63 @@ useEffect(() => {
   };
 
 
-const getFormattedTimeData = () => {
-  // Get time from URL params first, then fallback to state
-  const mathTimeFromParams = searchParams.get("mathTime");
-  const elaTimeFromParams = searchParams.get("elaTime");
-  const totalTimeFromParams = searchParams.get("totalTime");
+// const getFormattedTimeData = () => {
+//   // Get time from URL params first, then fallback to state
+//   const mathTimeFromParams = searchParams.get("mathTime");
+//   const elaTimeFromParams = searchParams.get("elaTime");
+//   const totalTimeFromParams = searchParams.get("totalTime");
 
-  const mathTime = mathTimeFromParams ? parseInt(mathTimeFromParams) : timeData.mathDuration || 0;
-  const elaTime = elaTimeFromParams ? parseInt(elaTimeFromParams) : timeData.elaDuration || 0;
-  const totalTime = totalTimeFromParams ? parseInt(totalTimeFromParams) : timeData.totalDuration || 0;
+//   const mathTime = mathTimeFromParams ? parseInt(mathTimeFromParams) : timeData.mathDuration || 0;
+//   const elaTime = elaTimeFromParams ? parseInt(elaTimeFromParams) : timeData.elaDuration || 0;
+//   const totalTime = totalTimeFromParams ? parseInt(totalTimeFromParams) : timeData.totalDuration || 0;
 
-  const tookMath = mathTime > 0;
-  const tookELA = elaTime > 0;
+//   const tookMath = mathTime > 0;
+//   const tookELA = elaTime > 0;
 
-  // Calculate total time
-  const calculatedTotalTime = (tookMath || tookELA) ? (mathTime + elaTime) : totalTime;
+//   // Calculate total time
+//   const calculatedTotalTime = (tookMath || tookELA) ? (mathTime + elaTime) : totalTime;
 
-  // Format values
-  const mathFormatted = tookMath ? formatDuration(mathTime) : "0m 0s";
-  const elaFormatted = tookELA ? formatDuration(elaTime) : "0m 0s";
-  const totalFormatted = calculatedTotalTime > 0 ? formatDuration(calculatedTotalTime) : "Time not available";
+//   // Format values
+//   const mathFormatted = tookMath ? formatDuration(mathTime) : "0m 0s";
+//   const elaFormatted = tookELA ? formatDuration(elaTime) : "0m 0s";
+//   const totalFormatted = calculatedTotalTime > 0 ? formatDuration(calculatedTotalTime) : "Time not available";
 
-  // Return all three as an object
-  return {
-    math: mathFormatted,
-    ela: elaFormatted,
-    total: totalFormatted
-  };
-};
+//   // Return all three as an object
+//   return {
+//     math: mathFormatted,
+//     ela: elaFormatted,
+//     total: totalFormatted
+//   };
+// };
 
 
 
  // Function to generate and download PDF report
+
+
+ const getFormattedTimeData = () => {
+  const mathTimeFromParams = searchParams.get("mathTime");
+  const elaTimeFromParams = searchParams.get("elaTime");
+  const scienceTimeFromParams = searchParams.get("scienceTime");
+  const totalTimeFromParams = searchParams.get("totalTime");
+
+  const mathTime = mathTimeFromParams ? parseInt(mathTimeFromParams) : timeData.mathDuration || 0;
+  const elaTime = elaTimeFromParams ? parseInt(elaTimeFromParams) : timeData.elaDuration || 0;
+  const scienceTime = scienceTimeFromParams
+    ? parseInt(scienceTimeFromParams)
+    : timeData.scienceDuration || 0;
+
+  const calculatedTotalTime = mathTime + elaTime + scienceTime;
+
+  return {
+    math: mathTime ? formatDuration(mathTime) : "0m 0s",
+    ela: elaTime ? formatDuration(elaTime) : "0m 0s",
+    science: scienceTime ? formatDuration(scienceTime) : "0m 0s",
+    total: calculatedTotalTime
+      ? formatDuration(calculatedTotalTime)
+      : "Time not available",
+  };
+};
 
 
   const handleDownloadReport = () => {
@@ -965,13 +1001,15 @@ const getFormattedTimeData = () => {
   const nameToUse = userName || "Student";
 
   // Get time data - use both URL params and localStorage as fallback
-  const mathTimeFromParams = searchParams.get("mathTime");
-  const elaTimeFromParams = searchParams.get("elaTime");
-  const totalTimeFromParams = searchParams.get("totalTime");
-  
-  const mathDuration = mathTimeFromParams ? parseInt(mathTimeFromParams) : timeData.mathDuration;
-  const elaDuration = elaTimeFromParams ? parseInt(elaTimeFromParams) : timeData.elaDuration;
-  const totalDuration = totalTimeFromParams ? parseInt(totalTimeFromParams) : timeData.totalDuration;
+    const mathTimeFromParams = searchParams.get("mathTime");
+    const elaTimeFromParams = searchParams.get("elaTime");
+    const scienceTimeFromParams = searchParams.get("scienceTime");
+    const totalTimeFromParams = searchParams.get("totalTime");
+    
+    const mathDuration = mathTimeFromParams ? parseInt(mathTimeFromParams) : timeData.mathDuration;
+    const elaDuration = elaTimeFromParams ? parseInt(elaTimeFromParams) : timeData.elaDuration;
+    const scienceDuration = scienceTimeFromParams ? parseInt(scienceTimeFromParams) : timeData.scienceDuration;
+    const totalDuration = totalTimeFromParams ? parseInt(totalTimeFromParams) : timeData.totalDuration;
 
   const doc = new jsPDF();
 
@@ -1014,21 +1052,31 @@ const getFormattedTimeData = () => {
 
 
     // Handle ELA score - show "Skipped" if skipped, otherwise show percentage
-    studentInfo.push(["ELA Score", elaSkipped ? "Skipped" : (elaScore !== null ? `${elaScore}%` : "N/A")]);
-
-    // Science (Year 7 only)
-    if (isYear7 && scienceScore !== null) {
-      studentInfo.push(["Science Score", `${scienceScore}%`]);
-    }
-
-
-    if (elaDuration && !elaSkipped) {
-      studentInfo.push(["ELA Time", formatDuration(elaDuration)]);
-    } else if (elaSkipped) {
-      studentInfo.push(["ELA Time", "Skipped"]);
-    } else {
-      studentInfo.push(["ELA Time", "Not recorded"]);
-    }
+        studentInfo.push(["ELA Score", elaSkipped ? "Skipped" : (elaScore !== null ? `${elaScore}%` : "N/A")]);
+    
+        // Science (Year 7 only)
+        if (isYear7 && scienceScore !== null) {
+          studentInfo.push(["Science Score", `${scienceScore}%`]);
+    
+          // Resolve science time from URL params or fallback to stored timeData
+          const scienceTimeFromParams = searchParams.get("scienceTime");
+          const scienceDuration = scienceTimeFromParams
+            ? parseInt(scienceTimeFromParams)
+            : timeData.scienceDuration;
+    
+          studentInfo.push([
+            "Science Time",
+            scienceDuration ? formatDuration(scienceDuration) : "Not recorded",
+          ]);
+        }
+    
+        if (elaDuration && !elaSkipped) {
+          studentInfo.push(["ELA Time", formatDuration(elaDuration)]);
+        } else if (elaSkipped) {
+          studentInfo.push(["ELA Time", "Skipped"]);
+        } else {
+          studentInfo.push(["ELA Time", "Not recorded"]);
+        }
 
     
   } else {
@@ -1100,13 +1148,14 @@ const getFormattedTimeData = () => {
 
 
     if (isYear7 && scienceScore !== null) {
-      sectionData.push([
-        "Science",
-        `${scienceScore}%`,
-        "Not recorded",
-        scienceScore >= 70 ? "Good" : "Needs Improvement"
-      ]);
-    }
+  sectionData.push([
+    "Science",
+    `${scienceScore}%`,
+    scienceDuration ? formatDuration(scienceDuration) : "Not recorded",
+    scienceScore >= 70 ? "Good" : "Needs Improvement"
+  ]);
+}
+
 
 
 
@@ -1272,7 +1321,8 @@ if (loading) return <p className="text-center text-gray-600">Loading quiz data..
           Time Taken: {getFormattedTimeData().total} |
           Math time: {getFormattedTimeData().math} |
           ELA time: {getFormattedTimeData().ela}
-          {isYear7 ? " | Science time: N/A" : ""}
+          {isYear7 ? ` | Science time: ${getFormattedTimeData().science}` : ""}
+
         </p>
 
       </div>

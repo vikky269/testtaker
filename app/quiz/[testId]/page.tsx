@@ -1049,9 +1049,7 @@ export default function Quiz() {
   const [isSatReading, setIsSatReading] = useState(true);
   const [showScienceModal, setShowScienceModal] = useState(false);
 
-  const [scienceStartTime, setScienceStartTime] = useState<number | null>(null);
-  const [scienceEndTime, setScienceEndTime] = useState<number | null>(null);
-
+ 
 
 
   //const [quizSection, setQuizSection] = useState<'math' | 'ela'>('math');
@@ -1064,6 +1062,9 @@ export default function Quiz() {
   const [mathEndTime, setMathEndTime] = useState<number | null>(null);
   const [elaStartTime, setElaStartTime] = useState<number | null>(null);
   const [elaEndTime, setElaEndTime] = useState<number | null>(null);
+  const [scienceStartTime, setScienceStartTime] = useState<number | null>(null);
+  const [scienceEndTime, setScienceEndTime] = useState<number | null>(null);
+
   const [totalTestStartTime, setTotalTestStartTime] = useState<number | null>(null);
   const [totalTestEndTime, setTotalTestEndTime] = useState<number | null>(null);
 
@@ -1238,6 +1239,8 @@ const scienceSectionQuestions = isYear7
       setMathEndTime(parsed.mathEndTime);
       setElaStartTime(parsed.elaStartTime);
       setElaEndTime(parsed.elaEndTime);
+      setScienceStartTime(parsed.scienceStartTime);
+      setScienceEndTime(parsed.scienceEndTime);
       setTotalTestStartTime(parsed.totalTestStartTime);
       setTotalTestEndTime(parsed.totalTestEndTime);
     } else {
@@ -1276,11 +1279,13 @@ useEffect(() => {
     elaStartTime,
     elaEndTime,
     totalTestStartTime,
+    scienceStartTime,
+    scienceEndTime,
     totalTestEndTime,
     completed: submitted
   };
   localStorage.setItem("quizTimeData", JSON.stringify(timeData));
-}, [testid, gradeParam, mathStartTime, mathEndTime, elaStartTime, elaEndTime, totalTestStartTime, totalTestEndTime, submitted]);
+}, [testid, gradeParam, mathStartTime, mathEndTime, elaStartTime, elaEndTime, scienceStartTime, scienceEndTime, totalTestStartTime, totalTestEndTime, submitted]);
 
 // Add this useEffect to properly initialize math start time
 useEffect(() => {
@@ -1308,6 +1313,15 @@ useEffect(() => {
     console.log("Initializing ELA start time:", now);
     setElaStartTime(now);
   }
+
+
+  // Initialize Science start time
+if (isYear7 && quizSection === 'science' && scienceStartTime === null) {
+  const now = Date.now();
+  console.log("Initializing Science start time:", now);
+  setScienceStartTime(now);
+}
+
 }, [isGrade9Or10, quizSection, mathStartTime, elaStartTime, totalTestStartTime]);
 
 //3RD TIME TRACKING USEEFFECT
@@ -1370,6 +1384,7 @@ const calculateDurations = () => {
   console.log("Calculating durations with:", {
     mathStartTime, mathEndTime,
     elaStartTime, elaEndTime,
+    scienceStartTime, scienceEndTime,
     totalTestStartTime, totalTestEndTime
   });
 
@@ -1391,6 +1406,15 @@ const calculateDurations = () => {
     durations.elaDuration = Math.round((endTime - elaStartTime) / 1000);
     console.log("ELA duration:", durations.elaDuration, "seconds");
   }
+
+
+  // Calculate science duration
+  if (scienceStartTime) {
+    const endTime = scienceEndTime || now;
+    durations.scienceDuration = Math.round((endTime - scienceStartTime) / 1000);
+    console.log("Science duration:", durations.scienceDuration, "seconds");
+  }
+
 
   // Calculate total test duration
   if (totalTestStartTime) {
@@ -1530,11 +1554,13 @@ const handleTakeScience = () => {
   setCurrentQuestionIndex(0);
 };
 
-const handleSkipScience = () => {
-  const now = Date.now();
-  setTotalTestEndTime(now);
-  finalizeSubmit();
-};
+  const handleSkipScience = () => {
+    const now = Date.now();
+    localStorage.setItem("scienceSkipped", "true");
+    setTotalTestEndTime(now);
+    finalizeSubmit();
+  };
+
 
 
   const handleSubmitAfterConfirm2 = () => {
@@ -1795,6 +1821,11 @@ const calculateSectionScore = (section: "math" | "ela" | "science") => {
       durations.elaDuration = Math.round((endTime - elaStartTime) / 1000);
     }
 
+    if (scienceStartTime && (scienceEndTime || now)) {
+      const endTime = scienceEndTime || now;
+      durations.scienceDuration = Math.round((endTime - scienceStartTime) / 1000);
+    }
+
     if (totalTestStartTime && (totalTestEndTime || now)) {
       const endTime = totalTestEndTime || now;
       durations.totalDuration = Math.round((endTime - totalTestStartTime) / 1000);
@@ -1807,6 +1838,17 @@ const calculateSectionScore = (section: "math" | "ela" | "science") => {
     if (durations.elaDuration) {
       url.append("elaTime", durations.elaDuration.toString());
     }
+
+    if (durations.scienceDuration && isYear7) {
+      url.append("scienceTime", durations.scienceDuration.toString());
+    }
+
+
+    if (durations.scienceDuration) {
+      localStorage.setItem("scienceTime", durations.scienceDuration.toString());
+    }
+
+
 
     if (durations.totalDuration) {
       url.append("totalTime", durations.totalDuration.toString());

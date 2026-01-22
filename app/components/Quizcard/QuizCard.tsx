@@ -18,27 +18,56 @@ const lato = Lato({
 
 const stateOptions = ["New York", "New Jersey", "Georgia", "Texas", "Maryland", "Ohio"];
 const gradeOptions = ["Grade 3", "Grade 4", "Grade 5", "Grade 6", "Grade 7", "Grade 8"];
-const quizassesmentOptions = ["Pre-K","Kindergarten", "1st Grade", "2nd Grade", "3rd Grade", "4th Grade", "5th Grade", "6th Grade", "7th Grade", "8th Grade", "9th Grade", "10th Grade", "11th Grade", "12th Grade", "SSAT", "ALGEBRA 1", "GEOMETRY", "ALGEBRA 2", "SAT"];
+const quizassesmentOptions = ["Pre-K","Kindergarten", "1st Grade", "2nd Grade", "3rd Grade", "4th Grade", "5th Grade", "6th Grade", "Year 7", "7th Grade", "8th Grade", "9th Grade", "10th Grade", "11th Grade", "12th Grade", "SSAT", "ALGEBRA 1", "GEOMETRY", "ALGEBRA 2", "SAT",];
 
 
+
+// function generatePasscode(grade: string): string {
+//   let normalized = grade.toLowerCase().replace(/\s+/g, "");
+
+//    if (normalized === "algebra1") normalized = "algebra-1";
+//   if (normalized === "algebra2") normalized = "algebra-2";
+
+//   if (normalized === "kindergarten") return "SMTTK";
+//   if (normalized === "pre-k") return "SMTTPK";
+//   if (normalized === "sat") return "SMTTS";
+//    if (normalized === "ssat") return "SMTTSS";
+//    if (normalized === "algebra-2") return "SMTTA2";
+//   if (normalized === "algebra-1") return "SMTTA1";
+//   if (normalized === "geometry") return "SMTTG";  
+
+//   const match = grade.match(/(\d+)/);
+//   return match ? `SMTT${match[1]}` : "";
+// }
 
 function generatePasscode(grade: string): string {
-  let normalized = grade.toLowerCase().replace(/\s+/g, "");
+  let normalized = grade.toLowerCase().trim();
 
-   if (normalized === "algebra1") normalized = "algebra-1";
-  if (normalized === "algebra2") normalized = "algebra-2";
+  // Normalize spaces
+  normalized = normalized.replace(/\s+/g, "-");
 
+  // Special normalization for Year 7
+  if (normalized === "year-7") {
+    normalized = "7th-year";
+    return "SMTT7";
+  }
+
+  // Normalize algebra formats
+  if (normalized === "algebra-1") return "SMTTA1";
+  if (normalized === "algebra-2") return "SMTTA2";
+
+  // Other special cases
   if (normalized === "kindergarten") return "SMTTK";
   if (normalized === "pre-k") return "SMTTPK";
   if (normalized === "sat") return "SMTTS";
-   if (normalized === "ssat") return "SMTTSS";
-   if (normalized === "algebra-2") return "SMTTA2";
-  if (normalized === "algebra-1") return "SMTTA1";
-  if (normalized === "geometry") return "SMTTG";  
+  if (normalized === "ssat") return "SMTTSS";
+  if (normalized === "geometry") return "SMTTG";
 
-  const match = grade.match(/(\d+)/);
+  // Match numeric grades (1st, 2nd, 7th, etc)
+  const match = normalized.match(/(\d+)/);
   return match ? `SMTT${match[1]}` : "";
 }
+
 
 function QuizCard({ id, imageSrc, title, level, category, difficulty, time, questions }: QuizCardProps) {
   const [selectedTest, setSelectedTest] = useState<string | null>(null);

@@ -1095,6 +1095,248 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
 
     ],
   },
+   {
+    grade: "year-7",
+    questions: [
+      {
+        id: "q1",
+        question: "A baker uses 2<sup>3</sup>&frasl;<sub>4</sub> cups of flour for one batch of cookies. How much flour is needed for 3<sup>1</sup>&frasl;<sub>2</sub> batches?",
+        options: ["9<sup>5</sup>&frasl;<sub>8</sub> cups", "9<sup>7</sup>&frasl;<sub>8</sub> cups", "8<sup>1</sup>&frasl;<sub>2</sub> cups", "10 cups"],
+        correctAnswer: "9<sup>7</sup>&frasl;<sub>8</sub> cups",
+        solution: "<p><strong>Step 1:</strong> Convert to improper fractions.<br>2<sup>3</sup>&frasl;<sub>4</sub> = 11/4, 3<sup>1</sup>&frasl;<sub>2</sub> = 7/2.<br><strong>Step 2:</strong> Multiply.<br>(11/4) × (7/2) = 77/8.<br><strong>Step 3:</strong> Convert to mixed number.<br>77/8 = 9<sup>5</sup>&frasl;<sub>8</sub> cups.<br><strong>Answer:</strong> 9<sup>5</sup>&frasl;<sub>8</sub> cups.</p>"
+      },
+      {
+        id: "q2",
+        question: "The expression (2x – 3)(x + 4) is expanded. What is the coefficient of the x-term in the expanded form?",
+        options: ["2", "5", "-3", "5x"],
+        correctAnswer: "5",
+        solution: "<p><strong>Step 1:</strong> Expand using distributive property.<br>(2x)(x) = 2x², (2x)(4) = 8x, (-3)(x) = -3x, (-3)(4) = -12.<br><strong>Step 2:</strong> Combine like terms.<br>8x - 3x = 5x.<br><strong>Answer:</strong> Coefficient is 5.</p>"
+      },
+      {
+        id: "q3",
+        question: "A number is divisible by both 6 and 8. What is the least possible positive number that meets this condition?",
+        options: ["24", "48", "12", "36"],
+        correctAnswer: "24",
+        solution: "<p><strong>Step 1:</strong> Find LCM of 6 and 8.<br>6 = 2 × 3, 8 = 2³.<br><strong>Step 2:</strong> LCM = 2³ × 3 = 24.<br><strong>Step 3:</strong> But 24 is not divisible by both? (Yes it is). Wait — actually, 24 works, but 'least possible' means LCM → 24 is correct</p>"
+      },
+      {
+        id: "q4",
+        question: "A regular hexagon has a perimeter of 48 cm. What is the length of one side?",
+        options: ["8 cm", "6 cm", "12 cm", "7 cm"],
+        correctAnswer: "8 cm",
+        solution: "<p><strong>Step 1:</strong> A hexagon has 6 equal sides.<br><strong>Step 2:</strong> Side length = perimeter ÷ number of sides.<br>48 ÷ 6 = 8 cm.<br><strong>Answer:</strong> 8 cm.</p>"
+      },
+      {
+        id: "q5",
+        question: "Which of the following has the greatest value?",
+        options: ["<sup>3</sup>&frasl;<sub>4</sub>", "0.82", "<sup>8</sup>&frasl;<sub>10</sub>", "81%"],
+        correctAnswer: "0.82",
+        solution: "<p><strong>Step 1:</strong> Convert all to decimals.<br>3/4 = 0.75, 0.82 stays same, 8/10 = 0.8, 81% = 0.81.<br><strong>Step 2:</strong> Compare: 0.82 is the largest.<br><strong>Answer:</strong> 0.82.</p>"
+      },
+      {
+        id: "q6",
+        question: "Solve for x in the equation: <sup>2</sup>&frasl;<sub>3</sub>x - 5 = 7.",
+        options: ["15", "18", "12", "9"],
+        correctAnswer: "18",
+        solution: "<p><strong>Step 1:</strong> Add 5 to both sides.<br>(2/3)x = 12.<br><strong>Step 2:</strong> Multiply by 3/2.<br>x = 12 × (3/2) = 18.<br><strong>Answer:</strong> 18.</p>"
+      },
+      {
+        id: "q7",
+        question: "A box contains 3 red, 4 blue, and 5 green marbles. If one marble is randomly selected, what is the probability it is not green?",
+        options: ["<sup>3</sup>&frasl;<sub>4</sub>", "<sup>7</sup>&frasl;<sub>12</sub>", "<sup>5</sup>&frasl;<sub>12</sub>", "<sup>1</sup>&frasl;<sub>4</sub>"],
+        correctAnswer: "<sup>7</sup>&frasl;<sub>12</sub>",
+        solution: "<p><strong>Step 1:</strong> Total marbles = 3 + 4 + 5 = 12.<br><strong>Step 2:</strong> Not green = red + blue = 3 + 4 = 7.<br><strong>Step 3:</strong> Probability = 7/12 ≈ 0.583</p>"
+      },
+      {
+        id: "q8",
+        question: "The equation y = 5x + 2 represents a pattern. What is the value of y when x = –3?",
+        options: ["-13", "-15", "-12", "-17"],
+        correctAnswer: "-13",
+        solution: "<p><strong>Step 1:</strong> Substitute x = -3.<br>y = 5(-3) + 2 = -15 + 2 = -13.<br><strong>Answer:</strong> -13.</p>"
+      },
+      {
+        id: "q9",
+        question: "A store is offering a 25% discount on an item that costs $84. What is the sale price?",
+        options: ["$63.00", "$62.50", "$65.00", "$67.00"],
+        correctAnswer: "$63.00",
+        solution: "<p><strong>Step 1:</strong> Find 25% of $84.<br>0.25 × 84 = 21.<br><strong>Step 2:</strong> Subtract from original price.<br>84 - 21 = 63.<br><strong>Answer:</strong> $63.00.</p>"
+      },
+      {
+        id: "q10",
+        question: "If a triangle has side lengths of 7 cm, 24 cm, and 25 cm, is it a right triangle?",
+        options: ["Yes, because 7² + 24² = 25²", "No, because 7 + 24 < 25", "No, because 24² + 25² ≠ 7²", "Yes, because it's isosceles"],
+        correctAnswer: "Yes, because 7² + 24² = 25²",
+        solution: "<p><strong>Step 1:</strong> Check Pythagoras.<br>7² + 24² = 49 + 576 = 625.<br><strong>Step 2:</strong> 25² = 625.<br><strong>Step 3:</strong> They match, so it’s a right triangle.<br><strong>Answer:</strong> Yes, because 7² + 24² = 25².</p>"
+      },
+      {
+        id: "q11",
+        question: "What is a central idea in nonfiction text?",
+        options: ["The main topic or point the author is making", "The first sentence", "The caption", "The last fact listed"],
+        correctAnswer: "The main topic or point the author is making"
+      },
+      {
+        id: "q12",
+        question: "Which sentence contains an example of a hyperbole?",
+        options: ["She cried for hours.", "I have a million things to do today.", "He ran to the store.", "The sun is bright."],
+        correctAnswer: "I have a million things to do today."
+      },
+      {
+        id: "q13",
+        question: "Why do authors use foreshadowing in fiction?",
+        options: ["To confuse the reader", "To hint at events that will happen later", "To introduce new characters", "To change the point of view"],
+        correctAnswer: "To hint at events that will happen later"
+      },
+      {
+        id: "q14",
+        question: "What is a claim in argumentative writing?",
+        options: ["A story from the past", "A personal feeling", "The main opinion or position the author takes", "A character’s name"],
+        correctAnswer: "The main opinion or position the author takes"
+      },
+      {
+        id: "q15",
+        question: "Which of the following best describes an objective summary?",
+        options: ["A summary with personal opinions", "A detailed retelling with emotions", "A brief, neutral restatement of main ideas", "A summary written like a poem"],
+        correctAnswer: "A brief, neutral restatement of main ideas"
+      },
+      {
+        id: "q16",
+        question: "What is the difference between tone and mood?",
+        options: ["Tone is the reader’s feeling; mood is the author’s word choice", "Tone is how the author feels; mood is how the reader feels", "They are the same", "Mood is used only in poems"],
+        correctAnswer: "Tone is how the author feels; mood is how the reader feels"
+      },
+      {
+        id: "q17",
+        question: "How does dialogue help develop a character?",
+        options: ["It shows the setting", "It lists their job", "It reveals thoughts, feelings, and relationships", "It creates a plot twist"],
+        correctAnswer: "It reveals thoughts, feelings, and relationships"
+      },
+      {
+        id: "q18",
+        question: "Which sentence is written in active voice?",
+        options: ["The homework was completed by Jake.", "The test was taken by the class.", "Jake completed the homework.", "The paper was torn."],
+        correctAnswer: "Jake completed the homework."
+      },
+      {
+        id: "q19",
+        question: "What does the word 'elaborate' mean in this sentence: 'Can you elaborate on your idea?'",
+        options: ["Change your idea", "Say it more clearly", "Explain it with more detail", "Delete your idea"],
+        correctAnswer: "Explain it with more detail"
+      },
+      {
+        id: "q20",
+        question: "Why is it important to analyze how a text is structured?",
+        options: ["To ignore confusing parts", "To see if it's fiction or nonfiction", "To understand how ideas connect and support meaning", "To find spelling mistakes"],
+        correctAnswer: "To understand how ideas connect and support meaning"
+      },
+      {
+        id: "q21",
+        question: "Which of the following is found in both plant and animal cells?",
+        options: ["Cell wall", "Chloroplast", "Nucleus", "Large permanent vacuole"],
+        correctAnswer: "Nucleus",
+        solution: "<p><strong>Explanation:</strong> Both plant and animal cells contain a nucleus, which controls the activities of the cell. Cell walls and chloroplasts are found only in plant cells.</p>"
+      },
+      {
+        id: "q22",
+        question: "Which statement best explains why red blood cells are well-adapted for oxygen transport?",
+        options: ["They contain chloroplasts for energy", "They have a large nucleus to control activities", "They have a biconcave shape and lack a nucleus", "They have a cell wall for strength"],
+        correctAnswer: "They have a biconcave shape and lack a nucleus",
+        solution: "<p><strong>Explanation:</strong> Red blood cells have a biconcave shape that increases surface area for oxygen absorption, and they lack a nucleus to allow more space for hemoglobin.</p>"
+      },
+      {
+        id: "q23",
+        question: "Which body system is responsible for transporting oxygen and nutrients around the body?",
+        options: ["Digestive system", "Circulatory system", "Respiratory system", "Nervous system"],
+        correctAnswer: "Circulatory system",
+        solution: "<p><strong>Explanation:</strong> The circulatory system transports oxygen, nutrients, and other substances around the body using blood vessels and the heart.</p>"
+      },
+      {
+        id: "q24",
+        question: "Food is broken down into smaller soluble substances in the:",
+        options: ["Circulatory system", "Digestive system", "Skeletal system", "Nervous system"],
+        correctAnswer: "Digestive system",
+        solution: "<p><strong>Explanation:</strong> The digestive system breaks down food into small, soluble substances that can be absorbed into the bloodstream.</p>"
+      },
+      {
+        id: "q25",
+        question: "In flowering plants, fertilisation happens when:",
+        options: ["Seeds are released", "Pollen reaches the stigma", "A fruit forms", "Leaves grow"],
+        correctAnswer: "Pollen reaches the stigma",
+        solution: "<p><strong>Explanation:</strong> Fertilisation begins when pollen lands on the stigma, allowing the male gamete to reach the ovule.</p>"
+      },
+      {
+        id: "q26",
+        question: "In which state are particles closest together?",
+        options: ["Solid", "Liquid", "Gas", "Plasma"],
+        correctAnswer: "Solid",
+        solution: "<p><strong>Explanation:</strong> In solids, particles are tightly packed and vibrate in fixed positions.</p>"
+      },
+      {
+        id: "q27",
+        question: "An atom is:",
+        options: ["A mixture of substances", "The smallest part of an element", "A type of compound", "A chemical reaction"],
+        correctAnswer: "The smallest part of an element",
+        solution: "<p><strong>Explanation:</strong> An atom is the smallest unit of an element that retains the properties of that element.</p>"
+      },
+      {
+        id: "q28",
+        question: "Classify each as element, compound, or mixture: a) Oxygen (O₂), b) Water (H₂O), c) Air",
+        options: ["Element, Compound, Mixture", "Compound, Element, Mixture", "Mixture, Compound, Element", "Element, Mixture, Compound"],
+        correctAnswer: "Element, Compound, Mixture",
+        solution: "<p><strong>Explanation:</strong> Oxygen is an element, water is a compound made of hydrogen and oxygen, and air is a mixture of different gases.</p>"
+      },
+      {
+        id: "q29",
+        question: "A chemical reaction usually forms:",
+        options: ["No new substances", "Only gases", "New substances", "Only liquids"],
+        correctAnswer: "New substances",
+        solution: "<p><strong>Explanation:</strong> A chemical reaction forms new substances with different properties from the original substances.</p>"
+      },
+      {
+        id: "q30",
+        question: "Melting butter is a:",
+        options: ["Chemical change", "Physical change"," Phase reaction", "Nuclear reaction"],
+        correctAnswer: "Physical change",
+        solution: "<p><strong>Explanation:</strong> Melting changes only the state of the butter, not its chemical composition.</p>"
+      },
+      {
+        id: "q31",
+        question: "A force can change an object’s:",
+        options: ["Speed", "Direction", "Shape", "All of the above"],
+        correctAnswer: "All of the above",
+        solution: "<p><strong>Explanation:</strong> A force can affect how fast something moves, the direction it moves, and even its shape.</p>"
+      },
+      {
+        id: "q32",
+        question: "Friction is a force that:",
+        options: ["Always speeds things up", "Opposes motion between surfaces", "Only happens in water", "Only happens in space"],
+        correctAnswer: "Opposes motion between surfaces",
+        solution: "<p><strong>Explanation:</strong> Friction resists the motion between two surfaces that are in contact.</p>"
+      },
+      {
+        id: "q33",
+        question: "Sound is produced by:",
+        options: ["Melting", "Vibrations", "Reflections", "Gravity"],
+        correctAnswer: "Vibrations",
+        solution: "<p><strong>Explanation:</strong> Sound is produced when objects vibrate and create sound waves in the air.</p>"
+      },
+      {
+        id: "q34",
+        question: "What causes day and night?",
+        options: ["The Moon moving", "Earth spinning on its axis", "Earth moving closer to the Sun", "Clouds blocking sunlight"],
+        correctAnswer: "Earth spinning on its axis",
+        solution: "<p><strong>Explanation:</strong> Day and night occur because the Earth rotates on its axis, exposing different parts to the Sun.</p>"
+      },
+      {
+        id: "q35",
+        question: "Which explanation best describes why the UK has different seasons?",
+        options: ["Earth is closer to the Sun in summer", "Earth’s tilt changes sunlight angle and day length during its orbit", "The Moon blocks sunlight in winter", "Clouds increase in winter causing cold"],
+        correctAnswer: "Earth’s tilt changes sunlight angle and day length during its orbit",
+        solution: "<p><strong>Explanation:</strong> The Earth's tilted axis causes changes in sunlight angle and day length as it orbits the Sun, leading to different seasons.</p>"
+      }
+
+
+    ],
+  },
   {
     grade: "7th-grade",
     questions: [

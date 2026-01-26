@@ -745,7 +745,7 @@ export default function ReviewPage() {
   const elaScore = elaScoreParam ? parseFloat(elaScoreParam) : null;
   const scienceScore = scienceScoreParam ? parseFloat(scienceScoreParam) : null;
 
-  const isYear7 = gradeParam === "year-7";
+  const isYear7 = gradeParam === "year-7" || gradeParam === "7th-grade";
 
   const [userName, setUserName] = useState<string>("");
   const [userEmail, setUserEmail] = useState("");
@@ -937,38 +937,6 @@ useEffect(() => {
   };
 
 
-// const getFormattedTimeData = () => {
-//   // Get time from URL params first, then fallback to state
-//   const mathTimeFromParams = searchParams.get("mathTime");
-//   const elaTimeFromParams = searchParams.get("elaTime");
-//   const totalTimeFromParams = searchParams.get("totalTime");
-
-//   const mathTime = mathTimeFromParams ? parseInt(mathTimeFromParams) : timeData.mathDuration || 0;
-//   const elaTime = elaTimeFromParams ? parseInt(elaTimeFromParams) : timeData.elaDuration || 0;
-//   const totalTime = totalTimeFromParams ? parseInt(totalTimeFromParams) : timeData.totalDuration || 0;
-
-//   const tookMath = mathTime > 0;
-//   const tookELA = elaTime > 0;
-
-//   // Calculate total time
-//   const calculatedTotalTime = (tookMath || tookELA) ? (mathTime + elaTime) : totalTime;
-
-//   // Format values
-//   const mathFormatted = tookMath ? formatDuration(mathTime) : "0m 0s";
-//   const elaFormatted = tookELA ? formatDuration(elaTime) : "0m 0s";
-//   const totalFormatted = calculatedTotalTime > 0 ? formatDuration(calculatedTotalTime) : "Time not available";
-
-//   // Return all three as an object
-//   return {
-//     math: mathFormatted,
-//     ela: elaFormatted,
-//     total: totalFormatted
-//   };
-// };
-
-
-
- // Function to generate and download PDF report
 
 
  const getFormattedTimeData = () => {
@@ -1055,7 +1023,7 @@ useEffect(() => {
         studentInfo.push(["ELA Score", elaSkipped ? "Skipped" : (elaScore !== null ? `${elaScore}%` : "N/A")]);
     
         // Science (Year 7 only)
-        if (isYear7 && scienceScore !== null) {
+        if (isYear7  && scienceScore !== null) {
           studentInfo.push(["Science Score", `${scienceScore}%`]);
     
           // Resolve science time from URL params or fallback to stored timeData
@@ -1148,13 +1116,13 @@ useEffect(() => {
 
 
     if (isYear7 && scienceScore !== null) {
-  sectionData.push([
-    "Science",
-    `${scienceScore}%`,
-    scienceDuration ? formatDuration(scienceDuration) : "Not recorded",
-    scienceScore >= 70 ? "Good" : "Needs Improvement"
-  ]);
-}
+      sectionData.push([
+        "Science",
+        `${scienceScore}%`,
+        scienceDuration ? formatDuration(scienceDuration) : "Not recorded",
+        scienceScore >= 70 ? "Good" : "Needs Improvement"
+      ]);
+    }
 
 
 
@@ -1290,13 +1258,7 @@ if (loading) return <p className="text-center text-gray-600">Loading quiz data..
       )}
 
 
-      {/* {isGrade9Or10 && (
-        <div className="mt-2 text-center">
-          <p className="text-sm text-gray-700">
-            Math: {mathScore}%{elaSkipped ? " | ELA: Skipped" : ` | ELA: ${elaScore}%`}
-          </p>
-        </div>
-      )} */}
+    
 
 
 
@@ -1305,7 +1267,7 @@ if (loading) return <p className="text-center text-gray-600">Loading quiz data..
           <p className="text-sm text-gray-700">
             Math: {mathScore}%
             {elaSkipped ? " | ELA: Skipped" : ` | ELA: ${elaScore}%`}
-            {isYear7 && scienceScore !== null ? ` | Science: ${scienceScore}%` : ""}
+            {isYear7  && scienceScore !== null ? ` | Science: ${scienceScore}%` : ""}
           </p>
         </div>
       )}

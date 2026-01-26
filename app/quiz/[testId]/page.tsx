@@ -1017,7 +1017,6 @@
 
 "use client";
 
-
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 import quizData from "@/app/data/quizdata";
@@ -1146,18 +1145,16 @@ export default function Quiz() {
 
   // Determine what quiz type we're dealing with
   const isSat = ['sat', 'ssat'].includes(normalizedGrade);
-  const isGrade9Or10 = normalizedGrade === "9th-grade" || normalizedGrade === "10th-grade"|| normalizedGrade === "7th-grade" || normalizedGrade === "8th-grade" || normalizedGrade === "6th-grade" || normalizedGrade === "5th-grade" || normalizedGrade === "4th-grade" || normalizedGrade === "3rd-grade" || normalizedGrade === "11th-grade" || normalizedGrade === "12th-grade" || normalizedGrade === "2nd-grade" || normalizedGrade === "1st-grade" || normalizedGrade === "pre-k" || normalizedGrade === "kindergarten" || normalizedGrade === "year-7";
+  const isGrade9Or10 = normalizedGrade === "9th-grade" || normalizedGrade === "10th-grade"|| normalizedGrade === "8th-grade" || normalizedGrade === "7th-grade" || normalizedGrade === "6th-grade" || normalizedGrade === "5th-grade" || normalizedGrade === "4th-grade" || normalizedGrade === "3rd-grade" || normalizedGrade === "11th-grade" || normalizedGrade === "12th-grade" || normalizedGrade === "2nd-grade" || normalizedGrade === "1st-grade" || normalizedGrade === "pre-k" || normalizedGrade === "kindergarten" || normalizedGrade === "year-7";
 
   // Slice up questions for SAT
   const readingQuestions = isSat ? quizQuestions.slice(0, 10) : [];
   const mathQuestions = isSat ? quizQuestions.slice(10) : [];
 
-  // Slice up questions for Grade 9/10
-  // const mathSectionQuestions = isGrade9Or10 ? quizQuestions.slice(0, 10) : [];
-  // const elaSectionQuestions = isGrade9Or10 ? quizQuestions.slice(10) : [];
+ 
+  const isYear7 = normalizedGrade === "year-7" || normalizedGrade === "7th-grade";
 
 
-  const isYear7 = normalizedGrade === "year-7";
 
 const mathSectionQuestions = isGrade9Or10 || isYear7
   ? quizQuestions.slice(0, 10)
@@ -1170,6 +1167,7 @@ const elaSectionQuestions = isGrade9Or10 || isYear7
 const scienceSectionQuestions = isYear7
   ? quizQuestions.slice(20, 35)
   : [];
+
 
 
   const activeQuestions = isSat
@@ -1707,41 +1705,95 @@ const calculateScore = () => {
 };
 
 
+// const calculateSectionScore = (section: "math" | "ela" | "science") => {
+
+//   // Check if ELA was skipped
+//   const elaSkipped = localStorage.getItem("elaSkipped") === "true";
+
+//   if (section === "ela" && elaSkipped) {
+//     return null;
+//   }
+
+//   const isGrade9Or10 = gradeParam === "grade9" || gradeParam === "grade10";
+//   const isYear7 = gradeParam === "year-7";
+
+//   let sectionQuestions: any[] = [];
+
+//   // =========================
+//   // YEAR 7 LOGIC
+//   // Math = 0–9
+//   // ELA = 10–19
+//   // Science = 20–34
+//   // =========================
+//   if (isYear7) {
+//     if (section === "math") {
+//       sectionQuestions = quizQuestions.slice(0, 10);
+//     } else if (section === "ela") {
+//       sectionQuestions = quizQuestions.slice(10, 20);
+//     } else if (section === "science") {
+//       sectionQuestions = quizQuestions.slice(20, 35);
+//     }
+//   }
+
+//   // =========================
+//   // GRADE 9 / 10 LOGIC
+//   // Math = 0–9
+//   // ELA = 10–19
+//   // =========================
+//   else if (isGrade9Or10) {
+//     if (section === "math") {
+//       sectionQuestions = quizQuestions.slice(0, 10);
+//     } else if (section === "ela") {
+//       sectionQuestions = quizQuestions.slice(10, 20);
+//     }
+//   }
+
+//   // =========================
+//   // DEFAULT (Single section quizzes)
+//   // =========================
+//   else {
+//     sectionQuestions = quizQuestions;
+//   }
+
+//   const total = sectionQuestions.length;
+//   if (total === 0) return "0.00";
+
+//   const correct = sectionQuestions.filter(
+//     (q) => answers?.[q.question] === (q.correctAnswer || q.answer)
+//   ).length;
+
+//   return ((correct / total) * 100).toFixed(2);
+// };
+
+
 const calculateSectionScore = (section: "math" | "ela" | "science") => {
-
-  // Check if ELA was skipped
   const elaSkipped = localStorage.getItem("elaSkipped") === "true";
+  if (section === "ela" && elaSkipped) return null;
 
-  if (section === "ela" && elaSkipped) {
-    return null;
-  }
+  const normalized = gradeParam?.toLowerCase().replace(/\s+/g, "-") ?? "";
 
-  const isGrade9Or10 = gradeParam === "grade9" || gradeParam === "grade10";
-  const isYear7 = gradeParam === "year-7";
+  const isYear7 =
+    normalized === "year-7" ||
+    normalized === "7th-grade";
+
+  const isGrade9Or10 =
+    normalized === "9th-grade" ||
+    normalized === "10th-grade";
 
   let sectionQuestions: any[] = [];
 
-  // =========================
-  // YEAR 7 LOGIC
-  // Math = 0–9
-  // ELA = 10–19
-  // Science = 20–34
-  // =========================
+  // YEAR 7
   if (isYear7) {
     if (section === "math") {
       sectionQuestions = quizQuestions.slice(0, 10);
     } else if (section === "ela") {
       sectionQuestions = quizQuestions.slice(10, 20);
     } else if (section === "science") {
-      sectionQuestions = quizQuestions.slice(20, 35);
+      sectionQuestions = quizQuestions.slice(20, 35); // 15 questions
     }
   }
 
-  // =========================
-  // GRADE 9 / 10 LOGIC
-  // Math = 0–9
-  // ELA = 10–19
-  // =========================
+  // GRADE 9 / 10
   else if (isGrade9Or10) {
     if (section === "math") {
       sectionQuestions = quizQuestions.slice(0, 10);
@@ -1750,15 +1802,13 @@ const calculateSectionScore = (section: "math" | "ela" | "science") => {
     }
   }
 
-  // =========================
-  // DEFAULT (Single section quizzes)
-  // =========================
+  // FALLBACK
   else {
     sectionQuestions = quizQuestions;
   }
 
   const total = sectionQuestions.length;
-  if (total === 0) return "0.00";
+  if (!total) return "0.00";
 
   const correct = sectionQuestions.filter(
     (q) => answers?.[q.question] === (q.correctAnswer || q.answer)
@@ -1766,7 +1816,6 @@ const calculateSectionScore = (section: "math" | "ela" | "science") => {
 
   return ((correct / total) * 100).toFixed(2);
 };
-
 
 
   const handleGoHome = () => {
@@ -1794,7 +1843,7 @@ const calculateSectionScore = (section: "math" | "ela" | "science") => {
     const elaScore = calculateSectionScore("ela");
     const scienceScore = calculateSectionScore("science");
 
-    const isYear7 = gradeParam === "year-7";
+    const isYear7 = gradeParam === "year-7 " || gradeParam === "7th-grade";
 
     // -------------------------
     // TIME HANDLING
@@ -2099,7 +2148,7 @@ const answeredCount = submitted && isSATQuiz
         </div>
       ) : (
           <div className="text-center">
-            {isGrade9Or10 || gradeParam === "year-7" ? (
+            {(isGrade9Or10 || gradeParam === "year-7"|| normalizedGrade === "7th-grade") ? (
               <>
                 <h2 className="text-xl font-bold mb-3">Section Scores</h2>
 
@@ -2117,7 +2166,7 @@ const answeredCount = submitted && isSATQuiz
                 </p>
 
                 {/* Science — Year 7 only */}
-                {gradeParam === "year-7" && (
+                {(gradeParam === "year-7" || normalizedGrade === "7th-grade") && (
                   <p className="text-lg text-green-700">
                     Science Score:{" "}
                     {localStorage.getItem("scienceSkipped") === "true"

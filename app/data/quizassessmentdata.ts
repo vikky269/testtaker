@@ -1470,6 +1470,111 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         options: ["Even though she had failed twice, she trained harder and finally won.", "He preferred staying indoors, watching movies all weekend.", "The sun rose slowly over the empty hills.", "They agreed to meet after school to work on the project."],
         correctAnswer: "Even though she had failed twice, she trained harder and finally won.",
       },
+      {
+        id: "q21",
+        question: "Which organelle is primarily responsible for energy production in a cell?",
+        options: ["Nucleus", "Mitochondria", "Ribosome", "Cell wall"],
+        correctAnswer: "Mitochondria",
+        solution: "<p><strong>Explanation:</strong> Mitochondria are known as the powerhouse of the cell because they produce energy needed for cellular activities.</p>"
+      },
+      {
+        id: "q22",
+        question: "Which of the following is an example of a physical change?",
+        options: ["Burning paper", "Rusting metal", "Melting ice", "Baking a cake"],
+        correctAnswer: "Melting ice",
+        solution: "<p><strong>Explanation:</strong> Melting ice is a physical change because the substance remains water and no new substance is formed.</p>"
+      },
+      {
+        id: "q23",
+        question: "What is the main function of chlorophyll in plants?",
+        options: ["Absorb water", "Produce glucose", "Absorb sunlight", "Release carbon dioxide"],
+        correctAnswer: "Absorb sunlight",
+        solution: "<p><strong>Explanation:</strong> Chlorophyll absorbs sunlight, which provides the energy needed for photosynthesis.</p>"
+      },
+      {
+        id: "q24",
+        question: "Which layer of the Earth is made of molten rock and is found below the crust?",
+        options: ["Inner core", "Mantle", "Outer core", "Lithosphere"],
+        correctAnswer: "Mantle",
+        solution: "<p><strong>Explanation:</strong> The mantle lies beneath the Earth's crust and is made of semi-molten rock called magma.</p>"
+      },
+      {
+        id: "q25",
+        question: "What type of energy is stored in food molecules?",
+        options: ["Thermal energy", "Chemical energy", "Kinetic energy", "Sound energy"],
+        correctAnswer: "Chemical energy",
+        solution: "<p><strong>Explanation:</strong> Food stores chemical energy, which is released when the food is broken down during digestion.</p>"
+      },
+      {
+        id: "q26",
+        question: "Which process describes water changing from liquid to gas?",
+        options: ["Condensation", "Evaporation", "Freezing", "Melting"],
+        correctAnswer: "Evaporation",
+        solution: "<p><strong>Explanation:</strong> Evaporation occurs when liquid water gains heat energy and changes into water vapor.</p>"
+      },
+      {
+        id: "q27",
+        question: "Which of the following best describes the role of a producer in an ecosystem?",
+        options: ["Eats other animals", "Breaks down dead organisms", "Makes its own food", "Lives in water only"],
+        correctAnswer: "Makes its own food",
+        solution: "<p><strong>Explanation:</strong> Producers, such as plants, make their own food using sunlight through photosynthesis.</p>"
+      },
+      {
+        id: "q28",
+        question: "In the periodic table, elements are arranged primarily by their:",
+        options: ["Atomic mass", "Color", "Atomic number", "Size"],
+        correctAnswer: "Atomic number",
+        solution: "<p><strong>Explanation:</strong> Elements in the periodic table are arranged by increasing atomic number, which is the number of protons.</p>"
+      },
+      {
+        id: "q29",
+        question: "What is the basic unit of life?",
+        options: ["Atom", "Cell", "Tissue", "Organ"],
+        correctAnswer: "Cell",
+        solution: "<p><strong>Explanation:</strong> The cell is the smallest unit of life that can carry out all life processes.</p>"
+      },
+      {
+        id: "q30",
+        question: "Which force pulls objects toward Earth?",
+        options: ["Friction", "Magnetism", "Gravity", "Electricity"],
+        correctAnswer: "Gravity",
+        solution: "<p><strong>Explanation:</strong> Gravity is the force that attracts objects toward the center of the Earth.</p>"
+      },
+      {
+        id: "q31",
+        question: "Which of these is an example of potential energy?",
+        options: ["A moving car", "A stretched rubber band", "A running athlete", "A flying bird"],
+        correctAnswer: "A stretched rubber band",
+        solution: "<p><strong>Explanation:</strong> Potential energy is stored energy. A stretched rubber band stores energy due to its position and shape.</p>"
+      },
+      {
+        id: "q32",
+        question: "What is the primary cause of the seasons on Earth?",
+        options: ["Earth's distance from the Sun", "Earth's tilt on its axis", "The Moon's orbit", "Ocean currents"],
+        correctAnswer: "Earth's tilt on its axis",
+        solution: "<p><strong>Explanation:</strong> Earth's tilt causes different parts of the planet to receive varying amounts of sunlight during the year.</p>"
+      },
+      {
+        id: "q33",
+        question: "Which type of rock forms from cooled magma or lava?",
+        options: ["Sedimentary", "Metamorphic", "Igneous", "Fossil"],
+        correctAnswer: "Igneous",
+        solution: "<p><strong>Explanation:</strong> Igneous rocks form when magma or lava cools and solidifies.</p>"
+      },
+      {
+        id: "q34",
+        question: "What do we call the process by which plants make their own food?",
+        options: ["Respiration", "Digestion", "Photosynthesis", "Fermentation"],
+        correctAnswer: "Photosynthesis",
+        solution: "<p><strong>Explanation:</strong> Photosynthesis is the process where plants use sunlight, carbon dioxide, and water to make food.</p>"
+      },
+      {
+        id: "q35",
+        question: "Which part of the human body is responsible for pumping blood?",
+        options: ["Brain", "Lung", "Heart", "Liver"],
+        correctAnswer: "Heart",
+        solution: "<p><strong>Explanation:</strong> The heart pumps blood throughout the body, supplying oxygen and nutrients.</p>"
+      },
     ],
   },
   {

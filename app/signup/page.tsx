@@ -70,6 +70,7 @@ const handleSubmit = async () => {
         } else {
             setError(signUpError.message);
         }
+         router.push("/login");
         return;
     }
 
@@ -100,7 +101,45 @@ const handleSubmit = async () => {
     setError(`Profile insert failed: ${profileInsertError.message}`);
     return;
   }
+
+//   await fetch(
+//   "https://<project-ref>.supabase.co/functions/v1/notify-new-student",
+//   {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Authorization: `Bearer ${session.access_token}`,
+//     },
+//     body: JSON.stringify({
+//       fullName: formData.fullName,
+//       email: formData.email,
+//       grade: formData.grade,
+//     }),
+//   }
+// );
    
+console.log("Supabase URL:", process.env.NEXT_PUBLIC_SUPABASE_URL);
+
+
+
+// 4. Call the edge function to send notification email to admin and student
+await fetch(
+  `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/notify-new-student`,
+  {
+    
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
+    },
+    body: JSON.stringify({
+      fullName: formData.fullName,
+      email: formData.email,
+      grade: formData.grade,
+    }),
+  }
+);
+
   toast.success("Signup successful! Please log in to access your test.");
   router.push("/login");
 };
@@ -133,33 +172,6 @@ const handleSubmit = async () => {
           className="w-full border p-2 rounded"
           required
         />
-        {/* <select
-          name="grade"
-          onChange={handleChange}
-          className="w-full border p-2 rounded"
-        >
-          <option value="">Select Grade</option>
-          {Array.from({ length: 12 }, (_, i) => (
-            <option key={i + 1} value={`Grade ${i + 1}`}>
-              Grade {i + 1}
-            </option>
-          ))}
-        </select> */}
-
-        {/* <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          onChange={handleChange}
-          className="w-full border p-2 rounded"
-        />
-        <input
-          type="password"
-          name="confirmPassword"
-          placeholder="Confirm Password"
-          onChange={handleChange}
-          className="w-full border p-2 rounded"
-        /> */}
         <div className="relative w-full">
           <input
             type={showPassword ? "text" : "password"}

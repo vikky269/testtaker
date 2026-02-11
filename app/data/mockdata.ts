@@ -153,6 +153,6 @@ export interface QuizCardProps {
       time: "15 min",
       questions: 10,
       onStart: () => console.log("Started Civics Awareness")
-    }
+    },
   ];
   

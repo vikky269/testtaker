@@ -11,280 +11,11 @@ export interface GradeLevelQuiz {
   questions: QuizQuestion[];
 }
 
-export const quizAssessmentData: GradeLevelQuiz[] = [
-  {
-    grade: "pre-k",
-    questions: [
-      {
-        id: "q1",
-        question: "Subtract 5 – 5 ",
-        options: ["0", "1", "2", "5"],
-        correctAnswer: "0",
-      },
-      {
-        id: "q2",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751576131/Screenshot_2025-07-03_215504_ljo8rp.png",
-        options: ["5", "7", "3", "10"],
-        correctAnswer: "10",
-      },
-      {
-        id: "q3",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751576281/Screenshot_2025-07-03_215731_d7jxfa.png",
-        options: ["5", "7", "3", "10"],
-        correctAnswer: "5",
-      },
-      {
-        id: "q4",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751555566/Screenshot_2025-07-03_161228_snytqb.png",
-        options: ["3", "4", "5", "6"],
-        correctAnswer: "4",
-      },
-      {
-        id: "q5",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751555683/Screenshot_2025-07-03_161430_rk9zqz.png",
-        options: ["A", "B", "C", "D"],
-        correctAnswer: "D",
-      },
-      {
-        id: "q6",
-        question: "How many sides does a triangle have?",
-        options: ["2", "3", "4", "5"],
-        correctAnswer: "3",
-      },
-      {
-        id: "q7",
-        question: "What number comes before 8?",
-        options: ["6", "7", "9", "10"],
-        correctAnswer: "7",
-      },
-      {
-        id: "q8",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751555983/Screenshot_2025-07-03_161925_f59za6.png",
-        options: ["3 bananas", "5 bananas", "4 bananas", "2 bananas"],
-        correctAnswer: "4 bananas",
-      },
-      {
-        id: "q9",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751556129/Picture2_txgxxx.png",
-        options: ["10", "5", "15", "51"],
-        correctAnswer: "5",
-      },
-      {
-        id: "q10",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751556244/Picture3_x1kdnp.png",
-        options: ["6", "4", "2", "24"],
-        correctAnswer: "6",
-      },
-      {
-        id: "q11",
-        question: "What letter comes after A?",
-        options: ["B", "C", "D"],
-        correctAnswer: "B",
-        solution: "The alphabet goes A, B, C, D… so the letter after A is B."
-      },
-      {
-        id: "q12",
-        question: "Which word rhymes with cat?",
-        options: ["Dog", "Hat", "Bird"],
-        correctAnswer: "Hat",
-        solution: "Cat and hat sound alike at the end, so they rhyme."
-      },
-      {
-        id: "q13",
-        question: "What sound does the letter S make?",
-        options: ["/mmm/", "/sss/", "/buh/"],
-        correctAnswer: "/sss/",
-        solution: "The letter S makes a 'sss' sound, like in 'sun' or 'snake'."
-      },
-      {
-        id: "q14",
-        question: "Which of these is a fruit?",
-        options: ["Carrot", "Apple", "Bread"],
-        correctAnswer: "Apple",
-        solution: "Apple is a fruit, while carrot is a vegetable and bread is not a fruit."
-      },
-      {
-        id: "q15",
-        question: "Which of these shows something we can read?",
-        options: ["Book", "Ball", "Shoe"],
-        correctAnswer: "Book",
-        solution: "We read books because they have words and stories inside."
-      },
-      {
-        id: "q16",
-        question: "What is the opposite of big?",
-        options: ["Small", "Tall", "Long"],
-        correctAnswer: "Small",
-        solution: "The opposite of big is small."
-      },
-      {
-        id: "q17",
-        question: "Finish the sentence: 'The sun is in the ___.",
-        options: ["Sky", "Ocean", "House"],
-        correctAnswer: "Sky",
-        solution: "The sun is found in the sky, not in the ocean or house."
-      },
-      {
-        id: "q18",
-        question: "Which word starts with the same sound as ball?",
-        options: ["Dog", "Bat", "Cat"],
-        correctAnswer: "Bat",
-        solution: "Ball and bat both start with the /b/ sound."
-      },
-      {
-        id: "q19",
-        question: "Point to the word that means happy.",
-        options: ["Sad", "Glad", "Mad"],
-        correctAnswer: "Glad",
-        solution: "Glad means happy, while sad means unhappy and mad means angry."
-      },
-      {
-        id: "q20",
-        question: "What do we do with a pencil?",
-        options: ["Eat it", "Draw or write", "Throw it"],
-        correctAnswer: "Draw or write",
-        solution: "We use a pencil to draw or write, not to eat or throw."
-      }
-    ],
-  },
-  {
-    grade: "Kindergarten",
-    questions: [
-      {
-        id: "q1",
-        question: "Write the missing number: 1, 2, 3, __, 5",
-        options: ["4", "5", "-6", "-4"],
-        correctAnswer: "4",
-      },
-      {
-        id: "q2",
-        question: "9 - 3 = ?",
-        options: ["12", "6", "5", "7"],
-        correctAnswer: "6",
-      },
-      {
-        id: "q3",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751515197/Screenshot_2025-07-03_045932_k2t6tj.png",
-        options: ["16", "18", "20", "12"],
-        correctAnswer: "16",
-      },
-      {
-        id: "q4",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751515371/Screenshot_2025-07-03_050233_yk1dbu.png",
-        options: ["Circle", "Dot", "Triangle", "None of the above"],
-        correctAnswer: "Circle",
-      },
-      {
-        id: "q5",
-        question: "Mrs. Gabbie served 5 trays of cheese breads, 9 trays of caramel breads and 5 trays of drinks for her family reunion. How many trays of bread were there altogether?",
-        options: ["19", "10", "14", "5"],
-        correctAnswer: "14",
-      },
-      {
-        id: "q6",
-        question: "8 tens and 5 ones is equal to what number?",
-        options: ["805", "85", "58", "81051"],
-        correctAnswer: "85",
-      },
-      {
-        id: "q7",
-        question: "The old sewing machine is 12 inches wide, and the brand-new sewing machine is 14 inches wide. How much wider is the new machine than the old one?",
-        options: ["1", "2", "3", "4"],
-        correctAnswer: "2",
-      },
-      {
-        id: "q8",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751516014/Screenshot_2025-07-03_051315_aovhxv.png",
-        options: ["Square", "Cuboid", "Rectangle", "Cube"],
-        correctAnswer: "Cube",
-      },
-      {
-        id: "q9",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751516157/Screenshot_2025-07-03_051543_ewo27i.png",
-        options: ["Cylinder", "Circle", "Cone", "Sphere"],
-        correctAnswer: "Cylinder",
-      },
-      {
-        id: "q10",
-        question: "What number is missing?  (Sequence: 8, 9, __, 11, 12)",
-        options: ["7", "9", "10", "9.5"],
-        correctAnswer: "10",
-      },
-      {
-        id: "q11",
-        question: "Which word is spelled correctly?",
-        options: ["Kat", "Cat", "Cet"],
-        correctAnswer: "Cat",
-        solution: "Cat is the correct spelling; 'Kat' and 'Cet' are spelled incorrectly."
-      },
-      {
-        id: "q12",
-        question: "Which word rhymes with tree?",
-        options: ["Bee", "Top", "Book"],
-        correctAnswer: "Bee",
-        solution: "Tree and bee sound alike at the end, so they rhyme."
-      },
-      {
-        id: "q13",
-        question: "What is the plural of dog?",
-        options: ["Doges", "Dogs", "Dogz"],
-        correctAnswer: "Dogs",
-        solution: "The plural of dog is dogs; we just add 's'."
-      },
-      {
-        id: "q14",
-        question: "Fill in the blank: 'We like to play in the ___.'",
-        options: ["Park", "Spoon", "Chair"],
-        correctAnswer: "Park",
-        solution: "The correct sentence is 'We like to play in the park.'"
-      },
-      {
-        id: "q15",
-        question: "Which word means the opposite of fast?",
-        options: ["Slow", "Run", "Quick"],
-        correctAnswer: "Slow",
-        solution: "Slow is the opposite of fast."
-      },
-      {
-        id: "q16",
-        question: "Which sentence is correct?",
-        options: ["i like pizza.", "I Like pizza.", "I like pizza."],
-        correctAnswer: "I like pizza.",
-        solution: "The sentence 'I like pizza.' is correct because it starts with a capital letter and ends with a period."
-      },
-      {
-        id: "q17",
-        question: "Which of these is a question?",
-        options: ["I like candy.", "Do you like candy?", "Candy is sweet."],
-        correctAnswer: "Do you like candy?",
-        solution: "A question ends with a question mark, like 'Do you like candy?'"
-      },
-      {
-        id: "q18",
-        question: "Which word begins with the same sound as fish?",
-        options: ["Fan", "Sun", "Man"],
-        correctAnswer: "Fan",
-        solution: "Fish and fan both start with the /f/ sound."
-      },
-      {
-        id: "q19",
-        question: "Which word is a verb (an action word)?",
-        options: ["Jump", "Table", "Book"],
-        correctAnswer: "Jump",
-        solution: "Jump is an action word; table and book are nouns."
-      },
-      {
-        id: "q20",
-        question: "Read this short passage: 'Tom has a red ball. He likes to play with it in the yard.' What color is Tom’s ball?",
-        options: ["Blue", "Red", "Green"],
-        correctAnswer: "Red",
-        solution: "The passage says 'Tom has a red ball,' so the ball is red."
-      }
 
-    ],
-  },
+
+export const ukquizAssessmentData: GradeLevelQuiz[] = [
   {
-    grade: "1st-grade",
+    grade: "year-1",
     questions: [
       {
         id: "q1",
@@ -416,81 +147,10 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         options: ["A. .", "B. !", "C. ?", "D. ,"],
         correctAnswer: "C. ?",
       },
-      {
-  id: "q21",
-  question: "Which part of a plant grows underground?",
-  options: ["Leaf", "Flower", "Root", "Stem"],
-  correctAnswer: "Root",
-  solution: "<p>The <b>root</b> grows underground. It helps anchor the plant in the soil and absorbs water and nutrients.</p>"
-},
-{
-  id: "q22",
-  question: "Which object gives us light during the day?",
-  options: ["Moon", "Sun", "Star", "Lamp"],
-  correctAnswer: "Sun",
-  solution: "<p>The <b>Sun</b> gives us light and heat during the day.</p>"
-},
-{
-  id: "q23",
-  question: "What do animals need to survive?",
-  options: ["Toys", "Food, water, and shelter", "Music", "Clothes"],
-  correctAnswer: "Food, water, and shelter",
-  solution: "<p>Animals need <b>food, water, and shelter</b> to survive and stay healthy.</p>"
-},
-{
-  id: "q24",
-  question: "Which sense helps us hear?",
-  options: ["Eyes", "Nose", "Ears", "Hands"],
-  correctAnswer: "Ears",
-  solution: "<p>We use our <b>ears</b> to hear sounds.</p>"
-},
-{
-  id: "q25",
-  question: "What is water when it freezes?",
-  options: ["Gas", "Ice", "Steam", "Liquid"],
-  correctAnswer: "Ice",
-  solution: "<p>When water freezes, it turns into <b>ice</b>, which is a solid.</p>"
-},
-{
-  id: "q26",
-  question: "Which part of a plant grows underground?",
-  options: ["Leaf", "Flower", "Root", "Stem"],
-  correctAnswer: "Root",
-  solution: "<p>The <b>root</b> grows underground and helps the plant absorb water and nutrients.</p>"
-},
-{
-  id: "q27",
-  question: "Which object gives us light during the day?",
-  options: ["Moon", "Sun", "Star", "Lamp"],
-  correctAnswer: "Sun",
-  solution: "<p>The <b>Sun</b> provides light during the daytime.</p>"
-},
-{
-  id: "q28",
-  question: "What do animals need to survive?",
-  options: ["Toys", "Food, water, and shelter", "Music", "Clothes"],
-  correctAnswer: "Food, water, and shelter",
-  solution: "<p>Animals must have <b>food, water, and shelter</b> to live and grow.</p>"
-},
-{
-  id: "q29",
-  question: "Which sense helps us hear?",
-  options: ["Eyes", "Nose", "Ears", "Hands"],
-  correctAnswer: "Ears",
-  solution: "<p>The sense of hearing comes from our <b>ears</b>.</p>"
-},
-{
-  id: "q30",
-  question: "What is water when it freezes?",
-  options: ["Gas", "Ice", "Steam", "Liquid"],
-  correctAnswer: "Ice",
-  solution: "<p>When water becomes very cold and freezes, it changes into <b>ice</b>, which is solid.</p>"
-}
-
     ],
   },
   {
-    grade: "2nd-grade",
+    grade: "year-2",
     questions: [
       {
         id: "q1",
@@ -622,151 +282,10 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         options: ["She is as fast as a cheetah.", "She runs like the wind.", "She is a shining star.", "She jumped high."],
         correctAnswer: "She is a shining star.",
       },
-      {
-  id: "q21",
-  question: "Which state of matter has a fixed shape?",
-  options: ["Solid", "Liquid", "Gas", "Plasma"],
-  correctAnswer: "Solid",
-  solution: "<p>A <b>solid</b> has a fixed shape and fixed volume. Its particles are tightly packed together.</p>"
-},
-{
-  id: "q22",
-  question: "Which planet is closest to the Sun?",
-  options: ["Earth", "Venus", "Mars", "Mercury"],
-  correctAnswer: "Mercury",
-  solution: "<p><b>Mercury</b> is the planet closest to the Sun in our solar system.</p>"
-},
-{
-  id: "q23",
-  question: "What helps plants make food?",
-  options: ["Roots", "Sunlight", "Soil", "Rain"],
-  correctAnswer: "Sunlight",
-  solution: "<p>Plants use <b>sunlight</b> to make their own food through a process called photosynthesis.</p>"
-},
-{
-  id: "q24",
-  question: "Which tool measures temperature?",
-  options: ["Ruler", "Scale", "Thermometer", "Clock"],
-  correctAnswer: "Thermometer",
-  solution: "<p>A <b>thermometer</b> is used to measure temperature.</p>"
-},
-{
-  id: "q25",
-  question: "Which animal is a mammal?",
-  options: ["Snake", "Frog", "Dolphin", "Lizard"],
-  correctAnswer: "Dolphin",
-  solution: "<p>A <b>dolphin</b> is a mammal because it breathes air and gives birth to live young.</p>"
-},
-{
-  id: "q26",
-  question: "Which state of matter has a fixed shape?",
-  options: ["Solid", "Liquid", "Gas", "Plasma"],
-  correctAnswer: "Solid",
-  solution: "<p>A <b>solid</b> keeps its shape because its particles are closely packed together.</p>"
-},
-{
-  id: "q27",
-  question: "Which planet is closest to the Sun?",
-  options: ["Earth", "Venus", "Mars", "Mercury"],
-  correctAnswer: "Mercury",
-  solution: "<p><b>Mercury</b> is the nearest planet to the Sun.</p>"
-},
-{
-  id: "q28",
-  question: "What helps plants make food?",
-  options: ["Roots", "Sunlight", "Soil", "Rain"],
-  correctAnswer: "Sunlight",
-  solution: "<p><b>Sunlight</b> provides the energy plants need to produce food.</p>"
-},
-{
-  id: "q29",
-  question: "Which tool measures temperature?",
-  options: ["Ruler", "Scale", "Thermometer", "Clock"],
-  correctAnswer: "Thermometer",
-  solution: "<p>A <b>thermometer</b> measures how hot or cold something is.</p>"
-},
-{
-  id: "q30",
-  question: "Which animal is a mammal?",
-  options: ["Snake", "Frog", "Dolphin", "Lizard"],
-  correctAnswer: "Dolphin",
-  solution: "<p>The <b>dolphin</b> is a mammal because it breathes with lungs and feeds its young with milk.</p>"
-},
-{
-  id: "q31",
-  question: "Which state of matter has a fixed shape?",
-  options: ["Solid", "Liquid", "Gas", "Plasma"],
-  correctAnswer: "Solid",
-  solution: "<p>A <b>solid</b> has a definite shape and volume.</p>"
-},
-{
-  id: "q32",
-  question: "Which planet is closest to the Sun?",
-  options: ["Earth", "Venus", "Mars", "Mercury"],
-  correctAnswer: "Mercury",
-  solution: "<p><b>Mercury</b> is the first planet from the Sun.</p>"
-},
-{
-  id: "q33",
-  question: "What helps plants make food?",
-  options: ["Roots", "Sunlight", "Soil", "Rain"],
-  correctAnswer: "Sunlight",
-  solution: "<p>Plants need <b>sunlight</b> to carry out photosynthesis.</p>"
-},
-{
-  id: "q34",
-  question: "Which tool measures temperature?",
-  options: ["Ruler", "Scale", "Thermometer", "Clock"],
-  correctAnswer: "Thermometer",
-  solution: "<p>The correct instrument for measuring temperature is a <b>thermometer</b>.</p>"
-},
-{
-  id: "q35",
-  question: "Which animal is a mammal?",
-  options: ["Snake", "Frog", "Dolphin", "Lizard"],
-  correctAnswer: "Dolphin",
-  solution: "<p>A <b>dolphin</b> is classified as a mammal.</p>"
-},
-{
-  id: "q36",
-  question: "Which state of matter has a fixed shape?",
-  options: ["Solid", "Liquid", "Gas", "Plasma"],
-  correctAnswer: "Solid",
-  solution: "<p><b>Solids</b> maintain their shape unless acted upon by force.</p>"
-},
-{
-  id: "q37",
-  question: "Which planet is closest to the Sun?",
-  options: ["Earth", "Venus", "Mars", "Mercury"],
-  correctAnswer: "Mercury",
-  solution: "<p><b>Mercury</b> orbits closest to the Sun.</p>"
-},
-{
-  id: "q38",
-  question: "What helps plants make food?",
-  options: ["Roots", "Sunlight", "Soil", "Rain"],
-  correctAnswer: "Sunlight",
-  solution: "<p>Without <b>sunlight</b>, plants cannot produce food.</p>"
-},
-{
-  id: "q39",
-  question: "Which tool measures temperature?",
-  options: ["Ruler", "Scale", "Thermometer", "Clock"],
-  correctAnswer: "Thermometer",
-  solution: "<p>A <b>thermometer</b> is designed specifically to measure temperature.</p>"
-},
-{
-  id: "q40",
-  question: "Which animal is a mammal?",
-  options: ["Snake", "Frog", "Dolphin", "Lizard"],
-  correctAnswer: "Dolphin",
-  solution: "<p>The <b>dolphin</b> is a mammal because it is warm-blooded and nurses its young.</p>"
-}
-
     ],
   },
   {
-    grade: "3rd-grade",
+    grade: "year-3",
     questions: [
       {
         id: "q1",
@@ -898,82 +417,11 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         question: "What question should a reader ask to identify the theme of a story?",
         options: ["What did the character wear?", "Where did the story happen?", "What lesson did the character learn?", "How many pages are in the story?"],
         correctAnswer: "What lesson did the character learn?",
-      },
-      {
-  id: "q21",
-  question: "Which system helps humans breathe?",
-  options: ["Digestive", "Respiratory", "Circulatory", "Skeletal"],
-  correctAnswer: "Respiratory",
-  solution: "<p>The <b>respiratory system</b> helps humans breathe by taking in oxygen and removing carbon dioxide.</p>"
-},
-{
-  id: "q22",
-  question: "What force slows objects when they rub together?",
-  options: ["Gravity", "Magnetism", "Friction", "Energy"],
-  correctAnswer: "Friction",
-  solution: "<p><b>Friction</b> is the force that slows objects down when two surfaces rub against each other.</p>"
-},
-{
-  id: "q23",
-  question: "Which material is attracted to magnets?",
-  options: ["Plastic", "Wood", "Iron", "Glass"],
-  correctAnswer: "Iron",
-  solution: "<p><b>Iron</b> is attracted to magnets because it is a magnetic material.</p>"
-},
-{
-  id: "q24",
-  question: "Which process changes liquid water into vapor?",
-  options: ["Condensation", "Evaporation", "Freezing", "Melting"],
-  correctAnswer: "Evaporation",
-  solution: "<p><b>Evaporation</b> is the process where liquid water changes into water vapor.</p>"
-},
-{
-  id: "q25",
-  question: "Which planet is known as the Red Planet?",
-  options: ["Venus", "Jupiter", "Mars", "Saturn"],
-  correctAnswer: "Mars",
-  solution: "<p><b>Mars</b> is called the Red Planet because of its reddish appearance.</p>"
-},
-{
-  id: "q26",
-  question: "Which system helps humans breathe?",
-  options: ["Digestive", "Respiratory", "Circulatory", "Skeletal"],
-  correctAnswer: "Respiratory",
-  solution: "<p>The <b>respiratory system</b> allows us to inhale oxygen and exhale carbon dioxide.</p>"
-},
-{
-  id: "q27",
-  question: "What force slows objects when they rub together?",
-  options: ["Gravity", "Magnetism", "Friction", "Energy"],
-  correctAnswer: "Friction",
-  solution: "<p><b>Friction</b> acts between surfaces in contact and reduces motion.</p>"
-},
-{
-  id: "q28",
-  question: "Which material is attracted to magnets?",
-  options: ["Plastic", "Wood", "Iron", "Glass"],
-  correctAnswer: "Iron",
-  solution: "<p>Materials like <b>iron</b> are attracted to magnets.</p>"
-},
-{
-  id: "q29",
-  question: "Which process changes liquid water into vapor?",
-  options: ["Condensation", "Evaporation", "Freezing", "Melting"],
-  correctAnswer: "Evaporation",
-  solution: "<p>When water gains heat and turns into vapor, the process is called <b>evaporation</b>.</p>"
-},
-{
-  id: "q30",
-  question: "Which planet is known as the Red Planet?",
-  options: ["Venus", "Jupiter", "Mars", "Saturn"],
-  correctAnswer: "Mars",
-  solution: "<p>The planet <b>Mars</b> is known as the Red Planet due to its red color.</p>"
-}
-
+      }
     ],
   },
   {
-    grade: "4th-grade",
+    grade: "year-4",
     questions: [
       {
         id: "q1",
@@ -1104,82 +552,11 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         question: "Which of the following best describes a character trait?",
         options: ["The name of the character", "A quality that describes how a character thinks or acts", "The color of the character’s hair", "The number of friends they have"],
         correctAnswer: "A quality that describes how a character thinks or acts",
-      },
-      {
-  id: "q21",
-  question: "What is the function of the skeleton?",
-  options: ["Digestion", "Support and protection", "Breathing", "Circulation"],
-  correctAnswer: "Support and protection",
-  solution: "<p>The <b>skeleton</b> provides support for the body and protects important organs like the brain and heart.</p>"
-},
-{
-  id: "q22",
-  question: "Which energy comes from moving objects?",
-  options: ["Potential", "Chemical", "Kinetic", "Thermal"],
-  correctAnswer: "Kinetic",
-  solution: "<p><b>Kinetic energy</b> is the energy an object has because it is moving.</p>"
-},
-{
-  id: "q23",
-  question: "Which layer of Earth is the hottest?",
-  options: ["Crust", "Mantle", "Outer core", "Inner core"],
-  correctAnswer: "Inner core",
-  solution: "<p>The <b>inner core</b> is the hottest layer of the Earth.</p>"
-},
-{
-  id: "q24",
-  question: "Which process forms sedimentary rock?",
-  options: ["Cooling magma", "Heat and pressure", "Compaction and cementation", "Melting"],
-  correctAnswer: "Compaction and cementation",
-  solution: "<p>Sedimentary rocks form through <b>compaction and cementation</b> of sediments over time.</p>"
-},
-{
-  id: "q25",
-  question: "Which gas do plants release during photosynthesis?",
-  options: ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"],
-  correctAnswer: "Oxygen",
-  solution: "<p>During photosynthesis, plants release <b>oxygen</b> into the air.</p>"
-},
-{
-  id: "q26",
-  question: "What is the function of the skeleton?",
-  options: ["Digestion", "Support and protection", "Breathing", "Circulation"],
-  correctAnswer: "Support and protection",
-  solution: "<p>The <b>skeleton</b> helps the body stand upright and protects vital organs.</p>"
-},
-{
-  id: "q27",
-  question: "Which energy comes from moving objects?",
-  options: ["Potential", "Chemical", "Kinetic", "Thermal"],
-  correctAnswer: "Kinetic",
-  solution: "<p><b>Kinetic energy</b> is energy in motion.</p>"
-},
-{
-  id: "q28",
-  question: "Which layer of Earth is the hottest?",
-  options: ["Crust", "Mantle", "Outer core", "Inner core"],
-  correctAnswer: "Inner core",
-  solution: "<p>The Earth's <b>inner core</b> has the highest temperature.</p>"
-},
-{
-  id: "q29",
-  question: "Which process forms sedimentary rock?",
-  options: ["Cooling magma", "Heat and pressure", "Compaction and cementation", "Melting"],
-  correctAnswer: "Compaction and cementation",
-  solution: "<p><b>Compaction and cementation</b> press sediments together to form sedimentary rock.</p>"
-},
-{
-  id: "q30",
-  question: "Which gas do plants release during photosynthesis?",
-  options: ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"],
-  correctAnswer: "Oxygen",
-  solution: "<p>Plants give off <b>oxygen</b> as a product of photosynthesis.</p>"
-}
-
+      }
     ],
   },
   {
-    grade: "5th-grade",
+    grade: "year-5",
     questions: [
       {
         id: "q1",
@@ -1310,82 +687,147 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         question: "What is the best strategy to figure out the meaning of an unknown word?",
         options: ["Skip it", "Look at pictures", "Use context clues in the sentence", "Ask someone else"],
         correctAnswer: "Use context clues in the sentence"
-      },
-      {
-  id: "q21",
-  question: "Which organ filters waste from blood?",
-  options: ["Heart", "Lung", "Kidney", "Liver"],
-  correctAnswer: "Kidney",
-  solution: "<p>The <b>kidney</b> filters waste products and extra fluids from the blood.</p>"
-},
-{
-  id: "q22",
-  question: "What causes day and night on Earth?",
-  options: ["Revolution", "Orbit", "Tilt", "Rotation"],
-  correctAnswer: "Rotation",
-  solution: "<p>Day and night are caused by the Earth's <b>rotation</b> on its axis.</p>"
-},
-{
-  id: "q23",
-  question: "Which simple machine is a seesaw?",
-  options: ["Pulley", "Inclined plane", "Lever", "Screw"],
-  correctAnswer: "Lever",
-  solution: "<p>A seesaw is a type of <b>lever</b>, which pivots around a fixed point called a fulcrum.</p>"
-},
-{
-  id: "q24",
-  question: "Which type of energy is stored in a battery?",
-  options: ["Kinetic", "Chemical", "Sound", "Light"],
-  correctAnswer: "Chemical",
-  solution: "<p>A battery stores <b>chemical energy</b>, which can be converted into electrical energy.</p>"
-},
-{
-  id: "q25",
-  question: "Which process turns sugar into energy in cells?",
-  options: ["Photosynthesis", "Respiration", "Digestion", "Circulation"],
-  correctAnswer: "Respiration",
-  solution: "<p><b>Respiration</b> is the process by which cells break down sugar to release energy.</p>"
-},
-{
-  id: "q26",
-  question: "Which organ filters waste from blood?",
-  options: ["Heart", "Lung", "Kidney", "Liver"],
-  correctAnswer: "Kidney",
-  solution: "<p>The <b>kidneys</b> clean the blood by removing waste and producing urine.</p>"
-},
-{
-  id: "q27",
-  question: "What causes day and night on Earth?",
-  options: ["Revolution", "Orbit", "Tilt", "Rotation"],
-  correctAnswer: "Rotation",
-  solution: "<p>The Earth's <b>rotation</b> makes different parts of the planet face the Sun, causing day and night.</p>"
-},
-{
-  id: "q28",
-  question: "Which simple machine is a seesaw?",
-  options: ["Pulley", "Inclined plane", "Lever", "Screw"],
-  correctAnswer: "Lever",
-  solution: "<p>A seesaw works as a <b>lever</b>, helping lift weight around a central pivot.</p>"
-},
-{
-  id: "q29",
-  question: "Which type of energy is stored in a battery?",
-  options: ["Kinetic", "Chemical", "Sound", "Light"],
-  correctAnswer: "Chemical",
-  solution: "<p>Batteries contain stored <b>chemical energy</b> that powers devices.</p>"
-},
-{
-  id: "q30",
-  question: "Which process turns sugar into energy in cells?",
-  options: ["Photosynthesis", "Respiration", "Digestion", "Circulation"],
-  correctAnswer: "Respiration",
-  solution: "<p>Cells use <b>respiration</b> to convert sugar into usable energy.</p>"
-}
-
+      }
     ],
   },
   {
-    grade: "6th-grade",
+    grade: "year-6",
+    questions: [
+      {
+        id: "q1",
+        question: "A baker uses 2<sup>3</sup>&frasl;<sub>4</sub> cups of flour for one batch of cookies. How much flour is needed for 3<sup>1</sup>&frasl;<sub>2</sub> batches?",
+        options: ["9<sup>5</sup>&frasl;<sub>8</sub> cups", "9<sup>7</sup>&frasl;<sub>8</sub> cups", "8<sup>1</sup>&frasl;<sub>2</sub> cups", "10 cups"],
+        correctAnswer: "9<sup>7</sup>&frasl;<sub>8</sub> cups",
+        solution: "<p><strong>Step 1:</strong> Convert to improper fractions.<br>2<sup>3</sup>&frasl;<sub>4</sub> = 11/4, 3<sup>1</sup>&frasl;<sub>2</sub> = 7/2.<br><strong>Step 2:</strong> Multiply.<br>(11/4) × (7/2) = 77/8.<br><strong>Step 3:</strong> Convert to mixed number.<br>77/8 = 9<sup>5</sup>&frasl;<sub>8</sub> cups.<br><strong>Answer:</strong> 9<sup>5</sup>&frasl;<sub>8</sub> cups.</p>"
+      },
+      {
+        id: "q2",
+        question: "The expression (2x – 3)(x + 4) is expanded. What is the coefficient of the x-term in the expanded form?",
+        options: ["2", "5", "-3", "5x"],
+        correctAnswer: "5",
+        solution: "<p><strong>Step 1:</strong> Expand using distributive property.<br>(2x)(x) = 2x², (2x)(4) = 8x, (-3)(x) = -3x, (-3)(4) = -12.<br><strong>Step 2:</strong> Combine like terms.<br>8x - 3x = 5x.<br><strong>Answer:</strong> Coefficient is 5.</p>"
+      },
+      {
+        id: "q3",
+        question: "A number is divisible by both 6 and 8. What is the least possible positive number that meets this condition?",
+        options: ["24", "48", "12", "36"],
+        correctAnswer: "24",
+        solution: "<p><strong>Step 1:</strong> Find LCM of 6 and 8.<br>6 = 2 × 3, 8 = 2³.<br><strong>Step 2:</strong> LCM = 2³ × 3 = 24.<br><strong>Step 3:</strong> But 24 is not divisible by both? (Yes it is). Wait — actually, 24 works, but 'least possible' means LCM → 24 is correct</p>"
+      },
+      {
+        id: "q4",
+        question: "A regular hexagon has a perimeter of 48 cm. What is the length of one side?",
+        options: ["8 cm", "6 cm", "12 cm", "7 cm"],
+        correctAnswer: "8 cm",
+        solution: "<p><strong>Step 1:</strong> A hexagon has 6 equal sides.<br><strong>Step 2:</strong> Side length = perimeter ÷ number of sides.<br>48 ÷ 6 = 8 cm.<br><strong>Answer:</strong> 8 cm.</p>"
+      },
+      {
+        id: "q5",
+        question: "Which of the following has the greatest value?",
+        options: ["<sup>3</sup>&frasl;<sub>4</sub>", "0.82", "<sup>8</sup>&frasl;<sub>10</sub>", "81%"],
+        correctAnswer: "0.82",
+        solution: "<p><strong>Step 1:</strong> Convert all to decimals.<br>3/4 = 0.75, 0.82 stays same, 8/10 = 0.8, 81% = 0.81.<br><strong>Step 2:</strong> Compare: 0.82 is the largest.<br><strong>Answer:</strong> 0.82.</p>"
+      },
+      {
+        id: "q6",
+        question: "Solve for x in the equation: <sup>2</sup>&frasl;<sub>3</sub>x - 5 = 7.",
+        options: ["15", "18", "12", "9"],
+        correctAnswer: "18",
+        solution: "<p><strong>Step 1:</strong> Add 5 to both sides.<br>(2/3)x = 12.<br><strong>Step 2:</strong> Multiply by 3/2.<br>x = 12 × (3/2) = 18.<br><strong>Answer:</strong> 18.</p>"
+      },
+      {
+        id: "q7",
+        question: "A box contains 3 red, 4 blue, and 5 green marbles. If one marble is randomly selected, what is the probability it is not green?",
+        options: ["<sup>3</sup>&frasl;<sub>4</sub>", "<sup>7</sup>&frasl;<sub>12</sub>", "<sup>5</sup>&frasl;<sub>12</sub>", "<sup>1</sup>&frasl;<sub>4</sub>"],
+        correctAnswer: "<sup>7</sup>&frasl;<sub>12</sub>",
+        solution: "<p><strong>Step 1:</strong> Total marbles = 3 + 4 + 5 = 12.<br><strong>Step 2:</strong> Not green = red + blue = 3 + 4 = 7.<br><strong>Step 3:</strong> Probability = 7/12 ≈ 0.583</p>"
+      },
+      {
+        id: "q8",
+        question: "The equation y = 5x + 2 represents a pattern. What is the value of y when x = –3?",
+        options: ["-13", "-15", "-12", "-17"],
+        correctAnswer: "-13",
+        solution: "<p><strong>Step 1:</strong> Substitute x = -3.<br>y = 5(-3) + 2 = -15 + 2 = -13.<br><strong>Answer:</strong> -13.</p>"
+      },
+      {
+        id: "q9",
+        question: "A store is offering a 25% discount on an item that costs $84. What is the sale price?",
+        options: ["$63.00", "$62.50", "$65.00", "$67.00"],
+        correctAnswer: "$63.00",
+        solution: "<p><strong>Step 1:</strong> Find 25% of $84.<br>0.25 × 84 = 21.<br><strong>Step 2:</strong> Subtract from original price.<br>84 - 21 = 63.<br><strong>Answer:</strong> $63.00.</p>"
+      },
+      {
+        id: "q10",
+        question: "If a triangle has side lengths of 7 cm, 24 cm, and 25 cm, is it a right triangle?",
+        options: ["Yes, because 7² + 24² = 25²", "No, because 7 + 24 < 25", "No, because 24² + 25² ≠ 7²", "Yes, because it's isosceles"],
+        correctAnswer: "Yes, because 7² + 24² = 25²",
+        solution: "<p><strong>Step 1:</strong> Check Pythagoras.<br>7² + 24² = 49 + 576 = 625.<br><strong>Step 2:</strong> 25² = 625.<br><strong>Step 3:</strong> They match, so it’s a right triangle.<br><strong>Answer:</strong> Yes, because 7² + 24² = 25².</p>"
+      },
+      {
+        id: "q11",
+        question: "What is a central idea in nonfiction text?",
+        options: ["The main topic or point the author is making", "The first sentence", "The caption", "The last fact listed"],
+        correctAnswer: "The main topic or point the author is making"
+      },
+      {
+        id: "q12",
+        question: "Which sentence contains an example of a hyperbole?",
+        options: ["She cried for hours.", "I have a million things to do today.", "He ran to the store.", "The sun is bright."],
+        correctAnswer: "I have a million things to do today."
+      },
+      {
+        id: "q13",
+        question: "Why do authors use foreshadowing in fiction?",
+        options: ["To confuse the reader", "To hint at events that will happen later", "To introduce new characters", "To change the point of view"],
+        correctAnswer: "To hint at events that will happen later"
+      },
+      {
+        id: "q14",
+        question: "What is a claim in argumentative writing?",
+        options: ["A story from the past", "A personal feeling", "The main opinion or position the author takes", "A character’s name"],
+        correctAnswer: "The main opinion or position the author takes"
+      },
+      {
+        id: "q15",
+        question: "Which of the following best describes an objective summary?",
+        options: ["A summary with personal opinions", "A detailed retelling with emotions", "A brief, neutral restatement of main ideas", "A summary written like a poem"],
+        correctAnswer: "A brief, neutral restatement of main ideas"
+      },
+      {
+        id: "q16",
+        question: "What is the difference between tone and mood?",
+        options: ["Tone is the reader’s feeling; mood is the author’s word choice", "Tone is how the author feels; mood is how the reader feels", "They are the same", "Mood is used only in poems"],
+        correctAnswer: "Tone is how the author feels; mood is how the reader feels"
+      },
+      {
+        id: "q17",
+        question: "How does dialogue help develop a character?",
+        options: ["It shows the setting", "It lists their job", "It reveals thoughts, feelings, and relationships", "It creates a plot twist"],
+        correctAnswer: "It reveals thoughts, feelings, and relationships"
+      },
+      {
+        id: "q18",
+        question: "Which sentence is written in active voice?",
+        options: ["The homework was completed by Jake.", "The test was taken by the class.", "Jake completed the homework.", "The paper was torn."],
+        correctAnswer: "Jake completed the homework."
+      },
+      {
+        id: "q19",
+        question: "What does the word 'elaborate' mean in this sentence: 'Can you elaborate on your idea?'",
+        options: ["Change your idea", "Say it more clearly", "Explain it with more detail", "Delete your idea"],
+        correctAnswer: "Explain it with more detail"
+      },
+      {
+        id: "q20",
+        question: "Why is it important to analyze how a text is structured?",
+        options: ["To ignore confusing parts", "To see if it's fiction or nonfiction", "To understand how ideas connect and support meaning", "To find spelling mistakes"],
+        correctAnswer: "To understand how ideas connect and support meaning"
+      }
+
+    ],
+  },
+   {
+    grade: "year-7",
     questions: [
       {
         id: "q1",
@@ -1518,81 +960,116 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         correctAnswer: "To understand how ideas connect and support meaning"
       },
       {
-  id: "q21",
-  question: "Which particle has a negative charge?",
-  options: ["Proton", "Neutron", "Electron", "Atom"],
-  correctAnswer: "Electron",
-  solution: "<p>An <b>electron</b> has a negative charge and moves around the nucleus of an atom.</p>"
-},
-{
-  id: "q22",
-  question: "Which body system fights disease?",
-  options: ["Nervous", "Immune", "Skeletal", "Digestive"],
-  correctAnswer: "Immune",
-  solution: "<p>The <b>immune system</b> protects the body by fighting germs and diseases.</p>"
-},
-{
-  id: "q23",
-  question: "Which type of plate boundary causes earthquakes?",
-  options: ["Transform", "Divergent", "Convergent", "All of these"],
-  correctAnswer: "All of these",
-  solution: "<p><b>All of these</b> plate boundaries (transform, divergent, and convergent) can cause earthquakes.</p>"
-},
-{
-  id: "q24",
-  question: "Which energy source is nonrenewable?",
-  options: ["Wind", "Solar", "Coal", "Water"],
-  correctAnswer: "Coal",
-  solution: "<p><b>Coal</b> is a nonrenewable energy source because it takes millions of years to form.</p>"
-},
-{
-  id: "q25",
-  question: "Which graph best shows temperature change over time?",
-  options: ["Bar", "Pie", "Line", "Picture"],
-  correctAnswer: "Line",
-  solution: "<p>A <b>line graph</b> is best for showing changes, such as temperature, over time.</p>"
-},
-{
-  id: "q26",
-  question: "Which particle has a negative charge?",
-  options: ["Proton", "Neutron", "Electron", "Atom"],
-  correctAnswer: "Electron",
-  solution: "<p>The <b>electron</b> carries a negative electrical charge.</p>"
-},
-{
-  id: "q27",
-  question: "Which body system fights disease?",
-  options: ["Nervous", "Immune", "Skeletal", "Digestive"],
-  correctAnswer: "Immune",
-  solution: "<p>The <b>immune system</b> helps the body recognize and destroy harmful organisms.</p>"
-},
-{
-  id: "q28",
-  question: "Which type of plate boundary causes earthquakes?",
-  options: ["Transform", "Divergent", "Convergent", "All of these"],
-  correctAnswer: "All of these",
-  solution: "<p>Earthquakes can occur at <b>transform, divergent, and convergent</b> plate boundaries.</p>"
-},
-{
-  id: "q29",
-  question: "Which energy source is nonrenewable?",
-  options: ["Wind", "Solar", "Coal", "Water"],
-  correctAnswer: "Coal",
-  solution: "<p><b>Coal</b> cannot be replaced quickly, so it is considered nonrenewable.</p>"
-},
-{
-  id: "q30",
-  question: "Which graph best shows temperature change over time?",
-  options: ["Bar", "Pie", "Line", "Picture"],
-  correctAnswer: "Line",
-  solution: "<p>A <b>line graph</b> clearly shows trends and changes over a period of time.</p>"
-}
+        id: "q21",
+        question: "Which of the following is found in both plant and animal cells?",
+        options: ["Cell wall", "Chloroplast", "Nucleus", "Large permanent vacuole"],
+        correctAnswer: "Nucleus",
+        solution: "<p><strong>Explanation:</strong> Both plant and animal cells contain a nucleus, which controls the activities of the cell. Cell walls and chloroplasts are found only in plant cells.</p>"
+      },
+      {
+        id: "q22",
+        question: "Which statement best explains why red blood cells are well-adapted for oxygen transport?",
+        options: ["They contain chloroplasts for energy", "They have a large nucleus to control activities", "They have a biconcave shape and lack a nucleus", "They have a cell wall for strength"],
+        correctAnswer: "They have a biconcave shape and lack a nucleus",
+        solution: "<p><strong>Explanation:</strong> Red blood cells have a biconcave shape that increases surface area for oxygen absorption, and they lack a nucleus to allow more space for hemoglobin.</p>"
+      },
+      {
+        id: "q23",
+        question: "Which body system is responsible for transporting oxygen and nutrients around the body?",
+        options: ["Digestive system", "Circulatory system", "Respiratory system", "Nervous system"],
+        correctAnswer: "Circulatory system",
+        solution: "<p><strong>Explanation:</strong> The circulatory system transports oxygen, nutrients, and other substances around the body using blood vessels and the heart.</p>"
+      },
+      {
+        id: "q24",
+        question: "Food is broken down into smaller soluble substances in the:",
+        options: ["Circulatory system", "Digestive system", "Skeletal system", "Nervous system"],
+        correctAnswer: "Digestive system",
+        solution: "<p><strong>Explanation:</strong> The digestive system breaks down food into small, soluble substances that can be absorbed into the bloodstream.</p>"
+      },
+      {
+        id: "q25",
+        question: "In flowering plants, fertilisation happens when:",
+        options: ["Seeds are released", "Pollen reaches the stigma", "A fruit forms", "Leaves grow"],
+        correctAnswer: "Pollen reaches the stigma",
+        solution: "<p><strong>Explanation:</strong> Fertilisation begins when pollen lands on the stigma, allowing the male gamete to reach the ovule.</p>"
+      },
+      {
+        id: "q26",
+        question: "In which state are particles closest together?",
+        options: ["Solid", "Liquid", "Gas", "Plasma"],
+        correctAnswer: "Solid",
+        solution: "<p><strong>Explanation:</strong> In solids, particles are tightly packed and vibrate in fixed positions.</p>"
+      },
+      {
+        id: "q27",
+        question: "An atom is:",
+        options: ["A mixture of substances", "The smallest part of an element", "A type of compound", "A chemical reaction"],
+        correctAnswer: "The smallest part of an element",
+        solution: "<p><strong>Explanation:</strong> An atom is the smallest unit of an element that retains the properties of that element.</p>"
+      },
+      {
+        id: "q28",
+        question: "Classify each as element, compound, or mixture: a) Oxygen (O₂), b) Water (H₂O), c) Air",
+        options: ["Element, Compound, Mixture", "Compound, Element, Mixture", "Mixture, Compound, Element", "Element, Mixture, Compound"],
+        correctAnswer: "Element, Compound, Mixture",
+        solution: "<p><strong>Explanation:</strong> Oxygen is an element, water is a compound made of hydrogen and oxygen, and air is a mixture of different gases.</p>"
+      },
+      {
+        id: "q29",
+        question: "A chemical reaction usually forms:",
+        options: ["No new substances", "Only gases", "New substances", "Only liquids"],
+        correctAnswer: "New substances",
+        solution: "<p><strong>Explanation:</strong> A chemical reaction forms new substances with different properties from the original substances.</p>"
+      },
+      {
+        id: "q30",
+        question: "Melting butter is a:",
+        options: ["Chemical change", "Physical change"," Phase reaction", "Nuclear reaction"],
+        correctAnswer: "Physical change",
+        solution: "<p><strong>Explanation:</strong> Melting changes only the state of the butter, not its chemical composition.</p>"
+      },
+      {
+        id: "q31",
+        question: "A force can change an object’s:",
+        options: ["Speed", "Direction", "Shape", "All of the above"],
+        correctAnswer: "All of the above",
+        solution: "<p><strong>Explanation:</strong> A force can affect how fast something moves, the direction it moves, and even its shape.</p>"
+      },
+      {
+        id: "q32",
+        question: "Friction is a force that:",
+        options: ["Always speeds things up", "Opposes motion between surfaces", "Only happens in water", "Only happens in space"],
+        correctAnswer: "Opposes motion between surfaces",
+        solution: "<p><strong>Explanation:</strong> Friction resists the motion between two surfaces that are in contact.</p>"
+      },
+      {
+        id: "q33",
+        question: "Sound is produced by:",
+        options: ["Melting", "Vibrations", "Reflections", "Gravity"],
+        correctAnswer: "Vibrations",
+        solution: "<p><strong>Explanation:</strong> Sound is produced when objects vibrate and create sound waves in the air.</p>"
+      },
+      {
+        id: "q34",
+        question: "What causes day and night?",
+        options: ["The Moon moving", "Earth spinning on its axis", "Earth moving closer to the Sun", "Clouds blocking sunlight"],
+        correctAnswer: "Earth spinning on its axis",
+        solution: "<p><strong>Explanation:</strong> Day and night occur because the Earth rotates on its axis, exposing different parts to the Sun.</p>"
+      },
+      {
+        id: "q35",
+        question: "Which explanation best describes why the UK has different seasons?",
+        options: ["Earth is closer to the Sun in summer", "Earth’s tilt changes sunlight angle and day length during its orbit", "The Moon blocks sunlight in winter", "Clouds increase in winter causing cold"],
+        correctAnswer: "Earth’s tilt changes sunlight angle and day length during its orbit",
+        solution: "<p><strong>Explanation:</strong> The Earth's tilted axis causes changes in sunlight angle and day length as it orbits the Sun, leading to different seasons.</p>"
+      }
 
 
     ],
   },
   {
-    grade: "7th-grade",
+    grade: "year-8",
     questions: [
       {
         id: "q1",
@@ -1832,7 +1309,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     ],
   },
   {
-    grade: "8th-grade",
+    grade: "year-9",
     questions: [
       {
         id: "q1",
@@ -1964,81 +1441,10 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         options: ["Climax", "Falling Action", "Rising Action", "Resolution"],
         correctAnswer: "Rising Action",
       },
-      {
-  id: "q21",
-  question: "Which law explains action and reaction?",
-  options: ["Newton’s First", "Newton’s Second", "Newton’s Third", "Law of Gravity"],
-  correctAnswer: "Newton’s Third",
-  solution: "<p><b>Newton’s Third Law</b> states that for every action, there is an equal and opposite reaction.</p>"
-},
-{
-  id: "q22",
-  question: "What is the pH of a neutral solution?",
-  options: ["1", "5", "7", "14"],
-  correctAnswer: "7",
-  solution: "<p>A <b>neutral solution</b> has a pH of <b>7</b>, such as pure water.</p>"
-},
-{
-  id: "q23",
-  question: "Which organelle controls cell activities?",
-  options: ["Mitochondria", "Ribosome", "Nucleus", "Cytoplasm"],
-  correctAnswer: "Nucleus",
-  solution: "<p>The <b>nucleus</b> is the control center of the cell, regulating all cell activities.</p>"
-},
-{
-  id: "q24",
-  question: "Which process forms new species over time?",
-  options: ["Mutation", "Adaptation", "Natural selection", "Photosynthesis"],
-  correctAnswer: "Natural selection",
-  solution: "<p><b>Natural selection</b> is the process by which species evolve over time.</p>"
-},
-{
-  id: "q25",
-  question: "What type of wave does not need a medium?",
-  options: ["Sound", "Water", "Seismic", "Electromagnetic"],
-  correctAnswer: "Electromagnetic",
-  solution: "<p><b>Electromagnetic waves</b> can travel through a vacuum and do not require a medium.</p>"
-},
-{
-  id: "q26",
-  question: "Which law explains action and reaction?",
-  options: ["Newton’s First", "Newton’s Second", "Newton’s Third", "Law of Gravity"],
-  correctAnswer: "Newton’s Third",
-  solution: "<p><b>Newton’s Third Law</b> means that forces always come in pairs, with equal magnitude and opposite direction.</p>"
-},
-{
-  id: "q27",
-  question: "What is the pH of a neutral solution?",
-  options: ["1", "5", "7", "14"],
-  correctAnswer: "7",
-  solution: "<p>A solution with a pH of <b>7</b> is neutral and is neither acidic nor basic.</p>"
-},
-{
-  id: "q28",
-  question: "Which organelle controls cell activities?",
-  options: ["Mitochondria", "Ribosome", "Nucleus", "Cytoplasm"],
-  correctAnswer: "Nucleus",
-  solution: "<p>The <b>nucleus</b> contains DNA and controls cell growth, reproduction, and function.</p>"
-},
-{
-  id: "q29",
-  question: "Which process forms new species over time?",
-  options: ["Mutation", "Adaptation", "Natural selection", "Photosynthesis"],
-  correctAnswer: "Natural selection",
-  solution: "<p>Over generations, <b>natural selection</b> allows species to evolve traits that help them survive.</p>"
-},
-{
-  id: "q30",
-  question: "What type of wave does not need a medium?",
-  options: ["Sound", "Water", "Seismic", "Electromagnetic"],
-  correctAnswer: "Electromagnetic",
-  solution: "<p><b>Electromagnetic waves</b>, like light, can travel through empty space without a medium.</p>"
-}
-
     ],
   },
   {
-    grade: "9th-grade",
+    grade: "year-10",
     questions: [
       {
         id: "q1",
@@ -2173,7 +1579,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     ],
   },
   {
-    grade: "10th-grade",
+    grade: "year-11",
     questions: [
       {
         id: "q1",
@@ -2331,7 +1737,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     ],
   },
   {
-    grade: "11th-grade",
+    grade: "year-12",
     questions: [
 
       {
@@ -2502,324 +1908,6 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         question: "What is the most effective way to revise a vague thesis statement?",
         options: ["Make it longer", "Add emotional language", "Be specific and clearly state your position", "Start with a question"],
         correctAnswer: "Be specific and clearly state your position"
-      }
-    ],
-  },
-   {
-    grade: "12th-grade",
-    questions: [
-      {
-        id: "q1",
-        question: "What is the derivative of x²?",
-        options: ["x", "2x", "x²", "2"],
-        correctAnswer: "2x",
-      },
-      {
-        id: "q2",
-        question: "Evaluate: ∫2x dx",
-        options: ["x² + C", "2x + C", "x + C", "2x² + C"],
-        correctAnswer: "x² + C",
-      }
-    ],
-  },
-   {
-    grade: "sat",
-    questions: [
-      {
-        id: "q1",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752217874/Screenshot_2025-07-11_080932_v19q6s.png",
-        options: ["NO CHANGE", "pounds", "pounds, however", "pounds, yet"],
-        correctAnswer: "pounds, yet",
-      },
-      {
-        id: "q2",
-        question: "György Buzsáki, the Biggs Professor of Neuroscience at the New York University Grossman School of Medicine, conducted a study of mice brain cells to investigate ______ According to Buzsáki’s research, certain experiences are immediately followed by five to twenty “sharp wave ripples” of neurons that linger in the brain until sleep, during which the ripples are reactivated and consolidated into a lasting memory.Which choice completes the text so that it conforms to the conventions of Standard English?",
-        options: ["how are mammalian experiences converted into permanent memories?", "how are mammalian experiences converted into permanent memories.", "how mammalian experiences are converted into permanent memories?", "how mammalian experiences are converted into permanent memories."],
-        correctAnswer: "how mammalian experiences are converted into permanent memories.",
-      },
-      {
-        id: "q3",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752218267/Screenshot_2025-07-11_081725_mulbao.png",
-        options: ["NO CHANGE", "It ranks", "Those rank", "Theirs rank"],
-        correctAnswer: "It ranks",
-      },
-      {
-        id: "q4",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752218466/Screenshot_2025-07-11_082049_yafz3g.png",
-        options: ["the declaration actually had several intended audiences", "many Haitian people opposed the revolution and the declaration", "aspects of the declaration were modeled on similar documents from other countries.", "the French government may have been surprised by the declaration"],
-        correctAnswer: "the declaration actually had several intended audiences",
-      },
-      {
-        id: "q5",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752218773/Screenshot_2025-07-11_082556_lbjow6.png",
-        options: ["Canada and Australia have similar precipitation levels but very different amounts of freshwater resources per capita.", "Sierra Leone and Brazil have similar precipitation levels and similar amounts of freshwater resources per capita.", "Brazil has the second highest precipitation level and the second highest amount of freshwater resources per capita.", "Sierra Leone and Australia have very similar amounts of freshwater resources per capita but very different precipitation levels."],
-        correctAnswer: "Canada and Australia have similar precipitation levels but very different amounts of freshwater resources per capita.",
-      },
-      {
-        id: "q6",
-        question: "In 2008 a complete set of ancient pessoi (glass game pieces) was uncovered from beneath a paving stone in modern-day Israel. Due to their small size, pessoi were easily misplaced, making a whole set a rare find. This has led some experts to suggest that the set may have been buried intentionally; however, without clear evidence, archaeologists are left to ______ what happened. Which choice completes the text with the most logical and precise word or phrase?",
-        options: ["dismiss", "catalog", "speculate about", "expand on"],
-        correctAnswer: "speculate about",
-      },
-      {
-        id: "q7",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752219798/Screenshot_2025-07-11_084300_ttrdxp.png",
-        options: ["To show Jane’s regret after her outburst against Mrs. Reed", "To portray Jane as a rebellious and angry child who deserves punishment", "To explore Jane’s complex feelings of love and hate towards Mrs. Reed", "To reveal the source of Jane’s resentment toward Mrs. Reed"],
-        correctAnswer: "To show Jane’s regret after her outburst against Mrs. Reed",
-      },
-      {
-        id: "q8",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752220124/Screenshot_2025-07-11_084825_e3h4fo.png",
-        options: ["redress", "exacerbate", "reimburse", "commemorate"],
-        correctAnswer: "exacerbate",
-      },
-      {
-        id: "q9",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752220277/Screenshot_2025-07-11_085103_tse7vi.png",
-        options: ["They may have written about different topics, but Equiano and Sinclair both influenced readers.", "The 1807 Slave Trade Act resulted in part from a book by Equiano, while the 1906 Pure Food and Drug Act resulted in part from a book by Sinclair.", "The Interesting Narrative of the Life of Olaudah Equiano and The Jungle are two works of literature that contributed to new legislation (concerning the slave trade and food safety, respectively).", "Although both are powerful works of literature that contributed to new legislation, Equiano’s book is an autobiography, while Sinclair’s is fictional."],
-        correctAnswer: "Although both are powerful works of literature that contributed to new legislation, Equiano’s book is an autobiography, while Sinclair’s is fictional.",
-      },
-      {
-        id: "q10",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752220623/Screenshot_2025-07-11_085645_kx0fel.png",
-        options: ["Muscari is primarily known for his culinary tastes, as indicated by is favorite restaurant.", "Muscari carries himself with a modest and understated demeanor in public settings.", "Muscari has a deep appreciation for nature.", "Muscari adopts a dramatic and confident presence."],
-        correctAnswer: "Muscari adopts a dramatic and confident presence.",
-      },
-      {
-        id: "q11",
-        question: "The state fair sells food coupons for $2 each and ride coupons for $3 each. If Marlon wants to buy at least 15 coupons and spend no more than $40, what is the largest number of ride coupons he can buy?",
-        options: ["9", "10", "11", "12"],
-        correctAnswer: "10",
-      },
-      {
-        id: "q12",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752322733/Screenshot_2025-07-12_130947_zv2oee.png",
-        options: ["{-2, -6}", "{-2}", "{3}", "There are no solutions to the given equation."],
-        correctAnswer: "{3}",
-      },
-      {
-        id: "q13",
-        question: "The graph of a line in the xy-plane is totally vertical and has a negative x-intercept. Which of the following could represent a line with these conditions?",
-        options: ["x = -5", "y = -4", "y = -x – 2", "x = -4y"],
-        correctAnswer: "x = -5",
-      },
-      {
-        id: "q14",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752323071/Screenshot_2025-07-12_132412_pxjwwj.png",
-        options: ["It would be twice the original force.", "It would be four times the original force", "It would be ½ of the original force.", "It would be ¼ of the original force."],
-        correctAnswer: "It would be ¼ of the original force.",
-      },
-      {
-        id: "q15",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752323255/Screenshot_2025-07-12_132720_qmoogl.png",
-        options: ["<sup>40</sup>&frasl;<sub>188</sub>", "<sup>40</sup>&frasl;<sub>100</sub>", "<sup>60</sup>&frasl;<sub>188</sub>", "<sup>40</sup>&frasl;<sub>78</sub>"],
-        correctAnswer: "<sup>40</sup>&frasl;<sub>78</sub>",
-      },
-      {
-        id: "q16",
-        question: "Triangle ABC has a right angle B. If side AB has a length of 7 units and side BC has a length of 24 units, what is the length in units of side AC?",
-        options: ["25 units", "30 units", "35 units", "40 units"],
-        correctAnswer: "25 units",
-      },
-      {
-        id: "q17",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752323652/Screenshot_2025-07-12_133355_reiroq.png",
-        options: ["a", "b", "c", "d"],
-        correctAnswer: "c",
-      },
-      {
-        id: "q18",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752323826/Screenshot_2025-07-12_133651_tbnz5i.png",
-        options: ["a", "b", "c", "d"],
-        correctAnswer: "d",
-      },
-      {
-        id: "q19",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752324070/Screenshot_2025-07-12_134056_pxr3bt.png",
-        options: ["a", "b", "c", "d"],
-        correctAnswer: "b",
-      },
-      {
-        id: "q20",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752324183/Screenshot_2025-07-12_134249_dwlkfq.png",
-        options: ["a", "b", "c", "d"],
-        correctAnswer: "a",
-      },
-    ],
-  },
-    {
-    grade: "ssat",
-    questions: [
-      {
-        id: "q1",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752959367/q1_wdmjwh.jpg",
-        options: ["The Aftermath of World War II", "The Marshall Plan: A Program forEuropean Reconstruction", "The Economic Destruction of Europe", "George C. Marshall: The Man behind"],
-        correctAnswer: "The Marshall Plan: A Program forEuropean Reconstruction",
-      },
-      {
-        id: "q2",
-        question: "The tone of the author toward the Marshall Plan is",
-        options: ["objective", "Excited", "Insistent", "Anxious"],
-        correctAnswer: "objective",
-      },
-      {
-        id: "q3",
-        question: "All of the following are true about theMarshall Plan EXCEPT",
-        options: ["It provided economic assistance to 16 countries", "It went into action in 1948", "It supplied economic aid for a period spanning four years", "It gave each of the participating countries 12 billion dollars"],
-        correctAnswer: "It gave each of the participating countries 12 billion dollars",
-      },
-      {
-        id: "q4",
-        question: "Each of the following questions consists of one word followed by five words or phrases. You are to select the one word or phrase whose meaning is closest to the word in capital letters. <br> HARSH",
-        options: ["Severe", "Useless", "Poor", "Angry"],
-        correctAnswer: "Severe",
-      },
-      {
-        id: "q5",
-        question: "Select the one word or phrase whose meaning is closest to the word in capital letters. <br> SECURE: ",
-        options: ["Unssen", "Aware", "Safe",  "Knotty"],
-        correctAnswer: "Safe",
-      },
-      {
-        id: "q6",
-        question: "Select the one word or phrase whose meaning is closest to the word in capital letters. <br> CHRONIC:",
-        options: ["meet with", "look at", "help with", "point out"],
-        correctAnswer: "meet with",
-      },
-      {
-        id: "q7",
-        question: "Select the one word or phrase whose meaning is closest to the word in capital letters. <br> QUENCH:",
-        options: ["unknown", "quiet", "cheerless", "trembling"],
-        correctAnswer: "trembling",
-      },
-      {
-        id: "q8",
-        question: "Hammer is to nail as",
-        options: ["screwdriver is to screw", "Axe is to wood", "lathe is to molding", "chisel is to marble"],
-        correctAnswer: "screwdriver is to screw",
-      },
-      {
-        id: "q9",
-        question: "Tremor is to earthquake as",
-        options: ["desert is to sandstorm", "faucet is to deluge", "wind is to tornado", "flood is to river"],
-        correctAnswer: "wind is to tornado",
-      },
-      {
-        id: "q10",
-        question: "Cartographer is to map as chef is to",
-        options: ["Silverware", "Table", "Meal", "Ingredient"],
-        correctAnswer: "Ingredient",
-      },
-      {
-        id: "q11",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752955115/Screenshot_2025-07-19_205700_kqq9cw.png",
-        options: ["12", "18", "24", "36"],
-        correctAnswer: "36",
-      },
-      {
-        id: "q12",
-        question: "If n is a positive odd integer, which of the following is an even integer?",
-        options: ["3n-1", "2n+3", "2n-1", "n+2"],
-        correctAnswer: "3n-1",
-      },
-      {
-        id: "q13",
-        question: "Of the following fractions which is closest to 37%?",
-        options: ["<sup>1</sup>&frasl;<sub>3</sub>", "<sup>1</sup>&frasl;<sub>4</sub>", "<sup>2</sup>&frasl;<sub>5</sub>", "<sup>3</sup>&frasl;<sub>8</sub>"],
-        correctAnswer: "<sup>3</sup>&frasl;<sub>8</sub>",
-      },
-      {
-        id: "q14",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752955934/Screenshot_2025-07-19_211156_omrdlz.png",
-        options: ["18", "20", "22", "24"],
-        correctAnswer: "24",
-      },
-      {
-        id: "q15",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752956151/Screenshot_2025-07-19_211535_ehs4fk.png",
-        options: ["21", "24", "27", "28"],
-        correctAnswer: "28",
-      },
-      {
-        id: "q16",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752956371/Screenshot_2025-07-19_211913_obynet.png",
-        options: ["24", "36", "31 ", "40"],
-        correctAnswer: "40",
-      },
-      {
-        id: "q17",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752956541/Screenshot_2025-07-19_212200_gqecyp.png",
-        options: ["1.92", "2.88", "4.08", "5.04"],
-        correctAnswer: "5.04",
-      },
-      {
-        id: "q18",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752956966/Screenshot_2025-07-19_212910_gbnafu.png",
-        options: ["11", "14", "21", "24"],
-        correctAnswer: "14",
-      },
-      {
-        id: "q19",
-        question: "Sophie is making bows for packages and uses 1.25m of ribbon per bow. If she has 12 metres of ribbon and makes as many complete bows as possible.  How much ribbon in metres will remain?",
-        options: ["0.60", "0.75", "0.85", "1.75"],
-        correctAnswer: "0.75",
-      },
-      {
-        id: "q20",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752957511/Screenshot_2025-07-19_213813_m4ivy0.png",
-        options: ["150", "135", "120", "105"],
-        correctAnswer: "150",
-      },
-    ],
-  },
-   {
-    grade: "algebra-1",
-    questions: [
-      {
-        id: "q1",
-        question: "What is 2 + 3?",
-        options: ["4", "5", "6", "7"],
-        correctAnswer: "5",
-      },
-      {
-        id: "q2",
-        question: "Which number comes after 6?",
-        options: ["5", "7", "8", "9"],
-        correctAnswer: "7",
-      }
-    ],
-  },
-   {
-    grade: "geometry",
-    questions: [
-      {
-        id: "q1",
-        question: "What is 2 + 3?",
-        options: ["4", "5", "6", "7"],
-        correctAnswer: "5",
-      },
-      {
-        id: "q2",
-        question: "Which number comes after 6?",
-        options: ["5", "7", "8", "9"],
-        correctAnswer: "7",
-      }
-    ],
-  },
-   {
-    grade: "algebra-2",
-    questions: [
-      {
-        id: "q1",
-        question: "What is 2 + 3?",
-        options: ["4", "5", "6", "7"],
-        correctAnswer: "5",
-      },
-      {
-        id: "q2",
-        question: "Which number comes after 6?",
-        options: ["5", "7", "8", "9"],
-        correctAnswer: "7",
       }
     ],
   },

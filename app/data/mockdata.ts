@@ -148,10 +148,22 @@ export interface QuizCardProps {
       imageSrc: "/imseven.png",
       title: "QUIZ ASSESSMENT",
       level: "k-12",
-      category: "Maths",
+      category: "Maths, science and ELA",
       difficulty: "Medium",
-      time: "15 min",
-      questions: 10,
+      time: "30 min",
+      questions: 30,
+      onStart: () => console.log("Started Civics Awareness")
+    },
+
+    {
+      id: "quiz-assessment-2",
+      imageSrc: "/imfour.png",
+      title: "UK QUIZ ASSESSMENT",
+      level: "k-12",
+      category: "Maths, Science and ELA",
+      difficulty: "Medium",
+      time: "20 min",
+      questions: 30,
       onStart: () => console.log("Started Civics Awareness")
     },
   ];

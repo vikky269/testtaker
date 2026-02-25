@@ -102,31 +102,13 @@ const handleSubmit = async () => {
     return;
   }
 
-//   await fetch(
-//   "https://<project-ref>.supabase.co/functions/v1/notify-new-student",
-//   {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//       Authorization: `Bearer ${session.access_token}`,
-//     },
-//     body: JSON.stringify({
-//       fullName: formData.fullName,
-//       email: formData.email,
-//       grade: formData.grade,
-//     }),
-//   }
-// );
-   
-console.log("Supabase URL:", process.env.NEXT_PUBLIC_SUPABASE_URL);
-
 
 
 // 4. Call the edge function to send notification email to admin and student
 await fetch(
   `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/notify-new-student`,
   {
-    
+
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -140,7 +122,13 @@ await fetch(
   }
 );
 
-  toast.success("Signup successful! Please log in to access your test.");
+  toast.success("Signup successful! Please log in to access your test.", {
+    duration: 4000,
+  });
+
+  toast.success("A notification mail has been sent to your email.", {
+    duration: 8000,
+  });
   router.push("/login");
 };
 

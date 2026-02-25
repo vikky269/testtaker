@@ -9,6 +9,8 @@ import { Button } from '@/components/ui/button'
 import { Clock, FileText, Star } from 'lucide-react'
 import { quizData, QuizCardProps } from "../../data/mockdata"
 import { Lato } from 'next/font/google'
+import { FaChild, FaSchool, FaGraduationCap, FaBook } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
 
 const lato = Lato({
   subsets: ['latin'], 
@@ -18,27 +20,9 @@ const lato = Lato({
 
 const stateOptions = ["New York", "New Jersey", "Georgia", "Texas", "Maryland", "Ohio"];
 const gradeOptions = ["Grade 3", "Grade 4", "Grade 5", "Grade 6", "Grade 7", "Grade 8"];
-const quizassesmentOptions = ["Pre-K","Kindergarten", "1st Grade", "2nd Grade", "3rd Grade", "4th Grade", "5th Grade", "6th Grade", "Year 7", "7th Grade", "8th Grade", "9th Grade", "10th Grade", "11th Grade", "12th Grade", "SSAT", "ALGEBRA 1", "GEOMETRY", "ALGEBRA 2", "SAT",];
+const quizassesmentOptions = ["Pre-K","Kindergarten", "1st Grade", "2nd Grade", "3rd Grade", "4th Grade", "5th Grade", "6th Grade", "7th Grade", "8th Grade", "9th Grade", "10th Grade", "11th Grade", "12th Grade", "SSAT", "ALGEBRA 1", "GEOMETRY", "ALGEBRA 2", "SAT",];
 
 
-
-// function generatePasscode(grade: string): string {
-//   let normalized = grade.toLowerCase().replace(/\s+/g, "");
-
-//    if (normalized === "algebra1") normalized = "algebra-1";
-//   if (normalized === "algebra2") normalized = "algebra-2";
-
-//   if (normalized === "kindergarten") return "SMTTK";
-//   if (normalized === "pre-k") return "SMTTPK";
-//   if (normalized === "sat") return "SMTTS";
-//    if (normalized === "ssat") return "SMTTSS";
-//    if (normalized === "algebra-2") return "SMTTA2";
-//   if (normalized === "algebra-1") return "SMTTA1";
-//   if (normalized === "geometry") return "SMTTG";  
-
-//   const match = grade.match(/(\d+)/);
-//   return match ? `SMTT${match[1]}` : "";
-// }
 
 function generatePasscode(grade: string): string {
   let normalized = grade.toLowerCase().trim();
@@ -159,7 +143,7 @@ function QuizCard({ id, imageSrc, title, level, category, difficulty, time, ques
 
         {selectedTest && (
           <div className="fixed  bottom-0 right-0 inset-0 flex items-center justify-center bg-gray-200 bg-opacity-70 z-50">
-            <div className="bg-white p-6 rounded-lg shadow-2xl w-full max-w-3xl">
+            <div  className={`bg-white p-8 rounded-2xl shadow-2xl w-full transition-all duration-300 ${step === 2 ? "md:max-w-6xl" : "max-w-md"}`}>
               {step === 1 && isStateTest && (
                 <>
                   <p className="font-bold mb-4">Select your state:</p>
@@ -175,41 +159,135 @@ function QuizCard({ id, imageSrc, title, level, category, difficulty, time, ques
                 </>
               )}
 
-              {step === 2 && (
+             
+             {step === 2 && (
                 <>
-                  <p className="font-bold mb-4 text-[#7FB509]">Select your grade:</p>
-                  <div className="grid max-sm:grid-cols-1 grid-cols-2 md:grid-cols-3 gap-2 mb-4">
-                    {(isStateTest ? gradeOptions : quizassesmentOptions).map((grade) => (
-                      <button key={grade} onClick={() => setSelectedGrade(grade)} className={`p-2 cursor-pointer border rounded ${selectedGrade === grade ? "bg-[#7FB509] text-white" : ""}`}>{grade}</button>
-                    ))}
+              
+                  <div className="mb-6">
+                    <h2 className="text-2xl font-bold text-gray-800">
+                      Select Your Grade
+                    </h2>
+                    <p className="text-gray-500">
+                      Choose your level to continue
+                    </p>
                   </div>
+
+                  <div className="grid max-sm:grid-cols-1 grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    {(isStateTest ? gradeOptions : quizassesmentOptions).map((grade) => {
+
+                      const getIcon = () => {
+                        if (grade.toLowerCase().includes("pre") || grade.includes("1st") || grade.includes("2nd"))
+                          return <FaChild />;
+                        if (grade.includes("6th") || grade.includes("7th") || grade.includes("8th") || grade.includes("Year 7"))
+                          return <FaSchool />;
+                        if (grade.includes("9th") || grade.includes("10th") || grade.includes("11th") || grade.includes("12th"))
+                          return <FaGraduationCap />;
+                        return <FaBook />;
+                      };
+
+                      return (
+                        <button
+                          key={grade}
+                          onClick={() => setSelectedGrade(grade)}
+                          className={`
+              p-4 rounded-xl border transition-all duration-200 
+              flex items-center justify-center gap-2
+              hover:scale-105 cursor-pointer
+              ${selectedGrade === grade
+                              ? "bg-[#7FB509] text-white border-[#7FB509] shadow-md"
+                              : "bg-gray-50 border-gray-200 hover:bg-green-50"
+                            }
+            `}
+                        >
+                          <span className="text-lg">{getIcon()}</span>
+                          <span className="font-medium">{grade}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
                   <div className="flex justify-between">
-                    {isStateTest && <Button className="cursor-pointer" onClick={() => setStep(1)}>Back</Button>}
-                    {!isStateTest && <Button className="cursor-pointer bg-[#7FB509] hover:bg-[#689703]"  onClick={resetSelection}>Back</Button>}
-                    <Button className="cursor-pointer bg-[#7FB509] hover:bg-[#689703]" onClick={() => selectedGrade && setStep(3)} disabled={!selectedGrade}>Next</Button>
+                    {isStateTest && (
+                      <Button
+                        className="cursor-pointer bg-gray-200 hover:bg-gray-300 text-gray-700"
+                        onClick={() => setStep(1)}
+                      >
+                        Back
+                      </Button>
+                    )}
+
+                    {!isStateTest && (
+                      <Button
+                        className="cursor-pointer bg-gray-200 hover:bg-gray-300 text-gray-700"
+                        onClick={resetSelection}
+                      >
+                        Back
+                      </Button>
+                    )}
+
+                    <Button
+                      className={`
+          cursor-pointer transition-all
+          ${selectedGrade
+                          ? "bg-[#7FB509] hover:bg-[#689703] text-white"
+                          : "bg-green-200 text-white cursor-not-allowed"
+                        }
+        `}
+                      onClick={() => selectedGrade && setStep(3)}
+                      disabled={!selectedGrade}
+                    >
+                      Next
+                    </Button>
                   </div>
                 </>
               )}
 
 
               {step === 3 && (
-                <>
-                  <p className="font-bold mb-2 text-[#557d00]">Enter Passcode for {selectedGrade}:</p>
+                <div className="flex flex-col items-center text-center">
+                  <FaLock className="text-3xl text-[#7FB509] mb-4" />
+                  <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                    Enter Test Passcode
+                  </h2>
+
+                  <p className="text-gray-800 mb-6 text-3xl">
+                    Grade: <span className="font-bold text-3xl text-[#7FB509]">{selectedGrade}</span>
+                  </p>
+
                   <input
                     type="text"
                     value={passcodeInput}
                     onChange={(e) => setPasscodeInput(e.target.value)}
-                    className="w-full p-2 border rounded mb-2"
-                    placeholder=""
+                    placeholder="Enter your passcode"
+                    className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#7FB509] focus:border-[#7FB509]transition"
                   />
-                  {passcodeError && <p className="text-red-500 text-sm mb-2">{passcodeError}</p>}
-                  <div className="flex justify-between">
-                    <Button className="cursor-pointer bg-[#7FB509] hover:bg-[#5d820d] text-white"  onClick={() => setStep(2)}>Back</Button>
-                    <Button className="cursor-pointer bg-[#7FB509] hover:bg-[#5d820d]" onClick={validatePasscodeAndStart} disabled={!passcodeInput}>Start Test</Button>
-                  </div>
-                </>
-              )}
 
+                  {passcodeError && (
+                    <p className="text-red-500 text-sm mt-2">
+                      {passcodeError}
+                    </p>
+                  )}
+
+                  <div className="flex w-full justify-between mt-8">
+
+                    <Button
+                      className="bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 cursor-pointer"
+                      onClick={() => setStep(2)}
+                    >
+                      Back
+                    </Button>
+
+                    <Button
+                      className={`px-6 cursor-pointer transition-all${passcodeInput ? "bg-[#7FB509] hover:bg-[#689703] text-white": "bg-green-200 text-white cursor-not-allowed"}`}
+                      onClick={validatePasscodeAndStart}
+                      disabled={!passcodeInput}
+                    >
+                      Start Test
+                    </Button>
+
+                  </div>
+                </div>
+              )}
 
 
               {(!isStateTest && !isQuizAssessment) && (
@@ -234,7 +312,7 @@ function QuizCard({ id, imageSrc, title, level, category, difficulty, time, ques
              
             </div>
           </div>
-      )}
+         )}
 
       <hr className='shadow inset-2'></hr>
 

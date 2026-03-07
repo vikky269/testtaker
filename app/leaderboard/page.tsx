@@ -62,7 +62,7 @@ export default function Leaderboard() {
 
       let query = supabase
         .from("leaderboard")
-        .select("full_name, grade, overall_score, math_score, ela_score, total_time", {
+        .select("full_name, grade, overall_score, math_score, ela_score, science_score, total_time", {
           count: "exact",
         })
         .order("overall_score", { ascending: false })
@@ -130,6 +130,7 @@ export default function Leaderboard() {
             <th className="p-2 border">Overall Score</th>
             <th className="p-2 border">Math Score</th>
             <th className="p-2 border">ELA Score</th>
+            <th className="p-2 border">Science Score</th>
             <th className="p-2 border">Time Taken</th>
           </tr>
         </thead>
@@ -153,6 +154,7 @@ export default function Leaderboard() {
               </td>
               <td className="p-2 border">{entry.math_score}%</td>
               <td className="p-2 border font-medium">{entry.ela_score ? `${entry.ela_score}%` : "—"}</td>
+              <td className="p-2 border">{entry.science_score ? `${entry.science_score}%` : "—"}</td>
               <td className="p-2 border">{formatTime(entry.total_time)}</td>
             </tr>
           ))}

@@ -628,7 +628,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
   options: ["Solid", "Liquid", "Gas", "Plasma"],
   correctAnswer: "Solid",
   solution: "<p>A <b>solid</b> has a fixed shape and fixed volume. Its particles are tightly packed together.</p>"
-},
+      },
 {
   id: "q22",
   question: "Which planet is closest to the Sun?",
@@ -659,111 +659,40 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
 },
 {
   id: "q26",
-  question: "Which state of matter has a fixed shape?",
-  options: ["Solid", "Liquid", "Gas", "Plasma"],
-  correctAnswer: "Solid",
-  solution: "<p>A <b>solid</b> keeps its shape because its particles are closely packed together.</p>"
+  question: "Which system helps humans breathe?",
+  options: ["Digestive", "Respiratory", "Circulatory", "Skeletal"],
+  correctAnswer: "Respiratory",
+  solution: "<p>The <b>respiratory system</b> allows us to inhale oxygen and exhale carbon dioxide.</p>"
 },
 {
   id: "q27",
-  question: "Which planet is closest to the Sun?",
-  options: ["Earth", "Venus", "Mars", "Mercury"],
-  correctAnswer: "Mercury",
-  solution: "<p><b>Mercury</b> is the nearest planet to the Sun.</p>"
+  question: "What force slows objects when they rub together?",
+  options: ["Gravity", "Magnetism", "Friction", "Energy"],
+  correctAnswer: "Friction",
+  solution: "<p><b>Friction</b> acts between surfaces in contact and reduces motion.</p>"
 },
 {
   id: "q28",
-  question: "What helps plants make food?",
-  options: ["Roots", "Sunlight", "Soil", "Rain"],
-  correctAnswer: "Sunlight",
-  solution: "<p><b>Sunlight</b> provides the energy plants need to produce food.</p>"
+  question: "Which material is attracted to magnets?",
+  options: ["Plastic", "Wood", "Iron", "Glass"],
+  correctAnswer: "Iron",
+  solution: "<p>Materials like <b>iron</b> are attracted to magnets.</p>"
 },
 {
   id: "q29",
-  question: "Which tool measures temperature?",
-  options: ["Ruler", "Scale", "Thermometer", "Clock"],
-  correctAnswer: "Thermometer",
-  solution: "<p>A <b>thermometer</b> measures how hot or cold something is.</p>"
+  question: "Which process changes liquid water into vapor?",
+  options: ["Condensation", "Evaporation", "Freezing", "Melting"],
+  correctAnswer: "Evaporation",
+  solution: "<p>When water gains heat and turns into vapor, the process is called <b>evaporation</b>.</p>"
 },
 {
   id: "q30",
-  question: "Which animal is a mammal?",
-  options: ["Snake", "Frog", "Dolphin", "Lizard"],
-  correctAnswer: "Dolphin",
-  solution: "<p>The <b>dolphin</b> is a mammal because it breathes with lungs and feeds its young with milk.</p>"
-},
-{
-  id: "q31",
-  question: "Which state of matter has a fixed shape?",
-  options: ["Solid", "Liquid", "Gas", "Plasma"],
-  correctAnswer: "Solid",
-  solution: "<p>A <b>solid</b> has a definite shape and volume.</p>"
-},
-{
-  id: "q32",
-  question: "Which planet is closest to the Sun?",
-  options: ["Earth", "Venus", "Mars", "Mercury"],
-  correctAnswer: "Mercury",
-  solution: "<p><b>Mercury</b> is the first planet from the Sun.</p>"
-},
-{
-  id: "q33",
-  question: "What helps plants make food?",
-  options: ["Roots", "Sunlight", "Soil", "Rain"],
-  correctAnswer: "Sunlight",
-  solution: "<p>Plants need <b>sunlight</b> to carry out photosynthesis.</p>"
-},
-{
-  id: "q34",
-  question: "Which tool measures temperature?",
-  options: ["Ruler", "Scale", "Thermometer", "Clock"],
-  correctAnswer: "Thermometer",
-  solution: "<p>The correct instrument for measuring temperature is a <b>thermometer</b>.</p>"
-},
-{
-  id: "q35",
-  question: "Which animal is a mammal?",
-  options: ["Snake", "Frog", "Dolphin", "Lizard"],
-  correctAnswer: "Dolphin",
-  solution: "<p>A <b>dolphin</b> is classified as a mammal.</p>"
-},
-{
-  id: "q36",
-  question: "Which state of matter has a fixed shape?",
-  options: ["Solid", "Liquid", "Gas", "Plasma"],
-  correctAnswer: "Solid",
-  solution: "<p><b>Solids</b> maintain their shape unless acted upon by force.</p>"
-},
-{
-  id: "q37",
-  question: "Which planet is closest to the Sun?",
-  options: ["Earth", "Venus", "Mars", "Mercury"],
-  correctAnswer: "Mercury",
-  solution: "<p><b>Mercury</b> orbits closest to the Sun.</p>"
-},
-{
-  id: "q38",
-  question: "What helps plants make food?",
-  options: ["Roots", "Sunlight", "Soil", "Rain"],
-  correctAnswer: "Sunlight",
-  solution: "<p>Without <b>sunlight</b>, plants cannot produce food.</p>"
-},
-{
-  id: "q39",
-  question: "Which tool measures temperature?",
-  options: ["Ruler", "Scale", "Thermometer", "Clock"],
-  correctAnswer: "Thermometer",
-  solution: "<p>A <b>thermometer</b> is designed specifically to measure temperature.</p>"
-},
-{
-  id: "q40",
-  question: "Which animal is a mammal?",
-  options: ["Snake", "Frog", "Dolphin", "Lizard"],
-  correctAnswer: "Dolphin",
-  solution: "<p>The <b>dolphin</b> is a mammal because it is warm-blooded and nurses its young.</p>"
+  question: "Which planet is known as the Red Planet?",
+  options: ["Venus", "Jupiter", "Mars", "Saturn"],
+  correctAnswer: "Mars",
+  solution: "<p>The planet <b>Mars</b> is known as the Red Planet due to its red color.</p>"
 }
-
-    ],
+],
   },
   {
     grade: "3rd-grade",
@@ -2000,41 +1929,40 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
   solution: "<p><b>Electromagnetic waves</b> can travel through a vacuum and do not require a medium.</p>"
 },
 {
-  id: "q26",
-  question: "Which law explains action and reaction?",
-  options: ["Newton’s First", "Newton’s Second", "Newton’s Third", "Law of Gravity"],
-  correctAnswer: "Newton’s Third",
-  solution: "<p><b>Newton’s Third Law</b> means that forces always come in pairs, with equal magnitude and opposite direction.</p>"
-},
-{
-  id: "q27",
-  question: "What is the pH of a neutral solution?",
-  options: ["1", "5", "7", "14"],
-  correctAnswer: "7",
-  solution: "<p>A solution with a pH of <b>7</b> is neutral and is neither acidic nor basic.</p>"
-},
-{
-  id: "q28",
-  question: "Which organelle controls cell activities?",
-  options: ["Mitochondria", "Ribosome", "Nucleus", "Cytoplasm"],
-  correctAnswer: "Nucleus",
-  solution: "<p>The <b>nucleus</b> contains DNA and controls cell growth, reproduction, and function.</p>"
-},
-{
-  id: "q29",
-  question: "Which process forms new species over time?",
-  options: ["Mutation", "Adaptation", "Natural selection", "Photosynthesis"],
-  correctAnswer: "Natural selection",
-  solution: "<p>Over generations, <b>natural selection</b> allows species to evolve traits that help them survive.</p>"
-},
-{
-  id: "q30",
-  question: "What type of wave does not need a medium?",
-  options: ["Sound", "Water", "Seismic", "Electromagnetic"],
-  correctAnswer: "Electromagnetic",
-  solution: "<p><b>Electromagnetic waves</b>, like light, can travel through empty space without a medium.</p>"
-}
-
+        id: "q26",
+        question: "Which process describes water changing from liquid to gas?",
+        options: ["Condensation", "Evaporation", "Freezing", "Melting"],
+        correctAnswer: "Evaporation",
+        solution: "<p><strong>Explanation:</strong> Evaporation occurs when liquid water gains heat energy and changes into water vapor.</p>"
+      },
+      {
+        id: "q27",
+        question: "Which of the following best describes the role of a producer in an ecosystem?",
+        options: ["Eats other animals", "Breaks down dead organisms", "Makes its own food", "Lives in water only"],
+        correctAnswer: "Makes its own food",
+        solution: "<p><strong>Explanation:</strong> Producers, such as plants, make their own food using sunlight through photosynthesis.</p>"
+      },
+      {
+        id: "q28",
+        question: "In the periodic table, elements are arranged primarily by their:",
+        options: ["Atomic mass", "Color", "Atomic number", "Size"],
+        correctAnswer: "Atomic number",
+        solution: "<p><strong>Explanation:</strong> Elements in the periodic table are arranged by increasing atomic number, which is the number of protons.</p>"
+      },
+      {
+        id: "q29",
+        question: "What is the basic unit of life?",
+        options: ["Atom", "Cell", "Tissue", "Organ"],
+        correctAnswer: "Cell",
+        solution: "<p><strong>Explanation:</strong> The cell is the smallest unit of life that can carry out all life processes.</p>"
+      },
+      {
+        id: "q30",
+        question: "Which force pulls objects toward Earth?",
+        options: ["Friction", "Magnetism", "Gravity", "Electricity"],
+        correctAnswer: "Gravity",
+        solution: "<p><strong>Explanation:</strong> Gravity is the force that attracts objects toward the center of the Earth.</p>"
+      },
     ],
   },
   {

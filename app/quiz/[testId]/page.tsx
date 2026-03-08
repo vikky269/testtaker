@@ -719,19 +719,18 @@ const handleReview = () => {
   router.push(`/quiz/${testid}/review?${url.toString()}`);
 };
 
-  const totalQuestions = submitted && isSATQuiz
+  // AFTER
+const totalQuestions = (submitted && isSATQuiz) || (submitted && isGrade9Or10)
   ? quizQuestions.length
   : activeQuestions.length;
 
-const answeredCount = submitted && isSATQuiz
+const answeredCount = (submitted && isSATQuiz) || (submitted && isGrade9Or10)
   ? Object.keys(answers).filter((key) =>
       quizQuestions.find((q) => q.question === key)
     ).length
   : Object.keys(answers).filter((key) =>
       activeQuestions.find((q) => q.question === key)
     ).length;
-
-
   
 
 
@@ -775,7 +774,7 @@ const answeredCount = submitted && isSATQuiz
       )}
 
 
-     <div className="text-center font-medium text-md text-gray-600 mt-4 mb-8">
+     <div className="text-center font-medium text-xl text-gray-600 mt-4 mb-8">
         {answeredCount} of {totalQuestions} questions answered
       </div>
 
@@ -986,7 +985,7 @@ const answeredCount = submitted && isSATQuiz
             {/* ── SECTION SCORES (Grade 9 & 10) ── */}
             {isGrade9Or10 ? (
               <>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 cursor-pointer">
 
                   {/* Math */}
                   <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 text-center hover:-translate-y-1 transition-transform duration-200">

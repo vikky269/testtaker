@@ -418,45 +418,45 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       },
       {
   id: "q21",
-  question: "Which part of a plant grows underground?",
-  options: ["Leaf", "Flower", "Root", "Stem"],
-  correctAnswer: "Root",
-  solution: "<p>The <b>root</b> grows underground. It helps anchor the plant in the soil and absorbs water and nutrients.</p>"
+  question: "Which animal says 'meow'?",
+  options: ["Dog", "Cat", "Cow", "Goat"],
+  correctAnswer: "Cat",
+  solution: "<p>A <b>cat</b> is the animal that says 'meow'.</p>"
 },
 {
   id: "q22",
-  question: "Which object gives us light during the day?",
-  options: ["Moon", "Sun", "Star", "Lamp"],
-  correctAnswer: "Sun",
-  solution: "<p>The <b>Sun</b> gives us light and heat during the day.</p>"
+  question: "What do we use to see?",
+  options: ["Nose", "Ears", "Eyes", "Hands"],
+  correctAnswer: "Eyes",
+  solution: "<p>We use our <b>eyes</b> to see things around us.</p>"
 },
 {
   id: "q23",
-  question: "What do animals need to survive?",
-  options: ["Toys", "Food, water, and shelter", "Music", "Clothes"],
-  correctAnswer: "Food, water, and shelter",
-  solution: "<p>Animals need <b>food, water, and shelter</b> to survive and stay healthy.</p>"
+  question: "Which of these is hot?",
+  options: ["Ice", "Snow", "Sun", "Rain"],
+  correctAnswer: "Sun",
+  solution: "<p>The <b>Sun</b> is very hot.</p>"
 },
 {
   id: "q24",
-  question: "Which sense helps us hear?",
-  options: ["Eyes", "Nose", "Ears", "Hands"],
-  correctAnswer: "Ears",
-  solution: "<p>We use our <b>ears</b> to hear sounds.</p>"
+  question: "Which one can we drink?",
+  options: ["Stone", "Water", "Sand", "Wood"],
+  correctAnswer: "Water",
+  solution: "<p>We drink <b>water</b> to stay healthy.</p>"
 },
 {
   id: "q25",
-  question: "What is water when it freezes?",
-  options: ["Gas", "Ice", "Steam", "Liquid"],
-  correctAnswer: "Ice",
-  solution: "<p>When water freezes, it turns into <b>ice</b>, which is a solid.</p>"
+  question: "Which animal can bark?",
+  options: ["Cat", "Dog", "Fish", "Bird"],
+  correctAnswer: "Dog",
+  solution: "<p>A <b>dog</b> is the animal that barks.</p>"
 },
 {
   id: "q26",
-  question: "Which part of a plant grows underground?",
-  options: ["Leaf", "Flower", "Root", "Stem"],
-  correctAnswer: "Root",
-  solution: "<p>The <b>root</b> grows underground and helps the plant absorb water and nutrients.</p>"
+  question: "What do plants need to grow?",
+  options: ["Toys", "Water", "Shoes", "Books"],
+  correctAnswer: "Water",
+  solution: "<p>Plants need <b>water</b> to grow.</p>"
 },
 {
   id: "q27",
@@ -623,76 +623,76 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         correctAnswer: "She is a shining star.",
       },
       {
-  id: "q21",
-  question: "Which state of matter has a fixed shape?",
-  options: ["Solid", "Liquid", "Gas", "Plasma"],
-  correctAnswer: "Solid",
-  solution: "<p>A <b>solid</b> has a fixed shape and fixed volume. Its particles are tightly packed together.</p>"
+        id: "q21",
+        question: "Which part of your body helps you see?",
+        options: ["Ears", "Eyes", "Nose", "Hands"],
+        correctAnswer: "Eyes",
+        solution: "<p>Your <b>eyes</b> help you see things around you.</p>"
       },
-{
-  id: "q22",
-  question: "Which planet is closest to the Sun?",
-  options: ["Earth", "Venus", "Mars", "Mercury"],
-  correctAnswer: "Mercury",
-  solution: "<p><b>Mercury</b> is the planet closest to the Sun in our solar system.</p>"
-},
-{
-  id: "q23",
-  question: "What helps plants make food?",
-  options: ["Roots", "Sunlight", "Soil", "Rain"],
-  correctAnswer: "Sunlight",
-  solution: "<p>Plants use <b>sunlight</b> to make their own food through a process called photosynthesis.</p>"
-},
-{
-  id: "q24",
-  question: "Which tool measures temperature?",
-  options: ["Ruler", "Scale", "Thermometer", "Clock"],
-  correctAnswer: "Thermometer",
-  solution: "<p>A <b>thermometer</b> is used to measure temperature.</p>"
-},
-{
-  id: "q25",
-  question: "Which animal is a mammal?",
-  options: ["Snake", "Frog", "Dolphin", "Lizard"],
-  correctAnswer: "Dolphin",
-  solution: "<p>A <b>dolphin</b> is a mammal because it breathes air and gives birth to live young.</p>"
-},
-{
-  id: "q26",
-  question: "Which system helps humans breathe?",
-  options: ["Digestive", "Respiratory", "Circulatory", "Skeletal"],
-  correctAnswer: "Respiratory",
-  solution: "<p>The <b>respiratory system</b> allows us to inhale oxygen and exhale carbon dioxide.</p>"
-},
-{
-  id: "q27",
-  question: "What force slows objects when they rub together?",
-  options: ["Gravity", "Magnetism", "Friction", "Energy"],
-  correctAnswer: "Friction",
-  solution: "<p><b>Friction</b> acts between surfaces in contact and reduces motion.</p>"
-},
-{
-  id: "q28",
-  question: "Which material is attracted to magnets?",
-  options: ["Plastic", "Wood", "Iron", "Glass"],
-  correctAnswer: "Iron",
-  solution: "<p>Materials like <b>iron</b> are attracted to magnets.</p>"
-},
-{
-  id: "q29",
-  question: "Which process changes liquid water into vapor?",
-  options: ["Condensation", "Evaporation", "Freezing", "Melting"],
-  correctAnswer: "Evaporation",
-  solution: "<p>When water gains heat and turns into vapor, the process is called <b>evaporation</b>.</p>"
-},
-{
-  id: "q30",
-  question: "Which planet is known as the Red Planet?",
-  options: ["Venus", "Jupiter", "Mars", "Saturn"],
-  correctAnswer: "Mars",
-  solution: "<p>The planet <b>Mars</b> is known as the Red Planet due to its red color.</p>"
-}
-],
+      {
+        id: "q22",
+        question: "Which of these is a living thing?",
+        options: ["Rock", "Water", "Tree", "Sand"],
+        correctAnswer: "Tree",
+        solution: "<p>A <b>tree</b> is a living thing because it grows and needs water and sunlight.</p>"
+      },
+      {
+        id: "q23",
+        question: "What do we breathe in to stay alive?",
+        options: ["Water", "Oxygen", "Food", "Soil"],
+        correctAnswer: "Oxygen",
+        solution: "<p>We breathe in <b>oxygen</b> to help our bodies stay alive.</p>"
+      },
+      {
+        id: "q24",
+        question: "Which animal can fly?",
+        options: ["Dog", "Fish", "Bird", "Cat"],
+        correctAnswer: "Bird",
+        solution: "<p>A <b>bird</b> can fly using its wings.</p>"
+      },
+      {
+        id: "q25",
+        question: "What do plants need to grow?",
+        options: ["Only toys", "Water and sunlight", "Only air", "Only rocks"],
+        correctAnswer: "Water and sunlight",
+        solution: "<p>Plants need <b>water and sunlight</b> to grow healthy.</p>"
+      },
+      {
+        id: "q26",
+        question: "Which part of the plant is usually green and makes food?",
+        options: ["Root", "Stem", "Leaf", "Flower"],
+        correctAnswer: "Leaf",
+        solution: "<p>The <b>leaf</b> is green and helps the plant make food.</p>"
+      },
+      {
+        id: "q27",
+        question: "Which sense do you use to smell flowers?",
+        options: ["Touch", "Taste", "Smell", "Sight"],
+        correctAnswer: "Smell",
+        solution: "<p>You use your sense of <b>smell</b> with your nose to smell flowers.</p>"
+      },
+      {
+        id: "q28",
+        question: "What is the Sun mainly used for?",
+        options: ["Cooling", "Lighting and heat", "Sleeping", "Making noise"],
+        correctAnswer: "Lighting and heat",
+        solution: "<p>The <b>Sun</b> gives us light and heat.</p>"
+      },
+      {
+        id: "q29",
+        question: "Which of these is a solid?",
+        options: ["Air", "Water", "Ice", "Steam"],
+        correctAnswer: "Ice",
+        solution: "<p><b>Ice</b> is a solid because it has a fixed shape.</p>"
+      },
+      {
+        id: "q30",
+        question: "Which animal lives in water?",
+        options: ["Lion", "Elephant", "Fish", "Dog"],
+        correctAnswer: "Fish",
+        solution: "<p>A <b>fish</b> lives in water and uses gills to breathe.</p>"
+      }
+    ],
   },
   {
     grade: "3rd-grade",
@@ -829,75 +829,75 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         correctAnswer: "What lesson did the character learn?",
       },
       {
-  id: "q21",
-  question: "Which system helps humans breathe?",
-  options: ["Digestive", "Respiratory", "Circulatory", "Skeletal"],
-  correctAnswer: "Respiratory",
-  solution: "<p>The <b>respiratory system</b> helps humans breathe by taking in oxygen and removing carbon dioxide.</p>"
-},
-{
-  id: "q22",
-  question: "What force slows objects when they rub together?",
-  options: ["Gravity", "Magnetism", "Friction", "Energy"],
-  correctAnswer: "Friction",
-  solution: "<p><b>Friction</b> is the force that slows objects down when two surfaces rub against each other.</p>"
-},
-{
-  id: "q23",
-  question: "Which material is attracted to magnets?",
-  options: ["Plastic", "Wood", "Iron", "Glass"],
-  correctAnswer: "Iron",
-  solution: "<p><b>Iron</b> is attracted to magnets because it is a magnetic material.</p>"
-},
-{
-  id: "q24",
-  question: "Which process changes liquid water into vapor?",
-  options: ["Condensation", "Evaporation", "Freezing", "Melting"],
-  correctAnswer: "Evaporation",
-  solution: "<p><b>Evaporation</b> is the process where liquid water changes into water vapor.</p>"
-},
-{
-  id: "q25",
-  question: "Which planet is known as the Red Planet?",
-  options: ["Venus", "Jupiter", "Mars", "Saturn"],
-  correctAnswer: "Mars",
-  solution: "<p><b>Mars</b> is called the Red Planet because of its reddish appearance.</p>"
-},
-{
-  id: "q26",
-  question: "Which system helps humans breathe?",
-  options: ["Digestive", "Respiratory", "Circulatory", "Skeletal"],
-  correctAnswer: "Respiratory",
-  solution: "<p>The <b>respiratory system</b> allows us to inhale oxygen and exhale carbon dioxide.</p>"
-},
-{
-  id: "q27",
-  question: "What force slows objects when they rub together?",
-  options: ["Gravity", "Magnetism", "Friction", "Energy"],
-  correctAnswer: "Friction",
-  solution: "<p><b>Friction</b> acts between surfaces in contact and reduces motion.</p>"
-},
-{
-  id: "q28",
-  question: "Which material is attracted to magnets?",
-  options: ["Plastic", "Wood", "Iron", "Glass"],
-  correctAnswer: "Iron",
-  solution: "<p>Materials like <b>iron</b> are attracted to magnets.</p>"
-},
-{
-  id: "q29",
-  question: "Which process changes liquid water into vapor?",
-  options: ["Condensation", "Evaporation", "Freezing", "Melting"],
-  correctAnswer: "Evaporation",
-  solution: "<p>When water gains heat and turns into vapor, the process is called <b>evaporation</b>.</p>"
-},
-{
-  id: "q30",
-  question: "Which planet is known as the Red Planet?",
-  options: ["Venus", "Jupiter", "Mars", "Saturn"],
-  correctAnswer: "Mars",
-  solution: "<p>The planet <b>Mars</b> is known as the Red Planet due to its red color.</p>"
-}
+        id: "q21",
+        question: "Which system helps humans breathe?",
+        options: ["Digestive", "Respiratory", "Circulatory", "Skeletal"],
+        correctAnswer: "Respiratory",
+        solution: "<p>The <b>respiratory system</b> helps humans breathe by taking in oxygen and removing carbon dioxide.</p>"
+      },
+      {
+        id: "q22",
+        question: "What force slows objects when they rub together?",
+        options: ["Gravity", "Magnetism", "Friction", "Energy"],
+        correctAnswer: "Friction",
+        solution: "<p><b>Friction</b> is the force that slows objects down when two surfaces rub against each other.</p>"
+      },
+      {
+        id: "q23",
+        question: "Which material is attracted to magnets?",
+        options: ["Plastic", "Wood", "Iron", "Glass"],
+        correctAnswer: "Iron",
+        solution: "<p><b>Iron</b> is attracted to magnets because it is a magnetic material.</p>"
+      },
+      {
+        id: "q24",
+        question: "Which process changes liquid water into vapor?",
+        options: ["Condensation", "Evaporation", "Freezing", "Melting"],
+        correctAnswer: "Evaporation",
+        solution: "<p><b>Evaporation</b> is the process where liquid water changes into water vapor.</p>"
+      },
+      {
+        id: "q25",
+        question: "Which planet is known as the Red Planet?",
+        options: ["Venus", "Jupiter", "Mars", "Saturn"],
+        correctAnswer: "Mars",
+        solution: "<p><b>Mars</b> is called the Red Planet because of its reddish appearance.</p>"
+      },
+      {
+        id: "q26",
+        question: "Which part of the plant takes in water from the soil?",
+        options: ["Leaf", "Stem", "Root", "Flower"],
+        correctAnswer: "Root",
+        solution: "<p>The <b>root</b> absorbs water and nutrients from the soil.</p>"
+      },
+      {
+        id: "q27",
+        question: "What do we use our ears for?",
+        options: ["Seeing", "Hearing", "Smelling", "Touching"],
+        correctAnswer: "Hearing",
+        solution: "<p>We use our <b>ears</b> to hear sounds around us.</p>"
+      },
+      {
+        id: "q28",
+        question: "Which of these is a source of light?",
+        options: ["Moon", "Sun", "Book", "Water"],
+        correctAnswer: "Sun",
+        solution: "<p>The <b>Sun</b> is a natural source of light that gives us daylight.</p>"
+      },
+      {
+        id: "q29",
+        question: "Which state of matter is air?",
+        options: ["Solid", "Liquid", "Gas", "Ice"],
+        correctAnswer: "Gas",
+        solution: "<p>Air is a <b>gas</b> because it has no fixed shape or volume.</p>"
+      },
+      {
+        id: "q30",
+        question: "What do plants need to grow?",
+        options: ["Only water", "Only sunlight", "Water, sunlight, and air", "Only soil"],
+        correctAnswer: "Water, sunlight, and air",
+        solution: "<p>Plants need <b>water, sunlight, and air</b> to grow healthy.</p>"
+      }
 
     ],
   },
@@ -1064,48 +1064,47 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
 },
 {
   id: "q25",
-  question: "Which gas do plants release during photosynthesis?",
-  options: ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"],
-  correctAnswer: "Oxygen",
-  solution: "<p>During photosynthesis, plants release <b>oxygen</b> into the air.</p>"
+  question: "What part of the plant is responsible for making food?",
+  options: ["Root", "Stem", "Leaf", "Flower"],
+  correctAnswer: "Leaf",
+  solution: "<p>The <b>leaf</b> makes food for the plant through photosynthesis using sunlight, water, and carbon dioxide.</p>"
 },
 {
   id: "q26",
-  question: "What is the function of the skeleton?",
-  options: ["Digestion", "Support and protection", "Breathing", "Circulation"],
-  correctAnswer: "Support and protection",
-  solution: "<p>The <b>skeleton</b> helps the body stand upright and protects vital organs.</p>"
+  question: "Which state of matter has a definite shape and volume?",
+  options: ["Solid", "Liquid", "Gas", "Plasma"],
+  correctAnswer: "Solid",
+  solution: "<p>A <b>solid</b> has a fixed shape and volume because its particles are tightly packed together.</p>"
 },
 {
   id: "q27",
-  question: "Which energy comes from moving objects?",
-  options: ["Potential", "Chemical", "Kinetic", "Thermal"],
-  correctAnswer: "Kinetic",
-  solution: "<p><b>Kinetic energy</b> is energy in motion.</p>"
+  question: "What force pulls objects toward the center of the Earth?",
+  options: ["Magnetism", "Friction", "Gravity", "Tension"],
+  correctAnswer: "Gravity",
+  solution: "<p><b>Gravity</b> is the force that pulls objects toward the Earth.</p>"
 },
 {
   id: "q28",
-  question: "Which layer of Earth is the hottest?",
-  options: ["Crust", "Mantle", "Outer core", "Inner core"],
-  correctAnswer: "Inner core",
-  solution: "<p>The Earth's <b>inner core</b> has the highest temperature.</p>"
+  question: "Which organ in the human body pumps blood?",
+  options: ["Lungs", "Brain", "Heart", "Liver"],
+  correctAnswer: "Heart",
+  solution: "<p>The <b>heart</b> pumps blood throughout the body, supplying oxygen and nutrients.</p>"
 },
 {
   id: "q29",
-  question: "Which process forms sedimentary rock?",
-  options: ["Cooling magma", "Heat and pressure", "Compaction and cementation", "Melting"],
-  correctAnswer: "Compaction and cementation",
-  solution: "<p><b>Compaction and cementation</b> press sediments together to form sedimentary rock.</p>"
+  question: "What type of energy is stored in food?",
+  options: ["Kinetic", "Thermal", "Chemical", "Light"],
+  correctAnswer: "Chemical",
+  solution: "<p><b>Chemical energy</b> is stored in food and released when the body uses it.</p>"
 },
 {
   id: "q30",
-  question: "Which gas do plants release during photosynthesis?",
-  options: ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"],
-  correctAnswer: "Oxygen",
-  solution: "<p>Plants give off <b>oxygen</b> as a product of photosynthesis.</p>"
-}
-
-    ],
+  question: "Which planet is known as the Red Planet?",
+  options: ["Earth", "Mars", "Jupiter", "Venus"],
+  correctAnswer: "Mars",
+  solution: "<p><b>Mars</b> is called the Red Planet because of its reddish surface.</p>"
+},
+],
   },
   {
     grade: "5th-grade",
@@ -1241,76 +1240,75 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         correctAnswer: "Use context clues in the sentence"
       },
       {
-  id: "q21",
-  question: "Which organ filters waste from blood?",
-  options: ["Heart", "Lung", "Kidney", "Liver"],
-  correctAnswer: "Kidney",
-  solution: "<p>The <b>kidney</b> filters waste products and extra fluids from the blood.</p>"
-},
-{
-  id: "q22",
-  question: "What causes day and night on Earth?",
-  options: ["Revolution", "Orbit", "Tilt", "Rotation"],
-  correctAnswer: "Rotation",
-  solution: "<p>Day and night are caused by the Earth's <b>rotation</b> on its axis.</p>"
-},
-{
-  id: "q23",
-  question: "Which simple machine is a seesaw?",
-  options: ["Pulley", "Inclined plane", "Lever", "Screw"],
-  correctAnswer: "Lever",
-  solution: "<p>A seesaw is a type of <b>lever</b>, which pivots around a fixed point called a fulcrum.</p>"
-},
-{
-  id: "q24",
-  question: "Which type of energy is stored in a battery?",
-  options: ["Kinetic", "Chemical", "Sound", "Light"],
-  correctAnswer: "Chemical",
-  solution: "<p>A battery stores <b>chemical energy</b>, which can be converted into electrical energy.</p>"
-},
-{
-  id: "q25",
-  question: "Which process turns sugar into energy in cells?",
-  options: ["Photosynthesis", "Respiration", "Digestion", "Circulation"],
-  correctAnswer: "Respiration",
-  solution: "<p><b>Respiration</b> is the process by which cells break down sugar to release energy.</p>"
-},
-{
-  id: "q26",
-  question: "Which organ filters waste from blood?",
-  options: ["Heart", "Lung", "Kidney", "Liver"],
-  correctAnswer: "Kidney",
-  solution: "<p>The <b>kidneys</b> clean the blood by removing waste and producing urine.</p>"
-},
-{
-  id: "q27",
-  question: "What causes day and night on Earth?",
-  options: ["Revolution", "Orbit", "Tilt", "Rotation"],
-  correctAnswer: "Rotation",
-  solution: "<p>The Earth's <b>rotation</b> makes different parts of the planet face the Sun, causing day and night.</p>"
-},
-{
-  id: "q28",
-  question: "Which simple machine is a seesaw?",
-  options: ["Pulley", "Inclined plane", "Lever", "Screw"],
-  correctAnswer: "Lever",
-  solution: "<p>A seesaw works as a <b>lever</b>, helping lift weight around a central pivot.</p>"
-},
-{
-  id: "q29",
-  question: "Which type of energy is stored in a battery?",
-  options: ["Kinetic", "Chemical", "Sound", "Light"],
-  correctAnswer: "Chemical",
-  solution: "<p>Batteries contain stored <b>chemical energy</b> that powers devices.</p>"
-},
-{
-  id: "q30",
-  question: "Which process turns sugar into energy in cells?",
-  options: ["Photosynthesis", "Respiration", "Digestion", "Circulation"],
-  correctAnswer: "Respiration",
-  solution: "<p>Cells use <b>respiration</b> to convert sugar into usable energy.</p>"
-}
-
+        id: "q21",
+        question: "Which organ filters waste from blood?",
+        options: ["Heart", "Lung", "Kidney", "Liver"],
+        correctAnswer: "Kidney",
+        solution: "<p>The <b>kidney</b> filters waste products and extra fluids from the blood.</p>"
+      },
+      {
+        id: "q22",
+        question: "What causes day and night on Earth?",
+        options: ["Revolution", "Orbit", "Tilt", "Rotation"],
+        correctAnswer: "Rotation",
+        solution: "<p>Day and night are caused by the Earth's <b>rotation</b> on its axis.</p>"
+      },
+      {
+        id: "q23",
+        question: "Which simple machine is a seesaw?",
+        options: ["Pulley", "Inclined plane", "Lever", "Screw"],
+        correctAnswer: "Lever",
+        solution: "<p>A seesaw is a type of <b>lever</b>, which pivots around a fixed point called a fulcrum.</p>"
+      },
+      {
+        id: "q24",
+        question: "Which type of energy is stored in a battery?",
+        options: ["Kinetic", "Chemical", "Sound", "Light"],
+        correctAnswer: "Chemical",
+        solution: "<p>A battery stores <b>chemical energy</b>, which can be converted into electrical energy.</p>"
+      },
+      {
+        id: "q25",
+        question: "Which body system controls and coordinates all activities in the body?",
+        options: ["Digestive system", "Circulatory system", "Nervous system", "Respiratory system"],
+        correctAnswer: "Nervous system",
+        solution: "<p>The <b>nervous system</b> controls and coordinates body activities using the brain, spinal cord, and nerves.</p>"
+      },
+      {
+        id: "q26",
+        question: "What is the main function of red blood cells?",
+        options: ["Fight infection", "Carry oxygen", "Digest food", "Produce hormones"],
+        correctAnswer: "Carry oxygen",
+        solution: "<p><b>Red blood cells</b> carry oxygen from the lungs to the rest of the body.</p>"
+      },
+      {
+        id: "q27",
+        question: "What type of energy does a stretched rubber band have?",
+        options: ["Kinetic", "Thermal", "Potential", "Light"],
+        correctAnswer: "Potential",
+        solution: "<p>A stretched rubber band stores <b>potential energy</b>, which can be released when it snaps back.</p>"
+      },
+      {
+        id: "q28",
+        question: "Which layer of the atmosphere contains most weather changes?",
+        options: ["Stratosphere", "Mesosphere", "Troposphere", "Thermosphere"],
+        correctAnswer: "Troposphere",
+        solution: "<p>The <b>troposphere</b> is the lowest layer of the atmosphere where weather occurs.</p>"
+      },
+      {
+        id: "q29",
+        question: "What is the process by which water vapor cools and becomes liquid?",
+        options: ["Evaporation", "Condensation", "Precipitation", "Freezing"],
+        correctAnswer: "Condensation",
+        solution: "<p><b>Condensation</b> occurs when water vapor cools and changes into liquid droplets.</p>"
+      },
+      {
+        id: "q30",
+        question: "Which force slows down moving objects when they rub against surfaces?",
+        options: ["Gravity", "Magnetism", "Friction", "Tension"],
+        correctAnswer: "Friction",
+        solution: "<p><b>Friction</b> is a force that resists motion between two surfaces in contact.</p>"
+      },
     ],
   },
   {
@@ -1447,77 +1445,75 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         correctAnswer: "To understand how ideas connect and support meaning"
       },
       {
-  id: "q21",
-  question: "Which particle has a negative charge?",
-  options: ["Proton", "Neutron", "Electron", "Atom"],
-  correctAnswer: "Electron",
-  solution: "<p>An <b>electron</b> has a negative charge and moves around the nucleus of an atom.</p>"
-},
-{
-  id: "q22",
-  question: "Which body system fights disease?",
-  options: ["Nervous", "Immune", "Skeletal", "Digestive"],
-  correctAnswer: "Immune",
-  solution: "<p>The <b>immune system</b> protects the body by fighting germs and diseases.</p>"
-},
-{
-  id: "q23",
-  question: "Which type of plate boundary causes earthquakes?",
-  options: ["Transform", "Divergent", "Convergent", "All of these"],
-  correctAnswer: "All of these",
-  solution: "<p><b>All of these</b> plate boundaries (transform, divergent, and convergent) can cause earthquakes.</p>"
-},
-{
-  id: "q24",
-  question: "Which energy source is nonrenewable?",
-  options: ["Wind", "Solar", "Coal", "Water"],
-  correctAnswer: "Coal",
-  solution: "<p><b>Coal</b> is a nonrenewable energy source because it takes millions of years to form.</p>"
-},
-{
-  id: "q25",
-  question: "Which graph best shows temperature change over time?",
-  options: ["Bar", "Pie", "Line", "Picture"],
-  correctAnswer: "Line",
-  solution: "<p>A <b>line graph</b> is best for showing changes, such as temperature, over time.</p>"
-},
-{
-  id: "q26",
-  question: "Which particle has a negative charge?",
-  options: ["Proton", "Neutron", "Electron", "Atom"],
-  correctAnswer: "Electron",
-  solution: "<p>The <b>electron</b> carries a negative electrical charge.</p>"
-},
-{
-  id: "q27",
-  question: "Which body system fights disease?",
-  options: ["Nervous", "Immune", "Skeletal", "Digestive"],
-  correctAnswer: "Immune",
-  solution: "<p>The <b>immune system</b> helps the body recognize and destroy harmful organisms.</p>"
-},
-{
-  id: "q28",
-  question: "Which type of plate boundary causes earthquakes?",
-  options: ["Transform", "Divergent", "Convergent", "All of these"],
-  correctAnswer: "All of these",
-  solution: "<p>Earthquakes can occur at <b>transform, divergent, and convergent</b> plate boundaries.</p>"
-},
-{
-  id: "q29",
-  question: "Which energy source is nonrenewable?",
-  options: ["Wind", "Solar", "Coal", "Water"],
-  correctAnswer: "Coal",
-  solution: "<p><b>Coal</b> cannot be replaced quickly, so it is considered nonrenewable.</p>"
-},
-{
-  id: "q30",
-  question: "Which graph best shows temperature change over time?",
-  options: ["Bar", "Pie", "Line", "Picture"],
-  correctAnswer: "Line",
-  solution: "<p>A <b>line graph</b> clearly shows trends and changes over a period of time.</p>"
-}
-
-
+        id: "q21",
+        question: "Which particle has a negative charge?",
+        options: ["Proton", "Neutron", "Electron", "Atom"],
+        correctAnswer: "Electron",
+        solution: "<p>An <b>electron</b> has a negative charge and moves around the nucleus of an atom.</p>"
+      },
+      {
+        id: "q22",
+        question: "Which body system fights disease?",
+        options: ["Nervous", "Immune", "Skeletal", "Digestive"],
+        correctAnswer: "Immune",
+        solution: "<p>The <b>immune system</b> protects the body by fighting germs and diseases.</p>"
+      },
+      {
+        id: "q23",
+        question: "Which type of plate boundary causes earthquakes?",
+        options: ["Transform", "Divergent", "Convergent", "All of these"],
+        correctAnswer: "All of these",
+        solution: "<p><b>All of these</b> plate boundaries (transform, divergent, and convergent) can cause earthquakes.</p>"
+      },
+      {
+        id: "q24",
+        question: "Which energy source is nonrenewable?",
+        options: ["Wind", "Solar", "Coal", "Water"],
+        correctAnswer: "Coal",
+        solution: "<p><b>Coal</b> is a nonrenewable energy source because it takes millions of years to form.</p>"
+      },
+      {
+        id: "q25",
+        question: "Which type of graph is best for comparing parts of a whole?",
+        options: ["Line", "Bar", "Pie", "Scatter"],
+        correctAnswer: "Pie",
+        solution: "<p>A <b>pie chart</b> is best for showing how different parts make up a whole.</p>"
+      },
+      {
+        id: "q26",
+        question: "Which subatomic particle determines the identity of an element?",
+        options: ["Electron", "Neutron", "Proton", "Nucleus"],
+        correctAnswer: "Proton",
+        solution: "<p>The number of <b>protons</b> (atomic number) determines the identity of an element.</p>"
+      },
+      {
+        id: "q27",
+        question: "Which system works closely with the muscular system to produce movement?",
+        options: ["Digestive", "Respiratory", "Skeletal", "Circulatory"],
+        correctAnswer: "Skeletal",
+        solution: "<p>The <b>skeletal system</b> works with muscles to help the body move.</p>"
+      },
+      {
+        id: "q28",
+        question: "What type of plate boundary forms mountains when two plates collide?",
+        options: ["Transform", "Divergent", "Convergent", "Fault"],
+        correctAnswer: "Convergent",
+        solution: "<p><b>Convergent boundaries</b> occur when plates collide, often forming mountains.</p>"
+      },
+      {
+        id: "q29",
+        question: "Which process in the water cycle involves water soaking into the ground?",
+        options: ["Evaporation", "Condensation", "Infiltration", "Precipitation"],
+        correctAnswer: "Infiltration",
+        solution: "<p><b>Infiltration</b> is when water soaks into the soil and becomes groundwater.</p>"
+      },
+      {
+        id: "q30",
+        question: "Which type of energy transformation occurs in a flashlight?",
+        options: ["Chemical to electrical to light", "Light to chemical", "Thermal to kinetic", "Electrical to chemical"],
+        correctAnswer: "Chemical to electrical to light",
+        solution: "<p>In a flashlight, <b>chemical energy</b> in the battery is converted to electrical energy, then to light energy.</p>"
+      }
     ],
   },
   {
@@ -1683,80 +1679,45 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       },
       {
         id: "q25",
-        question: "What type of energy is stored in food molecules?",
-        options: ["Thermal energy", "Chemical energy", "Kinetic energy", "Sound energy"],
-        correctAnswer: "Chemical energy",
-        solution: "<p><strong>Explanation:</strong> Food stores chemical energy, which is released when the food is broken down during digestion.</p>"
+        question: "Which type of energy transformation occurs during photosynthesis?",
+        options: ["Chemical to thermal", "Light to chemical", "Kinetic to chemical", "Thermal to light"],
+        correctAnswer: "Light to chemical",
+        solution: "<p><strong>Explanation:</strong> During photosynthesis, plants convert <b>light energy</b> from the Sun into <b>chemical energy</b> stored in glucose.</p>"
       },
       {
         id: "q26",
-        question: "Which process describes water changing from liquid to gas?",
-        options: ["Condensation", "Evaporation", "Freezing", "Melting"],
-        correctAnswer: "Evaporation",
-        solution: "<p><strong>Explanation:</strong> Evaporation occurs when liquid water gains heat energy and changes into water vapor.</p>"
+        question: "What is the pH of a neutral substance?",
+        options: ["0", "7", "14", "10"],
+        correctAnswer: "7",
+        solution: "<p><strong>Explanation:</strong> A <b>neutral substance</b> has a pH of 7, meaning it is neither acidic nor basic.</p>"
       },
       {
         id: "q27",
-        question: "Which of the following best describes the role of a producer in an ecosystem?",
-        options: ["Eats other animals", "Breaks down dead organisms", "Makes its own food", "Lives in water only"],
-        correctAnswer: "Makes its own food",
-        solution: "<p><strong>Explanation:</strong> Producers, such as plants, make their own food using sunlight through photosynthesis.</p>"
+        question: "What is the speed of an object with constant velocity?",
+        options: ["Always increasing", "Always decreasing", "Constant", "Zero"],
+        correctAnswer: "Constant",
+        solution: "<p><strong>Explanation:</strong> An object with <b>constant velocity</b> moves at a steady speed in a consistent direction.</p>"
       },
       {
         id: "q28",
-        question: "In the periodic table, elements are arranged primarily by their:",
-        options: ["Atomic mass", "Color", "Atomic number", "Size"],
-        correctAnswer: "Atomic number",
-        solution: "<p><strong>Explanation:</strong> Elements in the periodic table are arranged by increasing atomic number, which is the number of protons.</p>"
+        question: "Which law states that energy cannot be created or destroyed, only transformed?",
+        options: ["Newton’s First Law", "Law of Conservation of Energy", "Law of Gravity", "Ohm’s Law"],
+        correctAnswer: "Law of Conservation of Energy",
+        solution: "<p><strong>Explanation:</strong> The <b>Law of Conservation of Energy</b> states that energy cannot be created or destroyed, only changed from one form to another.</p>"
       },
       {
         id: "q29",
-        question: "What is the basic unit of life?",
-        options: ["Atom", "Cell", "Tissue", "Organ"],
-        correctAnswer: "Cell",
-        solution: "<p><strong>Explanation:</strong> The cell is the smallest unit of life that can carry out all life processes.</p>"
+        question: "What type of bond involves the sharing of electrons between atoms?",
+        options: ["Ionic bond", "Hydrogen bond", "Covalent bond", "Metallic bond"],
+        correctAnswer: "Covalent bond",
+        solution: "<p><strong>Explanation:</strong> A <b>covalent bond</b> forms when atoms share electrons to achieve stability.</p>"
       },
       {
         id: "q30",
-        question: "Which force pulls objects toward Earth?",
-        options: ["Friction", "Magnetism", "Gravity", "Electricity"],
-        correctAnswer: "Gravity",
-        solution: "<p><strong>Explanation:</strong> Gravity is the force that attracts objects toward the center of the Earth.</p>"
-      },
-      {
-        id: "q31",
-        question: "Which of these is an example of potential energy?",
-        options: ["A moving car", "A stretched rubber band", "A running athlete", "A flying bird"],
-        correctAnswer: "A stretched rubber band",
-        solution: "<p><strong>Explanation:</strong> Potential energy is stored energy. A stretched rubber band stores energy due to its position and shape.</p>"
-      },
-      {
-        id: "q32",
-        question: "What is the primary cause of the seasons on Earth?",
-        options: ["Earth's distance from the Sun", "Earth's tilt on its axis", "The Moon's orbit", "Ocean currents"],
-        correctAnswer: "Earth's tilt on its axis",
-        solution: "<p><strong>Explanation:</strong> Earth's tilt causes different parts of the planet to receive varying amounts of sunlight during the year.</p>"
-      },
-      {
-        id: "q33",
-        question: "Which type of rock forms from cooled magma or lava?",
-        options: ["Sedimentary", "Metamorphic", "Igneous", "Fossil"],
-        correctAnswer: "Igneous",
-        solution: "<p><strong>Explanation:</strong> Igneous rocks form when magma or lava cools and solidifies.</p>"
-      },
-      {
-        id: "q34",
-        question: "What do we call the process by which plants make their own food?",
-        options: ["Respiration", "Digestion", "Photosynthesis", "Fermentation"],
-        correctAnswer: "Photosynthesis",
-        solution: "<p><strong>Explanation:</strong> Photosynthesis is the process where plants use sunlight, carbon dioxide, and water to make food.</p>"
-      },
-      {
-        id: "q35",
-        question: "Which part of the human body is responsible for pumping blood?",
-        options: ["Brain", "Lung", "Heart", "Liver"],
-        correctAnswer: "Heart",
-        solution: "<p><strong>Explanation:</strong> The heart pumps blood throughout the body, supplying oxygen and nutrients.</p>"
+        question: "What is the main function of the large intestine in the digestive system?",
+        options: ["Break down proteins", "Absorb nutrients", "Absorb water", "Produce enzymes"],
+        correctAnswer: "Absorb water",
+        solution: "<p><strong>Explanation:</strong> The <b>large intestine</b> absorbs water from undigested food, forming solid waste.</p>"
       },
     ],
   },
@@ -1894,75 +1855,75 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         correctAnswer: "Rising Action",
       },
       {
-  id: "q21",
-  question: "Which law explains action and reaction?",
-  options: ["Newton’s First", "Newton’s Second", "Newton’s Third", "Law of Gravity"],
-  correctAnswer: "Newton’s Third",
-  solution: "<p><b>Newton’s Third Law</b> states that for every action, there is an equal and opposite reaction.</p>"
-},
-{
-  id: "q22",
-  question: "What is the pH of a neutral solution?",
-  options: ["1", "5", "7", "14"],
-  correctAnswer: "7",
-  solution: "<p>A <b>neutral solution</b> has a pH of <b>7</b>, such as pure water.</p>"
-},
-{
-  id: "q23",
-  question: "Which organelle controls cell activities?",
-  options: ["Mitochondria", "Ribosome", "Nucleus", "Cytoplasm"],
-  correctAnswer: "Nucleus",
-  solution: "<p>The <b>nucleus</b> is the control center of the cell, regulating all cell activities.</p>"
-},
-{
-  id: "q24",
-  question: "Which process forms new species over time?",
-  options: ["Mutation", "Adaptation", "Natural selection", "Photosynthesis"],
-  correctAnswer: "Natural selection",
-  solution: "<p><b>Natural selection</b> is the process by which species evolve over time.</p>"
-},
-{
-  id: "q25",
-  question: "What type of wave does not need a medium?",
-  options: ["Sound", "Water", "Seismic", "Electromagnetic"],
-  correctAnswer: "Electromagnetic",
-  solution: "<p><b>Electromagnetic waves</b> can travel through a vacuum and do not require a medium.</p>"
-},
-{
+        id: "q21",
+        question: "Which quantity is defined as mass multiplied by velocity?",
+        options: ["Force", "Momentum", "Acceleration", "Energy"],
+        correctAnswer: "Momentum",
+        solution: "<p><b>Momentum</b> is the product of mass and velocity (p = mv).</p>"
+      },
+      {
+        id: "q22",
+        question: "Which type of reaction releases energy to its surroundings?",
+        options: ["Endothermic", "Exothermic", "Neutralization", "Decomposition"],
+        correctAnswer: "Exothermic",
+        solution: "<p>An <b>exothermic reaction</b> releases energy, usually in the form of heat, to its surroundings.</p>"
+      },
+      {
+        id: "q23",
+        question: "Which structure controls what enters and leaves the cell?",
+        options: ["Nucleus", "Cell membrane", "Cytoplasm", "Mitochondria"],
+        correctAnswer: "Cell membrane",
+        solution: "<p>The <b>cell membrane</b> regulates the movement of substances into and out of the cell.</p>"
+      },
+      {
+        id: "q24",
+        question: "Which mechanism drives the movement of tectonic plates?",
+        options: ["Gravity", "Magnetism", "Convection currents", "Friction"],
+        correctAnswer: "Convection currents",
+        solution: "<p><b>Convection currents</b> in the mantle drive the movement of tectonic plates.</p>"
+      },
+      {
+        id: "q25",
+        question: "Which type of wave transfers energy through vibrations of particles in a medium?",
+        options: ["Electromagnetic", "Mechanical", "Light", "Radio"],
+        correctAnswer: "Mechanical",
+        solution: "<p><b>Mechanical waves</b> require a medium and transfer energy through particle vibrations.</p>"
+      },
+      {
         id: "q26",
-        question: "Which process describes water changing from liquid to gas?",
-        options: ["Condensation", "Evaporation", "Freezing", "Melting"],
-        correctAnswer: "Evaporation",
-        solution: "<p><strong>Explanation:</strong> Evaporation occurs when liquid water gains heat energy and changes into water vapor.</p>"
+        question: "What is the relationship between voltage, current, and resistance described by Ohm’s Law?",
+        options: ["V = IR", "F = ma", "E = mc²", "P = mv"],
+        correctAnswer: "V = IR",
+        solution: "<p><b>Ohm’s Law</b> states that voltage (V) equals current (I) multiplied by resistance (R).</p>"
       },
       {
         id: "q27",
-        question: "Which of the following best describes the role of a producer in an ecosystem?",
-        options: ["Eats other animals", "Breaks down dead organisms", "Makes its own food", "Lives in water only"],
-        correctAnswer: "Makes its own food",
-        solution: "<p><strong>Explanation:</strong> Producers, such as plants, make their own food using sunlight through photosynthesis.</p>"
+        question: "Which level of organization includes all the different populations in an area?",
+        options: ["Organism", "Population", "Community", "Ecosystem"],
+        correctAnswer: "Community",
+        solution: "<p>A <b>community</b> consists of all the different populations living and interacting in an area.</p>"
       },
       {
         id: "q28",
-        question: "In the periodic table, elements are arranged primarily by their:",
-        options: ["Atomic mass", "Color", "Atomic number", "Size"],
-        correctAnswer: "Atomic number",
-        solution: "<p><strong>Explanation:</strong> Elements in the periodic table are arranged by increasing atomic number, which is the number of protons.</p>"
+        question: "What happens to the kinetic energy of particles as temperature increases?",
+        options: ["It decreases", "It stays the same", "It increases", "It disappears"],
+        correctAnswer: "It increases",
+        solution: "<p>As temperature increases, the <b>kinetic energy</b> of particles also increases, causing them to move faster.</p>"
       },
       {
         id: "q29",
-        question: "What is the basic unit of life?",
-        options: ["Atom", "Cell", "Tissue", "Organ"],
-        correctAnswer: "Cell",
-        solution: "<p><strong>Explanation:</strong> The cell is the smallest unit of life that can carry out all life processes.</p>"
+        question: "Which subatomic particle has no charge but contributes to atomic mass?",
+        options: ["Proton", "Electron", "Neutron", "Ion"],
+        correctAnswer: "Neutron",
+        solution: "<p>A <b>neutron</b> has no charge and contributes to the mass of an atom.</p>"
       },
       {
         id: "q30",
-        question: "Which force pulls objects toward Earth?",
-        options: ["Friction", "Magnetism", "Gravity", "Electricity"],
-        correctAnswer: "Gravity",
-        solution: "<p><strong>Explanation:</strong> Gravity is the force that attracts objects toward the center of the Earth.</p>"
-      },
+        question: "Which process releases carbon dioxide into the atmosphere?",
+        options: ["Photosynthesis", "Respiration", "Transpiration", "Nitrogen fixation"],
+        correctAnswer: "Respiration",
+        solution: "<p><b>Respiration</b> releases carbon dioxide as organisms break down food to release energy.</p>"
+      }
     ],
   },
   {

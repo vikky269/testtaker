@@ -86,6 +86,7 @@ export default function SignUpPage() {
         ? 'This email is already in use. Please log in instead.'
         : signUpError.message);
       setLoading(false);
+      toast.error('Signup failed. This email is already in use. Please log in instead.. ', { duration: 7000 });
       router.push('/login');
       return;
     }

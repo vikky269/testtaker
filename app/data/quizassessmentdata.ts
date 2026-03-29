@@ -2160,63 +2160,214 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       {
         id: "q11",
         question: "Which sentence contains an example of a metaphor?",
-        options: ["The clouds were like cotton candy.", "The thunder roared angrily.", "Time is a thief.", "He ran as fast as lightning."],
+        options: [
+          "The clouds were like cotton candy.",
+          "The thunder roared angrily.",
+          "Time is a thief.",
+          "He ran as fast as lightning."
+        ],
         correctAnswer: "Time is a thief.",
+        solution: "<p>A <b>metaphor</b> directly compares two unlike things without using 'like' or 'as'. 'Time is a thief' compares time to a thief, suggesting it steals moments from our lives.</p>"
       },
       {
         id: "q12",
         question: "What is the central theme of George Orwell’s 'Animal Farm'?",
-        options: ["Animal behavior", "The corrupting influence of power", "Environmental justice", "Rural life in England"],
+        options: [
+          "Animal behavior",
+          "The corrupting influence of power",
+          "Environmental justice",
+          "Rural life in England"
+        ],
         correctAnswer: "The corrupting influence of power",
+        solution: "<p>'<b>Animal Farm</b>' by George Orwell shows how those in power can become corrupt and abuse authority, especially through the actions of the pigs who take control.</p>"
       },
       {
         id: "q13",
         question: "What is the purpose of a counterclaim in argumentative writing?",
-        options: ["To confuse the reader", "To introduce a new topic", "To acknowledge opposing views", "To restate the claim"],
+        options: [
+          "To confuse the reader",
+          "To introduce a new topic",
+          "To acknowledge opposing views",
+          "To restate the claim"
+        ],
         correctAnswer: "To acknowledge opposing views",
+        solution: "<p>A <b>counterclaim</b> presents the opposing viewpoint. Addressing it strengthens an argument by showing awareness of other perspectives and responding to them logically.</p>"
       },
       {
         id: "q14",
         question: "Which of the following best describes the tone of the narrator in 'Of Mice and Men'?",
         options: ["Sarcastic", "Hopeful", "Objective", "Jubilant"],
         correctAnswer: "Objective",
+        solution: "<p>The narrator in '<b>Of Mice and Men</b>' presents events in a <b>neutral and objective</b> manner, describing actions and dialogue without strong personal judgment.</p>"
       },
       {
         id: "q15",
-        question: "What does the word 'elated' most likely mean in the sentence: <br> 'She was elated when she heard the good news'? ",
+        question: "What does the word 'elated' most likely mean in the sentence: <br> 'She was elated when she heard the good news'?",
         options: ["Sad", "Joyful", "Angry", "Nervous"],
         correctAnswer: "Joyful",
+        solution: "<p>The context mentions <b>good news</b>, which suggests a positive emotion. 'Elated' means extremely <b>happy or joyful</b>.</p>"
       },
       {
         id: "q16",
         question: "What is the main function of a thesis statement in an essay?",
-        options: ["To introduce the conclusion", "To provide background information", "To state the main argument", "To list the sources"],
+        options: [
+          "To introduce the conclusion",
+          "To provide background information",
+          "To state the main argument",
+          "To list the sources"
+        ],
         correctAnswer: "To state the main argument",
+        solution: "<p>A <b>thesis statement</b> clearly presents the writer’s main argument or central idea, guiding the direction of the entire essay.</p>"
       },
       {
         id: "q17",
         question: "In literature, what is foreshadowing?",
-        options: ["A hint of what is to come", "A detailed character analysis", "A flashback to earlier events", "A summary of the story"],
+        options: [
+          "A hint of what is to come",
+          "A detailed character analysis",
+          "A flashback to earlier events",
+          "A summary of the story"
+        ],
         correctAnswer: "A hint of what is to come",
+        solution: "<p><b>Foreshadowing</b> is when an author gives clues or hints about events that will happen later in the story.</p>"
       },
       {
         id: "q18",
         question: "Which sentence uses correct parallel structure?",
-        options: ["She likes reading, to swim, and biking.", "He enjoys running, jumping, and to swim.", "They like to hike, to bike, and to swim.", "We went shopping, to the movies, and ate dinner."],
+        options: [
+          "She likes reading, to swim, and biking.",
+          "He enjoys running, jumping, and to swim.",
+          "They like to hike, to bike, and to swim.",
+          "We went shopping, to the movies, and ate dinner."
+        ],
         correctAnswer: "They like to hike, to bike, and to swim.",
+        solution: "<p><b>Parallel structure</b> means using the same grammatical form. 'To hike, to bike, and to swim' all follow the same pattern, making the sentence correct.</p>"
       },
       {
         id: "q19",
         question: "Which figure of speech is used in the sentence: <br> 'The wind whispered through the trees'?",
         options: ["Metaphor", "Simile", "Hyperbole", "Personification"],
         correctAnswer: "Personification",
+        solution: "<p><b>Personification</b> gives human qualities to non-human things. The wind 'whispering' is a human action, so this is personification.</p>"
       },
       {
         id: "q20",
         question: "What is the point of view in 'The Great Gatsby'?",
         options: ["First person", "Second person", "Third-person limited", "Omniscient"],
         correctAnswer: "First person",
+        solution: "<p>'<b>The Great Gatsby</b>' is narrated by Nick Carraway using 'I', which makes it a <b>first-person point of view</b>.</p>"
       },
+      {
+        id: "q21",
+        question: "Which statement best explains why enzymes lose activity at extremely high temperatures?",
+        options: [
+          "The enzyme runs out of substrate",
+          "The enzyme’s active site changes shape due to denaturation",
+          "The enzyme becomes more selective",
+          "The enzyme increases reaction speed uncontrollably"
+        ],
+        correctAnswer: "The enzyme’s active site changes shape due to denaturation",
+        solution: "<p>At high temperatures, enzymes <b>denature</b>, meaning their structure changes. This alters the <b>active site</b>, preventing the substrate from binding properly and reducing enzyme activity.</p>"
+      },
+      {
+        id: "q22",
+        question: "What is the molarity of a solution containing 2 moles of NaCl dissolved in 0.5 liters of water?",
+        options: ["0.25 M", "1.0 M", "2.0 M", "4.0 M"],
+        correctAnswer: "4.0 M",
+        solution: "<p>Molarity = moles ÷ volume = <b>2 ÷ 0.5 = 4.0 M</b>. Therefore, the correct answer is 4.0 M.</p>"
+      },
+      {
+        id: "q23",
+        question: "A car accelerates from rest at a constant rate of 3 m/s². What is its velocity after 5 seconds?",
+        options: ["8 m/s", "10 m/s", "15 m/s", "25 m/s"],
+        correctAnswer: "15 m/s",
+        solution: "<p>Using the formula <b>v = u + at</b>: initial velocity (u) = 0, acceleration (a) = 3 m/s², time (t) = 5 s. So, v = 0 + (3 × 5) = <b>15 m/s</b>.</p>"
+      },
+      {
+        id: "q24",
+        question: "Which of the following best describes the role of mRNA during protein synthesis?",
+        options: [
+          "It transports amino acids to the ribosome",
+          "It copies genetic information from DNA and carries it to the ribosome",
+          "It forms the ribosome structure",
+          "It breaks down proteins"
+        ],
+        correctAnswer: "It copies genetic information from DNA and carries it to the ribosome",
+        solution: "<p>mRNA is responsible for <b>transcribing genetic information from DNA</b> and carrying it to the ribosome, where proteins are synthesized.</p>"
+      },
+      {
+        id: "q25",
+        question: "According to the Law of Conservation of Mass, what must be true during a chemical reaction?",
+        options: [
+          "Energy is always lost",
+          "The mass of reactants equals the mass of products",
+          "New atoms are created",
+          "Volume must remain constant"
+        ],
+        correctAnswer: "The mass of reactants equals the mass of products",
+        solution: "<p>The Law of Conservation of Mass states that <b>mass cannot be created or destroyed</b>. Therefore, the total mass of reactants must equal the total mass of products.</p>"
+      },
+      {
+        id: "q26",
+        question: "Which of the following best explains why increasing surface area speeds up a chemical reaction?",
+        options: [
+          "It decreases activation energy",
+          "It allows more particles to collide effectively",
+          "It increases temperature",
+          "It changes the chemical properties"
+        ],
+        correctAnswer: "It allows more particles to collide effectively",
+        solution: "<p>Increasing surface area exposes more particles, leading to <b>more frequent and effective collisions</b>, which increases the reaction rate.</p>"
+      },
+      {
+        id: "q27",
+        question: "What happens to the gravitational force between two objects if the distance between them is doubled?",
+        options: [
+          "It doubles",
+          "It halves",
+          "It becomes four times smaller",
+          "It remains the same"
+        ],
+        correctAnswer: "It becomes four times smaller",
+        solution: "<p>Gravitational force follows an <b>inverse square law</b>. If distance is doubled, force becomes 1/(2²) = <b>1/4 of the original</b>, meaning four times smaller.</p>"
+      },
+      {
+        id: "q28",
+        question: "Which of the following processes is primarily responsible for the movement of tectonic plates?",
+        options: [
+          "Earth’s rotation",
+          "Convection currents in the mantle",
+          "Ocean tides",
+          "Solar radiation"
+        ],
+        correctAnswer: "Convection currents in the mantle",
+        solution: "<p>Tectonic plates move due to <b>convection currents in the mantle</b>, where hot material rises and cooler material sinks, creating movement.</p>"
+      },
+      {
+        id: "q29",
+        question: "In an ecosystem, which trophic level contains the greatest amount of available energy?",
+        options: [
+          "Primary consumers",
+          "Secondary consumers",
+          "Producers",
+          "Tertiary consumers"
+        ],
+        correctAnswer: "Producers",
+        solution: "<p><b>Producers</b> (plants) capture energy directly from the sun, so they contain the <b>highest amount of energy</b> in the food chain.</p>"
+      },
+      {
+        id: "q30",
+        question: "Which of the following best describes a covalent bond?",
+        options: [
+          "Transfer of electrons between atoms",
+          "Sharing of electrons between atoms",
+          "Attraction between ions",
+          "Interaction between protons"
+        ],
+        correctAnswer: "Sharing of electrons between atoms",
+        solution: "<p>A <b>covalent bond</b> forms when atoms <b>share electrons</b> to achieve a stable electron configuration.</p>"
+      },
+
     ],
   },
   {

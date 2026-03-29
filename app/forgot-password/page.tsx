@@ -10,13 +10,27 @@ import { toast } from 'react-hot-toast';
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
 
 const MATH_SYMBOLS = [
-  { sym: '÷', x: 10, y: 15, size: 26, delay: 0,   dur: 6 },
-  { sym: 'π', x: 78, y: 8,  size: 22, delay: 0.8, dur: 7 },
-  { sym: '∑', x: 88, y: 55, size: 24, delay: 1.5, dur: 5 },
-  { sym: '√', x: 18, y: 70, size: 20, delay: 0.3, dur: 8 },
-  { sym: '∞', x: 60, y: 80, size: 18, delay: 2,   dur: 6 },
-  { sym: '×', x: 45, y: 20, size: 16, delay: 1.1, dur: 7 },
-  { sym: 'Δ', x: 5,  y: 45, size: 20, delay: 0.6, dur: 5 },
+    { sym: '÷', x: 10, y: 15, size: 26, delay: 0, dur: 6 },
+    { sym: 'π', x: 78, y: 8, size: 22, delay: 0.8, dur: 7 },
+    { sym: '∑', x: 88, y: 55, size: 24, delay: 1.5, dur: 5 },
+    { sym: '√', x: 18, y: 70, size: 20, delay: 0.3, dur: 8 },
+    { sym: '∞', x: 60, y: 80, size: 18, delay: 2, dur: 6 },
+    { sym: '×', x: 45, y: 20, size: 16, delay: 1.1, dur: 7 },
+    { sym: 'Δ', x: 5, y: 45, size: 20, delay: 0.6, dur: 5 },
+    { sym: '∫', x: 70, y: 30, size: 22, delay: 1.8, dur: 6 },
+    { sym: '∝', x: 30, y: 60, size: 18, delay: 0.4, dur: 7 },
+    { sym: '∈', x: 50, y: 40, size: 20, delay: 1.3, dur: 5, },
+    { sym: '∉', x: 80, y: 70, size: 18, delay: 0.9, dur: 6, },
+    { sym: '∋', x: 20, y: 30, size: 22, delay: 1.6, dur: 7, },
+    { sym: '∌', x: 65, y: 60, size: 20, delay: 0.7, dur: 5, },
+    { sym: '∎', x: 40, y: 80, size: 18, delay: 1.2, dur: 6, },
+    { sym: '∐', x: 55, y: 15, size: 22, delay: 0.5, dur: 7, },
+    { sym: '∑', x: 25, y: 50, size: 20, delay: 1.4, dur: 5, },
+    { sym: '∏', x: 75, y: 25, size: 18, delay: 0.2, dur: 6, },
+    { sym: '∐', x: 35, y: 65, size: 22, delay: 1.7, dur: 7, },
+    { sym: '∑', x: 15, y: 20, size: 20, delay: 0.8, dur: 5, },
+    { sym: '∏', x: 85, y: 50, size: 18, delay: 1.9, dur: 6, },
+    { sym: '∐', x: 45, y: 35, size: 22, delay: 0.3, dur: 7, },
 ];
 
 export default function ForgotPasswordPage() {

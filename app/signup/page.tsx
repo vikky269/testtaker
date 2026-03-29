@@ -22,6 +22,14 @@ const MATH_SYMBOLS = [
   { sym: 'Δ',  x: 85, y: 72, size: 24, delay: 1.7,  dur: 8  },
   { sym: '∫',  x: 30, y: 90, size: 20, delay: 0.2,  dur: 6  },
   { sym: '÷',  x: 65, y: 35, size: 18, delay: 2.1,  dur: 7  },
+  { sym: '∩', x: 60, y: 40, size: 18, delay: 1.6,  dur: 5  },
+  { sym: '∖', x: 45, y: 80, size: 20, delay: 0.9,  dur: 7  },
+  { sym: '∗', x: 15, y: 60, size: 22, delay: 1.3,  dur: 6  },
+  { sym: '∎', x: 80, y: 10, size: 18, delay: 0.2,  dur: 5  },
+  { sym: '∏', x: 75, y: 25, size: 18, delay: 0.2, dur: 6, },
+  { sym: '∐', x: 35, y: 65, size: 22, delay: 1.7, dur: 7, },
+  { sym: '∑', x: 15, y: 20, size: 20, delay: 0.8, dur: 5, },
+  { sym: '∏', x: 85, y: 50, size: 18, delay: 1.9, dur: 6, },
 ];
 
 const GRADE_OPTIONS = [

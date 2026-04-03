@@ -5,6 +5,7 @@ import { supabase } from '@/lib/supabaseClient';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Outfit } from 'next/font/google';
+import { usePathname } from 'next/navigation';
 
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
 
@@ -19,6 +20,7 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [user, setUser]             = useState<any>(null);
+  const isAdmin = user?.email === 'info@smartmathz.com';
   const [profile, setProfile]       = useState<any>(null);
   const [showDropdown, setShowDropdown] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -26,29 +28,77 @@ export default function Navbar() {
   const [mounted, setMounted] = useState(false);
    useEffect(() => setMounted(true), []);
 
-  useEffect(() => {
-    const getUser = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      const currentUser = session?.user || null;
-      setUser(currentUser);
-      if (currentUser) {
-        const { data, error } = await supabase
-          .from('student_profile').select('full_name, grade').eq('id', currentUser.id).single();
-        if (!error) setProfile(data);
-      }
-    };
-    getUser();
+  // useEffect(() => {
+  //   const getUser = async () => {
+  //     const { data: { session } } = await supabase.auth.getSession();
+  //     const currentUser = session?.user || null;
+  //     setUser(currentUser);
+  //     if (currentUser) {
+  //       const { data, error } = await supabase
+  //         .from('student_profile').select('full_name, grade').eq('id', currentUser.id).single();
+  //       if (!error) setProfile(data);
+  //     }
+  //   };
+  //   getUser();
 
-    const { data: listener } = supabase.auth.onAuthStateChange((_e, session) => {
-      const currentUser = session?.user || null;
-      setUser(currentUser);
-      if (currentUser) {
-        supabase.from('student_profile').select('full_name, grade').eq('id', currentUser.id)
-          .single().then(({ data, error }) => { if (!error) setProfile(data); });
-      }
-    });
-    return () => listener.subscription.unsubscribe();
-  }, []);
+  //   const { data: listener } = supabase.auth.onAuthStateChange((_e, session) => {
+  //     const currentUser = session?.user || null;
+  //     setUser(currentUser);
+  //     if (currentUser) {
+  //       supabase.from('student_profile').select('full_name, grade').eq('id', currentUser.id)
+  //         .single().then(({ data, error }) => { if (!error) setProfile(data); });
+  //     }
+  //   });
+  //   return () => listener.subscription.unsubscribe();
+  // }, []);
+
+useEffect(() => {
+  const getUser = async () => {
+    const { data: { user } } = await supabase.auth.getUser();
+
+    setUser(user || null);
+
+    // 🚫 Skip admin (VERY IMPORTANT)
+    if (!user || user.email === 'info@smartmathz.com') return;
+
+    const { data, error } = await supabase
+      .from('student_profile')
+      .select('full_name, grade')
+      .eq('id', user.id)
+      .maybeSingle(); // ✅ FIX HERE
+
+    if (error) {
+      console.log('Profile fetch error:', error.message);
+      return;
+    }
+
+    setProfile(data);
+  };
+
+  getUser();
+
+  const { data: listener } = supabase.auth.onAuthStateChange(async (_e, session) => {
+    const user = session?.user || null;
+    setUser(user);
+
+    // 🚫 Skip admin again
+    if (!user || user.email === 'info@smartmathz.com') return;
+
+    const { data, error } = await supabase
+      .from('student_profile')
+      .select('full_name, grade')
+      .eq('id', user.id)
+      .maybeSingle(); // ✅ FIX HERE TOO
+
+    if (!error) setProfile(data);
+  });
+
+  return () => listener.subscription.unsubscribe();
+}, []);
+
+
+
+
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
@@ -57,6 +107,11 @@ export default function Navbar() {
   };
 
   const initials = user?.email?.charAt(0).toUpperCase() ?? 'U';
+
+
+  const pathname = usePathname();
+
+if (pathname.startsWith('/admin')) return null;
 
   return (
     <nav className={`${outfit.variable} sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm`}>
@@ -68,7 +123,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav links */}
-        <div className="hidden md:flex items-center gap-1">
+        {/* <div className="hidden md:flex items-center gap-1">
           {NAV_LINKS.map(({ label, href }) => (
             <Link
               key={label}
@@ -82,7 +137,22 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
-        </div>
+        </div> */}
+
+        {!isAdmin && (
+          <div className="hidden md:flex items-center gap-1">
+            {NAV_LINKS.map(({ label, href }) => (
+              <Link
+                key={label}
+                href={href}
+                className="relative px-3 py-1.5 text-sm font-semibold text-gray-600 rounded-lg
+                   hover:text-[#7FB509] hover:bg-green-50 transition-all duration-150"
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+        )}
 
         {/* Right: avatar / login + mobile toggle */}
         <div className="flex items-center gap-3">
@@ -143,9 +213,14 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+      
+
+      
+
+
 
       {/* Mobile drawer */}
-      {mounted && mobileOpen && (
+      {mounted && mobileOpen && !isAdmin &&  (
         <div className="md:hidden border-t border-gray-100 bg-white px-4 pb-4 pt-2 space-y-1">
           {NAV_LINKS.map(({ label, href }) => (
             <Link

@@ -2059,6 +2059,76 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         options: ["A character’s internal conflict", "A recurring element with symbolic meaning", "The plot’s turning point", "The central antagonist"],
         correctAnswer: "A recurring element with symbolic meaning",
       },
+      {
+        "id": "q21",
+        "question": "Which of the following best describes the function of the cell membrane?",
+        "options": ["Stores genetic material", "Controls what enters and leaves the cell", "Produces energy for the cell", "Synthesizes proteins"],
+        "correctAnswer": "Controls what enters and leaves the cell",
+        "solution": "The cell membrane is selectively permeable, meaning it regulates what substances can enter and leave the cell, helping maintain internal balance."
+      },
+      {
+        "id": "q22",
+        "question": "What is the atomic number of an element equal to?",
+        "options": ["Number of neutrons", "Number of protons", "Number of electrons and neutrons", "Atomic mass"],
+        "correctAnswer": "Number of protons",
+        "solution": "The atomic number is defined as the number of protons in the nucleus of an atom, which uniquely identifies each element."
+      },
+      {
+        "id": "q23",
+        "question": "Which type of energy is associated with motion?",
+        "options": ["Potential energy", "Thermal energy", "Kinetic energy", "Chemical energy"],
+        "correctAnswer": "Kinetic energy",
+        "solution": "Kinetic energy is the energy an object possesses due to its motion. Any moving object has kinetic energy."
+      },
+      {
+        "id": "q24",
+        "question": "During photosynthesis, plants convert:",
+        "options": ["Oxygen into carbon dioxide", "Light energy into chemical energy", "Heat into light", "Chemical energy into kinetic energy"],
+        "correctAnswer": "Light energy into chemical energy",
+        "solution": "During photosynthesis, plants use sunlight to convert carbon dioxide and water into glucose, storing energy in chemical form."
+      },
+      {
+        "id": "q25",
+        "question": "What is the main function of red blood cells?",
+        "options": ["Fight infections", "Carry oxygen throughout the body", "Produce hormones", "Digest nutrients"],
+        "correctAnswer": "Carry oxygen throughout the body",
+        "solution": "Red blood cells contain hemoglobin, which binds oxygen and transports it from the lungs to tissues throughout the body."
+      },
+      {
+        "id": "q26",
+        "question": "Which of the following is a chemical change?",
+        "options": ["Boiling water", "Crushing a can", "Burning wood", "Melting ice"],
+        "correctAnswer": "Burning wood",
+        "solution": "Burning wood is a chemical change because it produces new substances like ash and gases, and the process is not reversible."
+      },
+      {
+        "id": "q27",
+        "question": "What force keeps planets in orbit around the Sun?",
+        "options": ["Friction", "Magnetism", "Gravity", "Tension"],
+        "correctAnswer": "Gravity",
+        "solution": "Gravity is the force of attraction between masses. The Sun's gravity pulls planets toward it, keeping them in orbit."
+      },
+      {
+        "id": "q28",
+        "question": "Which layer of Earth is the thinnest?",
+        "options": ["Mantle", "Outer core", "Inner core", "Crust"],
+        "correctAnswer": "Crust",
+        "solution": "The Earth's crust is the outermost layer and is much thinner compared to the mantle and core layers."
+      },
+      {
+        "id": "q29",
+        "question": "Which of the following best explains why metals are good conductors of electricity?",
+        "options": ["They contain tightly bound electrons", "They have free-moving electrons", "They are dense materials", "They are always solid"],
+        "correctAnswer": "They have free-moving electrons",
+        "solution": "Metals conduct electricity well because their outer electrons are free to move, allowing electric current to flow easily."
+      },
+      {
+        "id": "q30",
+        "question": "In a food chain, what is the role of a primary consumer?",
+        "options": ["Produces its own food", "Eats other consumers", "Eats producers", "Breaks down dead organisms"],
+        "correctAnswer": "Eats producers",
+        "solution": "Primary consumers are herbivores that feed directly on producers (plants), transferring energy from plants to higher levels in the food chain."
+      }
     ],
   },
   {
@@ -2449,7 +2519,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         options: ["x² − 4x + 7", "x² − 4x + 3", "3x² − 2x + 3", "3x² − 4x + 3"],
         correctAnswer: "x² − 4x + 7",
         solution:
-        `
+          `
         <strong>Step 1:</strong> 
         Distribute the negative sign: <br>
         (2x² − 3x + 5) − x² − x + 2 <br>
@@ -2484,82 +2554,364 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         `
       },
       {
-        id: "q11",
-        question: "Passage 1: <br> The forest was unusually silent that morning, save for the occasional rustle of leaves stirred by a gentle wind. Sunlight filtered through the canopy, casting golden rays on the damp earth. As Clara walked deeper into the woods, she felt both a sense of wonder and a prickling unease, as if the forest itself was holding its breath.<br>  What is the tone of this passage?",
-        options: ["Cheerful", "Tense", "Humorous", "Indifferent"],
-        correctAnswer: "Tense"
+        "id": "q11",
+        "question": "Passage 1: <br> The forest was unusually silent that morning, save for the occasional rustle of leaves stirred by a gentle wind. Sunlight filtered through the canopy, casting golden rays on the damp earth. As Clara walked deeper into the woods, she felt both a sense of wonder and a prickling unease, as if the forest itself was holding its breath.<br>  What is the tone of this passage?",
+        "options": ["Cheerful", "Tense", "Humorous", "Indifferent"],
+        "correctAnswer": "Tense",
+        "solution": "The description of silence, unease, and the forest 'holding its breath' creates a feeling of suspense and anticipation, which indicates a tense tone."
       },
       {
-        id: "q12",
-        question: "Which literary device is used in the phrase 'the forest itself was holding its breath'?",
-        options: ["Simile", "Hyperbole", "Personification", "Alliteration"],
-        correctAnswer: "Personification"
+        "id": "q12",
+        "question": "Which literary device is used in the phrase 'the forest itself was holding its breath'?",
+        "options": ["Simile", "Hyperbole", "Personification", "Alliteration"],
+        "correctAnswer": "Personification",
+        "solution": "The forest is given a human characteristic (holding its breath), which is an example of personification."
       },
       {
-        id: "q13",
-        question: "Passage 2: <br> Throughout history, scientific discovery has relied not only on brilliant minds, but also on the collaboration of diverse teams. From the laboratories of Marie Curie to the engineering marvels of NASA, innovation thrives when ideas intersect and evolve. The future of science depends not solely on individual intellect, but on shared pursuit. <br> What is the main idea of this passage?",
-        options: ["Marie Curie discovered radiation.", "Scientific innovation depends on individual effort.", "Collaboration enhances scientific discovery.", "NASA is the greatest scientific organization."],
-        correctAnswer: "Collaboration enhances scientific discovery."
+        "id": "q13",
+        "question": "Passage 2: <br> Throughout history, scientific discovery has relied not only on brilliant minds, but also on the collaboration of diverse teams. From the laboratories of Marie Curie to the engineering marvels of NASA, innovation thrives when ideas intersect and evolve. The future of science depends not solely on individual intellect, but on shared pursuit. <br> What is the main idea of this passage?",
+        "options": ["Marie Curie discovered radiation.", "Scientific innovation depends on individual effort.", "Collaboration enhances scientific discovery.", "NASA is the greatest scientific organization."],
+        "correctAnswer": "Collaboration enhances scientific discovery.",
+        "solution": "The passage emphasizes that teamwork and collaboration, rather than individual effort alone, drive scientific progress."
       },
       {
-        id: "q14",
-        question: "What is the author's tone in this Passage 2?",
-        options: ["Critical", "Reflective", "Sarcastic", "Indifferent"],
-        correctAnswer: "Reflective"
+        "id": "q14",
+        "question": "What is the author's tone in this Passage 2?",
+        "options": ["Critical", "Reflective", "Sarcastic", "Indifferent"],
+        "correctAnswer": "Reflective",
+        "solution": "The author looks back on historical examples and thoughtfully considers the importance of collaboration, which gives a reflective tone."
       },
       {
-        id: "q15",
-        question: 'Passage 3: <br> "We must learn to live together as brothers or perish together as fools". These words, spoken by Dr. Martin Luther King Jr., remain relevant in a world still grappling with division and conflict. The quote is a timeless call to unity, underscoring the urgent need for empathy, dialogue, and mutual respect. <br>   What rhetorical device is most evident in the quote by Dr. King?',
-        options: ["Irony", "Repetition", "Metaphor", "Antithesis"],
-        correctAnswer: "Antithesis"
+        "id": "q15",
+        "question": "Passage 3: <br> \"We must learn to live together as brothers or perish together as fools\". These words, spoken by Dr. Martin Luther King Jr., remain relevant in a world still grappling with division and conflict. The quote is a timeless call to unity, underscoring the urgent need for empathy, dialogue, and mutual respect. <br>   What rhetorical device is most evident in the quote by Dr. King?",
+        "options": ["Irony", "Repetition", "Metaphor", "Antithesis"],
+        "correctAnswer": "Antithesis",
+        "solution": "The quote contrasts two opposing ideas—living together in unity versus perishing in division—which is a clear example of antithesis."
       },
       {
-        id: "q16",
-        question: "What is the purpose of including this quote in the Passage 3?",
-        options: ["To emphasize conflict", "To support an argument about unity", "To highlight political instability", "To question authority"],
-        correctAnswer: "To support an argument about unity"
+        "id": "q16",
+        "question": "What is the purpose of including this quote in the Passage 3?",
+        "options": ["To emphasize conflict", "To support an argument about unity", "To highlight political instability", "To question authority"],
+        "correctAnswer": "To support an argument about unity",
+        "solution": "The quote reinforces the passage’s message about the importance of unity, empathy, and cooperation."
       },
       {
-        id: "q17",
-        question: "What is the purpose of an anecdote in persuasive writing?",
-        options: ["To confuse the reader", "To entertain with fiction", "To add humor", "To provide a personal example that supports a point"],
-        correctAnswer: "To provide a personal example that supports a point"
+        "id": "q17",
+        "question": "What is the purpose of an anecdote in persuasive writing?",
+        "options": ["To confuse the reader", "To entertain with fiction", "To add humor", "To provide a personal example that supports a point"],
+        "correctAnswer": "To provide a personal example that supports a point",
+        "solution": "An anecdote is a short personal story used to make an argument more relatable and convincing."
       },
       {
-        id: "q18",
-        question: "Which of the following sentences contains a misplaced modifier?",
-        options: ["Running to the store, the rain began to fall.", "The dog chased the cat.", "She opened the door quickly.", "He made a delicious cake for dessert."],
-        correctAnswer: "Running to the store, the rain began to fall."
+        "id": "q18",
+        "question": "Which of the following sentences contains a misplaced modifier?",
+        "options": ["Running to the store, the rain began to fall.", "The dog chased the cat.", "She opened the door quickly.", "He made a delicious cake for dessert."],
+        "correctAnswer": "Running to the store, the rain began to fall.",
+        "solution": "The sentence incorrectly suggests that the rain was running to the store. The modifier should describe a person, not the rain."
       },
       {
-        id: "q19",
-        question: "What is the meaning of connotation?",
-        options: ["The dictionary definition of a word", "The emotional or cultural meaning associated with a word", "The part of speech of a word", "The root word"],
-        correctAnswer: "The emotional or cultural meaning associated with a word"
+        "id": "q19",
+        "question": "What is the meaning of connotation?",
+        "options": ["The dictionary definition of a word", "The emotional or cultural meaning associated with a word", "The part of speech of a word", "The root word"],
+        "correctAnswer": "The emotional or cultural meaning associated with a word",
+        "solution": "Connotation refers to the feelings or associations a word carries beyond its literal (denotative) meaning."
       },
       {
-        id: "q20",
-        question: "What is the most effective way to revise a vague thesis statement?",
-        options: ["Make it longer", "Add emotional language", "Be specific and clearly state your position", "Start with a question"],
-        correctAnswer: "Be specific and clearly state your position"
+        "id": "q20",
+        "question": "What is the most effective way to revise a vague thesis statement?",
+        "options": ["Make it longer", "Add emotional language", "Be specific and clearly state your position", "Start with a question"],
+        "correctAnswer": "Be specific and clearly state your position",
+        "solution": "A strong thesis should clearly express a specific argument or position, making it easier for the reader to understand the main point."
+      },
+      {
+        "id": "q21",
+        "question": "Which of the following best explains how competitive enzyme inhibition affects reaction rate?",
+        "options": ["It permanently alters the enzyme structure", "It decreases substrate concentration", "It competes with the substrate for the active site", "It increases enzyme production"],
+        "correctAnswer": "It competes with the substrate for the active site",
+        "solution": "In competitive inhibition, the inhibitor resembles the substrate and competes for binding at the enzyme’s active site, reducing the rate of reaction unless substrate concentration is increased."
+      },
+      {
+        "id": "q22",
+        "question": "What is the hybridization of the central atom in methane (CH₄)?",
+        "options": ["sp", "sp²", "sp³", "sp³d"],
+        "correctAnswer": "sp³",
+        "solution": "Methane has four single bonds around carbon, resulting in a tetrahedral shape. This corresponds to sp³ hybridization."
+      },
+      {
+        "id": "q23",
+        "question": "A 5 kg object is lifted to a height of 10 m. What is its gravitational potential energy? (g = 9.8 m/s²)",
+        "options": ["49 J", "98 J", "490 J", "980 J"],
+        "correctAnswer": "490 J",
+        "solution": "Gravitational potential energy = mgh = 5 × 9.8 × 10 = 490 J."
+      },
+      {
+        "id": "q24",
+        "question": "During cellular respiration, where does the majority of ATP production occur?",
+        "options": ["Cytoplasm", "Nucleus", "Mitochondrial matrix (electron transport chain)", "Ribosome"],
+        "correctAnswer": "Mitochondrial matrix (electron transport chain)",
+        "solution": "Most ATP is produced during the electron transport chain, which occurs in the inner mitochondrial membrane."
+      },
+      {
+        "id": "q25",
+        "question": "Which of the following best describes Le Chatelier’s Principle?",
+        "options": ["Systems always move toward disorder", "A system at equilibrium shifts to counteract stress", "Energy is conserved in a reaction", "Reactions always proceed forward"],
+        "correctAnswer": "A system at equilibrium shifts to counteract stress",
+        "solution": "Le Chatelier’s Principle states that when a system at equilibrium is disturbed, it adjusts to minimize the effect of the disturbance."
+      },
+      {
+        "id": "q26",
+        "question": "If the wavelength of light decreases, what happens to its frequency?",
+        "options": ["It decreases", "It increases", "It remains constant", "It becomes zero"],
+        "correctAnswer": "It increases",
+        "solution": "Wavelength and frequency are inversely proportional (c = fλ). As wavelength decreases, frequency increases."
+      },
+      {
+        "id": "q27",
+        "question": "Which process is responsible for increasing genetic variation during meiosis?",
+        "options": ["DNA replication", "Crossing over", "Mitosis", "Binary fission"],
+        "correctAnswer": "Crossing over",
+        "solution": "Crossing over occurs during prophase I of meiosis, where homologous chromosomes exchange genetic material, increasing variation."
+      },
+      {
+        "id": "q28",
+        "question": "What type of bond forms between sodium (Na) and chlorine (Cl)?",
+        "options": ["Covalent", "Hydrogen", "Ionic", "Metallic"],
+        "correctAnswer": "Ionic",
+        "solution": "Sodium transfers an electron to chlorine, forming oppositely charged ions that attract each other, creating an ionic bond."
+      },
+      {
+        "id": "q29",
+        "question": "Which layer of the atmosphere contains the ozone layer that absorbs most ultraviolet radiation?",
+        "options": ["Troposphere", "Stratosphere", "Mesosphere", "Thermosphere"],
+        "correctAnswer": "Stratosphere",
+        "solution": "The ozone layer is located in the stratosphere and absorbs most of the Sun’s harmful ultraviolet radiation."
+      },
+      {
+        "id": "q30",
+        "question": "What is the acceleration of an object with a net force of 20 N acting on a mass of 4 kg?",
+        "options": ["2 m/s²", "4 m/s²", "5 m/s²", "10 m/s²"],
+        "correctAnswer": "5 m/s²",
+        "solution": "Using Newton’s second law: F = ma → a = F/m = 20 ÷ 4 = 5 m/s²."
       }
     ],
   },
    {
     grade: "12th-grade",
     questions: [
-      {
-        id: "q1",
-        question: "What is the derivative of x²?",
-        options: ["x", "2x", "x²", "2"],
-        correctAnswer: "2x",
-      },
-      {
-        id: "q2",
-        question: "Evaluate: ∫2x dx",
-        options: ["x² + C", "2x + C", "x + C", "2x² + C"],
-        correctAnswer: "x² + C",
-      }
+       {
+      id: "q1",
+      question: "Find the derivative of f(x) = 3x³ - 5x² + 2x - 7.",
+      options: ["9x² - 10x + 2", "9x² - 5x + 2", "3x² - 10x + 2", "9x² - 10x - 7"],
+      correctAnswer: "9x² - 10x + 2",
+      solution: "Differentiate term by term: d/dx(3x³)=9x², d/dx(-5x²)=-10x, d/dx(2x)=2."
+    },
+    {
+      id: "q2",
+      question: "Evaluate: lim (x→2) (x² - 4)/(x - 2)",
+      options: ["2", "4", "0", "Undefined"],
+      correctAnswer: "4",
+      solution: "Factor numerator: (x-2)(x+2). Cancel (x-2), substitute x=2 → 4."
+    },
+    {
+      id: "q3",
+      question: "Solve: ln(x) = 3",
+      options: ["e³", "3e", "ln(3)", "e²"],
+      correctAnswer: "e³",
+      solution: "Exponentiate both ids: x = e³."
+    },
+    {
+      id: "q4",
+      question: "Find the integral: ∫(4x³) dx",
+      options: ["x⁴ + C", "4x⁴ + C", "x³ + C", "16x³ + C"],
+      correctAnswer: "x⁴ + C",
+      solution: "Use power rule: ∫xⁿ dx = xⁿ⁺¹/(n+1). So 4x³ → x⁴."
+    },
+    {
+      id: "q5",
+      question: "If f(x) = e^x, what is f''(x)?",
+      options: ["e^x", "2e^x", "x e^x", "0"],
+      correctAnswer: "e^x",
+      solution: "Derivative of e^x is itself. Second derivative is also e^x."
+    },
+    {
+      id: "q6",
+      question: "Solve: 2x² - 8 = 0",
+      options: ["±2", "±4", "2", "4"],
+      correctAnswer: "±2",
+      solution: "2x²=8 → x²=4 → x=±2."
+    },
+    {
+      id: "q7",
+      question: "Find the slope of the tangent to y = x² at x = 3.",
+      options: ["3", "6", "9", "12"],
+      correctAnswer: "6",
+      solution: "Derivative is 2x. At x=3 → 2(3)=6."
+    },
+    {
+      id: "q8",
+      question: "Evaluate: log₁₀(1000)",
+      options: ["2", "3", "10", "100"],
+      correctAnswer: "3",
+      solution: "10³ = 1000 → log₁₀(1000)=3."
+    },
+    {
+      id: "q9",
+      question: "Find the vertex of y = x² - 4x + 1.",
+      options: ["(2, -3)", "(4,1)", "(2,1)", "(1,-4)"],
+      correctAnswer: "(2, -3)",
+      solution: "Vertex x = -b/2a = 4/2 = 2. Substitute → y = -3."
+    },
+    {
+      id: "q10",
+      question: "What is the derivative of sin(x)?",
+      options: ["cos(x)", "-cos(x)", "sin(x)", "-sin(x)"],
+      correctAnswer: "cos(x)",
+      solution: "Standard derivative: d/dx(sin x) = cos x."
+    },
+
+    // ===================== ELA (q13 - q22) =====================
+    {
+      id: "q11",
+      question: "Which literary device involves a contrast between expectation and reality?",
+      options: ["Metaphor", "Irony", "Alliteration", "Imagery"],
+      correctAnswer: "Irony",
+      solution: "Irony occurs when there is a difference between expectation and actual outcome."
+    },
+    {
+      id: "q12",
+      question: "What is the primary purpose of a thesis statement?",
+      options: ["To summarize", "To entertain", "To present the main argument", "To describe setting"],
+      correctAnswer: "To present the main argument",
+      solution: "A thesis clearly states the writer’s main claim or argument."
+    },
+    {
+      id: "q13",
+      question: "Which tone is most appropriate for academic writing?",
+      options: ["Informal", "Objective", "Humorous", "Emotional"],
+      correctAnswer: "Objective",
+      solution: "Academic writing requires a formal, objective tone."
+    },
+    {
+      id: "q14",
+      question: "Which sentence uses parallel structure?",
+      options: ["She likes reading, to swim, and biking", "She likes reading, swimming, and biking", "She likes read, swim, bike", "She likes reading and swim"],
+      correctAnswer: "She likes reading, swimming, and biking",
+      solution: "Parallel structure requires consistent grammatical form."
+    },
+    {
+      id: "q15",
+      question: "What does a metaphor do?",
+      options: ["Compares using like/as", "Gives human traits", "Directly compares unlike things", "Repeats sounds"],
+      correctAnswer: "Directly compares unlike things",
+      solution: "A metaphor compares two unlike things without 'like' or 'as'."
+    },
+    {
+      id: "q16",
+      question: "What is the function of a counterargument?",
+      options: ["To weaken argument", "To present opposing view", "To conclude essay", "To summarize"],
+      correctAnswer: "To present opposing view",
+      solution: "Counterarguments strengthen writing by addressing opposing views."
+    },
+    {
+      id: "q17",
+      question: "Which word has a negative connotation?",
+      options: ["Slim", "Thin", "Skinny", "Lean"],
+      correctAnswer: "Skinny",
+      solution: "'Skinny' often implies unhealthy thinness."
+    },
+    {
+      id: "q18",
+      question: "What is an allusion?",
+      options: ["Comparison", "Reference to known work", "Exaggeration", "Sound repetition"],
+      correctAnswer: "Reference to known work",
+      solution: "An allusion refers to a well-known person, event, or text."
+    },
+    {
+      id: "q19",
+      question: "Which point of view uses 'you'?",
+      options: ["First person", "Second person", "Third person", "Omniscient"],
+      correctAnswer: "Second person",
+      solution: "Second person directly addresses the reader as 'you'."
+    },
+    {
+      id: "q20",
+      question: "What is the main purpose of rhetoric?",
+      options: ["To inform", "To persuade", "To entertain", "To describe"],
+      correctAnswer: "To persuade",
+      solution: "Rhetoric is used to influence or persuade an audience."
+    },
+
+    // ===================== SCIENCE (q23 - q32) =====================
+    {
+      id: "q21",
+      question: "What is the pH of a neutral solution",
+      options: ["0", "7", "14", "10"],
+      correctAnswer: "7",
+      solution: "Neutral solutions have equal H+ and OH- ions → pH = 7."
+    },
+    {
+      id: "q22",
+      question: "What organelle produces ATP?",
+      options: ["Nucleus", "Mitochondria", "Ribosome", "Golgi"],
+      correctAnswer: "Mitochondria",
+      solution: "Mitochondria are the site of cellular respiration and ATP production."
+    },
+    {
+      id: "q23",
+      question: "What type of reaction releases energy?",
+      options: ["Endothermic", "Exothermic", "Neutral", "Catalytic"],
+      correctAnswer: "Exothermic",
+      solution: "Exothermic reactions release energy to surroundings."
+    },
+    {
+      id: "q24",
+      question: "What is acceleration due to gravity on Earth?",
+      options: ["9.8 m/s²", "10 m/s²", "8 m/s²", "12 m/s²"],
+      correctAnswer: "9.8 m/s²",
+      solution: "Standard gravitational acceleration is 9.8 m/s²."
+    },
+    {
+      id: "q25",
+      question: "Which particle has a negative charge?",
+      options: ["Proton", "Neutron", "Electron", "Nucleus"],
+      correctAnswer: "Electron",
+      solution: "Electrons carry a negative charge."
+    },
+    {
+      id: "q26",
+      question: "What law states energy cannot be created or destroyed?",
+      options: ["Newton’s law", "Conservation of energy", "Ohm’s law", "Boyle’s law"],
+      correctAnswer: "Conservation of energy",
+      solution: "Energy can only change forms, not be created or destroyed."
+    },
+    {
+      id: "q27",
+      question: "What gas do plants absorb?",
+      options: ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"],
+      correctAnswer: "Carbon dioxide",
+      solution: "Plants use CO₂ for photosynthesis."
+    },
+    {
+      id: "q28",
+      question: "Which force opposes motion?",
+      options: ["Gravity", "Friction", "Magnetism", "Tension"],
+      correctAnswer: "Friction",
+      solution: "Friction resists motion between surfaces."
+    },
+    {
+      id: "q29",
+      question: "What is the basic unit of life?",
+      options: ["Atom", "Cell", "Molecule", "Tissue"],
+      correctAnswer: "Cell",
+      solution: "The cell is the smallest unit capable of life."
+    },
+    {
+      id: "q30",
+      question: "Which wave can travel through a vacuum?",
+      options: ["Sound", "Water", "Light", "Seismic"],
+      correctAnswer: "Light",
+      solution: "Electromagnetic waves like light do not require a medium."
+    }
     ],
   },
    {

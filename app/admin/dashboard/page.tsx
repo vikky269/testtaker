@@ -52,7 +52,7 @@ export default function AdminDashboard() {
       const { data, error } = await supabase
         .from('leaderboard')
         .select('*')
-        .order('overall_score', { ascending: false });
+        .order('created_at', { ascending: false });
 
       if (!error && data) {
         setEntries(data);
@@ -129,10 +129,10 @@ export default function AdminDashboard() {
             { icon: FaChartBar,         label: 'Avg Overall Score', val: `${metrics.avgOverall}%`,  cls: 'text-[#3a5a09]', bg: 'bg-[#e8f5c0]' },
             { icon: FaTrophy,           label: 'Top Score',         val: `${metrics.topScore}%`,    cls: 'text-amber-600', bg: 'bg-amber-50'  },
             { icon: FaExclamationTriangle, label: 'Need Support',   val: metrics.belowPass,         cls: 'text-red-600',   bg: 'bg-red-50'    },
-            { icon: FaChartBar,         label: 'Avg Math',          val: `${metrics.avgMath}%`,     cls: 'text-blue-600',  bg: 'bg-blue-50'   },
-            { icon: FaChartBar,         label: 'Avg ELA',           val: `${metrics.avgEla}%`,      cls: 'text-emerald-600', bg: 'bg-emerald-50' },
-            { icon: FaChartBar,         label: 'Avg Science',       val: `${metrics.avgScience}%`,  cls: 'text-purple-600', bg: 'bg-purple-50' },
-            { icon: FaFileAlt,          label: 'Total Tests',       val: metrics.totalTests,        cls: 'text-gray-600',  bg: 'bg-gray-100'  },
+            // { icon: FaChartBar,         label: 'Avg Math',          val: `${metrics.avgMath}%`,     cls: 'text-blue-600',  bg: 'bg-blue-50'   },
+            // { icon: FaChartBar,         label: 'Avg ELA',           val: `${metrics.avgEla}%`,      cls: 'text-emerald-600', bg: 'bg-emerald-50' },
+            // { icon: FaChartBar,         label: 'Avg Science',       val: `${metrics.avgScience}%`,  cls: 'text-purple-600', bg: 'bg-purple-50' },
+            // { icon: FaFileAlt,          label: 'Total Tests',       val: metrics.totalTests,        cls: 'text-gray-600',  bg: 'bg-gray-100'  },
           ].map(({ icon: Icon, label, val, cls, bg }) => (
             <div key={label} className="bg-white rounded-2xl border border-gray-100 p-4 shadow-sm cursor-pointer hover:shadow-md transition-all">
               <div className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center mb-3`}>
@@ -237,6 +237,7 @@ export default function AdminDashboard() {
           <table className="w-full text-sm">
             <thead>
               <tr className="bg-gray-50">
+                <th className="px-4 py-3 text-left text-xs font-bold text-gray-400 uppercase tracking-wide">Date</th>
                 <th className="px-4 py-3 text-left text-xs font-bold text-gray-400 uppercase tracking-wide">Student</th>
                 <th className="px-4 py-3 text-left text-xs font-bold text-gray-400 uppercase tracking-wide">Grade</th>
                 <th className="px-4 py-3 text-left text-xs font-bold text-gray-400 uppercase tracking-wide">Overall</th>
@@ -252,6 +253,8 @@ export default function AdminDashboard() {
                 const badge = getScoreBadge(entry.overall_score);
                 return (
                   <tr key={idx} className="border-t border-gray-50 hover:bg-gray-50/50 transition-colors">
+                    {/* Student info with avatar and date of submission */}
+                     <td className='px-4 py-3  text-gray-600 text-xs hidden md:table-cell'>{entry.created_at && new Date(entry.created_at).toLocaleDateString()}</td>
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-2.5">
                         <div className="w-7 h-7 rounded-full bg-[#e8f5c0] flex items-center justify-center text-[11px] font-bold text-[#3a5a09] flex-shrink-0">

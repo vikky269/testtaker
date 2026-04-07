@@ -7,16 +7,25 @@ import { supabase } from '@/lib/supabaseClient';
 
 export default function Home() {
 
+const ADMIN_EMAIL = 'info@smartmathz.com';
+
 
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
+
+
     const checkAuth = async () => {
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) {
         router.push('/login');
-      } else {
+
+      } else if (user.email?.toLowerCase() === ADMIN_EMAIL) {
+        router.push('/admin/dashboard');  
+        setLoading(false);
+      }
+      else {
         setLoading(false);
       }
     };

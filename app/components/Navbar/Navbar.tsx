@@ -19,7 +19,7 @@ const NAV_LINKS = [
 ];
 
 export default function Navbar() {
-  const [user, setUser]             = useState<any>(null);
+  const [user, setUser] = useState<any>(null);
   const isAdmin = user?.email === 'info@smartmathz.com';
   const [profile, setProfile]       = useState<any>(null);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -30,29 +30,6 @@ export default function Navbar() {
 
    const router = useRouter();
 
-  // useEffect(() => {
-  //   const getUser = async () => {
-  //     const { data: { session } } = await supabase.auth.getSession();
-  //     const currentUser = session?.user || null;
-  //     setUser(currentUser);
-  //     if (currentUser) {
-  //       const { data, error } = await supabase
-  //         .from('student_profile').select('full_name, grade').eq('id', currentUser.id).single();
-  //       if (!error) setProfile(data);
-  //     }
-  //   };
-  //   getUser();
-
-  //   const { data: listener } = supabase.auth.onAuthStateChange((_e, session) => {
-  //     const currentUser = session?.user || null;
-  //     setUser(currentUser);
-  //     if (currentUser) {
-  //       supabase.from('student_profile').select('full_name, grade').eq('id', currentUser.id)
-  //         .single().then(({ data, error }) => { if (!error) setProfile(data); });
-  //     }
-  //   });
-  //   return () => listener.subscription.unsubscribe();
-  // }, []);
 
 useEffect(() => {
   const getUser = async () => {
@@ -99,13 +76,10 @@ useEffect(() => {
 }, []);
 
 
-
-
-
   const handleLogout = async () => {
     await supabase.auth.signOut();
     setUser(null); setProfile(null);
-    router.push('/login');
+    router.replace('/login');
   };
 
   const initials = user?.email?.charAt(0).toUpperCase() ?? 'U';
@@ -175,7 +149,7 @@ if (pathname.startsWith('/admin')) return null;
               {mounted && showDropdown &&  (
                 <div className="absolute right-0 top-11 bg-white rounded-2xl shadow-xl border border-gray-100
                                 py-4 px-5 w-56 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-                  <p className="font-semibold text-sm text-gray-900 truncate">{profile?.full_name}</p>
+                  <p className="font-semibold text-sm text-gray-900 truncate">{user?.full_name}</p>
                   <p className="text-xs text-gray-400 mt-0.5 truncate">{user.email}</p>
                   {profile?.grade && (
                     <span className="inline-block mt-2 text-xs bg-green-50 text-[#7FB509] font-semibold px-2 py-0.5 rounded-full">

@@ -29,6 +29,7 @@ export default function ReviewPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const hasSavedRef = useRef(false);
+  
 
   // ── URL params ──────────────────────────────────────────
   const stateParam   = searchParams.get("state")?.toLowerCase();
@@ -43,6 +44,7 @@ export default function ReviewPage() {
   const [selectedQuiz, setSelectedQuiz] = useState<any[]>([]);
   const [loading, setLoading]         = useState(true);
   const [elaSkipped, setElaSkipped]   = useState(false);
+  const [gender, setGender] = useState("");
   const [timeData, setTimeData]       = useState<{
     mathDuration?: number;
     elaDuration?: number;
@@ -74,9 +76,10 @@ export default function ReviewPage() {
       const user = session?.user;
       if (user) {
         const { data: profile, error } = await supabase
-          .from("student_profile").select("full_name").eq("id", user.id).single();
+          .from("student_profile").select("full_name, gender").eq("id", user.id).single();
         setUserName(!error && profile ? profile.full_name : (user.email ?? "Student"));
         setUserEmail(user.email ?? "");
+        setGender(profile?.gender || "");
       } else {
         setUserName("Guest");
       }
@@ -164,7 +167,9 @@ export default function ReviewPage() {
         overall_score: parseFloat(score),
         total_time:    totalSeconds,
         test_type:     testId,
+        gender:        gender || 'N/A',
         created_at:    new Date().toISOString(),
+
       }]).select();
 
       if (error) {

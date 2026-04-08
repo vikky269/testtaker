@@ -564,7 +564,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       },
       {
         id: "q11",
-        question: "What is the main idea of the passage?",
+        question: "What is the main idea of a passage?",
         options: ["It gives details only", "It describes one event", "It explains the whole point", "It shows a timeline"],
         correctAnswer: "It explains the whole point",
       },

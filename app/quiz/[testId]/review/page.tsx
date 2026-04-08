@@ -183,15 +183,32 @@ export default function ReviewPage() {
 
   // ── Handlers ────────────────────────────────────────────
 
+  // const handleFinishReview = () => {
+  //   ["quizState","mathScore","elaScore","quizTimeData","testDurations",
+  //    "quizDurations","elaSkipped"].forEach((k) => localStorage.removeItem(k));
+  //   Object.keys(localStorage)
+  //     .filter((k) => k.startsWith("quiz-end-time"))
+  //     .forEach((k) => localStorage.removeItem(k));
+  //   setAnswers({});
+  //   router.push("/");
+  // };
+
+
   const handleFinishReview = () => {
-    ["quizState","mathScore","elaScore","quizTimeData","testDurations",
-     "quizDurations","elaSkipped"].forEach((k) => localStorage.removeItem(k));
-    Object.keys(localStorage)
-      .filter((k) => k.startsWith("quiz-end-time"))
-      .forEach((k) => localStorage.removeItem(k));
-    setAnswers({});
-    router.push("/");
-  };
+  ["quizState","mathScore","elaScore","quizTimeData","testDurations",
+   "quizDurations","elaSkipped"].forEach((k) => localStorage.removeItem(k));
+
+  Object.keys(localStorage)
+    .filter((k) => k.startsWith("quiz-end-time"))
+    .forEach((k) => localStorage.removeItem(k));
+
+  setAnswers({});
+
+  // ✅ allow React to settle before navigation
+  setTimeout(() => {
+    router.push('/');
+  }, 100);
+};
 
   const handleDownloadReport = () => {
     const mathDuration    = searchParams.get("mathTime")    ? parseInt(searchParams.get("mathTime")!)    : timeData.mathDuration;
@@ -212,8 +229,8 @@ export default function ReviewPage() {
   };
 
   // ── Guards ──────────────────────────────────────────────
-  if (loading)
-    return <p className="text-center text-gray-600 mt-20">Loading quiz data...</p>;
+  if (loading && selectedQuiz.length === 0)
+  return <p className="text-center mt-20">Loading quiz data...</p>;
 
   if (!selectedQuiz || selectedQuiz.length === 0)
     return <p className="text-center text-red-500 mt-10">No review data found for this test.</p>;

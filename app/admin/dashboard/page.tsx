@@ -17,6 +17,7 @@ interface LeaderboardEntry {
   total_time: number;
   test_type: string;
   created_at: string;
+  gender?: string;
 }
 
 interface Metrics {
@@ -129,10 +130,7 @@ export default function AdminDashboard() {
             { icon: FaChartBar,         label: 'Avg Overall Score', val: `${metrics.avgOverall}%`,  cls: 'text-[#3a5a09]', bg: 'bg-[#e8f5c0]' },
             { icon: FaTrophy,           label: 'Top Score',         val: `${metrics.topScore}%`,    cls: 'text-amber-600', bg: 'bg-amber-50'  },
             { icon: FaExclamationTriangle, label: 'Need Support',   val: metrics.belowPass,         cls: 'text-red-600',   bg: 'bg-red-50'    },
-            // { icon: FaChartBar,         label: 'Avg Math',          val: `${metrics.avgMath}%`,     cls: 'text-blue-600',  bg: 'bg-blue-50'   },
-            // { icon: FaChartBar,         label: 'Avg ELA',           val: `${metrics.avgEla}%`,      cls: 'text-emerald-600', bg: 'bg-emerald-50' },
-            // { icon: FaChartBar,         label: 'Avg Science',       val: `${metrics.avgScience}%`,  cls: 'text-purple-600', bg: 'bg-purple-50' },
-            // { icon: FaFileAlt,          label: 'Total Tests',       val: metrics.totalTests,        cls: 'text-gray-600',  bg: 'bg-gray-100'  },
+            
           ].map(({ icon: Icon, label, val, cls, bg }) => (
             <div key={label} className="bg-white rounded-2xl border border-gray-100 p-4 shadow-sm cursor-pointer hover:shadow-md transition-all">
               <div className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center mb-3`}>
@@ -240,6 +238,7 @@ export default function AdminDashboard() {
                 <th className="px-4 py-3 text-left text-xs font-bold text-gray-400 uppercase tracking-wide">Date</th>
                 <th className="px-4 py-3 text-left text-xs font-bold text-gray-400 uppercase tracking-wide">Student</th>
                 <th className="px-4 py-3 text-left text-xs font-bold text-gray-400 uppercase tracking-wide">Grade</th>
+                        <th className="px-4 py-3 text-left text-xs font-bold text-gray-400 uppercase tracking-wide">Gender</th>
                 <th className="px-4 py-3 text-left text-xs font-bold text-gray-400 uppercase tracking-wide">Overall</th>
                 <th className="px-4 py-3 text-left text-xs font-bold text-gray-400 uppercase tracking-wide hidden md:table-cell">Math</th>
                 <th className="px-4 py-3 text-left text-xs font-bold text-gray-400 uppercase tracking-wide hidden md:table-cell">ELA</th>
@@ -268,6 +267,9 @@ export default function AdminDashboard() {
                     </td>
                     <td className="px-4 py-3">
                       <span className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">{entry.grade}</span>
+                    </td>
+                    <td className="px-4 py-3">
+                      <span className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">{entry.gender || 'N/A'}</span>
                     </td>
                     <td className="px-4 py-3 font-bold text-gray-900 text-sm">{Math.round(entry.overall_score)}%</td>
                     <td className="px-4 py-3 text-gray-600 text-xs hidden md:table-cell">{entry.math_score}%</td>

@@ -5,7 +5,7 @@ import { supabase } from '@/lib/supabaseClient';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Outfit } from 'next/font/google';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
 
@@ -27,6 +27,8 @@ export default function Navbar() {
 
   const [mounted, setMounted] = useState(false);
    useEffect(() => setMounted(true), []);
+
+   const router = useRouter();
 
   // useEffect(() => {
   //   const getUser = async () => {
@@ -103,7 +105,7 @@ useEffect(() => {
   const handleLogout = async () => {
     await supabase.auth.signOut();
     setUser(null); setProfile(null);
-    window.location.href = '/login';
+    router.push('/login');
   };
 
   const initials = user?.email?.charAt(0).toUpperCase() ?? 'U';

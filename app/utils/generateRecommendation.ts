@@ -1,5 +1,4 @@
 // app/utils/generateRecommendation.ts
-// Generates the SmartMathz Program Recommendation PDF for a student
 
 import jsPDF from 'jspdf';
 
@@ -7,6 +6,7 @@ export interface StudentData {
   full_name: string;
   email: string;
   grade: string;
+  gender?: string | null;
   overall_score: number;
   math_score: number;
   ela_score: number | null;
@@ -37,17 +37,17 @@ export const getLearningCategory = (overallScore: number): LearningCategory => {
   if (overallScore >= 55) return {
     name: 'EXPLORERS',
     color: [0, 100, 0],
-    description: 'This category includes students who have a keen interest in mathematics and are eager to explore its various aspects. They might not always score at the top, but they actively engage with the subject, ask insightful questions, and enjoy delving into mathematical concepts beyond the standard curriculum.',
+    description: 'This category includes students who have a keen interest in mathematics and are eager to explore its various aspects. They might not always score at the top, but they actively engage with the subject and enjoy delving into mathematical concepts.',
   };
   if (overallScore >= 40) return {
     name: 'RISERS',
     color: [184, 134, 11],
-    description: 'The "Risers" category refers to students who might not have initially shown exceptional math skills but are steadily improving over time. They put in consistent effort to enhance their mathematical abilities and gradually move up in terms of their performance and understanding of the subject.',
+    description: 'Risers are students who might not have initially shown exceptional math skills but are steadily improving over time. They put in consistent effort to enhance their mathematical abilities and gradually move up in performance.',
   };
   return {
     name: 'ADAPTERS',
     color: [180, 0, 180],
-    description: 'These students exhibit a certain rigidity in their approach to learning, but they can also adapt when presented with the right methods. While they might resist learning math initially, they have the potential to change their perspective and approach if they\'re exposed to different teaching techniques or real-world applications that resonate with them.',
+    description: 'These students can adapt when presented with the right methods. While they might resist learning math initially, they have the potential to change their perspective if exposed to different teaching techniques or real-world applications.',
   };
 };
 
@@ -57,7 +57,7 @@ export type PackageKey = 'package1' | 'package2' | 'package3' | 'package4';
 export interface Package {
   key: PackageKey;
   name: string;
-  displayName: string;   // short label for dropdown
+  displayName: string;
   subjects: string[];
   hours: { subject: string; hours: string }[];
   totalHours: string;
@@ -74,7 +74,7 @@ export const ALL_PACKAGES: Package[] = [
       { subject: 'Mathematics', hours: '2 hours per week (1-hour sessions twice weekly)' },
     ],
     totalHours: '2 hours per week',
-    rationale: 'This package provides focused, dedicated Mathematics support. The student will receive structured, one-on-one sessions designed to strengthen core concepts, build problem-solving skills, and improve overall mathematical confidence.',
+    rationale: 'This package provides focused, dedicated Mathematics support. The student will receive structured sessions designed to strengthen core concepts, build problem-solving skills, and improve overall mathematical confidence.',
   },
   {
     key: 'package2',
@@ -87,7 +87,7 @@ export const ALL_PACKAGES: Package[] = [
       { subject: 'Virtual Library',       hours: 'Unlimited access' },
     ],
     totalHours: '3 hours per week + Virtual Library',
-    rationale: 'This package combines structured Mathematics and English Language Arts support with access to our Virtual Library. The balanced programme addresses both numerical and literacy skills, giving the student a strong academic foundation across core subjects.',
+    rationale: 'This package combines structured Mathematics and English Language Arts support with access to our Virtual Library, addressing both numerical and literacy skills across core subjects.',
   },
   {
     key: 'package3',
@@ -101,7 +101,7 @@ export const ALL_PACKAGES: Package[] = [
       { subject: 'Virtual Library',       hours: 'Unlimited access' },
     ],
     totalHours: '4 hours per week + Virtual Library',
-    rationale: 'This comprehensive STEM-focused package covers Mathematics, English Language Arts, and Science or Coding alongside Virtual Library access. It is designed to build well-rounded academic skills, introduce logical thinking through coding, and nurture scientific curiosity.',
+    rationale: 'This STEM-focused package covers Mathematics, English Language Arts, and Science or Coding alongside Virtual Library access, building well-rounded academic skills and logical thinking.',
   },
   {
     key: 'package4',
@@ -116,54 +116,49 @@ export const ALL_PACKAGES: Package[] = [
       { subject: 'Virtual Library',       hours: 'Unlimited access' },
     ],
     totalHours: '5 hours per week + Virtual Library',
-    rationale: 'Our most comprehensive programme, covering all four subjects — Mathematics, English Language Arts, Science, and Coding — alongside full Virtual Library access. This package ensures no learning gap is left unaddressed, providing the student with a complete, structured academic development experience.',
+    rationale: 'Our most comprehensive programme covering all four subjects alongside full Virtual Library access, ensuring no learning gap is left unaddressed.',
   },
 ];
 
-// ── Suggested package based on scores ───────────────────────
 export const getSuggestedPackage = (s: StudentData): Package => {
-  const math    = s.math_score ?? 0;
   const ela     = s.ela_score ?? 0;
   const science = s.science_score ?? 0;
-
   const needsEla     = ela > 0 && ela < 70;
   const needsScience = science > 0 && science < 70;
-
-  // Package IV: needs everything
-  if (needsEla && needsScience)
-    return ALL_PACKAGES.find(p => p.key === 'package4')!;
-
-  // Package III: needs ELA + science or coding
-  if (needsEla || needsScience)
-    return ALL_PACKAGES.find(p => p.key === 'package3')!;
-
-  // Package II: ELA support useful even if passing
-  if (ela > 0 && ela < 80)
-    return ALL_PACKAGES.find(p => p.key === 'package2')!;
-
-  // Package I: math only focus
+  if (needsEla && needsScience) return ALL_PACKAGES.find(p => p.key === 'package4')!;
+  if (needsEla || needsScience) return ALL_PACKAGES.find(p => p.key === 'package3')!;
+  if (ela > 0 && ela < 80)      return ALL_PACKAGES.find(p => p.key === 'package2')!;
   return ALL_PACKAGES.find(p => p.key === 'package1')!;
 };
 
-// ── Subject Performance Comment ──────────────────────────────
+// ── Short subject comments (kept tight for single-page fit) ──
 const getSubjectComment = (subject: string, score: number, name: string): string => {
-  const firstName = name.split(' ')[0];
+  const n = name.split(' ')[0];
   if (subject === 'math') {
-    if (score >= 80) return `${firstName} performed exceptionally well in Mathematics, demonstrating strong conceptual understanding and the ability to apply mathematical reasoning effectively.`;
-    if (score >= 60) return `${firstName} shows a developing understanding of Mathematics. With targeted support on core concepts, significant improvement is expected.`;
-    return `${firstName} is still developing foundational math skills and would benefit from structured support to strengthen core concepts. While this score indicates areas of need, attentiveness and willingness to attempt problems show strong learning potential.`;
+    if (score >= 80) return `${n} performed exceptionally well in Mathematics, demonstrating strong conceptual understanding and the ability to apply mathematical reasoning effectively.`;
+    if (score >= 60) return `${n} shows a developing understanding of Mathematics. With targeted support on core concepts, significant improvement is expected.`;
+    return `${n} is still developing foundational math skills and would benefit from structured support to strengthen core concepts and build problem-solving confidence.`;
   }
   if (subject === 'ela') {
-    if (score >= 80) return `${firstName} performed very well in ELA, demonstrating solid comprehension, reasoning, and communication skills. This strength supports overall academic confidence and the ability to understand instructions across subjects.`;
-    if (score >= 60) return `${firstName} shows a fair understanding of ELA concepts. With consistent reading practice and vocabulary development, performance can improve significantly.`;
-    return `${firstName} requires additional support in English Language Arts. Focused attention on reading comprehension, writing structure, and vocabulary will help bridge current gaps.`;
+    if (score >= 80) return `${n} performed very well in ELA, demonstrating solid comprehension, reasoning, and communication skills that support overall academic confidence.`;
+    if (score >= 60) return `${n} shows a fair understanding of ELA. With consistent reading practice and vocabulary development, performance can improve significantly.`;
+    return `${n} requires additional ELA support. Focused attention on reading comprehension, writing structure, and vocabulary will help bridge current gaps.`;
   }
   if (subject === 'science') {
-    if (score >= 80) return `${firstName}'s science performance reflects strong understanding and curiosity about scientific concepts, with excellent application of analytical thinking.`;
-    if (score >= 60) return `${firstName}'s science performance reflects good understanding and curiosity about scientific concepts. With guided practice, analytical thinking and problem-solving skills in this area can be further improved.`;
-    return `${firstName} would benefit from additional support in Science to strengthen understanding of key concepts and develop stronger analytical and application-based skills.`;
+    if (score >= 80) return `${n}'s science performance reflects strong understanding of scientific concepts with excellent application of analytical thinking.`;
+    if (score >= 60) return `${n} shows good understanding of science. With guided practice, analytical thinking and problem-solving skills can be further improved.`;
+    return `${n} would benefit from additional science support to strengthen understanding of key concepts and develop stronger analytical skills.`;
   }
   return '';
+};
+
+// ── pronoun helper ───────────────────────────────────────────
+const getPronoun = (gender?: string | null) => {
+  if (!gender) return { sub: 'The student', pos: 'their', obj: 'them' };
+  const g = gender.toLowerCase();
+  if (g === 'male' || g === 'boy')   return { sub: 'He',  pos: 'his',  obj: 'him'  };
+  if (g === 'female' || g === 'girl') return { sub: 'She', pos: 'her',  obj: 'her'  };
+  return { sub: 'They', pos: 'their', obj: 'them' };
 };
 
 // ── Main PDF Generator ───────────────────────────────────────
@@ -172,79 +167,99 @@ export const generateRecommendationPDF = (
   selectedPackage: Package,
   instructorName = 'Isaac Salako'
 ) => {
-  const doc      = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
-  const pageW    = doc.internal.pageSize.getWidth();
-  const pageH    = doc.internal.pageSize.getHeight();
-  const margin   = 16;
-  const cW       = pageW - margin * 2;
+  const doc     = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+  const pageW   = doc.internal.pageSize.getWidth();
+  const pageH   = doc.internal.pageSize.getHeight();
+  const margin  = 14;
+  const cW      = pageW - margin * 2;
   const category = getLearningCategory(s.overall_score);
   const pkg      = selectedPackage;
   const firstName = s.full_name.split(' ')[0];
+  const pronoun   = getPronoun(s.gender);
+
+  let y = 0;
 
   // ── HEADER ──────────────────────────────────────────────────
   doc.setFillColor(22, 101, 52);
-  doc.rect(0, 0, pageW, 38, 'F');
-  try { doc.addImage('/logo.png', 'PNG', margin, 4, 28, 28); } catch {}
+  doc.rect(0, 0, pageW, 32, 'F');
+  try { doc.addImage('/logo.png', 'PNG', margin, 3, 24, 24); } catch {}
   doc.setTextColor(255, 255, 255);
-  doc.setFontSize(15); doc.setFont('helvetica', 'bold');
-  doc.text('SmartMathz', margin + 32, 14);
-  doc.setFontSize(9); doc.setFont('helvetica', 'normal');
-  doc.text('Evaluation Summary & Program Recommendation', margin + 32, 21);
+  doc.setFontSize(14); doc.setFont('helvetica', 'bold');
+  doc.text('SmartMathz', margin + 28, 12);
+  doc.setFontSize(8.5); doc.setFont('helvetica', 'normal');
+  doc.text('Evaluation Summary & Program Recommendation', margin + 28, 19);
+  doc.setFontSize(7);
+  doc.text('CONFIDENTIAL — For SmartMathz use only', margin + 28, 25);
   doc.setFontSize(7.5);
-  doc.text('CONFIDENTIAL — For SmartMathz use only', margin + 32, 28);
-  const dateStr = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-  doc.setFontSize(8);
-  doc.text(`Date: ${dateStr}`, pageW - margin, 14, { align: 'right' });
+  doc.text(new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }), pageW - margin, 12, { align: 'right' });
 
-  let y = 46;
+  y = 38;
 
   // ── STUDENT INFO ─────────────────────────────────────────────
   doc.setFillColor(240, 253, 244);
-  doc.roundedRect(margin, y, cW, 22, 2, 2, 'F');
-  doc.setTextColor(22, 101, 52); doc.setFontSize(8); doc.setFont('helvetica', 'bold');
-  doc.text('STUDENT INFORMATION', margin + 4, y + 6);
-  doc.setTextColor(30, 30, 30); doc.setFont('helvetica', 'normal'); doc.setFontSize(8.5);
-  const c1 = margin + 4, c2 = pageW / 2 + 2;
-  doc.setFont('helvetica', 'bold');   doc.text('Name:',  c1, y + 14);
-  doc.setFont('helvetica', 'normal'); doc.text(s.full_name, c1 + 18, y + 14);
-  doc.setFont('helvetica', 'bold');   doc.text('Grade:', c2, y + 14);
-  doc.setFont('helvetica', 'normal'); doc.text(s.grade?.toUpperCase() || 'N/A', c2 + 18, y + 14);
-  doc.setFont('helvetica', 'bold');   doc.text('Email:', c1, y + 20);
-  doc.setFont('helvetica', 'normal'); doc.text(s.email || 'N/A', c1 + 18, y + 20);
-  doc.setFont('helvetica', 'bold');   doc.text('Date:',  c2, y + 20);
-  doc.setFont('helvetica', 'normal'); doc.text(new Date(s.created_at).toLocaleDateString(), c2 + 16, y + 20);
+  doc.roundedRect(margin, y, cW, 20, 2, 2, 'F');
+  doc.setTextColor(22, 101, 52); doc.setFontSize(7.5); doc.setFont('helvetica', 'bold');
+  doc.text('STUDENT INFORMATION', margin + 3, y + 5.5);
+  doc.setTextColor(30, 30, 30); doc.setFont('helvetica', 'normal'); doc.setFontSize(8);
 
-  y += 28;
+  const c1 = margin + 3, c2 = pageW / 2 + 2, c3 = pageW * 0.75;
+  const row1y = y + 12, row2y = y + 17;
 
-  // ── SCORE SUMMARY STRIP ──────────────────────────────────────
-  const sections = [
-    { label: 'Overall', val: s.overall_score,     color: [22, 101, 52]  as [number,number,number] },
-    { label: 'Math',    val: s.math_score,         color: [79, 70, 229]  as [number,number,number] },
-    { label: 'ELA',     val: s.ela_score ?? 0,     color: [5, 150, 105]  as [number,number,number] },
-    { label: 'Science', val: s.science_score ?? 0, color: [217, 119, 6]  as [number,number,number] },
-  ];
-  const sw = (cW - 9) / 4;
-  sections.forEach(({ label, val, color }, i) => {
-    const bx = margin + i * (sw + 3);
-    doc.setFillColor(249, 250, 251);
-    doc.roundedRect(bx, y, sw, 18, 2, 2, 'F');
-    doc.setDrawColor(...color); doc.setLineWidth(0.8);
-    doc.roundedRect(bx, y, sw, 18, 2, 2, 'S');
-    doc.setTextColor(...color); doc.setFontSize(6.5); doc.setFont('helvetica', 'bold');
-    doc.text(label.toUpperCase(), bx + sw / 2, y + 6, { align: 'center' });
-    doc.setFontSize(13);
-    doc.text(`${Math.round(val)}%`, bx + sw / 2, y + 14, { align: 'center' });
-  });
+  doc.setFont('helvetica', 'bold'); doc.text('Name:',   c1, row1y);
+  doc.setFont('helvetica', 'normal'); doc.text(s.full_name, c1 + 16, row1y);
+  doc.setFont('helvetica', 'bold'); doc.text('Grade:',  c2, row1y);
+  doc.setFont('helvetica', 'normal'); doc.text(s.grade?.toUpperCase() || 'N/A', c2 + 17, row1y);
+  doc.setFont('helvetica', 'bold'); doc.text('Gender:', c3, row1y);
+  doc.setFont('helvetica', 'normal'); doc.text(s.gender || 'N/A', c3 + 18, row1y);
+
+  doc.setFont('helvetica', 'bold'); doc.text('Email:',  c1, row2y);
+  doc.setFont('helvetica', 'normal'); doc.text(s.email || 'N/A', c1 + 16, row2y);
+  doc.setFont('helvetica', 'bold'); doc.text('Date:',   c2, row2y);
+  doc.setFont('helvetica', 'normal'); doc.text(new Date(s.created_at).toLocaleDateString(), c2 + 17, row2y);
 
   y += 24;
 
+  // ── SCORE STRIP ──────────────────────────────────────────────
+  const scoreItems = [
+    { label: 'OVERALL', val: s.overall_score,     color: [22, 101, 52]  as [number,number,number] },
+    { label: 'MATH',    val: s.math_score,         color: [79, 70, 229]  as [number,number,number] },
+    { label: 'ELA',     val: s.ela_score ?? 0,     color: [5, 150, 105]  as [number,number,number] },
+    { label: 'SCIENCE', val: s.science_score ?? 0, color: [217, 119, 6]  as [number,number,number] },
+  ];
+  const sw = (cW - 9) / 4;
+  scoreItems.forEach(({ label, val, color }, i) => {
+    const bx = margin + i * (sw + 3);
+    doc.setFillColor(249, 250, 251);
+    doc.roundedRect(bx, y, sw, 16, 2, 2, 'F');
+    doc.setDrawColor(...color); doc.setLineWidth(0.7);
+    doc.roundedRect(bx, y, sw, 16, 2, 2, 'S');
+    doc.setTextColor(...color); doc.setFontSize(6); doc.setFont('helvetica', 'bold');
+    doc.text(label, bx + sw / 2, y + 5.5, { align: 'center' });
+    doc.setFontSize(12);
+    doc.text(`${Math.round(val)}%`, bx + sw / 2, y + 13, { align: 'center' });
+  });
+
+  y += 20;
+
   // ── SUBJECT PERFORMANCE OVERVIEW ─────────────────────────────
-  doc.setFontSize(10); doc.setFont('helvetica', 'bold');
+  // Redesigned: 3-column table layout — Subject | Score bar | Comment
+  // Much more compact than stacked boxes
+
+  doc.setFontSize(9); doc.setFont('helvetica', 'bold');
   doc.setTextColor(17, 24, 39);
   doc.text('SUBJECT PERFORMANCE OVERVIEW', margin, y);
-  y += 4;
+  y += 3;
 
-  const subjects: {
+  // light header row
+  doc.setFillColor(240, 253, 244);
+  doc.roundedRect(margin, y, cW, 6, 1, 1, 'F');
+  doc.setTextColor(22, 101, 52); doc.setFontSize(6.5); doc.setFont('helvetica', 'bold');
+  doc.text('SUBJECT', margin + 3, y + 4.2);
+  doc.text('SCORE', margin + 47, y + 4.2);
+  doc.text('PERFORMANCE SUMMARY', margin + 72, y + 4.2);
+  y += 7;
+
+  const subjectRows: {
     name: string; score: number | null;
     key: 'math' | 'ela' | 'science';
     color: [number,number,number]; bg: [number,number,number]
@@ -254,123 +269,145 @@ export const generateRecommendationPDF = (
     { name: 'Science',               score: s.science_score, key: 'science', color: [217, 119, 6],  bg: [255, 251, 235] },
   ];
 
-  subjects.forEach(({ name, score, key, color, bg }) => {
+  const commentColX  = margin + 72;
+  const commentColW  = cW - 72 + margin - margin;  // = cW - 72
+  const rowH = 14; // fixed row height for each subject
+
+  subjectRows.forEach(({ name, score, key, color, bg }) => {
     if (score == null || score === 0) return;
-    const comment      = getSubjectComment(key, score, s.full_name);
-    const commentLines = doc.splitTextToSize(comment, cW - 30);
-    const boxH         = 8 + commentLines.length * 4.5;
 
+    // row background
     doc.setFillColor(...bg);
-    doc.roundedRect(margin, y, cW, boxH, 2, 2, 'F');
-    doc.setDrawColor(...color); doc.setLineWidth(0.5);
-    doc.line(margin, y, margin, y + boxH);
+    doc.roundedRect(margin, y, cW, rowH, 1, 1, 'F');
 
+    // left accent line
     doc.setFillColor(...color);
-    doc.roundedRect(margin + 4, y + 2.5, 22, 7, 1, 1, 'F');
-    doc.setTextColor(255,255,255); doc.setFontSize(7); doc.setFont('helvetica','bold');
-    doc.text(`${Math.round(score)}%`, margin + 15, y + 7.5, { align: 'center' });
+    doc.rect(margin, y, 2, rowH, 'F');
 
-    doc.setTextColor(...color); doc.setFontSize(8); doc.setFont('helvetica','bold');
-    doc.text(name, margin + 30, y + 7.5);
+    // subject name col (col 1) — max ~40mm wide
+    doc.setTextColor(...color); doc.setFontSize(7.5); doc.setFont('helvetica', 'bold');
+    doc.text(name, margin + 4, y + rowH / 2 + 1.5, { maxWidth: 42 });
 
-    doc.setTextColor(55, 65, 81); doc.setFontSize(7.5); doc.setFont('helvetica','normal');
-    doc.text(commentLines, margin + 4, y + 14);
+    // score pill (col 2) — centered in ~22mm
+    doc.setFillColor(...color);
+    doc.roundedRect(margin + 46, y + 3, 20, 8, 2, 2, 'F');
+    doc.setTextColor(255, 255, 255); doc.setFontSize(7.5); doc.setFont('helvetica', 'bold');
+    doc.text(`${Math.round(score)}%`, margin + 56, y + 8.5, { align: 'center' });
 
-    y += boxH + 3;
+    // comment (col 3)
+    const comment = getSubjectComment(key, score, s.full_name);
+    const commentLines = doc.splitTextToSize(comment, cW - 74);
+    doc.setTextColor(55, 65, 81); doc.setFontSize(7); doc.setFont('helvetica', 'normal');
+    // vertically centre the comment lines
+    const textBlockH = commentLines.length * 3.8;
+    const textStartY = y + (rowH - textBlockH) / 2 + 3.5;
+    doc.text(commentLines.slice(0, 3), commentColX, textStartY);
+
+    y += rowH + 2;
   });
 
-  y += 2;
+  y += 3;
 
   // ── LEARNING CATEGORY ────────────────────────────────────────
-  doc.setFontSize(10); doc.setFont('helvetica', 'bold');
+  // Redesigned: single compact row — badge on left, short text on right
+
+  doc.setFontSize(9); doc.setFont('helvetica', 'bold');
   doc.setTextColor(17, 24, 39);
   doc.text('LEARNING CATEGORY', margin, y);
-  y += 4;
+  y += 3;
 
-  const catLines = doc.splitTextToSize(
-    `${firstName} fits well within our ${category.name} category — ${category.description}`,
-    cW - 50
-  );
-  const catH = Math.max(24, 12 + catLines.length * 4.5);
+  // Short category description (1–2 lines max)
+  const shortCatDesc = doc.splitTextToSize(category.description, cW - 52).slice(0, 2);
+  const catBoxH = 16;
 
   doc.setFillColor(240, 253, 244);
-  doc.roundedRect(margin, y, cW, catH, 2, 2, 'F');
+  doc.roundedRect(margin, y, cW, catBoxH, 2, 2, 'F');
+  doc.setDrawColor(...category.color); doc.setLineWidth(0.4);
+  doc.roundedRect(margin, y, cW, catBoxH, 2, 2, 'S');
+
+  // badge
   doc.setFillColor(...category.color);
-  doc.roundedRect(margin + 4, y + 3, 36, 10, 2, 2, 'F');
-  doc.setTextColor(255, 255, 255); doc.setFontSize(7.5); doc.setFont('helvetica', 'bold');
-  doc.text(category.name, margin + 22, y + 9.5, { align: 'center' });
+  doc.roundedRect(margin + 3, y + 3, 40, 10, 2, 2, 'F');
+  doc.setTextColor(255, 255, 255); doc.setFontSize(8); doc.setFont('helvetica', 'bold');
+  doc.text(category.name, margin + 23, y + 9.5, { align: 'center' });
+
+  // text
   doc.setTextColor(30, 60, 30); doc.setFontSize(7.5); doc.setFont('helvetica', 'normal');
-  doc.text(catLines, margin + 44, y + 8);
+  doc.text(
+    `${firstName} fits well within our ${category.name} group. ${shortCatDesc.join(' ')}`,
+    margin + 47, y + 6,
+    { maxWidth: cW - 50 }
+  );
 
-  y += catH + 6;
-
-  if (y > pageH - 80) { doc.addPage(); y = 20; }
+  y += catBoxH + 5;
 
   // ── PROGRAMME RECOMMENDATION ─────────────────────────────────
-  doc.setFontSize(10); doc.setFont('helvetica', 'bold');
+  doc.setFontSize(9); doc.setFont('helvetica', 'bold');
   doc.setTextColor(17, 24, 39);
   doc.text('PROGRAMME RECOMMENDATION', margin, y);
   y += 4;
 
+  // Package name banner
   doc.setFillColor(22, 101, 52);
-  doc.roundedRect(margin, y, cW, 10, 2, 2, 'F');
+  doc.roundedRect(margin, y, cW, 9, 2, 2, 'F');
   doc.setTextColor(255, 255, 255); doc.setFontSize(9); doc.setFont('helvetica', 'bold');
-  doc.text(pkg.name, margin + cW / 2, y + 6.5, { align: 'center' });
-  y += 14;
+  doc.text(pkg.name, margin + cW / 2, y + 6, { align: 'center' });
+  y += 12;
 
+  // Rationale box
   const ratLines = doc.splitTextToSize(pkg.rationale, cW - 8);
+  const ratH = Math.min(ratLines.length, 3) * 4.2 + 7;
   doc.setFillColor(254, 252, 232);
-  doc.roundedRect(margin, y, cW, ratLines.length * 4.5 + 8, 2, 2, 'F');
-  doc.setDrawColor(234, 179, 8); doc.setLineWidth(0.5);
-  doc.line(margin, y, margin, y + ratLines.length * 4.5 + 8);
-  doc.setTextColor(92, 76, 3); doc.setFontSize(7.5); doc.setFont('helvetica', 'normal');
-  doc.text(ratLines, margin + 4, y + 6);
-  y += ratLines.length * 4.5 + 14;
+  doc.roundedRect(margin, y, cW, ratH, 2, 2, 'F');
+  doc.setDrawColor(234, 179, 8); doc.setLineWidth(0.4);
+  doc.line(margin + 1, y + 1, margin + 1, y + ratH - 1);
+  doc.setTextColor(92, 76, 3); doc.setFontSize(8); doc.setFont('helvetica', 'normal');
+  doc.text(ratLines.slice(0, 3), margin + 5, y + 5.5);
+  y += ratH + 5;
 
-  // Session schedule
-  doc.setFontSize(9); doc.setFont('helvetica', 'bold');
+  // Session schedule — compact inline rows
+  doc.setFontSize(8.5); doc.setFont('helvetica', 'bold');
   doc.setTextColor(17, 24, 39);
   doc.text('Session Schedule:', margin, y);
-  y += 5;
+  y += 4;
 
   pkg.hours.forEach(({ subject, hours }) => {
     doc.setFillColor(248, 250, 252);
-    doc.roundedRect(margin, y, cW, 8, 1, 1, 'F');
-    doc.setDrawColor(229, 231, 235); doc.setLineWidth(0.3);
-    doc.roundedRect(margin, y, cW, 8, 1, 1, 'S');
+    doc.roundedRect(margin, y, cW, 7.5, 1, 1, 'F');
+    doc.setDrawColor(229, 231, 235); doc.setLineWidth(0.2);
+    doc.roundedRect(margin, y, cW, 7.5, 1, 1, 'S');
     doc.setTextColor(22, 101, 52); doc.setFontSize(8); doc.setFont('helvetica', 'bold');
-    doc.text(`• ${subject}`, margin + 4, y + 5.5);
+    doc.text(`• ${subject}`, margin + 4, y + 5.2);
     doc.setTextColor(55, 65, 81); doc.setFont('helvetica', 'normal');
-    doc.text(hours, margin + cW - 4, y + 5.5, { align: 'right' });
-    y += 10;
+    doc.text(hours, margin + cW - 3, y + 5.2, { align: 'right' });
+    y += 9;
   });
 
+  // Total row
   doc.setFillColor(22, 101, 52);
-  doc.roundedRect(margin, y, cW, 9, 1, 1, 'F');
+  doc.roundedRect(margin, y, cW, 8, 1, 1, 'F');
   doc.setTextColor(255, 255, 255); doc.setFontSize(8.5); doc.setFont('helvetica', 'bold');
-  doc.text('Total:', margin + 4, y + 6);
-  doc.text(pkg.totalHours, margin + cW - 4, y + 6, { align: 'right' });
-  y += 15;
+  doc.text('Total:', margin + 4, y + 5.5);
+  doc.text(pkg.totalHours, margin + cW - 3, y + 5.5, { align: 'right' });
+  y += 12;
 
   // ── SIGN OFF ─────────────────────────────────────────────────
-  if (y > pageH - 40) { doc.addPage(); y = 20; }
-
-  doc.setFontSize(8.5); doc.setFont('helvetica', 'normal'); doc.setTextColor(55, 65, 81);
+  doc.setFontSize(8); doc.setFont('helvetica', 'normal'); doc.setTextColor(75, 85, 99);
   doc.text('Please do not hesitate to reach out if you have any questions or concerns.', margin, y);
-  y += 6;
+  y += 5;
   doc.text('Best regards,', margin, y); y += 5;
-  doc.setFont('helvetica', 'bold'); doc.setTextColor(22, 101, 52);
+  doc.setFont('helvetica', 'bold'); doc.setTextColor(22, 101, 52); doc.setFontSize(8.5);
   doc.text(instructorName, margin, y); y += 5;
-  doc.setFont('helvetica', 'normal'); doc.setTextColor(107, 114, 128);
+  doc.setFont('helvetica', 'normal'); doc.setTextColor(107, 114, 128); doc.setFontSize(7.5);
   doc.text('Lead Instructor, SmartMathz', margin, y);
 
   // ── FOOTER ───────────────────────────────────────────────────
   doc.setFillColor(22, 101, 52);
-  doc.rect(0, pageH - 12, pageW, 12, 'F');
-  doc.setTextColor(255, 255, 255); doc.setFontSize(7); doc.setFont('helvetica', 'normal');
+  doc.rect(0, pageH - 10, pageW, 10, 'F');
+  doc.setTextColor(255, 255, 255); doc.setFontSize(6.5); doc.setFont('helvetica', 'normal');
   doc.text(
     'CONFIDENTIAL — SmartMathz Evaluation Report  |  www.smartmathz.com',
-    pageW / 2, pageH - 5, { align: 'center' }
+    pageW / 2, pageH - 3.5, { align: 'center' }
   );
 
   doc.save(`SmartMathz_Recommendation_${s.full_name.replace(/\s+/g, '_')}.pdf`);

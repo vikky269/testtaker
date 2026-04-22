@@ -116,9 +116,9 @@ export default function QuizModals({
             <h2 className="text-xl font-bold mb-4">Math Section Complete</h2>
             <p className="mb-4">You&apos;ve finished the Math section. Would you like to continue with ELA?</p>
             <div className="flex justify-end gap-4">
-              <button onClick={onSkipEla} className="px-4 py-2 bg-gray-400 text-white rounded cursor-pointer" disabled>
+              {/* <button onClick={onSkipEla} className="px-4 py-2 bg-gray-400 text-white rounded cursor-pointer" disabled>
                 Skip ELA
-              </button>
+              </button> */}
               <button onClick={onTakeEla} className="px-4 py-2 bg-green-600 text-white rounded cursor-pointer">
                 Take ELA
               </button>

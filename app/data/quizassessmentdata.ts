@@ -1372,7 +1372,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       },
       {
         id: "q9",
-        question: "A store is offering a 25% discount on an item that costs $84. What is the sale price?",
+        question: "A store is offering a 25% discount on an item that costs $84. What is the sales price?",
         options: ["$63.00", "$62.50", "$65.00", "$67.00"],
         correctAnswer: "$63.00",
         solution: "<p><strong>Step 1:</strong> Find 25% of $84.<br>0.25 × 84 = 21.<br><strong>Step 2:</strong> Subtract from original price.<br>84 - 21 = 63.<br><strong>Answer:</strong> $63.00.</p>"

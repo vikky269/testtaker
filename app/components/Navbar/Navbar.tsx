@@ -99,22 +99,6 @@ if (pathname.startsWith('/admin')) return null;
           <Image src="/SmartMathz.png" alt="SmartMathz" width={140} height={48} className="h-9 w-auto object-contain" />
         </Link>
 
-        {/* Desktop nav links */}
-        {/* <div className="hidden md:flex items-center gap-1">
-          {NAV_LINKS.map(({ label, href }) => (
-            <Link
-              key={label}
-              href={href}
-              className="relative px-3 py-1.5 text-sm font-semibold text-gray-600 rounded-lg
-                         hover:text-[#7FB509] hover:bg-green-50 transition-all duration-150
-                         after:absolute after:bottom-0 after:left-3 after:right-3 after:h-0.5
-                         after:bg-[#7FB509] after:scale-x-0 hover:after:scale-x-100
-                         after:transition-transform after:duration-200 after:rounded-full"
-            >
-              {label}
-            </Link>
-          ))}
-        </div> */}
 
         {!isAdmin && (
           <div className="hidden md:flex items-center gap-1">

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { supabase } from '@/lib/supabaseClient';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -29,6 +29,8 @@ export default function Navbar() {
    useEffect(() => setMounted(true), []);
 
    const router = useRouter();
+
+   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
 
 useEffect(() => {
@@ -76,12 +78,31 @@ useEffect(() => {
 }, []);
 
 
-  const handleLogout = async () => {
+ const handleLogout = async () => {
+  try {
     await supabase.auth.signOut();
-    setUser(null); setProfile(null);
-     window.location.href = '/login';
-    // router.replace('/login');
+    setUser(null);
+    setProfile(null);
+    router.replace('/login');
+  } catch (err) {
+    console.error("Logout error:", err);
+  }
+};
+
+useEffect(() => {
+  const handleClickOutside = (event:any) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setShowDropdown(false);
+    }
   };
+
+  document.addEventListener("click", handleClickOutside);
+
+  return () => {
+    document.removeEventListener("click", handleClickOutside);
+  };
+}, []);
+
 
   const initials = user?.email?.charAt(0).toUpperCase() ?? 'U';
 
@@ -122,18 +143,23 @@ if (pathname.startsWith('/admin')) return null;
           {user ? (
             <div
               className="relative"
-              onMouseEnter={() => setShowDropdown(true)}
-              onMouseLeave={() => setShowDropdown(false)}
+              ref={dropdownRef}
             >
               <button className="w-9 h-9 rounded-full bg-[#7FB509] text-white text-sm font-bold
                                  flex items-center justify-center shadow-sm ring-2 ring-white
-                                 hover:ring-[#7FB509] transition-all duration-150 cursor-pointer">
+                                 hover:ring-[#7FB509] transition-all duration-150 cursor-pointer"
+                       onClick={() => setShowDropdown(p => !p)}          
+                                 
+                                 >
                 {initials}
               </button>
 
               {mounted && showDropdown &&  (
                 <div className="absolute right-0 top-11 bg-white rounded-2xl shadow-xl border border-gray-100
-                                py-4 px-5 w-56 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                                py-4 px-5 w-56 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
+                                
+                      //onClick={(e) => e.stopPropagation()}
+                >
                   <p className="font-semibold text-sm text-gray-900 truncate">{profile?.full_name}</p>
                   <p className="text-xs text-gray-400 mt-0.5 truncate">{user.email}</p>
                   {profile?.grade && (

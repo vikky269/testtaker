@@ -563,7 +563,7 @@ export default function ReviewPage() {
       .forEach((k) => localStorage.removeItem(k));
 
     setAnswers({});
-    setTimeout(() => { router.push("/"); }, 100);
+     router.push("/");
   };
 
   const handleDownloadReport = () => {
@@ -586,7 +586,9 @@ export default function ReviewPage() {
       times,
     });
 
+    setTimeout(() => {
     handleFinishReview();
+  }, 800);
   };
 
   // ── Guards ──────────────────────────────────────────────

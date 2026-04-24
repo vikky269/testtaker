@@ -3031,7 +3031,7 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
   },
   {
     id: "12",
-    question: "A system of equations is given below: <br> 2x + 3y = 18, <br>  4x − y = 8. Find x + y.",
+    question: "A system of equations is given below: <br> 2x + 3y = 18, <br>  4x − y = 8. <br> Find x + y.",
     options: ["5", "6", "7", "8"],
     correctAnswer: "7",
     solution: "<p>: From 4x − y = 8, y = 4x − 8. <br> Substitute into 2x + 3(4x − 8) = 18: 14x − 24 = 18, so x = 3. Then y = 4. x + y = 7.</p>"

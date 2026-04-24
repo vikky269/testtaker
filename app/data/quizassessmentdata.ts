@@ -2916,128 +2916,193 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
   },
    {
     grade: "sat",
-    questions: [
-      {
-        id: "q1",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752217874/Screenshot_2025-07-11_080932_v19q6s.png",
-        options: ["NO CHANGE", "pounds", "pounds, however", "pounds, yet"],
-        correctAnswer: "pounds, yet",
-      },
-      {
-        id: "q2",
-        question: "György Buzsáki, the Biggs Professor of Neuroscience at the New York University Grossman School of Medicine, conducted a study of mice brain cells to investigate ______ According to Buzsáki’s research, certain experiences are immediately followed by five to twenty “sharp wave ripples” of neurons that linger in the brain until sleep, during which the ripples are reactivated and consolidated into a lasting memory.Which choice completes the text so that it conforms to the conventions of Standard English?",
-        options: ["how are mammalian experiences converted into permanent memories?", "how are mammalian experiences converted into permanent memories.", "how mammalian experiences are converted into permanent memories?", "how mammalian experiences are converted into permanent memories."],
-        correctAnswer: "how mammalian experiences are converted into permanent memories.",
-      },
-      {
-        id: "q3",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752218267/Screenshot_2025-07-11_081725_mulbao.png",
-        options: ["NO CHANGE", "It ranks", "Those rank", "Theirs rank"],
-        correctAnswer: "It ranks",
-      },
-      {
-        id: "q4",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752218466/Screenshot_2025-07-11_082049_yafz3g.png",
-        options: ["the declaration actually had several intended audiences", "many Haitian people opposed the revolution and the declaration", "aspects of the declaration were modeled on similar documents from other countries.", "the French government may have been surprised by the declaration"],
-        correctAnswer: "the declaration actually had several intended audiences",
-      },
-      {
-        id: "q5",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752218773/Screenshot_2025-07-11_082556_lbjow6.png",
-        options: ["Canada and Australia have similar precipitation levels but very different amounts of freshwater resources per capita.", "Sierra Leone and Brazil have similar precipitation levels and similar amounts of freshwater resources per capita.", "Brazil has the second highest precipitation level and the second highest amount of freshwater resources per capita.", "Sierra Leone and Australia have very similar amounts of freshwater resources per capita but very different precipitation levels."],
-        correctAnswer: "Canada and Australia have similar precipitation levels but very different amounts of freshwater resources per capita.",
-      },
-      {
-        id: "q6",
-        question: "In 2008 a complete set of ancient pessoi (glass game pieces) was uncovered from beneath a paving stone in modern-day Israel. Due to their small size, pessoi were easily misplaced, making a whole set a rare find. This has led some experts to suggest that the set may have been buried intentionally; however, without clear evidence, archaeologists are left to ______ what happened. Which choice completes the text with the most logical and precise word or phrase?",
-        options: ["dismiss", "catalog", "speculate about", "expand on"],
-        correctAnswer: "speculate about",
-      },
-      {
-        id: "q7",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752219798/Screenshot_2025-07-11_084300_ttrdxp.png",
-        options: ["To show Jane’s regret after her outburst against Mrs. Reed", "To portray Jane as a rebellious and angry child who deserves punishment", "To explore Jane’s complex feelings of love and hate towards Mrs. Reed", "To reveal the source of Jane’s resentment toward Mrs. Reed"],
-        correctAnswer: "To show Jane’s regret after her outburst against Mrs. Reed",
-      },
-      {
-        id: "q8",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752220124/Screenshot_2025-07-11_084825_e3h4fo.png",
-        options: ["redress", "exacerbate", "reimburse", "commemorate"],
-        correctAnswer: "exacerbate",
-      },
-      {
-        id: "q9",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752220277/Screenshot_2025-07-11_085103_tse7vi.png",
-        options: ["They may have written about different topics, but Equiano and Sinclair both influenced readers.", "The 1807 Slave Trade Act resulted in part from a book by Equiano, while the 1906 Pure Food and Drug Act resulted in part from a book by Sinclair.", "The Interesting Narrative of the Life of Olaudah Equiano and The Jungle are two works of literature that contributed to new legislation (concerning the slave trade and food safety, respectively).", "Although both are powerful works of literature that contributed to new legislation, Equiano’s book is an autobiography, while Sinclair’s is fictional."],
-        correctAnswer: "Although both are powerful works of literature that contributed to new legislation, Equiano’s book is an autobiography, while Sinclair’s is fictional.",
-      },
-      {
-        id: "q10",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752220623/Screenshot_2025-07-11_085645_kx0fel.png",
-        options: ["Muscari is primarily known for his culinary tastes, as indicated by is favorite restaurant.", "Muscari carries himself with a modest and understated demeanor in public settings.", "Muscari has a deep appreciation for nature.", "Muscari adopts a dramatic and confident presence."],
-        correctAnswer: "Muscari adopts a dramatic and confident presence.",
-      },
-      {
-        id: "q11",
-        question: "The state fair sells food coupons for $2 each and ride coupons for $3 each. If Marlon wants to buy at least 15 coupons and spend no more than $40, what is the largest number of ride coupons he can buy?",
-        options: ["9", "10", "11", "12"],
-        correctAnswer: "10",
-      },
-      {
-        id: "q12",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752322733/Screenshot_2025-07-12_130947_zv2oee.png",
-        options: ["{-2, -6}", "{-2}", "{3}", "There are no solutions to the given equation."],
-        correctAnswer: "{3}",
-      },
-      {
-        id: "q13",
-        question: "The graph of a line in the xy-plane is totally vertical and has a negative x-intercept. Which of the following could represent a line with these conditions?",
-        options: ["x = -5", "y = -4", "y = -x – 2", "x = -4y"],
-        correctAnswer: "x = -5",
-      },
-      {
-        id: "q14",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752323071/Screenshot_2025-07-12_132412_pxjwwj.png",
-        options: ["It would be twice the original force.", "It would be four times the original force", "It would be ½ of the original force.", "It would be ¼ of the original force."],
-        correctAnswer: "It would be ¼ of the original force.",
-      },
-      {
-        id: "q15",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752323255/Screenshot_2025-07-12_132720_qmoogl.png",
-        options: ["<sup>40</sup>&frasl;<sub>188</sub>", "<sup>40</sup>&frasl;<sub>100</sub>", "<sup>60</sup>&frasl;<sub>188</sub>", "<sup>40</sup>&frasl;<sub>78</sub>"],
-        correctAnswer: "<sup>40</sup>&frasl;<sub>78</sub>",
-      },
-      {
-        id: "q16",
-        question: "Triangle ABC has a right angle B. If side AB has a length of 7 units and side BC has a length of 24 units, what is the length in units of side AC?",
-        options: ["25 units", "30 units", "35 units", "40 units"],
-        correctAnswer: "25 units",
-      },
-      {
-        id: "q17",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752323652/Screenshot_2025-07-12_133355_reiroq.png",
-        options: ["a", "b", "c", "d"],
-        correctAnswer: "c",
-      },
-      {
-        id: "q18",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752323826/Screenshot_2025-07-12_133651_tbnz5i.png",
-        options: ["a", "b", "c", "d"],
-        correctAnswer: "d",
-      },
-      {
-        id: "q19",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752324070/Screenshot_2025-07-12_134056_pxr3bt.png",
-        options: ["a", "b", "c", "d"],
-        correctAnswer: "b",
-      },
-      {
-        id: "q20",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1752324183/Screenshot_2025-07-12_134249_dwlkfq.png",
-        options: ["a", "b", "c", "d"],
-        correctAnswer: "a",
-      },
+   questions: [
+  {
+    id: "1",
+    question: "The following text is from a 2022 article on urban planning. <br> Despite the city council's ambitious proposals, the revitalization project remained _______; budget constraints and political disagreements consistently blocked any meaningful progress toward implementation. <br> Which choice completes the text with the most logical and precise word or phrase?",
+    options: ["pragmatic", "moribund", "innovative", "lucrative"],
+    correctAnswer: "moribund",
+    solution: "'Moribund' means stagnant or on the verge of death, which fits a project blocked from progress. 'Pragmatic' and 'innovative' are positive; 'lucrative' means profitable — none fit the contrast with blocked progress."
+  },
+  {
+    id: "2",
+    question: "The following text is adapted from a scientific paper on marine biology. <br> Recent studies on coral reef regeneration have revealed an unexpected ally: parrotfish. By consuming algae that would otherwise smother coral, parrotfish inadvertently create space for new coral polyps to settle. Researchers in the Caribbean observed that reef zones with healthy parrotfish populations recovered from bleaching events up to 40% faster than zones where these fish had been depleted by overfishing. <br> Which choice best states the main idea of the text?",
+    options: [
+      "Overfishing has become the leading cause of coral reef decline in the Caribbean.",
+      "Parrotfish contribute significantly to coral reef recovery by controlling algae growth.",
+      "Coral bleaching events can be completely reversed within a few decades.",
+      "Marine biologists have recently begun studying the diet of parrotfish in detail."
     ],
+    correctAnswer: "Parrotfish contribute significantly to coral reef recovery by controlling algae growth.",
+    solution: ": The text's central claim is that parrotfish aid reef recovery by eating algae. Options A, C, and D introduce ideas not supported as the main point."
+  },
+  {
+    id: "3",
+    question: "The following text is from an essay about technology and education. <br> Proponents of one-to-one laptop programs in schools often point to improved student engagement and access to digital resources. However, a closer examination of longitudinal studies suggests a more complicated picture. While initial enthusiasm among students is common, sustained academic improvement is not consistently documented, and some researchers have raised concerns about attention fragmentation and reduced retention of written material.<br> What is the main purpose of the text?",
+    options: [
+      "To argue that laptops should be banned from classrooms.",
+      "To describe how teachers can integrate technology more effectively.",
+      "To complicate the popular view that classroom laptops straightforwardly benefit learning.",
+      "To celebrate recent innovations in educational technology."
+    ],
+    correctAnswer: "To complicate the popular view that classroom laptops straightforwardly benefit learning.",
+    solution: "<p>The text acknowledges the pro-laptop argument, then introduces research that complicates it — it neither advocates a ban (A) nor celebrates technology (D)."
+  },
+  {
+    id: "4",
+    question: "A student is researching whether increased urban green space improves residents' mental health. The student wants to support the claim that access to parks is associated with measurable psychological benefits. Which finding, if true, would most directly support the student's claim?",
+    options: [
+      "Cities with more parks tend to have higher real-estate values near those parks.",
+      "Residents living within a 10-minute walk of parks reported 28% lower rates of anxiety symptoms in a 2023 longitudinal study.",
+      "Park visitation rates increase during summer months across most major cities.",
+      "Most urban planners agree that green spaces improve the appearance of neighborhoods."
+    ],
+    correctAnswer: "Residents living within a 10-minute walk of parks reported 28% lower rates of anxiety symptoms in a 2023 longitudinal study.",
+    solution: "This directly links park access to a measurable psychological benefit. The other options discuss property values, visitation, or planners' opinions — none directly support mental health claims."
+  },
+  {
+    id: "5",
+    question: "Read the following text. <br>  The Voyager 1 spacecraft, launched in 1977, was originally designed for a five-year mission to study Jupiter and Saturn. _______ more than four decades later, it continues to transmit data from interstellar space, having become the most distant human-made object from Earth. <br> Which transition word or phrase best completes the text?",
+    options: ["For example,", "Remarkably,", "In contrast,", "Similarly,"],
+    correctAnswer: "Remarkably,",
+    solution: "<p>The sentence contrasts the original 5-year plan with the 40+ years of operation — a surprising outcome. <strong> Remarkably </strong> signals that surprise better than the other options."
+  },
+  {
+    id: "6",
+    question: "Which choice completes the text so that it conforms to the conventions of Standard English? <br> The collection of rare manuscripts, along with several early printed books, _______ currently on display at the university library.",
+    options: ["are", "were", "is", "have been"],
+    correctAnswer: "is",
+    solution: "<p>The subject is <strong> collection </strong> (singular). The phrase <strong> along with several early printed books </strong> is a parenthetical modifier and does not affect subject-verb agreement.</p>"
+  },
+  {
+    id: "7",
+    question: "Which choice completes the text so that it conforms to the conventions of Standard English? <br> The archaeologist made an astonishing discovery at the excavation site _______ a bronze helmet dating back nearly 2,500 years.",
+    options: ["site, which was", "site;", "site:", "site"],
+    correctAnswer: "site:",
+    solution: ": A colon correctly introduces an explanation or specification of what the <b>astonishing discovery</b> was. The helmet describes/specifies the discovery.</p>"
+  },
+  {
+    id: "8",
+    question: " Which choice completes the text so that it conforms to the conventions of Standard English? <br>  _______ Maria finally completed her research paper on renewable energy policy.",
+    options: [
+      "Having worked on it for over three months,",
+      "Working on it for over three months,",
+      "After working on it for over three months,",
+      "Three months of hard work,"
+    ],
+    correctAnswer: "After working on it for over three months,",
+    solution: "This clearly modifies 'Maria' with a properly introduced time phrase. Options A and B create awkward or dangling modifiers; D is a sentence fragment."
+  },
+  {
+    id: "9",
+    question: "While researching, a student has taken the following notes: • Amelia Earhart was an American aviator born in 1897. <br> • In 1932, she became the first woman to fly solo across the Atlantic Ocean.<br> • She disappeared in 1937 during an attempted circumnavigation of the globe.<br>• Her disappearance remains one of aviation's greatest unsolved mysteries.The student wants to emphasize the enduring mystery surrounding Earhart. <br> Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    options: [
+      "Amelia Earhart, born in 1897, was an aviator who flew solo across the Atlantic in 1932.",
+      "Although Earhart achieved many firsts in aviation, her 1937 disappearance during a circumnavigation attempt remains one of aviation's greatest unsolved mysteries.",
+      "In 1932, Amelia Earhart became the first woman to fly solo across the Atlantic Ocean.",
+      "Amelia Earhart was an American aviator who attempted to circumnavigate the globe in 1937."
+    ],
+    correctAnswer: "Although Earhart achieved many firsts in aviation, her 1937 disappearance during a circumnavigation attempt remains one of aviation's greatest unsolved mysteries.",
+    solution: "This choice directly emphasizes the mystery (the student's goal) while incorporating her achievements for contrast. Others merely state facts."
+  },
+  {
+    id: "10",
+    question: "The following text is adapted from a novel. <br> Elena checked her watch for the third time in as many minutes. The platform clock confirmed what her wristwatch had been telling her: the train was now 40 minutes late. Around her, other commuters had begun to mutter, some pacing, others tapping furiously at their phones. She thought of the interview she was supposed to attend — the one she had prepared for over three weeks — and felt a tightening in her chest. <br>  Which choice most logically completes the text's implication about Elena?",
+    options: [
+      "She is indifferent to the train's delay.",
+      "She is increasingly anxious about being late to an important appointment.",
+      "She prefers traveling by train over other forms of transportation.",
+      "She has decided to abandon her plans for the day."
+    ],
+    correctAnswer: "She is increasingly anxious about being late to an important appointment.",
+    solution: "<p>Repeatedly checking the time, the physical response ('tightening in her chest'), and mention of the prepared-for interview together imply rising anxiety about the delay."
+  },
+  {
+    id: "11",
+    question: "If 3(x − 4) + 2x = 5x − 12, how many solutions does the equation have?",
+    options: [
+      "No solution",
+      "One solution",
+      "Two solutions",
+      "Infinitely many solutions"
+    ],
+    correctAnswer: "Infinitely many solutions",
+    solution: "<p><strong>Step 1:</strong> Expand both sides.<br>3x − 12 + 2x = 5x − 12.<br><strong>Step 2:</strong> Both sides are equal.<br><strong>Answer:</strong> Infinitely many solutions.</p>"
+  },
+  {
+    id: "12",
+    question: "A system of equations is given below: <br> 2x + 3y = 18, <br>  4x − y = 8. Find x + y.",
+    options: ["5", "6", "7", "8"],
+    correctAnswer: "7",
+    solution: "<p>: From 4x − y = 8, y = 4x − 8. <br> Substitute into 2x + 3(4x − 8) = 18: 14x − 24 = 18, so x = 3. Then y = 4. x + y = 7.</p>"
+  },
+  {
+    id: "13",
+    question: "The function f is defined by f(x) = x² − 6x + 5. What is the minimum value of f(x)?",
+    options: ["−4", "−3", "0", "5"],
+    correctAnswer: "−4",
+    solution: "f(x) = x² − 6x + 5 = (x − 3)² − 4. The vertex is at (3, −4), so the minimum value is −4."
+  },
+  {
+    id: "14",
+    question: "A shirt originally priced at $80 is discounted by 25%. After the discount, a 6% sales tax is applied to the discounted price. What is the final price the customer pays?",
+    options: ["$60.00", "$63.60", "$64.80", "$65.00"],
+    correctAnswer: "$63.60",
+    solution: "<p>Discounted price: 80 × 0.75 = $60. With 6% tax: 60 × 1.06 = $63.60.</p>"
+  },
+  {
+    id: "15",
+    question: ". A right circular cylinder has a radius of 4 cm and a height of 10 cm. What is the volume of the cylinder, in cubic centimeters? (Use π ≈ 3.14.)?",
+    options: ["125.6", "251.2", "502.4", "1004.8"],
+    correctAnswer: "502.4",
+    solution: "<p><strong>Step 1:</strong> Use formula V = πr²h.<br>3.14 × 16 × 10 = 502.4.<br><strong>Answer:</strong> 502.4.</p>"
+  },
+  {
+    id: "16",
+    question: "A bacteria population doubles every 3 hours. If the initial population is 500, which function P(t) gives the population after t hours?",
+    options: [
+      "500 • 2^t",
+      "500 • 2^(t/3)",
+      "500 • 3^(t/2)",
+      "500 + 2t/3"
+    ],
+    correctAnswer: "500 • 2^(t/3)",
+    solution: "<p><strong>Step 1:</strong> Doubling every 3 hours → exponent t/3.<br><strong>Answer:</strong> 500 • 2^(t/3).</p>"
+  },
+  {
+    id: "17",
+    question: "A line in the xy-plane passes through the points (2, −1) and (6, 7). What is the equation of the line in slope-intercept form?",
+    options: [
+      "y = 2x − 5",
+      "y = 2x + 3",
+      "y = (1/2)x − 2",
+      "y = −2x + 3"
+    ],
+    correctAnswer: "y = 2x − 5",
+    solution: "<p>: Slope: (7 − (−1)) / (6 − 2) = 8/4 = 2. Using point (2, −1): −1 = 2(2) + b → b = −5. So y = 2x − 5."
+  },
+  {
+    id: "18",
+    question: "The mean of five numbers is 14. If four of the numbers are 10, 12, 15, and 18, what is the fifth number?",
+    options: ["13", "14", "15", "16"],
+    correctAnswer: "15",
+    solution: "<p><strong>Step 1:</strong> Total = 5 × 14 = 70.<br><strong>Step 2:</strong> Known sum = 55.<br><strong>Step 3:</strong> Missing = 15.<br><strong>Answer:</strong> 15.</p>"
+  },
+  {
+    id: "19",
+    question: "If x² − 10x + 21 = 0 and x > 0, what is one possible value of x?",
+    options: ["3", "7", "3 or 7", "None"],
+    correctAnswer: "3 or 7",
+    solution: "<p><strong>Step 1:</strong> Factor equation.<br>(x − 3)(x − 7) = 0.<br><strong>Answer:</strong> 3 or 7.</p>"
+  },
+  {
+    id: "20",
+    question: "A car travels at a constant speed of 60 miles per hour. How many minutes will it take the car to travel 45 miles?",
+    options: ["30", "45", "60", "75"],
+    correctAnswer: "45",
+    solution: "<p><strong>Step 1:</strong> Time = distance/speed = 45/60 = 0.75 hours.<br><strong>Step 2:</strong> Convert to minutes: 0.75 × 60 = 45.<br><strong>Answer:</strong> 45 minutes.</p>"
+  },
+]
   },
     {
     grade: "ssat",

@@ -319,7 +319,7 @@ export default function QuizBody({
             </div>
 
             {/* Section indicator chips (grade quizzes only) */}
-            {isGrade9Or10 && (
+            {isGrade9Or10 &&  (
               <div className="mt-4 pt-4 border-t border-gray-100">
                 <p className="text-xs font-extrabold uppercase tracking-widest text-gray-400 mb-2">Sections</p>
                 <div className="flex flex-col gap-1.5">
@@ -327,6 +327,32 @@ export default function QuizBody({
                     { key: "math",    label: "Math",    theme: SECTION_THEME.math    },
                     { key: "ela",     label: "ELA",     theme: SECTION_THEME.ela     },
                     { key: "science", label: "Science", theme: SECTION_THEME.science },
+                  ].map(({ key, label, theme: t }) => (
+                    <div
+                      key={key}
+                      className={`flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs font-bold
+                        ${quizSection === key ? `${t.bg} ${t.label} ring-1 ${t.border}` : "text-gray-400"}`}
+                    >
+                      <span className={`w-2 h-2 rounded-full ${quizSection === key ? t.dot : "bg-gray-200"}`} />
+                      {label}
+                      {quizSection === key && <span className="ml-auto text-[10px]">Active</span>}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+
+
+
+
+             {isSat &&  (
+              <div className="mt-4 pt-4 border-t border-gray-100">
+                <p className="text-xs font-extrabold uppercase tracking-widest text-gray-400 mb-2">Sections</p>
+                <div className="flex flex-col gap-1.5">
+                  {[
+                    { key: "ela",    label: "Reading and writing",    theme: SECTION_THEME.math    },
+                    { key: "math",     label: "Math",     theme: SECTION_THEME.ela     },
                   ].map(({ key, label, theme: t }) => (
                     <div
                       key={key}

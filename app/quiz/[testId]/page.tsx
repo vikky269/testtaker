@@ -671,6 +671,9 @@ export default function Quiz() {
     ? quizQuestions.filter((q) => answers[q.question] === (q.correctAnswer || q.answer)).length
     : 0;
 
+console.log("satSection:", satSection, "isSat:", isSat, "normalizedGrade:", normalizedGrade);
+
+
   return (
     <div ref={questionRef}>
       {!submitted ? (

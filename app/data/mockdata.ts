@@ -4,7 +4,7 @@ export interface QuizCardProps {
     title: string;
     level: string;
     category: string;
-    difficulty: string;
+    // difficulty: string;
     time: string;
     questions: number;
     onStart: () => void;
@@ -17,7 +17,7 @@ export interface QuizCardProps {
       title: "STATE TEST",
       level: "",
       category: "Maths",
-      difficulty: "Easy",
+      //difficulty: "Easy",
       time: "20 min",
       questions: 20,
       onStart: () => console.log("Started Math Basics")
@@ -28,7 +28,7 @@ export interface QuizCardProps {
       title: "SSAT",
       level: "Grade 9",
       category: "Maths",
-      difficulty: "Medium",
+      //difficulty: "Medium",
       time: "30 min",
       questions: 15,
       onStart: () => console.log("Started Reading Comprehension")
@@ -39,7 +39,7 @@ export interface QuizCardProps {
       title: "SHAT",
       level: "Grade 8",
       category: "Math",
-      difficulty: "Medium",
+      //difficulty: "Medium",
       time: "25 min",
       questions: 12,
       onStart: () => console.log("Started Science Explorer")
@@ -50,7 +50,7 @@ export interface QuizCardProps {
       title: "ALGEBRA 1 REGENT",
       level: "Grade 9",
       category: "Algebra",
-      difficulty: "Hard",
+      //difficulty: "Hard",
       time: "35 min",
       questions: 18,
       onStart: () => console.log("Started History Quest")
@@ -61,7 +61,7 @@ export interface QuizCardProps {
       title: "ALGEBRA 2 REGENT",
       level: "Grade 8",
       category: "Algebra",
-      difficulty: "Medium",
+      //difficulty: "Medium",
       time: "20 min",
       questions: 14,
       onStart: () => console.log("Started Grammar Check")
@@ -72,7 +72,7 @@ export interface QuizCardProps {
       title: "GEOMETRY REGENT",
       level: "Grade 8",
       category: "Geometry",
-      difficulty: "Hard",
+      //difficulty: "Hard",
       time: "30 min",
       questions: 16,
       onStart: () => console.log("Started Geometry Fun")
@@ -83,7 +83,7 @@ export interface QuizCardProps {
       title: "PSAT",
       level: "Grade 7",
       category: "Math",
-      difficulty: "Medium",
+      //difficulty: "Medium",
       time: "40 min",
       questions: 20,
       onStart: () => console.log("Started Earth Science")
@@ -94,7 +94,7 @@ export interface QuizCardProps {
       title: "NJGPA",
       level: "Grade 8",
       category: "Algebra",
-      difficulty: "Hard",
+     // difficulty: "Hard",
       time: "40 min",
       questions: 20,
       onStart: () => console.log("Started Algebra Intro")
@@ -105,7 +105,7 @@ export interface QuizCardProps {
       title: "AP CALCULUS",
       level: "Grade 3",
       category: "Calculus",
-      difficulty: "Easy",
+     // difficulty: "Easy",
       time: "20 min",
       questions: 10,
       onStart: () => console.log("Started Spelling Bee")
@@ -116,29 +116,29 @@ export interface QuizCardProps {
       title: "AP CALCULUS AB",
       level: "Grade 10",
       category: "Calculus",
-      difficulty: "Medium",
+      //difficulty: "Medium",
       time: "25 min",
       questions: 12,
       onStart: () => console.log("Started World Capitals")
     },
-    {
-        id: "sat",
-      imageSrc: "/sat1.png",
-      title: "SAT",
-      level: "Grade 9",
-      category: "Maths",
-      difficulty: "Hard",
-      time: "45 min",
-      questions: 10,
-      onStart: () => console.log("Started Physics Fundamentals")
-    },
+    // {
+    //     id: "sat",
+    //   imageSrc: "/sat1.png",
+    //   title: "SAT",
+    //   level: "Grade 9",
+    //   category: "Maths",
+    //  // difficulty: "Hard",
+    //   time: "45 min",
+    //   questions: 10,
+    //   onStart: () => console.log("Started Physics Fundamentals")
+    // },
     {
         id: "asvab",
       imageSrc: "/imseven.png",
       title: "ASVAB",
       level: "Grade 6",
       category: "General",
-      difficulty: "Medium",
+     // difficulty: "Medium",
       time: "30 min",
       questions: 15,
       onStart: () => console.log("Started Civics Awareness")
@@ -146,10 +146,10 @@ export interface QuizCardProps {
     {
       id: "quiz-assessment",
       imageSrc: "/imseven.png",
-      title: "QUIZ ASSESSMENT",
+      title: "US QUIZ ASSESSMENT",
       level: "k-12",
       category: "Maths, science and ELA",
-      difficulty: "Medium",
+     // difficulty: "Medium",
       time: "30 min",
       questions: 30,
       onStart: () => console.log("Started Civics Awareness")
@@ -161,7 +161,7 @@ export interface QuizCardProps {
       title: "UK QUIZ ASSESSMENT",
       level: "k-12",
       category: "Maths, Science and ELA",
-      difficulty: "Medium",
+     // difficulty: "Medium",
       time: "20 min",
       questions: 30,
       onStart: () => console.log("Started Civics Awareness")

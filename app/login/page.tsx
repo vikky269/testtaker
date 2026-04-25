@@ -11,6 +11,8 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 
+export const dynamic = "force-dynamic"
+
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
 
 // Floating math symbols for the animated left panel
@@ -62,6 +64,7 @@ export default function LoginPage() {
   const [loading, setLoading]   = useState(false);
   const [mounted, setMounted]   = useState(false);
 
+  
   useEffect(() => { setMounted(true); }, []);
 
   const handleLogin = async () => {

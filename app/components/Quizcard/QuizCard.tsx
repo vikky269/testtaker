@@ -53,7 +53,7 @@ const DIFFICULTY_COLOR: Record<string, string> = {
 };
 
 // ── Quiz Card ────────────────────────────────────────────────
-function QuizCard({ id, imageSrc, title, level, category, difficulty, time, questions }: QuizCardProps) {
+function QuizCard({ id, imageSrc, title, level, category,  time, questions }: QuizCardProps) {
   const [selectedTest, setSelectedTest]     = useState<string | null>(null);
   const [isStateTest, setIsStateTest]       = useState(false);
   const [isQuizAssessment, setIsQuizAssessment] = useState(false);
@@ -107,7 +107,7 @@ function QuizCard({ id, imageSrc, title, level, category, difficulty, time, ques
     }
   };
 
-  const diffCls = DIFFICULTY_COLOR[difficulty] ?? "bg-gray-100 text-gray-600";
+ // const diffCls = DIFFICULTY_COLOR[difficulty] ?? "bg-gray-100 text-gray-600";
 
   return (
     <>
@@ -125,9 +125,9 @@ function QuizCard({ id, imageSrc, title, level, category, difficulty, time, ques
             priority
           />
           {/* Difficulty badge */}
-          <span className={`absolute top-3 right-3 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm ${diffCls}`}>
+          {/* <span className={`absolute top-3 right-3 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm ${diffCls}`}>
             {difficulty}
-          </span>
+          </span> */}
         </div>
 
         {/* Content */}

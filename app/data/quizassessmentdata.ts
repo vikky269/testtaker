@@ -3061,12 +3061,12 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
     id: "16",
     question: "A bacteria population doubles every 3 hours. If the initial population is 500, which function P(t) gives the population after t hours?",
     options: [
-      "500 • 2^t",
-      "500 • 2^(t/3)",
-      "500 • 3^(t/2)",
+      "500 • 2<sup>t</sup>",
+      "500 • 2<sup>(t/3)</sup>",
+      "500 • 3<sup>(t/2)</sup>",
       "500 + 2t/3"
     ],
-    correctAnswer: "500 • 2^(t/3)",
+    correctAnswer: "500 • 2<sup>(t/3)</sup>",
     solution: "<p><strong>Step 1:</strong> Doubling every 3 hours → exponent t/3.<br><strong>Answer:</strong> 500 • 2^(t/3).</p>"
   },
   {

@@ -241,13 +241,13 @@ if (isSat) {
   // Non-SAT: 5 bands — 3 on top row, 2 on bottom to prevent overflow
   // Colors match the band chart: dark green, light green, very light green, yellow, pink
   const row1 = [
-    { range: "95–100%", label: "Excellent Mastery",  color: [22, 101, 52]   as [number,number,number] },
-    { range: "80–94%",  label: "Strong Performance",  color: [144, 238, 144] as [number,number,number] },
-    { range: "61–79%",  label: "Developing Progress", color: [220, 237, 200] as [number,number,number] },
+    { range: "95–100%", label: "Excellent Mastery", category:"Whizzes",  color: [22, 101, 52]   as [number,number,number] },
+    { range: "80–94%",  label: "Strong Performance", category:"Aces",  color: [144, 238, 144] as [number,number,number] },
+    { range: "61–79%",  label: "Developing Progress", category:"Explorers",  color: [220, 237, 200] as [number,number,number] },
   ];
   const row2 = [
-    { range: "31–60%", label: "Steady Progress",             color: [255, 235, 0]   as [number,number,number] },
-    { range: "0–30%",  label: "Foundational Support Needed", color: [255, 105, 180] as [number,number,number] },
+    { range: "31–60%", label: "Steady Progress",   category:"Risers",            color: [255, 235, 0]   as [number,number,number] },
+    { range: "0–30%",  label: "Foundational Support Needed", category:"Adapters",  color: [255, 105, 180] as [number,number,number] },
   ];
 
   const bw3 = (contentW - 4) / 3;

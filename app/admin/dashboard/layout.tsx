@@ -11,13 +11,17 @@ import {
 } from 'react-icons/fa';
 
 const ADMIN_EMAIL = 'info@smartmathz.com';
+import { LayoutDashboard, Users, FileText, ClipboardList, BarChart2 } from 'lucide-react';
 
 const NAV_ITEMS = [
-  { href: '/admin/dashboard',          icon: FaTachometerAlt, label: 'Overview'  },
-  { href: '/admin/dashboard/students', icon: FaUsers,         label: 'Students'  },
-  { href: '/admin/dashboard/results',  icon: FaFileAlt,       label: 'Results'   },
-  { href: '/admin/dashboard/analytics',icon: FaChartBar,      label: 'Analytics' },
+  { href: '/admin/dashboard',                  icon: LayoutDashboard, label: 'Overview'       },
+  { href: '/admin/dashboard/students',         icon: Users,           label: 'Students'       },
+  { href: '/admin/dashboard/results',          icon: FileText,        label: 'Results'        },
+  { href: '/admin/dashboard/subscriptions',    icon: ClipboardList,   label: 'Subscriptions'  },
+  { href: '/admin/dashboard/analytics',        icon: BarChart2,       label: 'Analytics'      },
 ];
+
+
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const router   = useRouter();

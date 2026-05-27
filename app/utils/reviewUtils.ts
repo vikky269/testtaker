@@ -234,7 +234,7 @@ export const LEARNING_CATEGORIES: LearningCategory[] = [
   {
     name: 'EXPLORERS',
     range: '61–79%',
-    description: 'Students who show strong curiosity and engagement in Mathematics, ELA, and Science. They ask thoughtful questions, participate actively, and enjoy exploring ideas beyond the standard curriculum, even if they do not always score at the top.',
+    description: 'Students who show strong curiosity and engagement in Mathematics, ELA, and Science. They ask thoughtful questions, participate actively, and enjoy exploring ideas beyond the standard curriculum. even if they do not always score at the top.',
     color: 'text-blue-800',
     bgColor: 'bg-blue-50',
     badgeColor: '#1e40af',

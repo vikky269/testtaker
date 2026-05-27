@@ -12,9 +12,7 @@ const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
 const NAV_LINKS = [
   { label: 'Home',        href: '/'            },
   { label: 'Learning',    href: '/'            },
-  { label: 'Services',    href: '/'            },
-  { label: 'SM Academy',  href: '/'            },
-  { label: 'Contact Us',  href: '/'            },
+  {label: 'Enroll now',    href:'/subscribe'  },
   { label: 'Leaderboard', href: '/leaderboard' },
 ];
 

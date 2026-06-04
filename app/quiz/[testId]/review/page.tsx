@@ -8,8 +8,9 @@ import { useEffect, useState, useRef } from "react";
 import { supabase } from "@/lib/supabaseClient";
 
 import { formatDuration, getFormattedTimeData } from "@/app/utils/reviewUtils";
-import { generateReport } from "@/app/utils/generateReport";
+import { generateReport, generateReportBase64 } from "@/app/utils/generateReport"; // ← added generateReportBase64
 import SectionBlock from "@/app/components/SectionBlock/SectionBlock";
+import { toast } from "react-hot-toast"; // ← for success feedback
 
 // SAT readiness band (raw correct out of 20)
 function getSatReadinessBand(correctCount: number): {
@@ -25,7 +26,9 @@ function getSatReadinessBand(correctCount: number): {
 
 export default function ReviewPage() {
   const { answers, setAnswers } = useQuiz();
-  const { testId } = useParams();
+ // const { testId } = useParams();
+ const params = useParams();
+ const testId = params.testId as string;
   const searchParams = useSearchParams();
   const router = useRouter();
   const hasSavedRef = useRef(false);
@@ -49,6 +52,7 @@ export default function ReviewPage() {
   const [loading, setLoading]           = useState(true);
   const [elaSkipped, setElaSkipped]     = useState(false);
   const [gender, setGender]             = useState("");
+  const [emailSending, setEmailSending] = useState(false); // ← tracks email status
   const [timeData, setTimeData]         = useState<{
     mathDuration?: number;
     elaDuration?: number;
@@ -137,7 +141,6 @@ export default function ReviewPage() {
     }
 
     if (isSat) {
-      // SAT always shows all 20 questions (10 reading + 10 math)
       setSelectedQuiz(quiz);
     } else if (isGrade9Or10) {
       const localElaScore = searchParams.get("elaScore") ? parseFloat(searchParams.get("elaScore")!) : null;
@@ -202,32 +205,86 @@ export default function ReviewPage() {
       .forEach((k) => localStorage.removeItem(k));
 
     setAnswers({});
-     router.push("/");
+    router.push("/");
   };
 
-  const handleDownloadReport = () => {
+  // ── UPDATED: generates PDF, saves it, then emails it ───────────────────
+  const handleDownloadReport = async () => {
     const mathDuration    = searchParams.get("mathTime")    ? parseInt(searchParams.get("mathTime")!)    : timeData.mathDuration;
     const elaDuration     = searchParams.get("elaTime")     ? parseInt(searchParams.get("elaTime")!)     : timeData.elaDuration;
     const scienceDuration = searchParams.get("scienceTime") ? parseInt(searchParams.get("scienceTime")!) : timeData.scienceDuration;
     const totalDuration   = searchParams.get("totalTime")   ? parseInt(searchParams.get("totalTime")!)   : timeData.totalDuration;
 
-    generateReport({
+    // Build report params (same as before)
+    const reportParams = {
       userName, userEmail, gradeParam, testId,
       score, correctAnswersCount, totalQuestions,
       mathScore, elaScore, scienceScore,
       elaSkipped, isGrade9Or10,
-      // SAT-specific
       isSat,
       satReadingScore,
       satMathScore,
       satCorrectCount,
       mathDuration, elaDuration, scienceDuration, totalDuration,
       times,
-    });
+    };
+
+    // ── Step 1: Save PDF to disk immediately (same as before) ─────────────
+    generateReport(reportParams);
+
+    // ── Step 2: Generate base64 + email to student in background ──────────
+    if (userEmail) {
+      setEmailSending(true);
+      try {
+        const pdfBase64 = generateReportBase64(reportParams);
+
+        const formatSecs = (s: number) => `${Math.floor(s / 60)}m ${Math.floor(s % 60)}s`;
+        const totalTimeSec =
+          (mathDuration    ?? 0) +
+          (elaDuration     ?? 0) +
+          (scienceDuration ?? 0);
+
+        const overallScore = isSat
+          ? (((satReadingScore ?? 0) + (satMathScore ?? 0)) / 2).toFixed(2)
+          : score;
+
+        await fetch(
+          `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/send-result-email`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
+            },
+            body: JSON.stringify({
+              studentName:  userName,
+              studentEmail: userEmail,
+              grade:        gradeParam ?? "",
+              testType:     testId,
+              overallScore,
+              mathScore:    isSat ? satMathScore    : mathScore,
+              elaScore:     isSat ? satReadingScore : elaScore,
+              scienceScore: isSat ? null            : scienceScore,
+              totalTime:    totalTimeSec > 0 ? formatSecs(totalTimeSec) : null,
+              isSat,
+              pdfBase64,
+              pdfFileName: "SmartMathz_Evaluation_Report.pdf",
+            }),
+          }
+        );
+
+        toast.success(`Results emailed to ${userEmail}`, { duration: 5000 });
+      } catch (err) {
+        // Fail silently — PDF already downloaded, email is a bonus
+        console.error("Failed to email result:", err);
+      } finally {
+        setEmailSending(false);
+      }
+    }
 
     setTimeout(() => {
-    handleFinishReview();
-  }, 800);
+      handleFinishReview();
+    }, 800);
   };
 
   // ── Guards ──────────────────────────────────────────────
@@ -238,22 +295,21 @@ export default function ReviewPage() {
     return <p className="text-center text-red-500 mt-10">No review data found for this test.</p>;
 
   // ── Stats strip config ──────────────────────────────────
-  // For SAT: elaTime = reading time, mathTime = math time; no science
   const statsStrip = isSat
     ? [
-        { label: "Score",           val: `${score}%`,   cls: "text-gray-800"    },
-        { label: "Correct",         val: `${correctAnswersCount} / ${totalQuestions}`, cls: "text-gray-800" },
-        { label: "Total Time",      val: times.total,   cls: "text-gray-800"    },
-        { label: "R&W Time",        val: times.ela,     cls: "text-emerald-600" },
-        { label: "Math Time",       val: times.math,    cls: "text-indigo-600"  },
+        { label: "Score",      val: `${score}%`,   cls: "text-gray-800"    },
+        { label: "Correct",    val: `${correctAnswersCount} / ${totalQuestions}`, cls: "text-gray-800" },
+        { label: "Total Time", val: times.total,   cls: "text-gray-800"    },
+        { label: "R&W Time",   val: times.ela,     cls: "text-emerald-600" },
+        { label: "Math Time",  val: times.math,    cls: "text-indigo-600"  },
       ]
     : [
-        { label: "Score",           val: `${score}%`,   cls: "text-gray-800"    },
-        { label: "Correct",         val: `${correctAnswersCount} / ${totalQuestions}`, cls: "text-gray-800" },
-        { label: "Total Time",      val: times.total,   cls: "text-gray-800"    },
-        { label: "Math",            val: times.math,    cls: "text-indigo-600"  },
-        { label: "ELA",             val: elaSkipped ? "Skipped" : times.ela, cls: "text-emerald-600" },
-        { label: "Science",         val: times.science, cls: "text-amber-600"   },
+        { label: "Score",      val: `${score}%`,   cls: "text-gray-800"    },
+        { label: "Correct",    val: `${correctAnswersCount} / ${totalQuestions}`, cls: "text-gray-800" },
+        { label: "Total Time", val: times.total,   cls: "text-gray-800"    },
+        { label: "Math",       val: times.math,    cls: "text-indigo-600"  },
+        { label: "ELA",        val: elaSkipped ? "Skipped" : times.ela, cls: "text-emerald-600" },
+        { label: "Science",    val: times.science, cls: "text-amber-600"   },
       ];
 
   // ── SAT section blocks ──────────────────────────────────
@@ -304,12 +360,10 @@ export default function ReviewPage() {
 
         {/* ── SCORE CARDS ── */}
         {isSat ? (
-          /* SAT: two section score cards */
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            {/* Reading & Writing */}
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 text-center hover:-translate-y-1 transition-transform duration-200 cursor-pointer">
               <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-xl mx-auto mb-3">📖</div>
-              <p className="text-xs font-extrabold uppercase tracking-widest text-emerald-400 mb-1">Mathematics</p>
+              <p className="text-xs font-extrabold uppercase tracking-widest text-emerald-400 mb-1">Reading & Writing</p>
               <p className="text-4xl font-extrabold text-emerald-600 leading-none">{satReadingScore ?? "—"}%</p>
               {satReadingScore != null && (
                 <div className="mt-3 h-1.5 rounded-full bg-emerald-100 overflow-hidden">
@@ -317,10 +371,9 @@ export default function ReviewPage() {
                 </div>
               )}
             </div>
-            {/* SAT Math */}
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 text-center hover:-translate-y-1 transition-transform duration-200 cursor-pointer">
               <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-xl mx-auto mb-3">🔢</div>
-              <p className="text-xs font-extrabold uppercase tracking-widest text-indigo-400 mb-1">Reading and writing</p>
+              <p className="text-xs font-extrabold uppercase tracking-widest text-indigo-400 mb-1">Mathematics</p>
               <p className="text-4xl font-extrabold text-indigo-600 leading-none">{satMathScore ?? "—"}%</p>
               {satMathScore != null && (
                 <div className="mt-3 h-1.5 rounded-full bg-indigo-100 overflow-hidden">
@@ -331,7 +384,6 @@ export default function ReviewPage() {
           </div>
 
         ) : isGrade9Or10 ? (
-          /* Grade 1–10: three section score cards (unchanged) */
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 text-center hover:-translate-y-1 transition-transform duration-200 cursor-pointer">
               <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-xl mx-auto mb-3">🔢</div>
@@ -366,7 +418,6 @@ export default function ReviewPage() {
           </div>
 
         ) : (
-          /* Non-grade overall score (unchanged) */
           <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 text-center mb-8">
             <p className="text-xs font-extrabold uppercase tracking-widest text-indigo-400 mb-2">Overall Score</p>
             <p className="text-6xl font-extrabold text-indigo-600">{score}%</p>
@@ -376,7 +427,7 @@ export default function ReviewPage() {
           </div>
         )}
 
-        {/* ── SAT READINESS BAND (review page) ── */}
+        {/* ── SAT READINESS BAND ── */}
         {isSat && satBand && (
           <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 mb-8 text-center">
             <p className="text-xs font-extrabold uppercase tracking-widest text-gray-400 mb-1">
@@ -413,10 +464,23 @@ export default function ReviewPage() {
         {/* ── FOOTER BUTTONS ── */}
         <div className="flex justify-center gap-4 flex-wrap mt-4">
           <button
-            className="px-6 py-3 bg-white border border-gray-200 hover:border-indigo-300 text-gray-700 font-bold rounded-full shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
             onClick={handleDownloadReport}
+            disabled={emailSending}
+            className="px-6 py-3 bg-white border border-gray-200 hover:border-indigo-300 text-gray-700
+                       font-bold rounded-full shadow-sm hover:shadow-md transition-all duration-200
+                       cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-2"
           >
-            📄 Download Report
+            {emailSending ? (
+              <>
+                <svg className="animate-spin w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                </svg>
+                Sending...
+              </>
+            ) : (
+              <>📄 Download Report</>
+            )}
           </button>
         </div>
 

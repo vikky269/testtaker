@@ -209,83 +209,162 @@ export default function ReviewPage() {
   };
 
   // ── UPDATED: generates PDF, saves it, then emails it ───────────────────
-  const handleDownloadReport = async () => {
-    const mathDuration    = searchParams.get("mathTime")    ? parseInt(searchParams.get("mathTime")!)    : timeData.mathDuration;
-    const elaDuration     = searchParams.get("elaTime")     ? parseInt(searchParams.get("elaTime")!)     : timeData.elaDuration;
-    const scienceDuration = searchParams.get("scienceTime") ? parseInt(searchParams.get("scienceTime")!) : timeData.scienceDuration;
-    const totalDuration   = searchParams.get("totalTime")   ? parseInt(searchParams.get("totalTime")!)   : timeData.totalDuration;
+ 
+ 
+  // const handleDownloadReport = async () => {
+  //   const mathDuration    = searchParams.get("mathTime")    ? parseInt(searchParams.get("mathTime")!)    : timeData.mathDuration;
+  //   const elaDuration     = searchParams.get("elaTime")     ? parseInt(searchParams.get("elaTime")!)     : timeData.elaDuration;
+  //   const scienceDuration = searchParams.get("scienceTime") ? parseInt(searchParams.get("scienceTime")!) : timeData.scienceDuration;
+  //   const totalDuration   = searchParams.get("totalTime")   ? parseInt(searchParams.get("totalTime")!)   : timeData.totalDuration;
 
-    // Build report params (same as before)
-    const reportParams = {
-      userName, userEmail, gradeParam, testId,
-      score, correctAnswersCount, totalQuestions,
-      mathScore, elaScore, scienceScore,
-      elaSkipped, isGrade9Or10,
-      isSat,
-      satReadingScore,
-      satMathScore,
-      satCorrectCount,
-      mathDuration, elaDuration, scienceDuration, totalDuration,
-      times,
-    };
+  //   // Build report params (same as before)
+  //   const reportParams = {
+  //     userName, userEmail, gradeParam, testId,
+  //     score, correctAnswersCount, totalQuestions,
+  //     mathScore, elaScore, scienceScore,
+  //     elaSkipped, isGrade9Or10,
+  //     isSat,
+  //     satReadingScore,
+  //     satMathScore,
+  //     satCorrectCount,
+  //     mathDuration, elaDuration, scienceDuration, totalDuration,
+  //     times,
+  //   };
 
-    // ── Step 1: Save PDF to disk immediately (same as before) ─────────────
-    generateReport(reportParams);
+  //   // ── Step 1: Save PDF to disk immediately (same as before) ─────────────
+  //   generateReport(reportParams);
 
-    // ── Step 2: Generate base64 + email to student in background ──────────
-    if (userEmail) {
-      setEmailSending(true);
-      try {
-        const pdfBase64 = generateReportBase64(reportParams);
+  //   // ── Step 2: Generate base64 + email to student in background ──────────
+  //   if (userEmail) {
+  //     setEmailSending(true);
+  //     try {
+  //       const pdfBase64 = generateReportBase64(reportParams);
 
-        const formatSecs = (s: number) => `${Math.floor(s / 60)}m ${Math.floor(s % 60)}s`;
-        const totalTimeSec =
-          (mathDuration    ?? 0) +
-          (elaDuration     ?? 0) +
-          (scienceDuration ?? 0);
+  //       const formatSecs = (s: number) => `${Math.floor(s / 60)}m ${Math.floor(s % 60)}s`;
+  //       const totalTimeSec =
+  //         (mathDuration    ?? 0) +
+  //         (elaDuration     ?? 0) +
+  //         (scienceDuration ?? 0);
 
-        const overallScore = isSat
-          ? (((satReadingScore ?? 0) + (satMathScore ?? 0)) / 2).toFixed(2)
-          : score;
+  //       const overallScore = isSat
+  //         ? (((satReadingScore ?? 0) + (satMathScore ?? 0)) / 2).toFixed(2)
+  //         : score;
 
-        await fetch(
-          `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/send-result-email`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
-            },
-            body: JSON.stringify({
-              studentName:  userName,
-              studentEmail: userEmail,
-              grade:        gradeParam ?? "",
-              testType:     testId,
-              overallScore,
-              mathScore:    isSat ? satMathScore    : mathScore,
-              elaScore:     isSat ? satReadingScore : elaScore,
-              scienceScore: isSat ? null            : scienceScore,
-              totalTime:    totalTimeSec > 0 ? formatSecs(totalTimeSec) : null,
-              isSat,
-              pdfBase64,
-              pdfFileName: "SmartMathz_Evaluation_Report.pdf",
-            }),
-          }
-        );
+  //       await fetch(
+  //         `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/send-result-email`,
+  //         {
+  //           method: "POST",
+  //           headers: {
+  //             "Content-Type": "application/json",
+  //             Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
+  //           },
+  //           body: JSON.stringify({
+  //             studentName:  userName,
+  //             studentEmail: userEmail,
+  //             grade:        gradeParam ?? "",
+  //             testType:     testId,
+  //             overallScore,
+  //             mathScore:    isSat ? satMathScore    : mathScore,
+  //             elaScore:     isSat ? satReadingScore : elaScore,
+  //             scienceScore: isSat ? null            : scienceScore,
+  //             totalTime:    totalTimeSec > 0 ? formatSecs(totalTimeSec) : null,
+  //             isSat,
+  //             pdfBase64,
+  //             pdfFileName: "SmartMathz_Evaluation_Report.pdf",
+  //           }),
+  //         }
+  //       );
 
-        toast.success(`Results emailed to ${userEmail}`, { duration: 5000 });
-      } catch (err) {
-        // Fail silently — PDF already downloaded, email is a bonus
-        console.error("Failed to email result:", err);
-      } finally {
-        setEmailSending(false);
-      }
-    }
+  //       toast.success(`Results emailed to ${userEmail}`, { duration: 5000 });
+  //     } catch (err) {
+  //       // Fail silently — PDF already downloaded, email is a bonus
+  //       console.error("Failed to email result:", err);
+  //     } finally {
+  //       setEmailSending(false);
+  //     }
+  //   }
 
-    setTimeout(() => {
-      handleFinishReview();
-    }, 800);
+  //   setTimeout(() => {
+  //     handleFinishReview();
+  //   }, 800);
+  // };
+
+
+
+
+
+
+  const handleDownloadReport = () => {
+  const mathDuration    = searchParams.get("mathTime")    ? parseInt(searchParams.get("mathTime")!)    : timeData.mathDuration;
+  const elaDuration     = searchParams.get("elaTime")     ? parseInt(searchParams.get("elaTime")!)     : timeData.elaDuration;
+  const scienceDuration = searchParams.get("scienceTime") ? parseInt(searchParams.get("scienceTime")!) : timeData.scienceDuration;
+  const totalDuration   = searchParams.get("totalTime")   ? parseInt(searchParams.get("totalTime")!)   : timeData.totalDuration;
+
+  const reportParams = {
+    userName, userEmail, gradeParam, testId,
+    score, correctAnswersCount, totalQuestions,
+    mathScore, elaScore, scienceScore,
+    elaSkipped, isGrade9Or10,
+    isSat,
+    satReadingScore,
+    satMathScore,
+    satCorrectCount,
+    mathDuration, elaDuration, scienceDuration, totalDuration,
+    times,
   };
+
+  // ── Step 1: Save PDF to disk immediately ──────────────────────────────
+  generateReport(reportParams);
+
+  // ── Step 2: Email — fire in background, never blocks auth or navigation
+  if (userEmail) {
+    const pdfBase64 = generateReportBase64(reportParams);
+
+    const formatSecs  = (s: number) => `${Math.floor(s / 60)}m ${Math.floor(s % 60)}s`;
+    const totalTimeSec = (mathDuration ?? 0) + (elaDuration ?? 0) + (scienceDuration ?? 0);
+    const overallScore = isSat
+      ? (((satReadingScore ?? 0) + (satMathScore ?? 0)) / 2).toFixed(2)
+      : score;
+
+    Promise.race([
+      fetch(
+        `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/send-result-email`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
+          },
+          body: JSON.stringify({
+            studentName:  userName,
+            studentEmail: userEmail,
+            grade:        gradeParam ?? "",
+            testType:     testId,
+            overallScore,
+            mathScore:    isSat ? satMathScore    : mathScore,
+            elaScore:     isSat ? satReadingScore : elaScore,
+            scienceScore: isSat ? null            : scienceScore,
+            totalTime:    totalTimeSec > 0 ? formatSecs(totalTimeSec) : null,
+            isSat,
+            pdfBase64,
+            pdfFileName: "SmartMathz_Evaluation_Report.pdf",
+          }),
+        }
+      ),
+      // Abort after 4 seconds no matter what — never hangs auth
+      new Promise((_, reject) =>
+        setTimeout(() => reject(new Error("timeout")), 4000)
+      ),
+    ]).catch(() => {
+      // Silently ignore — PDF already downloaded, email is a bonus
+    });
+  }
+
+  // ── Step 3: Navigate home — no waiting for email ───────────────────────
+  setTimeout(() => {
+    handleFinishReview();
+  }, 300);
+};
 
   // ── Guards ──────────────────────────────────────────────
   if (loading && selectedQuiz.length === 0)

@@ -86,6 +86,7 @@ interface RecommendationParams {
   selectedPackage: PackageOption;
   customSubjects?: CustomPackageSubject[];
   instructorName?: string;
+  instructorComment?:string;
   testDate?:       string;
   computedPrice?:  ComputedPrice;
 }
@@ -95,7 +96,7 @@ export const generateRecommendationPDF = (params: RecommendationParams) => {
     studentName, studentEmail, grade, gender,
     mathScore, elaScore, scienceScore, overallScore,
     selectedPackage, customSubjects = [], instructorName, testDate,
-    computedPrice,
+    computedPrice, instructorComment,
   } = params;
 
   const doc   = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
@@ -310,7 +311,8 @@ export const generateRecommendationPDF = (params: RecommendationParams) => {
       head: [['', 'Standard Rate', 'SmartMathz Offer', '']],
       body: [
         ['Number of Sessions', `${computedPrice.sessions}`,                             `${computedPrice.sessions}`,                ''],
-        ['Hourly Rate',        `$${computedPrice.standardHourlyRate.toFixed(2)}`,       `$${computedPrice.smHourlyRate.toFixed(2)}`, '-$20'],
+        // ['Hourly Rate',        `$${computedPrice.standardHourlyRate.toFixed(2)}`,       `$${computedPrice.smHourlyRate.toFixed(2)}`, '-$20'],
+        ['Hourly Rate', `$${computedPrice.standardHourlyRate.toFixed(2)}`, `$${computedPrice.smHourlyRate.toFixed(2)}`, `$${(computedPrice.standardHourlyRate - computedPrice.smHourlyRate).toFixed(0)} off`],
         ['Monthly Fee',        `$${computedPrice.standardMonthlyFee}`,                  `$${computedPrice.smMonthlyFee}`,           ''],
         ['Bi-Weekly',          `$${(computedPrice.standardMonthlyFee / 2).toFixed(0)}`, `$${computedPrice.smBiweekly.toFixed(1)}`,  ''],
       ],
@@ -329,7 +331,7 @@ export const generateRecommendationPDF = (params: RecommendationParams) => {
       },
       didParseCell: (d) => {
         if (d.section === 'head' && d.column.index === 2) d.cell.styles.fillColor = [22, 101, 52];
-        if (d.section === 'body' && d.column.index === 3 && d.cell.raw === '-$20') {
+        if (d.section === 'body' && d.column.index === 3 && d.cell.raw !== '') {
           d.cell.styles.textColor = [153, 27, 27];
           d.cell.styles.fontStyle = 'bold';
         }
@@ -369,33 +371,84 @@ export const generateRecommendationPDF = (params: RecommendationParams) => {
     y += 24; 
   }
 
-  // ── NOTE BOX ──────────────────────────────────────────────────────────────
+  // // ── NOTE BOX ──────────────────────────────────────────────────────────────
+  // doc.setFillColor(254, 252, 232);
+  // doc.roundedRect(M, y, cW, 14, 2, 2, 'F');
+  // doc.setDrawColor(234, 179, 8);
+  // doc.roundedRect(M, y, cW, 14, 2, 2, 'S');
+  // doc.setTextColor(92, 76, 3); doc.setFontSize(8); doc.setFont('helvetica', 'normal');
+  // const noteText = `This recommendation was prepared by the SmartMathz academic team based on ${pronoun.pos} assessment results. ${pronoun.sub} is encouraged to attend all scheduled sessions consistently for optimal improvement.`;
+  // doc.text(doc.splitTextToSize(noteText, cW - 8).slice(0, 3), M + 4, y + 5.5);
+
+  // y += 20;
+
+  // // ── SIGN-OFF ──────────────────────────────────────────────────────────────
+  // doc.setTextColor(31, 41, 55); doc.setFontSize(8.5); doc.setFont('helvetica', 'bold');
+  // doc.text('If you have any questions do not hesitate to reach out.', M, y);
+
+  // y += 6;
+  // doc.setFont('helvetica', 'normal'); doc.setFontSize(8.5);
+  // doc.text('Best regards,', M, y);
+
+  // y += 6;
+  // const sigName = instructorName?.trim() || 'SmartMathz Team';
+  // doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(17, 24, 39);
+  // doc.text(sigName, M, y);
+
+  // y += 5.5;
+  // doc.setFont('helvetica', 'normal'); doc.setFontSize(8); doc.setTextColor(107, 114, 128);
+  // doc.text('Lead Instructor, SmartMathz', M, y);
+
+ if (instructorComment?.trim()) {
+    doc.setFontSize(7); doc.setFont('helvetica', 'bold'); doc.setTextColor(17, 24, 39);
+    doc.text("INSTRUCTOR'S COMMENT", M, y); y += 3;
+ 
+    // Calculate box height based on text length
+    const commentLines = doc.splitTextToSize(instructorComment.trim(), cW - 8);
+    const visibleLines = commentLines.slice(0, 6); // max 6 lines
+    const commentBoxH  = 8 + visibleLines.length * 4.5;
+ 
+    doc.setFillColor(248, 250, 252);
+    doc.roundedRect(M, y, cW, commentBoxH, 2, 2, 'F');
+    doc.setDrawColor(209, 213, 219);
+    doc.roundedRect(M, y, cW, commentBoxH, 2, 2, 'S');
+ 
+    doc.setTextColor(31, 41, 55); doc.setFontSize(7.5); doc.setFont('helvetica', 'normal');
+    doc.text(visibleLines, M + 4, y + 6);
+ 
+    y += commentBoxH + 5;
+  }
+ 
+  // ── CLOSING NOTE ─────────────────────────────────────────────────────────
   doc.setFillColor(254, 252, 232);
-  doc.roundedRect(M, y, cW, 14, 2, 2, 'F');
+  doc.roundedRect(M, y, cW, 11, 1.5, 1.5, 'F');
   doc.setDrawColor(234, 179, 8);
-  doc.roundedRect(M, y, cW, 14, 2, 2, 'S');
-  doc.setTextColor(92, 76, 3); doc.setFontSize(8); doc.setFont('helvetica', 'normal');
+  doc.roundedRect(M, y, cW, 11, 1.5, 1.5, 'S');
+  doc.setTextColor(92, 76, 3); doc.setFontSize(6.5); doc.setFont('helvetica', 'normal');
   const noteText = `This recommendation was prepared by the SmartMathz academic team based on ${pronoun.pos} assessment results. ${pronoun.sub} is encouraged to attend all scheduled sessions consistently for optimal improvement.`;
-  doc.text(doc.splitTextToSize(noteText, cW - 8).slice(0, 3), M + 4, y + 5.5);
-
-  y += 20;
-
+  doc.text(doc.splitTextToSize(noteText, cW - 6).slice(0, 3), M + 3, y + 4.5);
+  y += 14;
+ 
   // ── SIGN-OFF ──────────────────────────────────────────────────────────────
   doc.setTextColor(31, 41, 55); doc.setFontSize(8.5); doc.setFont('helvetica', 'bold');
   doc.text('If you have any questions do not hesitate to reach out.', M, y);
-
   y += 6;
   doc.setFont('helvetica', 'normal'); doc.setFontSize(8.5);
   doc.text('Best regards,', M, y);
-
   y += 6;
   const sigName = instructorName?.trim() || 'SmartMathz Team';
   doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(17, 24, 39);
   doc.text(sigName, M, y);
-
   y += 5.5;
   doc.setFont('helvetica', 'normal'); doc.setFontSize(8); doc.setTextColor(107, 114, 128);
   doc.text('Lead Instructor, SmartMathz', M, y);
+ 
+
+
+
+
+
+
 
   // ── FOOTER ────────────────────────────────────────────────────────────────
   doc.setFillColor(22, 101, 52);

@@ -207,6 +207,7 @@ export default function ResultsPage() {
   const [instructorName, setInstructorName]   = useState('');
   const [newSubjectName, setNewSubjectName]   = useState(CUSTOM_PACKAGE_SUBJECTS[0].name);
   const [newSubjectHours, setNewSubjectHours] = useState(1);
+  const [instructorComment, setInstructorComment] = useState('');
 
   // Pricing adjusters
   const [adjuster, setAdjuster]   = useState<number>(SM_ADJUSTER); // $ off per hour, default $20
@@ -284,6 +285,7 @@ export default function ResultsPage() {
     setInstructorName('');
     setCustomStdRate(50);
     setAdjuster(SM_ADJUSTER);
+     setInstructorComment('');
     // Set default sessions for suggested package
     setSessions(
       suggested.id === 'I'   ? 8  :
@@ -328,6 +330,7 @@ export default function ResultsPage() {
       selectedPackage,
       customSubjects: selectedPackage.id === 'custom' ? customSubjects : [],
       instructorName,
+      instructorComment,
       computedPrice:  computedPrice ?? undefined,
     });
   };
@@ -658,6 +661,24 @@ export default function ResultsPage() {
                     </div>
                   </div>
                 )}
+
+
+
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                    Instructor's Comment <span className="text-gray-400 font-normal text-xs">(optional)</span>
+                  </label>
+                  <textarea
+                    value={instructorComment}
+                    onChange={e => setInstructorComment(e.target.value)}
+                    placeholder="Add any personalised notes or comments for the student and parent..."
+                    rows={3}
+                    className="w-full px-4 py-2.5 text-sm border border-gray-200 rounded-xl
+               focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500
+               resize-none placeholder:text-gray-400"
+                  />
+                </div>
 
                 {/* Instructor name */}
                 <div>

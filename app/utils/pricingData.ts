@@ -4,7 +4,7 @@
 // ADAPTERS has higher rates; RISERS/EXPLORERS/ACES/WHIZZES share the lower table
 // SmartMathz adjuster = -$20/hr from standard hourly rate
 
-export const SM_ADJUSTER = 20;
+export const SM_ADJUSTER = 0;
 
 export interface PricePoint {
   monthlyHours: number;

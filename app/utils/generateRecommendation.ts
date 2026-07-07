@@ -465,7 +465,7 @@ function getSubjectComment(
   doc.text('Lead Instructor, SmartMathz', M, y);
 
   // ── FOOTER — drawn on every page ──────────────────────────────────────────
-  const pageCount = doc.getNumberOfPages();
+  const pageCount = (doc as any).getNumberOfPages();
   for (let p = 1; p <= pageCount; p++) {
     doc.setPage(p);
     doc.setFillColor(22, 101, 52);

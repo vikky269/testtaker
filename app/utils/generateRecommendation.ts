@@ -52,8 +52,9 @@ export const CUSTOM_PACKAGE_SUBJECTS = [
   { name: 'English Language Arts', defaultHours: 1 },
   { name: 'Science',               defaultHours: 1 },
   { name: 'Coding',                defaultHours: 1 },
-  { name: 'Virtual Library',       defaultHours: 1 },
-  {name: "Others",                 defaultHours: 1}
+  { name: 'Virtual Library',       defaultHours: 0.5 },
+  { name: 'Algebra',               defaultHours: 1 },
+  { name: 'Geometry',              defaultHours: 1 },
 ];
 
 export const getSuggestedPackage = (scores: {
@@ -85,18 +86,20 @@ interface RecommendationParams {
   overallScore:    number;
   selectedPackage: PackageOption;
   customSubjects?: CustomPackageSubject[];
-  instructorName?: string;
-  instructorComment?:string;
-  testDate?:       string;
-  computedPrice?:  ComputedPrice;
+  instructorName?:    string;
+  instructorComment?: string;
+  testDate?:          string;
+  computedPrice?:     ComputedPrice;
+  defaultSessions?:   number;
+  times?: { math?: string; ela?: string; science?: string; total?: string };
 }
 
 export const generateRecommendationPDF = (params: RecommendationParams) => {
   const {
     studentName, studentEmail, grade, gender,
     mathScore, elaScore, scienceScore, overallScore,
-    selectedPackage, customSubjects = [], instructorName, testDate,
-    computedPrice, instructorComment,
+    selectedPackage, customSubjects = [], instructorName, instructorComment,
+    testDate, computedPrice, defaultSessions,
   } = params;
 
   const doc   = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
@@ -131,7 +134,7 @@ export const generateRecommendationPDF = (params: RecommendationParams) => {
   doc.setFontSize(13); doc.setFont('helvetica', 'bold');
   doc.text('SmartMathz', M + 27, 14);
   doc.setFontSize(8.5); doc.setFont('helvetica', 'normal');
-  doc.text('Personalised Programme Recommendation', M + 27, 21);
+  doc.text('Personalized Programme Recommendation', M + 27, 21);
   doc.setFontSize(8);
   doc.text(`Date: ${dateStr}`, pageW - M, 14, { align: 'right' });
 
@@ -158,106 +161,114 @@ export const generateRecommendationPDF = (params: RecommendationParams) => {
     doc.setFont('helvetica', 'normal'); doc.text(studentEmail, c1 + 17, y + 18.5);
   }
 
-  y += 26;
-
-  // ── SCORE STRIP ───────────────────────────────────────────────────────────
-  doc.setFillColor(249, 250, 251);
-  doc.roundedRect(M, y, cW, 16, 2, 2, 'F');
-  doc.setDrawColor(229, 231, 235);
-  doc.roundedRect(M, y, cW, 16, 2, 2, 'S');
-
-  const scoreItems = [
-    { label: 'OVERALL', val: `${overallScore.toFixed(0)}%`, color: category.pdfTextColor },
-    { label: 'MATH',    val: mathScore    != null ? `${mathScore.toFixed(0)}%`    : '—', color: [31,41,55] as [number,number,number] },
-    { label: 'ELA',     val: elaScore     != null ? `${elaScore.toFixed(0)}%`     : '—', color: [31,41,55] as [number,number,number] },
-    { label: 'SCIENCE', val: scienceScore != null ? `${scienceScore.toFixed(0)}%` : '—', color: [31,41,55] as [number,number,number] },
-  ];
-  const sw = cW / scoreItems.length;
-  scoreItems.forEach((item, i) => {
-    const cx = M + sw * i + sw / 2;
-    doc.setTextColor(107, 114, 128); doc.setFontSize(6.5); doc.setFont('helvetica', 'normal');
-    doc.text(item.label, cx, y + 5, { align: 'center' });
-    doc.setTextColor(...item.color); doc.setFontSize(11); doc.setFont('helvetica', 'bold');
-    doc.text(item.val, cx, y + 12.5, { align: 'center' });
-  });
-
   y += 22;
 
-  // ── SUBJECT PERFORMANCE ───────────────────────────────────────────────────
-  doc.setFontSize(8.5); doc.setFont('helvetica', 'bold'); doc.setTextColor(17, 24, 39);
-  doc.text('SUBJECT PERFORMANCE', M, y);
-  y += 3;
+  // ── SCORE + TIME CARDS — colourful 4-column layout ────────────────────────
+  const fmtSec = (s?: string) => s && s !== '—' ? s : '—';
+  const t = params.times;
 
-  const subjectRows: any[] = [];
-  if (mathScore    != null) subjectRows.push(['Mathematics',           `${mathScore.toFixed(0)}%`,     getSubjectComment('math',    mathScore,    pronoun)]);
-  if (elaScore     != null) subjectRows.push(['English Language Arts', `${elaScore.toFixed(0)}%`,     getSubjectComment('ela',     elaScore,     pronoun)]);
-  if (scienceScore != null) subjectRows.push(['Science',               `${scienceScore.toFixed(0)}%`, getSubjectComment('science', scienceScore, pronoun)]);
+const scoreColor = (score: number | null): [number, number, number] => {
+  if (score === null) return [100, 100, 100];
+  if (score >= 95) return [22, 101, 52];
+  if (score >= 80) return [144, 238, 144];
+  if (score >= 61) return [220, 237, 200];
+  if (score >= 31) return [255, 235, 0];
+  return [255, 105, 180];
+};
 
-  autoTable(doc, {
-    startY: y,
-    head: [['Subject', 'Score', 'Comment']],
-    body: subjectRows,
-    theme: 'plain',
-    headStyles: {
-      fillColor: [22, 101, 52], textColor: [255,255,255],
-      fontSize: 8.5, fontStyle: 'bold', cellPadding: 3,
-    },
-    bodyStyles: { fontSize: 8.5, cellPadding: 3 },
-    alternateRowStyles: { fillColor: [240, 253, 244] },
-    columnStyles: {
-      0: { fontStyle: 'bold', cellWidth: 44 },
-      1: { halign: 'center', cellWidth: 15 },
-      2: { cellWidth: cW - 59 },
-    },
-    didParseCell: (d) => {
-      if (d.section === 'body' && d.column.index === 1) {
-        const v = parseFloat(d.cell.raw as string);
-        if (!isNaN(v)) {
-          d.cell.styles.textColor = v >= 80 ? [22,101,52] : v >= 50 ? [146,64,14] : [153,27,27];
-          d.cell.styles.fontStyle = 'bold';
-        }
-      }
-    },
-  });
 
-  y = (doc as any).lastAutoTable.finalY + 6;
+  const cards = [
+  { label: 'OVERALL',     raw: overallScore, score: `${overallScore.toFixed(0)}%`,
+    time: fmtSec(t?.total),   timeLabel: 'TOTAL TIME', fill: scoreColor(overallScore) },
+  { label: 'MATHEMATICS', raw: mathScore,    score: mathScore    != null ? `${mathScore.toFixed(0)}%`    : '—',
+    time: fmtSec(t?.math),    timeLabel: 'MATH TIME',  fill: scoreColor(mathScore) },
+  { label: 'ELA',         raw: elaScore,     score: elaScore     != null ? `${elaScore.toFixed(0)}%`     : '—',
+    time: fmtSec(t?.ela),     timeLabel: 'ELA TIME',   fill: scoreColor(elaScore) },
+  { label: 'SCIENCE',     raw: scienceScore, score: scienceScore != null ? `${scienceScore.toFixed(0)}%` : '—',
+    time: fmtSec(t?.science), timeLabel: 'SCI TIME',   fill: scoreColor(scienceScore) },
+];
 
-   doc.setFontSize(8); doc.setFont('helvetica', 'bold'); doc.setTextColor(17, 24, 39);
+const cardW = (cW - 4.5) / 4;   // 4 cards, 1.5mm gaps between
+const cardH = 23;
+
+// White label on dark fills, black on light fills
+const isDarkFill = (f: [number, number, number]) =>
+  f[0] * 0.299 + f[1] * 0.587 + f[2] * 0.114 < 128;
+
+cards.forEach((card, i) => {
+  const cx  = M + i * (cardW + 1.5);
+  const mid = cx + cardW / 2;
+
+  // White card with a soft border
+  doc.setFillColor(255, 255, 255);
+  doc.setDrawColor(229, 231, 235);
+  doc.setLineWidth(0.3);
+  doc.roundedRect(cx, y, cardW, cardH, 2, 2, 'FD');
+
+  // Colored header strip (rounded top corners, squared bottom edge)
+  doc.setFillColor(...card.fill);
+  doc.roundedRect(cx, y, cardW, 5.5, 2, 2, 'F');
+  doc.rect(cx, y + 3, cardW, 2.5, 'F');
+
+  // Subject label inside the strip
+  const dark = isDarkFill(card.fill);
+  doc.setTextColor(dark ? 255 : 0, dark ? 255 : 0, dark ? 255 : 0);
+  doc.setFontSize(5.5); doc.setFont('helvetica', 'bold');
+  doc.text(card.label, mid, y + 3.8, { align: 'center' });
+
+  // Score — large, dark, high contrast on white
+  doc.setTextColor(17, 24, 39);
+  doc.setFontSize(13); doc.setFont('helvetica', 'bold');
+  doc.text(card.score, mid, y + 13, { align: 'center' });
+
+  // Thin progress bar in the score colour
+  const barX = cx + 5, barW = cardW - 10, barY = y + 15.2, barH = 1.6;
+  doc.setFillColor(243, 244, 246);
+  doc.roundedRect(barX, barY, barW, barH, 0.8, 0.8, 'F');
+  if (card.raw != null) {
+    const fillW = Math.max(1.6, barW * Math.min(100, Math.max(0, card.raw)) / 100);
+    doc.setFillColor(...card.fill);
+    doc.roundedRect(barX, barY, fillW, barH, 0.8, 0.8, 'F');
+  }
+
+  // Time footer
+  doc.setFontSize(5); doc.setFont('helvetica', 'normal'); doc.setTextColor(107, 114, 128);
+  doc.text(card.timeLabel, mid, y + 19, { align: 'center' });
+  doc.setFontSize(7); doc.setFont('helvetica', 'bold'); doc.setTextColor(31, 41, 55);
+  doc.text(card.time, mid, y + 21.5, { align: 'center' });
+});
+
+y += cardH + 6;
+    
+  
+  // ── LEARNING CATEGORY ─────────────────────────────────────────────────────
+  
+  doc.setFontSize(8); doc.setFont('helvetica', 'bold'); doc.setTextColor(17, 24, 39);
   doc.text('LEARNING CATEGORY', M, y);
   y += 3;
- 
-  // Box height: 16mm fits badge + range + 2-line description comfortably
+
   doc.setFillColor(248, 250, 252);
   doc.roundedRect(M, y, cW, 16, 2, 2, 'F');
   doc.setDrawColor(...category.pdfTextColor);
   doc.roundedRect(M, y, cW, 16, 2, 2, 'S');
- 
-  // Badge — fixed width, vertically centred in the 16mm box
-  const badgeW = 32;
+
+  // Badge
   doc.setFillColor(...category.pdfTextColor);
-  doc.roundedRect(M + 3, y + 3, badgeW, 10, 1.5, 1.5, 'F');
-  doc.setTextColor(255, 255, 255);
-  doc.setFontSize(7.5); doc.setFont('helvetica', 'bold');
-  doc.text(category.name, M + 3 + badgeW / 2, y + 9.5, { align: 'center' });
- 
-  // Text column — starts right after badge with a small gap
-  const textX = M + 3 + badgeW + 5;
-  const textW  = cW - badgeW - 14;   // fills remaining width to right margin
- 
-  // Range label — top line of text column
-  doc.setTextColor(107, 114, 128);
-  doc.setFontSize(8.5); doc.setFont('helvetica', 'bold');
-  doc.text(category.range, textX, y + 4.5);
- 
-  // Description — directly below range, same left edge, max 2 lines
-  doc.setTextColor(31, 41, 55);
-  doc.setFontSize(8.5); doc.setFont('helvetica', 'normal');
-  const descLines2 = doc.splitTextToSize(category.description, textW);
-  doc.text(descLines2.slice(0, 2), textX, y + 9);
- 
+  doc.roundedRect(M + 3, y + 3, 30, 10, 1.5, 1.5, 'F');
+  doc.setTextColor(255, 255, 255); doc.setFontSize(8); doc.setFont('helvetica', 'bold');
+  doc.text(category.name, M + 18, y + 9.5, { align: 'center' });
+
+  // Range + description
+  doc.setTextColor(107, 114, 128); doc.setFontSize(7); doc.setFont('helvetica', 'bold');
+  doc.text(category.range, M + 37, y + 4.5);
+  doc.setTextColor(31, 41, 55); doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5);
+  const shortDesc = doc.splitTextToSize(category.description.substring(0, 200), cW - 52);
+  doc.text(shortDesc.slice(0, 2), M + 37, y + 9.5);
+
   y += 22;
+
   // ── PROGRAMME RECOMMENDATION ──────────────────────────────────────────────
-  doc.setFontSize(8.5); doc.setFont('helvetica', 'bold'); doc.setTextColor(17, 24, 39);
+  doc.setFontSize(8); doc.setFont('helvetica', 'bold'); doc.setTextColor(17, 24, 39);
   doc.text('PROGRAMME RECOMMENDATION', M, y);
   y += 3;
 
@@ -270,16 +281,16 @@ export const generateRecommendationPDF = (params: RecommendationParams) => {
   // Badge
   doc.setFillColor(22, 101, 52);
   doc.roundedRect(M + 3, y + 3.5, 30, 9, 1.5, 1.5, 'F');
-  doc.setTextColor(255, 255, 255); doc.setFontSize(8.5); doc.setFont('helvetica', 'bold');
+  doc.setTextColor(255, 255, 255); doc.setFontSize(7.5); doc.setFont('helvetica', 'bold');
   doc.text(packageLabel, M + 18, y + 9.5, { align: 'center' });
 
   // Description
-  doc.setTextColor(22, 101, 52); doc.setFontSize(8.5); doc.setFont('helvetica', 'bold');
+  doc.setTextColor(22, 101, 52); doc.setFontSize(7.5); doc.setFont('helvetica', 'bold');
   const descLines = doc.splitTextToSize(packageDesc, cW - 40);
   doc.text(descLines.slice(0, 2), M + 37, y + 9);
 
   // Subjects line
-  doc.setTextColor(31, 41, 55); doc.setFontSize(8.5); doc.setFont('helvetica', 'normal');
+  doc.setTextColor(31, 41, 55); doc.setFontSize(8); doc.setFont('helvetica', 'normal');
   const subText = packageSubjects.map(s => `• ${s}`).join('    ');
   doc.text('Subjects:', M + 4, y + 17.5);
   doc.setFont('helvetica', 'normal');
@@ -308,13 +319,12 @@ export const generateRecommendationPDF = (params: RecommendationParams) => {
 
     autoTable(doc, {
       startY: y,
-      head: [['', 'Standard Rate', 'SmartMathz Offer', '']],
+      head: [['', 'Standard Rate', 'SmartMathz Offer']],
       body: [
-        ['Number of Sessions', `${computedPrice.sessions}`,                             `${computedPrice.sessions}`,                ''],
-        // ['Hourly Rate',        `$${computedPrice.standardHourlyRate.toFixed(2)}`,       `$${computedPrice.smHourlyRate.toFixed(2)}`, '-$20'],
-        ['Hourly Rate', `$${computedPrice.standardHourlyRate.toFixed(2)}`, `$${computedPrice.smHourlyRate.toFixed(2)}`, `$${(computedPrice.standardHourlyRate - computedPrice.smHourlyRate).toFixed(0)} off`],
-        ['Monthly Fee',        `$${computedPrice.standardMonthlyFee}`,                  `$${computedPrice.smMonthlyFee}`,           ''],
-        ['Bi-Weekly',          `$${(computedPrice.standardMonthlyFee / 2).toFixed(0)}`, `$${computedPrice.smBiweekly.toFixed(1)}`,  ''],
+        ['Number of Sessions', `${defaultSessions ?? computedPrice.sessions}`, `${computedPrice.sessions}`],
+        ['Hourly Rate',        `$${computedPrice.standardHourlyRate.toFixed(2)}`, `$${computedPrice.smHourlyRate.toFixed(2)}`],
+        ['Monthly Fee',        `$${computedPrice.standardMonthlyFee}`,            `$${computedPrice.smMonthlyFee}`],
+        ['Bi-Weekly',          `$${(computedPrice.standardMonthlyFee / 2).toFixed(0)}`, `$${computedPrice.smBiweekly.toFixed(1)}`],
       ],
       theme: 'plain',
       headStyles: {
@@ -325,15 +335,14 @@ export const generateRecommendationPDF = (params: RecommendationParams) => {
       alternateRowStyles: { fillColor: [250, 253, 245] },
       columnStyles: {
         0: { fontStyle: 'bold', cellWidth: 42 },
-        1: { halign: 'center', cellWidth: 36 },
-        2: { halign: 'center', cellWidth: 36, textColor: [22,101,52], fontStyle: 'bold' },
-        3: { halign: 'center', cellWidth: 14, textColor: [153,27,27], fontStyle: 'bold' },
+        1: { halign: 'center', cellWidth: 40 },
+        2: { halign: 'center', cellWidth: cW - 82, textColor: [22,101,52], fontStyle: 'bold' },
       },
       didParseCell: (d) => {
         if (d.section === 'head' && d.column.index === 2) d.cell.styles.fillColor = [22, 101, 52];
-        if (d.section === 'body' && d.column.index === 3 && d.cell.raw !== '') {
-          d.cell.styles.textColor = [153, 27, 27];
-          d.cell.styles.fontStyle = 'bold';
+        // Center the head labels over their (already centered) body columns
+        if (d.section === 'head' && (d.column.index === 1 || d.column.index === 2)) {
+          d.cell.styles.halign = 'center';
         }
       },
     });
@@ -342,127 +351,36 @@ export const generateRecommendationPDF = (params: RecommendationParams) => {
 
     // Savings strip
     doc.setFillColor(240, 253, 244);
-    doc.roundedRect(M, y, cW, 18, 2, 2, 'F');
+    doc.roundedRect(M, y, cW, 16, 2, 2, 'F');
     doc.setDrawColor(22, 101, 52);
-    doc.roundedRect(M, y, cW, 18, 2, 2, 'S');
- 
+    doc.roundedRect(M, y, cW, 16, 2, 2, 'S');
+
     const half = cW / 2;
- 
+
     // Left: % Savings
     doc.setTextColor(22, 101, 52); doc.setFontSize(7.5); doc.setFont('helvetica', 'bold');
-    doc.text('% Savings', M + 4, y + 5.5);                         // label
+    doc.text('% Savings', M + 4, y + 6);
     doc.setFontSize(10); doc.setTextColor(31, 41, 55);
-    doc.text(`${computedPrice.savingsPercent}%`, M + 4, y + 11); // value — gap increased
+    doc.text(`${computedPrice.savingsPercent}%`, M + 4, y + 12.5);
     doc.setTextColor(107, 114, 128); doc.setFontSize(7); doc.setFont('helvetica', 'normal');
-    doc.text('Per Month', M + 4 + doc.getTextWidth(`${computedPrice.savingsPercent}%`) + 4, y + 11);
- 
+    doc.text('Per Month', M + 4 + doc.getTextWidth(`${computedPrice.savingsPercent}%`) + 4, y + 12.5);
+
     // Divider
     doc.setDrawColor(187, 247, 208);
-    doc.line(M + half, y + 3, M + half, y + 15);
- 
+    doc.line(M + half, y + 3, M + half, y + 13);
+
     // Right: SmartMathz Investment
     doc.setTextColor(22, 101, 52); doc.setFontSize(7.5); doc.setFont('helvetica', 'bold');
-    doc.text('SmartMathz Investment', M + half + 4, y + 5.5);              // label
+    doc.text('SmartMathz Investment', M + half + 4, y + 6);
     doc.setFontSize(10); doc.setTextColor(31, 41, 55);
-    doc.text(`$${computedPrice.smInvestment}`, M + half + 4, y + 11);   // value — gap increased
+    doc.text(`$${computedPrice.smInvestment}`, M + half + 4, y + 12.5);
     doc.setTextColor(107, 114, 128); doc.setFontSize(7); doc.setFont('helvetica', 'normal');
-    doc.text('Per Month', M + half + 4 + doc.getTextWidth(`$${computedPrice.smInvestment}`) + 4, y + 11);
- 
-    y += 24; 
+    doc.text('Per Month', M + half + 4 + doc.getTextWidth(`$${computedPrice.smInvestment}`) + 4, y + 12.5);
+
+    y += 22;
   }
 
-  // // ── NOTE BOX ──────────────────────────────────────────────────────────────
-  // doc.setFillColor(254, 252, 232);
-  // doc.roundedRect(M, y, cW, 14, 2, 2, 'F');
-  // doc.setDrawColor(234, 179, 8);
-  // doc.roundedRect(M, y, cW, 14, 2, 2, 'S');
-  // doc.setTextColor(92, 76, 3); doc.setFontSize(8); doc.setFont('helvetica', 'normal');
-  // const noteText = `This recommendation was prepared by the SmartMathz academic team based on ${pronoun.pos} assessment results. ${pronoun.sub} is encouraged to attend all scheduled sessions consistently for optimal improvement.`;
-  // doc.text(doc.splitTextToSize(noteText, cW - 8).slice(0, 3), M + 4, y + 5.5);
-
-  // y += 20;
-
-  // // ── SIGN-OFF ──────────────────────────────────────────────────────────────
-  // doc.setTextColor(31, 41, 55); doc.setFontSize(8.5); doc.setFont('helvetica', 'bold');
-  // doc.text('If you have any questions do not hesitate to reach out.', M, y);
-
-  // y += 6;
-  // doc.setFont('helvetica', 'normal'); doc.setFontSize(8.5);
-  // doc.text('Best regards,', M, y);
-
-  // y += 6;
-  // const sigName = instructorName?.trim() || 'SmartMathz Team';
-  // doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(17, 24, 39);
-  // doc.text(sigName, M, y);
-
-  // y += 5.5;
-  // doc.setFont('helvetica', 'normal'); doc.setFontSize(8); doc.setTextColor(107, 114, 128);
-  // doc.text('Lead Instructor, SmartMathz', M, y);
-
- if (instructorComment?.trim()) {
-    doc.setFontSize(7); doc.setFont('helvetica', 'bold'); doc.setTextColor(17, 24, 39);
-    doc.text("INSTRUCTOR'S COMMENT", M, y); y += 3;
- 
-    // Calculate box height based on text length
-    const commentLines = doc.splitTextToSize(instructorComment.trim(), cW - 8);
-    const visibleLines = commentLines.slice(0, 6); // max 6 lines
-    const commentBoxH  = 8 + visibleLines.length * 4.5;
- 
-    doc.setFillColor(248, 250, 252);
-    doc.roundedRect(M, y, cW, commentBoxH, 2, 2, 'F');
-    doc.setDrawColor(209, 213, 219);
-    doc.roundedRect(M, y, cW, commentBoxH, 2, 2, 'S');
- 
-    doc.setTextColor(31, 41, 55); doc.setFontSize(7.5); doc.setFont('helvetica', 'normal');
-    doc.text(visibleLines, M + 4, y + 6);
- 
-    y += commentBoxH + 5;
-  }
- 
-  // ── CLOSING NOTE ─────────────────────────────────────────────────────────
-  doc.setFillColor(254, 252, 232);
-  doc.roundedRect(M, y, cW, 11, 1.5, 1.5, 'F');
-  doc.setDrawColor(234, 179, 8);
-  doc.roundedRect(M, y, cW, 11, 1.5, 1.5, 'S');
-  doc.setTextColor(92, 76, 3); doc.setFontSize(6.5); doc.setFont('helvetica', 'normal');
-  const noteText = `This recommendation was prepared by the SmartMathz academic team based on ${pronoun.pos} assessment results. ${pronoun.sub} is encouraged to attend all scheduled sessions consistently for optimal improvement.`;
-  doc.text(doc.splitTextToSize(noteText, cW - 6).slice(0, 3), M + 3, y + 4.5);
-  y += 14;
- 
-  // ── SIGN-OFF ──────────────────────────────────────────────────────────────
-  doc.setTextColor(31, 41, 55); doc.setFontSize(8.5); doc.setFont('helvetica', 'bold');
-  doc.text('If you have any questions do not hesitate to reach out.', M, y);
-  y += 6;
-  doc.setFont('helvetica', 'normal'); doc.setFontSize(8.5);
-  doc.text('Best regards,', M, y);
-  y += 6;
-  const sigName = instructorName?.trim() || 'SmartMathz Team';
-  doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(17, 24, 39);
-  doc.text(sigName, M, y);
-  y += 5.5;
-  doc.setFont('helvetica', 'normal'); doc.setFontSize(8); doc.setTextColor(107, 114, 128);
-  doc.text('Lead Instructor, SmartMathz', M, y);
- 
-
-
-
-
-
-
-
-  // ── FOOTER ────────────────────────────────────────────────────────────────
-  doc.setFillColor(22, 101, 52);
-  doc.rect(0, pageH - 10, pageW, 10, 'F');
-  doc.setTextColor(255, 255, 255); doc.setFontSize(7); doc.setFont('helvetica', 'normal');
-  doc.text(
-    'SmartMathz  |  www.smartmathz.com  |  Confidential Student Report',
-    pageW / 2, pageH - 4, { align: 'center' }
-  );
-
-  doc.save(`SmartMathz_Recommendation_${studentName.replace(/\s+/g, '_')}.pdf`);
-};
-
-// ── Subject comment helper ────────────────────────────────────────────────────
+// // ── Subject comment helper ────────────────────────────────────────────────────
 function getSubjectComment(
   subject: 'math' | 'ela' | 'science',
   score: number,
@@ -491,3 +409,72 @@ function getSubjectComment(
   };
   return comments[subject][band];
 }
+
+
+// ── Page-break guard: keeps content clear of the footer ──────────────────
+  const FOOTER_CLEAR = 12; // mm reserved above footer
+  const ensureSpace = (needed: number) => {
+    if (y + needed > pageH - FOOTER_CLEAR) {
+      doc.addPage();
+      y = 16;
+    }
+  };
+
+  // ── EVALUATOR'S COMMENT ───────────────────────────────────────────────────
+  if (instructorComment?.trim()) {
+    // Measure with the SAME font the text will be rendered in (9pt normal)
+    doc.setFontSize(9); doc.setFont('helvetica', 'normal');
+    const LINE_H = 4; // mm per line at 9pt with lineHeightFactor 1.25
+    const commentLines = doc.splitTextToSize(instructorComment.trim(), cW - 8);
+    const commentBoxH  = commentLines.length * LINE_H + 7;
+
+    ensureSpace(commentBoxH + 10);
+
+    doc.setFontSize(8); doc.setFont('helvetica', 'bold'); doc.setTextColor(17, 24, 39);
+    doc.text("EVALUATOR'S COMMENT", M, y); y += 3;
+
+    doc.setFillColor(248, 250, 252);
+    doc.roundedRect(M, y, cW, commentBoxH, 2, 2, 'F');
+    doc.setDrawColor(209, 213, 219);
+    doc.roundedRect(M, y, cW, commentBoxH, 2, 2, 'S');
+
+    doc.setTextColor(31, 41, 55); doc.setFontSize(9); doc.setFont('helvetica', 'normal');
+    doc.text(commentLines, M + 4, y + 6, { lineHeightFactor: 1.25 });
+
+    y += commentBoxH + 5;
+  }
+
+
+// ── SIGN-OFF ──────────────────────────────────────────────────────────────
+  ensureSpace(19); // actual height of the sign-off block (~18mm)
+
+  doc.setTextColor(31, 41, 55); doc.setFontSize(8.5); doc.setFont('helvetica', 'bold');
+  doc.text('If you have any questions do not hesitate to reach out.', M, y);
+
+  y += 5;
+  doc.setFont('helvetica', 'normal'); doc.setFontSize(8.5);
+  doc.text('Best regards,', M, y);
+
+  y += 5;
+  const sigName = instructorName?.trim() || 'SmartMathz Team';
+  doc.setFont('helvetica', 'bold'); doc.setFontSize(9.5); doc.setTextColor(17, 24, 39);
+  doc.text(sigName, M, y);
+
+  y += 5.5;
+  doc.setFont('helvetica', 'normal'); doc.setFontSize(8); doc.setTextColor(107, 114, 128);
+  doc.text('Lead Instructor, SmartMathz', M, y);
+
+  // ── FOOTER — drawn on every page ──────────────────────────────────────────
+  const pageCount = doc.getNumberOfPages();
+  for (let p = 1; p <= pageCount; p++) {
+    doc.setPage(p);
+    doc.setFillColor(22, 101, 52);
+    doc.rect(0, pageH - 10, pageW, 10, 'F');
+    doc.setTextColor(255, 255, 255); doc.setFontSize(7); doc.setFont('helvetica', 'normal');
+    doc.text(
+      'SmartMathz  |  www.smartmathz.com  |  Confidential Student Report',
+      pageW / 2, pageH - 4, { align: 'center' }
+    );
+  }
+
+  doc.save(`SmartMathz_Recommendation_${studentName.replace(/\s+/g, '_')}.pdf`)};

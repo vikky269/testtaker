@@ -259,7 +259,7 @@ export default function QuizBody({
             </p>
             <div className="flex flex-wrap gap-1.5 mb-4">
               <span className="flex items-center gap-1 text-xs text-gray-500">
-                <span className={`w-3 h-3 rounded-sm ${theme.active}`} /> Current
+                <span className={`w-3 h-3 rounded-sm  bg-amber-500`} /> Current
               </span>
               <span className="flex items-center gap-1 text-xs text-gray-500">
                 <span className="w-3 h-3 rounded-sm bg-[#7FB509]" /> Answered
@@ -287,7 +287,7 @@ export default function QuizBody({
                       relative w-full aspect-square rounded-lg text-xs font-extrabold
                       flex items-center justify-center transition-all duration-150 cursor-pointer
                       ${isCurrent
-                        ? `${theme.active} text-white ring-2 ring-offset-1 ring-current scale-110 shadow-md z-10`
+                        ? `bg-amber-500 text-white ring-2 ring-offset-1 ring-current scale-110 shadow-md z-10`
                         : answered
                         ? "bg-[#7FB509] text-white hover:bg-[#6a9a07] shadow-sm"
                         : "bg-gray-100 text-gray-500 border border-gray-200 hover:border-[#7FB509] hover:text-[#7FB509]"

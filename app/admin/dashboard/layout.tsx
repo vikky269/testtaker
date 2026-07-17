@@ -21,8 +21,8 @@ const ADMIN_EMAIL = 'info@smartmathz.com';
 const NAV_ITEMS = [
   { href: '/admin/dashboard',                       icon: LayoutDashboard, label: 'Overview'             },
   { href: '/admin/dashboard/students',              icon: Users,           label: 'Students'             },
-  { href: '/admin/dashboard/results',               icon: FileText,        label: 'Results'              },
-  { href: '/admin/dashboard/completed-recommendations', icon: FileCheck2,  label: 'Completed Recommendations'  },
+  { href: '/admin/dashboard/results',               icon: FileText,        label: 'Pending Evaluations'              },
+  { href: '/admin/dashboard/completed-recommendations', icon: FileCheck2,  label: 'Completed Evaluations'  },
   { href: '/admin/dashboard/subscriptions',         icon: ClipboardList,   label: 'Subscriptions'        },
   { href: '/admin/dashboard/learning-categories',   icon: GraduationCap,   label: 'Learning Categories'  },
   { href: '/admin/dashboard/analytics',             icon: BarChart2,       label: 'Analytics'            },

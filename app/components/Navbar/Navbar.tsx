@@ -13,7 +13,6 @@ const NAV_LINKS = [
   { label: 'Home',        href: '/'            },
   {label: 'Enroll now',    href:'/subscribe'  },
   { label: 'Programs', href: '/programs' },
-  { label: 'My-test', href: '/my-tests' },
   { label: 'Leaderboard', href: '/leaderboard' },
 ];
 
@@ -120,7 +119,7 @@ if (pathname.startsWith('/admin')) return null;
         </Link>
 
 
-        {!isAdmin && (
+        {user && !isAdmin && (
           <div className="hidden md:flex items-center gap-1">
             {NAV_LINKS.map(({ label, href }) => (
               <Link
@@ -228,7 +227,7 @@ if (pathname.startsWith('/admin')) return null;
           )}
 
           {/* Mobile hamburger */}
-          <button
+         {user && <button
             className="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-gray-50 cursor-pointer"
             onClick={() => setMobileOpen((p) => !p)}
             aria-label="Toggle menu"
@@ -236,7 +235,7 @@ if (pathname.startsWith('/admin')) return null;
             <span className={`block h-0.5 w-5 bg-gray-700 rounded transition-all duration-200 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
             <span className={`block h-0.5 w-5 bg-gray-700 rounded transition-all duration-200 ${mobileOpen ? 'opacity-0' : ''}`} />
             <span className={`block h-0.5 w-5 bg-gray-700 rounded transition-all duration-200 ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-          </button>
+          </button>}
         </div>
       </div>
       
@@ -246,7 +245,7 @@ if (pathname.startsWith('/admin')) return null;
 
 
       {/* Mobile drawer */}
-      {mounted && mobileOpen && !isAdmin &&  (
+      {mounted && mobileOpen && !isAdmin && user &&   (
         <div className="md:hidden border-t border-gray-100 bg-white px-4 pb-4 pt-2 space-y-1">
           {NAV_LINKS.map(({ label, href }) => (
             <Link

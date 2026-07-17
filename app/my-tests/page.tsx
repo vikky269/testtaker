@@ -5,7 +5,7 @@
 // plus downloads for the test sheet PDF and the performance report.
 // Supports ?download=sheet / ?download=report to auto-trigger from the navbar.
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef,  Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { supabase, withTimeout } from '@/lib/supabaseClient';
 import { toast } from 'react-hot-toast';
@@ -23,7 +23,7 @@ const fmtDate = (d: string) =>
 const fmtSec = (s?: number | null) =>
   s != null ? `${Math.floor(s / 60)}m ${s % 60}s` : '—';
 
-export default function MyTestsPage() {
+function MyTestsContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [subs, setSubs]       = useState<TestSubmission[]>([]);
@@ -252,5 +252,18 @@ const handleDownloadReport = (sub: TestSubmission) => {
         )}
       </div>
     </div>
+  );
+}
+
+
+export default function MyTestsPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="w-8 h-8 border-4 border-[#7FB509] border-t-transparent rounded-full animate-spin" />
+      </div>
+    }>
+      <MyTestsContent />
+    </Suspense>
   );
 }

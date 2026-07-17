@@ -2,7 +2,7 @@
 import NewUI from "./newUI";
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { supabase } from '@/lib/supabaseClient';
+import { supabase, withTimeout } from '@/lib/supabaseClient';
 
 const ADMIN_EMAIL = 'info@smartmathz.com';
 
@@ -10,15 +10,61 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
+  // useEffect(() => {
+  //   const checkAuth = async () => {
+  //     try {
+  //       const { data: { session } } = await supabase.auth.getSession();
+
+  //       if (!session) {
+  //         // No session — redirect to login but also stop loading
+  //         // so the page doesn't hang if redirect is slow
+  //         setLoading(false);
+  //         router.push('/login');
+  //         return;
+  //       }
+
+  //       const userEmail = session.user?.email?.toLowerCase();
+
+  //       if (userEmail === ADMIN_EMAIL) {
+  //         // Admin — redirect to dashboard
+  //         router.push('/admin/dashboard');
+  //         // Don't setLoading(false) here — page is navigating away
+  //         return;
+  //       }
+
+  //       // Regular student — show the page
+  //       setLoading(false);
+
+  //     } catch (err) {
+  //       // If anything fails, unblock the page
+  //       console.error('Auth check failed:', err);
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   checkAuth();
+
+  //   // Also listen for auth state changes (handles reload/tab restore)
+  //   const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+  //     if (!session) {
+  //       router.push('/login');
+  //     }
+  //   });
+
+  //   return () => listener.subscription.unsubscribe();
+  // }, [router]);
+
+
   useEffect(() => {
     const checkAuth = async () => {
+      let keepSpinner = false; // true only when navigating to admin dashboard
       try {
-        const { data: { session } } = await supabase.auth.getSession();
+        // Capped at 3s — a hung auth call can no longer freeze this page
+        const result = await withTimeout(supabase.auth.getSession());
+        const session = result?.data?.session ?? null;
 
         if (!session) {
-          // No session — redirect to login but also stop loading
-          // so the page doesn't hang if redirect is slow
-          setLoading(false);
+          // No session (or auth timed out) — treat as logged out
           router.push('/login');
           return;
         }
@@ -26,19 +72,16 @@ export default function Home() {
         const userEmail = session.user?.email?.toLowerCase();
 
         if (userEmail === ADMIN_EMAIL) {
-          // Admin — redirect to dashboard
+          keepSpinner = true;          // hold the spinner while navigating away
           router.push('/admin/dashboard');
-          // Don't setLoading(false) here — page is navigating away
           return;
         }
 
-        // Regular student — show the page
-        setLoading(false);
-
+        // Regular student — fall through; finally will reveal the page
       } catch (err) {
-        // If anything fails, unblock the page
         console.error('Auth check failed:', err);
-        setLoading(false);
+      } finally {
+        if (!keepSpinner) setLoading(false);   // guaranteed exit for every other path
       }
     };
 

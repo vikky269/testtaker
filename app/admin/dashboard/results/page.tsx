@@ -5,10 +5,13 @@
 import { useEffect, useState, useMemo } from 'react';
 import { supabase } from '@/lib/supabaseClient';
 import { getLearningCategory, LEARNING_CATEGORIES, type LearningCategory } from '@/app/utils/reviewUtils';
-import { PACKAGES, CUSTOM_PACKAGE_SUBJECTS, getSuggestedPackage, generateRecommendationPDF, type PackageOption, type CustomPackageSubject } from '@/app/utils/generateRecommendation';
+import { PACKAGES, CUSTOM_PACKAGE_SUBJECTS, ADDITIONAL_PROGRAMS, getSuggestedPackage, generateRecommendationPDF, type PackageOption, type CustomPackageSubject } from '@/app/utils/generateRecommendation';
 import { getPricingTable, computePrice, type ComputedPrice, type GradePricing } from '@/app/utils/pricingData';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { toast } from 'react-hot-toast';
 
-const COMMENT_MAX = 2500; // max characters for evaluator's comment (renders well on PDF)
+
+const COMMENT_MAX = 750; // max characters for evaluator's comment (renders well on PDF)
 
 interface StudentResult {
   id?: string;
@@ -65,8 +68,8 @@ function computePriceWithAdjuster(
     smMonthlyFee = Math.round(parentBudget);
     smHourlyRate = parentBudget / sessions;
   } else {
-    // Normal mode — $-off adjuster
-    smHourlyRate = standardHourlyRate - adjuster;
+    // Normal mode — signed adjuster (+ raises SM rate, − discounts it)
+    smHourlyRate = standardHourlyRate + adjuster;
     smMonthlyFee = Math.round(smHourlyRate * sessions);
   }
 
@@ -105,8 +108,11 @@ const Stepper = ({
       className="w-6 h-6 rounded-md bg-gray-100 hover:bg-red-100 text-gray-600 hover:text-red-600 text-sm font-bold cursor-pointer transition-colors flex items-center justify-center">
       −
     </button>
-    <span className={`text-xs font-bold min-w-[42px] text-center ${colorClass}`}>
+    {/* <span className={`text-xs font-bold min-w-[42px] text-center ${colorClass}`}>
       {prefix}{showSign && value > 0 ? '+' : ''}{value}{suffix}
+    </span> */}
+    <span className={`text-xs font-bold min-w-[42px] text-center ${colorClass}`}>
+      {value < 0 ? '−' : showSign && value > 0 ? '+' : ''}{prefix}{Math.abs(value)}{suffix}
     </span>
     <button
       onClick={() => onChange(Math.min(max, value + 1))}
@@ -120,10 +126,11 @@ const Stepper = ({
 function PriceCard({
   price, packageLabel, adjuster, onAdjusterChange,
   sessionDelta, onSessionDeltaChange, defaultSessions,
-  parentBudget, onParentBudgetChange,
+  parentBudget, packageSubtitle, onParentBudgetChange,
 }: {
   price: ComputedPrice;
   packageLabel: string;
+  packageSubtitle: string;
   adjuster: number;
   onAdjusterChange: (val: number) => void;
   sessionDelta: number;                       // 0 = no adjustment
@@ -133,15 +140,16 @@ function PriceCard({
   onParentBudgetChange: (val: number) => void;
 }) {
   const budgetActive = parentBudget > 0;
-  // In budget mode the hourly-rate adjuster is derived automatically
-  const derivedAdjuster = price.standardHourlyRate - price.smHourlyRate;
+  // In budget mode the hourly-rate adjuster is derived automatically (signed)
+  const derivedAdjuster = price.smHourlyRate - price.standardHourlyRate;
 
   return (
     <div className="rounded-2xl border border-gray-100 overflow-hidden">
       {/* Header */}
       <div className="bg-[#1a2e05] text-white px-4 py-3 text-center">
         <p className="text-xs font-bold uppercase tracking-widest opacity-70 mb-0.5">{packageLabel}</p>
-        <p className="text-xs opacity-60">Math Tutoring + Programme</p>
+        {/* <p className="text-xs opacity-60">Math Tutoring + Programme</p> */}
+        <p className="text-xs opacity-60">{packageSubtitle}</p>
       </div>
 
       {/* Table */}
@@ -185,17 +193,17 @@ function PriceCard({
             <td className="px-3 py-2 text-center text-sm font-bold text-yellow-600 bg-yellow-50">${price.smHourlyRate.toFixed(2)}</td>
             <td className="px-3 py-2">
               {budgetActive ? (
-                <p className="text-center text-[11px] font-bold text-red-500">
-                  −${derivedAdjuster.toFixed(2)}
+                <p className={`text-center text-[11px] font-bold ${derivedAdjuster < 0 ? 'text-red-500' : 'text-green-600'}`}>
+                  {derivedAdjuster < 0 ? '−' : '+'}${Math.abs(derivedAdjuster).toFixed(2)}
                   <span className="block text-[10px] font-normal text-gray-400 italic">auto</span>
                 </p>
               ) : (
                 <Stepper
                   value={adjuster}
                   onChange={onAdjusterChange}
-                  min={0} max={50}
+                  min={-50} max={50}
                   prefix="$"
-                  colorClass="text-red-500"
+                  colorClass={adjuster < 0 ? 'text-red-500' : 'text-green-600'}
                 />
               )}
             </td>
@@ -287,6 +295,17 @@ export default function ResultsPage() {
   const [newSubjectName, setNewSubjectName]   = useState(CUSTOM_PACKAGE_SUBJECTS[0].name);
   const [newSubjectHours, setNewSubjectHours] = useState(1);
   const [instructorComment, setInstructorComment] = useState('');
+  const [additionalPrograms, setAdditionalPrograms] = useState<string[]>([]);
+
+  //new modal states
+  const router       = useRouter();
+  const searchParams = useSearchParams();
+  const [completedIds, setCompletedIds] = useState<Set<string>>(new Set());
+  const [editingRecId, setEditingRecId] = useState<string | null>(null);
+  const [editingTimes, setEditingTimes] = useState<any | null>(null);
+  const [saving, setSaving]             = useState(false);
+  const [deleteTarget, setDeleteTarget] = useState<StudentResult | null>(null);
+  const [deleting, setDeleting]         = useState(false);
 
   // Pricing adjusters — ALL start at zero
   const [adjuster, setAdjuster]         = useState<number>(0); // $ off per hour
@@ -307,8 +326,20 @@ export default function ResultsPage() {
     load();
   }, []);
 
+// Load which students already have a saved recommendation — new useEffect:
+  useEffect(() => {
+    const loadCompleted = async () => {
+      const { data } = await supabase
+        .from('completed_recommendations').select('leaderboard_id');
+      if (data) setCompletedIds(new Set(data.map(r => r.leaderboard_id).filter(Boolean) as string[]));
+    };
+    loadCompleted();
+  }, []);
+
   useEffect(() => {
     let out = [...results];
+    // Hide students whose recommendation has been saved
+    out = out.filter(r => !(r.id && completedIds.has(String(r.id))));
     if (gradeFilter !== 'All Grades')   out = out.filter(r => r.grade === gradeFilter);
     if (catFilter !== 'All Categories') out = out.filter(r => getLearningCategory(r.overall_score).name === catFilter);
     if (search) out = out.filter(r =>
@@ -316,7 +347,45 @@ export default function ResultsPage() {
       r.email.toLowerCase().includes(search.toLowerCase())
     );
     setFiltered(out);
-  }, [results, search, gradeFilter, catFilter]);
+  }, [results, search, gradeFilter, catFilter, completedIds]);
+
+
+
+// Edit deep-link — pre-populates the modal when arriving from the completed page:
+
+  useEffect(() => {
+    const editId = searchParams.get('edit');
+    if (!editId || loading) return;
+    const loadRec = async () => {
+      const { data: rec } = await supabase
+        .from('completed_recommendations').select('*').eq('id', editId).single();
+      if (!rec) { toast.error('Recommendation not found.'); return; }
+      setEditingRecId(rec.id);
+      setEditingTimes(rec.times);
+      setSelectedStudent({
+        id:            rec.leaderboard_id ?? undefined,
+        full_name:     rec.student_name,
+        email:         rec.student_email ?? '',
+        grade:         rec.grade,
+        gender:        rec.gender ?? undefined,
+        math_score:    rec.math_score,
+        ela_score:     rec.ela_score,
+        science_score: rec.science_score,
+        overall_score: rec.overall_score,
+        total_time:    0,
+      });
+      setSelectedPackage(PACKAGES.find(p => p.id === rec.package_id) ?? PACKAGES[0]);
+      setCustomSubjects(rec.custom_subjects ?? []);
+      setAdditionalPrograms(rec.additional_programs ?? []);
+      setAdjuster(rec.adjuster ?? 0);
+      setSessionDelta((rec.sessions ?? 0) - (rec.default_sessions ?? 0));
+      setParentBudget(rec.parent_budget ?? 0);
+      setCustomStdRate(rec.custom_std_rate ?? 50);
+      setInstructorName(rec.instructor_name ?? '');
+      setInstructorComment(rec.instructor_comment ?? '');
+    };
+    loadRec();
+  }, [searchParams, loading]);
 
   const allGrades = ['All Grades', ...Array.from(new Set(results.map(r => r.grade))).sort()];
   const categoryCounts = LEARNING_CATEGORIES.map(c => ({
@@ -385,6 +454,51 @@ export default function ResultsPage() {
     setParentBudget(0);
   };
 
+// handle delete function to delete entries by admin
+  const handleDelete = async () => {
+    if (!deleteTarget) return;
+    if (!deleteTarget.id) {
+      toast.error('This entry has no ID and cannot be deleted from here.');
+      setDeleteTarget(null);
+      return;
+    }
+    setDeleting(true);
+    const { error } = await supabase
+      .from('leaderboard').delete().eq('id', deleteTarget.id);
+    setDeleting(false);
+
+    if (error) {
+      console.error('Delete error:', error);
+      toast.error('Failed to delete. Check your permissions and try again.');
+      return;
+    }
+    toast.success(`${deleteTarget.full_name}'s result deleted.`);
+    setResults(prev => prev.filter(r => r.id !== deleteTarget.id));
+    setDeleteTarget(null);
+  };
+
+  // How many additional programs this package allows
+  const maxPrograms = selectedPackage.id === 'II' ? 1 : selectedPackage.id === 'III' ? 2 : 0;
+
+  const toggleProgram = (name: string) => {
+    setAdditionalPrograms(prev => {
+      if (prev.includes(name)) return prev.filter(p => p !== name);
+      if (prev.length < maxPrograms) return [...prev, name];
+      if (maxPrograms === 1) return [name];      // single-slot: replace
+      return prev;                                // full: ignore until one is removed
+    });
+  };
+
+  // Header subtitle for the pricing table
+  const packageSubtitle =
+    selectedPackage.id === 'custom' ? 'Customized Program'
+    : selectedPackage.id === 'I'    ? 'Math Tutoring Only'
+    : `Math Tutoring + ${
+        additionalPrograms.length > 0
+          ? additionalPrograms.join(' + ')
+          : `${maxPrograms} Additional Program${maxPrograms > 1 ? 's' : ''}`
+      } + Virtual Library`;
+
   // ── Custom subject helpers ─────────────────────────────────────────────────
   const addCustomSubject = () => {
     if (customSubjects.find(s => s.name === newSubjectName)) return;
@@ -394,36 +508,110 @@ export default function ResultsPage() {
   const updateHours = (name: string, h: number) =>
     setCustomSubjects(p => p.map(s => s.name === name ? { ...s, hours: h } : s));
 
-  // ── Generate PDF ───────────────────────────────────────────────────────────
-  const handleGeneratePDF = () => {
-    if (!selectedStudent) return;
-    const fmt = (s?: number | null) =>
-        s ? `${Math.floor(s / 60)}m ${s % 60}s` : '—';
+  const handleSaveRecommendation = async () => {
+    if (!selectedStudent || !computedPrice) return;
+    if (instructorComment.length > COMMENT_MAX) {
+      toast.error(`Comment exceeds ${COMMENT_MAX} characters — please shorten it.`);
+      return;
+    }
+    setSaving(true);
 
-    generateRecommendationPDF({
-      studentName:    selectedStudent.full_name,
-      studentEmail:   selectedStudent.email,
-      grade:          selectedStudent.grade,
-      gender:         selectedStudent.gender,
-      mathScore:      selectedStudent.math_score,
-      elaScore:       selectedStudent.ela_score,
-      scienceScore:   selectedStudent.science_score,
-      overallScore:   selectedStudent.overall_score,
-      selectedPackage,
-      customSubjects: selectedPackage.id === 'custom' ? customSubjects : [],
-      instructorName,
-      instructorComment: instructorComment.slice(0, COMMENT_MAX),
-      defaultSessions,
-      computedPrice:  computedPrice ?? undefined,
+    const fmt = (s?: number | null) => s ? `${Math.floor(s / 60)}m ${s % 60}s` : '—';
+    const times = editingTimes ?? {
+      total:   fmt(selectedStudent.total_time),
+      math:    fmt((selectedStudent as any).math_duration),
+      ela:     fmt((selectedStudent as any).ela_duration),
+      science: fmt((selectedStudent as any).science_duration),
+    };
 
-      times: {
-        total: fmt(selectedStudent.total_time),
-        math: fmt((selectedStudent as any).math_duration),
-        ela: fmt((selectedStudent as any).ela_duration),
-        science: fmt((selectedStudent as any).science_duration),
-      },
-    });
+    const payload = {
+      leaderboard_id:      selectedStudent.id ? String(selectedStudent.id) : null,
+      student_name:        selectedStudent.full_name,
+      student_email:       selectedStudent.email,
+      grade:               selectedStudent.grade,
+      gender:              selectedStudent.gender ?? null,
+      math_score:          selectedStudent.math_score,
+      ela_score:           selectedStudent.ela_score,
+      science_score:       selectedStudent.science_score,
+      overall_score:       selectedStudent.overall_score,
+      times,
+      package_id:          selectedPackage.id,
+      package_label:       selectedPackage.id === 'custom' ? 'Custom Package' : selectedPackage.label,
+      hours_per_week:      selectedPackage.id === 'custom' ? customWeeklyHours : selectedPackage.hoursPerWeek,
+      custom_subjects:     selectedPackage.id === 'custom' ? customSubjects : [],
+      additional_programs: selectedPackage.id !== 'custom' ? additionalPrograms : [],
+      default_sessions:    defaultSessions,
+      sessions:            computedPrice.sessions,
+      adjuster,
+      parent_budget:       parentBudget,
+      custom_std_rate:     customStdRate,
+      computed_price:      computedPrice,
+      instructor_name:     instructorName || null,
+      instructor_comment:  instructorComment || null,
+      updated_at:          new Date().toISOString(),
+    };
+
+    const { error } = editingRecId
+      ? await supabase.from('completed_recommendations').update(payload).eq('id', editingRecId)
+      : await supabase.from('completed_recommendations').insert([payload]);
+
+    setSaving(false);
+    if (error) { console.error(error); toast.error('Failed to save recommendation.'); return; }
+
+    toast.success(editingRecId ? 'Recommendation updated!' : 'Recommendation saved!');
+    if (selectedStudent.id) setCompletedIds(prev => new Set(prev).add(String(selectedStudent.id)));
+    setSelectedStudent(null);
+
+    if (editingRecId) {
+      setEditingRecId(null); setEditingTimes(null);
+      router.push('/admin/dashboard/completed-recommendations');
+    }
   };
+
+  // ── Generate PDF ───────────────────────────────────────────────────────────
+  // const handleGeneratePDF = () => {
+
+  //   if (!selectedStudent) return;
+  //   if (instructorComment.length > COMMENT_MAX) {
+  //     toast.error(
+  //       `Evaluator's comment is ${instructorComment.length.toLocaleString()} characters — the maximum is ${COMMENT_MAX.toLocaleString()}. Please shorten it before downloading.`,
+  //       { duration: 6000 }
+  //     );
+  //     return;
+  //   }
+  //   const fmt = (s?: number | null) =>
+  //       s ? `${Math.floor(s / 60)}m ${s % 60}s` : '—';
+
+  //   generateRecommendationPDF({
+  //     studentName:    selectedStudent.full_name,
+  //     studentEmail:   selectedStudent.email,
+  //     grade:          selectedStudent.grade,
+  //     gender:         selectedStudent.gender,
+  //     mathScore:      selectedStudent.math_score,
+  //     elaScore:       selectedStudent.ela_score,
+  //     scienceScore:   selectedStudent.science_score,
+  //     overallScore:   selectedStudent.overall_score,
+  //     selectedPackage,
+  //     customSubjects: selectedPackage.id === 'custom' ? customSubjects : [],
+  //     additionalPrograms: selectedPackage.id !== 'custom' ? additionalPrograms : [],
+  //     instructorName,
+  //     instructorComment: instructorComment.slice(0, COMMENT_MAX),
+  //     defaultSessions,
+  //     computedPrice:  computedPrice ?? undefined,
+
+  //     times: {
+  //       total: fmt(selectedStudent.total_time),
+  //       math: fmt((selectedStudent as any).math_duration),
+  //       ela: fmt((selectedStudent as any).ela_duration),
+  //       science: fmt((selectedStudent as any).science_duration),
+  //     },
+  //   });
+  // };
+
+
+
+
+
 
   if (loading) return <div className="p-8 text-gray-500">Loading results...</div>;
 
@@ -511,10 +699,20 @@ export default function ResultsPage() {
                       <span className="text-xs bg-blue-50 text-blue-700 font-semibold px-2 py-0.5 rounded-full">{sugg.label}</span>
                     </td>
                     <td className="px-4 py-3">
-                      <button onClick={() => openModal(r)}
-                        className="flex items-center gap-1.5 text-xs font-semibold text-green-700 hover:text-green-900 bg-green-50 hover:bg-green-100 px-3 py-1.5 rounded-lg cursor-pointer transition-colors">
-                        📄 Recommend
-                      </button>
+                      <div className="flex items-center gap-1.5">
+                        <button onClick={() => openModal(r)}
+                          className="flex items-center gap-1.5 text-xs font-semibold text-green-700 hover:text-green-900 bg-green-50 hover:bg-green-100 px-3 py-1.5 rounded-lg cursor-pointer transition-colors">
+                          📄 Recommend
+                        </button>
+                        <button onClick={() => setDeleteTarget(r)}
+                          title="Delete this result"
+                          className="w-8 h-8 flex items-center justify-center rounded-lg text-red-400 hover:text-red-600 bg-red-50/50 hover:bg-red-50 cursor-pointer transition-colors">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                          </svg>
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 );
@@ -523,6 +721,39 @@ export default function ResultsPage() {
           </table>
         </div>
       </div>
+
+
+      {/* ══════════ DELETE CONFIRMATION MODAL ══════════ */}
+      {deleteTarget && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl shadow-2xl w-full max-w-sm p-6 text-center">
+            <div className="w-14 h-14 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-4">
+              <svg className="w-7 h-7 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                  d="M12 9v3.75m0 3.75h.008M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-bold text-gray-900 mb-1.5">Delete this result?</h3>
+            <p className="text-sm text-gray-500 mb-1">
+              You're about to permanently delete
+              <span className="font-semibold text-gray-800"> {deleteTarget.full_name}</span>'s
+              result ({deleteTarget.grade} · {Math.round(deleteTarget.overall_score)}%).
+            </p>
+            <p className="text-xs text-red-500 font-medium mb-5">This action cannot be undone.</p>
+            <div className="flex gap-3">
+              <button onClick={() => setDeleteTarget(null)}
+                className="flex-1 py-2.5 border border-gray-200 text-gray-600 text-sm font-semibold rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                Cancel
+              </button>
+              <button onClick={handleDelete} disabled={deleting}
+                className="flex-1 py-2.5 bg-red-500 hover:bg-red-600 text-white text-sm font-bold rounded-xl cursor-pointer transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
+                {deleting ? 'Deleting...' : 'Yes, Delete'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
 
       {/* ══════════════════════════ MODAL ══════════════════════════ */}
       {selectedStudent && (() => {
@@ -534,10 +765,10 @@ export default function ResultsPage() {
               {/* Modal header */}
               <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-gray-100 sticky top-0 bg-white rounded-t-3xl z-10">
                 <div>
-                  <h2 className="text-lg font-bold text-gray-900">Programme Recommendation</h2>
+                  <h2 className="text-lg font-bold text-gray-900">Program Recommendation</h2>
                   <p className="text-sm text-gray-400 mt-0.5">{selectedStudent.full_name} · {selectedStudent.grade}</p>
                 </div>
-                <button onClick={() => setSelectedStudent(null)}
+                <button onClick={() => { setSelectedStudent(null); setEditingRecId(null); setEditingTimes(null); }}
                   className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 cursor-pointer text-gray-400 text-lg">✕</button>
               </div>
 
@@ -606,6 +837,45 @@ export default function ResultsPage() {
                   </div>
                 </div>
 
+
+
+                {/* ── Additional program picker (Package II / III) ── */}
+                {maxPrograms > 0 && (
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <p className="text-sm font-semibold text-gray-700">
+                        Select {maxPrograms} Additional Program{maxPrograms > 1 ? 's' : ''}
+                      </p>
+                      <span className={`text-xs font-bold px-2 py-0.5 rounded-full
+                        ${additionalPrograms.length === maxPrograms
+                          ? 'bg-green-100 text-green-700' : 'bg-yellow-50 text-yellow-700'}`}>
+                        {additionalPrograms.length} / {maxPrograms} selected
+                      </span>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {ADDITIONAL_PROGRAMS.map(prog => {
+                        const active = additionalPrograms.includes(prog);
+                        return (
+                          <button key={prog} onClick={() => toggleProgram(prog)}
+                            className={`px-3 py-2 rounded-xl border text-xs font-semibold cursor-pointer transition-all
+                              ${active
+                                ? 'bg-[#1a2e05] text-white border-[#1a2e05]'
+                                : 'bg-white text-gray-600 border-gray-200 hover:border-green-400'}`}>
+                            {active ? '✓ ' : ''}{prog}
+                          </button>
+                        );
+                      })}
+                    </div>
+                    {additionalPrograms.length < maxPrograms && (
+                      <p className="text-xs text-gray-400 mt-1.5">
+                        Choose {maxPrograms - additionalPrograms.length} more to include on the report.
+                      </p>
+                    )}
+                  </div>
+                )}
+
+
+
                 {/* ── Standard packages ── */}
                 {selectedPackage.id !== 'custom' && pricingTable && computedPrice && (
                   <>
@@ -625,7 +895,7 @@ export default function ResultsPage() {
                             (selectedPackage.id === 'II'  && i === 1) ||
                             (selectedPackage.id === 'III' && i === 2);
                           const refSessions = Math.max(1, pp.monthlyHours + sessionDelta);
-                          const smRate = pp.standardHourlyRate - adjuster;
+                          const smRate = pp.standardHourlyRate + adjuster;
                           const smFee  = Math.round(smRate * refSessions);
                           return (
                             <div key={label} className={`rounded-xl p-2 border ${isActive ? 'border-green-500 bg-green-50' : 'border-gray-100 bg-gray-50'}`}>
@@ -643,6 +913,7 @@ export default function ResultsPage() {
 
                     {/* Full breakdown */}
                     <PriceCard
+                     packageSubtitle={packageSubtitle}
                       price={computedPrice}
                       packageLabel={selectedPackage.label}
                       adjuster={adjuster}
@@ -668,7 +939,7 @@ export default function ResultsPage() {
                             onChange={e => setCustomStdRate(parseFloat(e.target.value))}
                             className="w-full px-3 py-2 text-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500/20 bg-white" />
                           <p className="text-xs text-green-600 mt-1">
-                            SM rate: ${computedPrice ? computedPrice.smHourlyRate.toFixed(2) : (customStdRate - adjuster).toFixed(2)}/hr
+                            SM rate: ${computedPrice ? computedPrice.smHourlyRate.toFixed(2) : (customStdRate + adjuster).toFixed(2)}/hr
                           </p>
                         </div>
                         <div>
@@ -705,6 +976,7 @@ export default function ResultsPage() {
                         defaultSessions={customMonthlyHours}
                         parentBudget={parentBudget}
                         onParentBudgetChange={setParentBudget}
+                        packageSubtitle={packageSubtitle}
                       />
                     )}
 
@@ -791,14 +1063,14 @@ export default function ResultsPage() {
 
                 {/* Actions */}
                 <div className="flex gap-3 pt-2">
-                  <button onClick={() => setSelectedStudent(null)}
+                  <button onClick={() => { setSelectedStudent(null); setEditingRecId(null); setEditingTimes(null); }}
                     className="flex-1 py-3 border border-gray-200 text-gray-600 text-sm font-semibold rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
                     Cancel
                   </button>
-                  <button onClick={handleGeneratePDF}
-                    disabled={selectedPackage.id === 'custom' && customSubjects.length === 0}
+                  <button onClick={handleSaveRecommendation}
+                    disabled={saving || (selectedPackage.id === 'custom' && customSubjects.length === 0) || instructorComment.length > COMMENT_MAX}
                     className="flex-[2] py-3 bg-[#1a2e05] hover:bg-[#2a4a09] text-white text-sm font-bold rounded-xl cursor-pointer transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed">
-                    📄 Download Recommendation PDF
+                    {saving ? 'Saving...' : editingRecId ? '💾 Update Recommendation' : '💾 Save Recommendation'}
                   </button>
                 </div>
 
@@ -807,6 +1079,8 @@ export default function ResultsPage() {
           </div>
         );
       })()}
+
+      
     </div>
   );
 }

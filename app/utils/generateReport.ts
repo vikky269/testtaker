@@ -204,22 +204,6 @@ const buildDoc = (params: ReportParams): jsPDF => {
       ];
 
 
-
-  //      'Excellent Mastery':          [22, 101, 52],    // dark green  (WHIZZES)
-  // 'Strong Performance':          [144, 238, 144],  // light green (ACES)
-  // 'Developing Progress':         [220, 237, 200],  // very light green (EXPLORERS)
-  // 'Steady Progress':             [255, 235, 0],    // yellow (RISERS)
-  // 'Foundational Support Needed': [255, 105, 180],  // pink/magenta (ADAPTERS)
-
-
-// const scaleBands: { range: string; label: string; color: [number, number, number] }[] = [
-//       { range: '95–100%', label: 'Excellent Mastery',          color: [22, 101, 52]   },  // dark green
-//       { range: '80–94%',  label: 'Strong Performance',          color: [144, 238, 144] },  // light green
-//       { range: '61–79%',  label: 'Developing Progress',         color: [220, 237, 200] },  // very light green
-//       { range: '31–60%',  label: 'Steady Progress',             color: [255, 235, 0]   },  // yellow
-//       { range: '0–30%',   label: 'Foundational Support Needed', color: [255, 105, 180] },  // pink
-//     ];
-
     // Row 1: first 3 bands
     const row1 = scaleBands.slice(0, 3);
     const bw3  = (contentW - 4) / 3;
@@ -250,19 +234,6 @@ const buildDoc = (params: ReportParams): jsPDF => {
 
     y += 32;
 
-  // const bw = (contentW - 6) / 4;
-  // scaleBands.forEach((b, i) => {
-  //   const bx = margin + i * (bw + 2);
-  //   doc.setFillColor(...b.color);
-  //   doc.roundedRect(bx, y, bw, 12, 1, 1, "F");
-  //   doc.setTextColor(255, 255, 255);
-  //   doc.setFontSize(6.5); doc.setFont("helvetica", "bold");
-  //   doc.text(b.range, bx + bw / 2, y + 4.5, { align: "center" });
-  //   doc.setFontSize(5.5); doc.setFont("helvetica", "normal");
-  //   doc.text(doc.splitTextToSize(b.label, bw - 3), bx + bw / 2, y + 8.5, { align: "center" });
-  // });
-
-  // y += 17;
 
   // ── RECOMMENDATIONS ───────────────────────────────────────────────────────────
   doc.setFontSize(9); doc.setFont("helvetica", "bold"); doc.setTextColor(17, 24, 39);

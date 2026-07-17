@@ -5,7 +5,7 @@ import quizData from "@/app/data/quizdata";
 import standardsData from "@/app/data/statetestdata";
 import { quizAssessmentData } from "@/app/data/quizassessmentdata";
 import { useEffect, useState, useRef } from "react";
-import { supabase } from "@/lib/supabaseClient";
+import { supabase, withTimeout } from "@/lib/supabaseClient";
 
 import { formatDuration, getFormattedTimeData } from "@/app/utils/reviewUtils";
 import { generateReport, generateReportBase64 } from "@/app/utils/generateReport"; // ← added generateReportBase64
@@ -82,14 +82,45 @@ export default function ReviewPage() {
   // ── Effects ─────────────────────────────────────────────
 
   // Fetch user profile
+  // useEffect(() => {
+  //   const getUserProfile = async () => {
+  //     const { data: { session } } = await supabase.auth.getSession();
+  //     const user = session?.user;
+  //     if (user) {
+  //       const { data: profile, error } = await supabase
+  //         .from("student_profile").select("full_name, gender").eq("id", user.id).single();
+  //       setUserName(!error && profile ? profile.full_name : (user.email ?? "Student"));
+  //       setUserEmail(user.email ?? "");
+  //       setGender(profile?.gender || "");
+  //     } else {
+  //       setUserName("Guest");
+  //     }
+  //   };
+  //   getUserProfile();
+  // }, []);
+
+
+
   useEffect(() => {
     const getUserProfile = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      const user = session?.user;
+      // 1. Prefer the snapshot written at quiz start — instant, can't hang
+      const saved = localStorage.getItem("activeStudent");
+      if (saved) {
+        try {
+          const s = JSON.parse(saved);
+          setUserName(s.fullName || "Student");
+          setUserEmail(s.email || "");
+          setGender(s.gender || "");
+          return;
+        } catch {}
+      }
+      // 2. Fallback: live auth, but with a timeout — degraded, never frozen
+      const result = await withTimeout(supabase.auth.getSession());
+      const user = result?.data?.session?.user;
       if (user) {
-        const { data: profile, error } = await supabase
-          .from("student_profile").select("full_name, gender").eq("id", user.id).single();
-        setUserName(!error && profile ? profile.full_name : (user.email ?? "Student"));
+        const { data: profile } = await supabase
+          .from("student_profile").select("full_name, gender").eq("id", user.id).maybeSingle();
+        setUserName(profile?.full_name || user.email || "Student");
         setUserEmail(user.email ?? "");
         setGender(profile?.gender || "");
       } else {
@@ -202,9 +233,14 @@ export default function ReviewPage() {
   // }, [userName, userEmail, gradeParam, loading, score]);
 
   // ── Handlers ────────────────────────────────────────────
+  
+  
+  
+  
+  
   const handleFinishReview = () => {
     ["quizState","mathScore","elaScore","quizTimeData","testDurations",
-     "quizDurations","elaSkipped","satReadingScore","satMathScore","satCorrectCount",
+     "quizDurations","elaSkipped","satReadingScore","satMathScore","satCorrectCount", "activeStudent",
     ].forEach((k) => localStorage.removeItem(k));
 
     Object.keys(localStorage)
@@ -289,7 +325,7 @@ export default function ReviewPage() {
   // ── Step 3: Navigate home — no waiting for email ───────────────────────
   setTimeout(() => {
     handleFinishReview();
-  }, 300);
+  }, 1200);
 };
 
   // ── Guards ──────────────────────────────────────────────
@@ -470,7 +506,8 @@ export default function ReviewPage() {
         <div className="flex justify-center gap-4 flex-wrap mt-4">
           <button
             onClick={handleDownloadReport}
-            disabled={emailSending}
+            //disabled={emailSending}
+            disabled={emailSending || !userName || userName === "Guest"}
             className="px-6 py-3 bg-white border border-gray-200 hover:border-indigo-300 text-gray-700
                        font-bold rounded-full shadow-sm hover:shadow-md transition-all duration-200
                        cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-2"

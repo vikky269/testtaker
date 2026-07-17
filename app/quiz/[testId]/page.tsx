@@ -14,7 +14,8 @@ import { calculateScore, calculateSectionScore } from "@/app/utils/ScoreUtils";
 import { useQuizTimer } from "@/app/hooks/useQuizTimer";
 import QuizBody from "@/app/quizBody/quizBody";
 import ResultsScreen from "@/app/modals/resultScreen";
-import { supabase } from "@/lib/supabaseClient";
+import { supabase, withTimeout } from "@/lib/supabaseClient";
+import toast from "react-hot-toast";
 
 type QuizSection = "math" | "ela" | "science";
 type SatSection  = "reading" | "math";
@@ -110,6 +111,32 @@ export default function Quiz() {
       }
     }
   }, [testid, gradeParam, setAnswers]);
+
+// Snapshot of the logged-in student, captured ONCE at quiz start.
+  // Written to localStorage so the review page can read it without
+  // ever needing a live auth call.
+  const studentInfoRef = useRef<{
+    id: string; fullName: string; email: string; gender: string;
+  } | null>(null);
+
+  useEffect(() => {
+    const captureStudent = async () => {
+      const result = await withTimeout(supabase.auth.getSession());
+      const user = result?.data?.session?.user;
+      if (!user) return;
+      const { data: profile } = await supabase
+        .from("student_profile").select("full_name, gender").eq("id", user.id).maybeSingle();
+      studentInfoRef.current = {
+        id:       user.id,
+        fullName: profile?.full_name || user.email || "Student",
+        email:    user.email ?? "",
+        gender:   profile?.gender || "N/A",
+      };
+      localStorage.setItem("activeStudent", JSON.stringify(studentInfoRef.current));
+    };
+    captureStudent();
+  }, []);
+
 
   // ── Load quiz questions ───────────────────────────────────────────────────
   useEffect(() => {
@@ -233,15 +260,47 @@ export default function Quiz() {
     hasSavedRef.current = true;
 
     // Fetch the logged-in student's profile at submit time
-    const { data: { session } } = await supabase.auth.getSession();
-    const user = session?.user;
-    if (!user) return; // guests aren't saved — same behaviour as before
+    // const { data: { session } } = await supabase.auth.getSession();
+    // const user = session?.user;
+    // if (!user) return; // guests aren't saved — same behaviour as before
 
-    const { data: profile } = await supabase
-      .from("student_profile").select("full_name, gender").eq("id", user.id).single();
+    // const { data: profile } = await supabase
+    //   .from("student_profile").select("full_name, gender").eq("id", user.id).single();
 
-    const fullName = profile?.full_name || user.email || "Student";
-    const gender   = profile?.gender || "N/A";
+    // const fullName = profile?.full_name || user.email || "Student";
+    // const gender   = profile?.gender || "N/A";
+
+
+
+
+    // Prefer the snapshot from quiz start; fall back to live auth (with timeout)
+    let student = studentInfoRef.current;
+    if (!student) {
+      const saved = localStorage.getItem("activeStudent");
+      if (saved) { try { student = JSON.parse(saved); } catch {} }
+    }
+    if (!student) {
+      const result = await withTimeout(supabase.auth.getSession());
+      const user = result?.data?.session?.user;
+      if (user) {
+        const { data: profile } = await supabase
+          .from("student_profile").select("full_name, gender").eq("id", user.id).maybeSingle();
+        student = {
+          id:       user.id,
+          fullName: profile?.full_name || user.email || "Student",
+          email:    user.email ?? "",
+          gender:   profile?.gender || "N/A",
+        };
+      }
+    }
+    if (!student) {
+      toast.error("You're not logged in — this result will NOT be saved!", { duration: 8000 });
+      hasSavedRef.current = false;
+      return;
+    }
+
+    const fullName = student.fullName;
+    const gender   = student.gender;
 
     // Section scores
     const mathScore    = calculateSectionScore("math",    quizQuestions, answers);
@@ -261,9 +320,27 @@ export default function Quiz() {
     ).length;
     const overall = scoredQs.length > 0 ? (correct / scoredQs.length) * 100 : 0;
 
-    const { error } = await supabase.from("leaderboard").insert([{
+    // const { error } = await supabase.from("leaderboard").insert([{
+    //   full_name:        fullName,
+    //   email:            student.email ?? "",
+    //   grade:            normalizedGrade,
+    //   math_score:       isSat ? (satMath    ?? 0) : (mathScore    != null ? Number(mathScore)    : 0),
+    //   ela_score:        isSat ? (satReading ?? 0) : (elaScore     != null ? Number(elaScore)     : 0),
+    //   science_score:    isSat ? 0                 : (scienceScore != null ? Number(scienceScore) : 0),
+    //   overall_score:    parseFloat(overall.toFixed(2)),
+    //   total_time:       durations?.totalDuration ?? 0,
+    //   math_duration:    durations?.mathDuration    ?? null,
+    //   ela_duration:     durations?.elaDuration     ?? null,
+    //   science_duration: durations?.scienceDuration ?? null,
+    //   test_type:        testid,
+    //   gender,
+    //   created_at:       new Date().toISOString(),
+    // }]);
+
+    // Build the payload once — used for BOTH the leaderboard and the test sheet
+    const payload = {
       full_name:        fullName,
-      email:            user.email ?? "",
+      email:            student.email ?? "",
       grade:            normalizedGrade,
       math_score:       isSat ? (satMath    ?? 0) : (mathScore    != null ? Number(mathScore)    : 0),
       ela_score:        isSat ? (satReading ?? 0) : (elaScore     != null ? Number(elaScore)     : 0),
@@ -276,19 +353,41 @@ export default function Quiz() {
       test_type:        testid,
       gender,
       created_at:       new Date().toISOString(),
-    }]);
+    };
+
+    const { error } = await supabase.from("leaderboard").insert([payload]);
 
     if (error) {
       console.error("Leaderboard save error:", error);
       hasSavedRef.current = false; // allow retry if it failed
+    } else {
+      toast.success("Result saved ✓");
+
+      // ── Persist the full test sheet (questions + answers) for "My Tests" ──
+      const { error: subError } = await supabase.from("test_submissions").insert([{
+        user_id:       student.id,
+        full_name:     fullName,
+        email:         student.email ?? "",
+        grade:         normalizedGrade,
+        test_type:     testid,
+        questions:     quizQuestions,   // the exact randomized set this student saw
+        answers:       answers,         // their chosen options, keyed by question text
+        math_score:    payload.math_score,
+        ela_score:     payload.ela_score,
+        science_score: payload.science_score,
+        overall_score: payload.overall_score,
+        durations,
+      }]);
+      if (subError) console.error("Test sheet save error:", subError);
     }
-  };
+    };
 
-
-
-
-
-
+    // if (error) {
+    //   console.error("Leaderboard save error:", error);
+    //   hasSavedRef.current = false; // allow retry if it failed
+    // }
+    
+  
  // ── Finalize and compute all scores ──────────────────────────────────────
   const finalizeSubmit = () => {
     const now = Date.now();

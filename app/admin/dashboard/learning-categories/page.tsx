@@ -295,7 +295,7 @@ export default function LearningCategoriesPage() {
             ) : (
               /* Placeholder when nothing selected */
               <div className="rounded-3xl border-2 border-dashed border-gray-200 p-8 text-center bg-white">
-                <p className="text-4xl mb-3">👆</p>
+                <p className="text-4xl mb-3">👈</p>
                 <p className="text-sm font-semibold text-gray-600">
                   Click any tier on the pyramid to explore that learning group
                 </p>

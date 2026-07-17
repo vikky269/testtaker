@@ -380,35 +380,6 @@ y += cardH + 6;
     y += 22;
   }
 
-// // ── Subject comment helper ────────────────────────────────────────────────────
-function getSubjectComment(
-  subject: 'math' | 'ela' | 'science',
-  score: number,
-  pronoun: { sub: string; obj: string; pos: string }
-): string {
-  const band = score >= 91 ? 'excellent' : score >= 80 ? 'strong' : score >= 50 ? 'developing' : 'foundational';
-  const comments: Record<string, Record<string, string>> = {
-    math: {
-      excellent:    `${pronoun.sub} demonstrates outstanding mathematical ability.`,
-      strong:       `${pronoun.sub} has a solid grasp of mathematical concepts.`,
-      developing:   `${pronoun.sub} shows progress; targeted practice will consolidate skills.`,
-      foundational: `${pronoun.sub} requires foundational support to build core numerical skills.`,
-    },
-    ela: {
-      excellent:    `${pronoun.sub} excels in reading comprehension and language arts.`,
-      strong:       `${pronoun.sub} performs well; reading and writing skills are developing strongly.`,
-      developing:   `${pronoun.sub} shows fair comprehension; continued practice will boost performance.`,
-      foundational: `${pronoun.sub} needs targeted ELA support to strengthen reading and writing.`,
-    },
-    science: {
-      excellent:    `${pronoun.sub} demonstrates exceptional understanding of scientific concepts.`,
-      strong:       `${pronoun.sub} has a strong grasp of core science topics.`,
-      developing:   `${pronoun.sub} is developing science skills; concept review will aid progress.`,
-      foundational: `${pronoun.sub} needs focused science support to build conceptual understanding.`,
-    },
-  };
-  return comments[subject][band];
-}
 
 
 // ── Page-break guard: keeps content clear of the footer ──────────────────
@@ -420,15 +391,40 @@ function getSubjectComment(
     }
   };
 
-  // ── EVALUATOR'S COMMENT ───────────────────────────────────────────────────
+// ── EVALUATOR'S COMMENT — adaptive: always fits on the current page ───────
   if (instructorComment?.trim()) {
-    // Measure with the SAME font the text will be rendered in (9pt normal)
-    doc.setFontSize(9); doc.setFont('helvetica', 'normal');
-    const LINE_H = 4; // mm per line at 9pt with lineHeightFactor 1.25
-    const commentLines = doc.splitTextToSize(instructorComment.trim(), cW - 8);
-    const commentBoxH  = commentLines.length * LINE_H + 7;
+    const SIGNOFF_RESERVE = 16;  // actual sign-off height (~15.5mm)
+    const LABEL_H         = 3;   // section label height
+    const available = (pageH - FOOTER_CLEAR) - y - SIGNOFF_RESERVE - LABEL_H - 2;
+    const text = instructorComment.trim();
 
-    ensureSpace(commentBoxH + 10);
+    // Font-size ladder — try each until the comment fits the remaining space
+    const SIZES = [
+      { font: 9,   lineH: 4.0 },
+      { font: 8.5, lineH: 3.7 },
+      { font: 8,   lineH: 3.4 },
+      { font: 7.5, lineH: 3.2 },
+      { font: 7,   lineH: 3.0 },
+      { font: 6.5, lineH: 2.8 },
+    ];
+
+    let chosen = SIZES[SIZES.length - 1];
+    let lines: string[] = [];
+    for (const s of SIZES) {
+      doc.setFontSize(s.font); doc.setFont('helvetica', 'normal');
+      const wrapped = doc.splitTextToSize(text, cW - 8);
+      lines = wrapped;
+      if (wrapped.length * s.lineH + 7 <= available) { chosen = s; break; }
+      chosen = s; // keep smallest as fallback
+    }
+
+    // Last resort: truncate with an ellipsis rather than breaking the page
+    const maxLines = Math.max(1, Math.floor((available - 7) / chosen.lineH));
+    if (lines.length > maxLines) {
+      lines = [...lines.slice(0, maxLines - 1), '…'];
+    }
+
+    const commentBoxH = lines.length * chosen.lineH + 7;
 
     doc.setFontSize(8); doc.setFont('helvetica', 'bold'); doc.setTextColor(17, 24, 39);
     doc.text("EVALUATOR'S COMMENT", M, y); y += 3;
@@ -438,15 +434,18 @@ function getSubjectComment(
     doc.setDrawColor(209, 213, 219);
     doc.roundedRect(M, y, cW, commentBoxH, 2, 2, 'S');
 
-    doc.setTextColor(31, 41, 55); doc.setFontSize(9); doc.setFont('helvetica', 'normal');
-    doc.text(commentLines, M + 4, y + 6, { lineHeightFactor: 1.25 });
+    doc.setTextColor(31, 41, 55);
+    doc.setFontSize(chosen.font); doc.setFont('helvetica', 'normal');
+    // Convert desired mm line height into jsPDF's lineHeightFactor
+    const lhFactor = chosen.lineH / (chosen.font * 0.3528);
+    doc.text(lines, M + 4, y + 5, { lineHeightFactor: lhFactor });
 
-    y += commentBoxH + 5;
+    y += commentBoxH + 3;
   }
 
 
 // ── SIGN-OFF ──────────────────────────────────────────────────────────────
-  ensureSpace(19); // actual height of the sign-off block (~18mm)
+  ensureSpace(16); // actual height of the sign-off block (~18mm)
 
   doc.setTextColor(31, 41, 55); doc.setFontSize(8.5); doc.setFont('helvetica', 'bold');
   doc.text('If you have any questions do not hesitate to reach out.', M, y);
@@ -478,3 +477,32 @@ function getSubjectComment(
   }
 
   doc.save(`SmartMathz_Recommendation_${studentName.replace(/\s+/g, '_')}.pdf`)};
+// // ── Subject comment helper ────────────────────────────────────────────────────
+function getSubjectComment(
+  subject: 'math' | 'ela' | 'science',
+  score: number,
+  pronoun: { sub: string; obj: string; pos: string }
+): string {
+  const band = score >= 91 ? 'excellent' : score >= 80 ? 'strong' : score >= 50 ? 'developing' : 'foundational';
+  const comments: Record<string, Record<string, string>> = {
+    math: {
+      excellent:    `${pronoun.sub} demonstrates outstanding mathematical ability.`,
+      strong:       `${pronoun.sub} has a solid grasp of mathematical concepts.`,
+      developing:   `${pronoun.sub} shows progress; targeted practice will consolidate skills.`,
+      foundational: `${pronoun.sub} requires foundational support to build core numerical skills.`,
+    },
+    ela: {
+      excellent:    `${pronoun.sub} excels in reading comprehension and language arts.`,
+      strong:       `${pronoun.sub} performs well; reading and writing skills are developing strongly.`,
+      developing:   `${pronoun.sub} shows fair comprehension; continued practice will boost performance.`,
+      foundational: `${pronoun.sub} needs targeted ELA support to strengthen reading and writing.`,
+    },
+    science: {
+      excellent:    `${pronoun.sub} demonstrates exceptional understanding of scientific concepts.`,
+      strong:       `${pronoun.sub} has a strong grasp of core science topics.`,
+      developing:   `${pronoun.sub} is developing science skills; concept review will aid progress.`,
+      foundational: `${pronoun.sub} needs focused science support to build conceptual understanding.`,
+    },
+  };
+  return comments[subject][band];
+}

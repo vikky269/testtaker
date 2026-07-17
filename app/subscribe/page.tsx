@@ -50,26 +50,19 @@ const PANEL_CONTENT = [
   {
     heading: 'Welcome to SmartMathz!',
     body: "Start your child's learning journey today. We provide personalised tutoring that builds confidence, closes gaps, and unlocks potential.",
-    stat1: { val: '300+', label: 'Students Enrolled' },
-    stat2: { val: '100%',  label: 'Parent Satisfaction' },
   },
   {
     heading: "We're a family here.",
     body: "Your involvement is key to your child's success. We keep parents informed, engaged, and empowered every step of the way.",
-    stat1: { val: '1-on-1', label: 'Personalised Sessions' },
-    stat2: { val: '3',      label: 'Flexible Packages'    },
+    
   },
   {
     heading: 'Built around your child.',
     body: "Our programmes are tailored to each student's grade, pace, and goals — from foundational maths to advanced science and coding.",
-    stat1: { val: 'Pre-K–12', label: 'All Grade Levels' },
-    stat2: { val: '4+',       label: 'Subject Areas'    },
   },
   {
     heading: 'Almost there!',
     body: "Tell us when your child is available and when you'd like to start. We'll match you with the right tutor and schedule.",
-    stat1: { val: '48hr',  label: 'Response Time' },
-    stat2: { val: 'Flex',  label: 'Scheduling'    },
   },
 ];
 
@@ -394,7 +387,7 @@ export default function SubscribePage() {
       {/* ════════════════════════════════════════════════════════
           LEFT PANEL
       ════════════════════════════════════════════════════════ */}
-      <div className="hidden lg:flex lg:w-[42%] xl:w-[47%] flex-shrink-0 relative overflow-hidden"
+      <div className="hidden lg:flex lg:w-[42%] xl:w-[40%] flex-shrink-0 relative overflow-hidden"
         style={{ background: 'linear-gradient(145deg, #1a2e05 0%, #2d5a0e 50%, #3a7a12 100%)' }}>
 
         <div className="absolute inset-0 opacity-[0.06]"
@@ -434,14 +427,14 @@ export default function SubscribePage() {
               {panel.body}
             </p>
             <div className="flex gap-6">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-5 py-4">
+              {/* <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-5 py-4">
                 <p className="text-3xl font-bold text-[#a3d926]">{panel.stat1.val}</p>
                 <p className="text-white/50 text-xs mt-0.5">{panel.stat1.label}</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-5 py-4">
+              </div> */}
+              {/* <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-5 py-4">
                 <p className="text-3xl font-bold text-[#a3d926]">{panel.stat2.val}</p>
                 <p className="text-white/50 text-xs mt-0.5">{panel.stat2.label}</p>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -458,7 +451,7 @@ export default function SubscribePage() {
       {/* ════════════════════════════════════════════════════════
           RIGHT PANEL
       ════════════════════════════════════════════════════════ */}
-      <div className="flex-1 bg-gray-50 overflow-y-auto">
+      <div className="flex-2 bg-gray-50 overflow-y-auto">
         <div className="max-w-lg mx-auto px-6 py-10 min-h-full flex flex-col">
 
           <div className="lg:hidden flex items-center gap-3 mb-8">

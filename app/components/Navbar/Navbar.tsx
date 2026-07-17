@@ -11,8 +11,9 @@ const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
 
 const NAV_LINKS = [
   { label: 'Home',        href: '/'            },
-  { label: 'Learning',    href: '/'            },
   {label: 'Enroll now',    href:'/subscribe'  },
+  { label: 'Programs', href: '/programs' },
+  { label: 'My-test', href: '/my-tests' },
   { label: 'Leaderboard', href: '/leaderboard' },
 ];
 
@@ -131,6 +132,46 @@ if (pathname.startsWith('/admin')) return null;
                 {label}
               </Link>
             ))}
+
+
+
+
+
+          
+            {/* ── My Tests — only when logged in ── */}
+            {user && (
+              <div className="relative group">
+                <button className="flex items-center gap-1 px-3 py-1.5 text-sm font-semibold text-gray-600 rounded-lg
+                                   hover:text-[#7FB509] hover:bg-green-50 transition-all duration-150 cursor-pointer">
+                  My Tests
+                  <svg className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {/* Single-level dropdown — right-aligned so it can never overflow */}
+                <div className="absolute right-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                  <div className="bg-white rounded-xl shadow-lg border border-gray-100 py-1.5 w-56">
+                    <p className="px-4 pt-1 pb-1.5 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                      Test Sheet
+                    </p>
+                    <Link href="/my-tests"
+                      className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#7FB509]">
+                      👁️ View Test Sheet
+                    </Link>
+                    <Link href="/my-tests?download=sheet"
+                      className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#7FB509]">
+                      ⬇️ Download Test Sheet
+                    </Link>
+                    <hr className="my-1.5 border-gray-100" />
+                    <Link href="/my-tests?download=report"
+                      className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#7FB509]">
+                      📊 Performance Report
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         )}
 
@@ -218,6 +259,24 @@ if (pathname.startsWith('/admin')) return null;
               {label}
             </Link>
           ))}
+
+          {user && (
+            <>
+              <p className="px-4 pt-2 pb-1 text-[10px] font-bold uppercase tracking-widest text-gray-400">My Tests</p>
+              {[
+                { label: '👁️ View Test Sheet', href: '/my-tests' },
+                { label: '⬇️ Download Test Sheet', href: '/my-tests?download=sheet' },
+                { label: '📊 Performance Report', href: '/my-tests?download=report' },
+              ].map(({ label, href }) => (
+                <Link key={href} href={href} onClick={() => setMobileOpen(false)}
+                  className="block px-4 py-2.5 text-sm font-semibold text-gray-700 rounded-xl hover:bg-green-50 hover:text-[#7FB509] transition-colors">
+                  {label}
+                </Link>
+              ))}
+            </>
+          )}
+
+
         </div>
       )}
     </nav>

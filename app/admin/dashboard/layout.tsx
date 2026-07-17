@@ -7,12 +7,12 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
-import { supabase } from '@/lib/supabaseClient';
+import { supabase,withTimeout } from '@/lib/supabaseClient';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
   LayoutDashboard, Users, FileText, ClipboardList,
-  BarChart2, LogOut, X, Menu, Shield, Settings, GraduationCap
+  BarChart2, LogOut, X, Menu, Shield, Settings, GraduationCap, FileCheck2
 } from 'lucide-react';
 
 const ADMIN_EMAIL = 'info@smartmathz.com';
@@ -22,6 +22,7 @@ const NAV_ITEMS = [
   { href: '/admin/dashboard',                       icon: LayoutDashboard, label: 'Overview'             },
   { href: '/admin/dashboard/students',              icon: Users,           label: 'Students'             },
   { href: '/admin/dashboard/results',               icon: FileText,        label: 'Results'              },
+  { href: '/admin/dashboard/completed-recommendations', icon: FileCheck2,  label: 'Completed Recommendations'  },
   { href: '/admin/dashboard/subscriptions',         icon: ClipboardList,   label: 'Subscriptions'        },
   { href: '/admin/dashboard/learning-categories',   icon: GraduationCap,   label: 'Learning Categories'  },
   { href: '/admin/dashboard/analytics',             icon: BarChart2,       label: 'Analytics'            },
@@ -35,7 +36,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   useEffect(() => {
     const check = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
+      // const { data: { session } } = await supabase.auth.getSession();
+      const result = await withTimeout(supabase.auth.getSession());
+      const session = result?.data?.session ?? null;
       if (!session || session.user.email?.toLowerCase() !== ADMIN_EMAIL) {
         router.replace('/admin/login');
       } else {

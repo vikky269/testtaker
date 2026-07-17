@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { supabase } from '@/lib/supabaseClient';
+import { supabase, withTimeout } from '@/lib/supabaseClient';
 import { toast } from 'react-hot-toast';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { Outfit } from 'next/font/google';
@@ -99,8 +99,10 @@ export default function SignUpPage() {
       return;
     }
 
-    const { data: { session }, error: sessionError } = await supabase.auth.getSession();
-    if (sessionError || !session) {
+   // const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+   const result = await withTimeout(supabase.auth.getSession());
+      const session = result?.data?.session ?? null;
+    if (!session) {
       setError('Session not found after signup. Please try logging in.');
       setLoading(false); return;
     }

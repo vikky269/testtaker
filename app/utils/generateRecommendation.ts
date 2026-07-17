@@ -27,24 +27,34 @@ export const PACKAGES: PackageOption[] = [
   {
     id: 'II',
     label: 'Package II',
-    subjects: ['Mathematics', '1 Additional Programme', 'Virtual Library'],
+    subjects: ['Mathematics', '1 Additional Program', 'Virtual Library'],
     hoursPerWeek: 4,
-    description: 'Math Tutoring + 1 Additional Programme + Virtual Library — 4hrs/week · 16hrs/month',
+    description: 'Math Tutoring + 1 Additional Program + Virtual Library — 4hrs/week · 16hrs/month',
   },
   {
     id: 'III',
     label: 'Package III',
-    subjects: ['Mathematics', '2 Additional Programmes', 'Virtual Library'],
+    subjects: ['Mathematics', '2 Additional Programs', 'Virtual Library'],
     hoursPerWeek: 5,
-    description: 'Math Tutoring + 2 Additional Programmes + Virtual Library — 5hrs/week · 20hrs/month',
+    description: 'Math Tutoring + 2 Additional Programs + Virtual Library — 5hrs/week · 20hrs/month',
   },
   {
     id: 'custom',
     label: 'Custom Package',
     subjects: [],
     hoursPerWeek: null,
-    description: 'Customised programme — subjects and hours set by admin',
+    description: 'Customized program — subjects and hours set by admin',
   },
+];
+
+// Programs the admin can attach to Package II (pick 1) or Package III (pick 2)
+export const ADDITIONAL_PROGRAMS = [
+  'Coding - Scratch / Snap',
+  'Science',
+  'English Language Arts',
+  'Ms Excel',
+  'Graphic Design',
+  'Coding -  Html / Css',
 ];
 
 export const CUSTOM_PACKAGE_SUBJECTS = [
@@ -52,7 +62,7 @@ export const CUSTOM_PACKAGE_SUBJECTS = [
   { name: 'English Language Arts', defaultHours: 1 },
   { name: 'Science',               defaultHours: 1 },
   { name: 'Coding',                defaultHours: 1 },
-  { name: 'Virtual Library',       defaultHours: 0.5 },
+  { name: 'Virtual Library',       defaultHours: 1 },
   { name: 'Algebra',               defaultHours: 1 },
   { name: 'Geometry',              defaultHours: 1 },
 ];
@@ -86,6 +96,7 @@ interface RecommendationParams {
   overallScore:    number;
   selectedPackage: PackageOption;
   customSubjects?: CustomPackageSubject[];
+  additionalPrograms?: string[];
   instructorName?:    string;
   instructorComment?: string;
   testDate?:          string;
@@ -98,7 +109,7 @@ export const generateRecommendationPDF = (params: RecommendationParams) => {
   const {
     studentName, studentEmail, grade, gender,
     mathScore, elaScore, scienceScore, overallScore,
-    selectedPackage, customSubjects = [], instructorName, instructorComment,
+    selectedPackage, customSubjects = [], additionalPrograms = [], instructorName, instructorComment,
     testDate, computedPrice, defaultSessions,
   } = params;
 
@@ -115,7 +126,14 @@ export const generateRecommendationPDF = (params: RecommendationParams) => {
   });
 
   const isCustom        = selectedPackage.id === 'custom';
-  const packageSubjects = isCustom ? customSubjects.map(s => s.name) : selectedPackage.subjects;
+  //const packageSubjects = isCustom ? customSubjects.map(s => s.name) : selectedPackage.subjects;
+  const packageSubjects = isCustom
+    ? customSubjects.map(s => s.name)
+    : additionalPrograms.length > 0
+      ? selectedPackage.subjects.flatMap(s =>
+          s.includes('Additional Program') ? additionalPrograms : [s])
+      : selectedPackage.subjects;
+
   const packageHours    = isCustom
     ? customSubjects.reduce((s, c) => s + c.hours, 0)
     : (selectedPackage.hoursPerWeek ?? 0);
@@ -241,31 +259,36 @@ cards.forEach((card, i) => {
 y += cardH + 6;
     
   
-  // ── LEARNING CATEGORY ─────────────────────────────────────────────────────
-  
+ // ── LEARNING CATEGORY — box grows to fit the full description ─────────────
   doc.setFontSize(8); doc.setFont('helvetica', 'bold'); doc.setTextColor(17, 24, 39);
   doc.text('LEARNING CATEGORY', M, y);
   y += 3;
 
+  // Measure the FULL description at the render font (7.5pt normal)
+  doc.setFontSize(7.5); doc.setFont('helvetica', 'normal');
+  const catDescLines = doc.splitTextToSize(category.description, cW - 52);
+  const CAT_LINE_H   = 3.3; // mm per line at 7.5pt
+  // Box must fit: range line + description lines, and never be shorter than the badge area
+  const catBoxH = Math.max(16, 7.5 + catDescLines.length * CAT_LINE_H + 3);
+
   doc.setFillColor(248, 250, 252);
-  doc.roundedRect(M, y, cW, 16, 2, 2, 'F');
+  doc.roundedRect(M, y, cW, catBoxH, 2, 2, 'F');
   doc.setDrawColor(...category.pdfTextColor);
-  doc.roundedRect(M, y, cW, 16, 2, 2, 'S');
+  doc.roundedRect(M, y, cW, catBoxH, 2, 2, 'S');
 
-  // Badge
+  // Badge — vertically centred in the box
   doc.setFillColor(...category.pdfTextColor);
-  doc.roundedRect(M + 3, y + 3, 30, 10, 1.5, 1.5, 'F');
+  doc.roundedRect(M + 3, y + catBoxH / 2 - 5, 30, 10, 1.5, 1.5, 'F');
   doc.setTextColor(255, 255, 255); doc.setFontSize(8); doc.setFont('helvetica', 'bold');
-  doc.text(category.name, M + 18, y + 9.5, { align: 'center' });
+  doc.text(category.name, M + 18, y + catBoxH / 2 + 1.5, { align: 'center' });
 
-  // Range + description
+  // Range + full description
   doc.setTextColor(107, 114, 128); doc.setFontSize(7); doc.setFont('helvetica', 'bold');
   doc.text(category.range, M + 37, y + 4.5);
   doc.setTextColor(31, 41, 55); doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5);
-  const shortDesc = doc.splitTextToSize(category.description.substring(0, 200), cW - 52);
-  doc.text(shortDesc.slice(0, 2), M + 37, y + 9.5);
+  doc.text(catDescLines, M + 37, y + 9, { lineHeightFactor: 1.25 });
 
-  y += 22;
+  y += catBoxH + 6;
 
   // ── PROGRAMME RECOMMENDATION ──────────────────────────────────────────────
   doc.setFontSize(8); doc.setFont('helvetica', 'bold'); doc.setTextColor(17, 24, 39);
@@ -393,9 +416,10 @@ y += cardH + 6;
 
 // ── EVALUATOR'S COMMENT — adaptive: always fits on the current page ───────
   if (instructorComment?.trim()) {
-    const SIGNOFF_RESERVE = 16;  // actual sign-off height (~15.5mm)
+   const SIGNOFF_RESERVE = 12;  // compact horizontal sign-off (~10mm) + margin
     const LABEL_H         = 3;   // section label height
-    const available = (pageH - FOOTER_CLEAR) - y - SIGNOFF_RESERVE - LABEL_H - 2;
+    const BOX_GAP         = 4;   // spacing after the comment box
+    const available = (pageH - FOOTER_CLEAR) - y - LABEL_H - BOX_GAP - SIGNOFF_RESERVE;
     const text = instructorComment.trim();
 
     // Font-size ladder — try each until the comment fits the remaining space
@@ -440,28 +464,54 @@ y += cardH + 6;
     const lhFactor = chosen.lineH / (chosen.font * 0.3528);
     doc.text(lines, M + 4, y + 5, { lineHeightFactor: lhFactor });
 
-    y += commentBoxH + 3;
+   y += commentBoxH + BOX_GAP;
+  
   }
 
 
 // ── SIGN-OFF ──────────────────────────────────────────────────────────────
-  ensureSpace(16); // actual height of the sign-off block (~18mm)
+// ── SIGN-OFF — compact horizontal layout ─────────────────────────────────
+  // ── SIGN-OFF — compact horizontal layout, anchored to page bottom ────────
+  ensureSpace(12);
+
+  // Bottom-anchor: if there's leftover space on the page, push the sign-off
+  // down so it sits just above the footer (never pushes it onto a new page)
+  const SIGNOFF_H = 11; // both sign-off lines
+  const anchorY   = pageH - FOOTER_CLEAR - SIGNOFF_H;
+  if (y < anchorY) y = anchorY;
 
   doc.setTextColor(31, 41, 55); doc.setFontSize(8.5); doc.setFont('helvetica', 'bold');
   doc.text('If you have any questions do not hesitate to reach out.', M, y);
-
-  y += 5;
-  doc.setFont('helvetica', 'normal'); doc.setFontSize(8.5);
-  doc.text('Best regards,', M, y);
-
-  y += 5;
-  const sigName = instructorName?.trim() || 'SmartMathz Team';
-  doc.setFont('helvetica', 'bold'); doc.setFontSize(9.5); doc.setTextColor(17, 24, 39);
-  doc.text(sigName, M, y);
-
   y += 5.5;
-  doc.setFont('helvetica', 'normal'); doc.setFontSize(8); doc.setTextColor(107, 114, 128);
-  doc.text('Lead Instructor, SmartMathz', M, y);
+  const sigName = instructorName?.trim() || 'SmartMathz Team';
+  doc.setFont('helvetica', 'normal'); doc.setFontSize(8.5); doc.setTextColor(31, 41, 55);
+  doc.text('Best regards,', M, y);
+  const brW = doc.getTextWidth('Best regards, ');
+
+  doc.setFont('helvetica', 'bold'); doc.setFontSize(9); doc.setTextColor(17, 24, 39);
+  doc.text(sigName, M + brW + 1, y);
+  const nameW = doc.getTextWidth(sigName);
+
+  doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.setTextColor(107, 114, 128);
+  doc.text('·  Lead Instructor, SmartMathz', M + brW + nameW + 3, y);
+
+  // ensureSpace(19); // actual height of the sign-off block (~18mm)
+
+  // doc.setTextColor(31, 41, 55); doc.setFontSize(8.5); doc.setFont('helvetica', 'bold');
+  // doc.text('If you have any questions do not hesitate to reach out.', M, y);
+
+  // y += 6;
+  // doc.setFont('helvetica', 'normal'); doc.setFontSize(8.5);
+  // doc.text('Best regards,', M, y);
+
+  // y += 6;
+  // const sigName = instructorName?.trim() || 'SmartMathz Team';
+  // doc.setFont('helvetica', 'bold'); doc.setFontSize(9.5); doc.setTextColor(17, 24, 39);
+  // doc.text(sigName, M, y);
+
+  // y += 5.5;
+  // doc.setFont('helvetica', 'normal'); doc.setFontSize(8); doc.setTextColor(107, 114, 128);
+  // doc.text('Lead Instructor, SmartMathz', M, y);
 
   // ── FOOTER — drawn on every page ──────────────────────────────────────────
   const pageCount = (doc as any).getNumberOfPages();

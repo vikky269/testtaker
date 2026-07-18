@@ -305,6 +305,7 @@ export default function ResultsPage() {
   const [editingTimes, setEditingTimes] = useState<any | null>(null);
   const [saving, setSaving]             = useState(false);
   const [deleteTarget, setDeleteTarget] = useState<StudentResult | null>(null);
+  const [rowMenu, setRowMenu] = useState<{ id: string; x: number; y: number } | null>(null);
   const [deleting, setDeleting]         = useState(false);
 
   // Pricing adjusters — ALL start at zero
@@ -350,6 +351,17 @@ export default function ResultsPage() {
   }, [results, search, gradeFilter, catFilter, completedIds]);
 
 
+//use effect to close action buttons
+useEffect(() => {
+    if (!rowMenu) return;
+    const close = () => setRowMenu(null);
+    document.addEventListener('click', close);
+    window.addEventListener('scroll', close, true);
+    return () => {
+      document.removeEventListener('click', close);
+      window.removeEventListener('scroll', close, true);
+    };
+  }, [rowMenu]);
 
 // Edit deep-link — pre-populates the modal when arriving from the completed page:
 
@@ -473,6 +485,7 @@ export default function ResultsPage() {
       return;
     }
     toast.success(`${deleteTarget.full_name}'s result deleted.`);
+    window.dispatchEvent(new Event('pending-evals-changed'));
     setResults(prev => prev.filter(r => r.id !== deleteTarget.id));
     setDeleteTarget(null);
   };
@@ -559,6 +572,7 @@ export default function ResultsPage() {
     if (error) { console.error(error); toast.error('Failed to save recommendation.'); return; }
 
     toast.success(editingRecId ? 'Recommendation updated!' : 'Recommendation saved!');
+    window.dispatchEvent(new Event('pending-evals-changed'));
     if (selectedStudent.id) setCompletedIds(prev => new Set(prev).add(String(selectedStudent.id)));
     setSelectedStudent(null);
 
@@ -567,50 +581,6 @@ export default function ResultsPage() {
       router.push('/admin/dashboard/completed-recommendations');
     }
   };
-
-  // ── Generate PDF ───────────────────────────────────────────────────────────
-  // const handleGeneratePDF = () => {
-
-  //   if (!selectedStudent) return;
-  //   if (instructorComment.length > COMMENT_MAX) {
-  //     toast.error(
-  //       `Evaluator's comment is ${instructorComment.length.toLocaleString()} characters — the maximum is ${COMMENT_MAX.toLocaleString()}. Please shorten it before downloading.`,
-  //       { duration: 6000 }
-  //     );
-  //     return;
-  //   }
-  //   const fmt = (s?: number | null) =>
-  //       s ? `${Math.floor(s / 60)}m ${s % 60}s` : '—';
-
-  //   generateRecommendationPDF({
-  //     studentName:    selectedStudent.full_name,
-  //     studentEmail:   selectedStudent.email,
-  //     grade:          selectedStudent.grade,
-  //     gender:         selectedStudent.gender,
-  //     mathScore:      selectedStudent.math_score,
-  //     elaScore:       selectedStudent.ela_score,
-  //     scienceScore:   selectedStudent.science_score,
-  //     overallScore:   selectedStudent.overall_score,
-  //     selectedPackage,
-  //     customSubjects: selectedPackage.id === 'custom' ? customSubjects : [],
-  //     additionalPrograms: selectedPackage.id !== 'custom' ? additionalPrograms : [],
-  //     instructorName,
-  //     instructorComment: instructorComment.slice(0, COMMENT_MAX),
-  //     defaultSessions,
-  //     computedPrice:  computedPrice ?? undefined,
-
-  //     times: {
-  //       total: fmt(selectedStudent.total_time),
-  //       math: fmt((selectedStudent as any).math_duration),
-  //       ela: fmt((selectedStudent as any).ela_duration),
-  //       science: fmt((selectedStudent as any).science_duration),
-  //     },
-  //   });
-  // };
-
-
-
-
 
 
   if (loading) return <div className="p-8 text-gray-500">Loading results...</div>;
@@ -698,21 +668,24 @@ export default function ResultsPage() {
                     <td className="px-4 py-3">
                       <span className="text-xs bg-blue-50 text-blue-700 font-semibold px-2 py-0.5 rounded-full">{sugg.label}</span>
                     </td>
-                    <td className="px-4 py-3">
-                      <div className="flex items-center gap-1.5">
-                        <button onClick={() => openModal(r)}
-                          className="flex items-center gap-1.5 text-xs font-semibold text-green-700 hover:text-green-900 bg-green-50 hover:bg-green-100 px-3 py-1.5 rounded-lg cursor-pointer transition-colors">
-                          📄 Recommend
-                        </button>
-                        <button onClick={() => setDeleteTarget(r)}
-                          title="Delete this result"
-                          className="w-8 h-8 flex items-center justify-center rounded-lg text-red-400 hover:text-red-600 bg-red-50/50 hover:bg-red-50 cursor-pointer transition-colors">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                          </svg>
-                        </button>
-                      </div>
+                   <td className="px-4 py-3">
+                      <button onClick={e => {
+                          e.stopPropagation();
+                          const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+                          const MENU_H = 100; // 2-item menu
+                          const openUp = rect.bottom + MENU_H > window.innerHeight - 8;
+                          setRowMenu(prev => prev?.id === String(r.id ?? idx) ? null : {
+                            id: String(r.id ?? idx),
+                            x: Math.max(8, rect.right - 180),
+                            y: openUp ? rect.top - MENU_H - 6 : rect.bottom + 6,
+                          });
+                        }}
+                        className={`w-8 h-8 flex items-center justify-center rounded-lg cursor-pointer transition-colors
+                          ${rowMenu?.id === String(r.id ?? idx) ? 'bg-gray-100 text-gray-700' : 'text-gray-400 hover:text-gray-700 hover:bg-gray-100'}`}>
+                        <svg className="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24">
+                          <circle cx="12" cy="5" r="1.8" /><circle cx="12" cy="12" r="1.8" /><circle cx="12" cy="19" r="1.8" />
+                        </svg>
+                      </button>
                     </td>
                   </tr>
                 );
@@ -721,7 +694,28 @@ export default function ResultsPage() {
           </table>
         </div>
       </div>
+     
 
+     {/* ══════════ ROW ACTION MENU ══════════ */}
+      {rowMenu && (() => {
+        const row = filtered.find((r, i) => String(r.id ?? i) === rowMenu.id);
+        if (!row) return null;
+        return (
+          <div className="fixed z-[70] bg-white rounded-xl shadow-xl border border-gray-100 py-1.5 w-[180px]"
+            style={{ left: rowMenu.x, top: rowMenu.y }}
+            onClick={e => e.stopPropagation()}>
+            <button onClick={() => { openModal(row); setRowMenu(null); }}
+              className="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer">
+              📄 Recommend
+            </button>
+            <hr className="my-1 border-gray-100" />
+            <button onClick={() => { setDeleteTarget(row); setRowMenu(null); }}
+              className="w-full text-left px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 cursor-pointer">
+              🗑️ Delete
+            </button>
+          </div>
+        );
+      })()}
 
       {/* ══════════ DELETE CONFIRMATION MODAL ══════════ */}
       {deleteTarget && (
@@ -1080,7 +1074,7 @@ export default function ResultsPage() {
         );
       })()}
 
-      
+
     </div>
   );
 }

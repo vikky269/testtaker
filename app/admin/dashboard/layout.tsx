@@ -34,6 +34,28 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [checking, setChecking]       = useState(true);
 
+  const [pendingCount, setPendingCount] = useState<number | null>(null);
+
+  const fetchPendingCount = async () => {
+    const [lb, done] = await Promise.all([
+      supabase.from('leaderboard').select('id'),
+      supabase.from('completed_recommendations').select('leaderboard_id'),
+    ]);
+    if (!lb.data) return;
+    const doneSet = new Set((done.data ?? []).map(r => r.leaderboard_id).filter(Boolean));
+    setPendingCount(lb.data.filter(r => r.id && !doneSet.has(String(r.id))).length);
+  };
+
+  // Refresh on mount + every route change within the dashboard
+  useEffect(() => { fetchPendingCount(); }, [pathname]);
+
+  // Refresh instantly when a page reports a change (save/delete)
+  useEffect(() => {
+    const handler = () => fetchPendingCount();
+    window.addEventListener('pending-evals-changed', handler);
+    return () => window.removeEventListener('pending-evals-changed', handler);
+  }, []);
+
   useEffect(() => {
     const check = async () => {
       // const { data: { session } } = await supabase.auth.getSession();
@@ -112,8 +134,15 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   ${active
                     ? 'bg-[#7FB509] text-white shadow-sm'
                     : 'text-white/60 hover:text-white hover:bg-white/10'}`}>
-                <Icon size={16} />
-                {label}
+               <Icon size={16} />
+                <span className="flex-1">{label}</span>
+                {href === '/admin/dashboard/results' && (pendingCount ?? 0) > 0 && (
+                  <span className={`min-w-[20px] h-5 px-1.5 rounded-full text-[11px] font-bold
+                                    flex items-center justify-center flex-shrink-0
+                                    ${active ? 'bg-white text-[#7FB509]' : 'bg-red-500 text-white'}`}>
+                    {pendingCount! > 99 ? '99+' : pendingCount}
+                  </span>
+                )}
               </Link>
             );
           })}

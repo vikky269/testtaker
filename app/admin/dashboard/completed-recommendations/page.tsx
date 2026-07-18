@@ -1,7 +1,8 @@
 'use client';
 
 // app/admin/dashboard/completed-recommendations/page.tsx
-// Saved programme recommendations — key metrics, download PDF, edit (reopens the results modal)
+// Saved programme recommendations — kebab action menu per row:
+// View Details · Edit · Download · Delete
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -45,11 +46,19 @@ interface CompletedRec {
 const fmtDate = (d: string) =>
   new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 
+const fmtDateTime = (d: string) =>
+  new Date(d).toLocaleString('en-US', {
+    year: 'numeric', month: 'short', day: 'numeric',
+    hour: 'numeric', minute: '2-digit',
+  });
+
 const pkgBadge = (id: string) =>
   id === 'I'      ? 'bg-blue-50 text-blue-700'
   : id === 'II'   ? 'bg-green-50 text-green-700'
   : id === 'III'  ? 'bg-purple-50 text-purple-700'
   : 'bg-amber-50 text-amber-700';
+
+const MENU_W = 190;
 
 export default function CompletedRecommendationsPage() {
   const router = useRouter();
@@ -58,7 +67,13 @@ export default function CompletedRecommendationsPage() {
   const [loading, setLoading]   = useState(true);
   const [search, setSearch]     = useState('');
   const [pkgFilter, setPkgFilter] = useState('All');
-  const [downloadingId, setDownloadingId] = useState<string | null>(null);
+
+  // Kebab menu state — fixed-positioned so the scroll container can't clip it
+  const [menu, setMenu] = useState<{ rec: CompletedRec; x: number; y: number } | null>(null);
+  // Modals
+  const [viewTarget, setViewTarget]     = useState<CompletedRec | null>(null);
+  const [deleteTarget, setDeleteTarget] = useState<CompletedRec | null>(null);
+  const [deleting, setDeleting]         = useState(false);
 
   const load = async () => {
     const { data, error } = await supabase
@@ -84,9 +99,31 @@ export default function CompletedRecommendationsPage() {
     setFiltered(out);
   }, [recs, search, pkgFilter]);
 
+  // Close the kebab menu on any outside click / scroll
+  useEffect(() => {
+    if (!menu) return;
+    const close = () => setMenu(null);
+    document.addEventListener('click', close);
+    window.addEventListener('scroll', close, true);
+    return () => {
+      document.removeEventListener('click', close);
+      window.removeEventListener('scroll', close, true);
+    };
+  }, [menu]);
+
+ const openMenu = (e: React.MouseEvent, rec: CompletedRec) => {
+    e.stopPropagation();
+    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+    const MENU_H = 195; // 4-item menu + divider
+    const openUp = rect.bottom + MENU_H > window.innerHeight - 8;
+    setMenu(prev => prev?.rec.id === rec.id ? null : {
+      rec,
+      x: Math.max(8, rect.right - MENU_W),
+      y: openUp ? rect.top - MENU_H - 6 : rect.bottom + 6,
+    });
+  };
   // ── Download PDF from the stored snapshot ─────────────────────────────────
   const handleDownload = (rec: CompletedRec) => {
-    setDownloadingId(rec.id);
     try {
       const selectedPackage: PackageOption =
         rec.package_id === 'custom'
@@ -121,14 +158,27 @@ export default function CompletedRecommendationsPage() {
     } catch (err) {
       console.error(err);
       toast.error('Could not generate the PDF for this record.');
-    } finally {
-      setDownloadingId(null);
     }
   };
 
-  // ── Edit — reopen the results-page modal pre-populated ───────────────────
-  const handleEdit = (rec: CompletedRec) => {
+  const handleEdit = (rec: CompletedRec) =>
     router.push(`/admin/dashboard/results?edit=${rec.id}`);
+
+  const handleDelete = async () => {
+    if (!deleteTarget) return;
+    setDeleting(true);
+    const { error } = await supabase
+      .from('completed_recommendations').delete().eq('id', deleteTarget.id);
+    setDeleting(false);
+    if (error) {
+      console.error(error);
+      toast.error('Failed to delete. Check permissions and try again.');
+      return;
+    }
+    toast.success(`${deleteTarget.student_name}'s recommendation deleted.`);
+    window.dispatchEvent(new Event('pending-evals-changed'));
+    setRecs(prev => prev.filter(r => r.id !== deleteTarget.id));
+    setDeleteTarget(null);
   };
 
   if (loading) return <div className="p-8 text-gray-500">Loading completed recommendations...</div>;
@@ -140,18 +190,18 @@ export default function CompletedRecommendationsPage() {
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-gray-900">Completed Recommendations</h1>
         <p className="text-sm text-gray-500 mt-1">
-          Saved program recommendations. Download the final PDF or edit a recommendation before sending it out.
+          Saved program recommendations. Use the actions menu to view, edit, download, or delete.
         </p>
       </div>
 
       {/* Summary cards */}
       <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
         {[
-          { label: 'Total',          count: recs.length,                                          cls: 'text-gray-800'   },
-          { label: 'Package I',      count: recs.filter(r => r.package_id === 'I').length,        cls: 'text-blue-700'   },
-          { label: 'Package II',     count: recs.filter(r => r.package_id === 'II').length,       cls: 'text-green-700'  },
-          { label: 'Package III',    count: recs.filter(r => r.package_id === 'III').length,      cls: 'text-purple-700' },
-          { label: 'Custom',         count: recs.filter(r => r.package_id === 'custom').length,   cls: 'text-amber-700'  },
+          { label: 'Total',       count: recs.length,                                        cls: 'text-gray-800'   },
+          { label: 'Package I',   count: recs.filter(r => r.package_id === 'I').length,      cls: 'text-blue-700'   },
+          { label: 'Package II',  count: recs.filter(r => r.package_id === 'II').length,     cls: 'text-green-700'  },
+          { label: 'Package III', count: recs.filter(r => r.package_id === 'III').length,    cls: 'text-purple-700' },
+          { label: 'Custom',      count: recs.filter(r => r.package_id === 'custom').length, cls: 'text-amber-700'  },
         ].map(({ label, count, cls }) => (
           <div key={label} className="bg-white rounded-2xl p-4 text-center border border-gray-100">
             <p className={`text-2xl font-extrabold ${cls}`}>{count}</p>
@@ -185,7 +235,7 @@ export default function CompletedRecommendationsPage() {
           <table className="w-full text-sm border-collapse">
             <thead>
               <tr className="bg-gray-50 border-b border-gray-100">
-                {['#','STUDENT','GRADE','PACKAGE','HRS/WK','SESSIONS','MONTHLY FEE','BI-WEEKLY','SAVINGS','EVALUATOR','SAVED','ACTIONS'].map(h => (
+                {['#','STUDENT','GRADE','PACKAGE','MONTHLY FEE','BI-WEEKLY','SAVINGS','EVALUATOR','SAVED','ACTIONS'].map(h => (
                   <th key={h} className="px-3 py-3 text-left text-[11px] font-medium uppercase tracking-wide text-gray-400 whitespace-nowrap">{h}</th>
                 ))}
               </tr>
@@ -217,8 +267,8 @@ export default function CompletedRecommendationsPage() {
                         {r.package_id === 'custom' ? 'Custom' : `Package ${r.package_id}`}
                       </span>
                     </td>
-                    <td className="px-3 py-3 text-sm text-gray-700">{r.hours_per_week ?? '—'}</td>
-                    <td className="px-3 py-3 text-sm text-gray-700">{r.sessions ?? cp?.sessions ?? '—'}</td>
+                    {/* <td className="px-3 py-3 text-sm text-gray-700">{r.hours_per_week ?? '—'}</td>
+                    <td className="px-3 py-3 text-sm text-gray-700">{r.sessions ?? cp?.sessions ?? '—'}</td> */}
                     <td className="px-3 py-3 text-sm font-bold text-green-700">
                       {cp ? `$${cp.smMonthlyFee}` : '—'}
                       {cp && <span className="block text-[10px] font-normal text-gray-400">std ${cp.standardMonthlyFee}</span>}
@@ -232,19 +282,21 @@ export default function CompletedRecommendationsPage() {
                       ) : '—'}
                     </td>
                     <td className="px-3 py-3 text-xs text-gray-500 truncate max-w-[110px]">{r.instructor_name ?? '—'}</td>
-                    <td className="px-3 py-3 text-xs text-gray-400 whitespace-nowrap">{fmtDate(r.created_at)}</td>
+                    <td className="px-3 py-3 text-xs text-gray-400 whitespace-nowrap">
+                      {fmtDate(r.created_at)}
+                      <span className="block text-[10px] text-gray-300">
+                        {new Date(r.created_at).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })}
+                      </span>
+                    </td>
                     <td className="px-3 py-3">
-                      <div className="flex items-center gap-1.5">
-                        <button onClick={() => handleDownload(r)}
-                          disabled={downloadingId === r.id}
-                          className="text-xs font-semibold text-green-700 bg-green-50 hover:bg-green-100 px-2.5 py-1.5 rounded-lg cursor-pointer transition-colors disabled:opacity-50 whitespace-nowrap">
-                          {downloadingId === r.id ? '...' : '📄 Download'}
-                        </button>
-                        <button onClick={() => handleEdit(r)}
-                          className="text-xs font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 px-2.5 py-1.5 rounded-lg cursor-pointer transition-colors whitespace-nowrap">
-                          ✏️ Edit
-                        </button>
-                      </div>
+                      {/* Kebab action button */}
+                      <button onClick={e => openMenu(e, r)}
+                        className="w-8 h-8 flex items-center justify-center rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 cursor-pointer transition-colors">
+                        <svg className="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                        </svg>
+                      </button>
                     </td>
                   </tr>
                 );
@@ -253,6 +305,145 @@ export default function CompletedRecommendationsPage() {
           </table>
         </div>
       </div>
+
+      {/* ── Kebab dropdown — fixed positioned, never clipped by the table ── */}
+      {menu && (
+        <div className="fixed z-[70] bg-white rounded-xl shadow-xl border border-gray-100 py-1.5"
+          style={{ left: menu.x, top: menu.y, width: MENU_W }}
+          onClick={e => e.stopPropagation()}>
+          <button onClick={() => { setViewTarget(menu.rec); setMenu(null); }}
+            className="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer">
+            👁️ View Details
+          </button>
+          <button onClick={() => { handleEdit(menu.rec); setMenu(null); }}
+            className="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer">
+            ✏️ Edit
+          </button>
+          <button onClick={() => { handleDownload(menu.rec); setMenu(null); }}
+            className="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer">
+            📄 Download PDF
+          </button>
+          <hr className="my-1 border-gray-100" />
+          <button onClick={() => { setDeleteTarget(menu.rec); setMenu(null); }}
+            className="w-full text-left px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 cursor-pointer">
+            🗑️ Delete
+          </button>
+        </div>
+      )}
+
+      {/* ── View Details modal ── */}
+      {viewTarget && (() => {
+        const r = viewTarget; const cp = r.computed_price;
+        const Row = ({ label, value }: { label: string; value: string | number | null | undefined }) =>
+          value != null && value !== '' ? (
+            <div className="flex justify-between py-1.5 border-b border-gray-50 last:border-0 text-sm gap-4">
+              <span className="text-gray-400 text-xs uppercase tracking-wide pt-0.5">{label}</span>
+              <span className="font-semibold text-gray-800 text-right">{value}</span>
+            </div>
+          ) : null;
+        const Section = ({ title }: { title: string }) => (
+          <h3 className="text-[11px] font-bold uppercase tracking-widest text-[#3a5a09] mt-4 mb-1 border-b border-green-100 pb-1">{title}</h3>
+        );
+        return (
+          <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+            <div className="bg-white rounded-3xl shadow-2xl w-full max-w-lg max-h-[92vh] overflow-y-auto">
+              <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-gray-100 sticky top-0 bg-white rounded-t-3xl z-10">
+                <div>
+                  <h2 className="text-lg font-bold text-gray-900">{r.student_name}</h2>
+                  <p className="text-sm text-gray-400 mt-0.5">Saved {fmtDate(r.created_at)}{r.updated_at !== r.created_at ? ` · edited ${fmtDate(r.updated_at)}` : ''}</p>
+                </div>
+                <button onClick={() => setViewTarget(null)}
+                  className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 cursor-pointer text-gray-400 text-lg">✕</button>
+              </div>
+              <div className="px-6 py-5">
+                <span className={`inline-block text-sm font-bold px-3 py-1 rounded-full mb-2 ${pkgBadge(r.package_id)}`}>
+                  {r.package_id === 'custom' ? 'Custom Package' : `Package ${r.package_id}`}
+                </span>
+
+                <Section title="Student" />
+                <Row label="Email"   value={r.student_email} />
+                <Row label="Grade"   value={r.grade} />
+                <Row label="Gender"  value={r.gender} />
+                <Row label="Overall" value={`${Math.round(r.overall_score)}%`} />
+                <Row label="Math"    value={r.math_score    != null ? `${Math.round(r.math_score)}%`    : null} />
+                <Row label="ELA"     value={r.ela_score     != null ? `${Math.round(r.ela_score)}%`     : null} />
+                <Row label="Science" value={r.science_score != null ? `${Math.round(r.science_score)}%` : null} />
+                <Row label="Total Time" value={r.times?.total} />
+
+                <Section title="Program" />
+                <Row label="Hours / Week" value={r.hours_per_week} />
+                <Row label="Sessions / Month" value={r.sessions} />
+                {r.package_id === 'custom' && (r.custom_subjects ?? []).length > 0 && (
+                  <Row label="Subjects" value={(r.custom_subjects ?? []).map(s => `${s.name} (${s.hours}hr/wk)`).join(', ')} />
+                )}
+                {(r.additional_programs ?? []).length > 0 && (
+                  <Row label="Additional Programs" value={(r.additional_programs ?? []).join(', ')} />
+                )}
+
+                <Section title="Pricing" />
+                <Row label="Standard Monthly" value={cp ? `$${cp.standardMonthlyFee}` : null} />
+                <Row label="SmartMathz Monthly" value={cp ? `$${cp.smMonthlyFee}` : null} />
+                <Row label="Hourly Rate" value={cp ? `$${cp.smHourlyRate.toFixed(2)}/hr (std $${cp.standardHourlyRate.toFixed(2)})` : null} />
+                <Row label="Bi-Weekly" value={cp ? `$${cp.smBiweekly.toFixed(1)}` : null} />
+                <Row label="Savings" value={cp ? `${cp.savingsPercent}% · $${cp.smInvestment}/mo investment` : null} />
+                {(r.parent_budget ?? 0) > 0 && <Row label="Parent Budget" value={`$${r.parent_budget}/mo`} />}
+                {(r.adjuster ?? 0) !== 0 && <Row label="Rate Adjuster" value={`${(r.adjuster ?? 0) > 0 ? '+' : ''}$${r.adjuster}/hr`} />}
+
+                <Section title="Evaluator" />
+                <Row label="Name" value={r.instructor_name} />
+                {r.instructor_comment && (
+                  <div className="mt-2 bg-gray-50 border border-gray-100 rounded-xl p-3 text-xs text-gray-600 whitespace-pre-wrap">
+                    {r.instructor_comment}
+                  </div>
+                )}
+
+                <div className="flex gap-3 mt-6">
+                  <button onClick={() => { handleDownload(r); }}
+                    className="flex-1 py-2.5 bg-[#1a2e05] hover:bg-[#2a4a09] text-white text-sm font-bold rounded-xl cursor-pointer transition-colors">
+                    📄 Download PDF
+                  </button>
+                  <button onClick={() => setViewTarget(null)}
+                    className="flex-1 py-2.5 border border-gray-200 text-gray-600 text-sm font-semibold rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
+
+      {/* ── Delete confirmation modal ── */}
+      {deleteTarget && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl shadow-2xl w-full max-w-sm p-6 text-center">
+            <div className="w-14 h-14 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-4">
+              <svg className="w-7 h-7 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                  d="M12 9v3.75m0 3.75h.008M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-bold text-gray-900 mb-1.5">Delete this recommendation?</h3>
+            <p className="text-sm text-gray-500 mb-1">
+              You're about to permanently delete
+              <span className="font-semibold text-gray-800"> {deleteTarget.student_name}</span>'s
+              saved recommendation ({deleteTarget.package_id === 'custom' ? 'Custom' : `Package ${deleteTarget.package_id}`}).
+            </p>
+            <p className="text-xs text-gray-400 mb-1">The student will reappear on the Results page.</p>
+            <p className="text-xs text-red-500 font-medium mb-5">This action cannot be undone.</p>
+            <div className="flex gap-3">
+              <button onClick={() => setDeleteTarget(null)}
+                className="flex-1 py-2.5 border border-gray-200 text-gray-600 text-sm font-semibold rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                Cancel
+              </button>
+              <button onClick={handleDelete} disabled={deleting}
+                className="flex-1 py-2.5 bg-red-500 hover:bg-red-600 text-white text-sm font-bold rounded-xl cursor-pointer transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
+                {deleting ? 'Deleting...' : 'Yes, Delete'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

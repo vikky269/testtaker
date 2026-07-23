@@ -296,6 +296,8 @@ export default function ResultsPage() {
   const [newSubjectHours, setNewSubjectHours] = useState(1);
   const [instructorComment, setInstructorComment] = useState('');
   const [additionalPrograms, setAdditionalPrograms] = useState<string[]>([]);
+  const [newProgram, setNewProgram]     = useState('');
+  const [customProgramText, setCustomProgramText] = useState('');
 
   //new modal states
   const router       = useRouter();
@@ -455,6 +457,8 @@ useEffect(() => {
     setSessionDelta(0);
     setParentBudget(0);
     setInstructorComment('');
+    setNewProgram('');
+    setCustomProgramText('');
   };
 
   // When package changes, reset all adjusters to zero
@@ -464,6 +468,8 @@ useEffect(() => {
     setAdjuster(0);
     setSessionDelta(0);
     setParentBudget(0);
+    setNewProgram('');
+    setCustomProgramText('');
   };
 
 // handle delete function to delete entries by admin
@@ -493,14 +499,14 @@ useEffect(() => {
   // How many additional programs this package allows
   const maxPrograms = selectedPackage.id === 'II' ? 1 : selectedPackage.id === 'III' ? 2 : 0;
 
-  const toggleProgram = (name: string) => {
-    setAdditionalPrograms(prev => {
-      if (prev.includes(name)) return prev.filter(p => p !== name);
-      if (prev.length < maxPrograms) return [...prev, name];
-      if (maxPrograms === 1) return [name];      // single-slot: replace
-      return prev;                                // full: ignore until one is removed
-    });
-  };
+  // const toggleProgram = (name: string) => {
+  //   setAdditionalPrograms(prev => {
+  //     if (prev.includes(name)) return prev.filter(p => p !== name);
+  //     if (prev.length < maxPrograms) return [...prev, name];
+  //     if (maxPrograms === 1) return [name];      // single-slot: replace
+  //     return prev;                                // full: ignore until one is removed
+  //   });
+  // };
 
   // Header subtitle for the pricing table
   const packageSubtitle =
@@ -834,6 +840,7 @@ useEffect(() => {
 
 
                 {/* ── Additional program picker (Package II / III) ── */}
+               {/* ── Additional program picker (Package II / III) ── */}
                 {maxPrograms > 0 && (
                   <div>
                     <div className="flex items-center justify-between mb-2">
@@ -846,21 +853,57 @@ useEffect(() => {
                         {additionalPrograms.length} / {maxPrograms} selected
                       </span>
                     </div>
-                    <div className="flex flex-wrap gap-2">
-                      {ADDITIONAL_PROGRAMS.map(prog => {
-                        const active = additionalPrograms.includes(prog);
-                        return (
-                          <button key={prog} onClick={() => toggleProgram(prog)}
-                            className={`px-3 py-2 rounded-xl border text-xs font-semibold cursor-pointer transition-all
-                              ${active
-                                ? 'bg-[#1a2e05] text-white border-[#1a2e05]'
-                                : 'bg-white text-gray-600 border-gray-200 hover:border-green-400'}`}>
-                            {active ? '✓ ' : ''}{prog}
-                          </button>
-                        );
-                      })}
-                    </div>
+
+                    {/* Dropdown + Add row (hidden once slots are full) */}
                     {additionalPrograms.length < maxPrograms && (
+                      <div className="flex gap-2 flex-wrap mb-2">
+                        <select value={newProgram} onChange={e => setNewProgram(e.target.value)}
+                          className="flex-1 min-w-[180px] px-3 py-2 text-sm border border-gray-200 rounded-xl bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-500/20">
+                          <option value="">Select a program…</option>
+                          {ADDITIONAL_PROGRAMS
+                            .filter(p => !additionalPrograms.includes(p))
+                            .map(p => <option key={p} value={p}>{p}</option>)}
+                          <option value="__other__">Other (type manually)…</option>
+                        </select>
+
+                        {newProgram === '__other__' ? (
+                          <input type="text" value={customProgramText}
+                            onChange={e => setCustomProgramText(e.target.value)}
+                            placeholder="Type program name"
+                            className="flex-1 min-w-[150px] px-3 py-2 text-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500/20" />
+                        ) : null}
+
+                        <button
+                          onClick={() => {
+                            const value = newProgram === '__other__' ? customProgramText.trim() : newProgram;
+                            if (!value) return;
+                            if (additionalPrograms.includes(value)) { toast.error('Already added.'); return; }
+                            if (additionalPrograms.length >= maxPrograms) return;
+                            setAdditionalPrograms(prev => [...prev, value]);
+                            setNewProgram(''); setCustomProgramText('');
+                          }}
+                          className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-xl cursor-pointer transition-colors">
+                          + Add
+                        </button>
+                      </div>
+                    )}
+
+                    {/* Selected programs list */}
+                    {additionalPrograms.length > 0 ? (
+                      <div className="space-y-2">
+                        {additionalPrograms.map(prog => (
+                          <div key={prog} className="flex items-center gap-3 bg-white rounded-xl px-3 py-2 border border-gray-100">
+                            <span className="flex-1 text-sm font-medium text-gray-800">{prog}</span>
+                            <button onClick={() => setAdditionalPrograms(prev => prev.filter(p => p !== prog))}
+                              className="text-red-400 hover:text-red-600 cursor-pointer">✕</button>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-xs text-gray-400 italic">No programs added yet.</p>
+                    )}
+
+                    {additionalPrograms.length < maxPrograms && additionalPrograms.length > 0 && (
                       <p className="text-xs text-gray-400 mt-1.5">
                         Choose {maxPrograms - additionalPrograms.length} more to include on the report.
                       </p>
@@ -1049,8 +1092,8 @@ useEffect(() => {
 
                 {/* Instructor name */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">Evaluator's Name (optional)</label>
-                  <input type="text" value={instructorName} onChange={e => setInstructorName(e.target.value)}
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">Evaluator's Name</label>
+                  <input type="text" value={instructorName} required onChange={e => setInstructorName(e.target.value)}
                     placeholder="e.g. Mr. James Osei"
                     className="w-full px-4 py-2.5 text-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500" />
                 </div>

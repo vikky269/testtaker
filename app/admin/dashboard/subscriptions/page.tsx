@@ -42,6 +42,22 @@ interface Subscription {
   start_date:         string;
   additional_info:    string | null;
   referral_source:    string;
+
+
+  // New enrollment-form fields
+  policy_agreed:      boolean | null;
+  policy_signature:   string | null;
+  policy_agreed_at:   string | null;
+  media_consent:      boolean | null;
+  media_signature:    string | null;
+  recommendation_id:  string | null;
+  billing: {
+    frequency?: 'once' | 'twice';
+    mode?: 'standard' | 'preferred';
+    preferredDay?: number;
+    firstDay?: number;
+    secondDay?: number;
+  } | null;
 }
 
 interface AvailabilitySlot {
@@ -116,6 +132,34 @@ const STEPS = [
   { num: 3, title: 'Programme',      subtitle: 'Package selection'       },
   { num: 4, title: 'Scheduling',     subtitle: 'Availability & start'    },
 ];
+
+
+
+
+const ord = (n: number) => {
+  const s = ['th','st','nd','rd'], v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+};
+
+const fmtBilling = (b: Subscription['billing']) => {
+  if (!b?.frequency) return null;
+  if (b.frequency === 'once') {
+    return b.mode === 'preferred' && b.preferredDay
+      ? `Once a month — ${ord(b.preferredDay)} of the month`
+      : 'Once a month — standard (start of period)';
+  }
+  if (b.frequency === 'twice' && b.firstDay && b.secondDay) {
+    return `Twice a month — ${ord(b.firstDay)} and ${ord(b.secondDay)}`;
+  }
+  return null;
+};
+
+const fmtDateTime = (d: string) =>
+  new Date(d).toLocaleString('en-US', {
+    year: 'numeric', month: 'short', day: 'numeric',
+    hour: 'numeric', minute: '2-digit',
+  });
+
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 const fmt = (d: string) => new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
@@ -816,8 +860,19 @@ export default function SubscriptionsPage() {
                 </>
               )}
 
-              <SectionTitle title="Programme Details" />
+             <SectionTitle title="Programme Details" />
               <DetailRow label="Package Selected" value={selected.programme_package} />
+              <DetailRow label="Payment Frequency" value={fmtBilling(selected.billing)} />
+              {selected.recommendation_id && (
+                <div className="py-2 border-b border-gray-50">
+                  <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide mb-0.5">Linked Recommendation</p>
+                  <a href={`/admin/dashboard/results?edit=${selected.recommendation_id}`}
+                    className="text-sm text-green-700 font-semibold hover:underline cursor-pointer">
+                    View saved recommendation →
+                  </a>
+                </div>
+              )}
+
 
               {/* Structured availability — falls back to plain text if no slots */}
               {selected.availability_slots && selected.availability_slots.length > 0 ? (
@@ -840,6 +895,16 @@ export default function SubscriptionsPage() {
               <SectionTitle title="Additional" />
               <DetailRow label="Additional Info"   value={selected.additional_info} />
               <DetailRow label="How They Found Us" value={selected.referral_source} />
+               <SectionTitle title="Agreements" />
+              <DetailRow label="Policy Agreed"
+                value={selected.policy_agreed ? 'Yes — agreed to Student & Parent Guidelines' : 'No'} />
+              <DetailRow label="Policy Signature" value={selected.policy_signature} />
+              <DetailRow label="Signed At"
+                value={selected.policy_agreed_at ? fmtDateTime(selected.policy_agreed_at) : null} />
+              <DetailRow label="Media Consent"
+                value={selected.media_consent ? 'Yes — consent given' : 'Not granted (optional)'} />
+              <DetailRow label="Media Signature" value={selected.media_signature} />
+
               <button onClick={() => setSelected(null)}
                 className="mt-5 w-full py-2.5 border border-gray-200 text-gray-600 text-sm font-semibold rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
                 Close

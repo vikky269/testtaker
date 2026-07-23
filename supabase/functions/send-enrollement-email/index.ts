@@ -1,23 +1,53 @@
-// supabase/functions/send-enrollment-email/index.ts
-// Sends enrollment confirmation to the parent + full details to the admin.
-// Deploy:  supabase functions deploy send-enrollment-email
-// Secrets: supabase secrets set GMAIL_USER=info@smartmathz.com GMAIL_APP_PASSWORD=xxxx
+// supabase/functions/send-enrollement-email/index.ts
+// Sends enrollment confirmation to the parent + full details to the admins via Resend.
+// Deploy:  supabase functions deploy send-enrollement-email --no-verify-jwt
+// Secret:  supabase secrets set RESEND_API_KEY=re_xxx
 
-import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
+// ── Sender + recipients ───────────────────────────────────────────────────────
+// TESTING: Resend only allows sending FROM onboarding@resend.dev and TO your own
+// account email until the smartmathz.com domain is verified. Once verified, change
+// FROM_ADDRESS to 'SmartMathz <info@smartmathz.com>' and the real recipients work.
+const FROM_ADDRESS = 'SmartMathz <info@smartmathz.com>';
 
-const ADMIN_EMAIL = 'info@smartmathz.com';
+const ADMIN_RECIPIENTS = [
+  'abdul.muktar@smartmathz.com',
+  'isaac.salako@smartmathz.com',
+  'victoramune2001@gmail.com',
+];
+
+// While unverified, Resend rejects any recipient that isn't your account email.
+// Set this to true ONLY after the domain is verified in Resend.
+const DOMAIN_VERIFIED = true;
+// Your Resend account email — the only address allowed to receive during testing.
+const TEST_INBOX = 'viktorefi2001@gmail.com';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
+// ── Resend send helper ────────────────────────────────────────────────────────
+async function sendEmail(to: string[], subject: string, html: string) {
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${Deno.env.get('RESEND_API_KEY')}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ from: FROM_ADDRESS, to, subject, html }),
+  });
+  if (!res.ok) {
+    const detail = await res.text();
+    throw new Error(`Resend ${res.status}: ${detail}`);
+  }
+  return res.json();
+}
+
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response('ok', { headers: corsHeaders });
 
   try {
     const p = await req.json();
-
     const studentName = `${p.student_first_name ?? ''} ${p.student_last_name ?? ''}`.trim();
     const parentName  = `${p.parent_first_name ?? ''} ${p.parent_last_name ?? ''}`.trim();
     const ps          = p.program_summary;
@@ -94,43 +124,32 @@ Deno.serve(async (req) => {
       detailsTable
     );
 
-    const client = new SMTPClient({
-      connection: {
-        hostname: 'smtp.gmail.com',
-        port: 465,
-        tls: true,
-        auth: {
-          username: Deno.env.get('GMAIL_USER')!,
-          password: Deno.env.get('GMAIL_APP_PASSWORD')!,
-        },
-      },
-    });
+    // ── Recipients ────────────────────────────────────────────────────────────
+    // Parent confirmation: form contact email + parent email (deduped).
+    const parentRecipients = [...new Set([p.email, p.parent_email].filter(Boolean))] as string[];
 
-    // Parent confirmation — sent to the form contact email + parent email (deduped)
-    const parentRecipients = [...new Set([p.email, p.parent_email].filter(Boolean))];
-    for (const to of parentRecipients) {
-      await client.send({
-        from: `SmartMathz <${Deno.env.get('GMAIL_USER')}>`,
-        to,
-        subject: `🎓 Enrollment Received — ${studentName} | SmartMathz`,
-        html: parentHtml,
-      });
+    if (DOMAIN_VERIFIED) {
+      // Production: send to the real people.
+      if (parentRecipients.length) {
+        await sendEmail(parentRecipients,
+          `🎓 Enrollment Received — ${studentName} | SmartMathz`, parentHtml);
+      }
+      await sendEmail(ADMIN_RECIPIENTS,
+        `🆕 New Enrollment: ${studentName} (${p.grade_level ?? ''})`, adminHtml);
+    } else {
+      // Testing: Resend only allows your own account email as recipient.
+      // Send BOTH emails to the test inbox so you can verify content + formatting.
+      await sendEmail([TEST_INBOX],
+        `[TEST · parent] Enrollment Received — ${studentName}`, parentHtml);
+      await sendEmail([TEST_INBOX],
+        `[TEST · admin] New Enrollment — ${studentName}`, adminHtml);
     }
 
-    // Admin notification
-    await client.send({
-      from: `SmartMathz <${Deno.env.get('GMAIL_USER')}>`,
-      to: ADMIN_EMAIL,
-      subject: `🆕 New Enrollment: ${studentName} (${p.grade_level ?? ''})`,
-      html: adminHtml,
-    });
-
-    await client.close();
     return new Response(JSON.stringify({ ok: true }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   } catch (err) {
-    console.error('send-enrollment-email error:', err);
+    console.error('send-enrollement-email error:', err);
     return new Response(JSON.stringify({ ok: false, error: String(err) }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },

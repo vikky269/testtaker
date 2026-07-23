@@ -468,51 +468,6 @@ y += cardH + 6;
   
   }
 
-
-// ── SIGN-OFF ──────────────────────────────────────────────────────────────
-// ── SIGN-OFF — compact horizontal layout ─────────────────────────────────
-  // ── SIGN-OFF — compact horizontal layout, anchored to page bottom ────────
-  ensureSpace(12);
-
-  // Bottom-anchor: if there's leftover space on the page, push the sign-off
-  // down so it sits just above the footer (never pushes it onto a new page)
-  const SIGNOFF_H = 11; // both sign-off lines
-  const anchorY   = pageH - FOOTER_CLEAR - SIGNOFF_H;
-  if (y < anchorY) y = anchorY;
-
-  doc.setTextColor(31, 41, 55); doc.setFontSize(8.5); doc.setFont('helvetica', 'bold');
-  doc.text('If you have any questions do not hesitate to reach out.', M, y);
-  y += 5.5;
-  const sigName = instructorName?.trim() || 'SmartMathz Team';
-  doc.setFont('helvetica', 'normal'); doc.setFontSize(8.5); doc.setTextColor(31, 41, 55);
-  doc.text('Best regards,', M, y);
-  const brW = doc.getTextWidth('Best regards, ');
-
-  doc.setFont('helvetica', 'bold'); doc.setFontSize(9); doc.setTextColor(17, 24, 39);
-  doc.text(sigName, M + brW + 1, y);
-  const nameW = doc.getTextWidth(sigName);
-
-  doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.setTextColor(107, 114, 128);
-  doc.text('·  Lead Instructor, SmartMathz', M + brW + nameW + 3, y);
-
-  // ensureSpace(19); // actual height of the sign-off block (~18mm)
-
-  // doc.setTextColor(31, 41, 55); doc.setFontSize(8.5); doc.setFont('helvetica', 'bold');
-  // doc.text('If you have any questions do not hesitate to reach out.', M, y);
-
-  // y += 6;
-  // doc.setFont('helvetica', 'normal'); doc.setFontSize(8.5);
-  // doc.text('Best regards,', M, y);
-
-  // y += 6;
-  // const sigName = instructorName?.trim() || 'SmartMathz Team';
-  // doc.setFont('helvetica', 'bold'); doc.setFontSize(9.5); doc.setTextColor(17, 24, 39);
-  // doc.text(sigName, M, y);
-
-  // y += 5.5;
-  // doc.setFont('helvetica', 'normal'); doc.setFontSize(8); doc.setTextColor(107, 114, 128);
-  // doc.text('Lead Instructor, SmartMathz', M, y);
-
   // ── FOOTER — drawn on every page ──────────────────────────────────────────
   const pageCount = (doc as any).getNumberOfPages();
   for (let p = 1; p <= pageCount; p++) {

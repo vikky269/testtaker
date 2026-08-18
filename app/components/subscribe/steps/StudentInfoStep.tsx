@@ -15,9 +15,9 @@ export function StudentInfoStep({ form, setField, setForm, errors }: {
 
   return (
     <>
-      <Field label="Your Email" required error={errors.email}>
+      {/* <Field label="Your Email" required error={errors.email}>
         <input type="email" placeholder="you@example.com" value={form.email} onChange={setField('email')} className={inputCls} />
-      </Field>
+      </Field> */}
       <div className="grid grid-cols-2 gap-4">
         <Field label="Student's First Name" required error={errors.studentFirstName}>
           <input type="text" placeholder="First name" value={form.studentFirstName} onChange={setField('studentFirstName')} className={inputCls} />

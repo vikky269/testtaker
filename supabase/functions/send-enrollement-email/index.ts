@@ -69,6 +69,10 @@ Deno.serve(async (req) => {
         <td style="padding:6px 12px;color:#111827;font-size:13px;font-weight:600">${value}</td>
       </tr>` : '';
 
+      // Break a comma-joined string onto separate lines for email display
+    const multiline = (v: unknown) =>
+      typeof v === 'string' ? v.split(/,\s*|\s+\+\s+/).map(s => s.trim()).filter(Boolean).join('<br/>') : v;
+
     const detailsTable = `
       <table style="border-collapse:collapse;width:100%;background:#f9fafb;border-radius:12px">
         ${row('Student', studentName)}
@@ -80,12 +84,12 @@ Deno.serve(async (req) => {
         ${row('Parent Email', p.parent_email)}
         ${p.has_second_parent ? row('Second Parent', `${p.parent2_first_name} ${p.parent2_last_name} · ${p.parent2_phone} · ${p.parent2_email}`) : ''}
         ${row('Address', p.household_address)}
-        ${row('Program', p.programme_package)}
+        ${row('Program', multiline(p.programme_package))}
         ${ps ? row('Monthly Fee', `$${ps.monthly}`) : ''}
         ${ps ? row('Bi-Weekly', `$${Number(ps.biweekly).toFixed(1)}`) : ''}
         ${ps ? row('Sessions / Month', ps.sessions) : ''}
         ${row('Payment Plan', billingText)}
-        ${row('Availability', p.availability)}
+       ${row('Availability', multiline(p.availability))}
         ${row('Start Date', p.start_date)}
         ${row('Referral', p.referral_source)}
         ${row('Additional Info', p.additional_info)}

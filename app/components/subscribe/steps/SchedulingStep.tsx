@@ -19,6 +19,10 @@ export function SchedulingStep({ form, setField, setForm, availability, setAvail
   return (
     <>
       <Field label="Days and times the student is available" required error={errors.availability}>
+        <p className="text-xs text-gray-400 italic mb-2 -mt-1">
+          Example: tap <span className="font-medium">Mon</span>, <span className="font-medium">Wed</span> and <span className="font-medium">Fri</span>,
+          then set each day&rsquo;s time range — e.g. 3:00 PM to 5:00 PM. Add as many days as work for your child.
+        </p>
         <AvailabilityPicker slots={availability} onChange={setAvailability} />
       </Field>
       <Field label="Potential start date" required error={errors.startDate}>

@@ -46,6 +46,10 @@ export function validateStep(args: ValidateStepArgs): FormErrors {
     name('studentLastName', 'Last name');
     email('studentEmail', "Student's email");
     req('studentGender', 'Gender'); req('studentSchool', 'School'); req('gradeLevel', 'Grade level');
+    // Student email must differ from the contact email
+    // if (!e.studentEmail && !e.email &&
+    //     form.studentEmail.trim().toLowerCase() === form.email.trim().toLowerCase())
+    //   e.studentEmail = 'Student email must be different from your contact email.';
   }
   if (s === 4) {
     req('relationship', 'Relationship');
@@ -53,7 +57,11 @@ export function validateStep(args: ValidateStepArgs): FormErrors {
     name('parentLastName', 'Last name');
     if (!form.parentPhone) e.parentPhone = 'Phone number is required';
     else if (!isValidPhoneNumber(form.parentPhone)) e.parentPhone = 'Please enter a valid phone number for the selected country';
-    email('parentEmail', 'Email');
+   email('parentEmail', 'Email');
+    // Parent email must differ from the student's email
+    if (!e.parentEmail &&
+        form.parentEmail.trim().toLowerCase() === form.studentEmail.trim().toLowerCase())
+      e.parentEmail = 'Parent email must be different from the student email.';
     req('householdAddress', 'Address');
     if (form.hasSecondParent) {
       name('parent2FirstName', 'First name');
@@ -61,8 +69,18 @@ export function validateStep(args: ValidateStepArgs): FormErrors {
       if (!form.parent2Phone) e.parent2Phone = 'Phone number is required';
       else if (!isValidPhoneNumber(form.parent2Phone)) e.parent2Phone = 'Please enter a valid phone number for the selected country';
       email('parent2Email', 'Email');
+      // Second parent email must differ from student AND first parent
+      if (!e.parent2Email) {
+        const p2 = form.parent2Email.trim().toLowerCase();
+        if (p2 === form.studentEmail.trim().toLowerCase())
+          e.parent2Email = 'Must be different from the student email.';
+        else if (p2 === form.parentEmail.trim().toLowerCase())
+          e.parent2Email = 'Must be different from the first parent email.';
+      }
     }
   }
+
+
   if (s === 5) {
     if (recStatus !== 'found') e.rec = 'Your personalized program must be ready before you can continue.';
     if (!billing.frequency) e.billing = 'Please choose a payment frequency.';

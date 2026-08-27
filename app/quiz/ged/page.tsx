@@ -1,16 +1,17 @@
 "use client";
 
 // app/quiz/ged/page.tsx
-// SmartMathz GED Readiness Diagnostic — a self-contained page, separate from
-// the main [testId] quiz page. It does NOT touch or share section-state logic
-// with grade-level or SAT quizzes; it only reuses already-shared utilities:
-// QuizBody, QuizModals (via QuizBody), supabase client, withTimeout.
+// SmartMathz GED Readiness Diagnostic — DB-backed progress (survives refresh,
+// closed tabs, even a crashed browser), modeled on the AssessmentTaker
+// pattern: an in-progress "attempt" row, claimed per tab via a session id,
+// debounce-autosaved, with an ownership check before every write so a
+// second tab can never silently overwrite the winning one's answers.
 //
-// Why a separate page rather than folding into [testId]: GED has 4 unequal
-// sections (24/22/19/15) where the existing page hardcodes 3 sections of 10.
-// Building it standalone means zero risk to any existing grade/SAT flow.
+// Simplified vs. AssessmentTaker: GED is single-answer MCQ against a static
+// question bank, so the whole answer map lives in one jsonb column instead
+// of a per-question answers table — same durability, far less plumbing.
 
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useRef, useState, useMemo, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { supabase, withTimeout } from "@/lib/supabaseClient";
 import toast from "react-hot-toast";
@@ -23,8 +24,6 @@ import ResultsScreen from "@/app/modals/resultScreen";
 // ── Section config ───────────────────────────────────────────────────────────
 const SECTION_ORDER: GEDSectionKey[] = ["math", "rla", "science", "social"];
 
-const GED_STORAGE_KEY = "gedQuizState";
-
 const SECTION_TITLE: Record<GEDSectionKey, string> = {
   math: "Mathematical Reasoning",
   rla: "Reasoning Through Language Arts",
@@ -32,15 +31,17 @@ const SECTION_TITLE: Record<GEDSectionKey, string> = {
   social: "Social Studies",
 };
 
-// Per-section time limits, in seconds — adjust freely, this is the only place
-// they're defined. (Totals ~2hrs; the source doc recommends 2.5–3hrs across
-// two sittings — tune these once you've seen real completion times.)
 const SECTION_TIME: Record<GEDSectionKey, number> = {
-  math: 2400,    // 40 min for 24 questions
-  rla: 2100,     // 35 min for 22 questions
-  science: 1500, // 25 min for 19 questions
-  social: 1200,  // 20 min for 15 questions
+  math: 2400, rla: 2100, science: 1500, social: 1200,
 };
+
+// Unique per tab, per page load — the same tab-locking mechanism AssessmentTaker uses
+const SESSION_ID = typeof crypto !== "undefined" && crypto.randomUUID
+  ? crypto.randomUUID()
+  : Math.random().toString(36).slice(2);
+
+type SectionDurations = Record<GEDSectionKey, number>;
+const EMPTY_DURATIONS: SectionDurations = { math: 0, rla: 0, science: 0, social: 0 };
 
 export default function GedQuizPage() {
   const router = useRouter();
@@ -53,19 +54,25 @@ export default function GedQuizPage() {
   const [transitionModal, setTransitionModal] = useState<{ fromLabel: string; toLabel: string; next: GEDSectionKey } | null>(null);
   const [unansweredModal, setUnansweredModal] = useState<{ count: number; toLabel: string; isFinal: boolean } | null>(null);
 
+  // ── DB attempt state ─────────────────────────────────────────────────────
+  const [restoring, setRestoring] = useState(true);   // true until initial load/resume completes
+  const [locked, setLocked] = useState(false);         // true if another tab has taken over this attempt
+  const attemptIdRef = useRef<string | null>(null);
+  const saveTimerRef = useRef<NodeJS.Timeout | null>(null);
+
   const hasSavedRef = useRef(false);
   const studentInfoRef = useRef<{ id: string; fullName: string; email: string; gender: string } | null>(null);
 
-  // Per-section elapsed time tracking (seconds), for the leaderboard/report
   const sectionStartRef = useRef<Record<GEDSectionKey, number | null>>({ math: null, rla: null, science: null, social: null });
-  const sectionDurationRef = useRef<Record<GEDSectionKey, number>>({ math: 0, rla: 0, science: 0, social: 0 });
+  const sectionDurationRef = useRef<SectionDurations>({ ...EMPTY_DURATIONS });
 
-  // ── Snapshot the logged-in student once, at quiz start (same pattern as the main quiz page) ──
+  // ── Mount: snapshot student, then resume or create the attempt ─────────────
   useEffect(() => {
-    const captureStudent = async () => {
+    const init = async () => {
       const result = await withTimeout(supabase.auth.getSession());
       const user = result?.data?.session?.user;
-      if (!user) return;
+      if (!user) { setRestoring(false); return; }
+
       const { data: profile } = await supabase
         .from("student_profile").select("full_name, gender").eq("id", user.id).maybeSingle();
       studentInfoRef.current = {
@@ -75,38 +82,60 @@ export default function GedQuizPage() {
         gender: profile?.gender || "N/A",
       };
       localStorage.setItem("activeStudent", JSON.stringify(studentInfoRef.current));
+
+      // Look for an existing in-progress attempt for this student
+      const { data: existing } = await supabase
+        .from("ged_attempts")
+        .select("*")
+        .eq("user_id", user.id)
+        .eq("status", "in_progress")
+        .maybeSingle();
+
+      let attempt = existing;
+
+      if (!attempt) {
+        const { data: created, error } = await supabase
+          .from("ged_attempts")
+          .insert({
+            user_id: user.id, status: "in_progress",
+            section: "math", current_question_index: 0,
+            answers: {}, section_durations: {},
+          })
+          .select()
+          .single();
+        if (error) {
+          console.error("Could not start GED attempt:", error);
+          toast.error("Could not start the assessment. Please try again.");
+          setRestoring(false);
+          return;
+        }
+        attempt = created;
+      } else {
+        toast.success("Resuming your GED assessment — picking up where you left off.");
+      }
+
+      attemptIdRef.current = attempt.id;
+
+      // Claim it for this tab — any other tab holding it becomes locked out
+      await supabase.from("ged_attempts").update({
+        active_session_id: SESSION_ID,
+        session_claimed_at: new Date().toISOString(),
+      }).eq("id", attempt.id);
+
+      // Restore state
+      const restoredSection = (attempt.section ?? "math") as GEDSectionKey;
+      setSection(restoredSection);
+      setCurrentQuestionIndex(attempt.current_question_index ?? 0);
+      setAnswers(attempt.answers ?? {});
+      sectionDurationRef.current = { ...EMPTY_DURATIONS, ...(attempt.section_durations ?? {}) };
+
+      sectionStartRef.current = { math: null, rla: null, science: null, social: null };
+      sectionStartRef.current[restoredSection] = Date.now();
+
+      setRestoring(false);
     };
-    captureStudent();
-    sectionStartRef.current.math = Date.now();
+    init();
   }, []);
-
-
-  useEffect(() => {
-  const saved = localStorage.getItem(GED_STORAGE_KEY);
-  if (!saved) return;
-  try {
-    const p = JSON.parse(saved);
-    if (p.section) setSection(p.section);
-    if (p.answers) setAnswers(p.answers);
-    if (typeof p.currentQuestionIndex === "number") setCurrentQuestionIndex(p.currentQuestionIndex);
-    if (p.sectionDurations) sectionDurationRef.current = p.sectionDurations;
-    // Resume the timer for whichever section we're restoring into
-    sectionStartRef.current = { math: null, rla: null, science: null, social: null };
-    sectionStartRef.current[(p.section ?? "math") as GEDSectionKey] = Date.now();
-  } catch {}
-}, []);
-
-
-
-useEffect(() => {
-  if (submitted) return; // don't keep writing once it's done
-  localStorage.setItem(GED_STORAGE_KEY, JSON.stringify({
-    section, currentQuestionIndex, answers,
-    sectionDurations: sectionDurationRef.current,
-  }));
-}, [section, currentQuestionIndex, answers, submitted]);
-
-
 
   // ── Active questions for the current section ─────────────────────────────
   const activeQuestions = useMemo(() => {
@@ -141,25 +170,18 @@ useEffect(() => {
     setUnansweredModal(null);
   };
 
-  // ── Section submit — called when "Submit Quiz" is clicked at the end of a section ──
+  // ── Section submit ──────────────────────────────────────────────────────
   const handleSectionSubmit = () => {
     const unanswered = activeQuestions.filter((q) => !answers[q.question]).length;
     const nextIndex = SECTION_ORDER.indexOf(section) + 1;
     const next = SECTION_ORDER[nextIndex];
 
     if (unanswered > 0) {
-      setUnansweredModal({
-        count: unanswered,
-        toLabel: next ? SECTION_TITLE[next] : "",
-        isFinal: !next,
-      });
+      setUnansweredModal({ count: unanswered, toLabel: next ? SECTION_TITLE[next] : "", isFinal: !next });
       return;
     }
-    if (next) {
-      setTransitionModal({ fromLabel: SECTION_TITLE[section], toLabel: SECTION_TITLE[next], next });
-    } else {
-      finalizeSubmit();
-    }
+    if (next) setTransitionModal({ fromLabel: SECTION_TITLE[section], toLabel: SECTION_TITLE[next], next });
+    else finalizeSubmit();
   };
 
   const confirmUnanswered = () => {
@@ -172,7 +194,6 @@ useEffect(() => {
 
   const confirmTransition = () => { if (transitionModal) proceedToSection(transitionModal.next); };
 
-  // Time runs out on the current section — auto-advance (or auto-submit on the last section)
   const handleTimeUp = () => {
     const nextIndex = SECTION_ORDER.indexOf(section) + 1;
     const next = SECTION_ORDER[nextIndex];
@@ -180,8 +201,48 @@ useEffect(() => {
     else finalizeSubmit();
   };
 
-  // ── Save to leaderboard + test_submissions (same pattern as the main quiz page) ──
-  const saveToLeaderboard = async (durations: Record<GEDSectionKey, number>) => {
+  // ── Autosave — debounced, ownership-checked before every write ────────────
+  const flushAttempt = useCallback(async () => {
+    if (!attemptIdRef.current) return;
+
+    const { data: owner, error } = await supabase
+      .from("ged_attempts")
+      .select("active_session_id, status")
+      .eq("id", attemptIdRef.current)
+      .single();
+
+    if (error) { console.error("GED ownership check failed:", error); return; }
+    if (owner.status !== "in_progress") return; // already finalized (e.g. from another tab)
+
+    if (owner.active_session_id !== SESSION_ID) {
+      setLocked(true);
+      toast.error(
+        "This GED assessment is open in another tab. Continue there — your answers are saving from that tab.",
+        { id: "ged-tab-conflict", duration: 8000 }
+      );
+      return;
+    }
+
+    const { error: saveErr } = await supabase.from("ged_attempts").update({
+      section,
+      current_question_index: currentQuestionIndex,
+      answers,
+      section_durations: sectionDurationRef.current,
+      updated_at: new Date().toISOString(),
+    }).eq("id", attemptIdRef.current);
+
+    if (saveErr) console.error("GED autosave failed:", saveErr);
+  }, [section, currentQuestionIndex, answers]);
+
+  useEffect(() => {
+    if (restoring || submitted || locked) return;
+    if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    saveTimerRef.current = setTimeout(() => { flushAttempt(); }, 1200);
+    return () => { if (saveTimerRef.current) clearTimeout(saveTimerRef.current); };
+  }, [section, currentQuestionIndex, answers, restoring, submitted, locked, flushAttempt]);
+
+  // ── Save final result to leaderboard + test_submissions (unchanged) ───────
+  const saveToLeaderboard = async (durations: SectionDurations) => {
     if (hasSavedRef.current) return;
     hasSavedRef.current = true;
 
@@ -210,8 +271,8 @@ useEffect(() => {
       return;
     }
 
-    const mathScore   = calculateGEDSectionScore("math", gedQuestions, answers);
-    const rlaScore    = calculateGEDSectionScore("rla", gedQuestions, answers);
+    const mathScore    = calculateGEDSectionScore("math", gedQuestions, answers);
+    const rlaScore     = calculateGEDSectionScore("rla", gedQuestions, answers);
     const scienceScore = calculateGEDSectionScore("science", gedQuestions, answers);
     const socialScore  = calculateGEDSectionScore("social", gedQuestions, answers);
     const overall       = calculateGEDOverallScore(gedQuestions, answers);
@@ -223,9 +284,9 @@ useEffect(() => {
       email: student.email,
       grade: "GED",
       math_score: Number(mathScore),
-      ela_score: Number(rlaScore),          // RLA stored in the ela_score column (closest semantic fit)
+      ela_score: Number(rlaScore),
       science_score: Number(scienceScore),
-      social_studies_score: Number(socialScore), // new column
+      social_studies_score: Number(socialScore),
       overall_score: Number(overall),
       total_time: totalTime,
       math_duration: durations.math,
@@ -271,28 +332,30 @@ useEffect(() => {
     if (subError) console.error("GED test sheet save error:", subError);
   };
 
-const finalizeSubmit = () => {
-  recordSectionEnd(section);
-  setTransitionModal(null);
-  setUnansweredModal(null);
-  setSubmitted(true);
-  localStorage.removeItem(GED_STORAGE_KEY);   // ← add this
-  setTimeout(() => {
-    saveToLeaderboard({ ...sectionDurationRef.current });
-  }, 100);
-};
+  const finalizeSubmit = () => {
+    recordSectionEnd(section);
+    setTransitionModal(null);
+    setUnansweredModal(null);
+    setSubmitted(true);
 
+    if (attemptIdRef.current) {
+      supabase.from("ged_attempts")
+        .update({ status: "submitted", updated_at: new Date().toISOString() })
+        .eq("id", attemptIdRef.current);
+    }
+
+    setTimeout(() => {
+      saveToLeaderboard({ ...sectionDurationRef.current });
+    }, 100);
+  };
 
   const handleGoHome = () => {
     localStorage.removeItem("activeStudent");
-    localStorage.removeItem(GED_STORAGE_KEY);   // ← add this
     router.push("/");
   };
 
-  // Review page for GED is a follow-up build — for now, "Review" isn't offered;
-  // students see their scores here and can go home. (Flagged, not silently skipped.)
   const handleReview = () => {
-    toast("Detailed review for the GED assessment is coming soon.", { icon: "🛠️" });
+    router.push("/quiz/ged/review");
   };
 
   const gedScores = useMemo(() => ({
@@ -304,6 +367,42 @@ const finalizeSubmit = () => {
   }), [answers]);
 
   const answeredCount = Object.keys(answers).filter((k) => gedQuestions.find((q) => q.question === k)).length;
+
+  // ── Guards ─────────────────────────────────────────────────────────────
+  if (restoring) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-8 h-8 border-4 border-[#7FB509] border-t-transparent rounded-full animate-spin" />
+          <p className="text-sm text-gray-500">Loading your assessment...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (locked) {
+    return (
+      <div className="min-h-screen flex items-center justify-center p-6">
+        <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 max-w-md w-full text-center">
+          <div className="w-14 h-14 rounded-full bg-amber-50 flex items-center justify-center mx-auto mb-4">
+            <svg className="w-7 h-7 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                d="M12 9v3.75m0 3.75h.008M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h2 className="text-lg font-bold text-gray-900 mb-2">Open in another tab</h2>
+          <p className="text-sm text-gray-500 mb-6">
+            This GED assessment is currently open in a different tab or window. Please continue there —
+            your answers are being saved from that tab, not this one.
+          </p>
+          <button onClick={() => window.location.reload()}
+            className="w-full py-3 bg-[#7FB509] hover:bg-[#6a9a07] text-white font-bold text-sm rounded-xl cursor-pointer transition-colors">
+            I've closed the other tab — try again
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -324,7 +423,7 @@ const finalizeSubmit = () => {
           currentQuestionIndex={currentQuestionIndex}
           setCurrentQuestionIndex={setCurrentQuestionIndex}
           answers={answers}
-          timerDuration={SECTION_TIME[section]}
+          timerDuration={SECTION_TIME[section] - (sectionDurationRef.current[section] ?? 0)}
           timerIdentifier={`ged-${section}`}
           onTimeUp={handleTimeUp}
           onSelect={handleSelect}

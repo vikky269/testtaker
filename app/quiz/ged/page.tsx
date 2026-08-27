@@ -23,6 +23,8 @@ import ResultsScreen from "@/app/modals/resultScreen";
 // ── Section config ───────────────────────────────────────────────────────────
 const SECTION_ORDER: GEDSectionKey[] = ["math", "rla", "science", "social"];
 
+const GED_STORAGE_KEY = "gedQuizState";
+
 const SECTION_TITLE: Record<GEDSectionKey, string> = {
   math: "Mathematical Reasoning",
   rla: "Reasoning Through Language Arts",
@@ -77,6 +79,34 @@ export default function GedQuizPage() {
     captureStudent();
     sectionStartRef.current.math = Date.now();
   }, []);
+
+
+  useEffect(() => {
+  const saved = localStorage.getItem(GED_STORAGE_KEY);
+  if (!saved) return;
+  try {
+    const p = JSON.parse(saved);
+    if (p.section) setSection(p.section);
+    if (p.answers) setAnswers(p.answers);
+    if (typeof p.currentQuestionIndex === "number") setCurrentQuestionIndex(p.currentQuestionIndex);
+    if (p.sectionDurations) sectionDurationRef.current = p.sectionDurations;
+    // Resume the timer for whichever section we're restoring into
+    sectionStartRef.current = { math: null, rla: null, science: null, social: null };
+    sectionStartRef.current[(p.section ?? "math") as GEDSectionKey] = Date.now();
+  } catch {}
+}, []);
+
+
+
+useEffect(() => {
+  if (submitted) return; // don't keep writing once it's done
+  localStorage.setItem(GED_STORAGE_KEY, JSON.stringify({
+    section, currentQuestionIndex, answers,
+    sectionDurations: sectionDurationRef.current,
+  }));
+}, [section, currentQuestionIndex, answers, submitted]);
+
+
 
   // ── Active questions for the current section ─────────────────────────────
   const activeQuestions = useMemo(() => {
@@ -241,18 +271,21 @@ export default function GedQuizPage() {
     if (subError) console.error("GED test sheet save error:", subError);
   };
 
-  const finalizeSubmit = () => {
-    recordSectionEnd(section);
-    setTransitionModal(null);
-    setUnansweredModal(null);
-    setSubmitted(true);
-    setTimeout(() => {
-      saveToLeaderboard({ ...sectionDurationRef.current });
-    }, 100);
-  };
+const finalizeSubmit = () => {
+  recordSectionEnd(section);
+  setTransitionModal(null);
+  setUnansweredModal(null);
+  setSubmitted(true);
+  localStorage.removeItem(GED_STORAGE_KEY);   // ← add this
+  setTimeout(() => {
+    saveToLeaderboard({ ...sectionDurationRef.current });
+  }, 100);
+};
+
 
   const handleGoHome = () => {
     localStorage.removeItem("activeStudent");
+    localStorage.removeItem(GED_STORAGE_KEY);   // ← add this
     router.push("/");
   };
 

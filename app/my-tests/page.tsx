@@ -16,6 +16,7 @@ import {
 // Performance report — the SAME generator the review page uses.
 // Align the import + call below with your review page's download handler.
 import { generateReport } from '@/app/utils/generateReport';
+import { generateGedReport } from '@/app/utils/generateGedReport';
 
 const fmtDate = (d: string) =>
   new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
@@ -71,6 +72,22 @@ function MyTestsContent() {
   };
 
 const handleDownloadReport = (sub: TestSubmission) => {
+  if (sub.test_type === 'ged') {
+      try {
+        generateGedReport({
+          studentName: sub.full_name ?? 'Student',
+          studentEmail: sub.email ?? undefined,
+          testDate: fmtDate(sub.created_at),
+          questions: sub.questions ?? [],
+          answers: sub.answers ?? {},
+          durations: sub.durations,
+        });
+      } catch (e) {
+        console.error(e);
+        toast.error('Could not generate the GED report.');
+      }
+      return;
+    }
     try {
       const grade  = (sub.grade ?? '').toLowerCase();
       const isSat  = sub.test_type === 'sat' || sub.test_type === 'ssat';

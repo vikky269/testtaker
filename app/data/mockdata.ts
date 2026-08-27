@@ -44,39 +44,39 @@ export interface QuizCardProps {
       questions: 12,
       onStart: () => console.log("Started Science Explorer")
     },
-    {
-        id: "algebra-1-regent",
-      imageSrc: "/imthree.png",
-      title: "ALGEBRA 1 REGENT",
-      level: "Grade 9",
-      category: "Algebra",
-      //difficulty: "Hard",
-      time: "35 min",
-      questions: 18,
-      onStart: () => console.log("Started History Quest")
-    },
-    {
-        id: "algebra-2-regent",
-      imageSrc: "/imfour.png",
-      title: "ALGEBRA 2 REGENT",
-      level: "Grade 8",
-      category: "Algebra",
-      //difficulty: "Medium",
-      time: "20 min",
-      questions: 14,
-      onStart: () => console.log("Started Grammar Check")
-    },
-    {
-        id: "geometry-regent",
-      imageSrc: "/imfive.png",
-      title: "GEOMETRY REGENT",
-      level: "Grade 8",
-      category: "Geometry",
-      //difficulty: "Hard",
-      time: "30 min",
-      questions: 16,
-      onStart: () => console.log("Started Geometry Fun")
-    },
+    // {
+    //     id: "algebra-1-regent",
+    //   imageSrc: "/imthree.png",
+    //   title: "ALGEBRA 1 REGENT",
+    //   level: "Grade 9",
+    //   category: "Algebra",
+    //   //difficulty: "Hard",
+    //   time: "35 min",
+    //   questions: 18,
+    //   onStart: () => console.log("Started History Quest")
+    // },
+    // {
+    //     id: "algebra-2-regent",
+    //   imageSrc: "/imfour.png",
+    //   title: "ALGEBRA 2 REGENT",
+    //   level: "Grade 8",
+    //   category: "Algebra",
+    //   //difficulty: "Medium",
+    //   time: "20 min",
+    //   questions: 14,
+    //   onStart: () => console.log("Started Grammar Check")
+    // },
+    // {
+    //     id: "geometry-regent",
+    //   imageSrc: "/imfive.png",
+    //   title: "GEOMETRY REGENT",
+    //   level: "Grade 8",
+    //   category: "Geometry",
+    //   //difficulty: "Hard",
+    //   time: "30 min",
+    //   questions: 16,
+    //   onStart: () => console.log("Started Geometry Fun")
+    // },
     {
         id: "psat",
       imageSrc: "/imsix.png",
@@ -166,5 +166,15 @@ export interface QuizCardProps {
       questions: 30,
       onStart: () => console.log("Started Civics Awareness")
     },
+    {
+  id: "ged",
+  imageSrc: "/imseven.png", // swap for a dedicated GED image if you have one
+  title: "GED READINESS DIAGNOSTIC",
+  level: "Adult / GED",
+  category: "Math, RLA, Science & Social Studies",
+  time: "2.5-3 hrs",
+  questions: 80,
+  onStart: () => console.log("Started GED Diagnostic")
+},
   ];
   

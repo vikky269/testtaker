@@ -6,7 +6,7 @@ import QuestionCard from "@/app/components/QuestionCard/QuestionCard";
 interface SectionBlockProps {
   label: string;
   emoji: string;
-  color: "indigo" | "emerald" | "amber";
+  color: "indigo" | "emerald" | "amber" | "violet";
   questions: any[];
   allQuestions: any[];   // selectedQuiz — needed for globalIndex
   answers: Record<string, string>;
@@ -16,24 +16,28 @@ const BORDER_MAP = {
   indigo:  "border-indigo-200",
   emerald: "border-emerald-200",
   amber:   "border-amber-200",
+  violet:  "border-violet-200",
 };
 
 const ICON_BG_MAP = {
   indigo:  "bg-indigo-50",
   emerald: "bg-emerald-50",
   amber:   "bg-amber-50",
+  violet:  "bg-violet-50",
 };
 
 const TITLE_MAP = {
   indigo:  "text-indigo-600",
   emerald: "text-emerald-600",
   amber:   "text-amber-600",
+  violet:  "text-violet-600",
 };
 
 const PILL_MAP = {
   indigo:  "bg-indigo-50 text-indigo-500",
   emerald: "bg-emerald-50 text-emerald-500",
   amber:   "bg-amber-50 text-amber-500",
+  violet:  "bg-violet-50 text-violet-500",
 };
 
 export default function SectionBlock({

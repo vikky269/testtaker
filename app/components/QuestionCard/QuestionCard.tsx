@@ -8,13 +8,14 @@ interface QuestionCardProps {
   index: number;         // 0-based index within its section
   globalIndex: number;   // 0-based index in selectedQuiz
   selectedAnswer: string | undefined;
-  color: "indigo" | "emerald" | "amber";
+  color: "indigo" | "emerald" | "amber" | "violet";
 }
 
 const COLOR_MAP = {
   indigo:  { num: "bg-indigo-50 text-indigo-500",  solution: "border-indigo-100" },
   emerald: { num: "bg-emerald-50 text-emerald-500", solution: "border-emerald-100" },
   amber:   { num: "bg-amber-50 text-amber-500",     solution: "border-amber-100" },
+  violet:  { num: "bg-violet-50 text-violet-500",   solution: "border-violet-100" },
 };
 
 export default function QuestionCard({

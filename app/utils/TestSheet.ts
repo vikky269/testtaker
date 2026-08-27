@@ -3,6 +3,7 @@
 // their answer, and the correct answer, section by section.
 
 import jsPDF from 'jspdf';
+import { GED_SECTIONS, GED_SECTION_LABELS } from '@/app/data/geddata';
 
 export interface SubmissionQuestion {
   question: string;
@@ -35,9 +36,17 @@ const stripHtml = (s: string) => s.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ')
 // Uses subject tags when present; falls back to the block convention.
 export function splitSections(sub: TestSubmission) {
   const qs = sub.questions ?? [];
+
+  // GED — real 24/22/19/15 boundaries, not generic tens
+  if (sub.test_type === 'ged') {
+    return GED_SECTIONS.map(sec => ({
+      name: GED_SECTION_LABELS[sec.key],
+      qs: qs.slice(sec.start, sec.end),
+    })).filter(s => s.qs.length);
+  }
+
   const hasTags = qs.some(q => q.subject);
   const isSat = sub.test_type === 'sat' || sub.test_type === 'ssat';
-
   if (hasTags) {
     const by = (names: string[]) => qs.filter(q => names.includes(q.subject ?? ''));
     return isSat

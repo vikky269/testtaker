@@ -44,39 +44,39 @@ export interface QuizCardProps {
       questions: 12,
       onStart: () => console.log("Started Science Explorer")
     },
-    // {
-    //     id: "algebra-1-regent",
-    //   imageSrc: "/imthree.png",
-    //   title: "ALGEBRA 1 REGENT",
-    //   level: "Grade 9",
-    //   category: "Algebra",
-    //   //difficulty: "Hard",
-    //   time: "35 min",
-    //   questions: 18,
-    //   onStart: () => console.log("Started History Quest")
-    // },
-    // {
-    //     id: "algebra-2-regent",
-    //   imageSrc: "/imfour.png",
-    //   title: "ALGEBRA 2 REGENT",
-    //   level: "Grade 8",
-    //   category: "Algebra",
-    //   //difficulty: "Medium",
-    //   time: "20 min",
-    //   questions: 14,
-    //   onStart: () => console.log("Started Grammar Check")
-    // },
-    // {
-    //     id: "geometry-regent",
-    //   imageSrc: "/imfive.png",
-    //   title: "GEOMETRY REGENT",
-    //   level: "Grade 8",
-    //   category: "Geometry",
-    //   //difficulty: "Hard",
-    //   time: "30 min",
-    //   questions: 16,
-    //   onStart: () => console.log("Started Geometry Fun")
-    // },
+    {
+        id: "algebra-1-regent",
+      imageSrc: "/imthree.png",
+      title: "ALGEBRA 1 REGENT",
+      level: "Grade 9",
+      category: "Algebra",
+      //difficulty: "Hard",
+      time: "35 min",
+      questions: 18,
+      onStart: () => console.log("Started History Quest")
+    },
+    {
+        id: "algebra-2-regent",
+      imageSrc: "/imfour.png",
+      title: "ALGEBRA 2 REGENT",
+      level: "Grade 8",
+      category: "Algebra",
+      //difficulty: "Medium",
+      time: "20 min",
+      questions: 14,
+      onStart: () => console.log("Started Grammar Check")
+    },
+    {
+        id: "geometry-regent",
+      imageSrc: "/imfive.png",
+      title: "GEOMETRY REGENT",
+      level: "Grade 8",
+      category: "Geometry",
+      //difficulty: "Hard",
+      time: "30 min",
+      questions: 16,
+      onStart: () => console.log("Started Geometry Fun")
+    },
     {
         id: "psat",
       imageSrc: "/imsix.png",
@@ -121,17 +121,17 @@ export interface QuizCardProps {
       questions: 12,
       onStart: () => console.log("Started World Capitals")
     },
-    // {
-    //     id: "sat",
-    //   imageSrc: "/sat1.png",
-    //   title: "SAT",
-    //   level: "Grade 9",
-    //   category: "Maths",
-    //  // difficulty: "Hard",
-    //   time: "45 min",
-    //   questions: 10,
-    //   onStart: () => console.log("Started Physics Fundamentals")
-    // },
+    {
+        id: "sat",
+      imageSrc: "/sat1.png",
+      title: "SAT",
+      level: "Grade 9",
+      category: "Maths",
+     // difficulty: "Hard",
+      time: "45 min",
+      questions: 10,
+      onStart: () => console.log("Started Physics Fundamentals")
+    },
     {
         id: "asvab",
       imageSrc: "/imseven.png",

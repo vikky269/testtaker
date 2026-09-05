@@ -1519,75 +1519,145 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
   {
     grade: "7th-grade",
     questions: [
-      {
+      // {
+      //   id: "q1",
+      //   question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751552188/Screenshot_2025-07-03_151607_vht1lb.png",
+      //   options: ["6", "5", "4", "2"],
+      //   correctAnswer: "6",
+      //   solution: "<p><strong>Step 1:</strong> Start with the equation:<br>(3x + 2) / 5 = 4.<br><strong>Step 2:</strong> Multiply both sides by 5:<br>3x + 2 = 20.<br><strong>Step 3:</strong> Subtract 2 from both sides:<br>3x = 18.<br><strong>Step 4:</strong> Divide by 3:<br>x = 6.<br><strong>Answer:</strong> 6.</p>"
+      // },
+      // {
+      //   id: "q2",
+      //   question: "A jacket originally costs $80. It is marked up by 30%, then discounted by 20%. What is the final price?",
+      //   options: ["$76.80", "$83.20", "$96.00", "$84.00"],
+      //   correctAnswer: "$83.20",
+      //   solution: "<p><strong>Step 1:</strong> Markup 30%:<br>80 × 1.3 = $104.<br><strong>Step 2:</strong> Apply 20% discount:<br>104 × 0.8 = $83.20.<br><strong>Answer:</strong> $83.20.</p>"
+      // },
+      // {
+      //   id: "q3",
+      //   question: "The probability of spinning a red section on a spinner is <sup>2</sup>&frasl;<sub>5</sub>. What is the probability of not spinning red after two independent spins?",
+      //   options: ["<sup>3</sup>&frasl;<sub>5</sub>", "<sup>9</sup>&frasl;<sub>25</sub>", "<sup>6</sup>&frasl;<sub>25</sub>", "<sup>12</sup>&frasl;<sub>25</sub>"],
+      //   correctAnswer: "<sup>9</sup>&frasl;<sub>25</sub>",
+      //   solution: "<p><strong>Step 1:</strong> Probability of not red = 1 - 2/5 = 3/5.<br><strong>Step 2:</strong> For two spins:<br>(3/5) × (3/5) = 9/25.<br><strong>Answer:</strong> <sup>9</sup>&frasl;<sub>25</sub>.</p>"
+      // },
+      // {
+      //   id: "q4",
+      //   question: "Simplify the expression -4<sup>2</sup> + 3 × (2 - 7)",
+      //   options: ["-31", "-29", "-25", "-19"],
+      //   correctAnswer: "-31",
+      //   solution: "<p><strong>Step 1:</strong> -4<sup>2</sup> means -(4 × 4) = -16.<br><strong>Step 2:</strong> (2 - 7) = -5.<br><strong>Step 3:</strong> 3 × (-5) = -15.<br><strong>Step 4:</strong> -16 + (-15) = -31.<br><strong>Answer:</strong> -31.</p>"
+      // },
+      // {
+      //   id: "q5",
+      //   question: "The dimensions of a rectangular prism are doubled. By what factor does the volume increase?",
+      //   options: ["2", "4", "6", "8"],
+      //   correctAnswer: "8",
+      //   solution: "<p><strong>Step 1:</strong> Volume formula: length × width × height.<br><strong>Step 2:</strong> Doubling each dimension multiplies volume by 2 × 2 × 2 = 8.<br><strong>Answer:</strong> 8.</p>"
+      // },
+      // {
+      //   id: "q6",
+      //   question: "What is the percent error if a student estimates a value to be 180, but the actual value is 200?",
+      //   options: ["10%", "15%", "20%", "25%"],
+      //   correctAnswer: "10%",
+      //   solution: "<p><strong>Step 1:</strong> Difference = |200 - 180| = 20.<br><strong>Step 2:</strong> Percent error = (20 / 200) × 100% = 10%.<br><strong>Answer:</strong> 10%.</p>"
+      // },
+      // {
+      //   id: "q7",
+      //   question: "Which of the following is irrational?",
+      //   options: ["&radic;81", "<sup>16</sup>&frasl;<sub>4</sub>", "π", "0.75"],
+      //   correctAnswer: "π",
+      //   solution: "<p><strong>Step 1:</strong> &radic;81 = 9 (rational), 16/4 = 4 (rational), 0.75 = 3/4 (rational).<br><strong>Step 2:</strong> π cannot be expressed as a fraction — irrational.<br><strong>Answer:</strong> π.</p>"
+      // },
+      // {
+      //   id: "q8",
+      //   question: "A triangle has two angles measuring 35° and 75°. What is the measure of the third angle?",
+      //   options: ["65°", "70°", "80°", "85°"],
+      //   correctAnswer: "70°",
+      //   solution: "<p><strong>Step 1:</strong> Sum of angles in a triangle = 180°.<br><strong>Step 2:</strong> Third angle = 180 - (35 + 75) = 70°.<br><strong>Answer:</strong> 70°.</p>"
+      // },
+      // {
+      //   id: "q9",
+      //   question: "Convert 3.61 into a fraction in simplest form.",
+      //   options: ["<sup>361</sup>&frasl;<sub>100</sub>", "<sup>325</sup>&frasl;<sub>90</sub>", "<sup>358</sup>&frasl;<sub>99</sub>", "<sup>356</sup>&frasl;<sub>99</sub>"],
+      //   correctAnswer: "<sup>361</sup>&frasl;<sub>100</sub>",
+      //   solution: "<p><strong>Step 1:</strong> 3.61 = 361/100.<br><strong>Step 2:</strong> 361 and 100 have no common factor except 1.<br><strong>Answer:</strong> <sup>361</sup>&frasl;<sub>100</sub>.</p>"
+      // },
+      // {
+      //   id: "q10",
+      //   question: "A car travels 160 miles in 2 hours 40 minutes. What is its average speed in miles per hour?",
+      //   options: ["60 mph", "64 mph", "65 mph", "66 mph"],
+      //   correctAnswer: "60 mph",
+      //   solution: "<p><strong>Step 1:</strong> Convert time to hours: 2 h 40 m = 2 + 40/60 = 2.666... h.<br><strong>Step 2:</strong> Speed = 160 ÷ 2.666... ≈ 60 mph.<br><strong>Answer:</strong> 60 mph.</p>"
+      // },
+            {
         id: "q1",
-        question: "https://res.cloudinary.com/dhoecxgs7/image/upload/v1751552188/Screenshot_2025-07-03_151607_vht1lb.png",
-        options: ["6", "5", "4", "2"],
-        correctAnswer: "6",
-        solution: "<p><strong>Step 1:</strong> Start with the equation:<br>(3x + 2) / 5 = 4.<br><strong>Step 2:</strong> Multiply both sides by 5:<br>3x + 2 = 20.<br><strong>Step 3:</strong> Subtract 2 from both sides:<br>3x = 18.<br><strong>Step 4:</strong> Divide by 3:<br>x = 6.<br><strong>Answer:</strong> 6.</p>"
+        question: "A student invests $500 at a simple annual interest rate of 4% for 3 years. How much interest will they earn?",
+        options: ["$60", "$20", "$45", "$80"],
+        correctAnswer: "$60",
+        solution: "<p><strong>Step 1:</strong> Simple interest formula: I = P × r × t.<br><strong>Step 2:</strong> I = 500 × 0.04 × 3 = $60.<br><strong>Answer:</strong> $60.</p>"
       },
       {
         id: "q2",
-        question: "A jacket originally costs $80. It is marked up by 30%, then discounted by 20%. What is the final price?",
-        options: ["$76.80", "$83.20", "$96.00", "$84.00"],
-        correctAnswer: "$83.20",
-        solution: "<p><strong>Step 1:</strong> Markup 30%:<br>80 × 1.3 = $104.<br><strong>Step 2:</strong> Apply 20% discount:<br>104 × 0.8 = $83.20.<br><strong>Answer:</strong> $83.20.</p>"
+        question: "A recipe uses 3/4 cup of sugar for every 2/3 cup of flour. What is the unit rate of sugar per cup of flour?",
+        options: ["9/8 cups", "8/9 cups", "1/2 cup", "2 cups"],
+        correctAnswer: "9/8 cups",
+        solution: "<p><strong>Step 1:</strong> Unit rate = sugar ÷ flour = (3/4) ÷ (2/3).<br><strong>Step 2:</strong> Multiply by the reciprocal: (3/4) × (3/2) = 9/8.<br><strong>Answer:</strong> 9/8 cups.</p>"
       },
       {
         id: "q3",
-        question: "The probability of spinning a red section on a spinner is <sup>2</sup>&frasl;<sub>5</sub>. What is the probability of not spinning red after two independent spins?",
-        options: ["<sup>3</sup>&frasl;<sub>5</sub>", "<sup>9</sup>&frasl;<sub>25</sub>", "<sup>6</sup>&frasl;<sub>25</sub>", "<sup>12</sup>&frasl;<sub>25</sub>"],
-        correctAnswer: "<sup>9</sup>&frasl;<sub>25</sub>",
-        solution: "<p><strong>Step 1:</strong> Probability of not red = 1 - 2/5 = 3/5.<br><strong>Step 2:</strong> For two spins:<br>(3/5) × (3/5) = 9/25.<br><strong>Answer:</strong> <sup>9</sup>&frasl;<sub>25</sub>.</p>"
+        question: "Evaluate: -5/6 + 2/3 ÷ (-4/9)",
+        options: ["-7/3", "7/3", "-1/6", "-11/6"],
+        correctAnswer: "-7/3",
+        solution: "<p><strong>Step 1:</strong> Follow order of operations — division first: 2/3 ÷ (-4/9) = 2/3 × (-9/4) = -3/2.<br><strong>Step 2:</strong> -5/6 + (-3/2) = -5/6 - 9/6 = -14/6 = -7/3.<br><strong>Answer:</strong> -7/3.</p>"
       },
       {
         id: "q4",
-        question: "Simplify the expression -4<sup>2</sup> + 3 × (2 - 7)",
-        options: ["-31", "-29", "-25", "-19"],
-        correctAnswer: "-31",
-        solution: "<p><strong>Step 1:</strong> -4<sup>2</sup> means -(4 × 4) = -16.<br><strong>Step 2:</strong> (2 - 7) = -5.<br><strong>Step 3:</strong> 3 × (-5) = -15.<br><strong>Step 4:</strong> -16 + (-15) = -31.<br><strong>Answer:</strong> -31.</p>"
+        question: "A taxi charges a $3 flat fee plus $2.50 per mile. If Maria wants her fare to be no more than $28, what is the maximum number of miles she can travel?",
+        options: ["10 miles", "8 miles", "11 miles", "12.5 miles"],
+        correctAnswer: "10 miles",
+        solution: "<p><strong>Step 1:</strong> Write the inequality: 3 + 2.50m ≤ 28.<br><strong>Step 2:</strong> Subtract 3: 2.50m ≤ 25.<br><strong>Step 3:</strong> Divide by 2.50: m ≤ 10.<br><strong>Answer:</strong> 10 miles.</p>"
       },
       {
         id: "q5",
-        question: "The dimensions of a rectangular prism are doubled. By what factor does the volume increase?",
-        options: ["2", "4", "6", "8"],
-        correctAnswer: "8",
-        solution: "<p><strong>Step 1:</strong> Volume formula: length × width × height.<br><strong>Step 2:</strong> Doubling each dimension multiplies volume by 2 × 2 × 2 = 8.<br><strong>Answer:</strong> 8.</p>"
+        question: "Simplify: 4(2x - 3) - 3(x + 5)",
+        options: ["5x - 27", "5x - 2", "11x - 27", "5x + 27"],
+        correctAnswer: "5x - 27",
+        solution: "<p><strong>Step 1:</strong> Distribute: 8x - 12 - 3x - 15.<br><strong>Step 2:</strong> Combine like terms: (8x - 3x) + (-12 - 15) = 5x - 27.<br><strong>Answer:</strong> 5x - 27.</p>"
       },
       {
         id: "q6",
-        question: "What is the percent error if a student estimates a value to be 180, but the actual value is 200?",
-        options: ["10%", "15%", "20%", "25%"],
-        correctAnswer: "10%",
-        solution: "<p><strong>Step 1:</strong> Difference = |200 - 180| = 20.<br><strong>Step 2:</strong> Percent error = (20 / 200) × 100% = 10%.<br><strong>Answer:</strong> 10%.</p>"
+        question: "A circle has a circumference of 31.4 cm. Using π ≈ 3.14, what is the area of the circle?",
+        options: ["78.5 cm²", "15.7 cm²", "50.24 cm²", "25 cm²"],
+        correctAnswer: "78.5 cm²",
+        solution: "<p><strong>Step 1:</strong> C = 2πr, so 31.4 = 2(3.14)r → r = 5 cm.<br><strong>Step 2:</strong> Area = πr² = 3.14 × 25 = 78.5 cm².<br><strong>Answer:</strong> 78.5 cm².</p>"
       },
       {
         id: "q7",
-        question: "Which of the following is irrational?",
-        options: ["&radic;81", "<sup>16</sup>&frasl;<sub>4</sub>", "π", "0.75"],
-        correctAnswer: "π",
-        solution: "<p><strong>Step 1:</strong> &radic;81 = 9 (rational), 16/4 = 4 (rational), 0.75 = 3/4 (rational).<br><strong>Step 2:</strong> π cannot be expressed as a fraction — irrational.<br><strong>Answer:</strong> π.</p>"
+        question: "A rectangular box measures 5 cm by 4 cm by 6 cm. A 2 cm cube is cut out from one corner. What is the remaining volume?",
+        options: ["112 cm³", "128 cm³", "120 cm³", "104 cm³"],
+        correctAnswer: "112 cm³",
+        solution: "<p><strong>Step 1:</strong> Box volume = 5 × 4 × 6 = 120 cm³.<br><strong>Step 2:</strong> Cube volume = 2³ = 8 cm³.<br><strong>Step 3:</strong> Remaining = 120 - 8 = 112 cm³.<br><strong>Answer:</strong> 112 cm³.</p>"
       },
       {
         id: "q8",
-        question: "A triangle has two angles measuring 35° and 75°. What is the measure of the third angle?",
-        options: ["65°", "70°", "80°", "85°"],
-        correctAnswer: "70°",
-        solution: "<p><strong>Step 1:</strong> Sum of angles in a triangle = 180°.<br><strong>Step 2:</strong> Third angle = 180 - (35 + 75) = 70°.<br><strong>Answer:</strong> 70°.</p>"
+        question: "A jacket's price increases by 25%, then decreases by 20% the following year. If the original price was $120, what is the final price?",
+        options: ["$120", "$114", "$126", "$108"],
+        correctAnswer: "$120",
+        solution: "<p><strong>Step 1:</strong> After a 25% increase: 120 × 1.25 = $150.<br><strong>Step 2:</strong> After a 20% decrease: 150 × 0.80 = $120.<br><strong>Note:</strong> A 25% increase followed by a 20% decrease returns to the original price, because the 20% is taken from a larger base.<br><strong>Answer:</strong> $120.</p>"
       },
       {
         id: "q9",
-        question: "Convert 3.61 into a fraction in simplest form.",
-        options: ["<sup>361</sup>&frasl;<sub>100</sub>", "<sup>325</sup>&frasl;<sub>90</sub>", "<sup>358</sup>&frasl;<sub>99</sub>", "<sup>356</sup>&frasl;<sub>99</sub>"],
-        correctAnswer: "<sup>361</sup>&frasl;<sub>100</sub>",
-        solution: "<p><strong>Step 1:</strong> 3.61 = 361/100.<br><strong>Step 2:</strong> 361 and 100 have no common factor except 1.<br><strong>Answer:</strong> <sup>361</sup>&frasl;<sub>100</sub>.</p>"
+        question: "Simplify: 3/8 ÷ 9/16 × 2/3",
+        options: ["4/9", "2/3", "8/9", "1/3"],
+        correctAnswer: "4/9",
+        solution: "<p><strong>Step 1:</strong> 3/8 ÷ 9/16 = 3/8 × 16/9 = 48/72 = 2/3.<br><strong>Step 2:</strong> 2/3 × 2/3 = 4/9.<br><strong>Answer:</strong> 4/9.</p>"
       },
       {
         id: "q10",
-        question: "A car travels 160 miles in 2 hours 40 minutes. What is its average speed in miles per hour?",
-        options: ["60 mph", "64 mph", "65 mph", "66 mph"],
-        correctAnswer: "60 mph",
-        solution: "<p><strong>Step 1:</strong> Convert time to hours: 2 h 40 m = 2 + 40/60 = 2.666... h.<br><strong>Step 2:</strong> Speed = 160 ÷ 2.666... ≈ 60 mph.<br><strong>Answer:</strong> 60 mph.</p>"
+        question: "A researcher surveys a random sample of 40 out of 800 students and finds that 30% plan to attend the school dance. Based on this sample, about how many of the 800 students are expected to attend?",
+        options: ["240", "120", "30", "300"],
+        correctAnswer: "240",
+        solution: "<p><strong>Step 1:</strong> Apply the sample percentage to the whole population: 30% of 800.<br><strong>Step 2:</strong> 0.30 × 800 = 240.<br><strong>Answer:</strong> 240.</p>"
       },
       {
         id: "q11",
@@ -1724,75 +1794,145 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
   {
     grade: "8th-grade",
     questions: [
-      {
+      // {
+      //   id: "q1",
+      //   question: "<img src='https://res.cloudinary.com/dhoecxgs7/image/upload/v1751552865/Screenshot_2025-07-03_152729_oh10fh.png' alt='Solve for x' />",
+      //   options: ["37", "26", "38", "35"],
+      //   correctAnswer: "38",
+      //   solution: "<p><strong>Step 1:</strong> Start with the equation:<br>(2(x - 3)) / 5 = (x + 4) / 3.<br><strong>Step 2:</strong> Cross-multiply:<br>3 × 2(x - 3) = 5(x + 4).<br><strong>Step 3:</strong> Expand both sides:<br>6x - 18 = 5x + 20.<br><strong>Step 4:</strong> Subtract 5x from both sides:<br>x - 18 = 20.<br><strong>Step 5:</strong> Add 18 to both sides:<br>x = 20 + 18 <br> x = 38.<br><strong>Step 6:</strong> Final answer: x = 38.</p>"
+      // },
+      // {
+      //   id: "q2",
+      //   question: "<img src='https://res.cloudinary.com/dhoecxgs7/image/upload/v1751553086/Screenshot_2025-07-03_153109_vvs0zy.png' alt='Coordinate question' />",
+      //   options: ["(1, 5)", "(2, 7)", "(3, 9)", "(1, 4)"],
+      //   correctAnswer: "(1, 5)",
+      //   solution: "<p><strong>Step 1:</strong> Since both equal y, set them equal: 2x + 3 = -x + 6<br><strong>Step 2:</strong> Combine like terms: 2x + x = 6 - 3 ⇒ 3x = 3<br><strong>Step 3:</strong> Solve for x: x = 3/3 = 1<br><strong>Step 4:</strong> Substitute x into y = 2x + 3: y = 2(1) + 3 = 5 (also y = -1 + 6 = 5)<br><strong>Step 5:</strong> Final answer: (x, y) = (1, 5)</p>"
+      // },
+      // {
+      //   id: "q3",
+      //   question: "<img src='https://res.cloudinary.com/dhoecxgs7/image/upload/v1751553357/Screenshot_2025-07-03_153543_spyqlm.png' alt='Exponent question' />",
+      //   options: ["16", "-16", "<sup>1</sup>&frasl;<sub>16</sub>", "<sup>1</sup>&frasl;<sub>8</sub>"],
+      //   correctAnswer: "<sup>1</sup>&frasl;<sub>16</sub>",
+      //   solution: "<p><strong>Step 1:</strong> Apply negative exponent rule: a<sup>-n</sup> = 1/a<sup>n</sup>.<br><strong>Step 2:</strong> 4<sup>-2</sup> = 1 / 4<sup>2</sup> = 1/16 <br><strong>Answer:</strong> <sup>1</sup>&frasl;<sub>16</sub>.</p>"
+      // },
+      // {
+      //   id: "q4",
+      //   question: "What is the distance between the points A(–3, 2) and B(4, –2)?",
+      //   options: ["6", "7", "&radic;65", "&radic;49"],
+      //   correctAnswer: "&radic;65",
+      //   solution: "<p><strong>Step 1:</strong> Use distance formula: √[(x₂ - x₁)² + (y₂ - y₁)²].<br><strong>Step 2:</strong> Difference in x: 4 - (-3) = 7.<br>Difference in y: -2 - 2 = -4.<br><strong>Step 3:</strong> √(7² + (-4)²) = √(49 + 16) = √65.<br><strong>Answer:</strong> &radic;65.</p>"
+      // },
+      // {
+      //   id: "q5",
+      //   question: "A cylinder has a height of 10 cm and a radius of 3 cm. What is the volume? (Use π ≈ 3.14)",
+      //   options: ["282.6 cm³", "94.2 cm³", "314.0 cm³", "188.4 cm³"],
+      //   correctAnswer: "282.6 cm³",
+      //   solution: "<p><strong>Step 1:</strong> Volume formula: V = πr²h.<br><strong>Step 2:</strong> r = 3, h = 10 → V = 3.14 × 9 × 10 = 282.6 cm³.<br><strong>Answer:</strong> 282.6 cm³.</p>"
+      // },
+      // {
+      //   id: "q6",
+      //   question: "Simplify the expression: 3x² – 2x + 5x² – 4 + 6x",
+      //   options: ["8x² + 4x – 4", "8x² + 4x + 4", "8x² + 6x – 4", "8x² + 6x + 4"],
+      //   correctAnswer: "8x² + 4x – 4",
+      //   solution: "<p><strong>Step 1:</strong> Combine like terms: 3x² + 5x² = 8x².<br><strong>Step 2:</strong> -2x + 6x = 4x  — <br> this would give 8x² + 4x, <br><strong>Step 3:</strong> Add the constant which is -4  we have <br> <strong>Answer:</strong> 8x² + 4x - 4 </p>"
+      // },
+      // {
+      //   id: "q7",
+      //   question: "Which number is irrational?",
+      //   options: ["<sup>4</sup>&frasl;<sub>7</sub>", "&radic;36", "&radic;50", "3.25"],
+      //   correctAnswer: "&radic;50",
+      //   solution: "<p><strong>Step 1:</strong> √36 = 6 (rational).<br>4/7 (rational), 3.25 = 13/4 (rational).<br><strong>Step 2:</strong> √50 = √(25 × 2) = 5√2, irrational.<br><strong>Answer:</strong> &radic;50.</p>"
+      // },
+      // {
+      //   id: "q8",
+      //   question: "The function f(x) = 2x² – 3x + 1. What is the value of f(–2)?",
+      //   options: ["15", "17", "9", "11"],
+      //   correctAnswer: "15",
+      //   solution: "<p><strong>Step 1:</strong> Substitute x = -2:<br>f(-2) = 2(-2)<sup>2</sup> - 3(-2) + 1.<br><strong>Step 2:</strong> = 8 + 6 + 1 = 15.<br><strong>Answer:</strong> 15.</p>"
+      // },
+      // {
+      //   id: "q9",
+      //   question: "Which equation has no solution?",
+      //   options: ["2x + 5 = 2x + 5", "4x – 1 = 4x + 3", "x – 2 = 2x – 2", "3x + 6 = 3(x + 2)"],
+      //   correctAnswer: "4x – 1 = 4x + 3",
+      //   solution: "<p><strong>Step 1:</strong> Subtract 4x from both sides:<br>-1 = 3 → false.<br><strong>Step 2:</strong> A false statement means no solution.<br><strong>Answer:</strong> 4x – 1 = 4x + 3.</p>"
+      // },
+      // {
+      //   id: "q10",
+      //   question: "The sum of two numbers is 20. Their difference is 4. What is the product of the two numbers?",
+      //   options: ["96", "99", "104", "100"],
+      //   correctAnswer: "96",
+      //   solution: "<p><strong>Step 1:</strong> Let the numbers be a and b.<br>a + b = 20 -----(1), <br> a - b = 4 --------(2)<br><strong>Step 2:</strong> Add the equations: 2a = 24 → a = 12.<br> Substitute a = 12 in equation (1) <br> <strong>Step 3:</strong> b = 20 - 12 = 8.<br><strong>Step 4:</strong> Product = 12 × 8 = 96.<br><strong>Answer:</strong> 96.</p>"
+      // },
+            {
         id: "q1",
-        question: "<img src='https://res.cloudinary.com/dhoecxgs7/image/upload/v1751552865/Screenshot_2025-07-03_152729_oh10fh.png' alt='Solve for x' />",
-        options: ["37", "26", "38", "35"],
-        correctAnswer: "38",
-        solution: "<p><strong>Step 1:</strong> Start with the equation:<br>(2(x - 3)) / 5 = (x + 4) / 3.<br><strong>Step 2:</strong> Cross-multiply:<br>3 × 2(x - 3) = 5(x + 4).<br><strong>Step 3:</strong> Expand both sides:<br>6x - 18 = 5x + 20.<br><strong>Step 4:</strong> Subtract 5x from both sides:<br>x - 18 = 20.<br><strong>Step 5:</strong> Add 18 to both sides:<br>x = 20 + 18 <br> x = 38.<br><strong>Step 6:</strong> Final answer: x = 38.</p>"
+        question: "Two numbers have a sum of 24 and a difference of 6. What are the two numbers?",
+        options: ["15 and 9", "12 and 12", "18 and 6", "20 and 4"],
+        correctAnswer: "15 and 9",
+        solution: "<p><strong>Step 1:</strong> Let x + y = 24 and x - y = 6.<br><strong>Step 2:</strong> Add the equations: 2x = 30 → x = 15.<br><strong>Step 3:</strong> Substitute: 15 + y = 24 → y = 9.<br><strong>Answer:</strong> 15 and 9.</p>"
       },
       {
         id: "q2",
-        question: "<img src='https://res.cloudinary.com/dhoecxgs7/image/upload/v1751553086/Screenshot_2025-07-03_153109_vvs0zy.png' alt='Coordinate question' />",
-        options: ["(1, 5)", "(2, 7)", "(3, 9)", "(1, 4)"],
-        correctAnswer: "(1, 5)",
-        solution: "<p><strong>Step 1:</strong> Since both equal y, set them equal: 2x + 3 = -x + 6<br><strong>Step 2:</strong> Combine like terms: 2x + x = 6 - 3 ⇒ 3x = 3<br><strong>Step 3:</strong> Solve for x: x = 3/3 = 1<br><strong>Step 4:</strong> Substitute x into y = 2x + 3: y = 2(1) + 3 = 5 (also y = -1 + 6 = 5)<br><strong>Step 5:</strong> Final answer: (x, y) = (1, 5)</p>"
+        question: "A right triangle has legs measuring 9 and 12. What is the length of the hypotenuse?",
+        options: ["15", "21", "225", "13"],
+        correctAnswer: "15",
+        solution: "<p><strong>Step 1:</strong> Pythagorean theorem: a² + b² = c².<br><strong>Step 2:</strong> 9² + 12² = 81 + 144 = 225.<br><strong>Step 3:</strong> c = √225 = 15.<br><strong>Answer:</strong> 15.</p>"
       },
       {
         id: "q3",
-        question: "<img src='https://res.cloudinary.com/dhoecxgs7/image/upload/v1751553357/Screenshot_2025-07-03_153543_spyqlm.png' alt='Exponent question' />",
-        options: ["16", "-16", "<sup>1</sup>&frasl;<sub>16</sub>", "<sup>1</sup>&frasl;<sub>8</sub>"],
-        correctAnswer: "<sup>1</sup>&frasl;<sub>16</sub>",
-        solution: "<p><strong>Step 1:</strong> Apply negative exponent rule: a<sup>-n</sup> = 1/a<sup>n</sup>.<br><strong>Step 2:</strong> 4<sup>-2</sup> = 1 / 4<sup>2</sup> = 1/16 <br><strong>Answer:</strong> <sup>1</sup>&frasl;<sub>16</sub>.</p>"
+        question: "What is the distance between the points (2, 3) and (7, 15)?",
+        options: ["13", "17", "15", "12"],
+        correctAnswer: "13",
+        solution: "<p><strong>Step 1:</strong> Δx = 7 - 2 = 5. Δy = 15 - 3 = 12.<br><strong>Step 2:</strong> Distance = √(5² + 12²) = √(25 + 144) = √169 = 13.<br><strong>Answer:</strong> 13.</p>"
       },
       {
         id: "q4",
-        question: "What is the distance between the points A(–3, 2) and B(4, –2)?",
-        options: ["6", "7", "&radic;65", "&radic;49"],
-        correctAnswer: "&radic;65",
-        solution: "<p><strong>Step 1:</strong> Use distance formula: √[(x₂ - x₁)² + (y₂ - y₁)²].<br><strong>Step 2:</strong> Difference in x: 4 - (-3) = 7.<br>Difference in y: -2 - 2 = -4.<br><strong>Step 3:</strong> √(7² + (-4)²) = √(49 + 16) = √65.<br><strong>Answer:</strong> &radic;65.</p>"
+        question: "A linear function is given by this table: x = 0, 1, 2, 3 and y = 5, 8, 11, 14. What is the rate of change of this function?",
+        options: ["3", "5", "8", "2"],
+        correctAnswer: "3",
+        solution: "<p><strong>Step 1:</strong> Rate of change = change in y ÷ change in x.<br><strong>Step 2:</strong> From x=0 to x=1: y goes from 5 to 8, a change of 3.<br><strong>Answer:</strong> 3.</p>"
       },
       {
         id: "q5",
-        question: "A cylinder has a height of 10 cm and a radius of 3 cm. What is the volume? (Use π ≈ 3.14)",
-        options: ["282.6 cm³", "94.2 cm³", "314.0 cm³", "188.4 cm³"],
-        correctAnswer: "282.6 cm³",
-        solution: "<p><strong>Step 1:</strong> Volume formula: V = πr²h.<br><strong>Step 2:</strong> r = 3, h = 10 → V = 3.14 × 9 × 10 = 282.6 cm³.<br><strong>Answer:</strong> 282.6 cm³.</p>"
+        question: "Solve for x: 5x - 3 = 2x + 12",
+        options: ["x = 5", "x = 3", "x = 15", "x = -5"],
+        correctAnswer: "x = 5",
+        solution: "<p><strong>Step 1:</strong> Subtract 2x from both sides: 3x - 3 = 12.<br><strong>Step 2:</strong> Add 3: 3x = 15.<br><strong>Step 3:</strong> Divide by 3: x = 5.<br><strong>Answer:</strong> x = 5.</p>"
       },
       {
         id: "q6",
-        question: "Simplify the expression: 3x² – 2x + 5x² – 4 + 6x",
-        options: ["8x² + 4x – 4", "8x² + 4x + 4", "8x² + 6x – 4", "8x² + 6x + 4"],
-        correctAnswer: "8x² + 4x – 4",
-        solution: "<p><strong>Step 1:</strong> Combine like terms: 3x² + 5x² = 8x².<br><strong>Step 2:</strong> -2x + 6x = 4x  — <br> this would give 8x² + 4x, <br><strong>Step 3:</strong> Add the constant which is -4  we have <br> <strong>Answer:</strong> 8x² + 4x - 4 </p>"
+        question: "Triangle ABC is reflected across the y-axis to form triangle A'B'C'. If point A is at (-3, 4), what are the coordinates of A'?",
+        options: ["(3, 4)", "(-3, -4)", "(4, -3)", "(-4, 3)"],
+        correctAnswer: "(3, 4)",
+        solution: "<p><strong>Step 1:</strong> A reflection across the y-axis flips the sign of the x-coordinate and keeps y the same.<br><strong>Step 2:</strong> (-3, 4) → (3, 4).<br><strong>Answer:</strong> (3, 4).</p>"
       },
       {
         id: "q7",
-        question: "Which number is irrational?",
-        options: ["<sup>4</sup>&frasl;<sub>7</sub>", "&radic;36", "&radic;50", "3.25"],
-        correctAnswer: "&radic;50",
-        solution: "<p><strong>Step 1:</strong> √36 = 6 (rational).<br>4/7 (rational), 3.25 = 13/4 (rational).<br><strong>Step 2:</strong> √50 = √(25 × 2) = 5√2, irrational.<br><strong>Answer:</strong> &radic;50.</p>"
+        question: "Simplify: (2³ × 2⁵) ÷ 2⁴",
+        options: ["16", "32", "8", "64"],
+        correctAnswer: "16",
+        solution: "<p><strong>Step 1:</strong> Add exponents when multiplying: 2³ × 2⁵ = 2⁸.<br><strong>Step 2:</strong> Subtract exponents when dividing: 2⁸ ÷ 2⁴ = 2⁴ = 16.<br><strong>Answer:</strong> 16.</p>"
       },
       {
         id: "q8",
-        question: "The function f(x) = 2x² – 3x + 1. What is the value of f(–2)?",
-        options: ["15", "17", "9", "11"],
-        correctAnswer: "15",
-        solution: "<p><strong>Step 1:</strong> Substitute x = -2:<br>f(-2) = 2(-2)<sup>2</sup> - 3(-2) + 1.<br><strong>Step 2:</strong> = 8 + 6 + 1 = 15.<br><strong>Answer:</strong> 15.</p>"
+        question: "Which best describes √70?",
+        options: ["Between 8 and 9", "Between 7 and 8", "Between 9 and 10", "Exactly 8.5"],
+        correctAnswer: "Between 8 and 9",
+        solution: "<p><strong>Step 1:</strong> 8² = 64 and 9² = 81.<br><strong>Step 2:</strong> Since 64 &lt; 70 &lt; 81, √70 is between 8 and 9.<br><strong>Answer:</strong> Between 8 and 9.</p>"
       },
       {
         id: "q9",
-        question: "Which equation has no solution?",
-        options: ["2x + 5 = 2x + 5", "4x – 1 = 4x + 3", "x – 2 = 2x – 2", "3x + 6 = 3(x + 2)"],
-        correctAnswer: "4x – 1 = 4x + 3",
-        solution: "<p><strong>Step 1:</strong> Subtract 4x from both sides:<br>-1 = 3 → false.<br><strong>Step 2:</strong> A false statement means no solution.<br><strong>Answer:</strong> 4x – 1 = 4x + 3.</p>"
+        question: "Find the volume of a cylinder with radius 3 cm and height 10 cm. Use π ≈ 3.14.",
+        options: ["282.6 cm³", "94.2 cm³", "188.4 cm³", "942 cm³"],
+        correctAnswer: "282.6 cm³",
+        solution: "<p><strong>Step 1:</strong> V = πr²h.<br><strong>Step 2:</strong> V = 3.14 × 3² × 10 = 3.14 × 9 × 10 = 282.6 cm³.<br><strong>Answer:</strong> 282.6 cm³.</p>"
       },
       {
         id: "q10",
-        question: "The sum of two numbers is 20. Their difference is 4. What is the product of the two numbers?",
-        options: ["96", "99", "104", "100"],
-        correctAnswer: "96",
-        solution: "<p><strong>Step 1:</strong> Let the numbers be a and b.<br>a + b = 20 -----(1), <br> a - b = 4 --------(2)<br><strong>Step 2:</strong> Add the equations: 2a = 24 → a = 12.<br> Substitute a = 12 in equation (1) <br> <strong>Step 3:</strong> b = 20 - 12 = 8.<br><strong>Step 4:</strong> Product = 12 × 8 = 96.<br><strong>Answer:</strong> 96.</p>"
+        question: "The graphs of two linear equations intersect at the point (4, -2). What is the solution to the system of equations?",
+        options: ["(4, -2)", "(-2, 4)", "(4, 2)", "(-4, -2)"],
+        correctAnswer: "(4, -2)",
+        solution: "<p><strong>Step 1:</strong> The solution to a system of equations is the point where the two lines intersect.<br><strong>Step 2:</strong> That point is given as (4, -2).<br><strong>Answer:</strong> (4, -2).</p>"
       },
       {
         id: "q11",
@@ -2134,98 +2274,192 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
   {
     grade: "10th-grade",
     questions: [
-      {
+//       {
+//         id: "q1",
+//         question: "What is the solution to the system of equations: 3x - 2y = 8 and 2x + y = 3?",
+//         options: ["(1, -1)", "(2, -1)", "(3, 2)", "(4, 1)"],
+//         correctAnswer: "(2, -1)",
+//         solution: `<p>
+// <strong>Step 1:</strong> From 2x + y = 3, get y = 3 − 2x.<br>
+// <strong>Step 2:</strong> Substitute into 3x − 2y = 8  <br> 3x − 2(3 − 2x) = 8 <br> 3x − 6 + 4x = 8 <br> 7x = 14<br> x = 14/7.<br> x =2.<br>
+// <strong>Step 3:</strong> Substitute x = 2 in  y = 3 - 2x <br>
+// <strong>Step 4:</strong> y = 3 − 2(2) = 3 - 4 = −1<br>
+// <strong>Solution for the system as written:</strong> (2, −1).<br>
+// <strong>Answer:</strong> (2, -1).</p>`
+//       },
+//       {
+//         id: "q2",
+//         question: "What is the discriminant of the quadratic equation 2x² - 4x + 1 = 0?",
+//         options: ["8", "0", "4", "12"],
+//         correctAnswer: "8",
+//         solution: `<p><strong>Step 1:</strong> For ax² + bx + c, the discriminant is Δ = b² − 4ac.<br>
+// <strong>Step 2:</strong> a = 2, b = −4, c = 1 <br> Δ = (−4)² − 4(2)(1) = 16 − 8 = 8.<br>
+// <strong>Answer:</strong> 8.</p>`
+//       },
+//       {
+//         id: "q3",
+//         question: "Which of the following functions represents exponential growth",
+//         options: ["y = 2x + 3", "y = 3x² - 1", "y = 5<sup>x<sup>", "y = <sup>x</sup>&frasl;<sub>2</sub>"],
+//         correctAnswer: "y = 5<sup>x<sup>",
+//         solution: `<p><strong>Step 1:</strong> Exponential growth has the variable in the exponent and base &gt; 1.<br>
+// <strong>Step 2:</strong> y = 5<sup>x</sup> matches this pattern (base 5 &gt; 1).<br>
+// <strong>Answer:</strong> y = 5<sup>x</sup>.</p>`
+//       },
+//       {
+//         id: "q4",
+//         question: "What is the domain of the function f(x) = √(x - 3)?",
+//         options: ["x ≥ 0", "x ≤ 3", "x > 3", "x ≥ 3"],
+//         correctAnswer: "x ≥ 3",
+//         solution: `<p><strong>Step 1:</strong> The radicand must be non-negative: x − 3 ≥ 0.<br>
+// <strong>Step 2:</strong> Therefore x ≥ 3.<br>
+// <strong>Answer:</strong> x ≥ 3.</p>`
+//       },
+//       {
+//         id: "q5",
+//         question: "What is the value of sin(30°)?",
+//         options: ["0", "1", "1/2", "√3/2"],
+//         correctAnswer: "1/2",
+//         solution: `<p><strong>Step 1:</strong> From special angles, sin(30°) = 1/2.<br>
+// <strong>Answer:</strong> 1/2.</p>`
+//       },
+//       {
+//         id: "q6",
+//         question: "What is the solution to |2x - 1| = 5?",
+//         options: ["x = 3 or x = -2", "x = 2 or x = -3", "x = 2 or x = -1", "x = 3 or x = 1"],
+//         correctAnswer: "x = 3 or x = -2",
+//         solution: `<p><strong>Step 1:</strong> Solve 2x − 1 = 5 <br> 2x = 6 <br> x = 3.<br>
+// <strong>Step 2:</strong> Solve 2x − 1 = −5 <br> 2x = −4 <br> x = −2.<br>
+// <strong>Answer:</strong> x = 3 or x = −2.</p>`
+//       },
+//       {
+//         id: "q7",
+//         question: "Which of the following is a characteristic of a linear function?",
+//         options: ["Constant rate of change", "Variable exponents", "No y-intercept", "Curved graph"],
+//         correctAnswer: "Constant rate of change",
+//         solution: `<p><strong>Step 1:</strong> Linear functions have the form y = mx + b.<br>
+// <strong>Step 2:</strong> Their key feature is a <em>constant</em> rate of change (slope m).<br>
+// <strong>Answer:</strong> Constant rate of change.</p>`
+//       },
+//       {
+//         id: "q8",
+//         question: "The volume of a cylinder is given by V = πr²h. What is the volume when r = 3 and h = 4?",
+//         options: ["36π", "27π", "12π", "48π"],
+//         correctAnswer: "36π",
+//         solution: `<p><strong>Step 1:</strong> Use V = πr²h.<br>
+// <strong>Step 2:</strong> r = 3 <br> r² = 9; <br> h = 4 <br> V = π(9)(4) = 36π.<br>
+// <strong>Answer:</strong> 36π.</p>`
+//       },
+//       {
+//         id: "q9",
+//         question: "What transformation occurs to the graph of y = x² if we graph y = (x - 2)² + 3?",
+//         options: ["Shift right 2, up 3", "Shift left 2, up 3", "Shift right 2, down 3", "Shift left 2, down 3"],
+//         correctAnswer: "Shift right 2, up 3",
+//         solution: `<p><strong>Step 1:</strong> (x − 2) shifts the graph right by 2.<br>
+// <strong>Step 2:</strong> +3 shifts the graph up by 3.<br>
+// <strong>Answer:</strong> Shift right 2, up 3.</p>`
+//       },
+//       {
+//         id: "q10",
+//         question: "A line passes through points (1,2) and (3,6). What is its slope?",
+//         options: ["1", "2", "3", "4"],
+//         correctAnswer: "2",
+//         solution: `<p><strong>Step 1:</strong> Use slope formula m = (y₂ − y₁)/(x₂ − x₁).<br>
+// <strong>Step 2:</strong> m = (6 − 2)/(3 − 1) = 4/2 = 2.<br>
+// <strong>Answer:</strong> 2.</p>`
+//       },
+{
         id: "q1",
-        question: "What is the solution to the system of equations: 3x - 2y = 8 and 2x + y = 3?",
-        options: ["(1, -1)", "(2, -1)", "(3, 2)", "(4, 1)"],
-        correctAnswer: "(2, -1)",
-        solution: `<p>
-<strong>Step 1:</strong> From 2x + y = 3, get y = 3 − 2x.<br>
-<strong>Step 2:</strong> Substitute into 3x − 2y = 8  <br> 3x − 2(3 − 2x) = 8 <br> 3x − 6 + 4x = 8 <br> 7x = 14<br> x = 14/7.<br> x =2.<br>
-<strong>Step 3:</strong> Substitute x = 2 in  y = 3 - 2x <br>
-<strong>Step 4:</strong> y = 3 − 2(2) = 3 - 4 = −1<br>
-<strong>Solution for the system as written:</strong> (2, −1).<br>
-<strong>Answer:</strong> (2, -1).</p>`
+        question: "Solve for x: 3(x - 2) + 5 = 2x + 7",
+        options: ["x = 6", "x = 8", "x = 4", "x = 9"],
+        correctAnswer: "x = 8",
+        solution: `<p><strong>Step 1:</strong> Distribute: 3x − 6 + 5 = 2x + 7 → 3x − 1 = 2x + 7.<br>
+<strong>Step 2:</strong> Subtract 2x from both sides: x − 1 = 7.<br>
+<strong>Step 3:</strong> Add 1: x = 8.<br>
+<strong>Answer:</strong> x = 8.</p>`
       },
       {
         id: "q2",
-        question: "What is the discriminant of the quadratic equation 2x² - 4x + 1 = 0?",
-        options: ["8", "0", "4", "12"],
-        correctAnswer: "8",
-        solution: `<p><strong>Step 1:</strong> For ax² + bx + c, the discriminant is Δ = b² − 4ac.<br>
-<strong>Step 2:</strong> a = 2, b = −4, c = 1 <br> Δ = (−4)² − 4(2)(1) = 16 − 8 = 8.<br>
-<strong>Answer:</strong> 8.</p>`
+        question: "Which expression is equivalent to (2x³y²)(3x⁴y)?",
+        options: ["6x⁷y³", "5x⁷y³", "6x¹²y²", "6x⁷y²"],
+        correctAnswer: "6x⁷y³",
+        solution: `<p><strong>Step 1:</strong> Multiply coefficients: 2 × 3 = 6.<br>
+<strong>Step 2:</strong> Add exponents on x: 3 + 4 = 7. Add exponents on y: 2 + 1 = 3.<br>
+<strong>Answer:</strong> 6x⁷y³.</p>`
       },
       {
         id: "q3",
-        question: "Which of the following functions represents exponential growth",
-        options: ["y = 2x + 3", "y = 3x² - 1", "y = 5<sup>x<sup>", "y = <sup>x</sup>&frasl;<sub>2</sub>"],
-        correctAnswer: "y = 5<sup>x<sup>",
-        solution: `<p><strong>Step 1:</strong> Exponential growth has the variable in the exponent and base &gt; 1.<br>
-<strong>Step 2:</strong> y = 5<sup>x</sup> matches this pattern (base 5 &gt; 1).<br>
-<strong>Answer:</strong> y = 5<sup>x</sup>.</p>`
+        question: "Solve the system: y = 2x - 1 and y = -x + 5",
+        options: ["(1, 1)", "(2, 3)", "(2, 4)", "(3, 5)"],
+        correctAnswer: "(2, 3)",
+        solution: `<p><strong>Step 1:</strong> Set the expressions equal: 2x − 1 = −x + 5.<br>
+<strong>Step 2:</strong> Add x: 3x − 1 = 5 → 3x = 6 → x = 2.<br>
+<strong>Step 3:</strong> Substitute into y = 2x − 1: y = 2(2) − 1 = 3.<br>
+<strong>Answer:</strong> (2, 3).</p>`
       },
       {
         id: "q4",
-        question: "What is the domain of the function f(x) = √(x - 3)?",
-        options: ["x ≥ 0", "x ≤ 3", "x > 3", "x ≥ 3"],
-        correctAnswer: "x ≥ 3",
-        solution: `<p><strong>Step 1:</strong> The radicand must be non-negative: x − 3 ≥ 0.<br>
-<strong>Step 2:</strong> Therefore x ≥ 3.<br>
-<strong>Answer:</strong> x ≥ 3.</p>`
+        question: "Simplify: √50",
+        options: ["5√2", "2√5", "10√5", "25√2"],
+        correctAnswer: "5√2",
+        solution: `<p><strong>Step 1:</strong> Factor 50 = 25 × 2.<br>
+<strong>Step 2:</strong> √50 = √25 × √2 = 5√2.<br>
+<strong>Answer:</strong> 5√2.</p>`
       },
       {
         id: "q5",
-        question: "What is the value of sin(30°)?",
-        options: ["0", "1", "1/2", "√3/2"],
-        correctAnswer: "1/2",
-        solution: `<p><strong>Step 1:</strong> From special angles, sin(30°) = 1/2.<br>
-<strong>Answer:</strong> 1/2.</p>`
+        question: "A cell phone plan costs $20 plus $0.10 per text message. Which equation models the total cost C for t texts?",
+        options: ["C = 20 + 0.10t", "C = 0.10 + 20t", "C = 20t + 0.10", "C = 20 - 0.10t"],
+        correctAnswer: "C = 20 + 0.10t",
+        solution: `<p><strong>Step 1:</strong> The fixed cost ($20) doesn't depend on t, so it's the constant.<br>
+<strong>Step 2:</strong> The per-text cost ($0.10) is multiplied by the number of texts, t.<br>
+<strong>Answer:</strong> C = 20 + 0.10t.</p>`
       },
       {
         id: "q6",
-        question: "What is the solution to |2x - 1| = 5?",
-        options: ["x = 3 or x = -2", "x = 2 or x = -3", "x = 2 or x = -1", "x = 3 or x = 1"],
-        correctAnswer: "x = 3 or x = -2",
-        solution: `<p><strong>Step 1:</strong> Solve 2x − 1 = 5 <br> 2x = 6 <br> x = 3.<br>
-<strong>Step 2:</strong> Solve 2x − 1 = −5 <br> 2x = −4 <br> x = −2.<br>
-<strong>Answer:</strong> x = 3 or x = −2.</p>`
+        question: "What are the solutions to x² - 5x + 6 = 0?",
+        options: ["x = 2, 3", "x = -2, -3", "x = 1, 6", "x = -1, -6"],
+        correctAnswer: "x = 2, 3",
+        solution: `<p><strong>Step 1:</strong> Factor: x² − 5x + 6 = (x − 2)(x − 3).<br>
+<strong>Step 2:</strong> Set each factor to 0: x − 2 = 0 → x = 2; x − 3 = 0 → x = 3.<br>
+<strong>Answer:</strong> x = 2, 3.</p>`
       },
       {
         id: "q7",
-        question: "Which of the following is a characteristic of a linear function?",
-        options: ["Constant rate of change", "Variable exponents", "No y-intercept", "Curved graph"],
-        correctAnswer: "Constant rate of change",
-        solution: `<p><strong>Step 1:</strong> Linear functions have the form y = mx + b.<br>
-<strong>Step 2:</strong> Their key feature is a <em>constant</em> rate of change (slope m).<br>
-<strong>Answer:</strong> Constant rate of change.</p>`
+        question: "Which function represents exponential decay?",
+        options: ["y = 3(1.5)ˣ", "y = 3(0.5)ˣ", "y = 3x + 2", "y = 3x²"],
+        correctAnswer: "y = 3(0.5)ˣ",
+        solution: `<p><strong>Step 1:</strong> Exponential decay has the form y = a(b)ˣ where 0 &lt; b &lt; 1.<br>
+<strong>Step 2:</strong> Here, b = 0.5, which is between 0 and 1, so this represents decay.<br>
+<strong>Answer:</strong> y = 3(0.5)ˣ.</p>`
       },
       {
         id: "q8",
-        question: "The volume of a cylinder is given by V = πr²h. What is the volume when r = 3 and h = 4?",
-        options: ["36π", "27π", "12π", "48π"],
-        correctAnswer: "36π",
-        solution: `<p><strong>Step 1:</strong> Use V = πr²h.<br>
-<strong>Step 2:</strong> r = 3 <br> r² = 9; <br> h = 4 <br> V = π(9)(4) = 36π.<br>
-<strong>Answer:</strong> 36π.</p>`
+        question: "Solve using the quadratic formula: x² + 4x + 5 = 0",
+        options: ["x = -2 ± i", "x = 2 ± i", "x = -2 ± 2i", "x = 4 ± i"],
+        correctAnswer: "x = -2 ± i",
+        solution: `<p><strong>Step 1:</strong> a = 1, b = 4, c = 5. x = (−b ± √(b² − 4ac)) / 2a.<br>
+<strong>Step 2:</strong> Discriminant = 16 − 20 = −4.<br>
+<strong>Step 3:</strong> √(−4) = 2i. So x = (−4 ± 2i) / 2 = −2 ± i.<br>
+<strong>Answer:</strong> x = -2 ± i.</p>`
       },
       {
         id: "q9",
-        question: "What transformation occurs to the graph of y = x² if we graph y = (x - 2)² + 3?",
-        options: ["Shift right 2, up 3", "Shift left 2, up 3", "Shift right 2, down 3", "Shift left 2, down 3"],
-        correctAnswer: "Shift right 2, up 3",
-        solution: `<p><strong>Step 1:</strong> (x − 2) shifts the graph right by 2.<br>
-<strong>Step 2:</strong> +3 shifts the graph up by 3.<br>
-<strong>Answer:</strong> Shift right 2, up 3.</p>`
+        question: "Divide: (x³ - 8) ÷ (x - 2)",
+        options: ["x² + 2x + 4", "x² - 2x + 4", "x² + 4x + 4", "x² - 4x - 4"],
+        correctAnswer: "x² + 2x + 4",
+        solution: `<p><strong>Step 1:</strong> x³ − 8 is a difference of cubes: a³ − b³ = (a − b)(a² + ab + b²), with a = x, b = 2.<br>
+<strong>Step 2:</strong> x³ − 8 = (x − 2)(x² + 2x + 4).<br>
+<strong>Step 3:</strong> Dividing by (x − 2) leaves x² + 2x + 4.<br>
+<strong>Answer:</strong> x² + 2x + 4.</p>`
       },
       {
         id: "q10",
-        question: "A line passes through points (1,2) and (3,6). What is its slope?",
-        options: ["1", "2", "3", "4"],
-        correctAnswer: "2",
-        solution: `<p><strong>Step 1:</strong> Use slope formula m = (y₂ − y₁)/(x₂ − x₁).<br>
-<strong>Step 2:</strong> m = (6 − 2)/(3 − 1) = 4/2 = 2.<br>
-<strong>Answer:</strong> 2.</p>`
+        question: "If f(x) = 2x + 3, what is f⁻¹(x)?",
+        options: ["f⁻¹(x) = (x - 3)/2", "f⁻¹(x) = (x + 3)/2", "f⁻¹(x) = 2x - 3", "f⁻¹(x) = (x - 2)/3"],
+        correctAnswer: "f⁻¹(x) = (x - 3)/2",
+        solution: `<p><strong>Step 1:</strong> Set y = 2x + 3, then swap x and y: x = 2y + 3.<br>
+<strong>Step 2:</strong> Solve for y: x − 3 = 2y → y = (x − 3)/2.<br>
+<strong>Answer:</strong> f⁻¹(x) = (x - 3)/2.</p>`
       },
       {
         id: "q11",
@@ -2327,115 +2561,187 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
         correctAnswer: "First person",
         solution: "<p>'<b>The Great Gatsby</b>' is narrated by Nick Carraway using 'I', which makes it a <b>first-person point of view</b>.</p>"
       },
+      // {
+      //   id: "q21",
+      //   question: "Which statement best explains why enzymes lose activity at extremely high temperatures?",
+      //   options: [
+      //     "The enzyme runs out of substrate",
+      //     "The enzyme’s active site changes shape due to denaturation",
+      //     "The enzyme becomes more selective",
+      //     "The enzyme increases reaction speed uncontrollably"
+      //   ],
+      //   correctAnswer: "The enzyme’s active site changes shape due to denaturation",
+      //   solution: "<p>At high temperatures, enzymes <b>denature</b>, meaning their structure changes. This alters the <b>active site</b>, preventing the substrate from binding properly and reducing enzyme activity.</p>"
+      // },
+      // {
+      //   id: "q22",
+      //   question: "What is the molarity of a solution containing 2 moles of NaCl dissolved in 0.5 liters of water?",
+      //   options: ["0.25 M", "1.0 M", "2.0 M", "4.0 M"],
+      //   correctAnswer: "4.0 M",
+      //   solution: "<p>Molarity = moles ÷ volume = <b>2 ÷ 0.5 = 4.0 M</b>. Therefore, the correct answer is 4.0 M.</p>"
+      // },
+      // {
+      //   id: "q23",
+      //   question: "A car accelerates from rest at a constant rate of 3 m/s². What is its velocity after 5 seconds?",
+      //   options: ["8 m/s", "10 m/s", "15 m/s", "25 m/s"],
+      //   correctAnswer: "15 m/s",
+      //   solution: "<p>Using the formula <b>v = u + at</b>: initial velocity (u) = 0, acceleration (a) = 3 m/s², time (t) = 5 s. So, v = 0 + (3 × 5) = <b>15 m/s</b>.</p>"
+      // },
+      // {
+      //   id: "q24",
+      //   question: "Which of the following best describes the role of mRNA during protein synthesis?",
+      //   options: [
+      //     "It transports amino acids to the ribosome",
+      //     "It copies genetic information from DNA and carries it to the ribosome",
+      //     "It forms the ribosome structure",
+      //     "It breaks down proteins"
+      //   ],
+      //   correctAnswer: "It copies genetic information from DNA and carries it to the ribosome",
+      //   solution: "<p>mRNA is responsible for <b>transcribing genetic information from DNA</b> and carrying it to the ribosome, where proteins are synthesized.</p>"
+      // },
+      // {
+      //   id: "q25",
+      //   question: "According to the Law of Conservation of Mass, what must be true during a chemical reaction?",
+      //   options: [
+      //     "Energy is always lost",
+      //     "The mass of reactants equals the mass of products",
+      //     "New atoms are created",
+      //     "Volume must remain constant"
+      //   ],
+      //   correctAnswer: "The mass of reactants equals the mass of products",
+      //   solution: "<p>The Law of Conservation of Mass states that <b>mass cannot be created or destroyed</b>. Therefore, the total mass of reactants must equal the total mass of products.</p>"
+      // },
+      // {
+      //   id: "q26",
+      //   question: "Which of the following best explains why increasing surface area speeds up a chemical reaction?",
+      //   options: [
+      //     "It decreases activation energy",
+      //     "It allows more particles to collide effectively",
+      //     "It increases temperature",
+      //     "It changes the chemical properties"
+      //   ],
+      //   correctAnswer: "It allows more particles to collide effectively",
+      //   solution: "<p>Increasing surface area exposes more particles, leading to <b>more frequent and effective collisions</b>, which increases the reaction rate.</p>"
+      // },
+      // {
+      //   id: "q27",
+      //   question: "What happens to the gravitational force between two objects if the distance between them is doubled?",
+      //   options: [
+      //     "It doubles",
+      //     "It halves",
+      //     "It becomes four times smaller",
+      //     "It remains the same"
+      //   ],
+      //   correctAnswer: "It becomes four times smaller",
+      //   solution: "<p>Gravitational force follows an <b>inverse square law</b>. If distance is doubled, force becomes 1/(2²) = <b>1/4 of the original</b>, meaning four times smaller.</p>"
+      // },
+      // {
+      //   id: "q28",
+      //   question: "Which of the following processes is primarily responsible for the movement of tectonic plates?",
+      //   options: [
+      //     "Earth’s rotation",
+      //     "Convection currents in the mantle",
+      //     "Ocean tides",
+      //     "Solar radiation"
+      //   ],
+      //   correctAnswer: "Convection currents in the mantle",
+      //   solution: "<p>Tectonic plates move due to <b>convection currents in the mantle</b>, where hot material rises and cooler material sinks, creating movement.</p>"
+      // },
+      // {
+      //   id: "q29",
+      //   question: "In an ecosystem, which trophic level contains the greatest amount of available energy?",
+      //   options: [
+      //     "Primary consumers",
+      //     "Secondary consumers",
+      //     "Producers",
+      //     "Tertiary consumers"
+      //   ],
+      //   correctAnswer: "Producers",
+      //   solution: "<p><b>Producers</b> (plants) capture energy directly from the sun, so they contain the <b>highest amount of energy</b> in the food chain.</p>"
+      // },
+      // {
+      //   id: "q30",
+      //   question: "Which of the following best describes a covalent bond?",
+      //   options: [
+      //     "Transfer of electrons between atoms",
+      //     "Sharing of electrons between atoms",
+      //     "Attraction between ions",
+      //     "Interaction between protons"
+      //   ],
+      //   correctAnswer: "Sharing of electrons between atoms",
+      //   solution: "<p>A <b>covalent bond</b> forms when atoms <b>share electrons</b> to achieve a stable electron configuration.</p>"
+      // },
+
+            // ── NEW: Science — Biology (5) + Chemistry (5), NGSS-aligned ─────────
       {
         id: "q21",
-        question: "Which statement best explains why enzymes lose activity at extremely high temperatures?",
-        options: [
-          "The enzyme runs out of substrate",
-          "The enzyme’s active site changes shape due to denaturation",
-          "The enzyme becomes more selective",
-          "The enzyme increases reaction speed uncontrollably"
-        ],
-        correctAnswer: "The enzyme’s active site changes shape due to denaturation",
-        solution: "<p>At high temperatures, enzymes <b>denature</b>, meaning their structure changes. This alters the <b>active site</b>, preventing the substrate from binding properly and reducing enzyme activity.</p>"
+        question: "Which structure is the site of protein synthesis in a cell?",
+        options: ["Ribosome", "Mitochondria", "Golgi apparatus", "Lysosome"],
+        correctAnswer: "Ribosome",
+        solution: "<p>The <b>ribosome</b> reads mRNA and links amino acids together to build proteins — this process is called translation.</p>"
       },
       {
         id: "q22",
-        question: "What is the molarity of a solution containing 2 moles of NaCl dissolved in 0.5 liters of water?",
-        options: ["0.25 M", "1.0 M", "2.0 M", "4.0 M"],
-        correctAnswer: "4.0 M",
-        solution: "<p>Molarity = moles ÷ volume = <b>2 ÷ 0.5 = 4.0 M</b>. Therefore, the correct answer is 4.0 M.</p>"
+        question: "A dominant allele (B) and recessive allele (b) control seed color. What is the expected phenotype ratio from a cross between two heterozygous (Bb) parents?",
+        options: ["1:1", "3:1", "1:2:1", "9:3:3:1"],
+        correctAnswer: "3:1",
+        solution: "<p>A Bb × Bb cross produces genotypes BB, Bb, Bb, bb (1:2:1). Since B is dominant, BB and Bb both show the dominant phenotype, giving a <b>3:1</b> dominant-to-recessive phenotype ratio.</p>"
       },
       {
         id: "q23",
-        question: "A car accelerates from rest at a constant rate of 3 m/s². What is its velocity after 5 seconds?",
-        options: ["8 m/s", "10 m/s", "15 m/s", "25 m/s"],
-        correctAnswer: "15 m/s",
-        solution: "<p>Using the formula <b>v = u + at</b>: initial velocity (u) = 0, acceleration (a) = 3 m/s², time (t) = 5 s. So, v = 0 + (3 × 5) = <b>15 m/s</b>.</p>"
+        question: "Which best describes the relationship between two species where one benefits and the other is unaffected?",
+        options: ["Mutualism", "Parasitism", "Commensalism", "Competition"],
+        correctAnswer: "Commensalism",
+        solution: "<p>In <b>commensalism</b>, one organism benefits while the other is neither helped nor harmed — for example, barnacles attaching to a whale.</p>"
       },
       {
         id: "q24",
-        question: "Which of the following best describes the role of mRNA during protein synthesis?",
-        options: [
-          "It transports amino acids to the ribosome",
-          "It copies genetic information from DNA and carries it to the ribosome",
-          "It forms the ribosome structure",
-          "It breaks down proteins"
-        ],
-        correctAnswer: "It copies genetic information from DNA and carries it to the ribosome",
-        solution: "<p>mRNA is responsible for <b>transcribing genetic information from DNA</b> and carrying it to the ribosome, where proteins are synthesized.</p>"
+        question: "Natural selection acts most directly on an organism's:",
+        options: ["Genotype", "Phenotype", "Genome size", "Chromosome number"],
+        correctAnswer: "Phenotype",
+        solution: "<p>Natural selection acts on observable traits — the <b>phenotype</b> — because that's what interacts with the environment and affects survival and reproduction.</p>"
       },
       {
         id: "q25",
-        question: "According to the Law of Conservation of Mass, what must be true during a chemical reaction?",
-        options: [
-          "Energy is always lost",
-          "The mass of reactants equals the mass of products",
-          "New atoms are created",
-          "Volume must remain constant"
-        ],
-        correctAnswer: "The mass of reactants equals the mass of products",
-        solution: "<p>The Law of Conservation of Mass states that <b>mass cannot be created or destroyed</b>. Therefore, the total mass of reactants must equal the total mass of products.</p>"
+        question: "Which process directly increases genetic variation within a sexually reproducing population?",
+        options: ["Mitosis", "Crossing over during meiosis", "Binary fission", "Cellular respiration"],
+        correctAnswer: "Crossing over during meiosis",
+        solution: "<p><b>Crossing over</b> during meiosis exchanges genetic material between homologous chromosomes, creating new combinations of alleles and increasing genetic variation.</p>"
       },
       {
         id: "q26",
-        question: "Which of the following best explains why increasing surface area speeds up a chemical reaction?",
-        options: [
-          "It decreases activation energy",
-          "It allows more particles to collide effectively",
-          "It increases temperature",
-          "It changes the chemical properties"
-        ],
-        correctAnswer: "It allows more particles to collide effectively",
-        solution: "<p>Increasing surface area exposes more particles, leading to <b>more frequent and effective collisions</b>, which increases the reaction rate.</p>"
+        question: "How many moles of oxygen (O₂) are needed to completely react with 2 moles of hydrogen gas in the reaction 2H₂ + O₂ → 2H₂O?",
+        options: ["0.5", "1", "2", "4"],
+        correctAnswer: "1",
+        solution: "<p>The balanced equation shows a 2:1 ratio of H₂ to O₂. For 2 moles of H₂, only <b>1 mole of O₂</b> is needed.</p>"
       },
       {
         id: "q27",
-        question: "What happens to the gravitational force between two objects if the distance between them is doubled?",
-        options: [
-          "It doubles",
-          "It halves",
-          "It becomes four times smaller",
-          "It remains the same"
-        ],
-        correctAnswer: "It becomes four times smaller",
-        solution: "<p>Gravitational force follows an <b>inverse square law</b>. If distance is doubled, force becomes 1/(2²) = <b>1/4 of the original</b>, meaning four times smaller.</p>"
+        question: "Which type of bond forms when sodium (Na) transfers an electron to chlorine (Cl)?",
+        options: ["Covalent bond", "Ionic bond", "Metallic bond", "Hydrogen bond"],
+        correctAnswer: "Ionic bond",
+        solution: "<p>When electrons are <b>transferred</b> rather than shared, the resulting attraction between the oppositely charged ions is an <b>ionic bond</b>, as in NaCl.</p>"
       },
       {
         id: "q28",
-        question: "Which of the following processes is primarily responsible for the movement of tectonic plates?",
-        options: [
-          "Earth’s rotation",
-          "Convection currents in the mantle",
-          "Ocean tides",
-          "Solar radiation"
-        ],
-        correctAnswer: "Convection currents in the mantle",
-        solution: "<p>Tectonic plates move due to <b>convection currents in the mantle</b>, where hot material rises and cooler material sinks, creating movement.</p>"
+        question: "A solution has a pH of 3. What can be concluded about this solution?",
+        options: ["It is strongly basic", "It is neutral", "It is acidic", "It has no hydrogen ions"],
+        correctAnswer: "It is acidic",
+        solution: "<p>The pH scale runs 0–14, with 7 as neutral. A pH of <b>3 is well below 7</b>, indicating a fairly strong acid.</p>"
       },
       {
         id: "q29",
-        question: "In an ecosystem, which trophic level contains the greatest amount of available energy?",
-        options: [
-          "Primary consumers",
-          "Secondary consumers",
-          "Producers",
-          "Tertiary consumers"
-        ],
-        correctAnswer: "Producers",
-        solution: "<p><b>Producers</b> (plants) capture energy directly from the sun, so they contain the <b>highest amount of energy</b> in the food chain.</p>"
+        question: "Which factor, if increased, generally increases the rate of a chemical reaction?",
+        options: ["Decreasing temperature", "Decreasing concentration of reactants", "Increasing temperature", "Removing the catalyst"],
+        correctAnswer: "Increasing temperature",
+        solution: "<p>Higher temperature gives particles more kinetic energy, causing <b>more frequent and more energetic collisions</b>, which increases reaction rate.</p>"
       },
       {
         id: "q30",
-        question: "Which of the following best describes a covalent bond?",
-        options: [
-          "Transfer of electrons between atoms",
-          "Sharing of electrons between atoms",
-          "Attraction between ions",
-          "Interaction between protons"
-        ],
-        correctAnswer: "Sharing of electrons between atoms",
-        solution: "<p>A <b>covalent bond</b> forms when atoms <b>share electrons</b> to achieve a stable electron configuration.</p>"
+        question: "An atom has 17 protons and 18 neutrons. What is its mass number?",
+        options: ["17", "18", "35", "1"],
+        correctAnswer: "35",
+        solution: "<p>Mass number = protons + neutrons = 17 + 18 = <b>35</b>.</p>"
       },
 
     ],

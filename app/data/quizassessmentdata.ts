@@ -1598,17 +1598,17 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       },
       {
         id: "q2",
-        question: "A recipe uses 3/4 cup of sugar for every 2/3 cup of flour. What is the unit rate of sugar per cup of flour?",
-        options: ["9/8 cups", "8/9 cups", "1/2 cup", "2 cups"],
-        correctAnswer: "9/8 cups",
-        solution: "<p><strong>Step 1:</strong> Unit rate = sugar ÷ flour = (3/4) ÷ (2/3).<br><strong>Step 2:</strong> Multiply by the reciprocal: (3/4) × (3/2) = 9/8.<br><strong>Answer:</strong> 9/8 cups.</p>"
+        question: "A recipe uses <sup>3</sup>&frasl;<sub>4</sub> cup of sugar for every <sup>2</sup>&frasl;<sub>3</sub> cup of flour. What is the unit rate of sugar per cup of flour?",
+        options: ["<sup>9</sup>&frasl;<sub>8</sub> cups", "<sup>8</sup>&frasl;<sub>9</sub> cups", "<sup>1</sup>&frasl;<sub>2</sub> cup", "2 cups"],
+        correctAnswer: "<sup>9</sup>&frasl;<sub>8</sub> cups",
+        solution: "<p><strong>Step 1:</strong> Unit rate = sugar ÷ flour = (<sup>3</sup>&frasl;<sub>4</sub>) ÷ (<sup>2</sup>&frasl;<sub>3</sub>).<br><strong>Step 2:</strong> Multiply by the reciprocal: (<sup>3</sup>&frasl;<sub>4</sub>) × (<sup>3</sup>&frasl;<sub>2</sub>) = <sup>9</sup>&frasl;<sub>8</sub>.<br><strong>Answer:</strong> <sup>9</sup>&frasl;<sub>8</sub> cups.</p>"
       },
-      {
+     {
         id: "q3",
-        question: "Evaluate: -5/6 + 2/3 ÷ (-4/9)",
-        options: ["-7/3", "7/3", "-1/6", "-11/6"],
-        correctAnswer: "-7/3",
-        solution: "<p><strong>Step 1:</strong> Follow order of operations — division first: 2/3 ÷ (-4/9) = 2/3 × (-9/4) = -3/2.<br><strong>Step 2:</strong> -5/6 + (-3/2) = -5/6 - 9/6 = -14/6 = -7/3.<br><strong>Answer:</strong> -7/3.</p>"
+        question: "Evaluate: -<sup>5</sup>&frasl;<sub>6</sub> + <sup>2</sup>&frasl;<sub>3</sub> ÷ (-<sup>4</sup>&frasl;<sub>9</sub>)",
+        options: ["-<sup>7</sup>&frasl;<sub>3</sub>", "<sup>7</sup>&frasl;<sub>3</sub>", "-<sup>1</sup>&frasl;<sub>6</sub>", "-<sup>11</sup>&frasl;<sub>6</sub>"],
+        correctAnswer: "-<sup>7</sup>&frasl;<sub>3</sub>",
+        solution: "<p><strong>Step 1:</strong> Follow order of operations — division first: <sup>2</sup>&frasl;<sub>3</sub> ÷ (-<sup>4</sup>&frasl;<sub>9</sub>) = <sup>2</sup>&frasl;<sub>3</sub> × (-<sup>9</sup>&frasl;<sub>4</sub>) = -<sup>3</sup>&frasl;<sub>2</sub>.<br><strong>Step 2:</strong> -<sup>5</sup>&frasl;<sub>6</sub> + (-<sup>3</sup>&frasl;<sub>2</sub>) = -<sup>5</sup>&frasl;<sub>6</sub> - <sup>9</sup>&frasl;<sub>6</sub> = -<sup>14</sup>&frasl;<sub>6</sub> = -<sup>7</sup>&frasl;<sub>3</sub>.<br><strong>Answer:</strong> -<sup>7</sup>&frasl;<sub>3</sub>.</p>"
       },
       {
         id: "q4",
@@ -1647,10 +1647,10 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       },
       {
         id: "q9",
-        question: "Simplify: 3/8 ÷ 9/16 × 2/3",
-        options: ["4/9", "2/3", "8/9", "1/3"],
-        correctAnswer: "4/9",
-        solution: "<p><strong>Step 1:</strong> 3/8 ÷ 9/16 = 3/8 × 16/9 = 48/72 = 2/3.<br><strong>Step 2:</strong> 2/3 × 2/3 = 4/9.<br><strong>Answer:</strong> 4/9.</p>"
+        question: "Simplify: <sup>3</sup>&frasl;<sub>8</sub> ÷ <sup>9</sup>&frasl;<sub>16</sub> × <sup>2</sup>&frasl;<sub>3</sub>",
+        options: ["<sup>4</sup>&frasl;<sub>9</sub>", "<sup>2</sup>&frasl;<sub>3</sub>", "<sup>8</sup>&frasl;<sub>9</sub>", "<sup>1</sup>&frasl;<sub>3</sub>"],
+        correctAnswer: "<sup>4</sup>&frasl;<sub>9</sub>",
+        solution: "<p><strong>Step 1:</strong> <sup>3</sup>&frasl;<sub>8</sub> ÷ <sup>9</sup>&frasl;<sub>16</sub> = <sup>3</sup>&frasl;<sub>8</sub> × <sup>16</sup>&frasl;<sub>9</sub> = <sup>48</sup>&frasl;<sub>72</sub> = <sup>2</sup>&frasl;<sub>3</sub>.<br><strong>Step 2:</strong> <sup>2</sup>&frasl;<sub>3</sub> × <sup>2</sup>&frasl;<sub>3</sub> = <sup>4</sup>&frasl;<sub>9</sub>.<br><strong>Answer:</strong> <sup>4</sup>&frasl;<sub>9</sub>.</p>"
       },
       {
         id: "q10",
@@ -1661,19 +1661,25 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       },
       {
         id: "q11",
-        question: "<h2>Use this Passage to answer Questions 1-3<h2> <br> The tide was beginning to pull out, revealing the jagged rocks along the shoreline. Lucia stood at the water's edge, scanning the horizon for signs of the pod. Every summer, the dolphins returned to this cove, and every year, she tried to photograph them—but this time was different. She was working on a science fair project to track their migration patterns, and her camera wasn't just for pictures anymore—it was for data.<br> What is the main conflict in the passage?",
+        question: `<p><em>Read the passage, then answer questions 1–3.</em></p>
+<blockquote>The tide was beginning to pull out, revealing the jagged rocks along the shoreline. Lucia stood at the water's edge, scanning the horizon for signs of the pod. Every summer, the dolphins returned to this cove, and every year, she tried to photograph them—but this time was different. She was working on a science fair project to track their migration patterns, and her camera wasn't just for pictures anymore—it was for data.</blockquote>
+<p><strong>What is the main conflict in the passage?</strong></p>`,
         options: ["Lucia is worried about the weather.", "Lucia is waiting for the dolphins to arrive for her project.", "Lucia is trying to decide whether to swim.", "Lucia is late for her science class."],
         correctAnswer: "Lucia is waiting for the dolphins to arrive for her project.",
       },
       {
         id: "q12",
-        question: "Which sentence best supports Lucia’s motivation?",
-        options: ["“The tide was beginning to pull out...”", "“Every year, she tried to photograph them...”", "“She was working on a science fair project...”", "“Lucia stood at the water’s edge...”"],
-        correctAnswer: "“She was working on a science fair project...”",
+        question: `<p><em>Passage (Questions 1–3):</em></p>
+<blockquote>The tide was beginning to pull out, revealing the jagged rocks along the shoreline. Lucia stood at the water's edge, scanning the horizon for signs of the pod. Every summer, the dolphins returned to this cove, and every year, she tried to photograph them—but this time was different. She was working on a science fair project to track their migration patterns, and her camera wasn't just for pictures anymore—it was for data.</blockquote>
+<p><strong>Which sentence best supports Lucia's motivation?</strong></p>`,
+        options: ["\u201cThe tide was beginning to pull out...\u201d", "\u201cEvery year, she tried to photograph them...\u201d", "\u201cShe was working on a science fair project...\u201d", "\u201cLucia stood at the water's edge...\u201d"],
+        correctAnswer: "\u201cShe was working on a science fair project...\u201d",
       },
       {
         id: "q13",
-        question: "What is the tone of the passage?",
+        question: `<p><em>Passage (Questions 1–3):</em></p>
+<blockquote>The tide was beginning to pull out, revealing the jagged rocks along the shoreline. Lucia stood at the water's edge, scanning the horizon for signs of the pod. Every summer, the dolphins returned to this cove, and every year, she tried to photograph them—but this time was different. She was working on a science fair project to track their migration patterns, and her camera wasn't just for pictures anymore—it was for data.</blockquote>
+<p><strong>What is the tone of the passage?</strong></p>`,
         options: ["Critical", "Hopeful", "Sarcastic", "Indifferent"],
         correctAnswer: "Hopeful",
       },

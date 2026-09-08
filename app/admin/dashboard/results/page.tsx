@@ -173,7 +173,7 @@ function PriceCard({
                 value={sessionDelta}
                 onChange={onSessionDeltaChange}
                 min={1 - defaultSessions}
-                max={40 - defaultSessions}
+                max={100 - defaultSessions}
                 suffix=" sess"
                 showSign
                 colorClass="text-yellow-600"
@@ -499,14 +499,7 @@ useEffect(() => {
   // How many additional programs this package allows
   const maxPrograms = selectedPackage.id === 'II' ? 1 : selectedPackage.id === 'III' ? 2 : 0;
 
-  // const toggleProgram = (name: string) => {
-  //   setAdditionalPrograms(prev => {
-  //     if (prev.includes(name)) return prev.filter(p => p !== name);
-  //     if (prev.length < maxPrograms) return [...prev, name];
-  //     if (maxPrograms === 1) return [name];      // single-slot: replace
-  //     return prev;                                // full: ignore until one is removed
-  //   });
-  // };
+
 
   // Header subtitle for the pricing table
   const packageSubtitle =

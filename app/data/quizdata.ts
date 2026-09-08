@@ -247,18 +247,6 @@ const quizData: Record<string, { question: string; options: string[]; answer: st
       { question: "What does a negative slope indicate?", options: ["Increasing function", "Decreasing function", "Constant function"], answer: "Decreasing function" },
       { question: "What happens when two lines have slopes that are negative reciprocals?", options: ["They are parallel", "They are perpendicular", "They do not intersect"], answer: "They are perpendicular" },
     ],
-    "sat": [
-      { question: "What is the sum of angles in a triangle?", options: ["90°", "180°", "360°"], answer: "180°" },
-      { question: "What is the formula for the area of a circle?", options: ["πr²", "2πr", "πd"], answer: "πr²" },
-      { question: "How many sides does a hexagon have?", options: ["4", "5", "6"], answer: "6" },
-      { question: "What type of triangle has two equal sides?", options: ["Scalene", "Isosceles", "Equilateral"], answer: "Isosceles" },
-      { question: "What is the formula for the perimeter of a rectangle?", options: ["2(l + w)", "l × w", "l + w"], answer: "2(l + w)" },
-      { question: "How many degrees are in a right angle?", options: ["45°", "90°", "180°"], answer: "90°" },
-      { question: "A quadrilateral with all sides equal and angles at 90° is called?", options: ["Rectangle", "Rhombus", "Square"], answer: "Square" },
-      { question: "What is the Pythagorean theorem?", options: ["a² + b² = c²", "a + b = c", "a² - b² = c²"], answer: "a² + b² = c²" },
-      { question: "What is the name of a polygon with 8 sides?", options: ["Hexagon", "Heptagon", "Octagon"], answer: "Octagon" },
-      { question: "What is the volume formula for a cylinder?", options: ["πr²h", "2πr", "πr³"], answer: "πr²h" },
-    ],
     "ap-calculus": [
       { question: "What is the derivative of x²?", options: ["2x", "x", "x³"], answer: "2x" },
       { question: "What is the integral of x?", options: ["x²/2", "x²", "1/x"], answer: "x²/2" },

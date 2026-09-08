@@ -125,11 +125,11 @@ export interface QuizCardProps {
         id: "sat",
       imageSrc: "/sat1.png",
       title: "SAT",
-      level: "Grade 9",
-      category: "Maths",
+      level: "Grade 11",
+      category: "Maths, ELA (VERBAL AND REASONING)",
      // difficulty: "Hard",
       time: "45 min",
-      questions: 10,
+      questions: 20,
       onStart: () => console.log("Started Physics Fundamentals")
     },
     {

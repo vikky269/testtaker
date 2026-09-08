@@ -72,8 +72,10 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
       setIsStateTest(true); setIsQuizAssessment(false); setStep(1);
     } else if (testId === "quiz-assessment") {
       setIsQuizAssessment(true); setIsStateTest(false); setStep(2);
-    }      else if (testId === "ged") {
-      setSelectedGrade("GED"); setShowGedIntro(true); return; // intro shown before the passcode modal opens
+        } else if (testId === "ged") {
+      setSelectedGrade("GED"); setShowGedIntro(true); return;
+    } else if (testId === "sat") {
+      setSelectedGrade("SAT"); setStep(3); setSelectedTest(testId); return;
     } else
       {
       setIsStateTest(false); setIsQuizAssessment(false);
@@ -81,23 +83,7 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
     setSelectedTest(testId);
   };
 
-  // const validatePasscodeAndStart = () => {
-  //   if (!selectedGrade) return;
-  //   const expected = generatePasscode(selectedGrade);
-  //   if (passcodeInput.trim().toUpperCase() === expected) {
-  //     const gradeSlug = selectedGrade.toLowerCase().replace(/\s+/g, "-");
-  //     const stateSlug = selectedState?.toLowerCase().replace(/\s+/g, "-");
-  //     router.push(
-  //       isStateTest
-  //         ? `/quiz/state-test?state=${stateSlug}&grade=${gradeSlug}`
-  //         : `/quiz/quiz-assessment?grade=${gradeSlug}`
-  //     );
-  //   } else {
-  //     setPasscodeError("Incorrect passcode. Please try again.");
-  //   }
-  // };
-
-
+ 
 
 
     const validatePasscodeAndStart = () => {
@@ -105,6 +91,7 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
     const expected = generatePasscode(selectedGrade);
     if (passcodeInput.trim().toUpperCase() === expected) {
       if (selectedGrade === "GED") { router.push(`/quiz/ged`); return; }
+       if (selectedGrade === "SAT") { router.push(`/quiz/sat`); return; }
       const gradeSlug = selectedGrade.toLowerCase().replace(/\s+/g, "-");
       const stateSlug = selectedState?.toLowerCase().replace(/\s+/g, "-");
       router.push(
@@ -371,7 +358,7 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
               )}
 
               {/* ── Direct start (non-assessment tests) ── */}
-              {!isStateTest && !isQuizAssessment &&  selectedGrade !== "GED" &&  (
+              {!isStateTest && !isQuizAssessment &&  selectedGrade !== "GED" && selectedGrade !== "SAT" &&   (
                 <div className="text-center py-4">
                   <p className="text-gray-600 text-sm mb-6">
                     Ready to take the{" "}

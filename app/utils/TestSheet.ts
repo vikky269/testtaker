@@ -30,8 +30,55 @@ export interface TestSubmission {
   durations: any;
 }
 
-const stripHtml = (s: string) => s.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-
+// Converts question/answer HTML into clean plain text for the PDF:
+// - <sup>9</sup>&frasl;<sub>8</sub>  →  9/8
+// - common math entities (&radic; &times; etc.) → their plain characters
+// - any other tags stripped, whitespace collapsed
+const stripHtml = (s: string) => {
+  let out = s;
+  // Fraction pattern: <sup>NUM</sup>&frasl;<sub>DEN</sub> → NUM/DEN
+  out = out.replace(
+    /<sup>(.*?)<\/sup>\s*&frasl;\s*<sub>(.*?)<\/sub>/gi,
+    (_m, num, den) => `${num}/${den}`
+  );
+  // Any remaining standalone <sup>/<sub> (e.g. exponents) → caret/underscore notation
+  out = out.replace(/<sup>(.*?)<\/sup>/gi, '^$1');
+  out = out.replace(/<sub>(.*?)<\/sub>/gi, '_$1');
+  // Common HTML entities used in the question bank
+  out = out
+    .replace(/&frasl;/gi, '/')
+    .replace(/&radic;/gi, '√')
+    .replace(/&times;/gi, '×')
+    .replace(/&divide;/gi, '÷')
+    .replace(/&plusmn;/gi, '±')
+    .replace(/&deg;/gi, '°')
+    .replace(/&le;/gi, '≤')
+    .replace(/&ge;/gi, '≥')
+    .replace(/&ne;/gi, '≠')
+    .replace(/&pi;/gi, 'π')
+    .replace(/&nbsp;/gi, ' ')
+       .replace(/&amp;/gi, '&');
+  // Literal Unicode math symbols — jsPDF's built-in fonts can't render these
+  // (they use WinAnsi encoding), so swap them for ASCII-safe equivalents.
+  out = out
+    .replace(/π/g, 'pi')
+    .replace(/≈/g, '~')
+    .replace(/√/g, 'sqrt ')
+    .replace(/×/g, 'x')
+    .replace(/÷/g, '/')
+    .replace(/±/g, '+/-')
+    .replace(/°/g, ' deg')
+    .replace(/≤/g, '<=')
+    .replace(/≥/g, '>=')
+    .replace(/≠/g, '!=')
+    .replace(/–/g, '-')   // en dash
+    .replace(/—/g, '-')   // em dash
+    .replace(/'/g, "'")   // curly apostrophe
+    .replace(/[""]/g, '"'); // curly quotes
+  // Strip any remaining tags
+  out = out.replace(/<[^>]*>/g, ' ');
+  return out.replace(/\s+/g, ' ').trim();
+};
 // Split the stored question array into named sections.
 // Uses subject tags when present; falls back to the block convention.
 export function splitSections(sub: TestSubmission) {

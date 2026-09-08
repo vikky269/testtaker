@@ -241,13 +241,16 @@ const handleDownloadReport = (sub: TestSubmission) => {
                           <div className="min-w-0 flex-1">
                             <p className="text-sm font-semibold text-gray-900 mb-2"
                                dangerouslySetInnerHTML={{ __html: `${i + 1}. ${q.question}` }} />
-                            <p className={`text-xs ${right ? 'text-green-700' : 'text-red-600'}`}>
+                                                     <p className={`text-xs ${right ? 'text-green-700' : 'text-red-600'}`}>
                               <span className="font-semibold">Your answer:</span>{' '}
-                              {student ?? <em className="text-gray-400">no answer</em>}
+                              {student
+                                ? <span dangerouslySetInnerHTML={{ __html: student }} />
+                                : <em className="text-gray-400">no answer</em>}
                             </p>
                             {!right && (
                               <p className="text-xs text-green-700 mt-0.5">
-                                <span className="font-semibold">Correct answer:</span> {correct}
+                                <span className="font-semibold">Correct answer:</span>{' '}
+                                <span dangerouslySetInnerHTML={{ __html: correct }} />
                               </p>
                             )}
                             {q.solution && !right && (

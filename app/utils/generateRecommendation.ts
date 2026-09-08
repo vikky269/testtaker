@@ -462,12 +462,34 @@ y += cardH + 6;
     doc.setFontSize(chosen.font); doc.setFont('helvetica', 'normal');
     // Convert desired mm line height into jsPDF's lineHeightFactor
     const lhFactor = chosen.lineH / (chosen.font * 0.3528);
-    doc.text(lines, M + 4, y + 5, { lineHeightFactor: lhFactor });
-
+   doc.text(lines, M + 4, y + 5, { lineHeightFactor: lhFactor });
    y += commentBoxH + BOX_GAP;
   
   }
 
+  // ── SIGN-OFF — always shown, even without a comment; anchored to page bottom ──
+  ensureSpace(12);
+  const SIGNOFF_H = 11;
+  const anchorY = pageH - FOOTER_CLEAR - SIGNOFF_H;
+  if (y < anchorY) y = anchorY;
+
+  doc.setTextColor(31, 41, 55); doc.setFontSize(8.5); doc.setFont('helvetica', 'bold');
+  doc.text('If you have any questions do not hesitate to reach out.', M, y);
+
+  y += 5.5;
+  const sigName = instructorName?.trim() || 'SmartMathz Team';
+  doc.setFont('helvetica', 'normal'); doc.setFontSize(8.5); doc.setTextColor(31, 41, 55);
+  doc.text('Best regards,', M, y);
+  const brW = doc.getTextWidth('Best regards, ');
+
+  doc.setFont('helvetica', 'bold'); doc.setFontSize(9); doc.setTextColor(17, 24, 39);
+  doc.text(sigName, M + brW + 1, y);
+  const nameW = doc.getTextWidth(sigName);
+
+  doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.setTextColor(107, 114, 128);
+  doc.text('·  Lead Instructor, SmartMathz', M + brW + nameW + 3, y);
+
+  
   // ── FOOTER — drawn on every page ──────────────────────────────────────────
   const pageCount = (doc as any).getNumberOfPages();
   for (let p = 1; p <= pageCount; p++) {

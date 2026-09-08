@@ -240,3 +240,37 @@ export const calculateGEDOverallScore = (
 
   return ((correct / total) * 100).toFixed(2);
 };
+
+
+
+
+// ── NEW: SAT-specific scoring — additive, does not touch anything above ────
+import { SAT_SECTIONS, type SATSectionKey } from "@/app/data/satdata";
+
+export const calculateSATSectionScore = (
+  sectionKey: SATSectionKey,
+  quizQuestions: Question[],
+  answers: Answers
+): string => {
+  const section = SAT_SECTIONS.find((s) => s.key === sectionKey);
+  if (!section) return "0.00";
+  const sectionQuestions = quizQuestions.slice(section.start, section.end);
+  const total = sectionQuestions.length;
+  if (total === 0) return "0.00";
+  const correct = sectionQuestions.filter(
+    (q) => answers?.[q.question] === (q.correctAnswer || q.answer)
+  ).length;
+  return ((correct / total) * 100).toFixed(2);
+};
+
+export const calculateSATOverallScore = (
+  quizQuestions: Question[],
+  answers: Answers
+): string => {
+  const total = quizQuestions.length;
+  if (total === 0) return "0.00";
+  const correct = quizQuestions.filter(
+    (q) => answers?.[q.question] === (q.correctAnswer || q.answer)
+  ).length;
+  return ((correct / total) * 100).toFixed(2);
+};

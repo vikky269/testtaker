@@ -41,7 +41,7 @@ export function validateStep(args: ValidateStepArgs): FormErrors {
       e.mediaSignature = 'Please sign to confirm your media consent, or untick the box.';
   }
   if (s === 3) {
-    email('email', 'Your email');
+   // email('email', 'Your email');
     name('studentFirstName', 'First name');
     name('studentLastName', 'Last name');
     email('studentEmail', "Student's email");

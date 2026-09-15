@@ -111,7 +111,21 @@ export default function SubscribePage() {
     }
     setLoading(true);
 
-    const availabilityText = availability.map(s => `${s.day} ${s.from} - ${s.to} ET`).join(', ');
+    //const availabilityText = availability.map(s => `${s.day} ${s.from} - ${s.to} ET`).join(', ');
+
+        // Always order Mon → Sun for storage + display, regardless of click order
+      const DAY_ORDER = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+    // Always order Mon → Sun for storage + display, regardless of click order
+    const sortedAvailability = DAY_ORDER
+      .map(day => availability.find(s => s.day === day))
+      .filter((s): s is AvailabilitySlot => !!s);
+
+    const availabilityText = sortedAvailability
+      .map(s => `${s.day} ${s.from} - ${s.to} ET`)
+      .join(', ');
+
+
     const programLabel = rec
       ? rec.package_id === 'custom'
         ? `Custom Package — ${(rec.custom_subjects ?? []).map(s => s.name).join(', ')}`
@@ -139,8 +153,8 @@ export default function SubscribePage() {
       parent2_phone: form.hasSecondParent ? form.parent2Phone : null,
       parent2_email: form.hasSecondParent ? form.parent2Email : null,
       programme_package: programLabel,
-      availability: availabilityText,
-      availability_slots: availability,
+      availability:       availabilityText,
+      availability_slots: sortedAvailability,   // JSONB column — structured data, Mon→Sun order
       start_date: form.startDate,
       additional_info: form.additionalInfo || null,
       referral_source: form.referralSource === 'Other' ? form.referralOther : form.referralSource,

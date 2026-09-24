@@ -34,9 +34,9 @@ export interface QuizCardProps {
       onStart: () => console.log("Started Reading Comprehension")
     },
     {
-      id: "shat",
+      id: "shsat",
       imageSrc: "/imtwo.png",
-      title: "SHAT",
+      title: "SHSAT",
       level: "Grade 8",
       category: "Math",
       //difficulty: "Medium",
@@ -44,47 +44,47 @@ export interface QuizCardProps {
       questions: 12,
       onStart: () => console.log("Started Science Explorer")
     },
-    {
-        id: "algebra-1-regent",
-      imageSrc: "/imthree.png",
-      title: "ALGEBRA 1 REGENT",
-      level: "Grade 9",
-      category: "Algebra",
-      //difficulty: "Hard",
-      time: "35 min",
-      questions: 18,
-      onStart: () => console.log("Started History Quest")
-    },
-    {
-        id: "algebra-2-regent",
-      imageSrc: "/imfour.png",
-      title: "ALGEBRA 2 REGENT",
-      level: "Grade 8",
-      category: "Algebra",
-      //difficulty: "Medium",
-      time: "20 min",
-      questions: 14,
-      onStart: () => console.log("Started Grammar Check")
-    },
-    {
-        id: "geometry-regent",
-      imageSrc: "/imfive.png",
-      title: "GEOMETRY REGENT",
-      level: "Grade 8",
-      category: "Geometry",
-      //difficulty: "Hard",
-      time: "30 min",
-      questions: 16,
-      onStart: () => console.log("Started Geometry Fun")
-    },
+    // {
+    //     id: "algebra-1-regent",
+    //   imageSrc: "/imthree.png",
+    //   title: "ALGEBRA 1 REGENT",
+    //   level: "Grade 9",
+    //   category: "Algebra",
+    //   //difficulty: "Hard",
+    //   time: "35 min",
+    //   questions: 18,
+    //   onStart: () => console.log("Started History Quest")
+    // },
+    // {
+    //     id: "algebra-2-regent",
+    //   imageSrc: "/imfour.png",
+    //   title: "ALGEBRA 2 REGENT",
+    //   level: "Grade 8",
+    //   category: "Algebra",
+    //   //difficulty: "Medium",
+    //   time: "20 min",
+    //   questions: 14,
+    //   onStart: () => console.log("Started Grammar Check")
+    // },
+    // {
+    //     id: "geometry-regent",
+    //   imageSrc: "/imfive.png",
+    //   title: "GEOMETRY REGENT",
+    //   level: "Grade 8",
+    //   category: "Geometry",
+    //   //difficulty: "Hard",
+    //   time: "30 min",
+    //   questions: 16,
+    //   onStart: () => console.log("Started Geometry Fun")
+    // },
     {
         id: "psat",
       imageSrc: "/imsix.png",
       title: "PSAT",
-      level: "Grade 7",
-      category: "Math",
+      level: "",
+      category: "Reading & Math",
       //difficulty: "Medium",
-      time: "40 min",
+      time: "140 min",
       questions: 20,
       onStart: () => console.log("Started Earth Science")
     },
@@ -99,28 +99,28 @@ export interface QuizCardProps {
       questions: 20,
       onStart: () => console.log("Started Algebra Intro")
     },
-    {
-        id: "ap-calculus",
-      imageSrc: "/imeight.png",
-      title: "AP CALCULUS",
-      level: "Grade 3",
-      category: "Calculus",
-     // difficulty: "Easy",
-      time: "20 min",
-      questions: 10,
-      onStart: () => console.log("Started Spelling Bee")
-    },
-    {
-        id: "ap-calculus-ab",
-      imageSrc: "/image.png",
-      title: "AP CALCULUS AB",
-      level: "Grade 10",
-      category: "Calculus",
-      //difficulty: "Medium",
-      time: "25 min",
-      questions: 12,
-      onStart: () => console.log("Started World Capitals")
-    },
+    // {
+    //     id: "ap-calculus",
+    //   imageSrc: "/imeight.png",
+    //   title: "AP CALCULUS",
+    //   level: "Grade 3",
+    //   category: "Calculus",
+    //  // difficulty: "Easy",
+    //   time: "20 min",
+    //   questions: 10,
+    //   onStart: () => console.log("Started Spelling Bee")
+    // },
+    // {
+    //     id: "ap-calculus-ab",
+    //   imageSrc: "/image.png",
+    //   title: "AP CALCULUS AB",
+    //   level: "Grade 10",
+    //   category: "Calculus",
+    //   //difficulty: "Medium",
+    //   time: "25 min",
+    //   questions: 12,
+    //   onStart: () => console.log("Started World Capitals")
+    // },
     {
         id: "sat",
       imageSrc: "/sat1.png",
@@ -132,17 +132,17 @@ export interface QuizCardProps {
       questions: 20,
       onStart: () => console.log("Started Physics Fundamentals")
     },
-    {
-        id: "asvab",
-      imageSrc: "/imseven.png",
-      title: "ASVAB",
-      level: "Grade 6",
-      category: "General",
-     // difficulty: "Medium",
-      time: "30 min",
-      questions: 15,
-      onStart: () => console.log("Started Civics Awareness")
-    },
+    // {
+    //     id: "asvab",
+    //   imageSrc: "/imseven.png",
+    //   title: "ASVAB",
+    //   level: "Grade 6",
+    //   category: "General",
+    //  // difficulty: "Medium",
+    //   time: "30 min",
+    //   questions: 15,
+    //   onStart: () => console.log("Started Civics Awareness")
+    // },
     {
       id: "quiz-assessment",
       imageSrc: "/imseven.png",

@@ -32,6 +32,7 @@ function generatePasscode(grade: string): string {
   if (normalized === "sat")        return "SMTTS";
   if (normalized === "ssat")       return "SMTTSS";
   if (normalized === "ged")        return "SMZGED";
+  if (normalized === "psat")       return "SMZPSAT";
   if (normalized === "geometry")   return "SMTTG";
   const match = normalized.match(/(\d+)/);
   return match ? `SMTT${match[1]}` : "";
@@ -65,6 +66,7 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
   const [passcodeInput, setPasscodeInput]   = useState("");
   const [passcodeError, setPasscodeError]   = useState("");
   const [showGedIntro, setShowGedIntro] = useState(false);
+  const [showPSatIntro, setShowPSatIntro] = useState(false);
   const router = useRouter();
 
   const handleTestClick = (testId: string) => {
@@ -74,7 +76,9 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
       setIsQuizAssessment(true); setIsStateTest(false); setStep(2);
         } else if (testId === "ged") {
       setSelectedGrade("GED"); setShowGedIntro(true); return;
-    } else if (testId === "sat") {
+    } else if (testId === "psat") {
+      setSelectedGrade("PSAT"); setShowPSatIntro(true); return;
+     } else if (testId === "sat") {
       setSelectedGrade("SAT"); setStep(3); setSelectedTest(testId); return;
     } else
       {
@@ -91,6 +95,7 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
     const expected = generatePasscode(selectedGrade);
     if (passcodeInput.trim().toUpperCase() === expected) {
       if (selectedGrade === "GED") { router.push(`/quiz/ged`); return; }
+      if (selectedGrade === "PSAT") { router.push(`/quiz/psat`); return; }
        if (selectedGrade === "SAT") { router.push(`/quiz/sat`); return; }
       const gradeSlug = selectedGrade.toLowerCase().replace(/\s+/g, "-");
       const stateSlug = selectedState?.toLowerCase().replace(/\s+/g, "-");
@@ -184,49 +189,93 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
 
 
       {showGedIntro && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-    <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden">
-      <div className="bg-[#1a2e05] px-6 py-5 text-white">
-        <p className="text-xs font-bold uppercase tracking-widest text-[#a3d926] mb-1">SmartMathz</p>
-        <h2 className="text-xl font-bold">GED Readiness Diagnostic</h2>
-      </div>
-      <div className="px-6 py-5">
-        <p className="text-sm text-gray-500 mb-4">
-          Before you begin, here's what to expect:
-        </p>
-        <div className="space-y-2.5 mb-5">
-          {[
-            { label: "Mathematical Reasoning", meta: "24 questions · ~40 min" },
-            { label: "Reasoning Through Language Arts", meta: "22 questions · ~35 min" },
-            { label: "Science", meta: "19 questions · ~25 min" },
-            { label: "Social Studies", meta: "15 questions · ~20 min" },
-          ].map(s => (
-            <div key={s.label} className="flex items-center justify-between bg-gray-50 rounded-xl px-4 py-2.5">
-              <span className="text-sm font-semibold text-gray-800">{s.label}</span>
-              <span className="text-xs text-gray-400">{s.meta}</span>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden">
+            <div className="bg-[#1a2e05] px-6 py-5 text-white">
+              <p className="text-xs font-bold uppercase tracking-widest text-[#a3d926] mb-1">SmartMathz</p>
+              <h2 className="text-xl font-bold">GED Readiness Diagnostic</h2>
             </div>
-          ))}
+            <div className="px-6 py-5">
+              <p className="text-sm text-gray-500 mb-4">
+                Before you begin, here's what to expect:
+              </p>
+              <div className="space-y-2.5 mb-5">
+                {[
+                  { label: "Mathematical Reasoning", meta: "24 questions · ~40 min" },
+                  { label: "Reasoning Through Language Arts", meta: "22 questions · ~35 min" },
+                  { label: "Science", meta: "19 questions · ~25 min" },
+                  { label: "Social Studies", meta: "15 questions · ~20 min" },
+                ].map(s => (
+                  <div key={s.label} className="flex items-center justify-between bg-gray-50 rounded-xl px-4 py-2.5">
+                    <span className="text-sm font-semibold text-gray-800">{s.label}</span>
+                    <span className="text-xs text-gray-400">{s.meta}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-amber-50 border border-amber-100 rounded-xl px-4 py-3 mb-5">
+                <p className="text-xs text-amber-800">
+                  📌 Total time: ~2 hours. Each section is timed separately — once you move to the next section
+                  you can't go back. Find a quiet space with a stable connection before starting.
+                </p>
+              </div>
+              <div className="flex gap-3">
+                <button onClick={() => setShowGedIntro(false)}
+                  className="flex-1 py-3 text-sm font-bold border border-gray-200 text-gray-600 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                  Cancel
+                </button>
+                <button onClick={() => { setShowGedIntro(false); setStep(3); setSelectedTest("ged"); }}
+                  className="flex-1 py-3 text-sm font-bold bg-[#7FB509] hover:bg-[#6a9a07] text-white rounded-xl cursor-pointer transition-colors">
+                  I'm Ready →
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="bg-amber-50 border border-amber-100 rounded-xl px-4 py-3 mb-5">
-          <p className="text-xs text-amber-800">
-            📌 Total time: ~2 hours. Each section is timed separately — once you move to the next section
-            you can't go back. Find a quiet space with a stable connection before starting.
-          </p>
+      )}
+
+
+      {showPSatIntro && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden">
+            <div className="bg-[#1a2e05] px-6 py-5 text-white">
+              <p className="text-xs font-bold uppercase tracking-widest text-[#a3d926] mb-1">SmartMathz</p>
+              <h2 className="text-xl font-bold">PSAT Evaluation</h2>
+            </div>
+            <div className="px-6 py-5">
+              <p className="text-sm text-gray-500 mb-4">Before you begin, here's what to expect:</p>
+              <div className="space-y-2.5 mb-5">
+                {[
+                  { label: "Reading & Writing — Module 1", meta: "27 questions · 32 min" },
+                  { label: "Reading & Writing — Module 2", meta: "27 questions · 32 min" },
+                  { label: "Math — Module 1", meta: "22 questions · 35 min" },
+                  { label: "Math — Module 2", meta: "22 questions · 35 min" },
+                ].map(s => (
+                  <div key={s.label} className="flex items-center justify-between bg-gray-50 rounded-xl px-4 py-2.5">
+                    <span className="text-sm font-semibold text-gray-800">{s.label}</span>
+                    <span className="text-xs text-gray-400">{s.meta}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-amber-50 border border-amber-100 rounded-xl px-4 py-3 mb-5">
+                <p className="text-xs text-amber-800">
+                  📌 Your questions are randomly drawn — no two students see the same set. Each module is timed
+                  separately, and once you move on you can't go back. Find a quiet space before starting.
+                </p>
+              </div>
+              <div className="flex gap-3">
+                <button onClick={() => setShowPSatIntro(false)}
+                  className="flex-1 py-3 text-sm font-bold border border-gray-200 text-gray-600 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                  Cancel
+                </button>
+                <button onClick={() => { setShowPSatIntro(false); setStep(3); setSelectedTest("psat"); }}
+                  className="flex-1 py-3 text-sm font-bold bg-[#7FB509] hover:bg-[#6a9a07] text-white rounded-xl cursor-pointer transition-colors">
+                  I'm Ready →
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex gap-3">
-          <button onClick={() => setShowGedIntro(false)}
-            className="flex-1 py-3 text-sm font-bold border border-gray-200 text-gray-600 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
-            Cancel
-          </button>
-          <button onClick={() => { setShowGedIntro(false); setStep(3); setSelectedTest("ged"); }}
-            className="flex-1 py-3 text-sm font-bold bg-[#7FB509] hover:bg-[#6a9a07] text-white rounded-xl cursor-pointer transition-colors">
-            I'm Ready →
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-)}
+      )}
 
       {/* ── Modal ── */}
       {selectedTest && (
@@ -358,7 +407,7 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
               )}
 
               {/* ── Direct start (non-assessment tests) ── */}
-              {!isStateTest && !isQuizAssessment &&  selectedGrade !== "GED" && selectedGrade !== "SAT" &&   (
+              {!isStateTest && !isQuizAssessment &&  selectedGrade !== "GED" && selectedGrade !== "SAT" && selectedGrade !== "PSAT" &&    (
                 <div className="text-center py-4">
                   <p className="text-gray-600 text-sm mb-6">
                     Ready to take the{" "}

@@ -26,6 +26,7 @@ const NAV_ITEMS = [
   { href: '/admin/dashboard/subscriptions',         icon: ClipboardList,   label: 'Subscriptions'        },
   { href: '/admin/dashboard/learning-categories',   icon: GraduationCap,   label: 'Learning Categories'  },
   { href: '/admin/dashboard/ged-results', icon: GraduationCap, label: 'GED Assessments' },
+  { href: '/admin/dashboard/psat-results', icon: FileCheck2, label: 'PSAT Assessments' },
   { href: '/admin/dashboard/analytics',             icon: BarChart2,       label: 'Analytics'            },
 ];
 

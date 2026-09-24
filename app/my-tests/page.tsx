@@ -17,6 +17,7 @@ import {
 // Align the import + call below with your review page's download handler.
 import { generateReport } from '@/app/utils/generateReport';
 import { generateGedReport } from '@/app/utils/generateGedReport';
+import { generatePsatReport } from '../utils/generatepSatReport';
 
 const fmtDate = (d: string) =>
   new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
@@ -85,6 +86,23 @@ const handleDownloadReport = (sub: TestSubmission) => {
       } catch (e) {
         console.error(e);
         toast.error('Could not generate the GED report.');
+      }
+      return;
+    }
+
+        if (sub.test_type === 'psat') {
+      try {
+        generatePsatReport({
+          studentName: sub.full_name ?? 'Student',
+          studentEmail: sub.email ?? undefined,
+          testDate: fmtDate(sub.created_at),
+          questions: sub.questions ?? [],
+          answers: sub.answers ?? {},
+          durations: sub.durations,
+        });
+      } catch (e) {
+        console.error(e);
+        toast.error('Could not generate the PSAT report.');
       }
       return;
     }

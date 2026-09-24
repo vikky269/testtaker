@@ -4,6 +4,7 @@
 
 import jsPDF from 'jspdf';
 import { GED_SECTIONS, GED_SECTION_LABELS } from '@/app/data/geddata';
+import { PSAT_SECTIONS } from '@/app/data/pSatconfig'
 
 export interface SubmissionQuestion {
   question: string;
@@ -88,6 +89,14 @@ export function splitSections(sub: TestSubmission) {
   if (sub.test_type === 'ged') {
     return GED_SECTIONS.map(sec => ({
       name: GED_SECTION_LABELS[sec.key],
+      qs: qs.slice(sec.start, sec.end),
+    })).filter(s => s.qs.length);
+  }
+
+
+    if (sub.test_type === 'psat') {
+    return PSAT_SECTIONS.map(sec => ({
+      name: sec.label,
       qs: qs.slice(sec.start, sec.end),
     })).filter(s => s.qs.length);
   }

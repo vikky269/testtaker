@@ -25,6 +25,7 @@ interface QuizBodyProps {
   isGrade9Or10: boolean;
   isSat: boolean;
   isGed?: boolean; // NEW
+  isPsat?: boolean;
 
   // Section state — widened to include GED's "rla" | "social"
   quizSection: "math" | "ela" | "science" | "rla" | "social";
@@ -84,10 +85,18 @@ const SECTION_THEME = {
   // NEW — GED-only keys
   rla:     { bg: "bg-[#f0fce8]", border: "border-[#7FB509]", active: "bg-[#7FB509]", label: "text-[#5a8508]", dot: "bg-[#7FB509]" },
   social:  { bg: "bg-violet-50", border: "border-violet-300", active: "bg-violet-600", label: "text-violet-700", dot: "bg-violet-500" },
+
+
+  //PSAT SECTIONS
+  rw1:   { bg: "bg-emerald-50", border: "border-emerald-300", active: "bg-emerald-600", label: "text-emerald-700", dot: "bg-emerald-500" },
+  rw2:   { bg: "bg-emerald-50", border: "border-emerald-300", active: "bg-emerald-600", label: "text-emerald-700", dot: "bg-emerald-500" },
+  math1: { bg: "bg-indigo-50",  border: "border-indigo-300",  active: "bg-indigo-600",  label: "text-indigo-700",  dot: "bg-indigo-500"  },
+  math2: { bg: "bg-indigo-50",  border: "border-indigo-300",  active: "bg-indigo-600",  label: "text-indigo-700",  dot: "bg-indigo-500"  },
 };
 
 const SECTION_NAME_MAP: Record<string, string> = {
   math: "Math", ela: "ELA", science: "Science", rla: "RLA", social: "Social Studies",
+  rw1: "R&W Module 1", rw2: "R&W Module 2", math1: "Math Module 1", math2: "Math Module 2",
 };
 
 function getCurrentTheme(quizSection: string, satSection: string, isSat: boolean) {
@@ -97,7 +106,7 @@ function getCurrentTheme(quizSection: string, satSection: string, isSat: boolean
 
 export default function QuizBody({
   testid, stateParam, gradeParam, normalizedGrade,
-  isSATQuiz, isGrade9Or10, isSat, isGed = false,
+  isSATQuiz, isGrade9Or10, isSat, isPsat = false, isGed = false,
   quizSection, satSection, isSatReading,
   activeQuestions, currentQuestionIndex, setCurrentQuestionIndex,
   answers,
@@ -148,12 +157,14 @@ export default function QuizBody({
               ? `Quiz Assessment — ${gradeParam.replace(/-/g, " ").toUpperCase()}`
               : testid === "ged"
               ? "SmartMathz GED Readiness Diagnostic"
+              : testid === "psat"
+              ? "SmartMathz PSAT Readiness Diagnostic"
               : `${testid} Practice Test`}
           </h1>
 
           {/* Section badge + progress + timer — one row */}
           <div className="flex flex-wrap items-center justify-center gap-3  mt-2">
-            {(isSATQuiz || isGrade9Or10 || isGed) && (
+           {(isSATQuiz || isGrade9Or10 || isGed || isPsat) && (
               <span className={`text-lg font-bold px-3 py-1 rounded-full ${theme.active} text-white`}>
                 {sectionLabel}
               </span>
@@ -396,6 +407,31 @@ export default function QuizBody({
                     { key: "rla",     label: "RLA",               theme: SECTION_THEME.rla     },
                     { key: "science", label: "Science",           theme: SECTION_THEME.science },
                     { key: "social",  label: "Social Studies",    theme: SECTION_THEME.social  },
+                  ].map(({ key, label, theme: t }) => (
+                    <div
+                      key={key}
+                      className={`flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs font-bold
+                        ${quizSection === key ? `${t.bg} ${t.label} ring-1 ${t.border}` : "text-gray-400"}`}
+                    >
+                      <span className={`w-2 h-2 rounded-full ${quizSection === key ? t.dot : "bg-gray-200"}`} />
+                      {label}
+                      {quizSection === key && <span className="ml-auto text-[10px]">Active</span>}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+                        {/* NEW — Section indicator chips for PSAT (4 modules) */}
+            {isPsat && (
+              <div className="mt-4 pt-4 border-t border-gray-100">
+                <p className="text-xs font-extrabold uppercase tracking-widest text-gray-400 mb-2">Modules</p>
+                <div className="flex flex-col gap-1.5">
+                  {[
+                    { key: "rw1",   label: "R&W Module 1",   theme: SECTION_THEME.rw1   },
+                    { key: "rw2",   label: "R&W Module 2",   theme: SECTION_THEME.rw2   },
+                    { key: "math1", label: "Math Module 1",  theme: SECTION_THEME.math1 },
+                    { key: "math2", label: "Math Module 2",  theme: SECTION_THEME.math2 },
                   ].map(({ key, label, theme: t }) => (
                     <div
                       key={key}

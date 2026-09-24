@@ -274,3 +274,18 @@ export const calculateSATOverallScore = (
   ).length;
   return ((correct / total) * 100).toFixed(2);
 };
+
+
+// ── NEW: generic score-by-array helper, used by PSAT (modules are separate
+// drawn arrays, not slices of one fixed bank, so no index-based version needed) ──
+export const calculateArrayScore = (
+  questions: { question: string; correctAnswer?: string; answer?: string }[],
+  answers: Answers
+): string => {
+  const total = questions.length;
+  if (total === 0) return "0.00";
+  const correct = questions.filter(
+    (q) => answers?.[q.question] === (q.correctAnswer || q.answer)
+  ).length;
+  return ((correct / total) * 100).toFixed(2);
+};

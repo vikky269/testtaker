@@ -212,7 +212,6 @@ const PROGRAMS: Program[] = [
       'Speaking, reading & writing skills',
       'Cultural awareness',
       'Storytelling & communication',
-      '8-week program · $50',
     ],
     idealFor: 'Children and teens · all levels welcome',
   },
@@ -325,15 +324,14 @@ export default function ProgramsPage() {
                     ))}
                   </ul>
 
-
-                  {(program.price || program.duration) && (
-                    <div className="mt-auto flex items-center justify-between text-[11px] font-semibold">
-                      {program.price && (
-                        <span className="bg-[#7FB509] text-[#1a2e05] px-2.5 py-1 rounded-full">{program.price}</span>
-                      )}
-                      {program.duration && <span className="text-white/80">{program.duration}</span>}
-                    </div>
-                  )}
+                        {(program.price || program.duration) && (
+                            <div className="mt-auto flex items-center justify-between text-[11px] font-semibold">
+                                {program.price && (
+                                    <span className="bg-[#7FB509] text-[#1a2e05] px-2.5 py-1 rounded-full">{program.price}</span>
+                                )}
+                                {program.duration && <span className="text-white/80">{program.duration}</span>}
+                            </div>
+                        )}
 
                 </div>
               </div>
@@ -342,7 +340,7 @@ export default function ProgramsPage() {
         </div>
 
         {/* ── Bottom CTA ── */}
-        <div className="mt-16 rounded-3xl bg-[#1a2e05] text-white text-center px-8 py-12">
+        {/* <div className="mt-16 rounded-3xl bg-[#1a2e05] text-white text-center px-8 py-12">
           <h2 className="text-2xl sm:text-3xl font-extrabold mb-3">
             Not sure which program fits best?
           </h2>
@@ -360,7 +358,7 @@ export default function ProgramsPage() {
               Enroll Now
             </Link>
           </div>
-        </div>
+        </div> */}
       </section>
     </div>
   );

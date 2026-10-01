@@ -112,12 +112,17 @@ Deno.serve(async (req) => {
         </div>
       </div>`;
 
-    const parentHtml = wrap(
-      `Enrollment Received — ${studentName}`,
-      `Hi ${p.parent_first_name || 'there'},<br/><br/>
-       Thank you for enrolling <strong>${studentName}</strong> with SmartMathz!
-       We've received your enrollment and our team will reach out within 48 hours to confirm
-       your schedule and next steps. Here's a summary of what you submitted:`,
+      const parentHtml = wrap(
+      `Welcome to SmartMathz – Enrollment Received`,
+      `Dear Parent,<br/><br/>
+       Thank you for enrolling <strong>${studentName}</strong> with SmartMathz!<br/><br/>
+       We have successfully received your enrollment. Our team is currently working on setting up
+       the student's SmartMathz account, class timetable, and your parent account so you can easily
+       access schedules, progress updates, and other learning information.<br/><br/>
+       We will be in touch shortly with the login details, confirmed class schedule, and next steps.
+       We're excited to welcome you and your family to the SmartMathz family and look forward to
+       supporting ${studentName}'s learning journey.<br/><br/>
+       Below is a summary of the information you submitted:`,
       detailsTable
     );
 
@@ -135,8 +140,8 @@ Deno.serve(async (req) => {
     if (DOMAIN_VERIFIED) {
       // Production: send to the real people.
       if (parentRecipients.length) {
-        await sendEmail(parentRecipients,
-          `🎓 Enrollment Received — ${studentName} | SmartMathz`, parentHtml);
+               await sendEmail(parentRecipients,
+          `Welcome to SmartMathz – Enrollment Received`, parentHtml);
       }
       await sendEmail(ADMIN_RECIPIENTS,
         `🆕 New Enrollment: ${studentName} (${p.grade_level ?? ''})`, adminHtml);

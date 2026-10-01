@@ -20,7 +20,7 @@ interface GedSubmission {
   questions: { question: string; options: string[]; correctAnswer?: string; answer?: string }[];
   answers: Record<string, string>;
   math_score: number | null;
-  ela_score: number | null;       // RLA
+  ela_score: number | null;       // RLA   
   science_score: number | null;
   social_studies_score: number | null;
   overall_score: number | null;
@@ -106,20 +106,29 @@ export default function GedResultsPage() {
   };
 
 
-  const handleDelete = async () => {
-  if (!deleteTarget) return;
-  setDeleting(true);
-  const { error } = await supabase.from('test_submissions').delete().eq('id', deleteTarget.id);
-  setDeleting(false);
-  if (error) {
-    console.error(error);
-    toast.error('Failed to delete. Check permissions and try again.');
-    return;
-  }
-  toast.success(`${deleteTarget.full_name}'s GED result deleted.`);
-  setSubs(prev => prev.filter(s => s.id !== deleteTarget.id));
-  setDeleteTarget(null);
-};
+const handleDelete = async () => {
+    if (!deleteTarget) return;
+    setDeleting(true);
+    const { data, error } = await supabase
+      .from('test_submissions').delete().eq('id', deleteTarget.id).select('id');
+    setDeleting(false);
+
+    if (error) {
+      console.error(error);
+      toast.error('Failed to delete. Check permissions and try again.');
+      return;
+    }
+    if (!data || data.length === 0) {
+      toast.error('Delete was blocked by a permissions rule — nothing was removed. Contact the developer.');
+      return;
+    }
+
+    toast.success(`${deleteTarget.full_name}'s GED result deleted.`);
+    setSubs(prev => prev.filter(s => s.id !== deleteTarget.id));
+    setDeleteTarget(null);
+  };
+
+
 
   if (loading) return <div className="p-8 text-gray-500">Loading GED submissions...</div>;
 

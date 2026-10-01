@@ -12,7 +12,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {
   LayoutDashboard, Users, FileText, ClipboardList,
-  BarChart2, LogOut, X, Menu, Shield, Settings, GraduationCap, FileCheck2
+  BarChart2, LogOut, X, Menu, Shield, Settings, GraduationCap, FileCheck2, BookOpen,
 } from 'lucide-react';
 
 const ADMIN_EMAIL = 'info@smartmathz.com';
@@ -25,6 +25,7 @@ const NAV_ITEMS = [
   { href: '/admin/dashboard/completed-recommendations', icon: FileCheck2,  label: 'Completed Evaluations'  },
   { href: '/admin/dashboard/subscriptions',         icon: ClipboardList,   label: 'Subscriptions'        },
   { href: '/admin/dashboard/learning-categories',   icon: GraduationCap,   label: 'Learning Categories'  },
+  { href: '/admin/dashboard/programs', icon: BookOpen, label: 'Programs' },
   { href: '/admin/dashboard/ged-results', icon: GraduationCap, label: 'GED Assessments' },
   { href: '/admin/dashboard/psat-results', icon: FileCheck2, label: 'PSAT Assessments' },
   { href: '/admin/dashboard/analytics',             icon: BarChart2,       label: 'Analytics'            },

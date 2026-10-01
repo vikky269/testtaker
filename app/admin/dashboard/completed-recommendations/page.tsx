@@ -164,23 +164,55 @@ export default function CompletedRecommendationsPage() {
   const handleEdit = (rec: CompletedRec) =>
     router.push(`/admin/dashboard/results?edit=${rec.id}`);
 
-  const handleDelete = async () => {
+
+ const handleDelete = async () => {
     if (!deleteTarget) return;
     setDeleting(true);
-    const { error } = await supabase
-      .from('completed_recommendations').delete().eq('id', deleteTarget.id);
-    setDeleting(false);
+
+    const { data, error } = await supabase
+      .from('completed_recommendations').delete().eq('id', deleteTarget.id).select('id');
+
     if (error) {
+      setDeleting(false);
       console.error(error);
       toast.error('Failed to delete. Check permissions and try again.');
       return;
     }
-    toast.success(`${deleteTarget.student_name}'s recommendation deleted.`);
+    if (!data || data.length === 0) {
+      setDeleting(false);
+      toast.error('Delete was blocked by a permissions rule — nothing was removed. Contact the developer.');
+      return;
+    }
+
+    // Also remove the underlying leaderboard row so the student can't
+    // reappear in Pending Evaluations — a full delete, not an "undo".
+    if (deleteTarget.leaderboard_id) {
+      const { error: lbError } = await supabase
+        .from('leaderboard').delete().eq('id', deleteTarget.leaderboard_id);
+      if (lbError) {
+        console.error('Could not delete linked leaderboard row:', lbError);
+        toast.error('Recommendation deleted, but the result row could not be removed — it may still show in Pending Evaluations.');
+      }
+    }
+
+    setDeleting(false);
+    toast.success(`${deleteTarget.student_name}'s recommendation and result deleted.`);
     window.dispatchEvent(new Event('pending-evals-changed'));
     setRecs(prev => prev.filter(r => r.id !== deleteTarget.id));
     setDeleteTarget(null);
   };
-
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   if (loading) return <div className="p-8 text-gray-500">Loading completed recommendations...</div>;
 
   return (
@@ -429,7 +461,8 @@ export default function CompletedRecommendationsPage() {
               <span className="font-semibold text-gray-800"> {deleteTarget.student_name}</span>'s
               saved recommendation ({deleteTarget.package_id === 'custom' ? 'Custom' : `Package ${deleteTarget.package_id}`}).
             </p>
-            <p className="text-xs text-gray-400 mb-1">The student will reappear on the Results page.</p>
+            {/* <p className="text-xs text-gray-400 mb-1">The student will reappear on the Results page.</p> */}
+             <p className="text-xs text-gray-400 mb-1">This removes the student's result completely — it will not reappear in Pending Evaluations.</p>
             <p className="text-xs text-red-500 font-medium mb-5">This action cannot be undone.</p>
             <div className="flex gap-3">
               <button onClick={() => setDeleteTarget(null)}

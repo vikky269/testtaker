@@ -13,6 +13,19 @@ import { toast } from 'react-hot-toast';
 
 const COMMENT_MAX = 750; // max characters for evaluator's comment (renders well on PDF)
 
+
+// ── Time helpers — used by the modal AND when saving the recommendation ──────
+const fmtTime = (s?: number | null) =>
+  s ? `${Math.floor(s / 60)}m ${Math.round(s % 60)}s` : '—';
+
+const getTimes = (s: StudentResult, saved?: any | null) =>
+  saved ?? {
+    total:   fmtTime(s.total_time),
+    math:    fmtTime(s.math_duration),
+    ela:     fmtTime(s.ela_duration),
+    science: fmtTime(s.science_duration),
+  };
+
 interface StudentResult {
   id?: string;
   full_name: string;
@@ -528,13 +541,16 @@ useEffect(() => {
     }
     setSaving(true);
 
-    const fmt = (s?: number | null) => s ? `${Math.floor(s / 60)}m ${s % 60}s` : '—';
-    const times = editingTimes ?? {
-      total:   fmt(selectedStudent.total_time),
-      math:    fmt((selectedStudent as any).math_duration),
-      ela:     fmt((selectedStudent as any).ela_duration),
-      science: fmt((selectedStudent as any).science_duration),
-    };
+    // const fmt = (s?: number | null) => s ? `${Math.floor(s / 60)}m ${s % 60}s` : '—';
+    // const times = editingTimes ?? {
+    //   total:   fmt(selectedStudent.total_time),
+    //   math:    fmt((selectedStudent as any).math_duration),
+    //   ela:     fmt((selectedStudent as any).ela_duration),
+    //   science: fmt((selectedStudent as any).science_duration),
+    // };
+
+    const times = getTimes(selectedStudent, editingTimes);
+    
 
     const payload = {
       leaderboard_id:      selectedStudent.id ? String(selectedStudent.id) : null,
@@ -751,6 +767,7 @@ useEffect(() => {
       {/* ══════════════════════════ MODAL ══════════════════════════ */}
       {selectedStudent && (() => {
         const cat = getLearningCategory(selectedStudent.overall_score);
+         const times = getTimes(selectedStudent, editingTimes);   // ← add
         return (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
             <div className="bg-white rounded-3xl shadow-2xl w-full max-w-2xl max-h-[94vh] overflow-y-auto">
@@ -767,20 +784,39 @@ useEffect(() => {
 
               <div className="px-6 py-5 space-y-5">
 
-                {/* Score summary */}
+               
+
+                {/* Score summary — score + time spent per section */}
                 <div className="grid grid-cols-4 gap-3">
                   {[
-                    { label: 'Overall', val: `${Math.round(selectedStudent.overall_score)}%` },
-                    { label: 'Math',    val: selectedStudent.math_score    != null ? `${Math.round(selectedStudent.math_score)}%`    : '—' },
-                    { label: 'ELA',     val: selectedStudent.ela_score     != null ? `${Math.round(selectedStudent.ela_score)}%`     : '—' },
-                    { label: 'Science', val: selectedStudent.science_score != null ? `${Math.round(selectedStudent.science_score)}%` : '—' },
-                  ].map(({ label, val }) => (
+                    {
+                      label: 'Overall', val: `${Math.round(selectedStudent.overall_score)}%`,
+                      timeLabel: 'Total time', time: times.total
+                    },
+                    {
+                      label: 'Math', val: selectedStudent.math_score != null ? `${Math.round(selectedStudent.math_score)}%` : '—',
+                      timeLabel: 'Math time', time: times.math
+                    },
+                    {
+                      label: 'ELA', val: selectedStudent.ela_score != null ? `${Math.round(selectedStudent.ela_score)}%` : '—',
+                      timeLabel: 'ELA time', time: times.ela
+                    },
+                    {
+                      label: 'Science', val: selectedStudent.science_score != null ? `${Math.round(selectedStudent.science_score)}%` : '—',
+                      timeLabel: 'Sci time', time: times.science
+                    },
+                  ].map(({ label, val, timeLabel, time }) => (
                     <div key={label} className="bg-gray-50 rounded-xl p-3 text-center">
                       <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">{label}</p>
                       <p className="text-lg font-bold text-gray-900">{val}</p>
+                      <div className="mt-2 pt-2 border-t border-gray-200/70">
+                        <p className="text-[10px] uppercase tracking-wide text-gray-400">{timeLabel}</p>
+                        <p className="text-xs font-semibold text-gray-700">{time}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
+
 
                 {/* Category + suggestion */}
                 <div className="flex items-center gap-3 bg-gray-50 rounded-xl p-3 flex-wrap">

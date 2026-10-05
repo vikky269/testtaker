@@ -50,85 +50,148 @@ serve(async (req) => {
     const year = new Date().getFullYear();
 
     // ── 1. Welcome email → student ────────────────────────────────────────
+//     await client.send({
+//       from: `SmartMathz <${GMAIL_USER}>`,
+//       to:   email,
+//       subject: "Welcome to SmartMathz Test Portal 🎓",
+//       content: "plain text fallback",
+//       html: `
+// <!DOCTYPE html>
+// <html>
+// <body style="margin:0;padding:0;background:#f4f4f4;font-family:Arial,sans-serif;">
+// <div style="max-width:600px;margin:30px auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+
+//   <!-- Header -->
+//   <div style="background:linear-gradient(135deg,#1a2e05,#3a7a12);padding:32px 24px;text-align:center;">
+//     <h1 style="color:#fff;margin:0;font-size:26px;letter-spacing:-0.5px;">SmartMathz</h1>
+//     <p style="color:rgba(255,255,255,0.7);margin:6px 0 0;font-size:13px;">Test Portal</p>
+//   </div>
+
+//   <!-- Body -->
+//   <div style="padding:32px 28px;color:#333;">
+//     <h2 style="margin-top:0;font-size:20px;color:#1a2e05;">Welcome, ${fullName}! 🎉</h2>
+//     <p style="font-size:15px;line-height:1.7;color:#555;">
+//       You've successfully created your SmartMathz account. We're thrilled to have you on board and can't wait to support your learning journey!
+//     </p>
+
+//     <!-- Info card -->
+//     <div style="background:#f8fdf0;border:1px solid #d4edaa;border-radius:8px;padding:16px 20px;margin:20px 0;">
+//       <table style="width:100%;border-collapse:collapse;">
+//         <tr>
+//           <td style="padding:6px 0;font-weight:bold;color:#3a5a09;font-size:13px;width:40%;">Grade Level</td>
+//           <td style="padding:6px 0;font-size:13px;color:#333;">${grade || 'Not specified'}</td>
+//         </tr>
+//         <tr>
+//           <td style="padding:6px 0;font-weight:bold;color:#3a5a09;font-size:13px;">Email</td>
+//           <td style="padding:6px 0;font-size:13px;color:#333;">${email}</td>
+//         </tr>
+//       </table>
+//     </div>
+
+//     <p style="font-size:15px;line-height:1.7;color:#555;">Here's what you can do on the portal:</p>
+//     <ul style="line-height:2;color:#555;font-size:14px;padding-left:20px;">
+//       <li>📘 Take grade-level practice assessments</li>
+//       <li>📊 See your results instantly with section breakdowns</li>
+//       <li>📄 Download your personalised evaluation report</li>
+//       <li>🏆 Track your rank on the leaderboard</li>
+//     </ul>
+
+//     <!-- CTA -->
+//     <div style="text-align:center;margin:30px 0;">
+//       <a href="https://smartmathztest-taker.netlify.app/login"
+//         style="background:#7FB509;color:#fff;padding:14px 32px;text-decoration:none;border-radius:8px;font-size:15px;font-weight:bold;display:inline-block;">
+//         Start Learning →
+//       </a>
+//     </div>
+
+//     <p style="font-size:13px;color:#888;margin-top:24px;">
+//       If you have any questions, reply to this email or reach out to us at
+//       <a href="mailto:info@smartmathz.com" style="color:#7FB509;">info@smartmathz.com</a>
+//     </p>
+
+//     <p style="margin-top:24px;font-size:14px;color:#333;">
+//       Best regards,<br/>
+//       <strong>The SmartMathz Team</strong><br/>
+//       <span style="font-size:12px;color:#999;">Lead Instructor: Isaac Salako</span>
+//     </p>
+//   </div>
+
+//   <!-- Footer -->
+//   <div style="background:#f8f8f8;border-top:1px solid #eee;padding:16px 24px;text-align:center;">
+//     <p style="font-size:11px;color:#aaa;margin:0;">© ${year} SmartMathz. All rights reserved.</p>
+//     <p style="font-size:11px;color:#aaa;margin:4px 0 0;">
+//       <a href="https://smartmathz.com" style="color:#7FB509;text-decoration:none;">www.smartmathz.com</a>
+//     </p>
+//   </div>
+
+// </div>
+// </body>
+// </html>
+//       `,
+//     });
+
+
+         // ── 1. Welcome email → student (same structure as the parent-facing enrollment email) ──
+    const row = (label: string, value: string) => `<tr>
+      <td style="padding:6px 12px;color:#9ca3af;font-size:13px;white-space:nowrap">${label}</td>
+      <td style="padding:6px 12px;color:#111827;font-size:13px;font-weight:600">${value}</td>
+    </tr>`;
+
+    const studentHtml = `
+      <div style="font-family:Arial,Helvetica,sans-serif;max-width:640px;margin:0 auto">
+        <div style="background:#1a2e05;padding:22px 28px;border-radius:14px 14px 0 0">
+          <p style="color:#a3d926;font-size:11px;font-weight:bold;letter-spacing:2px;margin:0 0 4px">SMARTMATHZ</p>
+          <h1 style="color:#fff;font-size:20px;margin:0">Welcome to SmartMathz – Account Created</h1>
+        </div>
+        <div style="background:#fff;border:1px solid #e5e7eb;border-top:none;padding:26px 28px;border-radius:0 0 14px 14px">
+          <p style="color:#374151;font-size:14px;line-height:1.6">
+            Dear ${fullName},<br/><br/>
+            Welcome to SmartMathz! Your Test Portal account has been created successfully, and we're
+            excited to support your learning journey.<br/><br/>
+            You can now log in to take grade-level practice assessments, see your results instantly with
+            section breakdowns, download your personalised evaluation report, and track your rank on the
+            leaderboard.<br/><br/>
+            Below is a summary of your account details:
+          </p>
+
+          <table style="border-collapse:collapse;width:100%;background:#f9fafb;border-radius:12px">
+            ${row('Name', fullName)}
+            ${row('Grade Level', grade || 'Not specified')}
+            ${row('Email', email)}
+          </table>
+
+          <div style="text-align:center;margin:28px 0 8px">
+            <a href="https://smartmathztest-taker.netlify.app/login"
+              style="background:#7FB509;color:#fff;padding:13px 30px;text-decoration:none;border-radius:8px;font-size:14px;font-weight:bold;display:inline-block;">
+              Start Learning →
+            </a>
+          </div>
+
+          <p style="color:#374151;font-size:13px;line-height:1.6;margin-top:22px">
+            If you have any questions, reply to this email or reach out to us at
+            <a href="mailto:info@smartmathz.com" style="color:#7FB509;">info@smartmathz.com</a>.
+          </p>
+          <p style="color:#374151;font-size:14px;margin-top:18px">
+            Best regards,<br/>
+            <strong>The SmartMathz Team</strong><br/>
+            <span style="font-size:12px;color:#9ca3af;">Lead Instructor: Isaac Salako</span>
+          </p>
+
+          <p style="color:#9ca3af;font-size:12px;margin-top:22px">
+            SmartMathz · www.smartmathz.com · © ${year} SmartMathz. This is an automated message.
+          </p>
+        </div>
+      </div>`;
+
     await client.send({
       from: `SmartMathz <${GMAIL_USER}>`,
       to:   email,
-      subject: "Welcome to SmartMathz Test Portal 🎓",
-      content: "plain text fallback",
-      html: `
-<!DOCTYPE html>
-<html>
-<body style="margin:0;padding:0;background:#f4f4f4;font-family:Arial,sans-serif;">
-<div style="max-width:600px;margin:30px auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.08);">
-
-  <!-- Header -->
-  <div style="background:linear-gradient(135deg,#1a2e05,#3a7a12);padding:32px 24px;text-align:center;">
-    <h1 style="color:#fff;margin:0;font-size:26px;letter-spacing:-0.5px;">SmartMathz</h1>
-    <p style="color:rgba(255,255,255,0.7);margin:6px 0 0;font-size:13px;">Test Portal</p>
-  </div>
-
-  <!-- Body -->
-  <div style="padding:32px 28px;color:#333;">
-    <h2 style="margin-top:0;font-size:20px;color:#1a2e05;">Welcome, ${fullName}! 🎉</h2>
-    <p style="font-size:15px;line-height:1.7;color:#555;">
-      You've successfully created your SmartMathz account. We're thrilled to have you on board and can't wait to support your learning journey!
-    </p>
-
-    <!-- Info card -->
-    <div style="background:#f8fdf0;border:1px solid #d4edaa;border-radius:8px;padding:16px 20px;margin:20px 0;">
-      <table style="width:100%;border-collapse:collapse;">
-        <tr>
-          <td style="padding:6px 0;font-weight:bold;color:#3a5a09;font-size:13px;width:40%;">Grade Level</td>
-          <td style="padding:6px 0;font-size:13px;color:#333;">${grade || 'Not specified'}</td>
-        </tr>
-        <tr>
-          <td style="padding:6px 0;font-weight:bold;color:#3a5a09;font-size:13px;">Email</td>
-          <td style="padding:6px 0;font-size:13px;color:#333;">${email}</td>
-        </tr>
-      </table>
-    </div>
-
-    <p style="font-size:15px;line-height:1.7;color:#555;">Here's what you can do on the portal:</p>
-    <ul style="line-height:2;color:#555;font-size:14px;padding-left:20px;">
-      <li>📘 Take grade-level practice assessments</li>
-      <li>📊 See your results instantly with section breakdowns</li>
-      <li>📄 Download your personalised evaluation report</li>
-      <li>🏆 Track your rank on the leaderboard</li>
-    </ul>
-
-    <!-- CTA -->
-    <div style="text-align:center;margin:30px 0;">
-      <a href="https://smartmathztest-taker.netlify.app/login"
-        style="background:#7FB509;color:#fff;padding:14px 32px;text-decoration:none;border-radius:8px;font-size:15px;font-weight:bold;display:inline-block;">
-        Start Learning →
-      </a>
-    </div>
-
-    <p style="font-size:13px;color:#888;margin-top:24px;">
-      If you have any questions, reply to this email or reach out to us at
-      <a href="mailto:info@smartmathz.com" style="color:#7FB509;">info@smartmathz.com</a>
-    </p>
-
-    <p style="margin-top:24px;font-size:14px;color:#333;">
-      Best regards,<br/>
-      <strong>The SmartMathz Team</strong><br/>
-      <span style="font-size:12px;color:#999;">Lead Instructor: Isaac Salako</span>
-    </p>
-  </div>
-
-  <!-- Footer -->
-  <div style="background:#f8f8f8;border-top:1px solid #eee;padding:16px 24px;text-align:center;">
-    <p style="font-size:11px;color:#aaa;margin:0;">© ${year} SmartMathz. All rights reserved.</p>
-    <p style="font-size:11px;color:#aaa;margin:4px 0 0;">
-      <a href="https://smartmathz.com" style="color:#7FB509;text-decoration:none;">www.smartmathz.com</a>
-    </p>
-  </div>
-
-</div>
-</body>
-</html>
-      `,
+      subject: "Welcome to SmartMathz – Account Created",
+      content: "Welcome to SmartMathz! Your Test Portal account has been created. Log in at https://smartmathztest-taker.netlify.app/login",
+      html: studentHtml,
     });
+
+
 
     // ── 2. Admin notification ──────────────────────────────────────────────
     await client.send({

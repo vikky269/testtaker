@@ -323,6 +323,11 @@ const SectionTitle = ({ title }: { title: string }) => (
   <h3 className="text-[11px] font-bold uppercase tracking-widest text-[#3a5a09] mt-4 mb-1 border-b border-green-100 pb-1">{title}</h3>
 );
 
+
+const MENU_W = 190;
+
+
+
 // ── Main page ─────────────────────────────────────────────────────────────────
 export default function SubscriptionsPage() {
   const [subs, setSubs]         = useState<Subscription[]>([]);
@@ -331,6 +336,12 @@ export default function SubscriptionsPage() {
   const [search, setSearch]     = useState('');
   const [pkgFilter, setPkgFilter] = useState('All');
   const [selected, setSelected] = useState<Subscription | null>(null);
+
+
+  // Row action menu + delete flow
+  const [menu, setMenu] = useState<{ sub: Subscription; x: number; y: number } | null>(null);
+  const [deleteTarget, setDeleteTarget] = useState<Subscription | null>(null);
+  const [deleting, setDeleting] = useState(false);
 
   // Add enrollment modal state
   const [showAdd, setShowAdd]   = useState(false);
@@ -365,6 +376,54 @@ export default function SubscriptionsPage() {
     }
     setFiltered(out);
   }, [subs, search, pkgFilter]);
+
+
+
+    // Close the menu on any outside click or scroll
+  useEffect(() => {
+    if (!menu) return;
+    const close = () => setMenu(null);
+    document.addEventListener('click', close);
+    window.addEventListener('scroll', close, true);
+    return () => {
+      document.removeEventListener('click', close);
+      window.removeEventListener('scroll', close, true);
+    };
+  }, [menu]);
+
+  const openMenu = (e: React.MouseEvent, sub: Subscription) => {
+    e.stopPropagation();
+    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+    const MENU_H = 100; // 2-item menu
+    const openUp = rect.bottom + MENU_H > window.innerHeight - 8;
+    setMenu(prev => prev?.sub.id === sub.id ? null : {
+      sub,
+      x: Math.max(8, rect.right - MENU_W),
+      y: openUp ? rect.top - MENU_H - 6 : rect.bottom + 6,
+    });
+  };
+
+  const handleDelete = async () => {
+    if (!deleteTarget) return;
+    setDeleting(true);
+    const { data, error } = await supabase
+      .from('subscriptions').delete().eq('id', deleteTarget.id).select('id');
+    setDeleting(false);
+
+    if (error) {
+      console.error(error);
+      toast.error('Failed to delete. Check permissions and try again.');
+      return;
+    }
+    if (!data || data.length === 0) {
+      toast.error('Delete was blocked by a permissions rule — nothing was removed. Contact the developer.');
+      return;
+    }
+
+    toast.success(`${deleteTarget.student_first_name} ${deleteTarget.student_last_name}'s subscription deleted.`);
+    setSubs(prev => prev.filter(s => s.id !== deleteTarget.id));
+    setDeleteTarget(null);
+  };
 
   // ── Form helpers ───────────────────────────────────────────────────────────
   const setF  = (f: keyof FormData) => (e: React.ChangeEvent<HTMLInputElement|HTMLTextAreaElement>) =>
@@ -539,7 +598,7 @@ export default function SubscriptionsPage() {
           <table className="w-full text-sm border-collapse">
             <thead>
               <tr className="bg-gray-50 border-b border-gray-100">
-                {['#','STUDENT','GRADE','PARENT','PHONE','PACKAGE','START DATE','SUBMITTED','DETAILS'].map(h => (
+               {['#','STUDENT','GRADE','PARENT','PHONE','PACKAGE','START DATE','SUBMITTED','ACTIONS'].map(h => (
                   <th key={h} className="px-4 py-3 text-left text-[11px] font-medium uppercase tracking-wide text-gray-400 whitespace-nowrap">{h}</th>
                 ))}
               </tr>
@@ -572,10 +631,14 @@ export default function SubscriptionsPage() {
                   </td>
                   <td className="px-4 py-3 text-sm text-gray-600 whitespace-nowrap">{fmt(s.start_date)}</td>
                   <td className="px-4 py-3 text-xs text-gray-400 whitespace-nowrap">{fmt(s.created_at)}</td>
-                  <td className="px-4 py-3">
-                    <button onClick={() => setSelected(s)}
-                      className="text-xs font-semibold text-green-700 bg-green-50 hover:bg-green-100 px-3 py-1.5 rounded-lg cursor-pointer transition-colors">
-                      View →
+                                    <td className="px-4 py-3">
+                    <button onClick={e => openMenu(e, s)}
+                      className={`w-8 h-8 flex items-center justify-center rounded-lg cursor-pointer transition-colors
+                        ${menu?.sub.id === s.id ? 'bg-gray-100 text-gray-700' : 'text-gray-400 hover:text-gray-700 hover:bg-gray-100'}`}>
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                      </svg>
                     </button>
                   </td>
                 </tr>
@@ -818,6 +881,55 @@ export default function SubscriptionsPage() {
           </div>
         </div>
       )}
+
+            {/* ── Row action menu (fixed-position so the table can't clip it) ── */}
+      {menu && (
+        <div className="fixed z-[70] bg-white rounded-xl shadow-xl border border-gray-100 py-1.5"
+          style={{ left: menu.x, top: menu.y, width: MENU_W }}
+          onClick={e => e.stopPropagation()}>
+          <button onClick={() => { setSelected(menu.sub); setMenu(null); }}
+            className="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer">
+            👁️ View Details
+          </button>
+          <hr className="my-1 border-gray-100" />
+          <button onClick={() => { setDeleteTarget(menu.sub); setMenu(null); }}
+            className="w-full text-left px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 cursor-pointer">
+            🗑️ Delete
+          </button>
+        </div>
+      )}
+
+      {/* ── Delete confirmation modal ── */}
+      {deleteTarget && (
+        <div className="fixed inset-0 z-[80] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl shadow-2xl w-full max-w-sm p-6 text-center">
+            <div className="w-14 h-14 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-4">
+              <svg className="w-7 h-7 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                  d="M12 9v3.75m0 3.75h.008M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-bold text-gray-900 mb-1.5">Delete this subscription?</h3>
+            <p className="text-sm text-gray-500 mb-1">
+              You're about to permanently delete the enrollment for
+              <span className="font-semibold text-gray-800"> {deleteTarget.student_first_name} {deleteTarget.student_last_name}</span>
+              {' '}(parent: {deleteTarget.parent_first_name} {deleteTarget.parent_last_name}).
+            </p>
+            <p className="text-xs text-red-500 font-medium mb-5">This action cannot be undone.</p>
+            <div className="flex gap-3">
+              <button onClick={() => setDeleteTarget(null)}
+                className="flex-1 py-2.5 border border-gray-200 text-gray-600 text-sm font-semibold rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                Cancel
+              </button>
+              <button onClick={handleDelete} disabled={deleting}
+                className="flex-1 py-2.5 bg-red-500 hover:bg-red-600 text-white text-sm font-bold rounded-xl cursor-pointer transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
+                {deleting ? 'Deleting...' : 'Yes, Delete'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
 
       {/* ── Detail view modal (existing) ── */}
       {selected && (

@@ -2277,481 +2277,646 @@ export const quizAssessmentData: GradeLevelQuiz[] = [
       }
     ],
   },
-  {
-    grade: "10th-grade",
-    questions: [
-//       {
+//   {
+//     grade: "10th-grade",
+//     questions: [
+
+// {
 //         id: "q1",
-//         question: "What is the solution to the system of equations: 3x - 2y = 8 and 2x + y = 3?",
-//         options: ["(1, -1)", "(2, -1)", "(3, 2)", "(4, 1)"],
-//         correctAnswer: "(2, -1)",
-//         solution: `<p>
-// <strong>Step 1:</strong> From 2x + y = 3, get y = 3 − 2x.<br>
-// <strong>Step 2:</strong> Substitute into 3x − 2y = 8  <br> 3x − 2(3 − 2x) = 8 <br> 3x − 6 + 4x = 8 <br> 7x = 14<br> x = 14/7.<br> x =2.<br>
-// <strong>Step 3:</strong> Substitute x = 2 in  y = 3 - 2x <br>
-// <strong>Step 4:</strong> y = 3 − 2(2) = 3 - 4 = −1<br>
-// <strong>Solution for the system as written:</strong> (2, −1).<br>
-// <strong>Answer:</strong> (2, -1).</p>`
+//         question: "Solve for x: 3(x - 2) + 5 = 2x + 7",
+//         options: ["x = 6", "x = 8", "x = 4", "x = 9"],
+//         correctAnswer: "x = 8",
+//         solution: `<p><strong>Step 1:</strong> Distribute: 3x − 6 + 5 = 2x + 7 → 3x − 1 = 2x + 7.<br>
+// <strong>Step 2:</strong> Subtract 2x from both sides: x − 1 = 7.<br>
+// <strong>Step 3:</strong> Add 1: x = 8.<br>
+// <strong>Answer:</strong> x = 8.</p>`
 //       },
 //       {
 //         id: "q2",
-//         question: "What is the discriminant of the quadratic equation 2x² - 4x + 1 = 0?",
-//         options: ["8", "0", "4", "12"],
-//         correctAnswer: "8",
-//         solution: `<p><strong>Step 1:</strong> For ax² + bx + c, the discriminant is Δ = b² − 4ac.<br>
-// <strong>Step 2:</strong> a = 2, b = −4, c = 1 <br> Δ = (−4)² − 4(2)(1) = 16 − 8 = 8.<br>
-// <strong>Answer:</strong> 8.</p>`
+//         question: "Which expression is equivalent to (2x³y²)(3x⁴y)?",
+//         options: ["6x⁷y³", "5x⁷y³", "6x¹²y²", "6x⁷y²"],
+//         correctAnswer: "6x⁷y³",
+//         solution: `<p><strong>Step 1:</strong> Multiply coefficients: 2 × 3 = 6.<br>
+// <strong>Step 2:</strong> Add exponents on x: 3 + 4 = 7. Add exponents on y: 2 + 1 = 3.<br>
+// <strong>Answer:</strong> 6x⁷y³.</p>`
 //       },
 //       {
 //         id: "q3",
-//         question: "Which of the following functions represents exponential growth",
-//         options: ["y = 2x + 3", "y = 3x² - 1", "y = 5<sup>x<sup>", "y = <sup>x</sup>&frasl;<sub>2</sub>"],
-//         correctAnswer: "y = 5<sup>x<sup>",
-//         solution: `<p><strong>Step 1:</strong> Exponential growth has the variable in the exponent and base &gt; 1.<br>
-// <strong>Step 2:</strong> y = 5<sup>x</sup> matches this pattern (base 5 &gt; 1).<br>
-// <strong>Answer:</strong> y = 5<sup>x</sup>.</p>`
+//         question: "Solve the system: y = 2x - 1 and y = -x + 5",
+//         options: ["(1, 1)", "(2, 3)", "(2, 4)", "(3, 5)"],
+//         correctAnswer: "(2, 3)",
+//         solution: `<p><strong>Step 1:</strong> Set the expressions equal: 2x − 1 = −x + 5.<br>
+// <strong>Step 2:</strong> Add x: 3x − 1 = 5 → 3x = 6 → x = 2.<br>
+// <strong>Step 3:</strong> Substitute into y = 2x − 1: y = 2(2) − 1 = 3.<br>
+// <strong>Answer:</strong> (2, 3).</p>`
 //       },
 //       {
 //         id: "q4",
-//         question: "What is the domain of the function f(x) = √(x - 3)?",
-//         options: ["x ≥ 0", "x ≤ 3", "x > 3", "x ≥ 3"],
-//         correctAnswer: "x ≥ 3",
-//         solution: `<p><strong>Step 1:</strong> The radicand must be non-negative: x − 3 ≥ 0.<br>
-// <strong>Step 2:</strong> Therefore x ≥ 3.<br>
-// <strong>Answer:</strong> x ≥ 3.</p>`
+//         question: "Simplify: √50",
+//         options: ["5√2", "2√5", "10√5", "25√2"],
+//         correctAnswer: "5√2",
+//         solution: `<p><strong>Step 1:</strong> Factor 50 = 25 × 2.<br>
+// <strong>Step 2:</strong> √50 = √25 × √2 = 5√2.<br>
+// <strong>Answer:</strong> 5√2.</p>`
 //       },
 //       {
 //         id: "q5",
-//         question: "What is the value of sin(30°)?",
-//         options: ["0", "1", "1/2", "√3/2"],
-//         correctAnswer: "1/2",
-//         solution: `<p><strong>Step 1:</strong> From special angles, sin(30°) = 1/2.<br>
-// <strong>Answer:</strong> 1/2.</p>`
+//         question: "A cell phone plan costs $20 plus $0.10 per text message. Which equation models the total cost C for t texts?",
+//         options: ["C = 20 + 0.10t", "C = 0.10 + 20t", "C = 20t + 0.10", "C = 20 - 0.10t"],
+//         correctAnswer: "C = 20 + 0.10t",
+//         solution: `<p><strong>Step 1:</strong> The fixed cost ($20) doesn't depend on t, so it's the constant.<br>
+// <strong>Step 2:</strong> The per-text cost ($0.10) is multiplied by the number of texts, t.<br>
+// <strong>Answer:</strong> C = 20 + 0.10t.</p>`
 //       },
 //       {
 //         id: "q6",
-//         question: "What is the solution to |2x - 1| = 5?",
-//         options: ["x = 3 or x = -2", "x = 2 or x = -3", "x = 2 or x = -1", "x = 3 or x = 1"],
-//         correctAnswer: "x = 3 or x = -2",
-//         solution: `<p><strong>Step 1:</strong> Solve 2x − 1 = 5 <br> 2x = 6 <br> x = 3.<br>
-// <strong>Step 2:</strong> Solve 2x − 1 = −5 <br> 2x = −4 <br> x = −2.<br>
-// <strong>Answer:</strong> x = 3 or x = −2.</p>`
+//         question: "What are the solutions to x² - 5x + 6 = 0?",
+//         options: ["x = 2, 3", "x = -2, -3", "x = 1, 6", "x = -1, -6"],
+//         correctAnswer: "x = 2, 3",
+//         solution: `<p><strong>Step 1:</strong> Factor: x² − 5x + 6 = (x − 2)(x − 3).<br>
+// <strong>Step 2:</strong> Set each factor to 0: x − 2 = 0 → x = 2; x − 3 = 0 → x = 3.<br>
+// <strong>Answer:</strong> x = 2, 3.</p>`
 //       },
 //       {
 //         id: "q7",
-//         question: "Which of the following is a characteristic of a linear function?",
-//         options: ["Constant rate of change", "Variable exponents", "No y-intercept", "Curved graph"],
-//         correctAnswer: "Constant rate of change",
-//         solution: `<p><strong>Step 1:</strong> Linear functions have the form y = mx + b.<br>
-// <strong>Step 2:</strong> Their key feature is a <em>constant</em> rate of change (slope m).<br>
-// <strong>Answer:</strong> Constant rate of change.</p>`
+//         question: "Which function represents exponential decay?",
+//         options: ["y = 3(1.5)ˣ", "y = 3(0.5)ˣ", "y = 3x + 2", "y = 3x²"],
+//         correctAnswer: "y = 3(0.5)ˣ",
+//         solution: `<p><strong>Step 1:</strong> Exponential decay has the form y = a(b)ˣ where 0 &lt; b &lt; 1.<br>
+// <strong>Step 2:</strong> Here, b = 0.5, which is between 0 and 1, so this represents decay.<br>
+// <strong>Answer:</strong> y = 3(0.5)ˣ.</p>`
 //       },
 //       {
 //         id: "q8",
-//         question: "The volume of a cylinder is given by V = πr²h. What is the volume when r = 3 and h = 4?",
-//         options: ["36π", "27π", "12π", "48π"],
-//         correctAnswer: "36π",
-//         solution: `<p><strong>Step 1:</strong> Use V = πr²h.<br>
-// <strong>Step 2:</strong> r = 3 <br> r² = 9; <br> h = 4 <br> V = π(9)(4) = 36π.<br>
-// <strong>Answer:</strong> 36π.</p>`
+//         question: "Solve using the quadratic formula: x² + 4x + 5 = 0",
+//         options: ["x = -2 ± i", "x = 2 ± i", "x = -2 ± 2i", "x = 4 ± i"],
+//         correctAnswer: "x = -2 ± i",
+//         solution: `<p><strong>Step 1:</strong> a = 1, b = 4, c = 5. x = (−b ± √(b² − 4ac)) / 2a.<br>
+// <strong>Step 2:</strong> Discriminant = 16 − 20 = −4.<br>
+// <strong>Step 3:</strong> √(−4) = 2i. So x = (−4 ± 2i) / 2 = −2 ± i.<br>
+// <strong>Answer:</strong> x = -2 ± i.</p>`
 //       },
 //       {
 //         id: "q9",
-//         question: "What transformation occurs to the graph of y = x² if we graph y = (x - 2)² + 3?",
-//         options: ["Shift right 2, up 3", "Shift left 2, up 3", "Shift right 2, down 3", "Shift left 2, down 3"],
-//         correctAnswer: "Shift right 2, up 3",
-//         solution: `<p><strong>Step 1:</strong> (x − 2) shifts the graph right by 2.<br>
-// <strong>Step 2:</strong> +3 shifts the graph up by 3.<br>
-// <strong>Answer:</strong> Shift right 2, up 3.</p>`
+//         question: "Divide: (x³ - 8) ÷ (x - 2)",
+//         options: ["x² + 2x + 4", "x² - 2x + 4", "x² + 4x + 4", "x² - 4x - 4"],
+//         correctAnswer: "x² + 2x + 4",
+//         solution: `<p><strong>Step 1:</strong> x³ − 8 is a difference of cubes: a³ − b³ = (a − b)(a² + ab + b²), with a = x, b = 2.<br>
+// <strong>Step 2:</strong> x³ − 8 = (x − 2)(x² + 2x + 4).<br>
+// <strong>Step 3:</strong> Dividing by (x − 2) leaves x² + 2x + 4.<br>
+// <strong>Answer:</strong> x² + 2x + 4.</p>`
 //       },
 //       {
 //         id: "q10",
-//         question: "A line passes through points (1,2) and (3,6). What is its slope?",
-//         options: ["1", "2", "3", "4"],
-//         correctAnswer: "2",
-//         solution: `<p><strong>Step 1:</strong> Use slope formula m = (y₂ − y₁)/(x₂ − x₁).<br>
-// <strong>Step 2:</strong> m = (6 − 2)/(3 − 1) = 4/2 = 2.<br>
-// <strong>Answer:</strong> 2.</p>`
+//         question: "If f(x) = 2x + 3, what is f⁻¹(x)?",
+//         options: ["f⁻¹(x) = (x - 3)/2", "f⁻¹(x) = (x + 3)/2", "f⁻¹(x) = 2x - 3", "f⁻¹(x) = (x - 2)/3"],
+//         correctAnswer: "f⁻¹(x) = (x - 3)/2",
+//         solution: `<p><strong>Step 1:</strong> Set y = 2x + 3, then swap x and y: x = 2y + 3.<br>
+// <strong>Step 2:</strong> Solve for y: x − 3 = 2y → y = (x − 3)/2.<br>
+// <strong>Answer:</strong> f⁻¹(x) = (x - 3)/2.</p>`
 //       },
-{
+//       {
+//         id: "q11",
+//         question: "Which sentence contains an example of a metaphor?",
+//         options: [
+//           "The clouds were like cotton candy.",
+//           "The thunder roared angrily.",
+//           "Time is a thief.",
+//           "He ran as fast as lightning."
+//         ],
+//         correctAnswer: "Time is a thief.",
+//         solution: "<p>A <b>metaphor</b> directly compares two unlike things without using 'like' or 'as'. 'Time is a thief' compares time to a thief, suggesting it steals moments from our lives.</p>"
+//       },
+//       {
+//         id: "q12",
+//         question: "What is the central theme of George Orwell’s 'Animal Farm'?",
+//         options: [
+//           "Animal behavior",
+//           "The corrupting influence of power",
+//           "Environmental justice",
+//           "Rural life in England"
+//         ],
+//         correctAnswer: "The corrupting influence of power",
+//         solution: "<p>'<b>Animal Farm</b>' by George Orwell shows how those in power can become corrupt and abuse authority, especially through the actions of the pigs who take control.</p>"
+//       },
+//       {
+//         id: "q13",
+//         question: "What is the purpose of a counterclaim in argumentative writing?",
+//         options: [
+//           "To confuse the reader",
+//           "To introduce a new topic",
+//           "To acknowledge opposing views",
+//           "To restate the claim"
+//         ],
+//         correctAnswer: "To acknowledge opposing views",
+//         solution: "<p>A <b>counterclaim</b> presents the opposing viewpoint. Addressing it strengthens an argument by showing awareness of other perspectives and responding to them logically.</p>"
+//       },
+//       {
+//         id: "q14",
+//         question: "Which of the following best describes the tone of the narrator in 'Of Mice and Men'?",
+//         options: ["Sarcastic", "Hopeful", "Objective", "Jubilant"],
+//         correctAnswer: "Objective",
+//         solution: "<p>The narrator in '<b>Of Mice and Men</b>' presents events in a <b>neutral and objective</b> manner, describing actions and dialogue without strong personal judgment.</p>"
+//       },
+//       {
+//         id: "q15",
+//         question: "What does the word 'elated' most likely mean in the sentence: <br> 'She was elated when she heard the good news'?",
+//         options: ["Sad", "Joyful", "Angry", "Nervous"],
+//         correctAnswer: "Joyful",
+//         solution: "<p>The context mentions <b>good news</b>, which suggests a positive emotion. 'Elated' means extremely <b>happy or joyful</b>.</p>"
+//       },
+//       {
+//         id: "q16",
+//         question: "What is the main function of a thesis statement in an essay?",
+//         options: [
+//           "To introduce the conclusion",
+//           "To provide background information",
+//           "To state the main argument",
+//           "To list the sources"
+//         ],
+//         correctAnswer: "To state the main argument",
+//         solution: "<p>A <b>thesis statement</b> clearly presents the writer’s main argument or central idea, guiding the direction of the entire essay.</p>"
+//       },
+//       {
+//         id: "q17",
+//         question: "In literature, what is foreshadowing?",
+//         options: [
+//           "A hint of what is to come",
+//           "A detailed character analysis",
+//           "A flashback to earlier events",
+//           "A summary of the story"
+//         ],
+//         correctAnswer: "A hint of what is to come",
+//         solution: "<p><b>Foreshadowing</b> is when an author gives clues or hints about events that will happen later in the story.</p>"
+//       },
+//       {
+//         id: "q18",
+//         question: "Which sentence uses correct parallel structure?",
+//         options: [
+//           "She likes reading, to swim, and biking.",
+//           "He enjoys running, jumping, and to swim.",
+//           "They like to hike, to bike, and to swim.",
+//           "We went shopping, to the movies, and ate dinner."
+//         ],
+//         correctAnswer: "They like to hike, to bike, and to swim.",
+//         solution: "<p><b>Parallel structure</b> means using the same grammatical form. 'To hike, to bike, and to swim' all follow the same pattern, making the sentence correct.</p>"
+//       },
+//       {
+//         id: "q19",
+//         question: "Which figure of speech is used in the sentence: <br> 'The wind whispered through the trees'?",
+//         options: ["Metaphor", "Simile", "Hyperbole", "Personification"],
+//         correctAnswer: "Personification",
+//         solution: "<p><b>Personification</b> gives human qualities to non-human things. The wind 'whispering' is a human action, so this is personification.</p>"
+//       },
+//       {
+//         id: "q20",
+//         question: "What is the point of view in 'The Great Gatsby'?",
+//         options: ["First person", "Second person", "Third-person limited", "Omniscient"],
+//         correctAnswer: "First person",
+//         solution: "<p>'<b>The Great Gatsby</b>' is narrated by Nick Carraway using 'I', which makes it a <b>first-person point of view</b>.</p>"
+//       },
+//       // {
+//       //   id: "q21",
+//       //   question: "Which statement best explains why enzymes lose activity at extremely high temperatures?",
+//       //   options: [
+//       //     "The enzyme runs out of substrate",
+//       //     "The enzyme’s active site changes shape due to denaturation",
+//       //     "The enzyme becomes more selective",
+//       //     "The enzyme increases reaction speed uncontrollably"
+//       //   ],
+//       //   correctAnswer: "The enzyme’s active site changes shape due to denaturation",
+//       //   solution: "<p>At high temperatures, enzymes <b>denature</b>, meaning their structure changes. This alters the <b>active site</b>, preventing the substrate from binding properly and reducing enzyme activity.</p>"
+//       // },
+//       // {
+//       //   id: "q22",
+//       //   question: "What is the molarity of a solution containing 2 moles of NaCl dissolved in 0.5 liters of water?",
+//       //   options: ["0.25 M", "1.0 M", "2.0 M", "4.0 M"],
+//       //   correctAnswer: "4.0 M",
+//       //   solution: "<p>Molarity = moles ÷ volume = <b>2 ÷ 0.5 = 4.0 M</b>. Therefore, the correct answer is 4.0 M.</p>"
+//       // },
+//       // {
+//       //   id: "q23",
+//       //   question: "A car accelerates from rest at a constant rate of 3 m/s². What is its velocity after 5 seconds?",
+//       //   options: ["8 m/s", "10 m/s", "15 m/s", "25 m/s"],
+//       //   correctAnswer: "15 m/s",
+//       //   solution: "<p>Using the formula <b>v = u + at</b>: initial velocity (u) = 0, acceleration (a) = 3 m/s², time (t) = 5 s. So, v = 0 + (3 × 5) = <b>15 m/s</b>.</p>"
+//       // },
+//       // {
+//       //   id: "q24",
+//       //   question: "Which of the following best describes the role of mRNA during protein synthesis?",
+//       //   options: [
+//       //     "It transports amino acids to the ribosome",
+//       //     "It copies genetic information from DNA and carries it to the ribosome",
+//       //     "It forms the ribosome structure",
+//       //     "It breaks down proteins"
+//       //   ],
+//       //   correctAnswer: "It copies genetic information from DNA and carries it to the ribosome",
+//       //   solution: "<p>mRNA is responsible for <b>transcribing genetic information from DNA</b> and carrying it to the ribosome, where proteins are synthesized.</p>"
+//       // },
+//       // {
+//       //   id: "q25",
+//       //   question: "According to the Law of Conservation of Mass, what must be true during a chemical reaction?",
+//       //   options: [
+//       //     "Energy is always lost",
+//       //     "The mass of reactants equals the mass of products",
+//       //     "New atoms are created",
+//       //     "Volume must remain constant"
+//       //   ],
+//       //   correctAnswer: "The mass of reactants equals the mass of products",
+//       //   solution: "<p>The Law of Conservation of Mass states that <b>mass cannot be created or destroyed</b>. Therefore, the total mass of reactants must equal the total mass of products.</p>"
+//       // },
+//       // {
+//       //   id: "q26",
+//       //   question: "Which of the following best explains why increasing surface area speeds up a chemical reaction?",
+//       //   options: [
+//       //     "It decreases activation energy",
+//       //     "It allows more particles to collide effectively",
+//       //     "It increases temperature",
+//       //     "It changes the chemical properties"
+//       //   ],
+//       //   correctAnswer: "It allows more particles to collide effectively",
+//       //   solution: "<p>Increasing surface area exposes more particles, leading to <b>more frequent and effective collisions</b>, which increases the reaction rate.</p>"
+//       // },
+//       // {
+//       //   id: "q27",
+//       //   question: "What happens to the gravitational force between two objects if the distance between them is doubled?",
+//       //   options: [
+//       //     "It doubles",
+//       //     "It halves",
+//       //     "It becomes four times smaller",
+//       //     "It remains the same"
+//       //   ],
+//       //   correctAnswer: "It becomes four times smaller",
+//       //   solution: "<p>Gravitational force follows an <b>inverse square law</b>. If distance is doubled, force becomes 1/(2²) = <b>1/4 of the original</b>, meaning four times smaller.</p>"
+//       // },
+//       // {
+//       //   id: "q28",
+//       //   question: "Which of the following processes is primarily responsible for the movement of tectonic plates?",
+//       //   options: [
+//       //     "Earth’s rotation",
+//       //     "Convection currents in the mantle",
+//       //     "Ocean tides",
+//       //     "Solar radiation"
+//       //   ],
+//       //   correctAnswer: "Convection currents in the mantle",
+//       //   solution: "<p>Tectonic plates move due to <b>convection currents in the mantle</b>, where hot material rises and cooler material sinks, creating movement.</p>"
+//       // },
+//       // {
+//       //   id: "q29",
+//       //   question: "In an ecosystem, which trophic level contains the greatest amount of available energy?",
+//       //   options: [
+//       //     "Primary consumers",
+//       //     "Secondary consumers",
+//       //     "Producers",
+//       //     "Tertiary consumers"
+//       //   ],
+//       //   correctAnswer: "Producers",
+//       //   solution: "<p><b>Producers</b> (plants) capture energy directly from the sun, so they contain the <b>highest amount of energy</b> in the food chain.</p>"
+//       // },
+//       // {
+//       //   id: "q30",
+//       //   question: "Which of the following best describes a covalent bond?",
+//       //   options: [
+//       //     "Transfer of electrons between atoms",
+//       //     "Sharing of electrons between atoms",
+//       //     "Attraction between ions",
+//       //     "Interaction between protons"
+//       //   ],
+//       //   correctAnswer: "Sharing of electrons between atoms",
+//       //   solution: "<p>A <b>covalent bond</b> forms when atoms <b>share electrons</b> to achieve a stable electron configuration.</p>"
+//       // },
+
+//             // ── NEW: Science — Biology (5) + Chemistry (5), NGSS-aligned ─────────
+//       {
+//         id: "q21",
+//         question: "Which structure is the site of protein synthesis in a cell?",
+//         options: ["Ribosome", "Mitochondria", "Golgi apparatus", "Lysosome"],
+//         correctAnswer: "Ribosome",
+//         solution: "<p>The <b>ribosome</b> reads mRNA and links amino acids together to build proteins — this process is called translation.</p>"
+//       },
+//       {
+//         id: "q22",
+//         question: "A dominant allele (B) and recessive allele (b) control seed color. What is the expected phenotype ratio from a cross between two heterozygous (Bb) parents?",
+//         options: ["1:1", "3:1", "1:2:1", "9:3:3:1"],
+//         correctAnswer: "3:1",
+//         solution: "<p>A Bb × Bb cross produces genotypes BB, Bb, Bb, bb (1:2:1). Since B is dominant, BB and Bb both show the dominant phenotype, giving a <b>3:1</b> dominant-to-recessive phenotype ratio.</p>"
+//       },
+//       {
+//         id: "q23",
+//         question: "Which best describes the relationship between two species where one benefits and the other is unaffected?",
+//         options: ["Mutualism", "Parasitism", "Commensalism", "Competition"],
+//         correctAnswer: "Commensalism",
+//         solution: "<p>In <b>commensalism</b>, one organism benefits while the other is neither helped nor harmed — for example, barnacles attaching to a whale.</p>"
+//       },
+//       {
+//         id: "q24",
+//         question: "Natural selection acts most directly on an organism's:",
+//         options: ["Genotype", "Phenotype", "Genome size", "Chromosome number"],
+//         correctAnswer: "Phenotype",
+//         solution: "<p>Natural selection acts on observable traits — the <b>phenotype</b> — because that's what interacts with the environment and affects survival and reproduction.</p>"
+//       },
+//       {
+//         id: "q25",
+//         question: "Which process directly increases genetic variation within a sexually reproducing population?",
+//         options: ["Mitosis", "Crossing over during meiosis", "Binary fission", "Cellular respiration"],
+//         correctAnswer: "Crossing over during meiosis",
+//         solution: "<p><b>Crossing over</b> during meiosis exchanges genetic material between homologous chromosomes, creating new combinations of alleles and increasing genetic variation.</p>"
+//       },
+//       {
+//         id: "q26",
+//         question: "How many moles of oxygen (O₂) are needed to completely react with 2 moles of hydrogen gas in the reaction 2H₂ + O₂ → 2H₂O?",
+//         options: ["0.5", "1", "2", "4"],
+//         correctAnswer: "1",
+//         solution: "<p>The balanced equation shows a 2:1 ratio of H₂ to O₂. For 2 moles of H₂, only <b>1 mole of O₂</b> is needed.</p>"
+//       },
+//       {
+//         id: "q27",
+//         question: "Which type of bond forms when sodium (Na) transfers an electron to chlorine (Cl)?",
+//         options: ["Covalent bond", "Ionic bond", "Metallic bond", "Hydrogen bond"],
+//         correctAnswer: "Ionic bond",
+//         solution: "<p>When electrons are <b>transferred</b> rather than shared, the resulting attraction between the oppositely charged ions is an <b>ionic bond</b>, as in NaCl.</p>"
+//       },
+//       {
+//         id: "q28",
+//         question: "A solution has a pH of 3. What can be concluded about this solution?",
+//         options: ["It is strongly basic", "It is neutral", "It is acidic", "It has no hydrogen ions"],
+//         correctAnswer: "It is acidic",
+//         solution: "<p>The pH scale runs 0–14, with 7 as neutral. A pH of <b>3 is well below 7</b>, indicating a fairly strong acid.</p>"
+//       },
+//       {
+//         id: "q29",
+//         question: "Which factor, if increased, generally increases the rate of a chemical reaction?",
+//         options: ["Decreasing temperature", "Decreasing concentration of reactants", "Increasing temperature", "Removing the catalyst"],
+//         correctAnswer: "Increasing temperature",
+//         solution: "<p>Higher temperature gives particles more kinetic energy, causing <b>more frequent and more energetic collisions</b>, which increases reaction rate.</p>"
+//       },
+//       {
+//         id: "q30",
+//         question: "An atom has 17 protons and 18 neutrons. What is its mass number?",
+//         options: ["17", "18", "35", "1"],
+//         correctAnswer: "35",
+//         solution: "<p>Mass number = protons + neutrons = 17 + 18 = <b>35</b>.</p>"
+//       },
+
+//     ],
+//   },
+
+  {
+    grade: "10th-grade",
+    questions: [
+
+      // ── MATH (q1–q10) — Algebra II level, harder ─────────────────────────
+      {
         id: "q1",
-        question: "Solve for x: 3(x - 2) + 5 = 2x + 7",
-        options: ["x = 6", "x = 8", "x = 4", "x = 9"],
-        correctAnswer: "x = 8",
-        solution: `<p><strong>Step 1:</strong> Distribute: 3x − 6 + 5 = 2x + 7 → 3x − 1 = 2x + 7.<br>
-<strong>Step 2:</strong> Subtract 2x from both sides: x − 1 = 7.<br>
-<strong>Step 3:</strong> Add 1: x = 8.<br>
-<strong>Answer:</strong> x = 8.</p>`
+        question: `<img src="https://res.cloudinary.com/dhoecxgs7/image/upload/v1791430112/grade10_q1_diinro.png" alt="Solve for x: (2x - 1)/3 + (x + 2)/4 = 2" style="max-width:100%" />`,
+        options: ["x = 3", "x = 1", "x = 2", "x = 4"],
+        correctAnswer: "x = 2",
+        solution: `<p><strong>Step 1:</strong> Multiply every term by the LCD, 12: 4(2x − 1) + 3(x + 2) = 24.<br>
+<strong>Step 2:</strong> Distribute: 8x − 4 + 3x + 6 = 24 → 11x + 2 = 24.<br>
+<strong>Step 3:</strong> 11x = 22 → x = 2.<br>
+<strong>Check:</strong> (4 − 1)/3 + (2 + 2)/4 = 1 + 1 = 2 ✓.<br>
+<strong>Answer:</strong> x = 2.</p>`
       },
       {
         id: "q2",
-        question: "Which expression is equivalent to (2x³y²)(3x⁴y)?",
-        options: ["6x⁷y³", "5x⁷y³", "6x¹²y²", "6x⁷y²"],
-        correctAnswer: "6x⁷y³",
-        solution: `<p><strong>Step 1:</strong> Multiply coefficients: 2 × 3 = 6.<br>
-<strong>Step 2:</strong> Add exponents on x: 3 + 4 = 7. Add exponents on y: 2 + 1 = 3.<br>
-<strong>Answer:</strong> 6x⁷y³.</p>`
+        question: `<img src="https://res.cloudinary.com/dhoecxgs7/image/upload/v1791431271/grade10_q2_hvapjo.png" alt="Find all solutions of the system: y = x² - 4x + 3 and y = x - 1" style="max-width:100%" />`,
+        options: ["(1, 0) and (3, 2)", "(1, 0) and (4, 3)", "(2, -1) and (4, 3)", "(0, -1) and (5, 4)"],
+        correctAnswer: "(1, 0) and (4, 3)",
+        solution: `<p><strong>Step 1:</strong> Set the expressions equal: x² − 4x + 3 = x − 1.<br>
+<strong>Step 2:</strong> Move everything to one side: x² − 5x + 4 = 0 → (x − 1)(x − 4) = 0.<br>
+<strong>Step 3:</strong> x = 1 or x = 4. Using y = x − 1: y = 0 and y = 3.<br>
+<strong>Answer:</strong> (1, 0) and (4, 3).</p>`
       },
       {
         id: "q3",
-        question: "Solve the system: y = 2x - 1 and y = -x + 5",
-        options: ["(1, 1)", "(2, 3)", "(2, 4)", "(3, 5)"],
-        correctAnswer: "(2, 3)",
-        solution: `<p><strong>Step 1:</strong> Set the expressions equal: 2x − 1 = −x + 5.<br>
-<strong>Step 2:</strong> Add x: 3x − 1 = 5 → 3x = 6 → x = 2.<br>
-<strong>Step 3:</strong> Substitute into y = 2x − 1: y = 2(2) − 1 = 3.<br>
-<strong>Answer:</strong> (2, 3).</p>`
+        question: `<img src="https://res.cloudinary.com/dhoecxgs7/image/upload/v1791431271/grade10_q3_tc74xi.png" alt="The height of a ball in feet is modeled by h(t) = -16t² + 64t + 5, where t is time in seconds. What is the maximum height of the ball?" style="max-width:100%" />`,
+        options: ["53 ft", "64 ft", "85 ft", "69 ft"],
+        correctAnswer: "69 ft",
+        solution: `<p><strong>Step 1:</strong> The maximum of a downward parabola is at its vertex: t = −b/(2a) = −64/(2 × −16) = 2 seconds.<br>
+<strong>Step 2:</strong> h(2) = −16(4) + 64(2) + 5 = −64 + 128 + 5 = 69.<br>
+<strong>Answer:</strong> 69 ft.</p>`
       },
       {
         id: "q4",
-        question: "Simplify: √50",
-        options: ["5√2", "2√5", "10√5", "25√2"],
-        correctAnswer: "5√2",
-        solution: `<p><strong>Step 1:</strong> Factor 50 = 25 × 2.<br>
-<strong>Step 2:</strong> √50 = √25 × √2 = 5√2.<br>
-<strong>Answer:</strong> 5√2.</p>`
+        question: `<img src="https://res.cloudinary.com/dhoecxgs7/image/upload/v1791431271/grade10_q4_azf0eu.png" alt="Simplify: (3 + 2i)(1 - 4i), where i² = -1" style="max-width:100%" />`,
+        options: ["-5 - 10i", "11 + 10i", "11 - 10i", "-5 + 14i"],
+        correctAnswer: "11 - 10i",
+        solution: `<p><strong>Step 1:</strong> FOIL: 3(1) + 3(−4i) + 2i(1) + 2i(−4i) = 3 − 12i + 2i − 8i².<br>
+<strong>Step 2:</strong> Replace i² with −1: −8i² = +8. Combine: 3 + 8 − 10i = 11 − 10i.<br>
+<strong>Answer:</strong> 11 - 10i.</p>`
       },
       {
         id: "q5",
-        question: "A cell phone plan costs $20 plus $0.10 per text message. Which equation models the total cost C for t texts?",
-        options: ["C = 20 + 0.10t", "C = 0.10 + 20t", "C = 20t + 0.10", "C = 20 - 0.10t"],
-        correctAnswer: "C = 20 + 0.10t",
-        solution: `<p><strong>Step 1:</strong> The fixed cost ($20) doesn't depend on t, so it's the constant.<br>
-<strong>Step 2:</strong> The per-text cost ($0.10) is multiplied by the number of texts, t.<br>
-<strong>Answer:</strong> C = 20 + 0.10t.</p>`
+        question: `<img src="https://res.cloudinary.com/dhoecxgs7/image/upload/v1791431271/grade10_q5_lsawp9.png" alt="Solve: log base 2 of x + log base 2 of (x - 2) = 3" style="max-width:100%" />`,
+        options: ["x = 4 and x = -2", "x = 4", "x = 8", "x = -2"],
+        correctAnswer: "x = 4",
+        solution: `<p><strong>Step 1:</strong> Combine the logs: log₂[x(x − 2)] = 3 → x(x − 2) = 2³ = 8.<br>
+<strong>Step 2:</strong> x² − 2x − 8 = 0 → (x − 4)(x + 2) = 0 → x = 4 or x = −2.<br>
+<strong>Step 3:</strong> Both x and x − 2 must be positive inside a logarithm, so x = −2 is extraneous.<br>
+<strong>Answer:</strong> x = 4.</p>`
       },
       {
         id: "q6",
-        question: "What are the solutions to x² - 5x + 6 = 0?",
-        options: ["x = 2, 3", "x = -2, -3", "x = 1, 6", "x = -1, -6"],
-        correctAnswer: "x = 2, 3",
-        solution: `<p><strong>Step 1:</strong> Factor: x² − 5x + 6 = (x − 2)(x − 3).<br>
-<strong>Step 2:</strong> Set each factor to 0: x − 2 = 0 → x = 2; x − 3 = 0 → x = 3.<br>
-<strong>Answer:</strong> x = 2, 3.</p>`
+        question: `<img src="https://res.cloudinary.com/dhoecxgs7/image/upload/v1791430304/grade10_q6_wcrccv.png" alt="Simplify the rational expression: (x² - 9)/(x² + x - 6)" style="max-width:100%" />`,
+        options: ["(x + 3)/(x - 2)", "(x - 3)/(x + 2)", "(x - 3)/(x - 2)", "(x + 3)/(x + 2)"],
+        correctAnswer: "(x - 3)/(x - 2)",
+        solution: `<p><strong>Step 1:</strong> Factor the numerator (difference of squares): x² − 9 = (x − 3)(x + 3).<br>
+<strong>Step 2:</strong> Factor the denominator: x² + x − 6 = (x + 3)(x − 2).<br>
+<strong>Step 3:</strong> Cancel the common factor (x + 3): (x − 3)/(x − 2), with x ≠ −3 and x ≠ 2.<br>
+<strong>Answer:</strong> (x - 3)/(x - 2).</p>`
       },
       {
         id: "q7",
-        question: "Which function represents exponential decay?",
-        options: ["y = 3(1.5)ˣ", "y = 3(0.5)ˣ", "y = 3x + 2", "y = 3x²"],
-        correctAnswer: "y = 3(0.5)ˣ",
-        solution: `<p><strong>Step 1:</strong> Exponential decay has the form y = a(b)ˣ where 0 &lt; b &lt; 1.<br>
-<strong>Step 2:</strong> Here, b = 0.5, which is between 0 and 1, so this represents decay.<br>
-<strong>Answer:</strong> y = 3(0.5)ˣ.</p>`
+        question: `<img src="https://res.cloudinary.com/dhoecxgs7/image/upload/v1791431272/grade10_q7_ggumcj.png" alt="A bacteria culture starts with 500 bacteria and doubles every 3 hours. Which function models the population P after t hours?" style="max-width:100%" />`,
+        options: [
+          "P = 500(2)<sup>3t</sup>",
+          "P = 500(2)<sup>t/3</sup>",
+          "P = 500(3)<sup>t/2</sup>",
+          "P = 1500t"
+        ],
+        correctAnswer: "P = 500(2)<sup>t/3</sup>",
+        solution: `<p><strong>Step 1:</strong> Exponential growth has the form P = P₀(b)^(t/d), where b is the growth factor and d is the time for one growth period.<br>
+<strong>Step 2:</strong> The population doubles (b = 2) every 3 hours (d = 3), starting from P₀ = 500.<br>
+<strong>Answer:</strong> P = 500(2)<sup>t/3</sup>.</p>`
       },
       {
         id: "q8",
-        question: "Solve using the quadratic formula: x² + 4x + 5 = 0",
-        options: ["x = -2 ± i", "x = 2 ± i", "x = -2 ± 2i", "x = 4 ± i"],
-        correctAnswer: "x = -2 ± i",
-        solution: `<p><strong>Step 1:</strong> a = 1, b = 4, c = 5. x = (−b ± √(b² − 4ac)) / 2a.<br>
-<strong>Step 2:</strong> Discriminant = 16 − 20 = −4.<br>
-<strong>Step 3:</strong> √(−4) = 2i. So x = (−4 ± 2i) / 2 = −2 ± i.<br>
-<strong>Answer:</strong> x = -2 ± i.</p>`
+        question: `<img src="https://res.cloudinary.com/dhoecxgs7/image/upload/v1791431270/grade10_q8_zv31za.png" alt="If f(x) = 2x + 1 and g(x) = x² - 3, what is f(g(x))?" style="max-width:100%" />`,
+        options: ["2x² + 1", "2x² - 5", "4x² + 4x - 2", "2x² - 2"],
+        correctAnswer: "2x² - 5",
+        solution: `<p><strong>Step 1:</strong> f(g(x)) means put g(x) inside f: f(x² − 3).<br>
+<strong>Step 2:</strong> f(x² − 3) = 2(x² − 3) + 1 = 2x² − 6 + 1 = 2x² − 5.<br>
+<strong>Note:</strong> 4x² + 4x − 2 is g(f(x)), the composition in the opposite order.<br>
+<strong>Answer:</strong> 2x² - 5.</p>`
       },
       {
         id: "q9",
-        question: "Divide: (x³ - 8) ÷ (x - 2)",
-        options: ["x² + 2x + 4", "x² - 2x + 4", "x² + 4x + 4", "x² - 4x - 4"],
-        correctAnswer: "x² + 2x + 4",
-        solution: `<p><strong>Step 1:</strong> x³ − 8 is a difference of cubes: a³ − b³ = (a − b)(a² + ab + b²), with a = x, b = 2.<br>
-<strong>Step 2:</strong> x³ − 8 = (x − 2)(x² + 2x + 4).<br>
-<strong>Step 3:</strong> Dividing by (x − 2) leaves x² + 2x + 4.<br>
-<strong>Answer:</strong> x² + 2x + 4.</p>`
+        question: `<img src="https://res.cloudinary.com/dhoecxgs7/image/upload/v1791431271/grade10_q9_krncha.png" alt="In right triangle ABC, the right angle is at C, AC = 8, and BC = 15. What is sin A?" style="max-width:100%" />`,
+        options: ["8/17", "8/15", "15/17", "17/15"],
+        correctAnswer: "15/17",
+        solution: `<p><strong>Step 1:</strong> Find the hypotenuse: AB = √(8² + 15²) = √289 = 17.<br>
+<strong>Step 2:</strong> sin A = opposite ÷ hypotenuse. The side opposite angle A is BC = 15.<br>
+<strong>Answer:</strong> 15/17.</p>`
       },
       {
         id: "q10",
-        question: "If f(x) = 2x + 3, what is f⁻¹(x)?",
-        options: ["f⁻¹(x) = (x - 3)/2", "f⁻¹(x) = (x + 3)/2", "f⁻¹(x) = 2x - 3", "f⁻¹(x) = (x - 2)/3"],
-        correctAnswer: "f⁻¹(x) = (x - 3)/2",
-        solution: `<p><strong>Step 1:</strong> Set y = 2x + 3, then swap x and y: x = 2y + 3.<br>
-<strong>Step 2:</strong> Solve for y: x − 3 = 2y → y = (x − 3)/2.<br>
-<strong>Answer:</strong> f⁻¹(x) = (x - 3)/2.</p>`
+        question: `<img src="https://res.cloudinary.com/dhoecxgs7/image/upload/v1791431271/grade10_q10_vy8m9w.png" alt="For what positive value of k does x² + kx + 9 = 0 have exactly one real solution?" style="max-width:100%" />`,
+        options: ["k = 3", "k = 9", "k = 18", "k = 6"],
+        correctAnswer: "k = 6",
+        solution: `<p><strong>Step 1:</strong> A quadratic has exactly one real solution when its discriminant is 0: b² − 4ac = 0.<br>
+<strong>Step 2:</strong> k² − 4(1)(9) = 0 → k² = 36 → k = ±6.<br>
+<strong>Step 3:</strong> The question asks for the positive value, so k = 6.<br>
+<strong>Answer:</strong> k = 6.</p>`
       },
+
+      // ── ELA (q11–q20) — intermediate 10th-grade, self-contained (no outside books needed) ──
       {
         id: "q11",
-        question: "Which sentence contains an example of a metaphor?",
-        options: [
-          "The clouds were like cotton candy.",
-          "The thunder roared angrily.",
-          "Time is a thief.",
-          "He ran as fast as lightning."
-        ],
-        correctAnswer: "Time is a thief.",
-        solution: "<p>A <b>metaphor</b> directly compares two unlike things without using 'like' or 'as'. 'Time is a thief' compares time to a thief, suggesting it steals moments from our lives.</p>"
+        question: "Read the sentence below.<blockquote style='margin:8px 0;padding-left:12px;border-left:3px solid #7FB509;font-style:italic'>The city was a beehive at noon, humming with people who never stopped moving.</blockquote>Which figure of speech is used?",
+        options: ["Simile", "Hyperbole", "Metaphor", "Alliteration"],
+        correctAnswer: "Metaphor",
+        solution: "<p>The city is directly compared to a beehive <b>without using 'like' or 'as'</b>, so this is a <b>metaphor</b>. A simile would say the city was <i>like</i> a beehive.</p>"
       },
       {
         id: "q12",
-        question: "What is the central theme of George Orwell’s 'Animal Farm'?",
-        options: [
-          "Animal behavior",
-          "The corrupting influence of power",
-          "Environmental justice",
-          "Rural life in England"
-        ],
-        correctAnswer: "The corrupting influence of power",
-        solution: "<p>'<b>Animal Farm</b>' by George Orwell shows how those in power can become corrupt and abuse authority, especially through the actions of the pigs who take control.</p>"
+        question: "Read the passage.<blockquote style='margin:8px 0;padding-left:12px;border-left:3px solid #7FB509;font-style:italic'>Mara practiced the violin every day for a year, even when her fingers blistered and her friends laughed at her. At the spring recital, she played the final note and the hall fell silent for a moment before erupting in applause.</blockquote>Which statement best expresses the theme of the passage?",
+        options: ["Music is more important than friendship", "Hard work and persistence can lead to success", "Talent is something people are born with", "Public performances are stressful"],
+        correctAnswer: "Hard work and persistence can lead to success",
+        solution: "<p>Mara kept practicing despite pain and teasing, and her effort paid off at the recital. The <b>theme</b> is that persistence leads to success.</p>"
       },
       {
         id: "q13",
-        question: "What is the purpose of a counterclaim in argumentative writing?",
-        options: [
-          "To confuse the reader",
-          "To introduce a new topic",
-          "To acknowledge opposing views",
-          "To restate the claim"
-        ],
-        correctAnswer: "To acknowledge opposing views",
-        solution: "<p>A <b>counterclaim</b> presents the opposing viewpoint. Addressing it strengthens an argument by showing awareness of other perspectives and responding to them logically.</p>"
+        question: "A writer argues that high schools should start later in the morning. In one paragraph, the writer says, 'Some people worry that later start times will interfere with after-school jobs and sports; however, many schools have solved this by adjusting practice schedules.' What is the main purpose of this paragraph?",
+        options: ["To restate the thesis in different words", "To introduce a completely new topic", "To address an opposing view and respond to it", "To provide a personal story"],
+        correctAnswer: "To address an opposing view and respond to it",
+        solution: "<p>The writer states what critics might say (a <b>counterclaim</b>) and then <b>rebuts</b> it. This makes the argument stronger and more credible.</p>"
       },
       {
         id: "q14",
-        question: "Which of the following best describes the tone of the narrator in 'Of Mice and Men'?",
-        options: ["Sarcastic", "Hopeful", "Objective", "Jubilant"],
-        correctAnswer: "Objective",
-        solution: "<p>The narrator in '<b>Of Mice and Men</b>' presents events in a <b>neutral and objective</b> manner, describing actions and dialogue without strong personal judgment.</p>"
+        question: "Read the sentence.<blockquote style='margin:8px 0;padding-left:12px;border-left:3px solid #7FB509;font-style:italic'>The scientist's explanation was so lucid that even the youngest students understood it right away.</blockquote>What does the word <b>lucid</b> most likely mean?",
+        options: ["Confusing", "Lengthy", "Clear", "Dramatic"],
+        correctAnswer: "Clear",
+        solution: "<p>The clue is that even the <b>youngest students understood it right away</b>. An explanation that is easy to understand is <b>clear</b>.</p>"
       },
       {
         id: "q15",
-        question: "What does the word 'elated' most likely mean in the sentence: <br> 'She was elated when she heard the good news'?",
-        options: ["Sad", "Joyful", "Angry", "Nervous"],
-        correctAnswer: "Joyful",
-        solution: "<p>The context mentions <b>good news</b>, which suggests a positive emotion. 'Elated' means extremely <b>happy or joyful</b>.</p>"
+        question: "Read the passage.<blockquote style='margin:8px 0;padding-left:12px;border-left:3px solid #7FB509;font-style:italic'>Every Sunday, Grandma's kitchen filled with the smell of cinnamon and warm bread. Now the house is quiet, and I would give anything to sit at that worn wooden table one more time.</blockquote>Which word best describes the tone of the passage?",
+        options: ["Humorous", "Nostalgic", "Angry", "Indifferent"],
+        correctAnswer: "Nostalgic",
+        solution: "<p>The speaker fondly remembers the past and longs to return to it. A <b>nostalgic</b> tone expresses a wistful longing for earlier times.</p>"
       },
       {
         id: "q16",
-        question: "What is the main function of a thesis statement in an essay?",
-        options: [
-          "To introduce the conclusion",
-          "To provide background information",
-          "To state the main argument",
-          "To list the sources"
-        ],
-        correctAnswer: "To state the main argument",
-        solution: "<p>A <b>thesis statement</b> clearly presents the writer’s main argument or central idea, guiding the direction of the entire essay.</p>"
+        question: "Which of the following is the strongest thesis statement for an essay about school lunches?",
+        options: ["School lunches are served at noon.", "Many students eat school lunch every day.", "Schools should serve more fresh fruits and vegetables because healthier lunches improve students' focus and health.", "I do not like school lunches."],
+        correctAnswer: "Schools should serve more fresh fruits and vegetables because healthier lunches improve students' focus and health.",
+        solution: "<p>A strong <b>thesis</b> makes a specific, debatable claim and previews the reasons. The other choices state facts or personal opinions that cannot guide an essay.</p>"
       },
       {
         id: "q17",
-        question: "In literature, what is foreshadowing?",
-        options: [
-          "A hint of what is to come",
-          "A detailed character analysis",
-          "A flashback to earlier events",
-          "A summary of the story"
-        ],
-        correctAnswer: "A hint of what is to come",
-        solution: "<p><b>Foreshadowing</b> is when an author gives clues or hints about events that will happen later in the story.</p>"
+        question: "Read the passage.<blockquote style='margin:8px 0;padding-left:12px;border-left:3px solid #7FB509;font-style:italic'>As Elena locked the front door, she noticed that the sky had turned an odd shade of green. The birds had gone silent, and the air felt strangely still.</blockquote>Which literary device is the author most likely using?",
+        options: ["Flashback", "Foreshadowing", "Irony", "Alliteration"],
+        correctAnswer: "Foreshadowing",
+        solution: "<p>The eerie details (green sky, silent birds, still air) <b>hint that something dramatic is about to happen</b>. That is <b>foreshadowing</b>.</p>"
       },
       {
         id: "q18",
         question: "Which sentence uses correct parallel structure?",
-        options: [
-          "She likes reading, to swim, and biking.",
-          "He enjoys running, jumping, and to swim.",
-          "They like to hike, to bike, and to swim.",
-          "We went shopping, to the movies, and ate dinner."
-        ],
-        correctAnswer: "They like to hike, to bike, and to swim.",
-        solution: "<p><b>Parallel structure</b> means using the same grammatical form. 'To hike, to bike, and to swim' all follow the same pattern, making the sentence correct.</p>"
+        options: ["She likes reading, to swim, and biking.", "He enjoys running, jumping, and swimming.", "They want to hike, biking, and to swim.", "We went shopping, to the movies, and ate dinner."],
+        correctAnswer: "He enjoys running, jumping, and swimming.",
+        solution: "<p><b>Parallel structure</b> means items in a list share the same grammatical form. 'Running, jumping, and swimming' are all <i>-ing</i> forms, so the sentence is parallel.</p>"
       },
       {
         id: "q19",
-        question: "Which figure of speech is used in the sentence: <br> 'The wind whispered through the trees'?",
-        options: ["Metaphor", "Simile", "Hyperbole", "Personification"],
-        correctAnswer: "Personification",
-        solution: "<p><b>Personification</b> gives human qualities to non-human things. The wind 'whispering' is a human action, so this is personification.</p>"
+        question: "A fire station burns down because of a faulty electrical wire. Which type of irony does this situation show?",
+        options: ["Verbal irony", "Dramatic irony", "Situational irony", "Sarcasm"],
+        correctAnswer: "Situational irony",
+        solution: "<p><b>Situational irony</b> occurs when the outcome is the opposite of what is expected. A fire station is supposed to protect against fires, so its burning down is ironic.</p>"
       },
       {
         id: "q20",
-        question: "What is the point of view in 'The Great Gatsby'?",
-        options: ["First person", "Second person", "Third-person limited", "Omniscient"],
-        correctAnswer: "First person",
-        solution: "<p>'<b>The Great Gatsby</b>' is narrated by Nick Carraway using 'I', which makes it a <b>first-person point of view</b>.</p>"
+        question: "Read the passage.<blockquote style='margin:8px 0;padding-left:12px;border-left:3px solid #7FB509;font-style:italic'>Marcus waited by the window, his stomach twisting with worry. Across town, unknown to him, Lena had already decided to forgive him.</blockquote>From which point of view is the passage told?",
+        options: ["First person", "Second person", "Third-person limited", "Third-person omniscient"],
+        correctAnswer: "Third-person omniscient",
+        solution: "<p>The narrator uses <i>he/she</i> (third person) and knows the thoughts of <b>more than one character</b>, including things Marcus does not know. That is <b>third-person omniscient</b>.</p>"
       },
-      // {
-      //   id: "q21",
-      //   question: "Which statement best explains why enzymes lose activity at extremely high temperatures?",
-      //   options: [
-      //     "The enzyme runs out of substrate",
-      //     "The enzyme’s active site changes shape due to denaturation",
-      //     "The enzyme becomes more selective",
-      //     "The enzyme increases reaction speed uncontrollably"
-      //   ],
-      //   correctAnswer: "The enzyme’s active site changes shape due to denaturation",
-      //   solution: "<p>At high temperatures, enzymes <b>denature</b>, meaning their structure changes. This alters the <b>active site</b>, preventing the substrate from binding properly and reducing enzyme activity.</p>"
-      // },
-      // {
-      //   id: "q22",
-      //   question: "What is the molarity of a solution containing 2 moles of NaCl dissolved in 0.5 liters of water?",
-      //   options: ["0.25 M", "1.0 M", "2.0 M", "4.0 M"],
-      //   correctAnswer: "4.0 M",
-      //   solution: "<p>Molarity = moles ÷ volume = <b>2 ÷ 0.5 = 4.0 M</b>. Therefore, the correct answer is 4.0 M.</p>"
-      // },
-      // {
-      //   id: "q23",
-      //   question: "A car accelerates from rest at a constant rate of 3 m/s². What is its velocity after 5 seconds?",
-      //   options: ["8 m/s", "10 m/s", "15 m/s", "25 m/s"],
-      //   correctAnswer: "15 m/s",
-      //   solution: "<p>Using the formula <b>v = u + at</b>: initial velocity (u) = 0, acceleration (a) = 3 m/s², time (t) = 5 s. So, v = 0 + (3 × 5) = <b>15 m/s</b>.</p>"
-      // },
-      // {
-      //   id: "q24",
-      //   question: "Which of the following best describes the role of mRNA during protein synthesis?",
-      //   options: [
-      //     "It transports amino acids to the ribosome",
-      //     "It copies genetic information from DNA and carries it to the ribosome",
-      //     "It forms the ribosome structure",
-      //     "It breaks down proteins"
-      //   ],
-      //   correctAnswer: "It copies genetic information from DNA and carries it to the ribosome",
-      //   solution: "<p>mRNA is responsible for <b>transcribing genetic information from DNA</b> and carrying it to the ribosome, where proteins are synthesized.</p>"
-      // },
-      // {
-      //   id: "q25",
-      //   question: "According to the Law of Conservation of Mass, what must be true during a chemical reaction?",
-      //   options: [
-      //     "Energy is always lost",
-      //     "The mass of reactants equals the mass of products",
-      //     "New atoms are created",
-      //     "Volume must remain constant"
-      //   ],
-      //   correctAnswer: "The mass of reactants equals the mass of products",
-      //   solution: "<p>The Law of Conservation of Mass states that <b>mass cannot be created or destroyed</b>. Therefore, the total mass of reactants must equal the total mass of products.</p>"
-      // },
-      // {
-      //   id: "q26",
-      //   question: "Which of the following best explains why increasing surface area speeds up a chemical reaction?",
-      //   options: [
-      //     "It decreases activation energy",
-      //     "It allows more particles to collide effectively",
-      //     "It increases temperature",
-      //     "It changes the chemical properties"
-      //   ],
-      //   correctAnswer: "It allows more particles to collide effectively",
-      //   solution: "<p>Increasing surface area exposes more particles, leading to <b>more frequent and effective collisions</b>, which increases the reaction rate.</p>"
-      // },
-      // {
-      //   id: "q27",
-      //   question: "What happens to the gravitational force between two objects if the distance between them is doubled?",
-      //   options: [
-      //     "It doubles",
-      //     "It halves",
-      //     "It becomes four times smaller",
-      //     "It remains the same"
-      //   ],
-      //   correctAnswer: "It becomes four times smaller",
-      //   solution: "<p>Gravitational force follows an <b>inverse square law</b>. If distance is doubled, force becomes 1/(2²) = <b>1/4 of the original</b>, meaning four times smaller.</p>"
-      // },
-      // {
-      //   id: "q28",
-      //   question: "Which of the following processes is primarily responsible for the movement of tectonic plates?",
-      //   options: [
-      //     "Earth’s rotation",
-      //     "Convection currents in the mantle",
-      //     "Ocean tides",
-      //     "Solar radiation"
-      //   ],
-      //   correctAnswer: "Convection currents in the mantle",
-      //   solution: "<p>Tectonic plates move due to <b>convection currents in the mantle</b>, where hot material rises and cooler material sinks, creating movement.</p>"
-      // },
-      // {
-      //   id: "q29",
-      //   question: "In an ecosystem, which trophic level contains the greatest amount of available energy?",
-      //   options: [
-      //     "Primary consumers",
-      //     "Secondary consumers",
-      //     "Producers",
-      //     "Tertiary consumers"
-      //   ],
-      //   correctAnswer: "Producers",
-      //   solution: "<p><b>Producers</b> (plants) capture energy directly from the sun, so they contain the <b>highest amount of energy</b> in the food chain.</p>"
-      // },
-      // {
-      //   id: "q30",
-      //   question: "Which of the following best describes a covalent bond?",
-      //   options: [
-      //     "Transfer of electrons between atoms",
-      //     "Sharing of electrons between atoms",
-      //     "Attraction between ions",
-      //     "Interaction between protons"
-      //   ],
-      //   correctAnswer: "Sharing of electrons between atoms",
-      //   solution: "<p>A <b>covalent bond</b> forms when atoms <b>share electrons</b> to achieve a stable electron configuration.</p>"
-      // },
 
-            // ── NEW: Science — Biology (5) + Chemistry (5), NGSS-aligned ─────────
+      // ── SCIENCE (q21–q30) — Earth Science, intermediate 10th-grade level ─────
       {
         id: "q21",
-        question: "Which structure is the site of protein synthesis in a cell?",
-        options: ["Ribosome", "Mitochondria", "Golgi apparatus", "Lysosome"],
-        correctAnswer: "Ribosome",
-        solution: "<p>The <b>ribosome</b> reads mRNA and links amino acids together to build proteins — this process is called translation.</p>"
+        question: "Which layer of Earth do we live on?",
+        options: ["Crust", "Mantle", "Outer core", "Inner core"],
+        correctAnswer: "Crust",
+        solution: "<p>The <b>crust</b> is Earth's thin, rocky outer layer. All land and ocean floors are part of it. Below it are the mantle, outer core and inner core.</p>"
       },
       {
         id: "q22",
-        question: "A dominant allele (B) and recessive allele (b) control seed color. What is the expected phenotype ratio from a cross between two heterozygous (Bb) parents?",
-        options: ["1:1", "3:1", "1:2:1", "9:3:3:1"],
-        correctAnswer: "3:1",
-        solution: "<p>A Bb × Bb cross produces genotypes BB, Bb, Bb, bb (1:2:1). Since B is dominant, BB and Bb both show the dominant phenotype, giving a <b>3:1</b> dominant-to-recessive phenotype ratio.</p>"
+        question: "Igneous rock forms when:",
+        options: ["Sediments are pressed together", "Magma or lava cools and hardens", "Rock is changed by heat and pressure", "Rock is broken down by wind"],
+        correctAnswer: "Magma or lava cools and hardens",
+        solution: "<p><b>Igneous</b> rock forms when molten rock (magma underground, lava on the surface) cools and hardens. Granite and basalt are examples.</p>"
       },
       {
         id: "q23",
-        question: "Which best describes the relationship between two species where one benefits and the other is unaffected?",
-        options: ["Mutualism", "Parasitism", "Commensalism", "Competition"],
-        correctAnswer: "Commensalism",
-        solution: "<p>In <b>commensalism</b>, one organism benefits while the other is neither helped nor harmed — for example, barnacles attaching to a whale.</p>"
+        question: "What is the epicenter of an earthquake?",
+        options: ["The point underground where the earthquake starts", "The point on Earth's surface directly above where it starts", "The strongest part of the earthquake", "The crack in the ground left behind"],
+        correctAnswer: "The point on Earth's surface directly above where it starts",
+        solution: "<p>The earthquake starts underground at the <b>focus</b>. The <b>epicenter</b> is the point on the surface directly above the focus.</p>"
       },
       {
         id: "q24",
-        question: "Natural selection acts most directly on an organism's:",
-        options: ["Genotype", "Phenotype", "Genome size", "Chromosome number"],
-        correctAnswer: "Phenotype",
-        solution: "<p>Natural selection acts on observable traits — the <b>phenotype</b> — because that's what interacts with the environment and affects survival and reproduction.</p>"
+        question: "In the water cycle, what is the process called when water vapor cools and turns into tiny liquid droplets that form clouds?",
+        options: ["Evaporation", "Condensation", "Precipitation", "Runoff"],
+        correctAnswer: "Condensation",
+        solution: "<p><b>Condensation</b> is when water vapor cools and changes into liquid droplets. Evaporation is the opposite, and precipitation is water falling as rain or snow.</p>"
       },
       {
         id: "q25",
-        question: "Which process directly increases genetic variation within a sexually reproducing population?",
-        options: ["Mitosis", "Crossing over during meiosis", "Binary fission", "Cellular respiration"],
-        correctAnswer: "Crossing over during meiosis",
-        solution: "<p><b>Crossing over</b> during meiosis exchanges genetic material between homologous chromosomes, creating new combinations of alleles and increasing genetic variation.</p>"
+        question: "What is the main cause of ocean tides?",
+        options: ["Wind blowing across the ocean", "The gravitational pull of the Moon", "Earth's magnetic field", "Ocean currents near the equator"],
+        correctAnswer: "The gravitational pull of the Moon",
+        solution: "<p>The Moon's <b>gravity</b> pulls on Earth's oceans, causing the water to rise and fall. The Sun also contributes, but the Moon has the larger effect.</p>"
       },
       {
         id: "q26",
-        question: "How many moles of oxygen (O₂) are needed to completely react with 2 moles of hydrogen gas in the reaction 2H₂ + O₂ → 2H₂O?",
-        options: ["0.5", "1", "2", "4"],
-        correctAnswer: "1",
-        solution: "<p>The balanced equation shows a 2:1 ratio of H₂ to O₂. For 2 moles of H₂, only <b>1 mole of O₂</b> is needed.</p>"
+        question: "Which of the following is most often caused by the movement of Earth's tectonic plates?",
+        options: ["Tides", "Earthquakes and volcanoes", "Day and night", "The phases of the Moon"],
+        correctAnswer: "Earthquakes and volcanoes",
+        solution: "<p>Earth's plates slowly move. Where they collide, pull apart, or slide past each other, <b>earthquakes</b> and <b>volcanoes</b> often occur.</p>"
       },
       {
         id: "q27",
-        question: "Which type of bond forms when sodium (Na) transfers an electron to chlorine (Cl)?",
-        options: ["Covalent bond", "Ionic bond", "Metallic bond", "Hydrogen bond"],
-        correctAnswer: "Ionic bond",
-        solution: "<p>When electrons are <b>transferred</b> rather than shared, the resulting attraction between the oppositely charged ions is an <b>ionic bond</b>, as in NaCl.</p>"
+        question: "What is erosion?",
+        options: ["Rock breaking into smaller pieces without moving", "Water vapor rising into the air", "The movement of weathered rock and soil by wind, water or ice", "The melting of rock deep underground"],
+        correctAnswer: "The movement of weathered rock and soil by wind, water or ice",
+        solution: "<p><b>Weathering</b> breaks rock down. <b>Erosion</b> then carries the pieces away by wind, water or ice.</p>"
       },
       {
         id: "q28",
-        question: "A solution has a pH of 3. What can be concluded about this solution?",
-        options: ["It is strongly basic", "It is neutral", "It is acidic", "It has no hydrogen ions"],
-        correctAnswer: "It is acidic",
-        solution: "<p>The pH scale runs 0–14, with 7 as neutral. A pH of <b>3 is well below 7</b>, indicating a fairly strong acid.</p>"
+        question: "Which of the following is a renewable energy resource?",
+        options: ["Coal", "Natural gas", "Solar energy", "Oil"],
+        correctAnswer: "Solar energy",
+        solution: "<p>A <b>renewable</b> resource is replaced naturally and does not run out. Sunlight is renewable. Coal, oil and natural gas are fossil fuels that take millions of years to form.</p>"
       },
       {
         id: "q29",
-        question: "Which factor, if increased, generally increases the rate of a chemical reaction?",
-        options: ["Decreasing temperature", "Decreasing concentration of reactants", "Increasing temperature", "Removing the catalyst"],
-        correctAnswer: "Increasing temperature",
-        solution: "<p>Higher temperature gives particles more kinetic energy, causing <b>more frequent and more energetic collisions</b>, which increases reaction rate.</p>"
+        question: "What is the main reason Earth has seasons?",
+        options: ["Earth's distance from the Sun changes", "Earth's axis is tilted", "The Sun gets hotter and colder", "The Moon blocks sunlight"],
+        correctAnswer: "Earth's axis is tilted",
+        solution: "<p>Earth's axis is tilted about <b>23.5°</b>. As Earth orbits the Sun, different parts of Earth get more direct sunlight at different times of year, which creates the seasons.</p>"
       },
       {
         id: "q30",
-        question: "An atom has 17 protons and 18 neutrons. What is its mass number?",
-        options: ["17", "18", "35", "1"],
-        correctAnswer: "35",
-        solution: "<p>Mass number = protons + neutrons = 17 + 18 = <b>35</b>.</p>"
+        question: "Burning fossil fuels adds large amounts of which greenhouse gas to the atmosphere?",
+        options: ["Oxygen", "Nitrogen", "Carbon dioxide", "Helium"],
+        correctAnswer: "Carbon dioxide",
+        solution: "<p>Burning coal, oil and gas releases <b>carbon dioxide (CO₂)</b>. It traps heat in the atmosphere and contributes to global warming.</p>"
       },
 
     ],
   },
+
+
   {
     grade: "11th-grade",
     questions: [

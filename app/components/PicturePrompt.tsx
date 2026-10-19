@@ -1,3 +1,5 @@
+import { ChoiceFace, isPictureChoice, KinderScene } from '@/app/components/KinderArt';
+
 export function isPictureQuestion(q: { picture?: boolean; stimulus?: string } | null | undefined) {
   return Boolean(q?.picture && q?.stimulus);
 }
@@ -14,6 +16,7 @@ export function showReadAloud(grade?: string) {
 
 /** Giant tiles are for symbols and short numbers. Words and sentences stay regular text. */
 export function usesLargePictureChoices(options: string[]) {
+  if (options.length > 0 && options.every(isPictureChoice)) return true;
   return options.every((option) => {
     const text = pictureLabel(option).trim();
     return text.length > 0 && text.length <= 8 && !/\p{L}{3,}/u.test(text);
@@ -85,6 +88,7 @@ function ShapeIcon({ kind }: { kind: ShapeKind }) {
 }
 
 function Stimulus({ stimulus }: { stimulus: string }) {
+  if (stimulus.startsWith('kvis:')) return <KinderScene stimulus={stimulus} />;
   const tokens = stimulus.split(/\s+/).filter(Boolean);
   if (!tokens.some((token) => SHAPE_KIND[token])) {
     return <div className="max-w-full text-6xl leading-tight tracking-wide md:text-7xl">{stimulus}</div>;

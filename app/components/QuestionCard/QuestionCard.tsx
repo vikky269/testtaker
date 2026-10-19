@@ -5,6 +5,7 @@ import { useState } from "react";
 import MathHtml from "@/app/components/MathHtml";
 import QuestionDiagram, { diagramForQuestion } from "@/app/components/QuestionDiagram";
 import PicturePrompt, { isPictureQuestion, pictureLabel, usesLargePictureChoices } from "@/app/components/PicturePrompt";
+import { ChoiceFace, isPictureChoice } from "@/app/components/KinderArt";
 
 interface QuestionCardProps {
   questionData: any;
@@ -98,7 +99,9 @@ export default function QuestionCard({
                 ${isCorrect ? "bg-white/30" : "bg-white/60 text-gray-500"}`}>
                 {String.fromCharCode(65 + oi)}
               </span>
-              {largeChoice ? (
+              {isPictureChoice(option) ? (
+                <ChoiceFace option={option} />
+              ) : largeChoice ? (
                 <span className="text-4xl leading-tight">{pictureLabel(option)}</span>
               ) : (
                 <MathHtml as="span" text={option} />

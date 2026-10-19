@@ -12,8 +12,22 @@ export function isPictureChoice(option: string) {
   return /^(pic|shape|letter):/.test(option);
 }
 
+function choiceLabel(name: string) {
+  return (
+    <span className="text-sm font-semibold capitalize leading-tight">{name}</span>
+  );
+}
+
 export function ChoiceFace({ option }: { option: string }) {
-  if (option.startsWith('pic:')) return <KinderIcon name={option.slice(4)} />;
+  if (option.startsWith('pic:')) {
+    const name = option.slice(4);
+    return (
+      <span className="flex flex-col items-center gap-1">
+        <KinderIcon name={name} />
+        {choiceLabel(name)}
+      </span>
+    );
+  }
   if (option.startsWith('shape:')) return <ShapeGlyph kind={option.slice(6)} />;
   if (option.startsWith('letter:')) return <LetterCard letter={option.slice(7)} />;
   return null;
@@ -107,8 +121,48 @@ export function KinderScene({ stimulus }: { stimulus: string }) {
   if (kind === 'length') {
     return (
       <figure className="mb-2 flex flex-col items-center gap-4">
-        <Group label="Row A" icon="block" count={3} />
-        <Group label="Row B" icon="block" count={6} />
+        <Group label="Row A" icon="block" count={Number(a) || 3} />
+        <Group label="Row B" icon="block" count={Number(b) || 6} />
+      </figure>
+    );
+  }
+
+  if (kind === 'cards') {
+    const nums = [a, b, c].filter(Boolean);
+    return (
+      <figure className="mb-2 flex items-center justify-center gap-3">
+        {nums.map((n) => (
+          <NumberCard key={n} value={n} />
+        ))}
+      </figure>
+    );
+  }
+
+  if (kind === 'tens') {
+    const tens = Number(a);
+    const ones = Number(b);
+    return (
+      <figure className="mb-2 flex flex-wrap items-end justify-center gap-6">
+        <div className="text-center">
+          <div className="flex flex-wrap justify-center gap-2">
+            {Array.from({ length: tens }, (_, index) => (
+              <TenBar key={index} />
+            ))}
+          </div>
+          <figcaption className="mt-2 text-sm font-semibold text-neutral-600">{tens} tens</figcaption>
+        </div>
+        <div>
+          <IconRow icon="block" count={ones} />
+          <figcaption className="mt-2 text-sm font-semibold text-neutral-600">{ones} ones</figcaption>
+        </div>
+      </figure>
+    );
+  }
+
+  if (kind === 'clock') {
+    return (
+      <figure className="mb-2">
+        <Clock hour={Number(a)} minute={Number(b)} />
       </figure>
     );
   }
@@ -130,8 +184,9 @@ export function KinderScene({ stimulus }: { stimulus: string }) {
 
   if (kind === 'ref') {
     return (
-      <figure className="mb-2">
+      <figure className="mb-2 flex flex-col items-center">
         <KinderIcon name={a} size={96} />
+        <figcaption className="mt-1 text-base font-semibold capitalize text-neutral-700">{a}</figcaption>
       </figure>
     );
   }
@@ -230,6 +285,39 @@ function TenFrame({ filled }: { filled: number }) {
         />
       ))}
     </div>
+  );
+}
+
+function TenBar() {
+  return (
+    <svg width="26" height="78" viewBox="0 0 26 78" aria-label="one ten">
+      {Array.from({ length: 10 }, (_, index) => (
+        <rect key={index} x="2" y={2 + index * 7.6} width="22" height="6" rx="1" fill="#3D7EE8" stroke="#1a1a1a" strokeWidth="1" />
+      ))}
+    </svg>
+  );
+}
+
+function Clock({ hour, minute }: { hour: number; minute: number }) {
+  const hand = (angle: number, length: number) => {
+    const r = (angle * Math.PI) / 180;
+    return [60 + length * Math.cos(r), 60 + length * Math.sin(r)];
+  };
+  const minuteAngle = (minute / 60) * 360 - 90;
+  const hourAngle = ((hour % 12) / 12) * 360 + (minute / 60) * 30 - 90;
+  const [mx, my] = hand(minuteAngle, 34);
+  const [hx, hy] = hand(hourAngle, 22);
+  return (
+    <svg width="150" height="150" viewBox="0 0 120 120" aria-label="clock">
+      <circle cx="60" cy="60" r="50" fill="#fff" stroke="#1a1a1a" strokeWidth="4" />
+      <circle cx="60" cy="14" r="2" fill="#1a1a1a" />
+      <circle cx="60" cy="106" r="2" fill="#1a1a1a" />
+      <circle cx="14" cy="60" r="2" fill="#1a1a1a" />
+      <circle cx="106" cy="60" r="2" fill="#1a1a1a" />
+      <line x1="60" y1="60" x2={hx} y2={hy} stroke="#1a1a1a" strokeWidth="5" strokeLinecap="round" />
+      <line x1="60" y1="60" x2={mx} y2={my} stroke="#2F80ED" strokeWidth="3" strokeLinecap="round" />
+      <circle cx="60" cy="60" r="3.5" fill="#E23B3B" />
+    </svg>
   );
 }
 

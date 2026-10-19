@@ -12,7 +12,7 @@ import Timer from "@/app/components/Timer/Timer";
 import QuizModals from "@/app/modals/quizModals";
 import MathHtml from "@/app/components/MathHtml";
 import QuestionDiagram, { diagramForQuestion } from "@/app/components/QuestionDiagram";
-import PicturePrompt, { isPictureQuestion, pictureLabel } from "@/app/components/PicturePrompt";
+import PicturePrompt, { isPictureQuestion, pictureLabel, usesLargePictureChoices } from "@/app/components/PicturePrompt";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -266,7 +266,7 @@ export default function QuizBody({
           {diagram && <QuestionDiagram spec={diagram} />}
 
           {isPictureQuestion(currentQuestion) ? (
-            <PicturePrompt stimulus={currentQuestion.stimulus} prompt={currentQuestion.question} />
+            <PicturePrompt stimulus={currentQuestion.stimulus} prompt={currentQuestion.question} grade={currentQuestion.grade} />
           ) : currentQuestion.question.startsWith("https://") ? (
             <img
               src={currentQuestion.question}
@@ -281,16 +281,17 @@ export default function QuizBody({
             />
           )}
 
-          <div className={`grid gap-3 ${isPictureQuestion(currentQuestion) ? "grid-cols-2 sm:grid-cols-3" : "grid-cols-1 md:grid-cols-2"}`}>
+          <div className={`grid gap-3 ${usesLargePictureChoices(currentQuestion.options) ? "grid-cols-2 sm:grid-cols-4" : "grid-cols-1 md:grid-cols-2"}`}>
             {currentQuestion.options.map((option: string, oi: number) => {
               const selected = answers[currentQuestion.question] === option;
+              const largeChoice = usesLargePictureChoices(currentQuestion.options);
               return (
                 <button
                   key={oi}
                   type="button"
                   onClick={() => onSelect(currentQuestion.question, option)}
                   className={`group relative flex gap-3 rounded-2xl border px-4 py-4 text-left transition-all duration-150 md:px-5 md:py-5 cursor-pointer
-                    ${isPictureQuestion(currentQuestion) ? "min-h-28 flex-col items-center justify-center text-center" : "items-start"}
+                    ${largeChoice ? "min-h-28 flex-col items-center justify-center text-center" : "items-start"}
                     ${selected
                       ? `${theme.active} border-transparent text-white`
                       : "border-neutral-200 bg-neutral-50 text-neutral-700 hover:border-[#7FB509] hover:bg-[#f0fce8]"
@@ -302,7 +303,7 @@ export default function QuizBody({
                   >
                     {String.fromCharCode(65 + oi)}
                   </span>
-                  {isPictureQuestion(currentQuestion) ? (
+                  {largeChoice ? (
                     <span className="w-full text-center text-4xl leading-tight md:text-5xl">{pictureLabel(option)}</span>
                   ) : (
                     <MathHtml

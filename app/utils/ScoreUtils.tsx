@@ -105,6 +105,7 @@
 // Pure score calculation functions — no React dependencies
 
 import { GED_SECTIONS, type GEDSectionKey } from "@/app/data/geddata";
+import { questionsForSection } from "@/app/utils/gradeAssessmentGenerator";
 
 type Answers = Record<string, string>;
 
@@ -114,6 +115,7 @@ interface Question {
   correctAnswer?: string;
   answer?: string;
   solution?: string;
+  subject?: string;
 }
 
 /**
@@ -184,12 +186,7 @@ export const calculateSectionScore = (
   const elaSkipped = localStorage.getItem("elaSkipped") === "true";
   if (section === "ela" && elaSkipped) return null;
 
-  const sectionQuestions =
-    section === "math"
-      ? quizQuestions.slice(0, 10)
-      : section === "ela"
-      ? quizQuestions.slice(10, 20)
-      : quizQuestions.slice(20); // science
+  const sectionQuestions = questionsForSection(quizQuestions, section);
 
   const total = sectionQuestions.length;
   if (total === 0) return null;

@@ -4,6 +4,7 @@
 import { useState } from "react";
 import MathHtml from "@/app/components/MathHtml";
 import QuestionDiagram, { diagramForQuestion } from "@/app/components/QuestionDiagram";
+import PicturePrompt, { isPictureQuestion, pictureLabel } from "@/app/components/PicturePrompt";
 
 interface QuestionCardProps {
   questionData: any;
@@ -59,7 +60,9 @@ export default function QuestionCard({
       {/* Question content */}
       {diagram && <QuestionDiagram spec={diagram} />}
 
-      {questionData.question.startsWith("https://res.cloudinary.com") ? (
+      {isPictureQuestion(questionData) ? (
+        <PicturePrompt stimulus={questionData.stimulus} prompt={questionData.question} />
+      ) : questionData.question.startsWith("https://res.cloudinary.com") ? (
         <img
           src={questionData.question}
           alt={`Question ${globalIndex + 1}`}
@@ -74,7 +77,7 @@ export default function QuestionCard({
       )}
 
       {/* Options */}
-      <ul className="grid grid-cols-2 gap-2">
+      <ul className={`grid gap-2 ${isPictureQuestion(questionData) ? "grid-cols-2 sm:grid-cols-3" : "grid-cols-2"}`}>
         {questionData.options.map((option: string, oi: number) => {
           const isCorrect  = option === correct;
           const isSelected = option === selectedAnswer;
@@ -83,7 +86,8 @@ export default function QuestionCard({
           return (
             <li
               key={oi}
-              className={`p-3 rounded-xl border text-sm font-semibold flex items-center gap-2 transition-all
+              className={`p-3 rounded-xl border text-sm font-semibold flex gap-2 transition-all
+                ${isPictureQuestion(questionData) ? "min-h-24 flex-col items-center justify-center text-center" : "items-center"}
                 ${isCorrect && noAnswer  ? "bg-green-50 border-green-200 text-green-800"
                 : isCorrect             ? "bg-green-500 border-green-500 text-white"
                 : isSelected            ? "bg-red-500 border-red-500 text-white"
@@ -93,7 +97,11 @@ export default function QuestionCard({
                 ${isCorrect ? "bg-white/30" : "bg-white/60 text-gray-500"}`}>
                 {String.fromCharCode(65 + oi)}
               </span>
-              <MathHtml as="span" text={option} />
+              {isPictureQuestion(questionData) ? (
+                <span className="text-4xl leading-tight">{pictureLabel(option)}</span>
+              ) : (
+                <MathHtml as="span" text={option} />
+              )}
               {isCorrect && <span className="ml-auto">✅</span>}
               {isSelected && !isCorrect && (
                 <span className="ml-auto text-xs opacity-80">(Your Answer)</span>

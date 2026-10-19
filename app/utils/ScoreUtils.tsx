@@ -192,7 +192,7 @@ export const calculateSectionScore = (
       : quizQuestions.slice(20); // science
 
   const total = sectionQuestions.length;
-  if (total === 0) return "0.00";
+  if (total === 0) return null;
 
   const correct = sectionQuestions.filter(
     (q) => answers?.[q.question] === (q.correctAnswer || q.answer)

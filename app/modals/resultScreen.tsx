@@ -418,7 +418,7 @@ export default function ResultsScreen({
         /* ════════════════════════════════════════════════════
            Grade 1–10 section score cards (unchanged)
            ════════════════════════════════════════════════════ */
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 cursor-pointer">
+        <div className={`grid grid-cols-1 gap-4 mb-8 cursor-pointer ${calculateSectionScore("science") == null ? "sm:grid-cols-2" : "sm:grid-cols-3"}`}>
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 text-center hover:-translate-y-1 transition-transform duration-200">
             <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-xl mx-auto mb-3">🔢</div>
             <p className="text-xs font-extrabold uppercase tracking-widest text-indigo-500 mb-1">Math</p>
@@ -441,18 +441,16 @@ export default function ResultsScreen({
             ) : <p className="text-lg font-bold text-gray-400 mt-1">Skipped</p>}
           </div>
 
+          {calculateSectionScore("science") !== null && (
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 text-center hover:-translate-y-1 transition-transform duration-200">
             <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-xl mx-auto mb-3">🔬</div>
             <p className="text-xs font-extrabold uppercase tracking-widest text-amber-500 mb-1">Science</p>
-            {calculateSectionScore("science") !== null ? (
-              <>
-                <p className="text-4xl font-extrabold text-amber-600 leading-none">{calculateSectionScore("science")}%</p>
-                <div className="mt-3 h-1.5 rounded-full bg-amber-100 overflow-hidden">
-                  <div className="h-full rounded-full bg-amber-500" style={{ width: `${calculateSectionScore("science")}%` }} />
-                </div>
-              </>
-            ) : <p className="text-lg font-bold text-gray-400 mt-1">Skipped</p>}
+            <p className="text-4xl font-extrabold text-amber-600 leading-none">{calculateSectionScore("science")}%</p>
+            <div className="mt-3 h-1.5 rounded-full bg-amber-100 overflow-hidden">
+              <div className="h-full rounded-full bg-amber-500" style={{ width: `${calculateSectionScore("science")}%` }} />
+            </div>
           </div>
+          )}
         </div>
 
       ) : (

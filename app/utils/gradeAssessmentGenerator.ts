@@ -1,8 +1,9 @@
 /**
- * Builds a Grade Assessment attempt:
- *   [10 Math] + [10 ELA] + [10 Science]
- * Math 1–7, ELA 1–7, and Science K–8 / HS Phys-Chem-Bio come from the new banks.
- * Pre-K / Kindergarten Math + Math/ELA 8–12 use the legacy bank where needed.
+ * Builds a Grade Assessment attempt.
+ * Pre-K through Grade 2: 10 picture Math + 10 picture ELA, no Science.
+ * Grades 3–12: [10 Math] + [10 ELA] + [10 Science], unchanged.
+ * Math 3–7, ELA 3–7, and Science 3–8 / HS Phys-Chem-Bio come from the new banks.
+ * Math/ELA 8–12 use the legacy bank where needed.
  */
 import { quizAssessmentData } from '@/app/data/quizassessmentdata';
 import {
@@ -13,6 +14,7 @@ import {
   hasNewMathBank,
   hasNewElaBank,
 } from '@/app/data/questionBanks';
+import { getPictureBank } from '@/app/data/pictureAssessments';
 
 export type Difficulty = 'easy' | 'medium' | 'hard';
 
@@ -26,6 +28,8 @@ export interface BankQuestion {
   subject?: string;
   grade?: string;
   solution?: string;
+  stimulus?: string;
+  picture?: boolean;
 }
 
 export interface QuizQuestion {
@@ -37,6 +41,8 @@ export interface QuizQuestion {
   difficulty?: string;
   topic?: string;
   subject?: string;
+  stimulus?: string;
+  picture?: boolean;
 }
 
 export const SECTION_SIZE = 10;
@@ -112,7 +118,17 @@ function toQuizQuestion(q: BankQuestion | QuizQuestion): QuizQuestion {
     difficulty: q.difficulty,
     topic: 'topic' in q ? q.topic : undefined,
     subject: 'subject' in q ? q.subject : undefined,
+    stimulus: q.stimulus,
+    picture: q.picture,
   };
+}
+
+/** Pre-K through Grade 2 use picture Math and ELA, with no Science section. */
+export function isEarlyPictureGrade(gradeParam: string | null | undefined): boolean {
+  const parts = parseGradeParts(gradeParam);
+  if (parts.isPreK || parts.isKindergarten) return true;
+  const n = Number(parts.num);
+  return n === 1 || n === 2;
 }
 
 /**
@@ -248,7 +264,7 @@ export interface GeneratedAssessment {
   meta: {
     mathSource: 'new' | 'legacy';
     elaSource: 'new' | 'legacy';
-    scienceSource: 'new-grade' | 'new-hs' | 'legacy';
+    scienceSource: 'new-grade' | 'new-hs' | 'legacy' | 'none';
     generatedAt: number;
   };
 }
@@ -256,7 +272,7 @@ export interface GeneratedAssessment {
 export type GenerateProgress = (message: string) => void;
 
 /**
- * Build a full 30-question assessment for quiz-assessment.
+ * Build a quiz-assessment: 20 picture questions for Pre-K–Grade 2, 30 for Grades 3–12.
  */
 export async function generateGradeAssessment(
   gradeParam: string,
@@ -267,6 +283,34 @@ export async function generateGradeAssessment(
   const started = Date.now();
 
   const parts = parseGradeParts(gradeParam);
+
+  if (isEarlyPictureGrade(gradeParam)) {
+    const key = parts.isPreK
+      ? 'pre-k'
+      : parts.isKindergarten
+      ? 'kindergarten'
+      : (parts.num as '1' | '2');
+    onProgress?.('Loading picture questions...');
+    const bank = getPictureBank(key);
+    onProgress?.('Drawing math and ELA pictures...');
+    const math = drawBalanced(bank.math, SECTION_SIZE).map((q) => ({ ...q, subject: 'math' }));
+    const ela = drawBalanced(bank.ela, SECTION_SIZE).map((q) => ({ ...q, subject: 'ela' }));
+    const elapsedEarly = Date.now() - started;
+    if (delayMs > elapsedEarly) {
+      await new Promise((r) => setTimeout(r, delayMs - elapsedEarly));
+    }
+    return {
+      gradeParam: parts.key,
+      questions: [...math, ...ela],
+      meta: {
+        mathSource: 'new',
+        elaSource: 'new',
+        scienceSource: 'none',
+        generatedAt: Date.now(),
+      },
+    };
+  }
+
   const legacy = legacyGradeQuestions(parts.key);
 
   // ── Math ──────────────────────────────────────────────────────────────

@@ -12,6 +12,7 @@ import Timer from "@/app/components/Timer/Timer";
 import QuizModals from "@/app/modals/quizModals";
 import MathHtml from "@/app/components/MathHtml";
 import QuestionDiagram, { diagramForQuestion } from "@/app/components/QuestionDiagram";
+import PicturePrompt, { isPictureQuestion, pictureLabel } from "@/app/components/PicturePrompt";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ interface QuizBodyProps {
   normalizedGrade: string;
   isSATQuiz: boolean;
   isGrade9Or10: boolean;
+  includeScience?: boolean;
   isSat: boolean;
   isGed?: boolean; // NEW
   isPsat?: boolean;
@@ -152,6 +154,7 @@ function SectionListItem({
 export default function QuizBody({
   testid, stateParam, gradeParam, normalizedGrade,
   isSATQuiz, isGrade9Or10, isSat, isPsat = false, isGed = false,
+  includeScience = true,
   quizSection, satSection, isSatReading,
   activeQuestions, currentQuestionIndex, setCurrentQuestionIndex,
   answers,
@@ -262,7 +265,9 @@ export default function QuizBody({
 
           {diagram && <QuestionDiagram spec={diagram} />}
 
-          {currentQuestion.question.startsWith("https://") ? (
+          {isPictureQuestion(currentQuestion) ? (
+            <PicturePrompt stimulus={currentQuestion.stimulus} prompt={currentQuestion.question} />
+          ) : currentQuestion.question.startsWith("https://") ? (
             <img
               src={currentQuestion.question}
               alt={`Question ${currentQuestionIndex + 1}`}
@@ -276,7 +281,7 @@ export default function QuizBody({
             />
           )}
 
-          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+          <div className={`grid gap-3 ${isPictureQuestion(currentQuestion) ? "grid-cols-2 sm:grid-cols-3" : "grid-cols-1 md:grid-cols-2"}`}>
             {currentQuestion.options.map((option: string, oi: number) => {
               const selected = answers[currentQuestion.question] === option;
               return (
@@ -284,7 +289,8 @@ export default function QuizBody({
                   key={oi}
                   type="button"
                   onClick={() => onSelect(currentQuestion.question, option)}
-                  className={`group relative flex items-start gap-3 rounded-2xl border px-4 py-4 text-left transition-all duration-150 md:px-5 md:py-5 cursor-pointer
+                  className={`group relative flex gap-3 rounded-2xl border px-4 py-4 text-left transition-all duration-150 md:px-5 md:py-5 cursor-pointer
+                    ${isPictureQuestion(currentQuestion) ? "min-h-28 flex-col items-center justify-center text-center" : "items-start"}
                     ${selected
                       ? `${theme.active} border-transparent text-white`
                       : "border-neutral-200 bg-neutral-50 text-neutral-700 hover:border-[#7FB509] hover:bg-[#f0fce8]"
@@ -296,11 +302,15 @@ export default function QuizBody({
                   >
                     {String.fromCharCode(65 + oi)}
                   </span>
-                  <MathHtml
-                    as="span"
-                    text={option}
-                    className="text-base font-medium leading-snug md:text-[17px]"
-                  />
+                  {isPictureQuestion(currentQuestion) ? (
+                    <span className="w-full text-center text-4xl leading-tight md:text-5xl">{pictureLabel(option)}</span>
+                  ) : (
+                    <MathHtml
+                      as="span"
+                      text={option}
+                      className="text-base font-medium leading-snug md:text-[17px]"
+                    />
+                  )}
                   {selected && (
                     <span className="absolute right-3 top-3 text-[11px] font-semibold uppercase tracking-wide text-white/75">
                       Selected
@@ -434,7 +444,9 @@ export default function QuizBody({
                   {[
                     { key: "math", label: "Math", theme: SECTION_THEME.math },
                     { key: "ela", label: "ELA", theme: SECTION_THEME.ela },
-                    { key: "science", label: "Science", theme: SECTION_THEME.science },
+                    ...(includeScience
+                      ? [{ key: "science", label: "Science", theme: SECTION_THEME.science }]
+                      : []),
                   ].map(({ key, label, theme: t }) => (
                     <SectionListItem
                       key={key}

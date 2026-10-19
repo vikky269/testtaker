@@ -357,7 +357,9 @@ export default function ReviewPage() {
         { label: "Total Time", val: times.total,   cls: "text-gray-800"    },
         { label: "Math",       val: times.math,    cls: "text-indigo-600"  },
         { label: "ELA",        val: elaSkipped ? "Skipped" : times.ela, cls: "text-emerald-600" },
-        { label: "Science",    val: times.science, cls: "text-amber-600"   },
+        ...(scienceScore != null
+          ? [{ label: "Science", val: times.science, cls: "text-amber-600" }]
+          : []),
       ];
 
   // ── SAT section blocks ──────────────────────────────────
@@ -372,7 +374,7 @@ export default function ReviewPage() {
     { label: "Science",               emoji: "🔬", color: "amber"   as const, qs: selectedQuiz.slice(20, 30) },
   ];
 
-  const sectionBlocks = isSat ? satSections : gradeSections;
+  const sectionBlocks = (isSat ? satSections : gradeSections).filter((s) => s.qs.length > 0);
 
   // ── Render ──────────────────────────────────────────────
   return (
@@ -432,7 +434,7 @@ export default function ReviewPage() {
           </div>
 
         ) : isGrade9Or10 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+          <div className={`grid grid-cols-1 gap-4 mb-8 ${scienceScore != null ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 text-center hover:-translate-y-1 transition-transform duration-200 cursor-pointer">
               <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-xl mx-auto mb-3">🔢</div>
               <p className="text-xs font-extrabold uppercase tracking-widest text-indigo-400 mb-1">Math</p>
@@ -455,6 +457,7 @@ export default function ReviewPage() {
                 </>
               )}
             </div>
+            {scienceScore != null && (
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 text-center hover:-translate-y-1 transition-transform duration-200 cursor-pointer">
               <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-xl mx-auto mb-3">🔬</div>
               <p className="text-xs font-extrabold uppercase tracking-widest text-amber-400 mb-1">Science</p>
@@ -463,6 +466,7 @@ export default function ReviewPage() {
                 <div className="h-full rounded-full bg-amber-500 transition-all duration-700" style={{ width: `${scienceScore}%` }} />
               </div>
             </div>
+            )}
           </div>
 
         ) : (

@@ -17,6 +17,7 @@ import { supabase, withTimeout } from "@/lib/supabaseClient";
 import toast from "react-hot-toast";
 import {
   generateGradeAssessment,
+  isEarlyPictureGrade,
   saveGeneratedAssessment,
   loadGeneratedAssessment,
   clearGeneratedAssessment,
@@ -64,6 +65,7 @@ export default function Quiz() {
   const hasSavedRef = useRef(false);
 
   const isSat = ["sat", "ssat"].includes(normalizedGrade);
+  const isEarlyPicture = isEarlyPictureGrade(gradeParam);
   const isGrade9Or10 = [
     "9th-grade","10th-grade","8th-grade","7th-grade","6th-grade",
     "5th-grade","4th-grade","3rd-grade","11th-grade","12th-grade",
@@ -264,6 +266,10 @@ export default function Quiz() {
       setShowGradeModal(true); return;
     }
     if (isGrade9Or10 && quizSection === "ela") {
+      if (isEarlyPicture) {
+        if (unanswered.length > 0) { setUnansweredCount(unanswered.length); setShowConfirmSubmissionModal(true); return; }
+        finalizeSubmit(); return;
+      }
       if (unanswered.length > 0) { setUnansweredCount(unanswered.length); setShowConfirmElaModal(true); return; }
       setShowScienceModal(true); return;
     }
@@ -589,7 +595,9 @@ export default function Quiz() {
             {generateStatus || 'Pooling questions from the question bank...'}
           </p>
           <p className="mt-4 text-xs text-gray-500">
-            Drawing a balanced mix of Math, ELA, and Science for {gradeParam?.replace(/-/g, ' ')}.
+            {isEarlyPicture
+              ? `Drawing picture-based Math and ELA for ${gradeParam?.replace(/-/g, ' ')}.`
+              : `Drawing a balanced mix of Math, ELA, and Science for ${gradeParam?.replace(/-/g, ' ')}.`}
           </p>
         </div>
       </div>
@@ -614,6 +622,7 @@ export default function Quiz() {
           normalizedGrade={normalizedGrade}
           isSATQuiz={isSATQuiz}
           isGrade9Or10={isGrade9Or10}
+          includeScience={!isEarlyPicture}
           isSat={isSat}
           quizSection={quizSection}
           satSection={satSection}

@@ -3136,14 +3136,14 @@
   },
   {
     "id": "math-2-introduction-number-sense-2nd-grade-medium-60",
-    "question": "Sophia has \\340 in her savings account. Which of the following equals \\340?",
+    "question": "Sophia has $340 in her savings account. Which of the following equals $340?",
     "options": [
-      "\\300 + \\40",
-      "\\300 + \\4",
-      "\\30 + \\40",
-      "\\300 + \\400"
+      "$300 + $40",
+      "$300 + $4",
+      "$30 + $40",
+      "$300 + $400"
     ],
-    "correctAnswer": "\\300 + \\40",
+    "correctAnswer": "$300 + $40",
     "difficulty": "medium",
     "topic": "INTRODUCTION & NUMBER SENSE (2ND GRADE)",
     "subject": "math",
@@ -4006,7 +4006,7 @@
   },
   {
     "id": "math-2-introduction-number-sense-2nd-grade-hard-118",
-    "question": "What is the value of 90\\text{ tens} + 10\\text{ ones}?",
+    "question": "What is the value of 90 tens + 10 ones?",
     "options": [
       "910",
       "9010",
@@ -4128,12 +4128,12 @@
     "id": "math-2-introduction-number-sense-2nd-grade-hard-126",
     "question": "Which comparison is TRUE?",
     "options": [
-      "3\\text{ hundreds } + 14\\text{ tens} > 4\\text{ hundreds } + 5\\text{ tens}",
-      "6\\text{ hundreds } + 2\\text{ tens } + 9\\text{ ones} < 6\\text{ hundreds } + 3\\text{ tens } + 0\\text{ ones}",
+      "3 hundreds + 14 tens > 4 hundreds + 5 tens",
+      "6 hundreds + 2 tens + 9 ones < 6 hundreds + 3 tens + 0 ones",
       "700 + 90 = 709",
       "811 < 809"
     ],
-    "correctAnswer": "6\\text{ hundreds } + 2\\text{ tens } + 9\\text{ ones} < 6\\text{ hundreds } + 3\\text{ tens } + 0\\text{ ones}",
+    "correctAnswer": "6 hundreds + 2 tens + 9 ones < 6 hundreds + 3 tens + 0 ones",
     "difficulty": "hard",
     "topic": "INTRODUCTION & NUMBER SENSE (2ND GRADE)",
     "subject": "math",
@@ -4533,12 +4533,12 @@
     "id": "math-2-measurement-data-2nd-grade-easy-3",
     "question": "Mateo has 2 quarters. How many total cents does he have?",
     "options": [
-      "25\\text{ cents}",
-      "50\\text{ cents}",
-      "20\\text{ cents}",
-      "75\\text{ cents}"
+      "25 cents",
+      "50 cents",
+      "20 cents",
+      "75 cents"
     ],
-    "correctAnswer": "50\\text{ cents}",
+    "correctAnswer": "50 cents",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -4548,12 +4548,12 @@
     "id": "math-2-measurement-data-2nd-grade-easy-4",
     "question": "About how many inches long is a standard new crayon?",
     "options": [
-      "About 3\\text{ inches}",
-      "About 3\\text{ feet}",
-      "About 30\\text{ inches}",
-      "About 1\\text{ yard}"
+      "About 3 inches",
+      "About 3 feet",
+      "About 30 inches",
+      "About 1 yard"
     ],
-    "correctAnswer": "About 3\\text{ inches}",
+    "correctAnswer": "About 3 inches",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -4563,12 +4563,12 @@
     "id": "math-2-measurement-data-2nd-grade-easy-5",
     "question": "Keisha counts 3 dimes and 2 pennies. How much money does she have in total?",
     "options": [
-      "32\\text{ cents}",
-      "23\\text{ cents}",
-      "35\\text{ cents}",
-      "12\\text{ cents}"
+      "32 cents",
+      "23 cents",
+      "35 cents",
+      "12 cents"
     ],
-    "correctAnswer": "32\\text{ cents}",
+    "correctAnswer": "32 cents",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -4593,12 +4593,12 @@
     "id": "math-2-measurement-data-2nd-grade-easy-7",
     "question": "Marcus measures a book with a ruler. It is 10 inches long. His notebook is 8 inches long. How much longer is the book than the notebook?",
     "options": [
-      "18\\text{ inches}",
-      "2\\text{ inches}",
-      "3\\text{ inches}",
-      "80\\text{ inches}"
+      "18 inches",
+      "2 inches",
+      "3 inches",
+      "80 inches"
     ],
-    "correctAnswer": "2\\text{ inches}",
+    "correctAnswer": "2 inches",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -4623,12 +4623,12 @@
     "id": "math-2-measurement-data-2nd-grade-easy-9",
     "question": "Jamal has 1 dollar bill (1) and 3 nickels. How much money does he have altogether?",
     "options": [
-      "\\1.15",
-      "\\1.03",
-      "\\1.30",
-      "\\1.05"
+      "$1.15",
+      "$1.03",
+      "$1.30",
+      "$1.05"
     ],
-    "correctAnswer": "\\1.15",
+    "correctAnswer": "$1.15",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -4653,12 +4653,12 @@
     "id": "math-2-measurement-data-2nd-grade-easy-11",
     "question": "Priya measures her eraser using centimeters. It is 5 cm long. Her paperclip is 3 cm long. What is the total length of both items placed end-to-end?",
     "options": [
-      "2\\text{ cm}",
-      "15\\text{ cm}",
-      "8\\text{ cm}",
-      "53\\text{ cm}"
+      "2cm",
+      "15cm",
+      "8cm",
+      "53cm"
     ],
-    "correctAnswer": "8\\text{ cm}",
+    "correctAnswer": "8cm",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -4666,14 +4666,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-easy-12",
-    "question": "Deshawn buys an apple for 40\\text{ cents}. He pays with a quarter (25\\text{ cents}) and two dimes (20\\text{ cents}). How much change should he receive?",
+    "question": "Deshawn buys an apple for 40 cents. He pays with a quarter (25 cents) and two dimes (20 cents). How much change should he receive?",
     "options": [
-      "5\\text{ cents}",
-      "10\\text{ cents}",
-      "0\\text{ cents}",
-      "15\\text{ cents}"
+      "5 cents",
+      "10 cents",
+      "0 cents",
+      "15 cents"
     ],
-    "correctAnswer": "5\\text{ cents}",
+    "correctAnswer": "5 cents",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -4698,12 +4698,12 @@
     "id": "math-2-measurement-data-2nd-grade-easy-14",
     "question": "How many centimeters are in 1 meter?",
     "options": [
-      "10\\text{ cm}",
-      "12\\text{ cm}",
-      "1000\\text{ cm}",
-      "100\\text{ cm}"
+      "10cm",
+      "12cm",
+      "1000cm",
+      "100cm"
     ],
-    "correctAnswer": "100\\text{ cm}",
+    "correctAnswer": "100cm",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -4713,12 +4713,12 @@
     "id": "math-2-measurement-data-2nd-grade-easy-15",
     "question": "Elena has 4 nickels. How many cents is this worth?",
     "options": [
-      "20\\text{ cents}",
-      "40\\text{ cents}",
-      "10\\text{ cents}",
-      "4\\text{ cents}"
+      "20 cents",
+      "40 cents",
+      "10 cents",
+      "4 cents"
     ],
-    "correctAnswer": "20\\text{ cents}",
+    "correctAnswer": "20 cents",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -4743,12 +4743,12 @@
     "id": "math-2-measurement-data-2nd-grade-easy-17",
     "question": "How many inches are in 1 foot?",
     "options": [
-      "10\\text{ inches}",
-      "100\\text{ inches}",
-      "12\\text{ inches}",
-      "24\\text{ inches}"
+      "10 inches",
+      "100 inches",
+      "12 inches",
+      "24 inches"
     ],
-    "correctAnswer": "12\\text{ inches}",
+    "correctAnswer": "12 inches",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -4773,12 +4773,12 @@
     "id": "math-2-measurement-data-2nd-grade-easy-19",
     "question": "Dante has 3 quarters and 1 dime. How much money does he have in total?",
     "options": [
-      "85\\text{ cents}",
-      "75\\text{ cents}",
-      "40\\text{ cents}",
-      "95\\text{ cents}"
+      "85 cents",
+      "75 cents",
+      "40 cents",
+      "95 cents"
     ],
-    "correctAnswer": "85\\text{ cents}",
+    "correctAnswer": "85 cents",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -4816,14 +4816,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-easy-22",
-    "question": "Carlos has two \\5 bills and three \\1 bills. How much money does he have?",
+    "question": "Carlos has two $5 bills and three $1 bills. How much money does he have?",
     "options": [
-      "\\8",
-      "\\13",
-      "\\15",
-      "\\23"
+      "$8",
+      "$13",
+      "$15",
+      "$23"
     ],
-    "correctAnswer": "\\13",
+    "correctAnswer": "$13",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -4833,12 +4833,12 @@
     "id": "math-2-measurement-data-2nd-grade-easy-23",
     "question": "A ribbon is 15 inches long. Kendra cuts off 6 inches. How long is the ribbon now?",
     "options": [
-      "9\\text{ inches}",
-      "21\\text{ inches}",
-      "8\\text{ inches}",
-      "10\\text{ inches}"
+      "9 inches",
+      "21 inches",
+      "8 inches",
+      "10 inches"
     ],
-    "correctAnswer": "9\\text{ inches}",
+    "correctAnswer": "9 inches",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -4876,7 +4876,7 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-easy-26",
-    "question": "Which coin is silver, larger than a nickel, and worth 25\\text{ cents}?",
+    "question": "Which coin is silver, larger than a nickel, and worth 25 cents?",
     "options": [
       "Penny",
       "Dime",
@@ -4893,12 +4893,12 @@
     "id": "math-2-measurement-data-2nd-grade-easy-27",
     "question": "What is the best estimate for the length of a standard doorway?",
     "options": [
-      "7\\text{ inches}",
-      "7\\text{ feet}",
-      "7\\text{ yards}",
-      "70\\text{ feet}"
+      "7 inches",
+      "7 feet",
+      "7 yards",
+      "70 feet"
     ],
-    "correctAnswer": "7\\text{ feet}",
+    "correctAnswer": "7 feet",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -4938,12 +4938,12 @@
     "id": "math-2-measurement-data-2nd-grade-easy-30",
     "question": "How much is 1 quarter, 1 nickel, and 4 pennies worth?",
     "options": [
-      "30\\text{ cents}",
-      "35\\text{ cents}",
-      "34\\text{ cents}",
-      "29\\text{ cents}"
+      "30 cents",
+      "35 cents",
+      "34 cents",
+      "29 cents"
     ],
-    "correctAnswer": "34\\text{ cents}",
+    "correctAnswer": "34 cents",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -4983,12 +4983,12 @@
     "id": "math-2-measurement-data-2nd-grade-easy-33",
     "question": "Diego has 5 dimes. How many total cents does he have?",
     "options": [
-      "50\\text{ cents}",
-      "5\\text{ cents}",
-      "25\\text{ cents}",
-      "500\\text{ cents}"
+      "50 cents",
+      "5 cents",
+      "25 cents",
+      "500 cents"
     ],
-    "correctAnswer": "50\\text{ cents}",
+    "correctAnswer": "50 cents",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5013,12 +5013,12 @@
     "id": "math-2-measurement-data-2nd-grade-easy-35",
     "question": "A piece of string is 12 centimeters long. A second piece is 18 centimeters long. How long are both pieces combined?",
     "options": [
-      "6\\text{ cm}",
-      "20\\text{ cm}",
-      "30\\text{ cm}",
-      "32\\text{ cm}"
+      "6cm",
+      "20cm",
+      "30cm",
+      "32cm"
     ],
-    "correctAnswer": "30\\text{ cm}",
+    "correctAnswer": "30cm",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5028,12 +5028,12 @@
     "id": "math-2-measurement-data-2nd-grade-easy-36",
     "question": "Which bill has the highest value in US currency among these choices?",
     "options": [
-      "\\5\\text{ bill}",
-      "\\1\\text{ bill}",
-      "\\10\\text{ bill}",
-      "\\20\\text{ bill}"
+      "$5bill",
+      "$1bill",
+      "$10bill",
+      "$20bill"
     ],
-    "correctAnswer": "\\20\\text{ bill}",
+    "correctAnswer": "$20bill",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5086,7 +5086,7 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-easy-40",
-    "question": "How many nickels make \\1.00 (100\\text{ cents})?",
+    "question": "How many nickels make $1.00 (100 cents)?",
     "options": [
       "10 nickels",
       "4 nickels",
@@ -5133,12 +5133,12 @@
     "id": "math-2-measurement-data-2nd-grade-easy-43",
     "question": "Andre has 1 quarter, 2 dimes, and 1 nickel. What is the total value?",
     "options": [
-      "40\\text{ cents}",
-      "50\\text{ cents}",
-      "45\\text{ cents}",
-      "55\\text{ cents}"
+      "40 cents",
+      "50 cents",
+      "45 cents",
+      "55 cents"
     ],
-    "correctAnswer": "50\\text{ cents}",
+    "correctAnswer": "50 cents",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5148,12 +5148,12 @@
     "id": "math-2-measurement-data-2nd-grade-easy-44",
     "question": "A caterpillar crawls 7 inches on Monday and 5 inches on Tuesday. How many inches did it crawl in total?",
     "options": [
-      "11\\text{ inches}",
-      "2\\text{ inches}",
-      "12\\text{ inches}",
-      "13\\text{ inches}"
+      "11 inches",
+      "2 inches",
+      "12 inches",
+      "13 inches"
     ],
-    "correctAnswer": "12\\text{ inches}",
+    "correctAnswer": "12 inches",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5193,12 +5193,12 @@
     "id": "math-2-measurement-data-2nd-grade-easy-47",
     "question": "What is the length of a paperclip on a metric ruler if it starts at 0 cm and ends at 4 cm?",
     "options": [
-      "0\\text{ cm}",
-      "4\\text{ cm}",
-      "4\\text{ inches}",
-      "40\\text{ cm}"
+      "0cm",
+      "4cm",
+      "4 inches",
+      "40cm"
     ],
-    "correctAnswer": "4\\text{ cm}",
+    "correctAnswer": "4cm",
     "difficulty": "easy",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5206,7 +5206,7 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-easy-48",
-    "question": "How many quarters equal \\1.00?",
+    "question": "How many quarters equal $1.00?",
     "options": [
       "2 quarters",
       "10 quarters",
@@ -5236,7 +5236,7 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-easy-50",
-    "question": "How many dimes equal \\1.00?",
+    "question": "How many dimes equal $1.00?",
     "options": [
       "5 dimes",
       "10 dimes",
@@ -5268,12 +5268,12 @@
     "id": "math-2-measurement-data-2nd-grade-medium-52",
     "question": "Mateo has 3 quarters, 2 dimes, 1 nickel, and 4 pennies. How much money does he have in total?",
     "options": [
-      "95\\text{ cents}",
-      "104\\text{ cents} (\\1.04)",
-      "89\\text{ cents}",
-      "99\\text{ cents}"
+      "95 cents",
+      "104 cents ($1.04)",
+      "89 cents",
+      "99 cents"
     ],
-    "correctAnswer": "104\\text{ cents} (\\1.04)",
+    "correctAnswer": "104 cents ($1.04)",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5283,12 +5283,12 @@
     "id": "math-2-measurement-data-2nd-grade-medium-53",
     "question": "A hallway is 28 feet long. A rug covers 15 feet of the hallway. How many feet of the hallway are NOT covered by the rug?",
     "options": [
-      "13\\text{ feet}",
-      "43\\text{ feet}",
-      "12\\text{ feet}",
-      "14\\text{ feet}"
+      "13 feet",
+      "43 feet",
+      "12 feet",
+      "14 feet"
     ],
-    "correctAnswer": "13\\text{ feet}",
+    "correctAnswer": "13 feet",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5311,14 +5311,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-medium-55",
-    "question": "Keisha buys a pencil for 35\\text{ cents} and an eraser for 25\\text{ cents}. She pays with a \\1.00 bill. How much change does she get back?",
+    "question": "Keisha buys a pencil for 35 cents and an eraser for 25 cents. She pays with a $1.00 bill. How much change does she get back?",
     "options": [
-      "40\\text{ cents}",
-      "60\\text{ cents}",
-      "50\\text{ cents}",
-      "30\\text{ cents}"
+      "40 cents",
+      "60 cents",
+      "50 cents",
+      "30 cents"
     ],
-    "correctAnswer": "40\\text{ cents}",
+    "correctAnswer": "40 cents",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5328,12 +5328,12 @@
     "id": "math-2-measurement-data-2nd-grade-medium-56",
     "question": "A blue yarn string is 42 cm long. A red yarn string is 27 cm long. How much longer is the blue string than the red string?",
     "options": [
-      "69\\text{ cm}",
-      "15\\text{ cm}",
-      "25\\text{ cm}",
-      "17\\text{ cm}"
+      "69cm",
+      "15cm",
+      "25cm",
+      "17cm"
     ],
-    "correctAnswer": "15\\text{ cm}",
+    "correctAnswer": "15cm",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5356,14 +5356,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-medium-58",
-    "question": "Jamal has two \\20 bills, one \\5 bill, and three \\1 bills. How much money does he have altogether?",
+    "question": "Jamal has two $20 bills, one $5 bill, and three $1 bills. How much money does he have altogether?",
     "options": [
-      "\\28",
-      "\\45",
-      "\\43",
-      "\\48"
+      "$28",
+      "$45",
+      "$43",
+      "$48"
     ],
-    "correctAnswer": "\\48",
+    "correctAnswer": "$48",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5386,14 +5386,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-medium-60",
-    "question": "Priya measures a bench using a yardstick. It is 2 yards long. How many feet long is the bench? (1\\text{ yard} = 3\\text{ feet})",
+    "question": "Priya measures a bench using a yardstick. It is 2 yards long. How many feet long is the bench? (1 yard = 3 feet)",
     "options": [
-      "2\\text{ feet}",
-      "5\\text{ feet}",
-      "6\\text{ feet}",
-      "24\\text{ feet}"
+      "2 feet",
+      "5 feet",
+      "6 feet",
+      "24 feet"
     ],
-    "correctAnswer": "6\\text{ feet}",
+    "correctAnswer": "6 feet",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5401,14 +5401,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-medium-61",
-    "question": "Deshawn has 2 quarters, 3 dimes, and 2 nickels. Does he have enough money to buy a notebook that costs 90\\text{ cents}?",
+    "question": "Deshawn has 2 quarters, 3 dimes, and 2 nickels. Does he have enough money to buy a notebook that costs 90 cents?",
     "options": [
-      "Yes, he has exactly 90\\text{ cents}",
-      "No, he is short by 5\\text{ cents}",
-      "No, he is short by 10\\text{ cents}",
-      "Yes, and he will have 10\\text{ cents} left"
+      "Yes, he has exactly 90 cents",
+      "No, he is short by 5 cents",
+      "No, he is short by 10 cents",
+      "Yes, and he will have 10 cents left"
     ],
-    "correctAnswer": "Yes, he has exactly 90\\text{ cents}",
+    "correctAnswer": "Yes, he has exactly 90 cents",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5433,12 +5433,12 @@
     "id": "math-2-measurement-data-2nd-grade-medium-63",
     "question": "Elena's garden fence is 35 feet long on one side and 42 feet long on the other side. What is the total length of both sides of the fence?",
     "options": [
-      "77\\text{ feet}",
-      "7\\text{ feet}",
-      "87\\text{ feet}",
-      "75\\text{ feet}"
+      "77 feet",
+      "7 feet",
+      "87 feet",
+      "75 feet"
     ],
-    "correctAnswer": "77\\text{ feet}",
+    "correctAnswer": "77 feet",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5461,7 +5461,7 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-medium-65",
-    "question": "Dante has \\1.00. He buys a bookmark for 62\\text{ cents}. Which set of coins could be his exact change?",
+    "question": "Dante has $1.00. He buys a bookmark for 62 cents. Which set of coins could be his exact change?",
     "options": [
       "1 quarter, 1 dime, 3 pennies",
       "3 dimes, 8 pennies",
@@ -5478,12 +5478,12 @@
     "id": "math-2-measurement-data-2nd-grade-medium-66",
     "question": "A wooden board is 90 inches long. A carpenter cuts off two pieces that are each 20 inches long. How long is the board now?",
     "options": [
-      "70\\text{ inches}",
-      "40\\text{ inches}",
-      "60\\text{ inches}",
-      "50\\text{ inches}"
+      "70 inches",
+      "40 inches",
+      "60 inches",
+      "50 inches"
     ],
-    "correctAnswer": "50\\text{ inches}",
+    "correctAnswer": "50 inches",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5523,12 +5523,12 @@
     "id": "math-2-measurement-data-2nd-grade-medium-69",
     "question": "Kendra has 1 dollar bill, 1 quarter, 3 dimes, and 2 pennies. How much total money does she have?",
     "options": [
-      "\\1.57",
-      "\\1.47",
-      "\\1.52",
-      "\\1.62"
+      "$1.57",
+      "$1.47",
+      "$1.52",
+      "$1.62"
     ],
-    "correctAnswer": "\\1.57",
+    "correctAnswer": "$1.57",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5538,12 +5538,12 @@
     "id": "math-2-measurement-data-2nd-grade-medium-70",
     "question": "How many centimeters long is a desk that measures 1 meter and 25 centimeters?",
     "options": [
-      "125\\text{ cm}",
-      "25\\text{ cm}",
-      "1025\\text{ cm}",
-      "150\\text{ cm}"
+      "125cm",
+      "25cm",
+      "1025cm",
+      "150cm"
     ],
-    "correctAnswer": "125\\text{ cm}",
+    "correctAnswer": "125cm",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5566,14 +5566,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-medium-72",
-    "question": "Nia counts her savings. She has three \\10 bills, four \\5 bills, and six \\1 bills. How much money does Nia have?",
+    "question": "Nia counts her savings. She has three $10 bills, four $5 bills, and six $1 bills. How much money does Nia have?",
     "options": [
-      "\\50",
-      "\\46",
-      "\\56",
-      "\\66"
+      "$50",
+      "$46",
+      "$56",
+      "$66"
     ],
-    "correctAnswer": "\\56",
+    "correctAnswer": "$56",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5583,12 +5583,12 @@
     "id": "math-2-measurement-data-2nd-grade-medium-73",
     "question": "A flagpole casts a shadow that is 18 feet long. A nearby fence casts a shadow that is 7 feet long. How much longer is the flagpole's shadow?",
     "options": [
-      "11\\text{ feet}",
-      "25\\text{ feet}",
-      "12\\text{ feet}",
-      "10\\text{ feet}"
+      "11 feet",
+      "25 feet",
+      "12 feet",
+      "10 feet"
     ],
-    "correctAnswer": "11\\text{ feet}",
+    "correctAnswer": "11 feet",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5611,14 +5611,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-medium-75",
-    "question": "Diego has 80\\text{ cents}. He spends 45\\text{ cents} on a bouncy ball. How much money does he have left?",
+    "question": "Diego has 80 cents. He spends 45 cents on a bouncy ball. How much money does he have left?",
     "options": [
-      "35\\text{ cents}",
-      "45\\text{ cents}",
-      "25\\text{ cents}",
-      "30\\text{ cents}"
+      "35 cents",
+      "45 cents",
+      "25 cents",
+      "30 cents"
     ],
-    "correctAnswer": "35\\text{ cents}",
+    "correctAnswer": "35 cents",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5628,12 +5628,12 @@
     "id": "math-2-measurement-data-2nd-grade-medium-76",
     "question": "Which estimate best describes the length of an adult bicycle?",
     "options": [
-      "6\\text{ inches}",
-      "6\\text{ feet}",
-      "6\\text{ yards}",
-      "60\\text{ feet}"
+      "6 inches",
+      "6 feet",
+      "6 yards",
+      "60 feet"
     ],
-    "correctAnswer": "6\\text{ feet}",
+    "correctAnswer": "6 feet",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5673,12 +5673,12 @@
     "id": "math-2-measurement-data-2nd-grade-medium-79",
     "question": "Andre measures two paths on a playground map. Path A is 54 meters. Path B is 38 meters. How much shorter is Path B than Path A?",
     "options": [
-      "16\\text{ meters}",
-      "26\\text{ meters}",
-      "92\\text{ meters}",
-      "14\\text{ meters}"
+      "16 meters",
+      "26 meters",
+      "92 meters",
+      "14 meters"
     ],
-    "correctAnswer": "16\\text{ meters}",
+    "correctAnswer": "16 meters",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5701,14 +5701,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-medium-81",
-    "question": "Keisha has 2 quarters, 4 dimes, and 3 nickels. How much more money does she need to make \\1.00?",
+    "question": "Keisha has 2 quarters, 4 dimes, and 3 nickels. How much more money does she need to make $1.00?",
     "options": [
-      "5\\text{ cents}",
-      "10\\text{ cents}",
-      "15\\text{ cents}",
-      "She already has more than \\1.00"
+      "5 cents",
+      "10 cents",
+      "15 cents",
+      "She already has more than $1.00"
     ],
-    "correctAnswer": "5\\text{ cents}",
+    "correctAnswer": "5 cents",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5716,14 +5716,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-medium-82",
-    "question": "Marcus measures a window sill that is 36 inches long. How many feet long is the window sill? (12\\text{ inches} = 1\\text{ foot})",
+    "question": "Marcus measures a window sill that is 36 inches long. How many feet long is the window sill? (12 inches = 1 foot)",
     "options": [
-      "2\\text{ feet}",
-      "3\\text{ feet}",
-      "4\\text{ feet}",
-      "36\\text{ feet}"
+      "2 feet",
+      "3 feet",
+      "4 feet",
+      "36 feet"
     ],
-    "correctAnswer": "3\\text{ feet}",
+    "correctAnswer": "3 feet",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5761,14 +5761,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-medium-85",
-    "question": "Jamal buys a box of crayons for \\2 and a sketchpad for \\5. He hands the cashier a \\10 bill. How much change should he receive?",
+    "question": "Jamal buys a box of crayons for $2 and a sketchpad for $5. He hands the cashier a $10 bill. How much change should he receive?",
     "options": [
-      "\\3",
-      "\\7",
-      "\\2",
-      "\\4"
+      "$3",
+      "$7",
+      "$2",
+      "$4"
     ],
-    "correctAnswer": "\\3",
+    "correctAnswer": "$3",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5806,14 +5806,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-medium-88",
-    "question": "Priya has 65\\text{ cents}. Her brother gives her 2 nickels and 3 pennies. How much money does Priya have now?",
+    "question": "Priya has 65 cents. Her brother gives her 2 nickels and 3 pennies. How much money does Priya have now?",
     "options": [
-      "75\\text{ cents}",
-      "73\\text{ cents}",
-      "81\\text{ cents}",
-      "78\\text{ cents}"
+      "75 cents",
+      "73 cents",
+      "81 cents",
+      "78 cents"
     ],
-    "correctAnswer": "78\\text{ cents}",
+    "correctAnswer": "78 cents",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5823,12 +5823,12 @@
     "id": "math-2-measurement-data-2nd-grade-medium-89",
     "question": "Deshawn's bedroom rug is 6 feet long and 4 feet wide. What is the difference between the rug's length and width?",
     "options": [
-      "2\\text{ feet}",
-      "10\\text{ feet}",
-      "1\\text{ foot}",
-      "24\\text{ feet}"
+      "2 feet",
+      "10 feet",
+      "1 foot",
+      "24 feet"
     ],
-    "correctAnswer": "2\\text{ feet}",
+    "correctAnswer": "2 feet",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5851,14 +5851,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-medium-91",
-    "question": "Elena has 3 quarters. She spends 50\\text{ cents} on juice. How much money does she have left?",
+    "question": "Elena has 3 quarters. She spends 50 cents on juice. How much money does she have left?",
     "options": [
-      "15\\text{ cents}",
-      "20\\text{ cents}",
-      "25\\text{ cents}",
-      "35\\text{ cents}"
+      "15 cents",
+      "20 cents",
+      "25 cents",
+      "35 cents"
     ],
-    "correctAnswer": "25\\text{ cents}",
+    "correctAnswer": "25 cents",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5868,12 +5868,12 @@
     "id": "math-2-measurement-data-2nd-grade-medium-92",
     "question": "A rope was 50 meters long. Workers cut off a piece measuring 18 meters. How long is the remaining rope?",
     "options": [
-      "38\\text{ meters}",
-      "32\\text{ meters}",
-      "28\\text{ meters}",
-      "30\\text{ meters}"
+      "38 meters",
+      "32 meters",
+      "28 meters",
+      "30 meters"
     ],
-    "correctAnswer": "32\\text{ meters}",
+    "correctAnswer": "32 meters",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5896,14 +5896,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-medium-94",
-    "question": "Tanesha has one \\5 bill, four \\1 bills, and 2 quarters. How much total money does she have?",
+    "question": "Tanesha has one $5 bill, four $1 bills, and 2 quarters. How much total money does she have?",
     "options": [
-      "\\9.25",
-      "\\9.75",
-      "\\10.00",
-      "\\9.50"
+      "$9.25",
+      "$9.75",
+      "$10.00",
+      "$9.50"
     ],
-    "correctAnswer": "\\9.50",
+    "correctAnswer": "$9.50",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5943,12 +5943,12 @@
     "id": "math-2-measurement-data-2nd-grade-medium-97",
     "question": "How many inches total are in 2 feet and 5 inches?",
     "options": [
-      "29\\text{ inches}",
-      "24\\text{ inches}",
-      "27\\text{ inches}",
-      "19\\text{ inches}"
+      "29 inches",
+      "24 inches",
+      "27 inches",
+      "19 inches"
     ],
-    "correctAnswer": "29\\text{ inches}",
+    "correctAnswer": "29 inches",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5956,14 +5956,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-medium-98",
-    "question": "Carlos pays for a \\6 lunch using a \\20 bill. How much change does he receive?",
+    "question": "Carlos pays for a $6 lunch using a $20 bill. How much change does he receive?",
     "options": [
-      "\\12",
-      "\\15",
-      "\\14",
-      "\\16"
+      "$12",
+      "$15",
+      "$14",
+      "$16"
     ],
-    "correctAnswer": "\\14",
+    "correctAnswer": "$14",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -5988,12 +5988,12 @@
     "id": "math-2-measurement-data-2nd-grade-medium-100",
     "question": "Kendra measures her jump rope at 72 inches. Her friend's jump rope is 60 inches. How many inches shorter is her friend's jump rope?",
     "options": [
-      "10\\text{ inches}",
-      "12\\text{ inches}",
-      "14\\text{ inches}",
-      "2\\text{ inches}"
+      "10 inches",
+      "12 inches",
+      "14 inches",
+      "2 inches"
     ],
-    "correctAnswer": "12\\text{ inches}",
+    "correctAnswer": "12 inches",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6003,12 +6003,12 @@
     "id": "math-2-measurement-data-2nd-grade-hard-101",
     "question": "Anaya has 3 quarters, 3 dimes, 3 nickels, and 3 pennies. What is the total value of her coins?",
     "options": [
-      "\\1.23 (123\\text{ cents})",
-      "\\1.18 (118\\text{ cents})",
-      "\\1.28 (128\\text{ cents})",
-      "\\1.13 (113\\text{ cents})"
+      "$1.23 (123 cents)",
+      "$1.18 (118 cents)",
+      "$1.28 (128 cents)",
+      "$1.13 (113 cents)"
     ],
-    "correctAnswer": "\\1.23 (123\\text{ cents})",
+    "correctAnswer": "$1.23 (123 cents)",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6033,12 +6033,12 @@
     "id": "math-2-measurement-data-2nd-grade-hard-103",
     "question": "A teacher has a 100-inch roll of bulletin board paper. She cuts off 38 inches for a display and 27 inches for a student project. How many inches of paper are left on the roll?",
     "options": [
-      "45\\text{ inches}",
-      "30\\text{ inches}",
-      "35\\text{ inches}",
-      "40\\text{ inches}"
+      "45 inches",
+      "30 inches",
+      "35 inches",
+      "40 inches"
     ],
-    "correctAnswer": "35\\text{ inches}",
+    "correctAnswer": "35 inches",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6046,14 +6046,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-hard-104",
-    "question": "Keisha bought a book for \\8.50 and a notebook for \\3.25. She paid with a \\20 bill. How much change should she receive?",
+    "question": "Keisha bought a book for $8.50 and a notebook for $3.25. She paid with a $20 bill. How much change should she receive?",
     "options": [
-      "\\8.25",
-      "\\8.75",
-      "\\9.25",
-      "\\8.00"
+      "$8.25",
+      "$8.75",
+      "$9.25",
+      "$8.00"
     ],
-    "correctAnswer": "\\8.75",
+    "correctAnswer": "$8.75",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6091,14 +6091,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-hard-107",
-    "question": "Jamal has 3 dollars, 2 quarters, 4 dimes, and 1 nickel. He buys a toy train for \\3.75. How much money does he have remaining?",
+    "question": "Jamal has 3 dollars, 2 quarters, 4 dimes, and 1 nickel. He buys a toy train for $3.75. How much money does he have remaining?",
     "options": [
-      "\\0.15 (15\\text{ cents})",
-      "\\0.20 (20\\text{ cents})",
-      "\\0.25 (25\\text{ cents})",
-      "\\0.10 (10\\text{ cents})"
+      "$0.15 (15 cents)",
+      "$0.20 (20 cents)",
+      "$0.25 (25 cents)",
+      "$0.10 (10 cents)"
     ],
-    "correctAnswer": "\\0.20 (20\\text{ cents})",
+    "correctAnswer": "$0.20 (20 cents)",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6108,12 +6108,12 @@
     "id": "math-2-measurement-data-2nd-grade-hard-108",
     "question": "A garden path is 14 meters long. A park worker adds 18 meters of stone path on Monday and 15 meters on Tuesday. What is the total length of the path now?",
     "options": [
-      "37\\text{ meters}",
-      "45\\text{ meters}",
-      "47\\text{ meters}",
-      "42\\text{ meters}"
+      "37 meters",
+      "45 meters",
+      "47 meters",
+      "42 meters"
     ],
-    "correctAnswer": "47\\text{ meters}",
+    "correctAnswer": "47 meters",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6136,14 +6136,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-hard-110",
-    "question": "Deshawn has two \\10 bills, three \\5 bills, and four \\1 bills. He buys a scooter for \\32. How much money does he have left?",
+    "question": "Deshawn has two $10 bills, three $5 bills, and four $1 bills. He buys a scooter for $32. How much money does he have left?",
     "options": [
-      "\\7",
-      "\\9",
-      "\\8",
-      "\\12"
+      "$7",
+      "$9",
+      "$8",
+      "$12"
     ],
-    "correctAnswer": "\\7",
+    "correctAnswer": "$7",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6151,14 +6151,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-hard-111",
-    "question": "A wooden fence around a square garden is 8 yards long on each of its 4 sides. What is the total length of the fence in FEET? (1\\text{ yard} = 3\\text{ feet})",
+    "question": "A wooden fence around a square garden is 8 yards long on each of its 4 sides. What is the total length of the fence in FEET? (1 yard = 3 feet)",
     "options": [
-      "32\\text{ feet}",
-      "96\\text{ feet}",
-      "24\\text{ feet}",
-      "48\\text{ feet}"
+      "32 feet",
+      "96 feet",
+      "24 feet",
+      "48 feet"
     ],
-    "correctAnswer": "96\\text{ feet}",
+    "correctAnswer": "96 feet",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6168,12 +6168,12 @@
     "id": "math-2-measurement-data-2nd-grade-hard-112",
     "question": "Look at a line plot of earthworm lengths in inches: 3 inches: XX 4 inches: XXXX 5 inches: XXXXX 6 inches: X What is the difference in length between the LONGEST earthworm measured and the SHORTEST earthworm measured?",
     "options": [
-      "2\\text{ inches}",
-      "4\\text{ inches}",
-      "3\\text{ inches}",
-      "1\\text{ inch}"
+      "2 inches",
+      "4 inches",
+      "3 inches",
+      "1 inch"
     ],
-    "correctAnswer": "3\\text{ inches}",
+    "correctAnswer": "3 inches",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6196,7 +6196,7 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-hard-114",
-    "question": "Tanesha has 95\\text{ cents} made of quarters, dimes, and nickels. She has 2 quarters and 3 dimes. How many nickels does she have?",
+    "question": "Tanesha has 95 cents made of quarters, dimes, and nickels. She has 2 quarters and 3 dimes. How many nickels does she have?",
     "options": [
       "3 nickels",
       "2 nickels",
@@ -6213,12 +6213,12 @@
     "id": "math-2-measurement-data-2nd-grade-hard-115",
     "question": "A blue board is 84 centimeters long. A green board is 59 centimeters long. How many centimeters must be cut from the blue board so both boards are equal?",
     "options": [
-      "35\\text{ cm}",
-      "25\\text{ cm}",
-      "23\\text{ cm}",
-      "27\\text{ cm}"
+      "35cm",
+      "25cm",
+      "23cm",
+      "27cm"
     ],
-    "correctAnswer": "25\\text{ cm}",
+    "correctAnswer": "25cm",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6241,14 +6241,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-hard-117",
-    "question": "Dante earns \\15 mowing lawns and \\18 washing cars. He spends \\12 on a game and saves the rest. How much money does Dante save?",
+    "question": "Dante earns $15 mowing lawns and $18 washing cars. He spends $12 on a game and saves the rest. How much money does Dante save?",
     "options": [
-      "\\21",
-      "\\23",
-      "\\25",
-      "\\20"
+      "$21",
+      "$23",
+      "$25",
+      "$20"
     ],
-    "correctAnswer": "\\21",
+    "correctAnswer": "$21",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6258,12 +6258,12 @@
     "id": "math-2-measurement-data-2nd-grade-hard-118",
     "question": "A hiking trail is 92 yards long. Hikers walk 47 yards before taking a break. How many yards do they have left to reach the end?",
     "options": [
-      "55\\text{ yards}",
-      "45\\text{ yards}",
-      "43\\text{ yards}",
-      "50\\text{ yards}"
+      "55 yards",
+      "45 yards",
+      "43 yards",
+      "50 yards"
     ],
-    "correctAnswer": "45\\text{ yards}",
+    "correctAnswer": "45 yards",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6273,12 +6273,12 @@
     "id": "math-2-measurement-data-2nd-grade-hard-119",
     "question": "Carlos has 4 quarters, 4 dimes, 4 nickels, and 4 pennies. How much money does he have total?",
     "options": [
-      "\\1.60",
-      "\\1.68",
-      "\\1.64",
-      "\\1.54"
+      "$1.60",
+      "$1.68",
+      "$1.64",
+      "$1.54"
     ],
-    "correctAnswer": "\\1.64",
+    "correctAnswer": "$1.64",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6316,14 +6316,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-hard-122",
-    "question": "Kendra measures a rope at 3 feet and 8 inches. How many total INCHES long is the rope? (1\\text{ foot} = 12\\text{ inches})",
+    "question": "Kendra measures a rope at 3 feet and 8 inches. How many total INCHES long is the rope? (1 foot = 12 inches)",
     "options": [
-      "38\\text{ inches}",
-      "44\\text{ inches}",
-      "42\\text{ inches}",
-      "48\\text{ inches}"
+      "38 inches",
+      "44 inches",
+      "42 inches",
+      "48 inches"
     ],
-    "correctAnswer": "44\\text{ inches}",
+    "correctAnswer": "44 inches",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6331,14 +6331,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-hard-123",
-    "question": "Nia has one \\20 bill. She buys a toy for \\11.50 and a snack for \\3.50. How much change does she receive?",
+    "question": "Nia has one $20 bill. She buys a toy for $11.50 and a snack for $3.50. How much change does she receive?",
     "options": [
-      "\\5.00",
-      "\\4.50",
-      "\\6.00",
-      "\\5.50"
+      "$5.00",
+      "$4.50",
+      "$6.00",
+      "$5.50"
     ],
-    "correctAnswer": "\\5.00",
+    "correctAnswer": "$5.00",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6363,12 +6363,12 @@
     "id": "math-2-measurement-data-2nd-grade-hard-125",
     "question": "Diego measures the sides of a triangle flowerbed: Side 1 is 14 feet, Side 2 is 19 feet, and Side 3 is 16 feet. What is the total perimeter around the flowerbed?",
     "options": [
-      "48\\text{ feet}",
-      "51\\text{ feet}",
-      "49\\text{ feet}",
-      "47\\text{ feet}"
+      "48 feet",
+      "51 feet",
+      "49 feet",
+      "47 feet"
     ],
-    "correctAnswer": "49\\text{ feet}",
+    "correctAnswer": "49 feet",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6376,7 +6376,7 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-hard-126",
-    "question": "Keisha has 82\\text{ cents}. She has 3 quarters and some pennies. How many pennies does she have?",
+    "question": "Keisha has 82 cents. She has 3 quarters and some pennies. How many pennies does she have?",
     "options": [
       "2 pennies",
       "5 pennies",
@@ -6406,14 +6406,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-hard-128",
-    "question": "Marcus has \\50. He spends \\18 on a shirt and \\24 on shoes. How much money does he have left?",
+    "question": "Marcus has $50. He spends $18 on a shirt and $24 on shoes. How much money does he have left?",
     "options": [
-      "\\12",
-      "\\8",
-      "\\10",
-      "\\14"
+      "$12",
+      "$8",
+      "$10",
+      "$14"
     ],
-    "correctAnswer": "\\8",
+    "correctAnswer": "$8",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6423,12 +6423,12 @@
     "id": "math-2-measurement-data-2nd-grade-hard-129",
     "question": "A runner ran 400 meters on Monday and 350 meters on Tuesday. How many meters must he run on Wednesday to reach 1000 total meters?",
     "options": [
-      "300\\text{ meters}",
-      "200\\text{ meters}",
-      "250\\text{ meters}",
-      "350\\text{ meters}"
+      "300 meters",
+      "200 meters",
+      "250 meters",
+      "350 meters"
     ],
-    "correctAnswer": "250\\text{ meters}",
+    "correctAnswer": "250 meters",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6451,7 +6451,7 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-hard-131",
-    "question": "Jamal has 5 coins that total 65\\text{ cents}. If 2 of the coins are quarters, what are the other 3 coins?",
+    "question": "Jamal has 5 coins that total 65 cents. If 2 of the coins are quarters, what are the other 3 coins?",
     "options": [
       "1 dime and 2 nickels",
       "3 nickels",
@@ -6468,12 +6468,12 @@
     "id": "math-2-measurement-data-2nd-grade-hard-132",
     "question": "A piece of fabric is 2 meters long. How many centimeters long is the fabric?",
     "options": [
-      "20\\text{ cm}",
-      "200\\text{ cm}",
-      "2000\\text{ cm}",
-      "250\\text{ cm}"
+      "20cm",
+      "200cm",
+      "2000cm",
+      "250cm"
     ],
-    "correctAnswer": "200\\text{ cm}",
+    "correctAnswer": "200cm",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6496,14 +6496,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-hard-134",
-    "question": "Deshawn has three \\5 bills, four \\1 bills, 2 quarters, and 2 dimes. How much money does he have in total?",
+    "question": "Deshawn has three $5 bills, four $1 bills, 2 quarters, and 2 dimes. How much money does he have in total?",
     "options": [
-      "\\19.50",
-      "\\19.60",
-      "\\19.70",
-      "\\20.20"
+      "$19.50",
+      "$19.60",
+      "$19.70",
+      "$20.20"
     ],
-    "correctAnswer": "\\19.70",
+    "correctAnswer": "$19.70",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6513,12 +6513,12 @@
     "id": "math-2-measurement-data-2nd-grade-hard-135",
     "question": "A ribbon is 75 inches long. Sarah cuts 28 inches for a gift box and 19 inches for a wreath. How many inches of ribbon remain?",
     "options": [
-      "38\\text{ inches}",
-      "27\\text{ inches}",
-      "32\\text{ inches}",
-      "28\\text{ inches}"
+      "38 inches",
+      "27 inches",
+      "32 inches",
+      "28 inches"
     ],
-    "correctAnswer": "28\\text{ inches}",
+    "correctAnswer": "28 inches",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6541,14 +6541,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-hard-137",
-    "question": "Elena buys 3 packs of stickers for \\3 each and 1 eraser for \\2. She pays with a \\20 bill. How much change does she receive?",
+    "question": "Elena buys 3 packs of stickers for $3 each and 1 eraser for $2. She pays with a $20 bill. How much change does she receive?",
     "options": [
-      "\\11",
-      "\\9",
-      "\\12",
-      "\\10"
+      "$11",
+      "$9",
+      "$12",
+      "$10"
     ],
-    "correctAnswer": "\\9",
+    "correctAnswer": "$9",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6558,12 +6558,12 @@
     "id": "math-2-measurement-data-2nd-grade-hard-138",
     "question": "A rectangular rug is 8 feet long and 5 feet wide. What is the total length around all 4 edges of the rug (perimeter)?",
     "options": [
-      "13\\text{ feet}",
-      "21\\text{ feet}",
-      "26\\text{ feet}",
-      "40\\text{ feet}"
+      "13 feet",
+      "21 feet",
+      "26 feet",
+      "40 feet"
     ],
-    "correctAnswer": "26\\text{ feet}",
+    "correctAnswer": "26 feet",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6586,7 +6586,7 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-hard-140",
-    "question": "Tanesha has 8 coins totaling 80\\text{ cents}. Which combination of coins could she have?",
+    "question": "Tanesha has 8 coins totaling 80 cents. Which combination of coins could she have?",
     "options": [
       "8 dimes",
       "3 quarters and 5 pennies",
@@ -6601,14 +6601,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-hard-141",
-    "question": "A wooden beam is 12 feet long. A second beam is 15 feet long. A third beam is 9 feet long. What is the total combined length in YARDS? (3\\text{ feet} = 1\\text{ yard})",
+    "question": "A wooden beam is 12 feet long. A second beam is 15 feet long. A third beam is 9 feet long. What is the total combined length in YARDS? (3 feet = 1 yard)",
     "options": [
-      "10\\text{ yards}",
-      "12\\text{ yards}",
-      "36\\text{ yards}",
-      "15\\text{ yards}"
+      "10 yards",
+      "12 yards",
+      "36 yards",
+      "15 yards"
     ],
-    "correctAnswer": "12\\text{ yards}",
+    "correctAnswer": "12 yards",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6631,7 +6631,7 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-hard-143",
-    "question": "Dante has \\1.50 in quarters. How many quarters does he have?",
+    "question": "Dante has $1.50 in quarters. How many quarters does he have?",
     "options": [
       "4 quarters",
       "5 quarters",
@@ -6663,12 +6663,12 @@
     "id": "math-2-measurement-data-2nd-grade-hard-145",
     "question": "Carlos has a piece of wire that is 64 cm long. He bends it to form a square where all 4 sides are equal. How long is each side?",
     "options": [
-      "14\\text{ cm}",
-      "16\\text{ cm}",
-      "18\\text{ cm}",
-      "32\\text{ cm}"
+      "14cm",
+      "16cm",
+      "18cm",
+      "32cm"
     ],
-    "correctAnswer": "16\\text{ cm}",
+    "correctAnswer": "16cm",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6691,14 +6691,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-hard-147",
-    "question": "Nia has 2 quarters, 4 dimes, and 8 pennies. She spends 75\\text{ cents}. How much money does she have remaining?",
+    "question": "Nia has 2 quarters, 4 dimes, and 8 pennies. She spends 75 cents. How much money does she have remaining?",
     "options": [
-      "20\\text{ cents}",
-      "18\\text{ cents}",
-      "15\\text{ cents}",
-      "23\\text{ cents}"
+      "20 cents",
+      "18 cents",
+      "15 cents",
+      "23 cents"
     ],
-    "correctAnswer": "23\\text{ cents}",
+    "correctAnswer": "23 cents",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6708,12 +6708,12 @@
     "id": "math-2-measurement-data-2nd-grade-hard-148",
     "question": "A carpenter needs a 90 cm board. He has a 48 cm board and a 37 cm board. If he glues them together, how many more centimeters does he need?",
     "options": [
-      "5\\text{ cm}",
-      "15\\text{ cm}",
-      "10\\text{ cm}",
-      "8\\text{ cm}"
+      "5cm",
+      "15cm",
+      "10cm",
+      "8cm"
     ],
-    "correctAnswer": "5\\text{ cm}",
+    "correctAnswer": "5cm",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6736,14 +6736,14 @@
   },
   {
     "id": "math-2-measurement-data-2nd-grade-hard-150",
-    "question": "Diego has two \\20 bills, one \\10 bill, and two \\5 bills. He buys a bike helmet for \\28 and a lock for \\12. How much money does he have left?",
+    "question": "Diego has two $20 bills, one $10 bill, and two $5 bills. He buys a bike helmet for $28 and a lock for $12. How much money does he have left?",
     "options": [
-      "\\15",
-      "\\18",
-      "\\20",
-      "\\22"
+      "$15",
+      "$18",
+      "$20",
+      "$22"
     ],
-    "correctAnswer": "\\20",
+    "correctAnswer": "$20",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA (2ND GRADE)",
     "subject": "math",
@@ -6901,14 +6901,14 @@
   },
   {
     "id": "math-2-number-operations-in-base-ten-2nd-grade-easy-11",
-    "question": "Jamal has \\50. He earns \\40 more mowing lawns. How much money does he have in total?",
+    "question": "Jamal has $50. He earns $40 more mowing lawns. How much money does he have in total?",
     "options": [
-      "\\80",
-      "\\900",
-      "\\100",
-      "\\90"
+      "$80",
+      "$900",
+      "$100",
+      "$90"
     ],
-    "correctAnswer": "\\90",
+    "correctAnswer": "$90",
     "difficulty": "easy",
     "topic": "NUMBER & OPERATIONS IN BASE TEN (2ND GRADE)",
     "subject": "math",
@@ -7216,14 +7216,14 @@
   },
   {
     "id": "math-2-number-operations-in-base-ten-2nd-grade-easy-32",
-    "question": "Maya has \\80. She buys a jacket for \\50. How much money is left?",
+    "question": "Maya has $80. She buys a jacket for $50. How much money is left?",
     "options": [
-      "\\20",
-      "\\30",
-      "\\40",
-      "\\130"
+      "$20",
+      "$30",
+      "$40",
+      "$130"
     ],
-    "correctAnswer": "\\30",
+    "correctAnswer": "$30",
     "difficulty": "easy",
     "topic": "NUMBER & OPERATIONS IN BASE TEN (2ND GRADE)",
     "subject": "math",
@@ -7516,14 +7516,14 @@
   },
   {
     "id": "math-2-number-operations-in-base-ten-2nd-grade-medium-52",
-    "question": "Diego has \\63. He spends \\28 on a video game. How much money does he have left?",
+    "question": "Diego has $63. He spends $28 on a video game. How much money does he have left?",
     "options": [
-      "\\45",
-      "\\35",
-      "\\37",
-      "\\43"
+      "$45",
+      "$35",
+      "$37",
+      "$43"
     ],
-    "correctAnswer": "\\35",
+    "correctAnswer": "$35",
     "difficulty": "medium",
     "topic": "NUMBER & OPERATIONS IN BASE TEN (2ND GRADE)",
     "subject": "math",
@@ -7921,14 +7921,14 @@
   },
   {
     "id": "math-2-number-operations-in-base-ten-2nd-grade-medium-79",
-    "question": "Mateo buys a soccer ball for \\27 and gloves for \\18. How much does he spend in total?",
+    "question": "Mateo buys a soccer ball for $27 and gloves for $18. How much does he spend in total?",
     "options": [
-      "\\45",
-      "\\35",
-      "\\46",
-      "\\55"
+      "$45",
+      "$35",
+      "$46",
+      "$55"
     ],
-    "correctAnswer": "\\45",
+    "correctAnswer": "$45",
     "difficulty": "medium",
     "topic": "NUMBER & OPERATIONS IN BASE TEN (2ND GRADE)",
     "subject": "math",
@@ -8073,12 +8073,12 @@
     "id": "math-2-number-operations-in-base-ten-2nd-grade-medium-89",
     "question": "Jamal has 59 cents. He finds 35 cents in his pocket. How many cents does he have now?",
     "options": [
-      "84\\text{ cents}",
-      "95\\text{ cents}",
-      "94\\text{ cents}",
-      "89\\text{ cents}"
+      "84 cents",
+      "95 cents",
+      "94 cents",
+      "89 cents"
     ],
-    "correctAnswer": "94\\text{ cents}",
+    "correctAnswer": "94 cents",
     "difficulty": "medium",
     "topic": "NUMBER & OPERATIONS IN BASE TEN (2ND GRADE)",
     "subject": "math",
@@ -8356,14 +8356,14 @@
   },
   {
     "id": "math-2-number-operations-in-base-ten-2nd-grade-hard-108",
-    "question": "Mateo had \\400. He spent \\162 on a new bicycle. How much money does he have left?",
+    "question": "Mateo had $400. He spent $162 on a new bicycle. How much money does he have left?",
     "options": [
-      "\\248",
-      "\\242",
-      "\\258",
-      "\\238"
+      "$248",
+      "$242",
+      "$258",
+      "$238"
     ],
-    "correctAnswer": "\\238",
+    "correctAnswer": "$238",
     "difficulty": "hard",
     "topic": "NUMBER & OPERATIONS IN BASE TEN (2ND GRADE)",
     "subject": "math",
@@ -8626,14 +8626,14 @@
   },
   {
     "id": "math-2-number-operations-in-base-ten-2nd-grade-hard-126",
-    "question": "Priya had \\900 in her savings account. She bought a laptop for \\564. How much money is left in her account?",
+    "question": "Priya had $900 in her savings account. She bought a laptop for $564. How much money is left in her account?",
     "options": [
-      "\\346",
-      "\\336",
-      "\\337",
-      "\\436"
+      "$346",
+      "$336",
+      "$337",
+      "$436"
     ],
-    "correctAnswer": "\\336",
+    "correctAnswer": "$336",
     "difficulty": "hard",
     "topic": "NUMBER & OPERATIONS IN BASE TEN (2ND GRADE)",
     "subject": "math",
@@ -9421,14 +9421,14 @@
   },
   {
     "id": "math-2-operations-algebraic-thinking-2nd-grade-easy-29",
-    "question": "Liam has \\9 in his piggy bank. He earns \\6 more for mowing the lawn. How much money does Liam have now?",
+    "question": "Liam has $9 in his piggy bank. He earns $6 more for mowing the lawn. How much money does Liam have now?",
     "options": [
-      "\\15",
-      "\\14",
-      "\\16",
-      "\\13"
+      "$15",
+      "$14",
+      "$16",
+      "$13"
     ],
-    "correctAnswer": "\\15",
+    "correctAnswer": "$15",
     "difficulty": "easy",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (2ND GRADE)",
     "subject": "math",
@@ -9541,14 +9541,14 @@
   },
   {
     "id": "math-2-operations-algebraic-thinking-2nd-grade-easy-37",
-    "question": "Ethan spends \\5 on lunch and \\4 on a snack. How much money did he spend altogether?",
+    "question": "Ethan spends $5 on lunch and $4 on a snack. How much money did he spend altogether?",
     "options": [
-      "\\9",
-      "\\8",
-      "\\10",
-      "\\1"
+      "$9",
+      "$8",
+      "$10",
+      "$1"
     ],
-    "correctAnswer": "\\9",
+    "correctAnswer": "$9",
     "difficulty": "easy",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (2ND GRADE)",
     "subject": "math",
@@ -9826,14 +9826,14 @@
   },
   {
     "id": "math-2-operations-algebraic-thinking-2nd-grade-medium-56",
-    "question": "Chloe has \\45. She buys a jacket for \\27. How much money does Chloe have left?",
+    "question": "Chloe has $45. She buys a jacket for $27. How much money does Chloe have left?",
     "options": [
-      "\\17",
-      "\\18",
-      "\\19",
-      "\\28"
+      "$17",
+      "$18",
+      "$19",
+      "$28"
     ],
-    "correctAnswer": "\\18",
+    "correctAnswer": "$18",
     "difficulty": "medium",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (2ND GRADE)",
     "subject": "math",
@@ -10021,14 +10021,14 @@
   },
   {
     "id": "math-2-operations-algebraic-thinking-2nd-grade-medium-69",
-    "question": "Mason has \\64. He spends \\29 on a video game. How much money does Mason have left?",
+    "question": "Mason has $64. He spends $29 on a video game. How much money does Mason have left?",
     "options": [
-      "\\34",
-      "\\36",
-      "\\35",
-      "\\45"
+      "$34",
+      "$36",
+      "$35",
+      "$45"
     ],
-    "correctAnswer": "\\35",
+    "correctAnswer": "$35",
     "difficulty": "medium",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (2ND GRADE)",
     "subject": "math",
@@ -10276,14 +10276,14 @@
   },
   {
     "id": "math-2-operations-algebraic-thinking-2nd-grade-medium-86",
-    "question": "Amelia buys a toy for \\18 and a book for \\14. She pays with a \\50 bill. How much money does she get back?",
+    "question": "Amelia buys a toy for $18 and a book for $14. She pays with a $50 bill. How much money does she get back?",
     "options": [
-      "\\17",
-      "\\19",
-      "\\28",
-      "\\18"
+      "$17",
+      "$19",
+      "$28",
+      "$18"
     ],
-    "correctAnswer": "\\18",
+    "correctAnswer": "$18",
     "difficulty": "medium",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (2ND GRADE)",
     "subject": "math",
@@ -10561,14 +10561,14 @@
   },
   {
     "id": "math-2-operations-algebraic-thinking-2nd-grade-hard-105",
-    "question": "Sophia has \\75. She buys a pair of shoes for \\38 and a hat for \\14. How much money does Sophia have remaining?",
+    "question": "Sophia has $75. She buys a pair of shoes for $38 and a hat for $14. How much money does Sophia have remaining?",
     "options": [
-      "\\23",
-      "\\22",
-      "\\24",
-      "\\33"
+      "$23",
+      "$22",
+      "$24",
+      "$33"
     ],
-    "correctAnswer": "\\23",
+    "correctAnswer": "$23",
     "difficulty": "hard",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (2ND GRADE)",
     "subject": "math",
@@ -10681,14 +10681,14 @@
   },
   {
     "id": "math-2-operations-algebraic-thinking-2nd-grade-hard-113",
-    "question": "Liam buys a shirt for \\26 and pants for \\38. He gives the cashier a \\100 bill. How much change does Liam receive?",
+    "question": "Liam buys a shirt for $26 and pants for $38. He gives the cashier a $100 bill. How much change does Liam receive?",
     "options": [
-      "\\36",
-      "\\35",
-      "\\37",
-      "\\46"
+      "$36",
+      "$35",
+      "$37",
+      "$46"
     ],
-    "correctAnswer": "\\36",
+    "correctAnswer": "$36",
     "difficulty": "hard",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (2ND GRADE)",
     "subject": "math",
@@ -10876,14 +10876,14 @@
   },
   {
     "id": "math-2-operations-algebraic-thinking-2nd-grade-hard-126",
-    "question": "Charlotte earns \\35 babysitting and \\28 walking dogs. She spends \\19 on a game. How much money does she have left?",
+    "question": "Charlotte earns $35 babysitting and $28 walking dogs. She spends $19 on a game. How much money does she have left?",
     "options": [
-      "\\43",
-      "\\44",
-      "\\45",
-      "\\54"
+      "$43",
+      "$44",
+      "$45",
+      "$54"
     ],
-    "correctAnswer": "\\44",
+    "correctAnswer": "$44",
     "difficulty": "hard",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (2ND GRADE)",
     "subject": "math",
@@ -11056,14 +11056,14 @@
   },
   {
     "id": "math-2-operations-algebraic-thinking-2nd-grade-hard-138",
-    "question": "Hannah has \\90. She spends \\42 on a bike helmet and \\29 on knee pads. How much money does she have left?",
+    "question": "Hannah has $90. She spends $42 on a bike helmet and $29 on knee pads. How much money does she have left?",
     "options": [
-      "\\18",
-      "\\19",
-      "\\20",
-      "\\29"
+      "$18",
+      "$19",
+      "$20",
+      "$29"
     ],
-    "correctAnswer": "\\19",
+    "correctAnswer": "$19",
     "difficulty": "hard",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (2ND GRADE)",
     "subject": "math",
@@ -11236,14 +11236,14 @@
   },
   {
     "id": "math-2-operations-algebraic-thinking-2nd-grade-hard-150",
-    "question": "Olivia had \\65. She earned \\28 doing chores, then spent \\49 on a skateboard. How much money does Olivia have now?",
+    "question": "Olivia had $65. She earned $28 doing chores, then spent $49 on a skateboard. How much money does Olivia have now?",
     "options": [
-      "\\43",
-      "\\44",
-      "\\45",
-      "\\34"
+      "$43",
+      "$44",
+      "$45",
+      "$34"
     ],
-    "correctAnswer": "\\44",
+    "correctAnswer": "$44",
     "difficulty": "hard",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (2ND GRADE)",
     "subject": "math",

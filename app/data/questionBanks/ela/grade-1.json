@@ -4501,7 +4501,7 @@
   },
   {
     "id": "ela-1-reading-comprehension-easy-1",
-    "question": "What did Mia get?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Red Kite</strong><br/>Mia got a red kite for her birthday. She took it to the park with her dad. The wind blew, and the kite went high into the sky. Mia smiled as she held the string.</blockquote><p><strong>What did Mia get?</strong></p>",
     "options": [
       "A book",
       "A ball",
@@ -4512,11 +4512,12 @@
     "difficulty": "easy",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Red Kite"
   },
   {
     "id": "ela-1-reading-comprehension-easy-2",
-    "question": "Where did Mia take the kite?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Red Kite</strong><br/>Mia got a red kite for her birthday. She took it to the park with her dad. The wind blew, and the kite went high into the sky. Mia smiled as she held the string.</blockquote><p><strong>Where did Mia take the kite?</strong></p>",
     "options": [
       "To school",
       "To the beach",
@@ -4527,11 +4528,12 @@
     "difficulty": "easy",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Red Kite"
   },
   {
     "id": "ela-1-reading-comprehension-easy-3",
-    "question": "Who went with Mia?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Red Kite</strong><br/>Mia got a red kite for her birthday. She took it to the park with her dad. The wind blew, and the kite went high into the sky. Mia smiled as she held the string.</blockquote><p><strong>Who went with Mia?</strong></p>",
     "options": [
       "Her dad",
       "Her brother",
@@ -4542,11 +4544,12 @@
     "difficulty": "easy",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Red Kite"
   },
   {
     "id": "ela-1-reading-comprehension-easy-4",
-    "question": "What helped the kite go high?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Red Kite</strong><br/>Mia got a red kite for her birthday. She took it to the park with her dad. The wind blew, and the kite went high into the sky. Mia smiled as she held the string.</blockquote><p><strong>What helped the kite go high?</strong></p>",
     "options": [
       "A tree",
       "A bird",
@@ -4557,11 +4560,12 @@
     "difficulty": "easy",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Red Kite"
   },
   {
     "id": "ela-1-reading-comprehension-easy-5",
-    "question": "What color was the kite?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Red Kite</strong><br/>Mia got a red kite for her birthday. She took it to the park with her dad. The wind blew, and the kite went high into the sky. Mia smiled as she held the string.</blockquote><p><strong>What color was the kite?</strong></p>",
     "options": [
       "Yellow",
       "Red",
@@ -4572,11 +4576,12 @@
     "difficulty": "easy",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Red Kite"
   },
   {
     "id": "ela-1-reading-comprehension-easy-6",
-    "question": "What did Mia hold?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Red Kite</strong><br/>Mia got a red kite for her birthday. She took it to the park with her dad. The wind blew, and the kite went high into the sky. Mia smiled as she held the string.</blockquote><p><strong>What did Mia hold?</strong></p>",
     "options": [
       "A stick",
       "The string",
@@ -4587,11 +4592,12 @@
     "difficulty": "easy",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Red Kite"
   },
   {
     "id": "ela-1-reading-comprehension-easy-7",
-    "question": "How did Mia feel?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Red Kite</strong><br/>Mia got a red kite for her birthday. She took it to the park with her dad. The wind blew, and the kite went high into the sky. Mia smiled as she held the string.</blockquote><p><strong>How did Mia feel?</strong></p>",
     "options": [
       "Sleepy",
       "Angry",
@@ -4602,11 +4608,12 @@
     "difficulty": "easy",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Red Kite"
   },
   {
     "id": "ela-1-reading-comprehension-easy-8",
-    "question": "When did Mia get the kite?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Red Kite</strong><br/>Mia got a red kite for her birthday. She took it to the park with her dad. The wind blew, and the kite went high into the sky. Mia smiled as she held the string.</blockquote><p><strong>When did Mia get the kite?</strong></p>",
     "options": [
       "On her birthday",
       "On Monday",
@@ -4617,11 +4624,12 @@
     "difficulty": "easy",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Red Kite"
   },
   {
     "id": "ela-1-reading-comprehension-easy-9",
-    "question": "Where did the kite go?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Red Kite</strong><br/>Mia got a red kite for her birthday. She took it to the park with her dad. The wind blew, and the kite went high into the sky. Mia smiled as she held the string.</blockquote><p><strong>Where did the kite go?</strong></p>",
     "options": [
       "Into the sky",
       "Under a table",
@@ -4632,11 +4640,12 @@
     "difficulty": "easy",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Red Kite"
   },
   {
     "id": "ela-1-reading-comprehension-easy-10",
-    "question": "What is the story mostly about?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Red Kite</strong><br/>Mia got a red kite for her birthday. She took it to the park with her dad. The wind blew, and the kite went high into the sky. Mia smiled as she held the string.</blockquote><p><strong>What is the story mostly about?</strong></p>",
     "options": [
       "Mia going to school",
       "Mia baking a cake",
@@ -4647,7 +4656,8 @@
     "difficulty": "easy",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Red Kite"
   },
   {
     "id": "ela-1-reading-comprehension-easy-11",
@@ -5131,7 +5141,7 @@
   },
   {
     "id": "ela-1-reading-comprehension-easy-41",
-    "question": "<blockquote class=\"quiz-passage\"><strong>A Rainy Day</strong><br/>Rain fell all morning. Omar put on his yellow raincoat and blue boots. He jumped in a puddle on the way to school. At recess, the class stayed inside and read a funny book. The Lost Button Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>What fell off Nora's coat?</strong></p>",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Lost Button</strong><br/>Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>What fell off Nora's coat?</strong></p>",
     "options": [
       "A zipper",
       "A sleeve",
@@ -5143,11 +5153,11 @@
     "topic": "Reading Comprehension",
     "subject": "ela",
     "grade": "1",
-    "passageTitle": "A Rainy Day"
+    "passageTitle": "The Lost Button"
   },
   {
     "id": "ela-1-reading-comprehension-easy-42",
-    "question": "<blockquote class=\"quiz-passage\"><strong>A Rainy Day</strong><br/>Rain fell all morning. Omar put on his yellow raincoat and blue boots. He jumped in a puddle on the way to school. At recess, the class stayed inside and read a funny book. The Lost Button Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>Where did Nora look?</strong></p>",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Lost Button</strong><br/>Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>Where did Nora look?</strong></p>",
     "options": [
       "Under the chair",
       "In the garden",
@@ -5159,11 +5169,11 @@
     "topic": "Reading Comprehension",
     "subject": "ela",
     "grade": "1",
-    "passageTitle": "A Rainy Day"
+    "passageTitle": "The Lost Button"
   },
   {
     "id": "ela-1-reading-comprehension-easy-43",
-    "question": "<blockquote class=\"quiz-passage\"><strong>A Rainy Day</strong><br/>Rain fell all morning. Omar put on his yellow raincoat and blue boots. He jumped in a puddle on the way to school. At recess, the class stayed inside and read a funny book. The Lost Button Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>Who found the button?</strong></p>",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Lost Button</strong><br/>Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>Who found the button?</strong></p>",
     "options": [
       "Her teacher",
       "Her friend",
@@ -5175,11 +5185,11 @@
     "topic": "Reading Comprehension",
     "subject": "ela",
     "grade": "1",
-    "passageTitle": "A Rainy Day"
+    "passageTitle": "The Lost Button"
   },
   {
     "id": "ela-1-reading-comprehension-easy-44",
-    "question": "<blockquote class=\"quiz-passage\"><strong>A Rainy Day</strong><br/>Rain fell all morning. Omar put on his yellow raincoat and blue boots. He jumped in a puddle on the way to school. At recess, the class stayed inside and read a funny book. The Lost Button Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>Where was it found?</strong></p>",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Lost Button</strong><br/>Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>Where was it found?</strong></p>",
     "options": [
       "In a drawer",
       "Near the shoe rack",
@@ -5191,11 +5201,11 @@
     "topic": "Reading Comprehension",
     "subject": "ela",
     "grade": "1",
-    "passageTitle": "A Rainy Day"
+    "passageTitle": "The Lost Button"
   },
   {
     "id": "ela-1-reading-comprehension-easy-45",
-    "question": "<blockquote class=\"quiz-passage\"><strong>A Rainy Day</strong><br/>Rain fell all morning. Omar put on his yellow raincoat and blue boots. He jumped in a puddle on the way to school. At recess, the class stayed inside and read a funny book. The Lost Button Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>What did Nora do after it was found?</strong></p>",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Lost Button</strong><br/>Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>What did Nora do after it was found?</strong></p>",
     "options": [
       "Threw it away",
       "Hid it",
@@ -5207,11 +5217,11 @@
     "topic": "Reading Comprehension",
     "subject": "ela",
     "grade": "1",
-    "passageTitle": "A Rainy Day"
+    "passageTitle": "The Lost Button"
   },
   {
     "id": "ela-1-reading-comprehension-easy-46",
-    "question": "<blockquote class=\"quiz-passage\"><strong>A Rainy Day</strong><br/>Rain fell all morning. Omar put on his yellow raincoat and blue boots. He jumped in a puddle on the way to school. At recess, the class stayed inside and read a funny book. The Lost Button Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>Who did Nora ask to sew it on?</strong></p>",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Lost Button</strong><br/>Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>Who did Nora ask to sew it on?</strong></p>",
     "options": [
       "The mail carrier",
       "Her brother",
@@ -5223,11 +5233,11 @@
     "topic": "Reading Comprehension",
     "subject": "ela",
     "grade": "1",
-    "passageTitle": "A Rainy Day"
+    "passageTitle": "The Lost Button"
   },
   {
     "id": "ela-1-reading-comprehension-easy-47",
-    "question": "<blockquote class=\"quiz-passage\"><strong>A Rainy Day</strong><br/>Rain fell all morning. Omar put on his yellow raincoat and blue boots. He jumped in a puddle on the way to school. At recess, the class stayed inside and read a funny book. The Lost Button Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>What was wrong with the coat?</strong></p>",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Lost Button</strong><br/>Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>What was wrong with the coat?</strong></p>",
     "options": [
       "It was wet",
       "It was torn in half",
@@ -5239,11 +5249,11 @@
     "topic": "Reading Comprehension",
     "subject": "ela",
     "grade": "1",
-    "passageTitle": "A Rainy Day"
+    "passageTitle": "The Lost Button"
   },
   {
     "id": "ela-1-reading-comprehension-easy-48",
-    "question": "<blockquote class=\"quiz-passage\"><strong>A Rainy Day</strong><br/>Rain fell all morning. Omar put on his yellow raincoat and blue boots. He jumped in a puddle on the way to school. At recess, the class stayed inside and read a funny book. The Lost Button Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>Which happened last?</strong></p>",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Lost Button</strong><br/>Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>Which happened last?</strong></p>",
     "options": [
       "Her brother found it",
       "The button fell off",
@@ -5255,11 +5265,11 @@
     "topic": "Reading Comprehension",
     "subject": "ela",
     "grade": "1",
-    "passageTitle": "A Rainy Day"
+    "passageTitle": "The Lost Button"
   },
   {
     "id": "ela-1-reading-comprehension-easy-49",
-    "question": "<blockquote class=\"quiz-passage\"><strong>A Rainy Day</strong><br/>Rain fell all morning. Omar put on his yellow raincoat and blue boots. He jumped in a puddle on the way to school. At recess, the class stayed inside and read a funny book. The Lost Button Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>How did Nora solve the problem?</strong></p>",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Lost Button</strong><br/>Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>How did Nora solve the problem?</strong></p>",
     "options": [
       "She left the button outside",
       "She searched and asked for help",
@@ -5271,11 +5281,11 @@
     "topic": "Reading Comprehension",
     "subject": "ela",
     "grade": "1",
-    "passageTitle": "A Rainy Day"
+    "passageTitle": "The Lost Button"
   },
   {
     "id": "ela-1-reading-comprehension-easy-50",
-    "question": "<blockquote class=\"quiz-passage\"><strong>A Rainy Day</strong><br/>Rain fell all morning. Omar put on his yellow raincoat and blue boots. He jumped in a puddle on the way to school. At recess, the class stayed inside and read a funny book. The Lost Button Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>What is a good title?</strong></p>",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Lost Button</strong><br/>Nora noticed a button had fallen off her coat. She looked under the chair and beside the door. Her brother found it near the shoe rack. Nora thanked him and asked Mom to sew it back on.</blockquote><p><strong>What is a good title?</strong></p>",
     "options": [
       "The Big Storm",
       "Nora's New Bike",
@@ -5287,11 +5297,11 @@
     "topic": "Reading Comprehension",
     "subject": "ela",
     "grade": "1",
-    "passageTitle": "A Rainy Day"
+    "passageTitle": "The Lost Button"
   },
   {
     "id": "ela-1-reading-comprehension-medium-1",
-    "question": "What kind of animal is Nibbles?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Class Pet</strong><br/>Room 4 got a class hamster named Nibbles. The students made a chart to remember who would add food and water each day. On Friday, Jay saw the water bottle was empty, so he filled it before the lesson. Their teacher praised the class for caring for Nibbles.</blockquote><p><strong>What kind of animal is Nibbles?</strong></p>",
     "options": [
       "A kitten",
       "A turtle",
@@ -5302,11 +5312,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Class Pet"
   },
   {
     "id": "ela-1-reading-comprehension-medium-2",
-    "question": "Why make a chart?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Class Pet</strong><br/>Room 4 got a class hamster named Nibbles. The students made a chart to remember who would add food and water each day. On Friday, Jay saw the water bottle was empty, so he filled it before the lesson. Their teacher praised the class for caring for Nibbles.</blockquote><p><strong>Why make a chart?</strong></p>",
     "options": [
       "To choose a game",
       "To count books",
@@ -5317,11 +5328,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Class Pet"
   },
   {
     "id": "ela-1-reading-comprehension-medium-3",
-    "question": "What did Jay notice?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Class Pet</strong><br/>Room 4 got a class hamster named Nibbles. The students made a chart to remember who would add food and water each day. On Friday, Jay saw the water bottle was empty, so he filled it before the lesson. Their teacher praised the class for caring for Nibbles.</blockquote><p><strong>What did Jay notice?</strong></p>",
     "options": [
       "Food was gone",
       "Cage was open",
@@ -5332,11 +5344,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Class Pet"
   },
   {
     "id": "ela-1-reading-comprehension-medium-4",
-    "question": "What did Jay do?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Class Pet</strong><br/>Room 4 got a class hamster named Nibbles. The students made a chart to remember who would add food and water each day. On Friday, Jay saw the water bottle was empty, so he filled it before the lesson. Their teacher praised the class for caring for Nibbles.</blockquote><p><strong>What did Jay do?</strong></p>",
     "options": [
       "Made a new chart",
       "Filled the water bottle",
@@ -5347,11 +5360,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Class Pet"
   },
   {
     "id": "ela-1-reading-comprehension-medium-5",
-    "question": "When did Jay help?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Class Pet</strong><br/>Room 4 got a class hamster named Nibbles. The students made a chart to remember who would add food and water each day. On Friday, Jay saw the water bottle was empty, so he filled it before the lesson. Their teacher praised the class for caring for Nibbles.</blockquote><p><strong>When did Jay help?</strong></p>",
     "options": [
       "During lunch",
       "Before the lesson",
@@ -5362,11 +5376,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Class Pet"
   },
   {
     "id": "ela-1-reading-comprehension-medium-6",
-    "question": "Why did the teacher praise the class?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Class Pet</strong><br/>Room 4 got a class hamster named Nibbles. The students made a chart to remember who would add food and water each day. On Friday, Jay saw the water bottle was empty, so he filled it before the lesson. Their teacher praised the class for caring for Nibbles.</blockquote><p><strong>Why did the teacher praise the class?</strong></p>",
     "options": [
       "They read a long book",
       "They cared for their pet responsibly",
@@ -5377,11 +5392,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Class Pet"
   },
   {
     "id": "ela-1-reading-comprehension-medium-7",
-    "question": "What does 'praised' mean?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Class Pet</strong><br/>Room 4 got a class hamster named Nibbles. The students made a chart to remember who would add food and water each day. On Friday, Jay saw the water bottle was empty, so he filled it before the lesson. Their teacher praised the class for caring for Nibbles.</blockquote><p><strong>What does 'praised' mean?</strong></p>",
     "options": [
       "Scolded",
       "Said something good about",
@@ -5392,11 +5408,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Class Pet"
   },
   {
     "id": "ela-1-reading-comprehension-medium-8",
-    "question": "What might happen if nobody checked the chart?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Class Pet</strong><br/>Room 4 got a class hamster named Nibbles. The students made a chart to remember who would add food and water each day. On Friday, Jay saw the water bottle was empty, so he filled it before the lesson. Their teacher praised the class for caring for Nibbles.</blockquote><p><strong>What might happen if nobody checked the chart?</strong></p>",
     "options": [
       "The hamster would read",
       "The hamster's care might be forgotten",
@@ -5407,11 +5424,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Class Pet"
   },
   {
     "id": "ela-1-reading-comprehension-medium-9",
-    "question": "Which detail shows Jay was responsible?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Class Pet</strong><br/>Room 4 got a class hamster named Nibbles. The students made a chart to remember who would add food and water each day. On Friday, Jay saw the water bottle was empty, so he filled it before the lesson. Their teacher praised the class for caring for Nibbles.</blockquote><p><strong>Which detail shows Jay was responsible?</strong></p>",
     "options": [
       "He drew a picture",
       "He named the hamster",
@@ -5422,11 +5440,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Class Pet"
   },
   {
     "id": "ela-1-reading-comprehension-medium-10",
-    "question": "What is the main lesson?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Class Pet</strong><br/>Room 4 got a class hamster named Nibbles. The students made a chart to remember who would add food and water each day. On Friday, Jay saw the water bottle was empty, so he filled it before the lesson. Their teacher praised the class for caring for Nibbles.</blockquote><p><strong>What is the main lesson?</strong></p>",
     "options": [
       "Hamsters should live outdoors",
       "Charts are only for teachers",
@@ -5437,11 +5456,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Class Pet"
   },
   {
     "id": "ela-1-reading-comprehension-medium-11",
-    "question": "Where did the class go?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Library Visit</strong><br/>On Tuesday, Ms. Lee's class walked to the library. Each student chose one book to borrow. Ava picked a book about whales because she wanted to learn how they live. Before leaving, the librarian showed the class how to return books in the book slot.</blockquote><p><strong>Where did the class go?</strong></p>",
     "options": [
       "Library",
       "Pool",
@@ -5452,11 +5472,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Library Visit"
   },
   {
     "id": "ela-1-reading-comprehension-medium-12",
-    "question": "When did they visit?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Library Visit</strong><br/>On Tuesday, Ms. Lee's class walked to the library. Each student chose one book to borrow. Ava picked a book about whales because she wanted to learn how they live. Before leaving, the librarian showed the class how to return books in the book slot.</blockquote><p><strong>When did they visit?</strong></p>",
     "options": [
       "Tuesday",
       "Monday",
@@ -5467,11 +5488,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Library Visit"
   },
   {
     "id": "ela-1-reading-comprehension-medium-13",
-    "question": "How many books could each student borrow?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Library Visit</strong><br/>On Tuesday, Ms. Lee's class walked to the library. Each student chose one book to borrow. Ava picked a book about whales because she wanted to learn how they live. Before leaving, the librarian showed the class how to return books in the book slot.</blockquote><p><strong>How many books could each student borrow?</strong></p>",
     "options": [
       "Two",
       "One",
@@ -5482,11 +5504,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Library Visit"
   },
   {
     "id": "ela-1-reading-comprehension-medium-14",
-    "question": "What topic did Ava choose?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Library Visit</strong><br/>On Tuesday, Ms. Lee's class walked to the library. Each student chose one book to borrow. Ava picked a book about whales because she wanted to learn how they live. Before leaving, the librarian showed the class how to return books in the book slot.</blockquote><p><strong>What topic did Ava choose?</strong></p>",
     "options": [
       "Dinosaurs",
       "Whales",
@@ -5497,11 +5520,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Library Visit"
   },
   {
     "id": "ela-1-reading-comprehension-medium-15",
-    "question": "Why did Ava choose that book?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Library Visit</strong><br/>On Tuesday, Ms. Lee's class walked to the library. Each student chose one book to borrow. Ava picked a book about whales because she wanted to learn how they live. Before leaving, the librarian showed the class how to return books in the book slot.</blockquote><p><strong>Why did Ava choose that book?</strong></p>",
     "options": [
       "Her friend told her to",
       "Her book was missing",
@@ -5512,11 +5536,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Library Visit"
   },
   {
     "id": "ela-1-reading-comprehension-medium-16",
-    "question": "Who showed them how to return books?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Library Visit</strong><br/>On Tuesday, Ms. Lee's class walked to the library. Each student chose one book to borrow. Ava picked a book about whales because she wanted to learn how they live. Before leaving, the librarian showed the class how to return books in the book slot.</blockquote><p><strong>Who showed them how to return books?</strong></p>",
     "options": [
       "Ms. Lee",
       "The librarian",
@@ -5527,11 +5552,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Library Visit"
   },
   {
     "id": "ela-1-reading-comprehension-medium-17",
-    "question": "Where should books be returned?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Library Visit</strong><br/>On Tuesday, Ms. Lee's class walked to the library. Each student chose one book to borrow. Ava picked a book about whales because she wanted to learn how they live. Before leaving, the librarian showed the class how to return books in the book slot.</blockquote><p><strong>Where should books be returned?</strong></p>",
     "options": [
       "In a lunch box",
       "On the floor",
@@ -5542,11 +5568,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Library Visit"
   },
   {
     "id": "ela-1-reading-comprehension-medium-18",
-    "question": "What does 'borrow' mean here?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Library Visit</strong><br/>On Tuesday, Ms. Lee's class walked to the library. Each student chose one book to borrow. Ava picked a book about whales because she wanted to learn how they live. Before leaving, the librarian showed the class how to return books in the book slot.</blockquote><p><strong>What does 'borrow' mean here?</strong></p>",
     "options": [
       "Read without opening",
       "Buy forever",
@@ -5557,11 +5584,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Library Visit"
   },
   {
     "id": "ela-1-reading-comprehension-medium-19",
-    "question": "What happened before they left?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Library Visit</strong><br/>On Tuesday, Ms. Lee's class walked to the library. Each student chose one book to borrow. Ava picked a book about whales because she wanted to learn how they live. Before leaving, the librarian showed the class how to return books in the book slot.</blockquote><p><strong>What happened before they left?</strong></p>",
     "options": [
       "They learned how to return books",
       "They watched a movie",
@@ -5572,11 +5600,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Library Visit"
   },
   {
     "id": "ela-1-reading-comprehension-medium-20",
-    "question": "What is the main idea?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Library Visit</strong><br/>On Tuesday, Ms. Lee's class walked to the library. Each student chose one book to borrow. Ava picked a book about whales because she wanted to learn how they live. Before leaving, the librarian showed the class how to return books in the book slot.</blockquote><p><strong>What is the main idea?</strong></p>",
     "options": [
       "The class learned how to use the library",
       "Ms. Lee bought books",
@@ -5587,11 +5616,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Library Visit"
   },
   {
     "id": "ela-1-reading-comprehension-medium-21",
-    "question": "What did they build?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Broken Birdhouse</strong><br/>Sam and his grandfather built a birdhouse from wood. After a windy night, Sam found it on the ground. One side had come loose. They used nails to fix it, then hung it on a strong branch. The next morning, a small bird sat on the roof.</blockquote><p><strong>What did they build?</strong></p>",
     "options": [
       "Fence",
       "Boat",
@@ -5602,11 +5632,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Broken Birdhouse"
   },
   {
     "id": "ela-1-reading-comprehension-medium-22",
-    "question": "What happened after the windy night?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Broken Birdhouse</strong><br/>Sam and his grandfather built a birdhouse from wood. After a windy night, Sam found it on the ground. One side had come loose. They used nails to fix it, then hung it on a strong branch. The next morning, a small bird sat on the roof.</blockquote><p><strong>What happened after the windy night?</strong></p>",
     "options": [
       "Bird flew away",
       "Birdhouse fell",
@@ -5617,11 +5648,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Broken Birdhouse"
   },
   {
     "id": "ela-1-reading-comprehension-medium-23",
-    "question": "What had come loose?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Broken Birdhouse</strong><br/>Sam and his grandfather built a birdhouse from wood. After a windy night, Sam found it on the ground. One side had come loose. They used nails to fix it, then hung it on a strong branch. The next morning, a small bird sat on the roof.</blockquote><p><strong>What had come loose?</strong></p>",
     "options": [
       "A window",
       "A door",
@@ -5632,11 +5664,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Broken Birdhouse"
   },
   {
     "id": "ela-1-reading-comprehension-medium-24",
-    "question": "What did they use to fix it?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Broken Birdhouse</strong><br/>Sam and his grandfather built a birdhouse from wood. After a windy night, Sam found it on the ground. One side had come loose. They used nails to fix it, then hung it on a strong branch. The next morning, a small bird sat on the roof.</blockquote><p><strong>What did they use to fix it?</strong></p>",
     "options": [
       "String only",
       "Tape",
@@ -5647,11 +5680,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Broken Birdhouse"
   },
   {
     "id": "ela-1-reading-comprehension-medium-25",
-    "question": "Where did they hang it?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Broken Birdhouse</strong><br/>Sam and his grandfather built a birdhouse from wood. After a windy night, Sam found it on the ground. One side had come loose. They used nails to fix it, then hung it on a strong branch. The next morning, a small bird sat on the roof.</blockquote><p><strong>Where did they hang it?</strong></p>",
     "options": [
       "On a strong branch",
       "On the ground",
@@ -5662,11 +5696,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Broken Birdhouse"
   },
   {
     "id": "ela-1-reading-comprehension-medium-26",
-    "question": "When did the bird sit on the roof?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Broken Birdhouse</strong><br/>Sam and his grandfather built a birdhouse from wood. After a windy night, Sam found it on the ground. One side had come loose. They used nails to fix it, then hung it on a strong branch. The next morning, a small bird sat on the roof.</blockquote><p><strong>When did the bird sit on the roof?</strong></p>",
     "options": [
       "Before they built it",
       "Next morning",
@@ -5677,11 +5712,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Broken Birdhouse"
   },
   {
     "id": "ela-1-reading-comprehension-medium-27",
-    "question": "What does 'fix' mean?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Broken Birdhouse</strong><br/>Sam and his grandfather built a birdhouse from wood. After a windy night, Sam found it on the ground. One side had come loose. They used nails to fix it, then hung it on a strong branch. The next morning, a small bird sat on the roof.</blockquote><p><strong>What does 'fix' mean?</strong></p>",
     "options": [
       "Move",
       "Break",
@@ -5692,11 +5728,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Broken Birdhouse"
   },
   {
     "id": "ela-1-reading-comprehension-medium-28",
-    "question": "Why choose a strong branch?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Broken Birdhouse</strong><br/>Sam and his grandfather built a birdhouse from wood. After a windy night, Sam found it on the ground. One side had come loose. They used nails to fix it, then hung it on a strong branch. The next morning, a small bird sat on the roof.</blockquote><p><strong>Why choose a strong branch?</strong></p>",
     "options": [
       "To hide it",
       "To hold the birdhouse safely",
@@ -5707,11 +5744,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Broken Birdhouse"
   },
   {
     "id": "ela-1-reading-comprehension-medium-29",
-    "question": "Which event happened first?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Broken Birdhouse</strong><br/>Sam and his grandfather built a birdhouse from wood. After a windy night, Sam found it on the ground. One side had come loose. They used nails to fix it, then hung it on a strong branch. The next morning, a small bird sat on the roof.</blockquote><p><strong>Which event happened first?</strong></p>",
     "options": [
       "They hung it up again",
       "A bird sat on the roof",
@@ -5722,11 +5760,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Broken Birdhouse"
   },
   {
     "id": "ela-1-reading-comprehension-medium-30",
-    "question": "What can we infer about Sam and his grandfather?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Broken Birdhouse</strong><br/>Sam and his grandfather built a birdhouse from wood. After a windy night, Sam found it on the ground. One side had come loose. They used nails to fix it, then hung it on a strong branch. The next morning, a small bird sat on the roof.</blockquote><p><strong>What can we infer about Sam and his grandfather?</strong></p>",
     "options": [
       "They work together to solve problems",
       "They wanted to throw it away",
@@ -5737,11 +5776,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Broken Birdhouse"
   },
   {
     "id": "ela-1-reading-comprehension-medium-31",
-    "question": "What was Mrs. Patel carrying?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Helpful Neighbor</strong><br/>Mrs. Patel had many grocery bags to carry from her car. Eli saw her struggling and offered to help. He carried two light bags to her door. Mrs. Patel thanked him and gave him an apple. Eli felt proud because he had made someone's day easier.</blockquote><p><strong>What was Mrs. Patel carrying?</strong></p>",
     "options": [
       "School books",
       "Groceries",
@@ -5752,11 +5792,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Helpful Neighbor"
   },
   {
     "id": "ela-1-reading-comprehension-medium-32",
-    "question": "Where were the bags?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Helpful Neighbor</strong><br/>Mrs. Patel had many grocery bags to carry from her car. Eli saw her struggling and offered to help. He carried two light bags to her door. Mrs. Patel thanked him and gave him an apple. Eli felt proud because he had made someone's day easier.</blockquote><p><strong>Where were the bags?</strong></p>",
     "options": [
       "At the park",
       "On a bus",
@@ -5767,11 +5808,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Helpful Neighbor"
   },
   {
     "id": "ela-1-reading-comprehension-medium-33",
-    "question": "Who offered to help?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Helpful Neighbor</strong><br/>Mrs. Patel had many grocery bags to carry from her car. Eli saw her struggling and offered to help. He carried two light bags to her door. Mrs. Patel thanked him and gave him an apple. Eli felt proud because he had made someone's day easier.</blockquote><p><strong>Who offered to help?</strong></p>",
     "options": [
       "Mrs. Patel",
       "Eli's teacher",
@@ -5782,11 +5824,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Helpful Neighbor"
   },
   {
     "id": "ela-1-reading-comprehension-medium-34",
-    "question": "How many bags did Eli carry?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Helpful Neighbor</strong><br/>Mrs. Patel had many grocery bags to carry from her car. Eli saw her struggling and offered to help. He carried two light bags to her door. Mrs. Patel thanked him and gave him an apple. Eli felt proud because he had made someone's day easier.</blockquote><p><strong>How many bags did Eli carry?</strong></p>",
     "options": [
       "Three",
       "Four",
@@ -5797,11 +5840,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Helpful Neighbor"
   },
   {
     "id": "ela-1-reading-comprehension-medium-35",
-    "question": "Where did he carry them?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Helpful Neighbor</strong><br/>Mrs. Patel had many grocery bags to carry from her car. Eli saw her struggling and offered to help. He carried two light bags to her door. Mrs. Patel thanked him and gave him an apple. Eli felt proud because he had made someone's day easier.</blockquote><p><strong>Where did he carry them?</strong></p>",
     "options": [
       "To the garage",
       "To the park",
@@ -5812,11 +5856,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Helpful Neighbor"
   },
   {
     "id": "ela-1-reading-comprehension-medium-36",
-    "question": "What did Mrs. Patel give Eli?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Helpful Neighbor</strong><br/>Mrs. Patel had many grocery bags to carry from her car. Eli saw her struggling and offered to help. He carried two light bags to her door. Mrs. Patel thanked him and gave him an apple. Eli felt proud because he had made someone's day easier.</blockquote><p><strong>What did Mrs. Patel give Eli?</strong></p>",
     "options": [
       "A toy car",
       "An apple",
@@ -5827,11 +5872,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Helpful Neighbor"
   },
   {
     "id": "ela-1-reading-comprehension-medium-37",
-    "question": "How did Eli feel?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Helpful Neighbor</strong><br/>Mrs. Patel had many grocery bags to carry from her car. Eli saw her struggling and offered to help. He carried two light bags to her door. Mrs. Patel thanked him and gave him an apple. Eli felt proud because he had made someone's day easier.</blockquote><p><strong>How did Eli feel?</strong></p>",
     "options": [
       "Sleepy",
       "Proud",
@@ -5842,11 +5888,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Helpful Neighbor"
   },
   {
     "id": "ela-1-reading-comprehension-medium-38",
-    "question": "What does 'struggling' suggest?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Helpful Neighbor</strong><br/>Mrs. Patel had many grocery bags to carry from her car. Eli saw her struggling and offered to help. He carried two light bags to her door. Mrs. Patel thanked him and gave him an apple. Eli felt proud because he had made someone's day easier.</blockquote><p><strong>What does 'struggling' suggest?</strong></p>",
     "options": [
       "She wanted to sell them",
       "The bags were hard to carry",
@@ -5857,11 +5904,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Helpful Neighbor"
   },
   {
     "id": "ela-1-reading-comprehension-medium-39",
-    "question": "Why did Eli feel proud?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Helpful Neighbor</strong><br/>Mrs. Patel had many grocery bags to carry from her car. Eli saw her struggling and offered to help. He carried two light bags to her door. Mrs. Patel thanked him and gave him an apple. Eli felt proud because he had made someone's day easier.</blockquote><p><strong>Why did Eli feel proud?</strong></p>",
     "options": [
       "He stayed home",
       "He bought an apple",
@@ -5872,11 +5920,12 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Helpful Neighbor"
   },
   {
     "id": "ela-1-reading-comprehension-medium-40",
-    "question": "What is the lesson?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Helpful Neighbor</strong><br/>Mrs. Patel had many grocery bags to carry from her car. Eli saw her struggling and offered to help. He carried two light bags to her door. Mrs. Patel thanked him and gave him an apple. Eli felt proud because he had made someone's day easier.</blockquote><p><strong>What is the lesson?</strong></p>",
     "options": [
       "Never speak to neighbors",
       "Groceries are always heavy",
@@ -5887,7 +5936,8 @@
     "difficulty": "medium",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Helpful Neighbor"
   },
   {
     "id": "ela-1-reading-comprehension-medium-41",
@@ -6051,7 +6101,7 @@
   },
   {
     "id": "ela-1-reading-comprehension-hard-1",
-    "question": "What did Nia plant?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Seed's Journey</strong><br/>Nia planted a sunflower seed in a small pot. She watered it and placed it where sunlight could reach it. After several days, a green shoot pushed through the soil. Nia kept caring for it. Weeks later, the plant had a tall stem and a yellow flower that turned toward the sun.</blockquote><p><strong>What did Nia plant?</strong></p>",
     "options": [
       "A bean in a jar",
       "A sunflower seed",
@@ -6062,11 +6112,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Seed's Journey"
   },
   {
     "id": "ela-1-reading-comprehension-hard-2",
-    "question": "What appeared after several days?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Seed's Journey</strong><br/>Nia planted a sunflower seed in a small pot. She watered it and placed it where sunlight could reach it. After several days, a green shoot pushed through the soil. Nia kept caring for it. Weeks later, the plant had a tall stem and a yellow flower that turned toward the sun.</blockquote><p><strong>What appeared after several days?</strong></p>",
     "options": [
       "A green shoot",
       "A new pot",
@@ -6077,11 +6128,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Seed's Journey"
   },
   {
     "id": "ela-1-reading-comprehension-hard-3",
-    "question": "Why did she place it in sunlight?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Seed's Journey</strong><br/>Nia planted a sunflower seed in a small pot. She watered it and placed it where sunlight could reach it. After several days, a green shoot pushed through the soil. Nia kept caring for it. Weeks later, the plant had a tall stem and a yellow flower that turned toward the sun.</blockquote><p><strong>Why did she place it in sunlight?</strong></p>",
     "options": [
       "To hide the plant",
       "To dry out the pot",
@@ -6092,11 +6144,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Seed's Journey"
   },
   {
     "id": "ela-1-reading-comprehension-hard-4",
-    "question": "Which event happened last?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Seed's Journey</strong><br/>Nia planted a sunflower seed in a small pot. She watered it and placed it where sunlight could reach it. After several days, a green shoot pushed through the soil. Nia kept caring for it. Weeks later, the plant had a tall stem and a yellow flower that turned toward the sun.</blockquote><p><strong>Which event happened last?</strong></p>",
     "options": [
       "She watered the soil",
       "She planted the seed",
@@ -6107,11 +6160,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Seed's Journey"
   },
   {
     "id": "ela-1-reading-comprehension-hard-5",
-    "question": "What is a 'shoot' here?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Seed's Journey</strong><br/>Nia planted a sunflower seed in a small pot. She watered it and placed it where sunlight could reach it. After several days, a green shoot pushed through the soil. Nia kept caring for it. Weeks later, the plant had a tall stem and a yellow flower that turned toward the sun.</blockquote><p><strong>What is a 'shoot' here?</strong></p>",
     "options": [
       "A toy",
       "A hole in a pot",
@@ -6122,11 +6176,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Seed's Journey"
   },
   {
     "id": "ela-1-reading-comprehension-hard-6",
-    "question": "How did Nia help the plant?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Seed's Journey</strong><br/>Nia planted a sunflower seed in a small pot. She watered it and placed it where sunlight could reach it. After several days, a green shoot pushed through the soil. Nia kept caring for it. Weeks later, the plant had a tall stem and a yellow flower that turned toward the sun.</blockquote><p><strong>How did Nia help the plant?</strong></p>",
     "options": [
       "Kept it in a box",
       "Pulled it out daily",
@@ -6137,11 +6192,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Seed's Journey"
   },
   {
     "id": "ela-1-reading-comprehension-hard-7",
-    "question": "What is the passage mostly about?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Seed's Journey</strong><br/>Nia planted a sunflower seed in a small pot. She watered it and placed it where sunlight could reach it. After several days, a green shoot pushed through the soil. Nia kept caring for it. Weeks later, the plant had a tall stem and a yellow flower that turned toward the sun.</blockquote><p><strong>What is the passage mostly about?</strong></p>",
     "options": [
       "How a sunflower grows",
       "How to paint a pot",
@@ -6152,11 +6208,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Seed's Journey"
   },
   {
     "id": "ela-1-reading-comprehension-hard-8",
-    "question": "What can we infer about Nia?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Seed's Journey</strong><br/>Nia planted a sunflower seed in a small pot. She watered it and placed it where sunlight could reach it. After several days, a green shoot pushed through the soil. Nia kept caring for it. Weeks later, the plant had a tall stem and a yellow flower that turned toward the sun.</blockquote><p><strong>What can we infer about Nia?</strong></p>",
     "options": [
       "She dislikes flowers",
       "She wanted it to stop growing",
@@ -6167,11 +6224,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Seed's Journey"
   },
   {
     "id": "ela-1-reading-comprehension-hard-9",
-    "question": "Why is 'Weeks later' important?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Seed's Journey</strong><br/>Nia planted a sunflower seed in a small pot. She watered it and placed it where sunlight could reach it. After several days, a green shoot pushed through the soil. Nia kept caring for it. Weeks later, the plant had a tall stem and a yellow flower that turned toward the sun.</blockquote><p><strong>Why is 'Weeks later' important?</strong></p>",
     "options": [
       "It shows growth takes time",
       "It means it grew in an hour",
@@ -6182,11 +6240,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Seed's Journey"
   },
   {
     "id": "ela-1-reading-comprehension-hard-10",
-    "question": "Which detail shows the plant changed?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Seed's Journey</strong><br/>Nia planted a sunflower seed in a small pot. She watered it and placed it where sunlight could reach it. After several days, a green shoot pushed through the soil. Nia kept caring for it. Weeks later, the plant had a tall stem and a yellow flower that turned toward the sun.</blockquote><p><strong>Which detail shows the plant changed?</strong></p>",
     "options": [
       "Sunlight reached the window",
       "Nia had a small pot",
@@ -6197,11 +6256,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Seed's Journey"
   },
   {
     "id": "ela-1-reading-comprehension-hard-11",
-    "question": "What did the team want to build?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Team's Plan</strong><br/>The Blue Team wanted to build the tallest paper tower for class. First, they drew a plan and folded sheets into strong tubes. Their first tower leaned and fell. Instead of giving up, they made the base wider and tried again. The second tower stood straight until the teacher measured it.</blockquote><p><strong>What did the team want to build?</strong></p>",
     "options": [
       "Model car",
       "Paper airplane",
@@ -6212,11 +6272,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Team's Plan"
   },
   {
     "id": "ela-1-reading-comprehension-hard-12",
-    "question": "What did they do first?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Team's Plan</strong><br/>The Blue Team wanted to build the tallest paper tower for class. First, they drew a plan and folded sheets into strong tubes. Their first tower leaned and fell. Instead of giving up, they made the base wider and tried again. The second tower stood straight until the teacher measured it.</blockquote><p><strong>What did they do first?</strong></p>",
     "options": [
       "Read a poem",
       "Measured a tree",
@@ -6227,11 +6288,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Team's Plan"
   },
   {
     "id": "ela-1-reading-comprehension-hard-13",
-    "question": "What happened to the first tower?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Team's Plan</strong><br/>The Blue Team wanted to build the tallest paper tower for class. First, they drew a plan and folded sheets into strong tubes. Their first tower leaned and fell. Instead of giving up, they made the base wider and tried again. The second tower stood straight until the teacher measured it.</blockquote><p><strong>What happened to the first tower?</strong></p>",
     "options": [
       "It was the tallest",
       "It was measured first",
@@ -6242,11 +6304,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Team's Plan"
   },
   {
     "id": "ela-1-reading-comprehension-hard-14",
-    "question": "How did they improve it?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Team's Plan</strong><br/>The Blue Team wanted to build the tallest paper tower for class. First, they drew a plan and folded sheets into strong tubes. Their first tower leaned and fell. Instead of giving up, they made the base wider and tried again. The second tower stood straight until the teacher measured it.</blockquote><p><strong>How did they improve it?</strong></p>",
     "options": [
       "Removed the base",
       "Used less paper",
@@ -6257,11 +6320,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Team's Plan"
   },
   {
     "id": "ela-1-reading-comprehension-hard-15",
-    "question": "Why did the second tower stand better?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Team's Plan</strong><br/>The Blue Team wanted to build the tallest paper tower for class. First, they drew a plan and folded sheets into strong tubes. Their first tower leaned and fell. Instead of giving up, they made the base wider and tried again. The second tower stood straight until the teacher measured it.</blockquote><p><strong>Why did the second tower stand better?</strong></p>",
     "options": [
       "Its wider base made it more stable",
       "The teacher held it",
@@ -6272,11 +6336,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Team's Plan"
   },
   {
     "id": "ela-1-reading-comprehension-hard-16",
-    "question": "What does 'instead of giving up' tell us?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Team's Plan</strong><br/>The Blue Team wanted to build the tallest paper tower for class. First, they drew a plan and folded sheets into strong tubes. Their first tower leaned and fell. Instead of giving up, they made the base wider and tried again. The second tower stood straight until the teacher measured it.</blockquote><p><strong>What does 'instead of giving up' tell us?</strong></p>",
     "options": [
       "They did not care",
       "They left the room",
@@ -6287,11 +6352,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Team's Plan"
   },
   {
     "id": "ela-1-reading-comprehension-hard-17",
-    "question": "When was the second tower measured?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Team's Plan</strong><br/>The Blue Team wanted to build the tallest paper tower for class. First, they drew a plan and folded sheets into strong tubes. Their first tower leaned and fell. Instead of giving up, they made the base wider and tried again. The second tower stood straight until the teacher measured it.</blockquote><p><strong>When was the second tower measured?</strong></p>",
     "options": [
       "Before class began",
       "After it stood straight",
@@ -6302,11 +6368,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Team's Plan"
   },
   {
     "id": "ela-1-reading-comprehension-hard-18",
-    "question": "What is the best summary?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Team's Plan</strong><br/>The Blue Team wanted to build the tallest paper tower for class. First, they drew a plan and folded sheets into strong tubes. Their first tower leaned and fell. Instead of giving up, they made the base wider and tried again. The second tower stood straight until the teacher measured it.</blockquote><p><strong>What is the best summary?</strong></p>",
     "options": [
       "They planned, learned from failure, and improved the tower",
       "They folded paper for no reason",
@@ -6317,11 +6384,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Team's Plan"
   },
   {
     "id": "ela-1-reading-comprehension-hard-19",
-    "question": "What is the main lesson?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Team's Plan</strong><br/>The Blue Team wanted to build the tallest paper tower for class. First, they drew a plan and folded sheets into strong tubes. Their first tower leaned and fell. Instead of giving up, they made the base wider and tried again. The second tower stood straight until the teacher measured it.</blockquote><p><strong>What is the main lesson?</strong></p>",
     "options": [
       "The first try is always best",
       "Plans are never useful",
@@ -6332,11 +6400,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Team's Plan"
   },
   {
     "id": "ela-1-reading-comprehension-hard-20",
-    "question": "Which detail shows teamwork?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Team's Plan</strong><br/>The Blue Team wanted to build the tallest paper tower for class. First, they drew a plan and folded sheets into strong tubes. Their first tower leaned and fell. Instead of giving up, they made the base wider and tried again. The second tower stood straight until the teacher measured it.</blockquote><p><strong>Which detail shows teamwork?</strong></p>",
     "options": [
       "The teacher measured it",
       "They worked together to improve the tower",
@@ -6347,11 +6416,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Team's Plan"
   },
   {
     "id": "ela-1-reading-comprehension-hard-21",
-    "question": "Where did Maya go?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Quiet Morning</strong><br/>Before the town woke, Maya walked with her grandfather to the bakery. The street was quiet, and the air smelled of warm bread. The baker placed fresh rolls in a paper bag. On their way home, Maya noticed birds gathering on a wire as the sky grew bright. She decided early mornings had their own kind of magic.</blockquote><p><strong>Where did Maya go?</strong></p>",
     "options": [
       "School",
       "Bakery",
@@ -6362,11 +6432,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Quiet Morning"
   },
   {
     "id": "ela-1-reading-comprehension-hard-22",
-    "question": "When did they leave?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Quiet Morning</strong><br/>Before the town woke, Maya walked with her grandfather to the bakery. The street was quiet, and the air smelled of warm bread. The baker placed fresh rolls in a paper bag. On their way home, Maya noticed birds gathering on a wire as the sky grew bright. She decided early mornings had their own kind of magic.</blockquote><p><strong>When did they leave?</strong></p>",
     "options": [
       "Before the town woke",
       "At lunchtime",
@@ -6377,11 +6448,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Quiet Morning"
   },
   {
     "id": "ela-1-reading-comprehension-hard-23",
-    "question": "What smell did Maya notice?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Quiet Morning</strong><br/>Before the town woke, Maya walked with her grandfather to the bakery. The street was quiet, and the air smelled of warm bread. The baker placed fresh rolls in a paper bag. On their way home, Maya noticed birds gathering on a wire as the sky grew bright. She decided early mornings had their own kind of magic.</blockquote><p><strong>What smell did Maya notice?</strong></p>",
     "options": [
       "Warm bread",
       "Rain",
@@ -6392,11 +6464,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Quiet Morning"
   },
   {
     "id": "ela-1-reading-comprehension-hard-24",
-    "question": "What did the baker put in the bag?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Quiet Morning</strong><br/>Before the town woke, Maya walked with her grandfather to the bakery. The street was quiet, and the air smelled of warm bread. The baker placed fresh rolls in a paper bag. On their way home, Maya noticed birds gathering on a wire as the sky grew bright. She decided early mornings had their own kind of magic.</blockquote><p><strong>What did the baker put in the bag?</strong></p>",
     "options": [
       "Flowers",
       "Apples",
@@ -6407,11 +6480,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Quiet Morning"
   },
   {
     "id": "ela-1-reading-comprehension-hard-25",
-    "question": "What did Maya see on the way home?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Quiet Morning</strong><br/>Before the town woke, Maya walked with her grandfather to the bakery. The street was quiet, and the air smelled of warm bread. The baker placed fresh rolls in a paper bag. On their way home, Maya noticed birds gathering on a wire as the sky grew bright. She decided early mornings had their own kind of magic.</blockquote><p><strong>What did Maya see on the way home?</strong></p>",
     "options": [
       "Birds on a wire",
       "A train in the sky",
@@ -6422,11 +6496,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Quiet Morning"
   },
   {
     "id": "ela-1-reading-comprehension-hard-26",
-    "question": "What does 'the sky grew bright' suggest?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Quiet Morning</strong><br/>Before the town woke, Maya walked with her grandfather to the bakery. The street was quiet, and the air smelled of warm bread. The baker placed fresh rolls in a paper bag. On their way home, Maya noticed birds gathering on a wire as the sky grew bright. She decided early mornings had their own kind of magic.</blockquote><p><strong>What does 'the sky grew bright' suggest?</strong></p>",
     "options": [
       "The sun was rising",
       "A storm began",
@@ -6437,11 +6512,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Quiet Morning"
   },
   {
     "id": "ela-1-reading-comprehension-hard-27",
-    "question": "How does Maya feel about early mornings?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Quiet Morning</strong><br/>Before the town woke, Maya walked with her grandfather to the bakery. The street was quiet, and the air smelled of warm bread. The baker placed fresh rolls in a paper bag. On their way home, Maya noticed birds gathering on a wire as the sky grew bright. She decided early mornings had their own kind of magic.</blockquote><p><strong>How does Maya feel about early mornings?</strong></p>",
     "options": [
       "She dislikes them",
       "They seem noisy",
@@ -6452,11 +6528,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Quiet Morning"
   },
   {
     "id": "ela-1-reading-comprehension-hard-28",
-    "question": "Which detail helps you imagine the bakery?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Quiet Morning</strong><br/>Before the town woke, Maya walked with her grandfather to the bakery. The street was quiet, and the air smelled of warm bread. The baker placed fresh rolls in a paper bag. On their way home, Maya noticed birds gathering on a wire as the sky grew bright. She decided early mornings had their own kind of magic.</blockquote><p><strong>Which detail helps you imagine the bakery?</strong></p>",
     "options": [
       "The sky grew bright",
       "The air smelled of warm bread",
@@ -6467,11 +6544,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Quiet Morning"
   },
   {
     "id": "ela-1-reading-comprehension-hard-29",
-    "question": "What does 'their own kind of magic' mean?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Quiet Morning</strong><br/>Before the town woke, Maya walked with her grandfather to the bakery. The street was quiet, and the air smelled of warm bread. The baker placed fresh rolls in a paper bag. On their way home, Maya noticed birds gathering on a wire as the sky grew bright. She decided early mornings had their own kind of magic.</blockquote><p><strong>What does 'their own kind of magic' mean?</strong></p>",
     "options": [
       "Early mornings feel special",
       "A magician was there",
@@ -6482,11 +6560,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Quiet Morning"
   },
   {
     "id": "ela-1-reading-comprehension-hard-30",
-    "question": "What is the main idea?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Quiet Morning</strong><br/>Before the town woke, Maya walked with her grandfather to the bakery. The street was quiet, and the air smelled of warm bread. The baker placed fresh rolls in a paper bag. On their way home, Maya noticed birds gathering on a wire as the sky grew bright. She decided early mornings had their own kind of magic.</blockquote><p><strong>What is the main idea?</strong></p>",
     "options": [
       "Maya learns to bake",
       "Maya feeds birds each afternoon",
@@ -6497,11 +6576,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Quiet Morning"
   },
   {
     "id": "ela-1-reading-comprehension-hard-31",
-    "question": "What was missing?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Missing Map</strong><br/>The class was ready for a nature walk, but the map was missing. Arlo remembered using it near the reading corner. He and Priya searched there, then checked the table where the class had sorted leaves. At last, Priya found the map inside a large nature book. The class followed it to the garden and spotted three kinds of butterflies.</blockquote><p><strong>What was missing?</strong></p>",
     "options": [
       "A pencil",
       "A leaf",
@@ -6512,11 +6592,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Missing Map"
   },
   {
     "id": "ela-1-reading-comprehension-hard-32",
-    "question": "What was the class ready to do?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Missing Map</strong><br/>The class was ready for a nature walk, but the map was missing. Arlo remembered using it near the reading corner. He and Priya searched there, then checked the table where the class had sorted leaves. At last, Priya found the map inside a large nature book. The class followed it to the garden and spotted three kinds of butterflies.</blockquote><p><strong>What was the class ready to do?</strong></p>",
     "options": [
       "Take a spelling test",
       "Visit a bakery",
@@ -6527,11 +6608,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Missing Map"
   },
   {
     "id": "ela-1-reading-comprehension-hard-33",
-    "question": "Where did Arlo remember using the map?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Missing Map</strong><br/>The class was ready for a nature walk, but the map was missing. Arlo remembered using it near the reading corner. He and Priya searched there, then checked the table where the class had sorted leaves. At last, Priya found the map inside a large nature book. The class followed it to the garden and spotted three kinds of butterflies.</blockquote><p><strong>Where did Arlo remember using the map?</strong></p>",
     "options": [
       "In the garden",
       "At the door",
@@ -6542,11 +6624,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Missing Map"
   },
   {
     "id": "ela-1-reading-comprehension-hard-34",
-    "question": "Who searched with Arlo?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Missing Map</strong><br/>The class was ready for a nature walk, but the map was missing. Arlo remembered using it near the reading corner. He and Priya searched there, then checked the table where the class had sorted leaves. At last, Priya found the map inside a large nature book. The class followed it to the garden and spotted three kinds of butterflies.</blockquote><p><strong>Who searched with Arlo?</strong></p>",
     "options": [
       "Maya",
       "Priya",
@@ -6557,11 +6640,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Missing Map"
   },
   {
     "id": "ela-1-reading-comprehension-hard-35",
-    "question": "Where was the map found?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Missing Map</strong><br/>The class was ready for a nature walk, but the map was missing. Arlo remembered using it near the reading corner. He and Priya searched there, then checked the table where the class had sorted leaves. At last, Priya found the map inside a large nature book. The class followed it to the garden and spotted three kinds of butterflies.</blockquote><p><strong>Where was the map found?</strong></p>",
     "options": [
       "In a lunch bag",
       "Inside a large nature book",
@@ -6572,11 +6656,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Missing Map"
   },
   {
     "id": "ela-1-reading-comprehension-hard-36",
-    "question": "What did the class do after finding it?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Missing Map</strong><br/>The class was ready for a nature walk, but the map was missing. Arlo remembered using it near the reading corner. He and Priya searched there, then checked the table where the class had sorted leaves. At last, Priya found the map inside a large nature book. The class followed it to the garden and spotted three kinds of butterflies.</blockquote><p><strong>What did the class do after finding it?</strong></p>",
     "options": [
       "Put it in the bin",
       "Went home",
@@ -6587,11 +6672,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Missing Map"
   },
   {
     "id": "ela-1-reading-comprehension-hard-37",
-    "question": "What did they spot?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Missing Map</strong><br/>The class was ready for a nature walk, but the map was missing. Arlo remembered using it near the reading corner. He and Priya searched there, then checked the table where the class had sorted leaves. At last, Priya found the map inside a large nature book. The class followed it to the garden and spotted three kinds of butterflies.</blockquote><p><strong>What did they spot?</strong></p>",
     "options": [
       "Three kinds of butterflies",
       "A nest of eggs",
@@ -6602,11 +6688,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Missing Map"
   },
   {
     "id": "ela-1-reading-comprehension-hard-38",
-    "question": "What happened just before the map was found?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Missing Map</strong><br/>The class was ready for a nature walk, but the map was missing. Arlo remembered using it near the reading corner. He and Priya searched there, then checked the table where the class had sorted leaves. At last, Priya found the map inside a large nature book. The class followed it to the garden and spotted three kinds of butterflies.</blockquote><p><strong>What happened just before the map was found?</strong></p>",
     "options": [
       "They spotted butterflies",
       "The walk ended",
@@ -6617,11 +6704,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Missing Map"
   },
   {
     "id": "ela-1-reading-comprehension-hard-39",
-    "question": "What helped Arlo start the search?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Missing Map</strong><br/>The class was ready for a nature walk, but the map was missing. Arlo remembered using it near the reading corner. He and Priya searched there, then checked the table where the class had sorted leaves. At last, Priya found the map inside a large nature book. The class followed it to the garden and spotted three kinds of butterflies.</blockquote><p><strong>What helped Arlo start the search?</strong></p>",
     "options": [
       "He remembered where he used it",
       "He asked the baker",
@@ -6632,11 +6720,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Missing Map"
   },
   {
     "id": "ela-1-reading-comprehension-hard-40",
-    "question": "What can we infer about Arlo and Priya?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Missing Map</strong><br/>The class was ready for a nature walk, but the map was missing. Arlo remembered using it near the reading corner. He and Priya searched there, then checked the table where the class had sorted leaves. At last, Priya found the map inside a large nature book. The class followed it to the garden and spotted three kinds of butterflies.</blockquote><p><strong>What can we infer about Arlo and Priya?</strong></p>",
     "options": [
       "They feared butterflies",
       "They work carefully to solve a problem",
@@ -6647,11 +6736,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Missing Map"
   },
   {
     "id": "ela-1-reading-comprehension-hard-41",
-    "question": "What made the bridge slippery?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Bridge Over the Stream</strong><br/>After heavy rain, the small wooden bridge over the stream became slippery. When the children arrived, their teacher asked them to stop and wait. She checked the bridge and saw one board was loose. The class took a different path while the caretaker repaired it. Later, the teacher explained that waiting had kept everyone safe.</blockquote><p><strong>What made the bridge slippery?</strong></p>",
     "options": [
       "Hot sunshine",
       "Falling leaves",
@@ -6662,11 +6752,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Bridge Over the Stream"
   },
   {
     "id": "ela-1-reading-comprehension-hard-42",
-    "question": "What did the teacher ask the children to do?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Bridge Over the Stream</strong><br/>After heavy rain, the small wooden bridge over the stream became slippery. When the children arrived, their teacher asked them to stop and wait. She checked the bridge and saw one board was loose. The class took a different path while the caretaker repaired it. Later, the teacher explained that waiting had kept everyone safe.</blockquote><p><strong>What did the teacher ask the children to do?</strong></p>",
     "options": [
       "Stop and wait",
       "Jump into the stream",
@@ -6677,11 +6768,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Bridge Over the Stream"
   },
   {
     "id": "ela-1-reading-comprehension-hard-43",
-    "question": "What problem did she find?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Bridge Over the Stream</strong><br/>After heavy rain, the small wooden bridge over the stream became slippery. When the children arrived, their teacher asked them to stop and wait. She checked the bridge and saw one board was loose. The class took a different path while the caretaker repaired it. Later, the teacher explained that waiting had kept everyone safe.</blockquote><p><strong>What problem did she find?</strong></p>",
     "options": [
       "Path was missing",
       "One board was loose",
@@ -6692,11 +6784,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Bridge Over the Stream"
   },
   {
     "id": "ela-1-reading-comprehension-hard-44",
-    "question": "What did the class do while it was repaired?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Bridge Over the Stream</strong><br/>After heavy rain, the small wooden bridge over the stream became slippery. When the children arrived, their teacher asked them to stop and wait. She checked the bridge and saw one board was loose. The class took a different path while the caretaker repaired it. Later, the teacher explained that waiting had kept everyone safe.</blockquote><p><strong>What did the class do while it was repaired?</strong></p>",
     "options": [
       "Crossed it in a line",
       "Took a different path",
@@ -6707,11 +6800,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Bridge Over the Stream"
   },
   {
     "id": "ela-1-reading-comprehension-hard-45",
-    "question": "Who repaired the bridge?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Bridge Over the Stream</strong><br/>After heavy rain, the small wooden bridge over the stream became slippery. When the children arrived, their teacher asked them to stop and wait. She checked the bridge and saw one board was loose. The class took a different path while the caretaker repaired it. Later, the teacher explained that waiting had kept everyone safe.</blockquote><p><strong>Who repaired the bridge?</strong></p>",
     "options": [
       "Shopkeeper",
       "Teacher's friend",
@@ -6722,11 +6816,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Bridge Over the Stream"
   },
   {
     "id": "ela-1-reading-comprehension-hard-46",
-    "question": "Why did the teacher ask everyone to wait?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Bridge Over the Stream</strong><br/>After heavy rain, the small wooden bridge over the stream became slippery. When the children arrived, their teacher asked them to stop and wait. She checked the bridge and saw one board was loose. The class took a different path while the caretaker repaired it. Later, the teacher explained that waiting had kept everyone safe.</blockquote><p><strong>Why did the teacher ask everyone to wait?</strong></p>",
     "options": [
       "To keep everyone quiet all day",
       "To find a classroom",
@@ -6737,11 +6832,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Bridge Over the Stream"
   },
   {
     "id": "ela-1-reading-comprehension-hard-47",
-    "question": "What does 'slippery' mean?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Bridge Over the Stream</strong><br/>After heavy rain, the small wooden bridge over the stream became slippery. When the children arrived, their teacher asked them to stop and wait. She checked the bridge and saw one board was loose. The class took a different path while the caretaker repaired it. Later, the teacher explained that waiting had kept everyone safe.</blockquote><p><strong>What does 'slippery' mean?</strong></p>",
     "options": [
       "Hard to see",
       "Easy to slide on",
@@ -6752,11 +6848,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Bridge Over the Stream"
   },
   {
     "id": "ela-1-reading-comprehension-hard-48",
-    "question": "Which event happened first?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Bridge Over the Stream</strong><br/>After heavy rain, the small wooden bridge over the stream became slippery. When the children arrived, their teacher asked them to stop and wait. She checked the bridge and saw one board was loose. The class took a different path while the caretaker repaired it. Later, the teacher explained that waiting had kept everyone safe.</blockquote><p><strong>Which event happened first?</strong></p>",
     "options": [
       "Class took another path",
       "Heavy rain fell",
@@ -6767,11 +6864,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Bridge Over the Stream"
   },
   {
     "id": "ela-1-reading-comprehension-hard-49",
-    "question": "What lesson did the teacher explain?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Bridge Over the Stream</strong><br/>After heavy rain, the small wooden bridge over the stream became slippery. When the children arrived, their teacher asked them to stop and wait. She checked the bridge and saw one board was loose. The class took a different path while the caretaker repaired it. Later, the teacher explained that waiting had kept everyone safe.</blockquote><p><strong>What lesson did the teacher explain?</strong></p>",
     "options": [
       "Rain always stops school",
       "Children should repair bridges",
@@ -6782,11 +6880,12 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Bridge Over the Stream"
   },
   {
     "id": "ela-1-reading-comprehension-hard-50",
-    "question": "Which detail shows the teacher was careful?",
+    "question": "<blockquote class=\"quiz-passage\"><strong>The Bridge Over the Stream</strong><br/>After heavy rain, the small wooden bridge over the stream became slippery. When the children arrived, their teacher asked them to stop and wait. She checked the bridge and saw one board was loose. The class took a different path while the caretaker repaired it. Later, the teacher explained that waiting had kept everyone safe.</blockquote><p><strong>Which detail shows the teacher was careful?</strong></p>",
     "options": [
       "The stream was small",
       "Children arrived",
@@ -6797,7 +6896,8 @@
     "difficulty": "hard",
     "topic": "Reading Comprehension",
     "subject": "ela",
-    "grade": "1"
+    "grade": "1",
+    "passageTitle": "The Bridge Over the Stream"
   },
   {
     "id": "ela-1-reading-foundations-phonics-easy-1",

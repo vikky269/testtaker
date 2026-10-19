@@ -11,6 +11,7 @@ import { Outfit } from "next/font/google";
 import Timer from "@/app/components/Timer/Timer";
 import QuizModals from "@/app/modals/quizModals";
 import MathHtml from "@/app/components/MathHtml";
+import QuestionDiagram, { diagramForQuestion } from "@/app/components/QuestionDiagram";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -197,6 +198,8 @@ export default function QuizBody({
 
   if (!currentQuestion) return null;
 
+  const diagram = diagramForQuestion(currentQuestion);
+
   return (
     <div
       className={`${outfit.className} min-h-screen`}
@@ -256,6 +259,8 @@ export default function QuizBody({
               </div>
             </div>
           </div>
+
+          {diagram && <QuestionDiagram spec={diagram} />}
 
           {currentQuestion.question.startsWith("https://") ? (
             <img

@@ -18,6 +18,7 @@ import toast from "react-hot-toast";
 import {
   generateGradeAssessment,
   isEarlyPictureGrade,
+  questionsForSection,
   saveGeneratedAssessment,
   loadGeneratedAssessment,
   clearGeneratedAssessment,
@@ -72,9 +73,9 @@ export default function Quiz() {
     "2nd-grade","1st-grade","pre-k","kindergarten",
   ].includes(normalizedGrade);
 
-  const mathSectionQuestions    = isGrade9Or10 ? quizQuestions.slice(0, 10)  : [];
-  const elaSectionQuestions     = isGrade9Or10 ? quizQuestions.slice(10, 20) : [];
-  const scienceSectionQuestions = isGrade9Or10 ? quizQuestions.slice(20)     : [];
+  const mathSectionQuestions    = isGrade9Or10 ? questionsForSection(quizQuestions, "math") : [];
+  const elaSectionQuestions     = isGrade9Or10 ? questionsForSection(quizQuestions, "ela") : [];
+  const scienceSectionQuestions = isGrade9Or10 ? questionsForSection(quizQuestions, "science") : [];
   const readingQuestions        = isSat        ? quizQuestions.slice(0, 10)  : [];
   const satMathQuestions        = isSat        ? quizQuestions.slice(10)     : [];
 
@@ -170,7 +171,8 @@ export default function Quiz() {
         // Resume mid-attempt with the same drawn set (refresh during a test)
         if (sameAttempt) {
           const existing = loadGeneratedAssessment(gradeParam);
-          if (existing?.questions?.length) {
+          const earlyCountOk = !isEarlyPictureGrade(gradeParam) || existing?.questions?.length === 20;
+          if (existing?.questions?.length && earlyCountOk) {
             if (!cancelled) {
               setQuizQuestions(existing.questions);
               setIsGenerating(false);
@@ -199,6 +201,9 @@ export default function Quiz() {
           setQuizQuestions(generated.questions);
           setAnswers({});
           localStorage.removeItem("quiz-end-time");
+          localStorage.removeItem(`quiz-end-time-grade-${normalizedGrade}-math`);
+          localStorage.removeItem(`quiz-end-time-grade-${normalizedGrade}-ela`);
+          localStorage.removeItem(`quiz-end-time-grade-${normalizedGrade}-science`);
           localStorage.removeItem("elaSkipped");
         } catch (err) {
           console.error("Failed to generate assessment:", err);
@@ -582,7 +587,7 @@ export default function Quiz() {
   const timerIdentifier = isSATQuiz
     ? (isSatReading ? "sat-reading" : "sat-math")
     : isGrade9Or10
-    ? (quizSection === "math" ? "grade-math" : quizSection === "ela" ? "grade-ela" : "grade-science")
+    ? `grade-${normalizedGrade}-${quizSection}`
     : "regular";
 
   if (isGenerating) {

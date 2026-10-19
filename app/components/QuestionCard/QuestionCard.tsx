@@ -4,7 +4,7 @@
 import { useState } from "react";
 import MathHtml from "@/app/components/MathHtml";
 import QuestionDiagram, { diagramForQuestion } from "@/app/components/QuestionDiagram";
-import PicturePrompt, { isPictureQuestion, pictureLabel } from "@/app/components/PicturePrompt";
+import PicturePrompt, { isPictureQuestion, pictureLabel, usesLargePictureChoices } from "@/app/components/PicturePrompt";
 
 interface QuestionCardProps {
   questionData: any;
@@ -61,7 +61,7 @@ export default function QuestionCard({
       {diagram && <QuestionDiagram spec={diagram} />}
 
       {isPictureQuestion(questionData) ? (
-        <PicturePrompt stimulus={questionData.stimulus} prompt={questionData.question} />
+        <PicturePrompt stimulus={questionData.stimulus} prompt={questionData.question} grade={questionData.grade} />
       ) : questionData.question.startsWith("https://res.cloudinary.com") ? (
         <img
           src={questionData.question}
@@ -77,17 +77,18 @@ export default function QuestionCard({
       )}
 
       {/* Options */}
-      <ul className={`grid gap-2 ${isPictureQuestion(questionData) ? "grid-cols-2 sm:grid-cols-3" : "grid-cols-2"}`}>
+      <ul className={`grid gap-2 ${usesLargePictureChoices(questionData.options) ? "grid-cols-2 sm:grid-cols-4" : "grid-cols-1 sm:grid-cols-2"}`}>
         {questionData.options.map((option: string, oi: number) => {
           const isCorrect  = option === correct;
           const isSelected = option === selectedAnswer;
           const noAnswer   = !selectedAnswer;
+          const largeChoice = usesLargePictureChoices(questionData.options);
 
           return (
             <li
               key={oi}
               className={`p-3 rounded-xl border text-sm font-semibold flex gap-2 transition-all
-                ${isPictureQuestion(questionData) ? "min-h-24 flex-col items-center justify-center text-center" : "items-center"}
+                ${largeChoice ? "min-h-24 flex-col items-center justify-center text-center" : "items-center"}
                 ${isCorrect && noAnswer  ? "bg-green-50 border-green-200 text-green-800"
                 : isCorrect             ? "bg-green-500 border-green-500 text-white"
                 : isSelected            ? "bg-red-500 border-red-500 text-white"
@@ -97,7 +98,7 @@ export default function QuestionCard({
                 ${isCorrect ? "bg-white/30" : "bg-white/60 text-gray-500"}`}>
                 {String.fromCharCode(65 + oi)}
               </span>
-              {isPictureQuestion(questionData) ? (
+              {largeChoice ? (
                 <span className="text-4xl leading-tight">{pictureLabel(option)}</span>
               ) : (
                 <MathHtml as="span" text={option} />

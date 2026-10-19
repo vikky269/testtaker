@@ -1,6 +1,6 @@
 /**
  * Builds a Grade Assessment attempt.
- * Pre-K through Grade 2: 10 picture Math + 10 picture ELA, no Science.
+ * Pre-K through Grade 2: 10 picture Math + 10 picture ELA, drawn from the picture pool. No Science.
  * Grades 3–12: [10 Math] + [10 ELA] + [10 Science], unchanged.
  * Math 3–7, ELA 3–7, and Science 3–8 / HS Phys-Chem-Bio come from the new banks.
  * Math/ELA 8–12 use the legacy bank where needed.
@@ -272,6 +272,29 @@ export interface GeneratedAssessment {
 export type GenerateProgress = (message: string) => void;
 
 /**
+ * Split a grade quiz into Math, ELA, and Science.
+ * A section longer than 10 follows each question's subject.
+ * Every other quiz keeps the original 10 / 10 / rest slices.
+ */
+export function questionsForSection<T extends { subject?: string }>(
+  questions: T[],
+  section: 'math' | 'ela' | 'science'
+): T[] {
+  const tagged =
+    questions.length > 0 &&
+    questions.every((q) => q.subject === 'math' || q.subject === 'ela' || q.subject === 'science');
+  const longerThanTen =
+    tagged &&
+    (questions.filter((q) => q.subject === 'math').length > 10 ||
+      questions.filter((q) => q.subject === 'ela').length > 10 ||
+      questions.filter((q) => q.subject === 'science').length > 10);
+  if (longerThanTen) return questions.filter((q) => q.subject === section);
+  if (section === 'math') return questions.slice(0, 10);
+  if (section === 'ela') return questions.slice(10, 20);
+  return questions.slice(20);
+}
+
+/**
  * Build a quiz-assessment: 20 picture questions for Pre-K–Grade 2, 30 for Grades 3–12.
  */
 export async function generateGradeAssessment(
@@ -293,8 +316,8 @@ export async function generateGradeAssessment(
     onProgress?.('Loading picture questions...');
     const bank = getPictureBank(key);
     onProgress?.('Drawing math and ELA pictures...');
-    const math = drawBalanced(bank.math, SECTION_SIZE).map((q) => ({ ...q, subject: 'math' }));
-    const ela = drawBalanced(bank.ela, SECTION_SIZE).map((q) => ({ ...q, subject: 'ela' }));
+    const math = drawBalanced(bank.math, SECTION_SIZE).map((q) => ({ ...q, subject: 'math' as const }));
+    const ela = drawBalanced(bank.ela, SECTION_SIZE).map((q) => ({ ...q, subject: 'ela' as const }));
     const elapsedEarly = Date.now() - started;
     if (delayMs > elapsedEarly) {
       await new Promise((r) => setTimeout(r, delayMs - elapsedEarly));

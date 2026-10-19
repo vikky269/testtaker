@@ -6,7 +6,7 @@ import standardsData from "@/app/data/statetestdata";
 import { quizAssessmentData } from "@/app/data/quizassessmentdata";
 import { useEffect, useState, useRef } from "react";
 import { supabase, withTimeout } from "@/lib/supabaseClient";
-import { loadGeneratedAssessment } from "@/app/utils/gradeAssessmentGenerator";
+import { loadGeneratedAssessment, questionsForSection } from "@/app/utils/gradeAssessmentGenerator";
 
 import { formatDuration, getFormattedTimeData } from "@/app/utils/reviewUtils";
 import { generateReport, generateReportBase64 } from "@/app/utils/generateReport"; // ← added generateReportBase64
@@ -369,9 +369,9 @@ export default function ReviewPage() {
   ];
 
   const gradeSections = [
-    { label: "Mathematics",           emoji: "🔢", color: "indigo"  as const, qs: selectedQuiz.slice(0, 10)  },
-    { label: "English Language Arts", emoji: "📖", color: "emerald" as const, qs: selectedQuiz.slice(10, 20) },
-    { label: "Science",               emoji: "🔬", color: "amber"   as const, qs: selectedQuiz.slice(20, 30) },
+    { label: "Mathematics",           emoji: "🔢", color: "indigo"  as const, qs: questionsForSection(selectedQuiz, "math") },
+    { label: "English Language Arts", emoji: "📖", color: "emerald" as const, qs: questionsForSection(selectedQuiz, "ela") },
+    { label: "Science",               emoji: "🔬", color: "amber"   as const, qs: questionsForSection(selectedQuiz, "science").slice(0, 10) },
   ];
 
   const sectionBlocks = (isSat ? satSections : gradeSections).filter((s) => s.qs.length > 0);

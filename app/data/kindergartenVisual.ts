@@ -94,7 +94,7 @@ const ela: KinderQuestion[] = [
   item('ela', 17, 'Story', 'medium', 'kvis:story:seed', 'A seed is planted first. Then it is watered. What comes first?', ['pic:seed', 'pic:sprout', 'pic:umbrella', 'pic:apple'], 'pic:seed', 'The seed is planted first.'),
   item('ela', 18, 'Letters', 'easy', 'kvis:tap', 'Which letter is a capital A?', ['letter:a', 'letter:A', 'letter:o', 'letter:m'], 'letter:A', 'The capital A is the tall letter A.'),
   item('ela', 19, 'Story', 'hard', 'kvis:story:boots', 'Liam put on boots and splashed in puddles. What did he put on?', ['pic:boot', 'pic:hat', 'pic:umbrella', 'pic:book'], 'pic:boot', 'Liam put on boots.'),
-  item('ela', 20, 'Rhyming', 'hard', 'kvis:ref:star', 'Which picture rhymes with jar?', ['pic:star', 'pic:cat', 'pic:sun', 'pic:book'], 'pic:star', 'Jar and star rhyme.'),
+  item('ela', 20, 'Rhyming', 'hard', 'kvis:ref:jar', 'Which picture rhymes with jar?', ['pic:star', 'pic:cat', 'pic:sun', 'pic:book'], 'pic:star', 'Jar and star rhyme.'),
 ];
 
 const prompts = new Set<string>();

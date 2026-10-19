@@ -3,7 +3,7 @@
 const ICONS = [
   'apple', 'star', 'duck', 'ball', 'block', 'bird', 'cat', 'hat', 'sun', 'dog',
   'fish', 'moon', 'tree', 'cup', 'umbrella', 'book', 'rabbit', 'chair', 'bee',
-  'bed', 'sock', 'seed', 'sprout', 'boot',
+  'bed', 'sock', 'seed', 'sprout', 'boot', 'jar',
 ] as const;
 
 export type KinderIconName = (typeof ICONS)[number];
@@ -529,6 +529,14 @@ function IconShape({ name }: { name: string }) {
       );
     case 'boot':
       return <path d="M18 8 h18 v28 h16 v12 h-40 z" fill="#3D7EE8" stroke={ink} strokeWidth="3" strokeLinejoin="round" />;
+    case 'jar':
+      return (
+        <>
+          <rect x="22" y="8" width="20" height="8" rx="2" fill="#C47A32" stroke={ink} strokeWidth="3" />
+          <path d="M18 18 h28 l-4 36 h-20 z" fill="#F4F1EA" stroke={ink} strokeWidth="3" strokeLinejoin="round" />
+          <path d="M20 32 h24" stroke="#7FB509" strokeWidth="4" />
+        </>
+      );
     default:
       return <circle cx="32" cy="32" r="16" fill="#D7E4F5" stroke={ink} strokeWidth="3" />;
   }

@@ -8,7 +8,7 @@ import katexImport from 'katex';
 const katex: typeof katexImport =
   typeof (katexImport as { renderToString?: unknown }).renderToString === 'function'
     ? katexImport
-    : ((katexImport as { default: typeof katexImport }).default ?? katexImport);
+    : ((katexImport as unknown as { default: typeof katexImport }).default ?? katexImport);
 
 const HAS_FRACTION =
   /\d\s+\d\s*\/\s*\d|\(\s*-?\d+\s*\/\s*-?\d+\s*\)|(?:^|[\s([])-?\d+\s*\/\s*-?\d+(?=[\s)\],.?!;:]|$)|\[[^\]]*\]\s*\/\s*\[/;

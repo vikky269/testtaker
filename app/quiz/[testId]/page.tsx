@@ -7,7 +7,6 @@ import { useParams } from "next/navigation";
 
 import quizData from "@/app/data/quizdata";
 import standardsData from "@/app/data/statetestdata";
-import { quizAssessmentData } from "@/app/data/quizassessmentdata";
 import { useQuiz } from "@/app/context/QuizContext";
 
 import { calculateScore, calculateSectionScore } from "@/app/utils/ScoreUtils";
@@ -16,6 +15,12 @@ import QuizBody from "@/app/quizBody/quizBody";
 import ResultsScreen from "@/app/modals/resultScreen";
 import { supabase, withTimeout } from "@/lib/supabaseClient";
 import toast from "react-hot-toast";
+import {
+  generateGradeAssessment,
+  saveGeneratedAssessment,
+  loadGeneratedAssessment,
+  clearGeneratedAssessment,
+} from "@/app/utils/gradeAssessmentGenerator";
 
 type QuizSection = "math" | "ela" | "science";
 type SatSection  = "reading" | "math";
@@ -52,6 +57,8 @@ export default function Quiz() {
   const [showScienceModal, setShowScienceModal]                     = useState(false);
   const [showSatModal, setShowSatModal]                             = useState(false);
   const [unansweredCount, setUnansweredCount]                       = useState(0);
+  const [isGenerating, setIsGenerating]                             = useState(false);
+  const [generateStatus, setGenerateStatus]                         = useState("");
 
   const questionRef = useRef<HTMLDivElement | null>(null);
   const hasSavedRef = useRef(false);
@@ -138,29 +145,99 @@ export default function Quiz() {
   }, []);
 
 
-  // ── Load quiz questions ───────────────────────────────────────────────────
+  // ── Load quiz questions (grade assessment = pool from question banks) ─────
   useEffect(() => {
+    let cancelled = false;
+    const runId = Symbol('assessment-load');
     const saved  = localStorage.getItem("quizState");
-    const parsed = saved ? JSON.parse(saved) : {};
-    if (testid === "state-test" && stateParam && gradeParam) {
-      setQuizQuestions(standardsData[`${stateParam}-${gradeParam.toLowerCase().replace(/\s+/g, "")}`] || []);
-    } else if (testid === "quiz-assessment" && gradeParam) {
-      const norm = gradeParam.toLowerCase().replace(/\s+/g, "-");
-      setQuizQuestions(quizAssessmentData.find((e) => e.grade.toLowerCase().replace(/\s+/g, "-") === norm)?.questions || []);
-    } else {
-      setQuizQuestions(quizData[testid as string] || []);
-    }
-    if (!parsed.answers || parsed.submitted) { setAnswers({}); localStorage.removeItem("quiz-end-time"); }
+    let parsed: any = {};
+    try { parsed = saved ? JSON.parse(saved) : {}; } catch { parsed = {}; }
+
+    const sameAttempt =
+      parsed.testid === testid &&
+      parsed.gradeParam === gradeParam &&
+      !parsed.submitted;
+
+    const load = async () => {
+      if (testid === "state-test" && stateParam && gradeParam) {
+        setQuizQuestions(
+          standardsData[`${stateParam}-${gradeParam.toLowerCase().replace(/\s+/g, "")}`] || []
+        );
+        setIsGenerating(false);
+      } else if (testid === "quiz-assessment" && gradeParam) {
+        // Resume mid-attempt with the same drawn set (refresh during a test)
+        if (sameAttempt) {
+          const existing = loadGeneratedAssessment(gradeParam);
+          if (existing?.questions?.length) {
+            if (!cancelled) {
+              setQuizQuestions(existing.questions);
+              setIsGenerating(false);
+              setGenerateStatus("");
+            }
+            return;
+          }
+        }
+
+        // Fresh attempt — pool & shuffle from the question banks
+        if (!cancelled) {
+          setIsGenerating(true);
+          setGenerateStatus("Pooling questions from the question bank...");
+        }
+
+        try {
+          const generated = await generateGradeAssessment(gradeParam, {
+            delayMs: 350,
+            onProgress: (msg) => {
+              if (!cancelled) setGenerateStatus(msg);
+            },
+          });
+          // Ignore stale results from a cancelled Strict-Mode / re-run effect
+          if (cancelled) return;
+          saveGeneratedAssessment(generated);
+          setQuizQuestions(generated.questions);
+          setAnswers({});
+          localStorage.removeItem("quiz-end-time");
+          localStorage.removeItem("elaSkipped");
+        } catch (err) {
+          console.error("Failed to generate assessment:", err);
+          toast.error("Could not generate questions. Please try again.");
+          if (!cancelled) setQuizQuestions([]);
+        } finally {
+          // Always clear the spinner for this run's UI state when still mounted
+          if (!cancelled) {
+            setIsGenerating(false);
+            setGenerateStatus("");
+          }
+        }
+        return;
+      } else {
+        setQuizQuestions(quizData[testid as string] || []);
+        setIsGenerating(false);
+      }
+
+      if (!parsed.answers || parsed.submitted) {
+        setAnswers({});
+        localStorage.removeItem("quiz-end-time");
+      }
+    };
+
+    load();
+    return () => { cancelled = true; void runId; };
   }, [testid, stateParam, gradeParam, setAnswers]);
 
   // ── Persist state to localStorage on every change ────────────────────────
   useEffect(() => {
+    // Don't write a half-baked quizState while banks are still loading —
+    // that made Strict Mode remounts think a prior attempt existed and
+    // left the generating spinner stuck.
+    if (isGenerating) return;
+    if (!quizQuestions.length && testid === "quiz-assessment") return;
     localStorage.setItem("quizState", JSON.stringify({
       testid, gradeParam, answers, currentQuestionIndex,
       submitted, satSection, quizSection,
       isSatReading, // persist so refresh mid-SAT-math restores correctly
     }));
-  }, [testid, gradeParam, answers, currentQuestionIndex, submitted, satSection, quizSection, isSatReading]);
+  }, [testid, gradeParam, answers, currentQuestionIndex, submitted, satSection, quizSection, isSatReading, isGenerating, quizQuestions.length]);
 
   // ── Answer selection ──────────────────────────────────────────────────────
   const handleSelect = (question: string, option: string) => {
@@ -435,6 +512,7 @@ export default function Quiz() {
 
   const handleGoHome = () => {
     localStorage.removeItem("quizState"); localStorage.removeItem("quiz-end-time");
+    clearGeneratedAssessment();
     setAnswers({}); setCurrentQuestionIndex(0); setSubmitted(false); router.push("/");
   };
 
@@ -501,6 +579,23 @@ export default function Quiz() {
     ? (quizSection === "math" ? "grade-math" : quizSection === "ela" ? "grade-ela" : "grade-science")
     : "regular";
 
+  if (isGenerating) {
+    return (
+      <div className="min-h-[70vh] flex items-center justify-center px-4">
+        <div className="max-w-md w-full text-center rounded-2xl border border-[#d9e8b8] bg-gradient-to-b from-[#f7fbe9] to-white shadow-sm px-8 py-10">
+          <div className="mx-auto mb-5 h-12 w-12 rounded-full border-4 border-[#7FB509] border-t-transparent animate-spin" />
+          <p className="text-lg font-semibold text-[#1a2e05]">Generating your assessment</p>
+          <p className="mt-2 text-sm text-[#3a5a09]">
+            {generateStatus || 'Pooling questions from the question bank...'}
+          </p>
+          <p className="mt-4 text-xs text-gray-500">
+            Drawing a balanced mix of Math, ELA, and Science for {gradeParam?.replace(/-/g, ' ')}.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   if (!quizQuestions || quizQuestions.length === 0)
     return <div className="text-center text-red-500 my-20 text-4xl">No quiz found for this test.</div>;
 
@@ -508,9 +603,6 @@ export default function Quiz() {
   const satCorrectCount = isSat
     ? quizQuestions.filter((q) => answers[q.question] === (q.correctAnswer || q.answer)).length
     : 0;
-
-console.log("satSection:", satSection, "isSat:", isSat, "normalizedGrade:", normalizedGrade);
-
 
   return (
     <div ref={questionRef}>

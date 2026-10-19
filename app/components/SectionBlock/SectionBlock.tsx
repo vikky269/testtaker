@@ -46,7 +46,7 @@ export default function SectionBlock({
   if (questions.length === 0) return null;
 
   return (
-    <div className="mb-12">
+    <div className="mb-12 max-w-full overflow-x-hidden">
       {/* Section header */}
       <div className={`flex items-center gap-3 mb-5 pb-3 border-b-2 ${BORDER_MAP[color]}`}>
         <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl ${ICON_BG_MAP[color]}`}>

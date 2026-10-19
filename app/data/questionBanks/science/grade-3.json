@@ -1,0 +1,734 @@
+[
+  {
+    "id": "science-3-easy-1",
+    "question": "What is a force?",
+    "options": [
+      "A kind of food",
+      "A color",
+      "A push or a pull",
+      "A sound"
+    ],
+    "correctAnswer": "A push or a pull",
+    "difficulty": "easy",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-easy-2",
+    "question": "Which object will a magnet attract?",
+    "options": [
+      "An iron nail",
+      "A plastic spoon",
+      "A wooden block",
+      "A rubber band"
+    ],
+    "correctAnswer": "An iron nail",
+    "difficulty": "easy",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-easy-3",
+    "question": "True or False: Every magnet has a north pole and a south pole.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-easy-4",
+    "question": "Which force pulls objects down toward the ground?",
+    "options": [
+      "Friction",
+      "Sound",
+      "Light",
+      "Gravity"
+    ],
+    "correctAnswer": "Gravity",
+    "difficulty": "easy",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-easy-5",
+    "question": "True or False: A force can change an object’s speed or direction.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-medium-6",
+    "question": "A box is pushed from both sides with equal forces. What happens to the box?",
+    "options": [
+      "It moves to the left",
+      "It does not move because the forces are balanced",
+      "It moves to the right",
+      "It speeds up"
+    ],
+    "correctAnswer": "It does not move because the forces are balanced",
+    "difficulty": "medium",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-medium-7",
+    "question": "The north poles of two magnets are brought close together. What happens?",
+    "options": [
+      "They pull together",
+      "Nothing happens",
+      "They melt",
+      "They push each other apart"
+    ],
+    "correctAnswer": "They push each other apart",
+    "difficulty": "medium",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-medium-8",
+    "question": "A swing moves back and forth in a regular pattern. After it swings away from you, what can you predict?",
+    "options": [
+      "It will stop in mid-air",
+      "It will swing back toward where it started",
+      "It will fly off the swing set",
+      "It will go higher each time on its own"
+    ],
+    "correctAnswer": "It will swing back toward where it started",
+    "difficulty": "medium",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-medium-9",
+    "question": "Rubbing your hands together makes them feel warm. Which force causes this?",
+    "options": [
+      "Friction",
+      "Gravity",
+      "Magnetism",
+      "Light"
+    ],
+    "correctAnswer": "Friction",
+    "difficulty": "medium",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-medium-10",
+    "question": "True or False: An object at rest will start moving only if an unbalanced force acts on it.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "medium",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-hard-11",
+    "question": "Two children push a box in opposite directions. The left child pushes with 20 N and the right child pushes with 30 N. Which way does the box move?",
+    "options": [
+      "To the left",
+      "It does not move",
+      "To the right",
+      "Straight up"
+    ],
+    "correctAnswer": "To the right",
+    "difficulty": "hard",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-hard-12",
+    "question": "A toy car rolls down a ramp and onto the floor. Where will it most likely roll farther?",
+    "options": [
+      "On thick carpet, because there is less friction",
+      "On smooth tile, because there is less friction",
+      "They will roll the same distance",
+      "It cannot roll on tile"
+    ],
+    "correctAnswer": "On smooth tile, because there is less friction",
+    "difficulty": "hard",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-hard-13",
+    "question": "A balloon is rubbed on hair and then sticks to a wall. What causes this?",
+    "options": [
+      "Gravity",
+      "A magnetic force",
+      "The wind",
+      "An electric force (static electricity)"
+    ],
+    "correctAnswer": "An electric force (static electricity)",
+    "difficulty": "hard",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-hard-14",
+    "question": "Why can a magnet pick up a paper clip without touching it?",
+    "options": [
+      "The paper clip is sticky",
+      "The magnet blows air on it",
+      "Magnetic force can act at a distance",
+      "Gravity pulls the paper clip up"
+    ],
+    "correctAnswer": "Magnetic force can act at a distance",
+    "difficulty": "hard",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-easy-15",
+    "question": "What is the correct order of a butterfly’s life cycle?",
+    "options": [
+      "Egg, larva (caterpillar), pupa (chrysalis), adult",
+      "Egg, pupa, larva, adult",
+      "Adult, egg, pupa, larva",
+      "Larva, egg, adult, pupa"
+    ],
+    "correctAnswer": "Egg, larva (caterpillar), pupa (chrysalis), adult",
+    "difficulty": "easy",
+    "topic": "Life Cycles and Traits",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-easy-16",
+    "question": "What do we call traits that are passed from parents to their offspring?",
+    "options": [
+      "Learned traits",
+      "Lost traits",
+      "Inherited traits",
+      "Fossil traits"
+    ],
+    "correctAnswer": "Inherited traits",
+    "difficulty": "easy",
+    "topic": "Life Cycles and Traits",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-easy-17",
+    "question": "True or False: Puppies usually look like their parents.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Life Cycles and Traits",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-easy-18",
+    "question": "Which animal changes its body completely as it grows (metamorphosis)?",
+    "options": [
+      "Butterfly",
+      "Dog",
+      "Cow",
+      "Chicken"
+    ],
+    "correctAnswer": "Butterfly",
+    "difficulty": "easy",
+    "topic": "Life Cycles and Traits",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-easy-19",
+    "question": "What does a flowering plant’s life cycle begin with?",
+    "options": [
+      "A flower",
+      "A fruit",
+      "An adult plant",
+      "A seed"
+    ],
+    "correctAnswer": "A seed",
+    "difficulty": "easy",
+    "topic": "Life Cycles and Traits",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-medium-20",
+    "question": "Which of these is an inherited trait?",
+    "options": [
+      "Knowing how to ride a bike",
+      "Eye color",
+      "A scar on your knee",
+      "Speaking English"
+    ],
+    "correctAnswer": "Eye color",
+    "difficulty": "medium",
+    "topic": "Life Cycles and Traits",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-medium-21",
+    "question": "Which of these is a learned behavior, not an inherited trait?",
+    "options": [
+      "The color of a cat’s fur",
+      "The number of legs on a dog",
+      "The color of a flower’s petals",
+      "Riding a bicycle"
+    ],
+    "correctAnswer": "Riding a bicycle",
+    "difficulty": "medium",
+    "topic": "Life Cycles and Traits",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-medium-22",
+    "question": "True or False: A plant can grow taller or greener depending on how much sunlight and water it gets.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "medium",
+    "topic": "Life Cycles and Traits",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-medium-23",
+    "question": "Which animal’s life cycle includes a tadpole stage?",
+    "options": [
+      "Butterfly",
+      "Frog",
+      "Chicken",
+      "Dog"
+    ],
+    "correctAnswer": "Frog",
+    "difficulty": "medium",
+    "topic": "Life Cycles and Traits",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-medium-24",
+    "question": "How is a caterpillar different from the adult butterfly it will become?",
+    "options": [
+      "It has a different body form and cannot fly",
+      "It has large wings",
+      "It lays the eggs",
+      "It looks exactly like the adult"
+    ],
+    "correctAnswer": "It has a different body form and cannot fly",
+    "difficulty": "medium",
+    "topic": "Life Cycles and Traits",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-hard-25",
+    "question": "Two bean plants grow from the same kind of seeds. One grows in sunlight and one in a dark closet. The closet plant is tall and pale. Why?",
+    "options": [
+      "It inherited pale color from a different species",
+      "Seeds in closets are always a different kind",
+      "The environment (lack of light) affected how it grew",
+      "Darkness permanently changes all seeds"
+    ],
+    "correctAnswer": "The environment (lack of light) affected how it grew",
+    "difficulty": "hard",
+    "topic": "Life Cycles and Traits",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-hard-26",
+    "question": "A girl has brown eyes like her mother. Her brother has blue eyes like their father. What does this show?",
+    "options": [
+      "Eye color is learned",
+      "Children inherit traits from both parents, and siblings can be different",
+      "Children never look like their parents",
+      "Eye color comes from the food we eat"
+    ],
+    "correctAnswer": "Children inherit traits from both parents, and siblings can be different",
+    "difficulty": "hard",
+    "topic": "Life Cycles and Traits",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-hard-27",
+    "question": "A cat’s fur color is inherited, but a scar from a fight is not. Why?",
+    "options": [
+      "Scars are always passed to kittens",
+      "Fur color is learned",
+      "Kittens copy their parents’ scars",
+      "A scar is gained during life and is not passed to kittens"
+    ],
+    "correctAnswer": "A scar is gained during life and is not passed to kittens",
+    "difficulty": "hard",
+    "topic": "Life Cycles and Traits",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-hard-28",
+    "question": "Why do offspring from the same parents often look a little different from each other?",
+    "options": [
+      "They eat different foods only",
+      "They are always identical",
+      "Each one inherits a different mix of traits from the parents",
+      "They copy other families"
+    ],
+    "correctAnswer": "Each one inherits a different mix of traits from the parents",
+    "difficulty": "hard",
+    "topic": "Life Cycles and Traits",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-easy-29",
+    "question": "What are fossils?",
+    "options": [
+      "The remains or traces of living things from long ago",
+      "New plants growing today",
+      "Rocks that fell from space",
+      "Tools made by people yesterday"
+    ],
+    "correctAnswer": "The remains or traces of living things from long ago",
+    "difficulty": "easy",
+    "topic": "Fossils",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-easy-30",
+    "question": "True or False: Fossils can show us what plants and animals looked like long ago.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Fossils",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-easy-31",
+    "question": "Which of these could be a fossil?",
+    "options": [
+      "A leaf that fell today",
+      "A plastic toy dinosaur",
+      "An animal footprint preserved in rock",
+      "A new pebble from a stream"
+    ],
+    "correctAnswer": "An animal footprint preserved in rock",
+    "difficulty": "easy",
+    "topic": "Fossils",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-medium-32",
+    "question": "What can scientists learn from fossils?",
+    "options": [
+      "What kinds of living things lived long ago and what Earth was like",
+      "What the weather will be tomorrow",
+      "Who will win a game",
+      "How many people live in cities"
+    ],
+    "correctAnswer": "What kinds of living things lived long ago and what Earth was like",
+    "difficulty": "medium",
+    "topic": "Fossils",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-medium-33",
+    "question": "A fossil of a fish is found on dry land far from any water. What does this suggest?",
+    "options": [
+      "Fish used to walk on land",
+      "Fish fell from the sky",
+      "There was never any water there",
+      "The land was once covered by water"
+    ],
+    "correctAnswer": "The land was once covered by water",
+    "difficulty": "medium",
+    "topic": "Fossils",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-medium-34",
+    "question": "True or False: Most living things become fossils when they die.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "medium",
+    "topic": "Fossils",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-hard-35",
+    "question": "A fossil of a fern is found in a place that is now a cold, dry desert. What does this suggest?",
+    "options": [
+      "The area has always been a desert",
+      "The area was once warm and wet",
+      "Ferns only grow in snow",
+      "The fossil formed yesterday"
+    ],
+    "correctAnswer": "The area was once warm and wet",
+    "difficulty": "hard",
+    "topic": "Fossils",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-hard-36",
+    "question": "A shark tooth and a seashell fossil are found in the same rock. What can you infer?",
+    "options": [
+      "Both lived in a desert",
+      "Both lived in the sky",
+      "Both lived only in caves",
+      "Both lived in a water environment"
+    ],
+    "correctAnswer": "Both lived in a water environment",
+    "difficulty": "hard",
+    "topic": "Fossils",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-easy-37",
+    "question": "Which tool measures how much rain falls?",
+    "options": [
+      "Thermometer",
+      "Rain gauge",
+      "Wind sock",
+      "Compass"
+    ],
+    "correctAnswer": "Rain gauge",
+    "difficulty": "easy",
+    "topic": "Weather and Climate",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-easy-38",
+    "question": "Which tool measures temperature?",
+    "options": [
+      "Thermometer",
+      "Rain gauge",
+      "Wind vane",
+      "Ruler"
+    ],
+    "correctAnswer": "Thermometer",
+    "difficulty": "easy",
+    "topic": "Weather and Climate",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-easy-39",
+    "question": "True or False: Climate is the typical weather of a place over a long time.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Weather and Climate",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-easy-40",
+    "question": "Which place usually has a hot, dry climate?",
+    "options": [
+      "The Arctic",
+      "A rainforest",
+      "A desert",
+      "A snowy mountain"
+    ],
+    "correctAnswer": "A desert",
+    "difficulty": "easy",
+    "topic": "Weather and Climate",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-easy-41",
+    "question": "Which of these is a severe weather event?",
+    "options": [
+      "Light breeze",
+      "Hurricane",
+      "Sunny afternoon",
+      "Cloudy morning"
+    ],
+    "correctAnswer": "Hurricane",
+    "difficulty": "easy",
+    "topic": "Weather and Climate",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-medium-42",
+    "question": "A table shows daily high temperatures: Monday 20°C, Tuesday 22°C, Wednesday 25°C, Thursday 18°C. Which day was the warmest?",
+    "options": [
+      "Monday",
+      "Tuesday",
+      "Thursday",
+      "Wednesday"
+    ],
+    "correctAnswer": "Wednesday",
+    "difficulty": "medium",
+    "topic": "Weather and Climate",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-medium-43",
+    "question": "How is weather different from climate?",
+    "options": [
+      "Weather is the pattern over many years; climate is what it is like today",
+      "They mean exactly the same thing",
+      "Weather is what it is like today; climate is the usual pattern over many years",
+      "Weather only happens in summer"
+    ],
+    "correctAnswer": "Weather is what it is like today; climate is the usual pattern over many years",
+    "difficulty": "medium",
+    "topic": "Weather and Climate",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-medium-44",
+    "question": "What is a good way to prepare for a hurricane?",
+    "options": [
+      "Listen to weather warnings and follow a safety plan",
+      "Go surfing",
+      "Ignore the warnings",
+      "Stand near the windows"
+    ],
+    "correctAnswer": "Listen to weather warnings and follow a safety plan",
+    "difficulty": "medium",
+    "topic": "Weather and Climate",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-medium-45",
+    "question": "Which climate gets the most rain all year?",
+    "options": [
+      "A desert",
+      "The Arctic tundra",
+      "A tropical rainforest",
+      "A dry grassland"
+    ],
+    "correctAnswer": "A tropical rainforest",
+    "difficulty": "medium",
+    "topic": "Weather and Climate",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-medium-46",
+    "question": "True or False: Every place on Earth has the same climate.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "medium",
+    "topic": "Weather and Climate",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-hard-47",
+    "question": "A graph shows rainfall: January 5 cm, February 6 cm, March 4 cm, June 0 cm, July 0 cm, August 1 cm. In which months would a farmer most likely need to water crops?",
+    "options": [
+      "June, July, and August",
+      "January and February",
+      "March only",
+      "Rainfall is the same every month"
+    ],
+    "correctAnswer": "June, July, and August",
+    "difficulty": "hard",
+    "topic": "Weather and Climate",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-hard-48",
+    "question": "A town often floods in the spring. Which action would help reduce flood damage?",
+    "options": [
+      "Cut down all the trees along the river",
+      "Pave over all the grass",
+      "Ignore flood warnings",
+      "Build barriers and keep the drains clear"
+    ],
+    "correctAnswer": "Build barriers and keep the drains clear",
+    "difficulty": "hard",
+    "topic": "Weather and Climate",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-hard-49",
+    "question": "Alaska has long, cold winters, and Florida is warm all year. Which best explains the difference in climate?",
+    "options": [
+      "Alaska is closer to the equator",
+      "Florida is closer to the equator and gets more direct sunlight",
+      "Florida has no winter because clouds block the Sun",
+      "Alaska never gets any sunlight"
+    ],
+    "correctAnswer": "Florida is closer to the equator and gets more direct sunlight",
+    "difficulty": "hard",
+    "topic": "Weather and Climate",
+    "subject": "science",
+    "grade": "3"
+  },
+  {
+    "id": "science-3-hard-50",
+    "question": "Which would give the best evidence about a city’s climate?",
+    "options": [
+      "Today’s temperature",
+      "Yesterday’s rainfall only",
+      "A photo of one cloud",
+      "Temperature and rainfall records kept over many years"
+    ],
+    "correctAnswer": "Temperature and rainfall records kept over many years",
+    "difficulty": "hard",
+    "topic": "Weather and Climate",
+    "subject": "science",
+    "grade": "3"
+  }
+]

@@ -133,3 +133,59 @@
 @utility animate-fadeInDelay {
   animation: fadeIn 0.6s ease-in-out both;
 }
+
+/* KaTeX equations in quiz questions / options */
+.katex-question .katex-display {
+  margin: 0.35em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.katex {
+  font-size: 1.05em;
+  color: inherit;
+}
+button .katex,
+li .katex {
+  color: inherit;
+}
+
+/* ELA / passage HTML — keep inside the card, wrap long lines */
+.math-html-content {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.quiz-question-html {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.quiz-question-html p {
+  margin: 0.35em 0 0.75em;
+  line-height: 1.55;
+}
+.quiz-question-html p:last-child {
+  margin-bottom: 0;
+}
+.quiz-question-html blockquote,
+blockquote.quiz-passage {
+  display: block;
+  max-width: 100%;
+  margin: 0.75em 0 1em;
+  padding: 0.75em 1em;
+  border-left: 3px solid #7FB509;
+  background: #f7fbe9;
+  border-radius: 0 0.75rem 0.75rem 0;
+  font-style: italic;
+  color: #1a2e05;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+}
+.quiz-question-html h2 {
+  font-size: 1.05em;
+  font-weight: 800;
+  margin: 0 0 0.5em;
+  color: #1a2e05;
+}

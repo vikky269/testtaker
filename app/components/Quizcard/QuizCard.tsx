@@ -10,6 +10,7 @@ import { Clock, FileText, Star, Lock, ChevronRight, X } from "lucide-react";
 import { quizData, QuizCardProps } from "../../data/mockdata";
 import { Lato } from "next/font/google";
 import { FaChild, FaSchool, FaGraduationCap, FaBook } from "react-icons/fa";
+import { beginFreshAssessment } from "@/app/utils/gradeAssessmentGenerator";
 
 
 const lato = Lato({ subsets: ["latin"], variable: "--font-lato", weight: ["400", "700"] });
@@ -99,6 +100,10 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
        if (selectedGrade === "SAT") { router.push(`/quiz/sat`); return; }
       const gradeSlug = selectedGrade.toLowerCase().replace(/\s+/g, "-");
       const stateSlug = selectedState?.toLowerCase().replace(/\s+/g, "-");
+      // Fresh start from home → new random draw (don't resume a prior hung attempt)
+      if (isQuizAssessment) {
+        beginFreshAssessment();
+      }
       router.push(
         isStateTest
           ? `/quiz/state-test?state=${stateSlug}&grade=${gradeSlug}`
@@ -119,7 +124,8 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
     if (isStateTest && selectedState && selectedGrade) {
       router.push(`/quiz/state-test?state=${selectedState.toLowerCase().replace(/\s/g, "-")}&grade=${selectedGrade.toLowerCase().replace(" ", "-")}`);
     } else if (isQuizAssessment && selectedGrade) {
-      router.push(`/quiz/quiz-assessment?grade=${selectedGrade.toLowerCase().replace(" ", "-")}`);
+      beginFreshAssessment();
+      router.push(`/quiz/quiz-assessment?grade=${selectedGrade.toLowerCase().replace(/\s+/g, "-")}`);
     } else if (!isStateTest && !isQuizAssessment && selectedTest) {
       router.push(`/quiz/${selectedTest}`);
     }

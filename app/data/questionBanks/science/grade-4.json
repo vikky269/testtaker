@@ -1,0 +1,738 @@
+[
+  {
+    "id": "science-4-easy-1",
+    "question": "What do we call the energy of motion?",
+    "options": [
+      "Potential energy",
+      "Light energy",
+      "Kinetic energy",
+      "Chemical energy"
+    ],
+    "correctAnswer": "Kinetic energy",
+    "difficulty": "easy",
+    "topic": "Energy and Waves",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-easy-2",
+    "question": "Which form of energy from the Sun helps us see?",
+    "options": [
+      "Light energy",
+      "Sound energy",
+      "Chemical energy",
+      "Magnetic energy"
+    ],
+    "correctAnswer": "Light energy",
+    "difficulty": "easy",
+    "topic": "Energy and Waves",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-easy-3",
+    "question": "True or False: Sound is a form of energy.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Energy and Waves",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-easy-4",
+    "question": "A battery-powered flashlight changes electrical energy into which kind of energy?",
+    "options": [
+      "Wind energy",
+      "Water energy",
+      "Nuclear energy",
+      "Light energy"
+    ],
+    "correctAnswer": "Light energy",
+    "difficulty": "easy",
+    "topic": "Energy and Waves",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-easy-5",
+    "question": "What makes a sound?",
+    "options": [
+      "Light",
+      "Vibrations",
+      "Cold air",
+      "Gravity"
+    ],
+    "correctAnswer": "Vibrations",
+    "difficulty": "easy",
+    "topic": "Energy and Waves",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-easy-6",
+    "question": "True or False: Heat can move from a hot object to a cooler object.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Energy and Waves",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-7",
+    "question": "Compared with a slow-moving ball, a fast-moving ball has what?",
+    "options": [
+      "Less energy of motion",
+      "The same energy of motion",
+      "No energy at all",
+      "More energy of motion"
+    ],
+    "correctAnswer": "More energy of motion",
+    "difficulty": "medium",
+    "topic": "Energy and Waves",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-8",
+    "question": "A toaster changes electrical energy into which kind of energy?",
+    "options": [
+      "Sound energy only",
+      "Heat energy",
+      "Energy of motion only",
+      "Chemical energy"
+    ],
+    "correctAnswer": "Heat energy",
+    "difficulty": "medium",
+    "topic": "Energy and Waves",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-9",
+    "question": "What is the height of a wave from its resting position to its crest (highest point) called?",
+    "options": [
+      "Amplitude",
+      "Wavelength",
+      "Frequency",
+      "Trough"
+    ],
+    "correctAnswer": "Amplitude",
+    "difficulty": "medium",
+    "topic": "Energy and Waves",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-10",
+    "question": "What must happen for you to see an object?",
+    "options": [
+      "Your eyes must send out light",
+      "The object must make a sound",
+      "Light must bounce off the object and enter your eyes",
+      "The object must be hot"
+    ],
+    "correctAnswer": "Light must bounce off the object and enter your eyes",
+    "difficulty": "medium",
+    "topic": "Energy and Waves",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-11",
+    "question": "Which material is the best conductor of heat?",
+    "options": [
+      "A wooden spoon",
+      "A metal spoon",
+      "A plastic spoon",
+      "A foam cup"
+    ],
+    "correctAnswer": "A metal spoon",
+    "difficulty": "medium",
+    "topic": "Energy and Waves",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-12",
+    "question": "True or False: You can see objects in a completely dark room with no light.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "medium",
+    "topic": "Energy and Waves",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-13",
+    "question": "A student shines a flashlight at a mirror. What happens to the light?",
+    "options": [
+      "It passes straight through the mirror",
+      "It is absorbed and disappears",
+      "It turns into sound",
+      "It bounces off the mirror in a new direction"
+    ],
+    "correctAnswer": "It bounces off the mirror in a new direction",
+    "difficulty": "medium",
+    "topic": "Energy and Waves",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-14",
+    "question": "Which of these is a renewable energy source?",
+    "options": [
+      "Coal",
+      "Oil",
+      "Wind",
+      "Natural gas"
+    ],
+    "correctAnswer": "Wind",
+    "difficulty": "medium",
+    "topic": "Energy and Waves",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-hard-15",
+    "question": "A moving ball hits a wall and stops. Which energy changes happen?",
+    "options": [
+      "Some of its motion energy changes into sound and heat",
+      "Its energy disappears completely",
+      "It gains new energy from the wall",
+      "It changes into light only"
+    ],
+    "correctAnswer": "Some of its motion energy changes into sound and heat",
+    "difficulty": "hard",
+    "topic": "Energy and Waves",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-hard-16",
+    "question": "Wave 1 has crests close together. Wave 2 has crests far apart. Which wave has the longer wavelength?",
+    "options": [
+      "Wave 1",
+      "They have the same wavelength",
+      "Wave 2",
+      "Neither wave has a wavelength"
+    ],
+    "correctAnswer": "Wave 2",
+    "difficulty": "hard",
+    "topic": "Energy and Waves",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-hard-17",
+    "question": "You turn the crank on a hand-crank flashlight and it lights up. Which shows the energy changes in order?",
+    "options": [
+      "Motion → electrical → light",
+      "Light → motion → electrical",
+      "Electrical → motion → light",
+      "Sound → light → heat"
+    ],
+    "correctAnswer": "Motion → electrical → light",
+    "difficulty": "hard",
+    "topic": "Energy and Waves",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-hard-18",
+    "question": "A rolling ball hits a ball that is sitting still, and the still ball starts to move. What happened?",
+    "options": [
+      "The second ball made energy from nothing",
+      "Energy was destroyed in the collision",
+      "The first ball gained energy",
+      "Energy moved from the first ball to the second ball in the collision"
+    ],
+    "correctAnswer": "Energy moved from the first ball to the second ball in the collision",
+    "difficulty": "hard",
+    "topic": "Energy and Waves",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-easy-19",
+    "question": "Which structure helps a bird fly?",
+    "options": [
+      "Gills",
+      "Wings",
+      "Roots",
+      "A shell"
+    ],
+    "correctAnswer": "Wings",
+    "difficulty": "easy",
+    "topic": "Structures of Organisms",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-easy-20",
+    "question": "What do roots do for a plant?",
+    "options": [
+      "Make seeds",
+      "Attract insects with bright colors",
+      "Make food from sunlight",
+      "Take in water and hold the plant in the soil"
+    ],
+    "correctAnswer": "Take in water and hold the plant in the soil",
+    "difficulty": "easy",
+    "topic": "Structures of Organisms",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-easy-21",
+    "question": "True or False: A cactus’s sharp spines help protect it from animals.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Structures of Organisms",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-easy-22",
+    "question": "Which body part helps you see?",
+    "options": [
+      "Ears",
+      "Eyes",
+      "Nose",
+      "Tongue"
+    ],
+    "correctAnswer": "Eyes",
+    "difficulty": "easy",
+    "topic": "Structures of Organisms",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-easy-23",
+    "question": "Which body part receives messages from your senses and decides how to respond?",
+    "options": [
+      "Brain",
+      "Heart",
+      "Lungs",
+      "Stomach"
+    ],
+    "correctAnswer": "Brain",
+    "difficulty": "easy",
+    "topic": "Structures of Organisms",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-easy-24",
+    "question": "Which structure helps a fish breathe underwater?",
+    "options": [
+      "Lungs",
+      "Wings",
+      "Gills",
+      "Fur"
+    ],
+    "correctAnswer": "Gills",
+    "difficulty": "easy",
+    "topic": "Structures of Organisms",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-25",
+    "question": "Why do many desert plants have thick, waxy stems?",
+    "options": [
+      "They attract more rain",
+      "They store water and keep it from escaping",
+      "They help the plant grow taller than others",
+      "They keep the plant cold"
+    ],
+    "correctAnswer": "They store water and keep it from escaping",
+    "difficulty": "medium",
+    "topic": "Structures of Organisms",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-26",
+    "question": "A polar bear has thick fur and a layer of fat. How do these structures help it?",
+    "options": [
+      "They help it fly",
+      "They help it hide in the desert",
+      "They help it breathe underwater",
+      "They keep it warm in cold weather"
+    ],
+    "correctAnswer": "They keep it warm in cold weather",
+    "difficulty": "medium",
+    "topic": "Structures of Organisms",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-27",
+    "question": "Which structure helps a woodpecker get insects out of tree bark?",
+    "options": [
+      "Webbed feet",
+      "Long wings",
+      "A strong, sharp beak",
+      "Thick fur"
+    ],
+    "correctAnswer": "A strong, sharp beak",
+    "difficulty": "medium",
+    "topic": "Structures of Organisms",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-28",
+    "question": "A nerve carries a message from your hand to your brain. What does the brain do next?",
+    "options": [
+      "It processes the message and sends back a response",
+      "It stores food for later",
+      "It pumps blood to the hand",
+      "It digests the message"
+    ],
+    "correctAnswer": "It processes the message and sends back a response",
+    "difficulty": "medium",
+    "topic": "Structures of Organisms",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-29",
+    "question": "True or False: All animals have the same body structures.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "medium",
+    "topic": "Structures of Organisms",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-30",
+    "question": "What is the main job of a plant’s leaves?",
+    "options": [
+      "Take in water from the soil",
+      "Hold the plant in the ground",
+      "Make food using sunlight",
+      "Grow seeds underground"
+    ],
+    "correctAnswer": "Make food using sunlight",
+    "difficulty": "medium",
+    "topic": "Structures of Organisms",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-hard-31",
+    "question": "A frog has thin, moist skin. How can this help the frog?",
+    "options": [
+      "Oxygen can pass through it, so the frog can also breathe through its skin",
+      "It keeps the frog dry in a desert",
+      "It lets the frog fly",
+      "It makes the frog larger"
+    ],
+    "correctAnswer": "Oxygen can pass through it, so the frog can also breathe through its skin",
+    "difficulty": "hard",
+    "topic": "Structures of Organisms",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-hard-32",
+    "question": "You touch a hot pan and quickly pull your hand away. Which order shows what happens?",
+    "options": [
+      "Muscles move → brain responds → nerves send a signal → skin senses heat",
+      "Brain responds → skin senses heat → muscles move → nerves send a signal",
+      "Nerves send a signal → muscles move → skin senses heat → brain responds",
+      "Skin senses heat → nerves send a signal → brain responds → muscles move the hand"
+    ],
+    "correctAnswer": "Skin senses heat → nerves send a signal → brain responds → muscles move the hand",
+    "difficulty": "hard",
+    "topic": "Structures of Organisms",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-hard-33",
+    "question": "A scientist finds an animal with sharp, pointed teeth and eyes at the front of its face. What is the best inference about its diet?",
+    "options": [
+      "It eats only plants",
+      "It probably eats other animals",
+      "It eats only leaves",
+      "It does not eat anything"
+    ],
+    "correctAnswer": "It probably eats other animals",
+    "difficulty": "hard",
+    "topic": "Structures of Organisms",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-hard-34",
+    "question": "Why is it helpful for animals to have more than one sense?",
+    "options": [
+      "One sense can do everything",
+      "Senses are not needed to survive",
+      "The brain does not need to work",
+      "Different senses give different information that helps the animal survive"
+    ],
+    "correctAnswer": "Different senses give different information that helps the animal survive",
+    "difficulty": "hard",
+    "topic": "Structures of Organisms",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-easy-35",
+    "question": "What is it called when wind, water, or ice moves pieces of rock and soil from one place to another?",
+    "options": [
+      "Weathering",
+      "Erosion",
+      "Evaporation",
+      "Condensation"
+    ],
+    "correctAnswer": "Erosion",
+    "difficulty": "easy",
+    "topic": "Earth Features",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-easy-36",
+    "question": "What is it called when rocks are broken down into smaller pieces?",
+    "options": [
+      "Weathering",
+      "Erosion",
+      "Melting",
+      "Fossilization"
+    ],
+    "correctAnswer": "Weathering",
+    "difficulty": "easy",
+    "topic": "Earth Features",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-easy-37",
+    "question": "True or False: Fossils are the remains or traces of living things from long ago.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Earth Features",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-easy-38",
+    "question": "Which landform is a very high area with steep sides and a peak?",
+    "options": [
+      "Valley",
+      "Plain",
+      "Mountain",
+      "Island"
+    ],
+    "correctAnswer": "Mountain",
+    "difficulty": "easy",
+    "topic": "Earth Features",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-easy-39",
+    "question": "Which landform is low land between hills or mountains?",
+    "options": [
+      "Mountain",
+      "Valley",
+      "Volcano",
+      "Cliff"
+    ],
+    "correctAnswer": "Valley",
+    "difficulty": "easy",
+    "topic": "Earth Features",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-easy-40",
+    "question": "Which of these is a natural hazard?",
+    "options": [
+      "A sunrise",
+      "A rainbow",
+      "A shadow",
+      "An earthquake"
+    ],
+    "correctAnswer": "An earthquake",
+    "difficulty": "easy",
+    "topic": "Earth Features",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-41",
+    "question": "In undisturbed layers of rock, where are the oldest layers found?",
+    "options": [
+      "At the top",
+      "Only in the middle",
+      "At the bottom",
+      "All layers are the same age"
+    ],
+    "correctAnswer": "At the bottom",
+    "difficulty": "medium",
+    "topic": "Earth Features",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-42",
+    "question": "What can fossils in rock layers tell scientists?",
+    "options": [
+      "What kinds of living things and environments existed long ago",
+      "What the weather will be next week",
+      "How tall mountains will grow",
+      "Which rock layer is the hottest"
+    ],
+    "correctAnswer": "What kinds of living things and environments existed long ago",
+    "difficulty": "medium",
+    "topic": "Earth Features",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-43",
+    "question": "Which is an example of weathering?",
+    "options": [
+      "A river carries sand downstream",
+      "Wind blows sand to a new place",
+      "Ice freezes in a crack and splits a rock",
+      "A glacier drags rocks across the land"
+    ],
+    "correctAnswer": "Ice freezes in a crack and splits a rock",
+    "difficulty": "medium",
+    "topic": "Earth Features",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-44",
+    "question": "Which is an example of erosion?",
+    "options": [
+      "A river carries sand downstream",
+      "Ice freezes in a crack and splits a rock",
+      "Plant roots crack a rock",
+      "Acid rain slowly dissolves a statue"
+    ],
+    "correctAnswer": "A river carries sand downstream",
+    "difficulty": "medium",
+    "topic": "Earth Features",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-45",
+    "question": "What does a map key (legend) tell you?",
+    "options": [
+      "How old the map is",
+      "Who drew the map",
+      "How hot the land is",
+      "What the symbols and colors on the map mean"
+    ],
+    "correctAnswer": "What the symbols and colors on the map mean",
+    "difficulty": "medium",
+    "topic": "Earth Features",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-medium-46",
+    "question": "True or False: Weathering and erosion are exactly the same thing.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "medium",
+    "topic": "Earth Features",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-hard-47",
+    "question": "A fossil of a sea shell is found at the top of a mountain far from the ocean. What does this suggest?",
+    "options": [
+      "Sea animals climbed up the mountain",
+      "The area was once under the sea",
+      "The mountain was never underwater",
+      "Shells fall from the sky"
+    ],
+    "correctAnswer": "The area was once under the sea",
+    "difficulty": "hard",
+    "topic": "Earth Features",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-hard-48",
+    "question": "A fish fossil is in the middle rock layer. A trilobite fossil is in the bottom layer. A mammal fossil is in the top layer. Which fossil is the oldest?",
+    "options": [
+      "The mammal in the top layer",
+      "The fish in the middle layer",
+      "They are all the same age",
+      "The trilobite in the bottom layer"
+    ],
+    "correctAnswer": "The trilobite in the bottom layer",
+    "difficulty": "hard",
+    "topic": "Earth Features",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-hard-49",
+    "question": "Over millions of years, a river carves a deep canyon. What best explains how this happened?",
+    "options": [
+      "A volcano erupted and made it in one day",
+      "Flowing water slowly eroded the rock layers over a very long time",
+      "A meteorite hit and made it in one day",
+      "People dug it in one year"
+    ],
+    "correctAnswer": "Flowing water slowly eroded the rock layers over a very long time",
+    "difficulty": "hard",
+    "topic": "Earth Features",
+    "subject": "science",
+    "grade": "4"
+  },
+  {
+    "id": "science-4-hard-50",
+    "question": "A coastal town wants to reduce damage from strong waves and erosion. Which solution would help?",
+    "options": [
+      "Build seawalls and plant grasses along the shore",
+      "Remove all dunes and plants",
+      "Build houses right at the water’s edge",
+      "Ignore the problem"
+    ],
+    "correctAnswer": "Build seawalls and plant grasses along the shore",
+    "difficulty": "hard",
+    "topic": "Earth Features",
+    "subject": "science",
+    "grade": "4"
+  }
+]

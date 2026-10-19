@@ -1,0 +1,734 @@
+[
+  {
+    "id": "science-kindergarten-easy-1",
+    "question": "Which of these is a living thing?",
+    "options": [
+      "A rock",
+      "A toy car",
+      "A tree",
+      "A spoon"
+    ],
+    "correctAnswer": "A tree",
+    "difficulty": "easy",
+    "topic": "Plants and Animals",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-easy-2",
+    "question": "What do plants need to grow?",
+    "options": [
+      "Water and sunlight",
+      "Candy and toys",
+      "Sand and plastic",
+      "Paint and glue"
+    ],
+    "correctAnswer": "Water and sunlight",
+    "difficulty": "easy",
+    "topic": "Plants and Animals",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-easy-3",
+    "question": "True or False: Animals need food and water to live.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Plants and Animals",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-easy-4",
+    "question": "Which part of a plant grows under the ground and takes in water?",
+    "options": [
+      "Leaf",
+      "Flower",
+      "Fruit",
+      "Root"
+    ],
+    "correctAnswer": "Root",
+    "difficulty": "easy",
+    "topic": "Plants and Animals",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-easy-5",
+    "question": "Which animal has feathers?",
+    "options": [
+      "Fish",
+      "Bird",
+      "Dog",
+      "Frog"
+    ],
+    "correctAnswer": "Bird",
+    "difficulty": "easy",
+    "topic": "Plants and Animals",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-easy-6",
+    "question": "True or False: A rock needs food and water to grow.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "easy",
+    "topic": "Plants and Animals",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-easy-7",
+    "question": "Which animal lives in water all the time?",
+    "options": [
+      "Cow",
+      "Cat",
+      "Chicken",
+      "Fish"
+    ],
+    "correctAnswer": "Fish",
+    "difficulty": "easy",
+    "topic": "Plants and Animals",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-medium-8",
+    "question": "Which part of a plant uses sunlight to help make food?",
+    "options": [
+      "Root",
+      "Leaf",
+      "Seed",
+      "Bark"
+    ],
+    "correctAnswer": "Leaf",
+    "difficulty": "medium",
+    "topic": "Plants and Animals",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-medium-9",
+    "question": "Which animal has fur that helps keep it warm?",
+    "options": [
+      "Bear",
+      "Snake",
+      "Fish",
+      "Frog"
+    ],
+    "correctAnswer": "Bear",
+    "difficulty": "medium",
+    "topic": "Plants and Animals",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-medium-10",
+    "question": "Which of these is NOT an animal?",
+    "options": [
+      "Cat",
+      "Frog",
+      "Sunflower",
+      "Bee"
+    ],
+    "correctAnswer": "Sunflower",
+    "difficulty": "medium",
+    "topic": "Plants and Animals",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-medium-11",
+    "question": "Plants and animals both need this to stay alive. What is it?",
+    "options": [
+      "Toys",
+      "Water",
+      "Television",
+      "Paint"
+    ],
+    "correctAnswer": "Water",
+    "difficulty": "medium",
+    "topic": "Plants and Animals",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-medium-12",
+    "question": "A plant is kept in a dark closet and gets no light. What will most likely happen?",
+    "options": [
+      "It will grow strong and green",
+      "It will turn into an animal",
+      "It will grow faster than other plants",
+      "It will become weak and turn yellow"
+    ],
+    "correctAnswer": "It will become weak and turn yellow",
+    "difficulty": "medium",
+    "topic": "Plants and Animals",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-medium-13",
+    "question": "A squirrel hides in a hole in a tree to stay safe. What does the tree give the squirrel?",
+    "options": [
+      "A toy",
+      "A new blanket",
+      "A shelter (a safe home)",
+      "A weather report"
+    ],
+    "correctAnswer": "A shelter (a safe home)",
+    "difficulty": "medium",
+    "topic": "Plants and Animals",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-hard-14",
+    "question": "True or False: A plant can grow healthy and strong in a dark place with no light forever.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "hard",
+    "topic": "Plants and Animals",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-hard-15",
+    "question": "A beaver cuts down trees and builds a dam in a stream. What does the beaver change?",
+    "options": [
+      "The place where it lives",
+      "The color of the sky",
+      "The size of the moon",
+      "The season of the year"
+    ],
+    "correctAnswer": "The place where it lives",
+    "difficulty": "hard",
+    "topic": "Plants and Animals",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-hard-16",
+    "question": "Which one shows an animal changing its home (environment)?",
+    "options": [
+      "A cloud floats across the sky",
+      "Rain falls on a field",
+      "A rabbit digs a burrow in the ground",
+      "The wind blows a leaf"
+    ],
+    "correctAnswer": "A rabbit digs a burrow in the ground",
+    "difficulty": "hard",
+    "topic": "Plants and Animals",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-hard-17",
+    "question": "Which sentence tells one way plants and animals are alike?",
+    "options": [
+      "Both are living things that need water",
+      "Both can walk and run",
+      "Both have eyes and ears",
+      "Both can fly"
+    ],
+    "correctAnswer": "Both are living things that need water",
+    "difficulty": "hard",
+    "topic": "Plants and Animals",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-easy-18",
+    "question": "What falls from the clouds on a rainy day?",
+    "options": [
+      "Leaves",
+      "Sand",
+      "Toys",
+      "Raindrops"
+    ],
+    "correctAnswer": "Raindrops",
+    "difficulty": "easy",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-easy-19",
+    "question": "Which tool keeps you dry on a rainy day?",
+    "options": [
+      "A sunhat",
+      "An umbrella",
+      "Sunglasses",
+      "A kite"
+    ],
+    "correctAnswer": "An umbrella",
+    "difficulty": "easy",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-easy-20",
+    "question": "True or False: The sun gives us light and warmth.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-easy-21",
+    "question": "What should you wear on a cold, snowy day?",
+    "options": [
+      "Shorts and sandals",
+      "A swimsuit",
+      "A T-shirt only",
+      "A warm coat and boots"
+    ],
+    "correctAnswer": "A warm coat and boots",
+    "difficulty": "easy",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-easy-22",
+    "question": "What can you see in the sky on a sunny day?",
+    "options": [
+      "Snowflakes",
+      "The sun",
+      "A rainbow made of snow",
+      "Raindrops"
+    ],
+    "correctAnswer": "The sun",
+    "difficulty": "easy",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-easy-23",
+    "question": "True or False: It is usually hot outside when it snows.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "easy",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-medium-24",
+    "question": "Which kind of weather is best for flying a kite?",
+    "options": [
+      "Windy weather",
+      "Still, calm weather",
+      "Heavy snow",
+      "Thick fog"
+    ],
+    "correctAnswer": "Windy weather",
+    "difficulty": "medium",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-medium-25",
+    "question": "Which tool tells us how hot or cold it is outside?",
+    "options": [
+      "A ruler",
+      "A clock",
+      "A thermometer",
+      "A scale"
+    ],
+    "correctAnswer": "A thermometer",
+    "difficulty": "medium",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-medium-26",
+    "question": "The sky is full of dark gray clouds. What might happen soon?",
+    "options": [
+      "It will be a clear, sunny day",
+      "It might rain",
+      "It will snow in the middle of summer",
+      "The stars will come out at noon"
+    ],
+    "correctAnswer": "It might rain",
+    "difficulty": "medium",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-medium-27",
+    "question": "Why do people listen to the weather forecast?",
+    "options": [
+      "To learn how to read",
+      "To find out what to eat for lunch",
+      "To make the clouds go away",
+      "To know what the weather will be so they can get ready"
+    ],
+    "correctAnswer": "To know what the weather will be so they can get ready",
+    "difficulty": "medium",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-medium-28",
+    "question": "What is the best thing to wear on a hot, sunny day?",
+    "options": [
+      "A heavy winter coat",
+      "Thick wool mittens",
+      "A hat and light clothes",
+      "A scarf and snow boots"
+    ],
+    "correctAnswer": "A hat and light clothes",
+    "difficulty": "medium",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-medium-29",
+    "question": "The sun shines on a dark sidewalk all afternoon. How will the sidewalk feel?",
+    "options": [
+      "Warm",
+      "Freezing cold",
+      "Wet and icy",
+      "Cool like ice"
+    ],
+    "correctAnswer": "Warm",
+    "difficulty": "medium",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-medium-30",
+    "question": "Trees sway and leaves blow around. What kind of weather is this?",
+    "options": [
+      "Snowy",
+      "Foggy",
+      "Windy",
+      "Sunny and perfectly still"
+    ],
+    "correctAnswer": "Windy",
+    "difficulty": "medium",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-hard-31",
+    "question": "Two sandboxes sit outside. One is in bright sunshine and one is in the shade. Which one feels warmer at noon?",
+    "options": [
+      "The one in the sunshine",
+      "The one in the shade",
+      "They feel exactly the same",
+      "Neither, because sand cannot get warm"
+    ],
+    "correctAnswer": "The one in the sunshine",
+    "difficulty": "hard",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-hard-32",
+    "question": "The forecast says heavy rain tomorrow. Your class has a picnic outside. What is the best plan?",
+    "options": [
+      "Do nothing and hope for sun",
+      "Wear sunglasses and shorts",
+      "Bring a kite to fly",
+      "Have the picnic indoors or on another day"
+    ],
+    "correctAnswer": "Have the picnic indoors or on another day",
+    "difficulty": "hard",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-hard-33",
+    "question": "True or False: The weather stays exactly the same every day.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "hard",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-hard-34",
+    "question": "You hear loud thunder while playing outside. What should you do?",
+    "options": [
+      "Keep playing in the open field",
+      "Go inside to stay safe",
+      "Climb a tall tree",
+      "Stand under a tall metal pole"
+    ],
+    "correctAnswer": "Go inside to stay safe",
+    "difficulty": "hard",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-hard-35",
+    "question": "Mia made a weather chart. Monday: sunny. Tuesday: rainy. Wednesday: rainy. Thursday: sunny. Which days were rainy?",
+    "options": [
+      "Monday and Thursday",
+      "Monday and Tuesday",
+      "Wednesday and Thursday",
+      "Tuesday and Wednesday"
+    ],
+    "correctAnswer": "Tuesday and Wednesday",
+    "difficulty": "hard",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-easy-36",
+    "question": "You grab a door handle and bring the door toward you. What are you using?",
+    "options": [
+      "A push",
+      "A pull",
+      "A spin",
+      "A jump"
+    ],
+    "correctAnswer": "A pull",
+    "difficulty": "easy",
+    "topic": "Pushes and Pulls",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-easy-37",
+    "question": "You shove a swing away from you to make it move. What are you doing?",
+    "options": [
+      "Pushing",
+      "Pulling",
+      "Freezing",
+      "Melting"
+    ],
+    "correctAnswer": "Pushing",
+    "difficulty": "easy",
+    "topic": "Pushes and Pulls",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-easy-38",
+    "question": "True or False: A push moves an object away from you.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Pushes and Pulls",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-easy-39",
+    "question": "Which one is a pull?",
+    "options": [
+      "Kicking a ball",
+      "Pressing a doorbell",
+      "Pulling a wagon",
+      "Pushing a shopping cart"
+    ],
+    "correctAnswer": "Pulling a wagon",
+    "difficulty": "easy",
+    "topic": "Pushes and Pulls",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-easy-40",
+    "question": "True or False: A push or a pull can make an object move.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Pushes and Pulls",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-medium-41",
+    "question": "Which one is a push?",
+    "options": [
+      "Pulling a wagon",
+      "Pressing a doorbell",
+      "Pulling open a drawer",
+      "Pulling on a rope"
+    ],
+    "correctAnswer": "Pressing a doorbell",
+    "difficulty": "medium",
+    "topic": "Pushes and Pulls",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-medium-42",
+    "question": "Which makes a ball roll faster?",
+    "options": [
+      "A tiny tap",
+      "No push at all",
+      "Holding it still",
+      "A big push"
+    ],
+    "correctAnswer": "A big push",
+    "difficulty": "medium",
+    "topic": "Pushes and Pulls",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-medium-43",
+    "question": "You push a toy car forward. Which way does it go?",
+    "options": [
+      "Backward, toward you",
+      "Straight up in the air",
+      "Forward, away from you",
+      "It does not move"
+    ],
+    "correctAnswer": "Forward, away from you",
+    "difficulty": "medium",
+    "topic": "Pushes and Pulls",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-medium-44",
+    "question": "A ball rolling across the grass slows down and stops. What can you do to make it roll again?",
+    "options": [
+      "Give it another push",
+      "Ask it nicely to move",
+      "Cover it with a blanket",
+      "Wait for the moon to come out"
+    ],
+    "correctAnswer": "Give it another push",
+    "difficulty": "medium",
+    "topic": "Pushes and Pulls",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-medium-45",
+    "question": "Pushes and pulls can change how an object does what?",
+    "options": [
+      "Tastes",
+      "Smells",
+      "Moves",
+      "Grows"
+    ],
+    "correctAnswer": "Moves",
+    "difficulty": "medium",
+    "topic": "Pushes and Pulls",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-hard-46",
+    "question": "Which needs a bigger push to move: a toy car or a big, heavy box?",
+    "options": [
+      "The big, heavy box",
+      "The toy car",
+      "They need the same push",
+      "Neither needs a push"
+    ],
+    "correctAnswer": "The big, heavy box",
+    "difficulty": "hard",
+    "topic": "Pushes and Pulls",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-hard-47",
+    "question": "True or False: A heavy box needs the same size push as a feather to move.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "hard",
+    "topic": "Pushes and Pulls",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-hard-48",
+    "question": "A goalie’s hands push against a fast soccer ball. What can this do to the ball?",
+    "options": [
+      "Make it go faster",
+      "Make it grow bigger",
+      "Make it disappear",
+      "Make it stop"
+    ],
+    "correctAnswer": "Make it stop",
+    "difficulty": "hard",
+    "topic": "Pushes and Pulls",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-hard-49",
+    "question": "Kai’s toy car is rolling straight. He wants it to change direction. What can he do?",
+    "options": [
+      "Paint it a new color",
+      "Give it a push from the side",
+      "Say “turn” very loudly",
+      "Leave it alone"
+    ],
+    "correctAnswer": "Give it a push from the side",
+    "difficulty": "hard",
+    "topic": "Pushes and Pulls",
+    "subject": "science",
+    "grade": "kindergarten"
+  },
+  {
+    "id": "science-kindergarten-hard-50",
+    "question": "Two children pull on opposite ends of a rope with the same strength. What happens to the rope?",
+    "options": [
+      "It moves quickly toward one child",
+      "It lifts up into the air",
+      "It spins in circles",
+      "It does not move"
+    ],
+    "correctAnswer": "It does not move",
+    "difficulty": "hard",
+    "topic": "Pushes and Pulls",
+    "subject": "science",
+    "grade": "kindergarten"
+  }
+]

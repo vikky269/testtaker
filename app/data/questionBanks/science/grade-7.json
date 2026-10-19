@@ -1,0 +1,732 @@
+[
+  {
+    "id": "science-7-easy-1",
+    "question": "What is the basic unit of structure and function in all living things?",
+    "options": [
+      "The atom",
+      "The organ",
+      "The cell",
+      "The tissue"
+    ],
+    "correctAnswer": "The cell",
+    "difficulty": "easy",
+    "topic": "Cell Biology",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-easy-2",
+    "question": "Which cell part contains the cell’s DNA?",
+    "options": [
+      "Nucleus",
+      "Cell membrane",
+      "Vacuole",
+      "Cell wall"
+    ],
+    "correctAnswer": "Nucleus",
+    "difficulty": "easy",
+    "topic": "Cell Biology",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-easy-3",
+    "question": "True or False: All living things are made of one or more cells.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Cell Biology",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-easy-4",
+    "question": "In which plant cell organelle does photosynthesis take place?",
+    "options": [
+      "Mitochondrion",
+      "Nucleus",
+      "Ribosome",
+      "Chloroplast"
+    ],
+    "correctAnswer": "Chloroplast",
+    "difficulty": "easy",
+    "topic": "Cell Biology",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-5",
+    "question": "Which structure is found in plant cells but NOT in animal cells?",
+    "options": [
+      "Nucleus",
+      "Cell wall",
+      "Cell membrane",
+      "Mitochondria"
+    ],
+    "correctAnswer": "Cell wall",
+    "difficulty": "medium",
+    "topic": "Cell Biology",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-6",
+    "question": "Which organelle releases energy from food through cellular respiration?",
+    "options": [
+      "Chloroplast",
+      "Cell wall",
+      "Nucleus",
+      "Mitochondrion"
+    ],
+    "correctAnswer": "Mitochondrion",
+    "difficulty": "medium",
+    "topic": "Cell Biology",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-7",
+    "question": "What is the main job of the cell membrane?",
+    "options": [
+      "It stores the cell’s DNA",
+      "It controls what enters and leaves the cell",
+      "It makes energy from sunlight",
+      "It gives animal cells a rigid shape"
+    ],
+    "correctAnswer": "It controls what enters and leaves the cell",
+    "difficulty": "medium",
+    "topic": "Cell Biology",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-8",
+    "question": "True or False: Prokaryotic cells, such as bacteria, have a nucleus.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "medium",
+    "topic": "Cell Biology",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-hard-9",
+    "question": "Which substances are the reactants (starting materials) of photosynthesis?",
+    "options": [
+      "Carbon dioxide and water",
+      "Oxygen and glucose",
+      "Oxygen and water",
+      "Glucose and carbon dioxide"
+    ],
+    "correctAnswer": "Carbon dioxide and water",
+    "difficulty": "hard",
+    "topic": "Cell Biology",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-hard-10",
+    "question": "Under a microscope, a cell has a cell wall and chloroplasts. Where did it most likely come from?",
+    "options": [
+      "A human muscle",
+      "A dog’s skin",
+      "The leaf of a plant",
+      "A fish scale"
+    ],
+    "correctAnswer": "The leaf of a plant",
+    "difficulty": "hard",
+    "topic": "Cell Biology",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-hard-11",
+    "question": "Cellular respiration takes in glucose and oxygen. What does it produce?",
+    "options": [
+      "More glucose and sunlight",
+      "Carbon dioxide, water, and usable energy",
+      "Oxygen and chlorophyll",
+      "Only heat and light"
+    ],
+    "correctAnswer": "Carbon dioxide, water, and usable energy",
+    "difficulty": "hard",
+    "topic": "Cell Biology",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-easy-12",
+    "question": "Which molecule carries the genetic information in living things?",
+    "options": [
+      "Glucose",
+      "Starch",
+      "Oxygen",
+      "DNA"
+    ],
+    "correctAnswer": "DNA",
+    "difficulty": "easy",
+    "topic": "Genetics",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-easy-13",
+    "question": "Traits that are passed from parents to offspring are called what?",
+    "options": [
+      "Learned behaviors",
+      "Injuries",
+      "Inherited traits",
+      "Habits"
+    ],
+    "correctAnswer": "Inherited traits",
+    "difficulty": "easy",
+    "topic": "Genetics",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-easy-14",
+    "question": "True or False: In sexual reproduction, offspring receive genetic material from two parents.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Genetics",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-easy-15",
+    "question": "Different forms of the same gene are called what?",
+    "options": [
+      "Alleles",
+      "Chromosomes",
+      "Cells",
+      "Proteins"
+    ],
+    "correctAnswer": "Alleles",
+    "difficulty": "easy",
+    "topic": "Genetics",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-16",
+    "question": "What is a Punnett square used to show?",
+    "options": [
+      "The length of a DNA strand",
+      "The number of chromosomes in a cell",
+      "The possible gene combinations of offspring",
+      "The species of an organism"
+    ],
+    "correctAnswer": "The possible gene combinations of offspring",
+    "difficulty": "medium",
+    "topic": "Genetics",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-17",
+    "question": "The allele B is dominant and b is recessive. Which genotype shows the recessive trait?",
+    "options": [
+      "bb",
+      "BB",
+      "Bb",
+      "B"
+    ],
+    "correctAnswer": "bb",
+    "difficulty": "medium",
+    "topic": "Genetics",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-18",
+    "question": "How many chromosomes are in a typical human body cell?",
+    "options": [
+      "23",
+      "92",
+      "2",
+      "46"
+    ],
+    "correctAnswer": "46",
+    "difficulty": "medium",
+    "topic": "Genetics",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-19",
+    "question": "True or False: Asexual reproduction usually produces offspring that are genetically identical to the parent.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "medium",
+    "topic": "Genetics",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-hard-20",
+    "question": "Two parents are both Bb (B is dominant). What fraction of their offspring is expected to show the recessive trait?",
+    "options": [
+      "1 out of 2 (50%)",
+      "1 out of 4 (25%)",
+      "3 out of 4 (75%)",
+      "0 out of 4 (0%)"
+    ],
+    "correctAnswer": "1 out of 4 (25%)",
+    "difficulty": "hard",
+    "topic": "Genetics",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-hard-21",
+    "question": "Which mutation is most likely to be passed on to a person’s children?",
+    "options": [
+      "A mutation in a skin cell",
+      "A mutation in a muscle cell",
+      "A mutation in a hair cell",
+      "A mutation in a sperm or egg cell"
+    ],
+    "correctAnswer": "A mutation in a sperm or egg cell",
+    "difficulty": "hard",
+    "topic": "Genetics",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-easy-22",
+    "question": "What do we call an organism that makes its own food?",
+    "options": [
+      "Consumer",
+      "Producer",
+      "Decomposer",
+      "Predator"
+    ],
+    "correctAnswer": "Producer",
+    "difficulty": "easy",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-easy-23",
+    "question": "An animal that eats only plants is called what?",
+    "options": [
+      "Herbivore",
+      "Carnivore",
+      "Omnivore",
+      "Decomposer"
+    ],
+    "correctAnswer": "Herbivore",
+    "difficulty": "easy",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-easy-24",
+    "question": "True or False: Decomposers break down dead organisms and return nutrients to the soil.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-easy-25",
+    "question": "What is the original source of energy for most food chains?",
+    "options": [
+      "The soil",
+      "The wind",
+      "The Sun",
+      "The ocean"
+    ],
+    "correctAnswer": "The Sun",
+    "difficulty": "easy",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-26",
+    "question": "In the food chain grass → grasshopper → frog → snake, which organism is the primary consumer?",
+    "options": [
+      "Grass",
+      "Grasshopper",
+      "Frog",
+      "Snake"
+    ],
+    "correctAnswer": "Grasshopper",
+    "difficulty": "medium",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-27",
+    "question": "What is a population?",
+    "options": [
+      "All the living and nonliving things in an area",
+      "A group of different species living together",
+      "A single living organism",
+      "All the members of one species living in an area"
+    ],
+    "correctAnswer": "All the members of one species living in an area",
+    "difficulty": "medium",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-28",
+    "question": "Which of these is an abiotic (nonliving) factor in an ecosystem?",
+    "options": [
+      "Bacteria",
+      "Mushrooms",
+      "Sunlight",
+      "Insects"
+    ],
+    "correctAnswer": "Sunlight",
+    "difficulty": "medium",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-29",
+    "question": "True or False: All of the energy at one level of a food chain is passed to the next level.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "medium",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-30",
+    "question": "Two bird species in a small area eat the same seeds. What kind of relationship is this?",
+    "options": [
+      "Competition",
+      "Mutualism",
+      "Parasitism",
+      "Predation"
+    ],
+    "correctAnswer": "Competition",
+    "difficulty": "medium",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-hard-31",
+    "question": "Producers in an ecosystem hold 10,000 kJ of energy. About 10% passes to each next level. About how much reaches the secondary consumers?",
+    "options": [
+      "1,000 kJ",
+      "10 kJ",
+      "100 kJ",
+      "9,000 kJ"
+    ],
+    "correctAnswer": "100 kJ",
+    "difficulty": "hard",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-hard-32",
+    "question": "A disease kills most of the rabbits in a field. Foxes in the field mainly eat rabbits. What will most likely happen to the fox population?",
+    "options": [
+      "It will decrease",
+      "It will increase quickly",
+      "It will stay exactly the same",
+      "It will turn into a new species overnight"
+    ],
+    "correctAnswer": "It will decrease",
+    "difficulty": "hard",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-easy-33",
+    "question": "What do we call a trait that helps an organism survive in its environment?",
+    "options": [
+      "Fossil",
+      "Habitat",
+      "Population",
+      "Adaptation"
+    ],
+    "correctAnswer": "Adaptation",
+    "difficulty": "easy",
+    "topic": "Evolution",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-easy-34",
+    "question": "True or False: Fossils give evidence about organisms that lived long ago.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Evolution",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-easy-35",
+    "question": "Which scientist proposed the theory of evolution by natural selection?",
+    "options": [
+      "Gregor Mendel",
+      "Charles Darwin",
+      "Isaac Newton",
+      "Louis Pasteur"
+    ],
+    "correctAnswer": "Charles Darwin",
+    "difficulty": "easy",
+    "topic": "Evolution",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-36",
+    "question": "What is natural selection?",
+    "options": [
+      "Organisms choose to change their traits",
+      "All organisms in a population survive equally",
+      "Only the biggest organisms survive",
+      "Organisms with traits better suited to their environment survive and reproduce more"
+    ],
+    "correctAnswer": "Organisms with traits better suited to their environment survive and reproduce more",
+    "difficulty": "medium",
+    "topic": "Evolution",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-37",
+    "question": "Which is evidence that different species share a common ancestor?",
+    "options": [
+      "They have different fur colors",
+      "Similar bone structures in their limbs",
+      "They live in different habitats",
+      "They eat different foods"
+    ],
+    "correctAnswer": "Similar bone structures in their limbs",
+    "difficulty": "medium",
+    "topic": "Evolution",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-38",
+    "question": "Which best explains why modern giraffes have long necks?",
+    "options": [
+      "Giraffes with longer necks survived and reproduced more, passing on the trait",
+      "Giraffes stretched their necks and passed the stretch to their young",
+      "Giraffes decided to grow taller",
+      "Long necks appeared in all giraffes at once"
+    ],
+    "correctAnswer": "Giraffes with longer necks survived and reproduced more, passing on the trait",
+    "difficulty": "medium",
+    "topic": "Evolution",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-39",
+    "question": "True or False: Individual organisms evolve during their own lifetime.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "medium",
+    "topic": "Evolution",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-hard-40",
+    "question": "Trees in a forest become covered in dark soot. Dark moths are hidden better than light moths. Over many generations, what will most likely happen?",
+    "options": [
+      "The proportion of dark moths will decrease",
+      "All moths will turn light",
+      "The proportion of dark moths will increase",
+      "Moths will stop reproducing"
+    ],
+    "correctAnswer": "The proportion of dark moths will increase",
+    "difficulty": "hard",
+    "topic": "Evolution",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-hard-41",
+    "question": "Why do antibiotic-resistant bacteria become more common over time?",
+    "options": [
+      "Antibiotics make bacteria want to be resistant",
+      "Resistant bacteria survive treatment and reproduce, passing on resistance",
+      "Every bacterium becomes resistant after one dose",
+      "Bacteria learn resistance from reading about it"
+    ],
+    "correctAnswer": "Resistant bacteria survive treatment and reproduce, passing on resistance",
+    "difficulty": "hard",
+    "topic": "Evolution",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-easy-42",
+    "question": "Which organ pumps blood around the body?",
+    "options": [
+      "Lungs",
+      "Stomach",
+      "Brain",
+      "Heart"
+    ],
+    "correctAnswer": "Heart",
+    "difficulty": "easy",
+    "topic": "Human Body",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-easy-43",
+    "question": "Which body system breaks down food into nutrients?",
+    "options": [
+      "Respiratory system",
+      "Circulatory system",
+      "Digestive system",
+      "Skeletal system"
+    ],
+    "correctAnswer": "Digestive system",
+    "difficulty": "easy",
+    "topic": "Human Body",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-easy-44",
+    "question": "True or False: The brain is part of the nervous system.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Human Body",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-45",
+    "question": "Which system carries oxygen to the cells of the body through the blood?",
+    "options": [
+      "Circulatory system",
+      "Digestive system",
+      "Excretory system",
+      "Skeletal system"
+    ],
+    "correctAnswer": "Circulatory system",
+    "difficulty": "medium",
+    "topic": "Human Body",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-46",
+    "question": "Where does gas exchange between the air and the blood take place in the lungs?",
+    "options": [
+      "Trachea",
+      "Bronchi",
+      "Alveoli",
+      "Esophagus"
+    ],
+    "correctAnswer": "Alveoli",
+    "difficulty": "medium",
+    "topic": "Human Body",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-medium-47",
+    "question": "Which two body systems work together to allow the body to move?",
+    "options": [
+      "Muscular and skeletal systems",
+      "Digestive and excretory systems",
+      "Respiratory and reproductive systems",
+      "Immune and endocrine systems"
+    ],
+    "correctAnswer": "Muscular and skeletal systems",
+    "difficulty": "medium",
+    "topic": "Human Body",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-hard-48",
+    "question": "True or False: Most nutrients are absorbed into the blood in the large intestine.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "hard",
+    "topic": "Human Body",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-hard-49",
+    "question": "Why does your breathing rate increase during exercise?",
+    "options": [
+      "The stomach needs more air",
+      "The lungs get smaller",
+      "The blood stops carrying oxygen",
+      "Muscle cells need more oxygen, and extra carbon dioxide must be removed"
+    ],
+    "correctAnswer": "Muscle cells need more oxygen, and extra carbon dioxide must be removed",
+    "difficulty": "hard",
+    "topic": "Human Body",
+    "subject": "science",
+    "grade": "7"
+  },
+  {
+    "id": "science-7-hard-50",
+    "question": "Which sequence correctly shows how a nerve signal travels when you touch something hot and pull away?",
+    "options": [
+      "Muscle → motor neuron → brain → sensory neuron → receptor",
+      "Receptor → sensory neuron → brain → motor neuron → muscle",
+      "Brain → receptor → muscle → sensory neuron",
+      "Receptor → motor neuron → muscle → brain"
+    ],
+    "correctAnswer": "Receptor → sensory neuron → brain → motor neuron → muscle",
+    "difficulty": "hard",
+    "topic": "Human Body",
+    "subject": "science",
+    "grade": "7"
+  }
+]

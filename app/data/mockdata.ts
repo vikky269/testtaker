@@ -155,17 +155,18 @@ export interface QuizCardProps {
       onStart: () => console.log("Started Civics Awareness")
     },
 
-    {
-      id: "quiz-assessment-2",
-      imageSrc: "/imfour.png",
-      title: "UK QUIZ ASSESSMENT",
-      level: "k-12",
-      category: "Maths, Science and ELA",
-     // difficulty: "Medium",
-      time: "20 min",
-      questions: 30,
-      onStart: () => console.log("Started Civics Awareness")
-    },
+    // {
+    //   id: "quiz-assessment-2",
+    //   imageSrc: "/imfour.png",
+    //   title: "UK QUIZ ASSESSMENT",
+    //   level: "k-12",
+    //   category: "Maths, Science and ELA",
+    //  // difficulty: "Medium",
+    //   time: "20 min",
+    //   questions: 30,
+    //   onStart: () => console.log("Started Civics Awareness")
+    // },
+    
     {
   id: "ged",
   imageSrc: "/imseven.png", // swap for a dedicated GED image if you have one

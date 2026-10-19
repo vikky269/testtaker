@@ -1,0 +1,2252 @@
+[
+  {
+    "id": "chemistry-easy-1",
+    "question": "Which of the following best defines chemistry?",
+    "options": [
+      "The study of living organisms",
+      "The study of matter and the changes it undergoes",
+      "The study of celestial bodies",
+      "The study of the human mind"
+    ],
+    "correctAnswer": "The study of matter and the changes it undergoes",
+    "difficulty": "easy",
+    "topic": "Introduction to Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-2",
+    "question": "Which of the following is written correctly in scientific notation?",
+    "options": [
+      "4500",
+      "4.5 × 10³",
+      "45 × 10²",
+      "0.45 × 10⁴"
+    ],
+    "correctAnswer": "4.5 × 10³",
+    "difficulty": "easy",
+    "topic": "Introduction to Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-3",
+    "question": "Which branch of chemistry focuses on the study of carbon-containing compounds?",
+    "options": [
+      "Inorganic chemistry",
+      "Organic chemistry",
+      "Analytical chemistry",
+      "Physical chemistry"
+    ],
+    "correctAnswer": "Organic chemistry",
+    "difficulty": "medium",
+    "topic": "Introduction to Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-4",
+    "question": "A measurement of 12.50 mL was recorded using a graduated cylinder marked in 0.1 mL increments. How many significant figures does this measurement have?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctAnswer": "4",
+    "difficulty": "hard",
+    "topic": "Introduction to Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-5",
+    "question": "Which SI base unit is used to measure mass?",
+    "options": [
+      "Meter",
+      "Kilogram",
+      "Second",
+      "Mole"
+    ],
+    "correctAnswer": "Kilogram",
+    "difficulty": "easy",
+    "topic": "Introduction to Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-6",
+    "question": "What is the SI base unit for temperature used in scientific calculations?",
+    "options": [
+      "Celsius",
+      "Fahrenheit",
+      "Kelvin",
+      "Rankine"
+    ],
+    "correctAnswer": "Kelvin",
+    "difficulty": "easy",
+    "topic": "Introduction to Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-7",
+    "question": "A student measures the volume of a liquid multiple times and gets values very close to each other, but far from the accepted true value. This describes what?",
+    "options": [
+      "High accuracy, low precision",
+      "High precision, low accuracy",
+      "Both high accuracy and precision",
+      "Both low accuracy and precision"
+    ],
+    "correctAnswer": "High precision, low accuracy",
+    "difficulty": "medium",
+    "topic": "Introduction to Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-8",
+    "question": "Convert 98.6°F to Kelvin (nearest whole number).",
+    "options": [
+      "273 K",
+      "310 K",
+      "373 K",
+      "195 K"
+    ],
+    "correctAnswer": "310 K",
+    "difficulty": "hard",
+    "topic": "Introduction to Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-9",
+    "question": "Which of the following is a physical change?",
+    "options": [
+      "Rusting of iron",
+      "Burning of wood",
+      "Melting of ice",
+      "Digestion of food"
+    ],
+    "correctAnswer": "Melting of ice",
+    "difficulty": "easy",
+    "topic": "Introduction to Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-10",
+    "question": "Salt water is best classified as what type of mixture?",
+    "options": [
+      "Element",
+      "Compound",
+      "Homogeneous mixture",
+      "Heterogeneous mixture"
+    ],
+    "correctAnswer": "Homogeneous mixture",
+    "difficulty": "easy",
+    "topic": "Introduction to Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-11",
+    "question": "Which of the following correctly distinguishes an element from a compound?",
+    "options": [
+      "An element contains two or more atoms chemically bonded, a compound contains only one type of atom",
+      "An element consists of only one type of atom, a compound consists of two or more elements chemically combined",
+      "Elements and compounds are identical",
+      "Compounds cannot be broken down chemically"
+    ],
+    "correctAnswer": "An element consists of only one type of atom, a compound consists of two or more elements chemically combined",
+    "difficulty": "medium",
+    "topic": "Introduction to Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-12",
+    "question": "A sample of matter has a variable composition and its components can be separated by physical means such as filtration. This sample is most likely what?",
+    "options": [
+      "A compound",
+      "An element",
+      "A homogeneous mixture",
+      "A heterogeneous mixture"
+    ],
+    "correctAnswer": "A heterogeneous mixture",
+    "difficulty": "hard",
+    "topic": "Introduction to Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-13",
+    "question": "Which scientist proposed the 'plum pudding' model of the atom?",
+    "options": [
+      "Rutherford",
+      "Bohr",
+      "Thomson",
+      "Dalton"
+    ],
+    "correctAnswer": "Thomson",
+    "difficulty": "easy",
+    "topic": "Atomic Structure",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-14",
+    "question": "Rutherford's gold foil experiment provided evidence for the existence of what?",
+    "options": [
+      "Electrons",
+      "A dense, positively charged nucleus",
+      "Neutrons",
+      "Quantized energy levels"
+    ],
+    "correctAnswer": "A dense, positively charged nucleus",
+    "difficulty": "easy",
+    "topic": "Atomic Structure",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-15",
+    "question": "Which atomic model first introduced the idea that electrons occupy fixed energy levels (orbits) around the nucleus?",
+    "options": [
+      "Thomson's model",
+      "Dalton's model",
+      "Bohr's model",
+      "The quantum mechanical model"
+    ],
+    "correctAnswer": "Bohr's model",
+    "difficulty": "medium",
+    "topic": "Atomic Structure",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-16",
+    "question": "Rutherford's gold foil experiment led him to revise Thomson's model mainly because of what unexpected observation?",
+    "options": [
+      "Most alpha particles passed straight through the foil",
+      "A small fraction of alpha particles were deflected at large angles, including some bouncing back",
+      "All alpha particles were absorbed by the foil",
+      "No alpha particles interacted with the foil at all"
+    ],
+    "correctAnswer": "A small fraction of alpha particles were deflected at large angles, including some bouncing back",
+    "difficulty": "hard",
+    "topic": "Atomic Structure",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-17",
+    "question": "Which subatomic particle has a negative charge?",
+    "options": [
+      "Proton",
+      "Neutron",
+      "Electron",
+      "Nucleon"
+    ],
+    "correctAnswer": "Electron",
+    "difficulty": "easy",
+    "topic": "Atomic Structure",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-18",
+    "question": "The atomic number of an element represents what?",
+    "options": [
+      "The number of neutrons only",
+      "The number of protons in the nucleus",
+      "The total mass of the atom",
+      "The number of energy levels"
+    ],
+    "correctAnswer": "The number of protons in the nucleus",
+    "difficulty": "easy",
+    "topic": "Atomic Structure",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-19",
+    "question": "Two atoms of the same element have different numbers of neutrons. What are these atoms called?",
+    "options": [
+      "Isotopes",
+      "Ions",
+      "Isomers",
+      "Allotropes"
+    ],
+    "correctAnswer": "Isotopes",
+    "difficulty": "medium",
+    "topic": "Atomic Structure",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-20",
+    "question": "An atom has 17 protons, 18 neutrons, and has gained one electron. What is the resulting species?",
+    "options": [
+      "A neutral chlorine atom",
+      "A chloride ion (Cl⁻) with charge −1",
+      "A chlorine cation with charge +1",
+      "An isotope of argon"
+    ],
+    "correctAnswer": "A chloride ion (Cl⁻) with charge −1",
+    "difficulty": "hard",
+    "topic": "Atomic Structure",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-21",
+    "question": "What is the maximum number of electrons that can occupy an s orbital?",
+    "options": [
+      "2",
+      "6",
+      "8",
+      "10"
+    ],
+    "correctAnswer": "2",
+    "difficulty": "easy",
+    "topic": "Atomic Structure",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-22",
+    "question": "According to the Aufbau principle, electrons fill orbitals in order of what?",
+    "options": [
+      "Random assignment",
+      "Increasing energy level, from lowest to highest",
+      "Decreasing energy level",
+      "Alphabetical order of orbital letters"
+    ],
+    "correctAnswer": "Increasing energy level, from lowest to highest",
+    "difficulty": "easy",
+    "topic": "Atomic Structure",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-23",
+    "question": "What is the correct electron configuration for a neutral oxygen atom (atomic number 8)?",
+    "options": [
+      "1s² 2s² 2p⁴",
+      "1s² 2s² 2p⁶",
+      "1s² 2s⁴",
+      "1s⁴ 2s² 2p²"
+    ],
+    "correctAnswer": "1s² 2s² 2p⁴",
+    "difficulty": "medium",
+    "topic": "Atomic Structure",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-24",
+    "question": "Chromium (atomic number 24) has an electron configuration ending in 3d⁵ 4s¹ rather than the expected 3d⁴ 4s². This exception occurs mainly because of what?",
+    "options": [
+      "A calculation error in the periodic table",
+      "A half-filled d subshell provides extra stability",
+      "Chromium has no d electrons",
+      "The Aufbau principle does not apply to any transition metals"
+    ],
+    "correctAnswer": "A half-filled d subshell provides extra stability",
+    "difficulty": "hard",
+    "topic": "Atomic Structure",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-25",
+    "question": "Elements in the same column (vertical) of the periodic table are called what?",
+    "options": [
+      "Periods",
+      "Groups",
+      "Series",
+      "Blocks"
+    ],
+    "correctAnswer": "Groups",
+    "difficulty": "easy",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-26",
+    "question": "Which category of elements is generally shiny, malleable, and a good conductor of electricity?",
+    "options": [
+      "Nonmetals",
+      "Metalloids",
+      "Metals",
+      "Noble gases"
+    ],
+    "correctAnswer": "Metals",
+    "difficulty": "easy",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-27",
+    "question": "Which group of the periodic table is known as the alkali metals?",
+    "options": [
+      "Group 1",
+      "Group 2",
+      "Group 17",
+      "Group 18"
+    ],
+    "correctAnswer": "Group 1",
+    "difficulty": "medium",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-28",
+    "question": "Elements in the same period show a trend as you move left to right, despite having the same number of electron shells. What is this trend primarily driven by?",
+    "options": [
+      "Increasing atomic radius",
+      "Increasing nuclear charge, generally leading to smaller atomic radius",
+      "No change in any property",
+      "Decreasing atomic number"
+    ],
+    "correctAnswer": "Increasing nuclear charge, generally leading to smaller atomic radius",
+    "difficulty": "hard",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-29",
+    "question": "As you move down a group on the periodic table, atomic radius generally does what?",
+    "options": [
+      "Decreases",
+      "Increases",
+      "Stays constant",
+      "Becomes negative"
+    ],
+    "correctAnswer": "Increases",
+    "difficulty": "easy",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-30",
+    "question": "Which element generally has the highest electronegativity?",
+    "options": [
+      "Sodium",
+      "Fluorine",
+      "Cesium",
+      "Helium"
+    ],
+    "correctAnswer": "Fluorine",
+    "difficulty": "easy",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-31",
+    "question": "Ionization energy generally increases across a period from left to right mainly because of what?",
+    "options": [
+      "Decreasing nuclear charge",
+      "Increasing atomic radius",
+      "Increasing nuclear charge pulling electrons more tightly",
+      "Addition of extra electron shells"
+    ],
+    "correctAnswer": "Increasing nuclear charge pulling electrons more tightly",
+    "difficulty": "medium",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-32",
+    "question": "The second ionization energy of sodium is dramatically higher than its first ionization energy mainly because of what?",
+    "options": [
+      "The remaining electron is removed from a stable, lower-energy noble-gas-like core configuration",
+      "Sodium becomes negatively charged",
+      "The second electron is easier to remove than the first",
+      "There is no significant difference between the two ionization energies"
+    ],
+    "correctAnswer": "The remaining electron is removed from a stable, lower-energy noble-gas-like core configuration",
+    "difficulty": "hard",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-33",
+    "question": "An ionic bond is best described as what?",
+    "options": [
+      "Sharing of electrons between two nonmetals",
+      "Transfer of electrons from a metal to a nonmetal, forming oppositely charged ions",
+      "A bond formed only between two metals",
+      "A bond with no charge separation"
+    ],
+    "correctAnswer": "Transfer of electrons from a metal to a nonmetal, forming oppositely charged ions",
+    "difficulty": "easy",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-34",
+    "question": "In a covalent bond, atoms are held together by what?",
+    "options": [
+      "Transfer of electrons",
+      "Shared pairs of electrons",
+      "Magnetic attraction only",
+      "Gravitational forces"
+    ],
+    "correctAnswer": "Shared pairs of electrons",
+    "difficulty": "easy",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-35",
+    "question": "Which type of bond would you expect between two atoms with a very small electronegativity difference, such as two carbon atoms?",
+    "options": [
+      "Ionic bond",
+      "Nonpolar covalent bond",
+      "Polar covalent bond",
+      "Metallic bond"
+    ],
+    "correctAnswer": "Nonpolar covalent bond",
+    "difficulty": "medium",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-36",
+    "question": "When drawing a Lewis structure, resonance structures are used when what situation occurs?",
+    "options": [
+      "There is only one possible valid arrangement of electrons",
+      "More than one valid Lewis structure can be drawn, and the true structure is a hybrid of them",
+      "The molecule has no valence electrons",
+      "The octet rule is never satisfied"
+    ],
+    "correctAnswer": "More than one valid Lewis structure can be drawn, and the true structure is a hybrid of them",
+    "difficulty": "hard",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-37",
+    "question": "According to VSEPR theory, electron pairs around a central atom arrange themselves to do what?",
+    "options": [
+      "Overlap as closely as possible",
+      "Minimize repulsion by staying as far apart as possible",
+      "Form a random pattern",
+      "Always form a perfect line"
+    ],
+    "correctAnswer": "Minimize repulsion by staying as far apart as possible",
+    "difficulty": "easy",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-38",
+    "question": "What is the molecular geometry of a molecule with four bonding pairs and no lone pairs on the central atom, such as CH4?",
+    "options": [
+      "Linear",
+      "Trigonal planar",
+      "Tetrahedral",
+      "Bent"
+    ],
+    "correctAnswer": "Tetrahedral",
+    "difficulty": "easy",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-39",
+    "question": "Water (H2O) has a bent shape due to two lone pairs on the central oxygen atom. Which best describes its polarity?",
+    "options": [
+      "Nonpolar, because the bonds cancel out",
+      "Polar, because the bent shape prevents the bond dipoles from canceling",
+      "It has no dipole moment",
+      "Its polarity cannot be determined from geometry"
+    ],
+    "correctAnswer": "Polar, because the bent shape prevents the bond dipoles from canceling",
+    "difficulty": "medium",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-40",
+    "question": "Carbon dioxide (CO2) has polar C=O bonds, yet the overall molecule is nonpolar. This is best explained by what?",
+    "options": [
+      "The molecule is bent, canceling the dipoles",
+      "The linear geometry causes the two equal and opposite bond dipoles to cancel out",
+      "CO2 has no bond polarity at all",
+      "Carbon and oxygen have identical electronegativities"
+    ],
+    "correctAnswer": "The linear geometry causes the two equal and opposite bond dipoles to cancel out",
+    "difficulty": "hard",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-41",
+    "question": "Which type of intermolecular force is found in all molecules, including nonpolar ones?",
+    "options": [
+      "Hydrogen bonding",
+      "Dipole-dipole forces",
+      "London dispersion forces",
+      "Ionic bonding"
+    ],
+    "correctAnswer": "London dispersion forces",
+    "difficulty": "easy",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-42",
+    "question": "Hydrogen bonding occurs when hydrogen is directly bonded to which highly electronegative elements?",
+    "options": [
+      "Carbon, sulfur, phosphorus",
+      "Nitrogen, oxygen, or fluorine",
+      "Chlorine, bromine, iodine",
+      "Boron, silicon, aluminum"
+    ],
+    "correctAnswer": "Nitrogen, oxygen, or fluorine",
+    "difficulty": "easy",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-43",
+    "question": "Which of the following would be expected to have the highest boiling point due to strong intermolecular forces?",
+    "options": [
+      "CH4 (methane)",
+      "H2O (water)",
+      "Ne (neon)",
+      "CO2 (carbon dioxide)"
+    ],
+    "correctAnswer": "H2O (water)",
+    "difficulty": "medium",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-44",
+    "question": "Water has an unusually high boiling point compared to other molecules of similar molar mass mainly because of what?",
+    "options": [
+      "Its weak London dispersion forces",
+      "Extensive hydrogen bonding between water molecules",
+      "Its nonpolar molecular structure",
+      "Its low molecular mass alone"
+    ],
+    "correctAnswer": "Extensive hydrogen bonding between water molecules",
+    "difficulty": "hard",
+    "topic": "The Periodic Table",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-45",
+    "question": "What is the correct name for the ionic compound NaCl?",
+    "options": [
+      "Sodium chlorate",
+      "Sodium chloride",
+      "Sodium chlorite",
+      "Disodium chloride"
+    ],
+    "correctAnswer": "Sodium chloride",
+    "difficulty": "easy",
+    "topic": "Chemical Reactions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-46",
+    "question": "In naming molecular (covalent) compounds, prefixes such as 'di-' and 'tri-' are used to indicate what?",
+    "options": [
+      "The charge of the ions",
+      "The number of atoms of each element in the compound",
+      "The state of matter",
+      "The type of bond present"
+    ],
+    "correctAnswer": "The number of atoms of each element in the compound",
+    "difficulty": "easy",
+    "topic": "Chemical Reactions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-47",
+    "question": "What is the correct formula for the compound formed between calcium (Ca²⁺) and phosphate (PO4³⁻)?",
+    "options": [
+      "CaPO4",
+      "Ca2PO4",
+      "Ca3(PO4)2",
+      "Ca(PO4)3"
+    ],
+    "correctAnswer": "Ca3(PO4)2",
+    "difficulty": "medium",
+    "topic": "Chemical Reactions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-48",
+    "question": "Which naming convention distinguishes between Fe²⁺ and Fe³⁺ compounds, such as iron(II) chloride versus iron(III) chloride?",
+    "options": [
+      "The prefix system used for covalent compounds",
+      "The Stock system, which uses Roman numerals to indicate the charge of a transition metal cation",
+      "Adding '-ide' to both names identically",
+      "Using 'mono-' and 'di-' prefixes"
+    ],
+    "correctAnswer": "The Stock system, which uses Roman numerals to indicate the charge of a transition metal cation",
+    "difficulty": "hard",
+    "topic": "Chemical Reactions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-49",
+    "question": "In a balanced chemical equation, what must be equal on both sides?",
+    "options": [
+      "The number of molecules",
+      "The number of atoms of each element",
+      "The physical states",
+      "The color of substances"
+    ],
+    "correctAnswer": "The number of atoms of each element",
+    "difficulty": "easy",
+    "topic": "Chemical Reactions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-50",
+    "question": "What symbol is used to represent a substance in aqueous solution in a chemical equation?",
+    "options": [
+      "(s)",
+      "(l)",
+      "(g)",
+      "(aq)"
+    ],
+    "correctAnswer": "(aq)",
+    "difficulty": "easy",
+    "topic": "Chemical Reactions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-51",
+    "question": "When balancing chemical equations, why is it incorrect to change the subscripts within a chemical formula?",
+    "options": [
+      "Subscripts have no chemical meaning",
+      "Changing subscripts would change the identity of the substance itself, not just its quantity",
+      "Subscripts must always equal 1",
+      "Only coefficients are allowed to be written as fractions"
+    ],
+    "correctAnswer": "Changing subscripts would change the identity of the substance itself, not just its quantity",
+    "difficulty": "medium",
+    "topic": "Chemical Reactions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-52",
+    "question": "Balance the following equation: __Fe + __O2 → __Fe2O3. What are the correct coefficients, in order?",
+    "options": [
+      "4, 3, 2",
+      "2, 3, 1",
+      "1, 1, 1",
+      "3, 2, 4"
+    ],
+    "correctAnswer": "4, 3, 2",
+    "difficulty": "medium",
+    "topic": "Chemical Reactions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-53",
+    "question": "The law of conservation of mass underlies the process of balancing equations. Which statement best explains why this law must hold true?",
+    "options": [
+      "Atoms are created and destroyed freely during a chemical reaction",
+      "Atoms are neither created nor destroyed in a chemical reaction, only rearranged",
+      "Mass can be converted to energy in ordinary chemical reactions",
+      "Chemical reactions always increase the total mass of the system"
+    ],
+    "correctAnswer": "Atoms are neither created nor destroyed in a chemical reaction, only rearranged",
+    "difficulty": "hard",
+    "topic": "Chemical Reactions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-54",
+    "question": "A reaction of the form A + B → AB is classified as what type of reaction?",
+    "options": [
+      "Decomposition",
+      "Synthesis (combination)",
+      "Single replacement",
+      "Double replacement"
+    ],
+    "correctAnswer": "Synthesis (combination)",
+    "difficulty": "easy",
+    "topic": "Chemical Reactions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-55",
+    "question": "Which type of reaction involves one element replacing another element in a compound, such as Zn + CuSO4 → ZnSO4 + Cu?",
+    "options": [
+      "Synthesis",
+      "Decomposition",
+      "Single replacement",
+      "Combustion"
+    ],
+    "correctAnswer": "Single replacement",
+    "difficulty": "medium",
+    "topic": "Chemical Reactions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-56",
+    "question": "A hydrocarbon reacts with oxygen to produce carbon dioxide and water, releasing energy. What type of reaction is this?",
+    "options": [
+      "Decomposition",
+      "Double replacement",
+      "Combustion",
+      "Synthesis"
+    ],
+    "correctAnswer": "Combustion",
+    "difficulty": "medium",
+    "topic": "Chemical Reactions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-57",
+    "question": "Using the activity series, which metal would be most likely to displace hydrogen gas from a dilute acid?",
+    "options": [
+      "Gold (Au)",
+      "Copper (Cu)",
+      "Zinc (Zn)",
+      "Silver (Ag)"
+    ],
+    "correctAnswer": "Zinc (Zn)",
+    "difficulty": "hard",
+    "topic": "Chemical Reactions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-58",
+    "question": "What is Avogadro's number, representing the number of particles in one mole of a substance?",
+    "options": [
+      "6.022 × 10²²",
+      "6.022 × 10²³",
+      "3.14 × 10²³",
+      "1.602 × 10⁻¹⁹"
+    ],
+    "correctAnswer": "6.022 × 10²³",
+    "difficulty": "easy",
+    "topic": "Stoichiometry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-59",
+    "question": "How many moles are there in 36 grams of water (molar mass = 18 g/mol)?",
+    "options": [
+      "0.5 mol",
+      "1 mol",
+      "2 mol",
+      "4 mol"
+    ],
+    "correctAnswer": "2 mol",
+    "difficulty": "medium",
+    "topic": "Stoichiometry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-60",
+    "question": "Which conversion factor is used to convert directly from moles of a gas to volume in liters at STP?",
+    "options": [
+      "Avogadro's number (6.022×10²³ particles/mol)",
+      "22.4 L/mol",
+      "Molar mass (g/mol)",
+      "1 mol = 1 g"
+    ],
+    "correctAnswer": "22.4 L/mol",
+    "difficulty": "medium",
+    "topic": "Stoichiometry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-61",
+    "question": "A sample contains 3.011 × 10²³ molecules of CO2. Approximately how many moles of CO2 does this represent?",
+    "options": [
+      "0.25 mol",
+      "0.5 mol",
+      "1 mol",
+      "2 mol"
+    ],
+    "correctAnswer": "0.5 mol",
+    "difficulty": "hard",
+    "topic": "Stoichiometry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-62",
+    "question": "In a stoichiometry problem, what must a chemical equation be before you can perform mole-ratio calculations?",
+    "options": [
+      "Balanced",
+      "Written in words only",
+      "Unbalanced is fine",
+      "Written without coefficients"
+    ],
+    "correctAnswer": "Balanced",
+    "difficulty": "easy",
+    "topic": "Stoichiometry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-63",
+    "question": "In the reaction 2H2 + O2 → 2H2O, how many moles of H2 are needed to completely react with 3 moles of O2?",
+    "options": [
+      "3 mol",
+      "6 mol",
+      "1.5 mol",
+      "2 mol"
+    ],
+    "correctAnswer": "6 mol",
+    "difficulty": "medium",
+    "topic": "Stoichiometry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-64",
+    "question": "In a reaction, the reactant that is completely consumed first, limiting the amount of product formed, is called what?",
+    "options": [
+      "The excess reagent",
+      "The limiting reagent",
+      "The catalyst",
+      "The spectator ion"
+    ],
+    "correctAnswer": "The limiting reagent",
+    "difficulty": "medium",
+    "topic": "Stoichiometry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-65",
+    "question": "A reaction has a theoretical yield of 50 g of product, but the actual yield obtained is 42.5 g. What is the percent yield?",
+    "options": [
+      "42.5%",
+      "50%",
+      "85%",
+      "117.6%"
+    ],
+    "correctAnswer": "85%",
+    "difficulty": "hard",
+    "topic": "Stoichiometry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-66",
+    "question": "The empirical formula of a compound represents what?",
+    "options": [
+      "The exact number of atoms in one molecule",
+      "The simplest whole-number ratio of atoms in a compound",
+      "The molar mass of the compound only",
+      "The physical state of the compound"
+    ],
+    "correctAnswer": "The simplest whole-number ratio of atoms in a compound",
+    "difficulty": "easy",
+    "topic": "Stoichiometry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-67",
+    "question": "A compound has an empirical formula of CH2O (empirical mass 30 g/mol) and a molar mass of 180 g/mol. What is the molecular formula?",
+    "options": [
+      "CH2O",
+      "C2H4O2",
+      "C6H12O6",
+      "C3H6O3"
+    ],
+    "correctAnswer": "C6H12O6",
+    "difficulty": "medium",
+    "topic": "Stoichiometry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-68",
+    "question": "Percent composition of a compound is calculated by dividing the mass of each element by what?",
+    "options": [
+      "The total mass of the compound, then multiplying by 100",
+      "The molar mass of oxygen only",
+      "The atomic number of the element",
+      "The number of moles of the compound"
+    ],
+    "correctAnswer": "The total mass of the compound, then multiplying by 100",
+    "difficulty": "medium",
+    "topic": "Stoichiometry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-69",
+    "question": "Combustion analysis of a hydrocarbon produces CO2 and H2O. Why is this technique useful for determining a compound's empirical formula?",
+    "options": [
+      "It directly measures the compound's molecular mass without further calculation",
+      "It allows the moles of carbon and hydrogen in the original sample to be determined from the CO2 and H2O produced",
+      "It only works for compounds containing nitrogen",
+      "It measures the compound's boiling point instead of its composition"
+    ],
+    "correctAnswer": "It allows the moles of carbon and hydrogen in the original sample to be determined from the CO2 and H2O produced",
+    "difficulty": "hard",
+    "topic": "Stoichiometry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-70",
+    "question": "Boyle's Law describes the relationship between which two variables for a gas at constant temperature?",
+    "options": [
+      "Pressure and volume",
+      "Volume and temperature",
+      "Pressure and temperature",
+      "Moles and volume"
+    ],
+    "correctAnswer": "Pressure and volume",
+    "difficulty": "easy",
+    "topic": "States of Matter & Solutions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-71",
+    "question": "According to PV = nRT, if temperature and amount of gas remain constant but the volume decreases, what happens to the pressure?",
+    "options": [
+      "It decreases",
+      "It increases",
+      "It remains constant",
+      "It becomes zero"
+    ],
+    "correctAnswer": "It increases",
+    "difficulty": "medium",
+    "topic": "States of Matter & Solutions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-72",
+    "question": "Charles's Law states that at constant pressure, the volume of a gas is directly proportional to what?",
+    "options": [
+      "Its pressure",
+      "Its absolute temperature (in Kelvin)",
+      "The number of moles only",
+      "Its molar mass"
+    ],
+    "correctAnswer": "Its absolute temperature (in Kelvin)",
+    "difficulty": "medium",
+    "topic": "States of Matter & Solutions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-73",
+    "question": "A gas occupies 2.0 L at 1.0 atm and 300 K. If pressure increases to 2.0 atm and temperature increases to 600 K, what is the new volume using the combined gas law?",
+    "options": [
+      "1.0 L",
+      "2.0 L",
+      "4.0 L",
+      "0.5 L"
+    ],
+    "correctAnswer": "2.0 L",
+    "difficulty": "hard",
+    "topic": "States of Matter & Solutions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-74",
+    "question": "Which type of solid has particles arranged in a highly ordered, repeating pattern?",
+    "options": [
+      "Amorphous solid",
+      "Crystalline solid",
+      "Liquid solid",
+      "Gaseous solid"
+    ],
+    "correctAnswer": "Crystalline solid",
+    "difficulty": "easy",
+    "topic": "States of Matter & Solutions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-75",
+    "question": "During a phase change, such as ice melting into water, what happens to the temperature while the change is occurring?",
+    "options": [
+      "It increases steadily",
+      "It decreases steadily",
+      "It remains constant until the phase change is complete",
+      "It fluctuates randomly"
+    ],
+    "correctAnswer": "It remains constant until the phase change is complete",
+    "difficulty": "medium",
+    "topic": "States of Matter & Solutions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-76",
+    "question": "Which type of solid is held together by a network of covalent bonds throughout, making it typically very hard with a high melting point, like diamond?",
+    "options": [
+      "Ionic solid",
+      "Molecular solid",
+      "Covalent network solid",
+      "Metallic solid"
+    ],
+    "correctAnswer": "Covalent network solid",
+    "difficulty": "medium",
+    "topic": "States of Matter & Solutions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-77",
+    "question": "On a phase diagram, the point at which all three phases (solid, liquid, gas) coexist in equilibrium is called what?",
+    "options": [
+      "The critical point",
+      "The triple point",
+      "The boiling point",
+      "The freezing point only"
+    ],
+    "correctAnswer": "The triple point",
+    "difficulty": "hard",
+    "topic": "States of Matter & Solutions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-78",
+    "question": "The phrase 'like dissolves like' is used to explain what general rule about solubility?",
+    "options": [
+      "Polar solvents dissolve nonpolar solutes best",
+      "Polar solvents tend to dissolve polar solutes, and nonpolar solvents tend to dissolve nonpolar solutes",
+      "All substances dissolve equally in any solvent",
+      "Only solids can dissolve in liquids"
+    ],
+    "correctAnswer": "Polar solvents tend to dissolve polar solutes, and nonpolar solvents tend to dissolve nonpolar solutes",
+    "difficulty": "easy",
+    "topic": "States of Matter & Solutions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-79",
+    "question": "What is the molarity of a solution made by dissolving 2 moles of NaCl in enough water to make 4 liters of solution?",
+    "options": [
+      "0.5 M",
+      "2 M",
+      "4 M",
+      "8 M"
+    ],
+    "correctAnswer": "0.5 M",
+    "difficulty": "medium",
+    "topic": "States of Matter & Solutions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-80",
+    "question": "Using C1V1 = C2V2, if 100 mL of a 2 M solution is diluted to 400 mL, what is the new concentration?",
+    "options": [
+      "0.5 M",
+      "2 M",
+      "4 M",
+      "8 M"
+    ],
+    "correctAnswer": "0.5 M",
+    "difficulty": "medium",
+    "topic": "States of Matter & Solutions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-81",
+    "question": "Salt is spread on icy roads primarily because it lowers the freezing point of water — an example of which colligative property?",
+    "options": [
+      "Boiling point elevation",
+      "Osmotic pressure",
+      "Freezing point depression",
+      "Vapor pressure elevation"
+    ],
+    "correctAnswer": "Freezing point depression",
+    "difficulty": "hard",
+    "topic": "States of Matter & Solutions",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-82",
+    "question": "A reaction that releases heat to the surroundings is described as what?",
+    "options": [
+      "Endothermic",
+      "Exothermic",
+      "Isothermal",
+      "Adiabatic"
+    ],
+    "correctAnswer": "Exothermic",
+    "difficulty": "easy",
+    "topic": "Thermochemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-83",
+    "question": "Using q = mcΔT, if a 50 g sample of water (c = 4.18 J/g°C) increases in temperature by 10°C, how much heat energy was absorbed?",
+    "options": [
+      "41.8 J",
+      "209 J",
+      "2090 J",
+      "500 J"
+    ],
+    "correctAnswer": "2090 J",
+    "difficulty": "medium",
+    "topic": "Thermochemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-84",
+    "question": "Hess's Law allows chemists to calculate the enthalpy change of a reaction by doing what?",
+    "options": [
+      "Measuring the reaction rate directly",
+      "Summing the enthalpy changes of a series of steps that add up to the overall reaction",
+      "Ignoring intermediate reaction steps entirely",
+      "Measuring only the final temperature of the surroundings"
+    ],
+    "correctAnswer": "Summing the enthalpy changes of a series of steps that add up to the overall reaction",
+    "difficulty": "medium",
+    "topic": "Thermochemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-85",
+    "question": "Hand warmers that use iron oxidation are exothermic at the molecular level primarily because of what?",
+    "options": [
+      "The energy released in forming new, stronger bonds exceeds the energy required to break the original bonds",
+      "No bonds are broken or formed during the reaction",
+      "The energy required to break bonds exceeds the energy released in forming new bonds",
+      "The reaction absorbs energy from the surroundings"
+    ],
+    "correctAnswer": "The energy released in forming new, stronger bonds exceeds the energy required to break the original bonds",
+    "difficulty": "hard",
+    "topic": "Thermochemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-86",
+    "question": "Entropy (S) is best described as a measure of what?",
+    "options": [
+      "The total energy of a system",
+      "The disorder or randomness of a system",
+      "The temperature of a system",
+      "The mass of a system"
+    ],
+    "correctAnswer": "The disorder or randomness of a system",
+    "difficulty": "easy",
+    "topic": "Thermochemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-87",
+    "question": "Using ΔG = ΔH − TΔS, a reaction is spontaneous at all temperatures when which conditions are true?",
+    "options": [
+      "ΔH is positive and ΔS is negative",
+      "ΔH is negative and ΔS is positive",
+      "ΔH is negative and ΔS is negative",
+      "ΔH is positive and ΔS is positive"
+    ],
+    "correctAnswer": "ΔH is negative and ΔS is positive",
+    "difficulty": "medium",
+    "topic": "Thermochemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-88",
+    "question": "Which process would generally be expected to result in an increase in entropy?",
+    "options": [
+      "A gas condensing into a liquid",
+      "A solid dissolving into a solution",
+      "A liquid freezing into a solid",
+      "Gas molecules combining into fewer moles of gas"
+    ],
+    "correctAnswer": "A solid dissolving into a solution",
+    "difficulty": "medium",
+    "topic": "Thermochemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-89",
+    "question": "A reaction has a negative ΔH and a negative ΔS. Under what temperature condition would this reaction most likely become non-spontaneous?",
+    "options": [
+      "At very low temperatures",
+      "At very high temperatures",
+      "At absolute zero only",
+      "Temperature has no effect on this reaction's spontaneity"
+    ],
+    "correctAnswer": "At very high temperatures",
+    "difficulty": "hard",
+    "topic": "Thermochemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-90",
+    "question": "According to collision theory, for a chemical reaction to occur, reacting particles must do what?",
+    "options": [
+      "Simply be present in the same container",
+      "Collide with sufficient energy and proper orientation",
+      "Never touch each other",
+      "Remain at absolute zero temperature"
+    ],
+    "correctAnswer": "Collide with sufficient energy and proper orientation",
+    "difficulty": "easy",
+    "topic": "Chemical Kinetics",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-91",
+    "question": "Which of the following would generally increase the rate of a chemical reaction?",
+    "options": [
+      "Decreasing the temperature",
+      "Decreasing the concentration of reactants",
+      "Increasing the surface area of a solid reactant",
+      "Removing the catalyst"
+    ],
+    "correctAnswer": "Increasing the surface area of a solid reactant",
+    "difficulty": "medium",
+    "topic": "Chemical Kinetics",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-92",
+    "question": "A catalyst increases the rate of a reaction primarily by doing what?",
+    "options": [
+      "Increasing the temperature of the reaction",
+      "Lowering the activation energy required for the reaction",
+      "Increasing the concentration of reactants",
+      "Being consumed in the reaction"
+    ],
+    "correctAnswer": "Lowering the activation energy required for the reaction",
+    "difficulty": "medium",
+    "topic": "Chemical Kinetics",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-93",
+    "question": "Refrigerating food slows down spoilage mainly because lower temperatures do what, according to collision theory?",
+    "options": [
+      "Increase the frequency and energy of molecular collisions",
+      "Decrease the frequency and energy of molecular collisions, reducing the reaction rate",
+      "Have no effect on molecular motion",
+      "Instantly stop all chemical reactions completely"
+    ],
+    "correctAnswer": "Decrease the frequency and energy of molecular collisions, reducing the reaction rate",
+    "difficulty": "hard",
+    "topic": "Chemical Kinetics",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-94",
+    "question": "In a rate law expression such as Rate = k[A]²[B], what does the exponent on [A] represent?",
+    "options": [
+      "The overall reaction order",
+      "The order of the reaction with respect to A",
+      "The rate constant",
+      "The molar mass of A"
+    ],
+    "correctAnswer": "The order of the reaction with respect to A",
+    "difficulty": "easy",
+    "topic": "Chemical Kinetics",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-95",
+    "question": "If doubling the concentration of reactant A causes the reaction rate to quadruple (other reactants held constant), what is the order with respect to A?",
+    "options": [
+      "Zero order",
+      "First order",
+      "Second order",
+      "Third order"
+    ],
+    "correctAnswer": "Second order",
+    "difficulty": "medium",
+    "topic": "Chemical Kinetics",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-96",
+    "question": "For a first-order reaction, the half-life is best described as what?",
+    "options": [
+      "Dependent on the initial concentration of the reactant",
+      "Constant, regardless of the initial concentration of the reactant",
+      "Always equal to zero",
+      "Only applicable to zero-order reactions"
+    ],
+    "correctAnswer": "Constant, regardless of the initial concentration of the reactant",
+    "difficulty": "medium",
+    "topic": "Chemical Kinetics",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-97",
+    "question": "In a multi-step reaction mechanism, the overall reaction rate is determined by which step?",
+    "options": [
+      "The fastest step in the mechanism",
+      "The rate-determining step, which is the slowest step in the mechanism",
+      "The last step in the mechanism, regardless of speed",
+      "The average of all steps' rates"
+    ],
+    "correctAnswer": "The rate-determining step, which is the slowest step in the mechanism",
+    "difficulty": "hard",
+    "topic": "Chemical Kinetics",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-98",
+    "question": "At chemical equilibrium, what is true about the rates of the forward and reverse reactions?",
+    "options": [
+      "The forward reaction stops completely",
+      "The reverse reaction stops completely",
+      "The forward and reverse reaction rates are equal",
+      "Both reactions proceed at increasing rates"
+    ],
+    "correctAnswer": "The forward and reverse reaction rates are equal",
+    "difficulty": "easy",
+    "topic": "Chemical Equilibrium",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-99",
+    "question": "If the equilibrium constant Keq for a reaction is very large (Keq >> 1), what does this indicate about the reaction at equilibrium?",
+    "options": [
+      "The reaction mixture favors reactants",
+      "The reaction mixture favors products",
+      "The reaction has not yet reached equilibrium",
+      "The reaction is nonspontaneous"
+    ],
+    "correctAnswer": "The reaction mixture favors products",
+    "difficulty": "medium",
+    "topic": "Chemical Equilibrium",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-100",
+    "question": "The reaction quotient Q is used to determine what about a reaction that is not yet at equilibrium?",
+    "options": [
+      "The exact temperature of the reaction",
+      "The direction the reaction must shift to reach equilibrium, by comparing Q to Keq",
+      "The color of the reaction mixture",
+      "The physical state of the reactants"
+    ],
+    "correctAnswer": "The direction the reaction must shift to reach equilibrium, by comparing Q to Keq",
+    "difficulty": "medium",
+    "topic": "Chemical Equilibrium",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-101",
+    "question": "For a heterogeneous equilibrium such as CaCO3(s) ⇌ CaO(s) + CO2(g), which species are included in the Keq expression?",
+    "options": [
+      "All species, including solids",
+      "Only the gaseous and aqueous species; pure solids and liquids are omitted",
+      "Only the solid species",
+      "Neither the solid nor the gas species"
+    ],
+    "correctAnswer": "Only the gaseous and aqueous species; pure solids and liquids are omitted",
+    "difficulty": "hard",
+    "topic": "Chemical Equilibrium",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-102",
+    "question": "If Q < Keq for a reaction at a given moment, in which direction will the reaction shift to reach equilibrium?",
+    "options": [
+      "Toward the reactants (reverse direction)",
+      "Toward the products (forward direction)",
+      "The reaction is already at equilibrium",
+      "The reaction will stop entirely"
+    ],
+    "correctAnswer": "Toward the products (forward direction)",
+    "difficulty": "hard",
+    "topic": "Chemical Equilibrium",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-103",
+    "question": "According to Le Chatelier's Principle, if a stress is applied to a system at equilibrium, the system will do what?",
+    "options": [
+      "Remain completely unchanged",
+      "Shift in a direction that relieves the stress and restores equilibrium",
+      "Immediately stop all reactions",
+      "Shift away from equilibrium permanently"
+    ],
+    "correctAnswer": "Shift in a direction that relieves the stress and restores equilibrium",
+    "difficulty": "easy",
+    "topic": "Chemical Equilibrium",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-104",
+    "question": "If the concentration of a reactant is increased in a system at equilibrium, in which direction will the equilibrium shift?",
+    "options": [
+      "Toward the reactants",
+      "Toward the products",
+      "It will not shift at all",
+      "It will shift toward the products, then immediately back"
+    ],
+    "correctAnswer": "Toward the products",
+    "difficulty": "medium",
+    "topic": "Chemical Equilibrium",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-105",
+    "question": "In the Haber process (N2 + 3H2 ⇌ 2NH3), which is exothermic, how would increasing the temperature affect the equilibrium position?",
+    "options": [
+      "Shift toward the products (more NH3)",
+      "Shift toward the reactants (less NH3), since heat is treated as a product in an exothermic reaction",
+      "Have no effect on the equilibrium position",
+      "Stop the reaction entirely"
+    ],
+    "correctAnswer": "Shift toward the reactants (less NH3), since heat is treated as a product in an exothermic reaction",
+    "difficulty": "hard",
+    "topic": "Chemical Equilibrium",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-106",
+    "question": "For a gaseous equilibrium reaction, decreasing the container volume (increasing pressure) will shift the equilibrium toward which side?",
+    "options": [
+      "The side with fewer moles of gas",
+      "The side with more moles of gas",
+      "It has no effect on gaseous equilibria",
+      "It always shifts toward the reactants"
+    ],
+    "correctAnswer": "The side with fewer moles of gas",
+    "difficulty": "hard",
+    "topic": "Chemical Equilibrium",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-107",
+    "question": "According to the Brønsted-Lowry definition, an acid is a substance that does what?",
+    "options": [
+      "Donates a proton (H⁺)",
+      "Accepts a proton (H⁺)",
+      "Donates an electron pair",
+      "Accepts an electron pair"
+    ],
+    "correctAnswer": "Donates a proton (H⁺)",
+    "difficulty": "easy",
+    "topic": "Chemical Equilibrium",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-108",
+    "question": "A solution has a pH of 3. Is this solution acidic, basic, or neutral, and why?",
+    "options": [
+      "Basic, because pH values below 7 indicate a base",
+      "Acidic, because pH values below 7 indicate an acid",
+      "Neutral, because pH has no relation to acidity",
+      "Basic, because low pH values indicate a high concentration of OH⁻"
+    ],
+    "correctAnswer": "Acidic, because pH values below 7 indicate an acid",
+    "difficulty": "medium",
+    "topic": "Chemical Equilibrium",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-109",
+    "question": "A weak acid has a small Ka value. What does this indicate about the degree of ionization of the acid in water?",
+    "options": [
+      "It ionizes almost completely in water",
+      "It ionizes only slightly in water, establishing an equilibrium with mostly undissociated acid",
+      "It does not dissolve in water at all",
+      "It has no relationship to the acid's strength"
+    ],
+    "correctAnswer": "It ionizes only slightly in water, establishing an equilibrium with mostly undissociated acid",
+    "difficulty": "hard",
+    "topic": "Chemical Equilibrium",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-110",
+    "question": "A salt formed from a strong base and a weak acid, such as sodium acetate, would produce a solution that is what?",
+    "options": [
+      "Acidic, due to hydrolysis of the cation",
+      "Basic, due to hydrolysis of the anion (the conjugate base of the weak acid)",
+      "Perfectly neutral",
+      "Impossible to predict without further data"
+    ],
+    "correctAnswer": "Basic, due to hydrolysis of the anion (the conjugate base of the weak acid)",
+    "difficulty": "hard",
+    "topic": "Chemical Equilibrium",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-111",
+    "question": "A buffer solution is designed to do what?",
+    "options": [
+      "Rapidly change pH with small additions of acid or base",
+      "Resist significant changes in pH when small amounts of acid or base are added",
+      "Always maintain a pH of exactly 7",
+      "Prevent any chemical reaction from occurring"
+    ],
+    "correctAnswer": "Resist significant changes in pH when small amounts of acid or base are added",
+    "difficulty": "easy",
+    "topic": "Chemical Equilibrium",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-112",
+    "question": "At the equivalence point of a titration between a strong acid and a strong base, what is the expected pH of the resulting solution?",
+    "options": [
+      "Below 7 (acidic)",
+      "Above 7 (basic)",
+      "Approximately 7 (neutral)",
+      "Impossible to determine"
+    ],
+    "correctAnswer": "Approximately 7 (neutral)",
+    "difficulty": "medium",
+    "topic": "Chemical Equilibrium",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-113",
+    "question": "The Henderson-Hasselbalch equation (pH = pKa + log([A⁻]/[HA])) is most useful for calculating what?",
+    "options": [
+      "The pH of a pure strong acid solution",
+      "The pH of a buffer solution made from a weak acid and its conjugate base",
+      "The boiling point of a solution",
+      "The molar mass of an unknown acid"
+    ],
+    "correctAnswer": "The pH of a buffer solution made from a weak acid and its conjugate base",
+    "difficulty": "hard",
+    "topic": "Chemical Equilibrium",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-114",
+    "question": "In the titration of a weak acid with a strong base, the pH at the equivalence point is expected to be what, and why?",
+    "options": [
+      "Exactly 7, because all acid-base titrations reach pH 7 at equivalence",
+      "Greater than 7, because the resulting salt contains the conjugate base of the weak acid, which hydrolyzes to form a basic solution",
+      "Less than 7, because weak acids always produce acidic salts",
+      "Impossible to predict for weak acid titrations"
+    ],
+    "correctAnswer": "Greater than 7, because the resulting salt contains the conjugate base of the weak acid, which hydrolyzes to form a basic solution",
+    "difficulty": "hard",
+    "topic": "Chemical Equilibrium",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-115",
+    "question": "In a redox reaction, the substance that loses electrons is said to undergo what?",
+    "options": [
+      "Reduction",
+      "Oxidation",
+      "Neutralization",
+      "Sublimation"
+    ],
+    "correctAnswer": "Oxidation",
+    "difficulty": "easy",
+    "topic": "Electrochemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-116",
+    "question": "In the reaction Zn + Cu²⁺ → Zn²⁺ + Cu, which species acts as the oxidizing agent?",
+    "options": [
+      "Zn",
+      "Cu²⁺",
+      "Zn²⁺",
+      "Cu"
+    ],
+    "correctAnswer": "Cu²⁺",
+    "difficulty": "medium",
+    "topic": "Electrochemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-117",
+    "question": "What is the oxidation state of chromium in the dichromate ion, Cr2O7²⁻?",
+    "options": [
+      "+3",
+      "+6",
+      "+2",
+      "+7"
+    ],
+    "correctAnswer": "+6",
+    "difficulty": "hard",
+    "topic": "Electrochemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-118",
+    "question": "When balancing a redox reaction in acidic solution using the half-reaction method, which species are typically added to balance oxygen and hydrogen atoms?",
+    "options": [
+      "Only electrons",
+      "H2O to balance oxygen, and H⁺ to balance hydrogen",
+      "OH⁻ ions only",
+      "Only additional oxygen gas"
+    ],
+    "correctAnswer": "H2O to balance oxygen, and H⁺ to balance hydrogen",
+    "difficulty": "hard",
+    "topic": "Electrochemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-119",
+    "question": "In a galvanic (voltaic) cell, chemical energy is converted spontaneously into what form of energy?",
+    "options": [
+      "Electrical energy",
+      "Nuclear energy",
+      "Thermal energy only",
+      "Mechanical energy only"
+    ],
+    "correctAnswer": "Electrical energy",
+    "difficulty": "easy",
+    "topic": "Electrochemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-120",
+    "question": "A cell with a positive standard cell potential (E°cell) indicates that the reaction is what?",
+    "options": [
+      "Nonspontaneous",
+      "Spontaneous",
+      "At equilibrium",
+      "Impossible to determine"
+    ],
+    "correctAnswer": "Spontaneous",
+    "difficulty": "medium",
+    "topic": "Electrochemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-121",
+    "question": "The Nernst equation is used to calculate the cell potential of an electrochemical cell under what conditions?",
+    "options": [
+      "Only under standard conditions (1 M, 1 atm, 25°C)",
+      "Non-standard conditions, accounting for actual concentrations and temperature",
+      "Only when the cell is at equilibrium",
+      "Only for electrolytic cells, never galvanic cells"
+    ],
+    "correctAnswer": "Non-standard conditions, accounting for actual concentrations and temperature",
+    "difficulty": "hard",
+    "topic": "Electrochemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-122",
+    "question": "In an electrolytic cell, unlike a galvanic cell, an external power source is required primarily because what is true of the reaction?",
+    "options": [
+      "The reaction is spontaneous and releases energy on its own",
+      "The reaction is nonspontaneous and requires energy input to proceed",
+      "There is no reaction occurring in an electrolytic cell",
+      "Electrolytic cells never involve redox reactions"
+    ],
+    "correctAnswer": "The reaction is nonspontaneous and requires energy input to proceed",
+    "difficulty": "hard",
+    "topic": "Electrochemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-123",
+    "question": "Organic chemistry is primarily the study of compounds containing which element?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon",
+      "Sulfur"
+    ],
+    "correctAnswer": "Carbon",
+    "difficulty": "easy",
+    "topic": "Organic Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-124",
+    "question": "Carbon's ability to form a huge variety of organic compounds is largely due to what unique property?",
+    "options": [
+      "Its ability to form up to four stable covalent bonds, including with other carbon atoms",
+      "Its high electronegativity compared to all other elements",
+      "Its inability to bond with hydrogen",
+      "Its radioactive nature"
+    ],
+    "correctAnswer": "Its ability to form up to four stable covalent bonds, including with other carbon atoms",
+    "difficulty": "medium",
+    "topic": "Organic Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-125",
+    "question": "Two molecules have the same molecular formula but different structural arrangements of atoms. What term describes this relationship?",
+    "options": [
+      "Allotropes",
+      "Isotopes",
+      "Isomers",
+      "Isobars"
+    ],
+    "correctAnswer": "Isomers",
+    "difficulty": "hard",
+    "topic": "Organic Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-126",
+    "question": "A chiral molecule is best described as one that does what?",
+    "options": [
+      "Has a superimposable mirror image",
+      "Has a non-superimposable mirror image, similar to left and right hands",
+      "Cannot form any isomers",
+      "Always contains only carbon and hydrogen"
+    ],
+    "correctAnswer": "Has a non-superimposable mirror image, similar to left and right hands",
+    "difficulty": "hard",
+    "topic": "Organic Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-127",
+    "question": "Alkanes are hydrocarbons that contain only what type of carbon-carbon bonds?",
+    "options": [
+      "Single bonds only",
+      "Double bonds",
+      "Triple bonds",
+      "A mixture of double and triple bonds"
+    ],
+    "correctAnswer": "Single bonds only",
+    "difficulty": "easy",
+    "topic": "Organic Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-128",
+    "question": "What is the general formula for an alkene with one double bond?",
+    "options": [
+      "CnH2n+2",
+      "CnH2n",
+      "CnH2n-2",
+      "CnHn"
+    ],
+    "correctAnswer": "CnH2n",
+    "difficulty": "medium",
+    "topic": "Organic Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-129",
+    "question": "Benzene is described as 'aromatic' mainly due to what structural feature, as explained by Hückel's rule?",
+    "options": [
+      "A cyclic, planar structure with a delocalized system of 4n+2 pi electrons providing extra stability",
+      "The presence of only single bonds throughout the ring",
+      "Its strong odor alone, unrelated to its structure",
+      "A complete absence of any double bonds"
+    ],
+    "correctAnswer": "A cyclic, planar structure with a delocalized system of 4n+2 pi electrons providing extra stability",
+    "difficulty": "hard",
+    "topic": "Organic Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-130",
+    "question": "The degree of unsaturation of a hydrocarbon indicates what about its structure?",
+    "options": [
+      "The total number of carbon atoms only",
+      "The number of rings and/or pi bonds (double or triple bonds) present in the molecule",
+      "The molecule's boiling point directly",
+      "The molecule's solubility in water"
+    ],
+    "correctAnswer": "The number of rings and/or pi bonds (double or triple bonds) present in the molecule",
+    "difficulty": "hard",
+    "topic": "Organic Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-131",
+    "question": "Which functional group is characteristic of alcohols?",
+    "options": [
+      "-COOH",
+      "-OH",
+      "-CHO",
+      "-NH2"
+    ],
+    "correctAnswer": "-OH",
+    "difficulty": "easy",
+    "topic": "Organic Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-132",
+    "question": "The reaction between a carboxylic acid and an alcohol, forming an ester and water, is known as what?",
+    "options": [
+      "Hydrolysis",
+      "Esterification",
+      "Oxidation",
+      "Amide formation"
+    ],
+    "correctAnswer": "Esterification",
+    "difficulty": "medium",
+    "topic": "Organic Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-133",
+    "question": "A ketone differs from an aldehyde primarily in the position of the carbonyl (C=O) group. Where is the carbonyl group located in a ketone?",
+    "options": [
+      "At the terminal (end) carbon of the chain",
+      "Between two carbon atoms within the chain, not at the end",
+      "It is not present in ketones",
+      "Attached to a nitrogen atom"
+    ],
+    "correctAnswer": "Between two carbon atoms within the chain, not at the end",
+    "difficulty": "hard",
+    "topic": "Organic Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-134",
+    "question": "In an SN2 nucleophilic substitution reaction, what is a key characteristic of the mechanism?",
+    "options": [
+      "It proceeds in two separate steps through a stable carbocation intermediate",
+      "It proceeds in a single concerted step, with the nucleophile attacking from the side opposite the leaving group",
+      "It never involves a nucleophile",
+      "It only occurs with tertiary substrates"
+    ],
+    "correctAnswer": "It proceeds in a single concerted step, with the nucleophile attacking from the side opposite the leaving group",
+    "difficulty": "hard",
+    "topic": "Organic Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-135",
+    "question": "Proteins are polymers made up of repeating monomer units called what?",
+    "options": [
+      "Monosaccharides",
+      "Amino acids",
+      "Fatty acids",
+      "Nucleotides"
+    ],
+    "correctAnswer": "Amino acids",
+    "difficulty": "easy",
+    "topic": "Organic Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-136",
+    "question": "Condensation polymerization differs from addition polymerization mainly in that condensation polymerization does what?",
+    "options": [
+      "Releases a small molecule, such as water, as monomers join together",
+      "Never involves the joining of monomers",
+      "Only occurs with inorganic molecules",
+      "Always produces gases as the only product"
+    ],
+    "correctAnswer": "Releases a small molecule, such as water, as monomers join together",
+    "difficulty": "medium",
+    "topic": "Organic Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-137",
+    "question": "The bond formed between two amino acids during protein synthesis, releasing a water molecule, is called what?",
+    "options": [
+      "A glycosidic bond",
+      "A peptide bond",
+      "An ester bond",
+      "A phosphodiester bond"
+    ],
+    "correctAnswer": "A peptide bond",
+    "difficulty": "hard",
+    "topic": "Organic Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-138",
+    "question": "Carbohydrates, lipids, proteins, and nucleic acids are all classified as macromolecules. Which of these is NOT primarily built from a single repeating monomer in the same way as the others?",
+    "options": [
+      "Proteins (built from amino acids)",
+      "Nucleic acids (built from nucleotides)",
+      "Lipids (not typically built from a single repeating monomer)",
+      "Carbohydrates (built from monosaccharides)"
+    ],
+    "correctAnswer": "Lipids (not typically built from a single repeating monomer)",
+    "difficulty": "hard",
+    "topic": "Organic Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-139",
+    "question": "Alpha decay involves the emission of what from an unstable nucleus?",
+    "options": [
+      "A high-energy electron",
+      "A helium nucleus (2 protons and 2 neutrons)",
+      "A photon only",
+      "A neutron only"
+    ],
+    "correctAnswer": "A helium nucleus (2 protons and 2 neutrons)",
+    "difficulty": "easy",
+    "topic": "Nuclear Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-140",
+    "question": "In beta-minus decay, a neutron in the nucleus is converted into what, resulting in the emission of an electron?",
+    "options": [
+      "A proton and an electron",
+      "A proton and an antineutrino, along with the emitted electron",
+      "Another neutron",
+      "A gamma ray only"
+    ],
+    "correctAnswer": "A proton and an antineutrino, along with the emitted electron",
+    "difficulty": "medium",
+    "topic": "Nuclear Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-141",
+    "question": "According to the band of stability, nuclides with too many neutrons relative to protons tend to undergo what type of decay to move toward stability?",
+    "options": [
+      "Alpha decay",
+      "Beta-minus decay, converting a neutron into a proton",
+      "Positron emission",
+      "Electron capture"
+    ],
+    "correctAnswer": "Beta-minus decay, converting a neutron into a proton",
+    "difficulty": "hard",
+    "topic": "Nuclear Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-142",
+    "question": "Gamma decay differs from alpha and beta decay in that gamma decay involves what?",
+    "options": [
+      "A change in the atomic number of the nucleus",
+      "The emission of high-energy electromagnetic radiation (photons) without a change in atomic number or mass number",
+      "The emission of a helium nucleus",
+      "The conversion of a proton into a neutron"
+    ],
+    "correctAnswer": "The emission of high-energy electromagnetic radiation (photons) without a change in atomic number or mass number",
+    "difficulty": "hard",
+    "topic": "Nuclear Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-143",
+    "question": "The half-life of a radioactive isotope is defined as what?",
+    "options": [
+      "The time required for the entire sample to decay completely",
+      "The time required for half of a radioactive sample to decay",
+      "The time required for a sample to double in mass",
+      "The temperature at which decay stops"
+    ],
+    "correctAnswer": "The time required for half of a radioactive sample to decay",
+    "difficulty": "easy",
+    "topic": "Nuclear Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-144",
+    "question": "Radiocarbon dating (using carbon-14) is most useful for determining the age of what type of material?",
+    "options": [
+      "Rocks older than 1 billion years",
+      "Once-living organic material up to about 50,000 years old",
+      "Purely inorganic minerals with no carbon content",
+      "Objects with no measurable radioactivity"
+    ],
+    "correctAnswer": "Once-living organic material up to about 50,000 years old",
+    "difficulty": "medium",
+    "topic": "Nuclear Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-145",
+    "question": "A radioactive sample has a half-life of 10 years. Approximately what fraction of the original sample remains after 30 years?",
+    "options": [
+      "1/2",
+      "1/4",
+      "1/8",
+      "1/16"
+    ],
+    "correctAnswer": "1/8",
+    "difficulty": "hard",
+    "topic": "Nuclear Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-146",
+    "question": "Nuclear fusion, the process powering the sun, differs fundamentally from nuclear fission in that fusion involves what?",
+    "options": [
+      "The splitting of a heavy nucleus into smaller fragments",
+      "The combining of light nuclei into a heavier nucleus, releasing energy",
+      "No release of energy at all",
+      "Only occurring in nuclear power plants on Earth"
+    ],
+    "correctAnswer": "The combining of light nuclei into a heavier nucleus, releasing energy",
+    "difficulty": "hard",
+    "topic": "Nuclear Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-easy-147",
+    "question": "In molecular orbital theory, electrons in a bonding molecular orbital do what to the stability of the molecule?",
+    "options": [
+      "Decrease its stability",
+      "Increase its stability, lowering overall energy",
+      "Have no effect on stability",
+      "Immediately break the molecule apart"
+    ],
+    "correctAnswer": "Increase its stability, lowering overall energy",
+    "difficulty": "easy",
+    "topic": "Nuclear Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-medium-148",
+    "question": "Crystal field theory is primarily used to explain the properties of what type of compounds?",
+    "options": [
+      "Simple ionic salts like NaCl",
+      "Coordination compounds (transition metal complexes)",
+      "Pure covalent nonmetal compounds",
+      "Noble gas compounds only"
+    ],
+    "correctAnswer": "Coordination compounds (transition metal complexes)",
+    "difficulty": "medium",
+    "topic": "Nuclear Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-149",
+    "question": "According to molecular orbital theory, the bond order of a diatomic molecule is calculated using what formula?",
+    "options": [
+      "(bonding electrons + antibonding electrons) / 2",
+      "(bonding electrons − antibonding electrons) / 2",
+      "bonding electrons × antibonding electrons",
+      "antibonding electrons − bonding electrons"
+    ],
+    "correctAnswer": "(bonding electrons − antibonding electrons) / 2",
+    "difficulty": "hard",
+    "topic": "Nuclear Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  },
+  {
+    "id": "chemistry-hard-150",
+    "question": "The O2 molecule is known to be paramagnetic. Which theory correctly predicts this property, unlike simple Lewis structure theory?",
+    "options": [
+      "VSEPR theory",
+      "Molecular orbital theory, which shows unpaired electrons in antibonding pi orbitals",
+      "Valence bond theory alone",
+      "Ionic bonding theory"
+    ],
+    "correctAnswer": "Molecular orbital theory, which shows unpaired electrons in antibonding pi orbitals",
+    "difficulty": "hard",
+    "topic": "Nuclear Chemistry",
+    "subject": "chemistry",
+    "grade": "hs"
+  }
+]

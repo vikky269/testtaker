@@ -1,0 +1,738 @@
+[
+  {
+    "id": "science-8-easy-1",
+    "question": "Which particle in an atom has a positive charge?",
+    "options": [
+      "Neutron",
+      "Electron",
+      "Proton",
+      "Photon"
+    ],
+    "correctAnswer": "Proton",
+    "difficulty": "easy",
+    "topic": "Atoms",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-easy-2",
+    "question": "Which particle in an atom has a negative charge?",
+    "options": [
+      "Electron",
+      "Proton",
+      "Neutron",
+      "Nucleus"
+    ],
+    "correctAnswer": "Electron",
+    "difficulty": "easy",
+    "topic": "Atoms",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-easy-3",
+    "question": "True or False: The nucleus is found at the center of an atom.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Atoms",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-easy-4",
+    "question": "What is the smallest unit of an element that still has the properties of that element?",
+    "options": [
+      "Molecule",
+      "Compound",
+      "Mixture",
+      "Atom"
+    ],
+    "correctAnswer": "Atom",
+    "difficulty": "easy",
+    "topic": "Atoms",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-easy-5",
+    "question": "The atomic number of an element tells you the number of which particles in its atoms?",
+    "options": [
+      "Neutrons",
+      "Protons",
+      "Isotopes",
+      "Energy levels"
+    ],
+    "correctAnswer": "Protons",
+    "difficulty": "easy",
+    "topic": "Atoms",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-6",
+    "question": "A neutral atom of sodium has an atomic number of 11. How many electrons does it have?",
+    "options": [
+      "1",
+      "22",
+      "23",
+      "11"
+    ],
+    "correctAnswer": "11",
+    "difficulty": "medium",
+    "topic": "Atoms",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-7",
+    "question": "Which of these is a pure substance made of only one kind of atom?",
+    "options": [
+      "A compound",
+      "An element",
+      "A mixture",
+      "A solution"
+    ],
+    "correctAnswer": "An element",
+    "difficulty": "medium",
+    "topic": "Atoms",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-8",
+    "question": "Water (H₂O) is made of hydrogen and oxygen chemically joined together. How is water classified?",
+    "options": [
+      "A compound",
+      "An element",
+      "A mixture",
+      "A single atom"
+    ],
+    "correctAnswer": "A compound",
+    "difficulty": "medium",
+    "topic": "Atoms",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-9",
+    "question": "The mass number of an atom is found by adding the number of protons to the number of which other particle?",
+    "options": [
+      "Electrons",
+      "Ions",
+      "Neutrons",
+      "Molecules"
+    ],
+    "correctAnswer": "Neutrons",
+    "difficulty": "medium",
+    "topic": "Atoms",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-hard-10",
+    "question": "True or False: All atoms of the same element always have the same number of neutrons.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "hard",
+    "topic": "Atoms",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-hard-11",
+    "question": "A carbon atom has 6 protons and 8 neutrons. What is its mass number?",
+    "options": [
+      "6",
+      "14",
+      "8",
+      "2"
+    ],
+    "correctAnswer": "14",
+    "difficulty": "hard",
+    "topic": "Atoms",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-hard-12",
+    "question": "Elements in the same column (group) of the periodic table have similar chemical properties. Why?",
+    "options": [
+      "They have the same number of protons",
+      "They have the same number of neutrons",
+      "They have the same total number of electrons",
+      "They have the same number of outer-shell (valence) electrons"
+    ],
+    "correctAnswer": "They have the same number of outer-shell (valence) electrons",
+    "difficulty": "hard",
+    "topic": "Atoms",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-easy-13",
+    "question": "Which is evidence that a chemical change has occurred?",
+    "options": [
+      "A solid is cut into smaller pieces",
+      "Water freezes into ice",
+      "A gas is produced and bubbles form",
+      "Sugar dissolves in water"
+    ],
+    "correctAnswer": "A gas is produced and bubbles form",
+    "difficulty": "easy",
+    "topic": "Chemical Reactions",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-easy-14",
+    "question": "Which of these is a physical change?",
+    "options": [
+      "Ice melting",
+      "Wood burning",
+      "Iron rusting",
+      "Milk turning sour"
+    ],
+    "correctAnswer": "Ice melting",
+    "difficulty": "easy",
+    "topic": "Chemical Reactions",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-easy-15",
+    "question": "True or False: In a chemical reaction, new substances with new properties are formed.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Chemical Reactions",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-easy-16",
+    "question": "What are the starting substances in a chemical reaction called?",
+    "options": [
+      "Products",
+      "Solvents",
+      "Reactants",
+      "Isotopes"
+    ],
+    "correctAnswer": "Reactants",
+    "difficulty": "easy",
+    "topic": "Chemical Reactions",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-17",
+    "question": "In the reaction 2H₂ + O₂ → 2H₂O, which substance is the product?",
+    "options": [
+      "Water (H₂O)",
+      "Hydrogen (H₂)",
+      "Oxygen (O₂)",
+      "Hydrogen peroxide (H₂O₂)"
+    ],
+    "correctAnswer": "Water (H₂O)",
+    "difficulty": "medium",
+    "topic": "Chemical Reactions",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-18",
+    "question": "Which statement best describes the law of conservation of mass?",
+    "options": [
+      "The products always weigh less than the reactants",
+      "New atoms are created during a chemical reaction",
+      "Atoms turn into energy during a chemical reaction",
+      "Matter is not created or destroyed in a chemical reaction"
+    ],
+    "correctAnswer": "Matter is not created or destroyed in a chemical reaction",
+    "difficulty": "medium",
+    "topic": "Chemical Reactions",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-19",
+    "question": "In a sealed container, 10 g of reactants react completely. What is the total mass of the products?",
+    "options": [
+      "5 g",
+      "10 g",
+      "20 g",
+      "0 g"
+    ],
+    "correctAnswer": "10 g",
+    "difficulty": "medium",
+    "topic": "Chemical Reactions",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-hard-20",
+    "question": "Which chemical equation is balanced?",
+    "options": [
+      "H₂ + O₂ → H₂O",
+      "H₂ + O₂ → 2H₂O",
+      "2H₂ + 2O₂ → 2H₂O",
+      "2H₂ + O₂ → 2H₂O"
+    ],
+    "correctAnswer": "2H₂ + O₂ → 2H₂O",
+    "difficulty": "hard",
+    "topic": "Chemical Reactions",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-hard-21",
+    "question": "Vinegar and baking soda are mixed in an open cup. The cup seems to lose mass. What best explains this?",
+    "options": [
+      "Mass was destroyed in the reaction",
+      "A gas escaped into the air",
+      "Atoms turned into energy",
+      "The cup absorbed the mass"
+    ],
+    "correctAnswer": "A gas escaped into the air",
+    "difficulty": "hard",
+    "topic": "Chemical Reactions",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-22",
+    "question": "True or False: Rusting of iron is a chemical change.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "medium",
+    "topic": "Chemical Reactions",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-23",
+    "question": "Which usually makes a chemical reaction happen faster?",
+    "options": [
+      "Raising the temperature",
+      "Lowering the temperature",
+      "Using larger chunks of a solid reactant",
+      "Removing some of the reactants"
+    ],
+    "correctAnswer": "Raising the temperature",
+    "difficulty": "medium",
+    "topic": "Chemical Reactions",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-24",
+    "question": "How many hydrogen atoms are in 2H₂O?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "6"
+    ],
+    "correctAnswer": "4",
+    "difficulty": "medium",
+    "topic": "Chemical Reactions",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-hard-25",
+    "question": "Burning wood is an exothermic reaction. What does exothermic mean?",
+    "options": [
+      "The reaction absorbs energy from its surroundings",
+      "The reaction releases energy to its surroundings",
+      "The reaction has no energy change",
+      "The reaction creates new atoms"
+    ],
+    "correctAnswer": "The reaction releases energy to its surroundings",
+    "difficulty": "hard",
+    "topic": "Chemical Reactions",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-hard-26",
+    "question": "In a reaction, 12 g of substance A reacts completely with 8 g of substance B to make only substance C. What is the mass of C?",
+    "options": [
+      "4 g",
+      "12 g",
+      "96 g",
+      "20 g"
+    ],
+    "correctAnswer": "20 g",
+    "difficulty": "hard",
+    "topic": "Chemical Reactions",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-easy-27",
+    "question": "What is the SI unit of force?",
+    "options": [
+      "Joule (J)",
+      "Watt (W)",
+      "Newton (N)",
+      "Meter (m)"
+    ],
+    "correctAnswer": "Newton (N)",
+    "difficulty": "easy",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-easy-28",
+    "question": "Newton’s first law of motion is also called the law of what?",
+    "options": [
+      "Inertia",
+      "Gravity",
+      "Acceleration",
+      "Energy"
+    ],
+    "correctAnswer": "Inertia",
+    "difficulty": "easy",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-easy-29",
+    "question": "True or False: A force is a push or a pull.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-easy-30",
+    "question": "Speed is calculated by dividing distance by what?",
+    "options": [
+      "Mass",
+      "Force",
+      "Time",
+      "Volume"
+    ],
+    "correctAnswer": "Time",
+    "difficulty": "easy",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-easy-31",
+    "question": "Which quantity describes both how fast an object moves and the direction it moves?",
+    "options": [
+      "Velocity",
+      "Mass",
+      "Distance",
+      "Weight"
+    ],
+    "correctAnswer": "Velocity",
+    "difficulty": "easy",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-hard-32",
+    "question": "A cyclist rides 12 km in 30 minutes. What is the cyclist’s average speed?",
+    "options": [
+      "12 km/h",
+      "6 km/h",
+      "0.4 km/h",
+      "24 km/h"
+    ],
+    "correctAnswer": "24 km/h",
+    "difficulty": "hard",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-33",
+    "question": "Which equation represents Newton’s second law of motion?",
+    "options": [
+      "F = m + a",
+      "F = m × a",
+      "F = m ÷ a",
+      "F = v ÷ t"
+    ],
+    "correctAnswer": "F = m × a",
+    "difficulty": "medium",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-34",
+    "question": "A 2 kg cart accelerates at 3 m/s². What is the net force on it?",
+    "options": [
+      "5 N",
+      "1.5 N",
+      "0.67 N",
+      "6 N"
+    ],
+    "correctAnswer": "6 N",
+    "difficulty": "medium",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-35",
+    "question": "A book rests on a table and does not move. Which statement explains this?",
+    "options": [
+      "No forces act on the book",
+      "The forces on the book are balanced",
+      "Only gravity acts on the book",
+      "Only an upward force acts on the book"
+    ],
+    "correctAnswer": "The forces on the book are balanced",
+    "difficulty": "medium",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-36",
+    "question": "True or False: Mass and weight are the same thing.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "medium",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-37",
+    "question": "A swimmer pushes water backward and moves forward. Which law of motion explains this?",
+    "options": [
+      "Newton’s third law",
+      "Newton’s first law",
+      "Newton’s second law",
+      "The law of conservation of mass"
+    ],
+    "correctAnswer": "Newton’s third law",
+    "difficulty": "medium",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-hard-38",
+    "question": "A skater pushes on a wall with a force of 50 N. What force does the wall exert on the skater?",
+    "options": [
+      "0 N",
+      "50 N in the same direction",
+      "50 N in the opposite direction",
+      "100 N in the opposite direction"
+    ],
+    "correctAnswer": "50 N in the opposite direction",
+    "difficulty": "hard",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-hard-39",
+    "question": "A box is pushed right with 20 N while friction pushes left with 20 N. What happens to the box’s motion?",
+    "options": [
+      "The net force is 40 N to the right",
+      "The net force is 0 N, so its motion does not change",
+      "The net force is 20 N to the right, so it speeds up",
+      "It stops immediately"
+    ],
+    "correctAnswer": "The net force is 0 N, so its motion does not change",
+    "difficulty": "hard",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-hard-40",
+    "question": "The same force is applied to a 1 kg object and a 4 kg object. Which accelerates more?",
+    "options": [
+      "The 4 kg object",
+      "They accelerate the same amount",
+      "Neither accelerates",
+      "The 1 kg object"
+    ],
+    "correctAnswer": "The 1 kg object",
+    "difficulty": "hard",
+    "topic": "Forces and Motion",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-easy-41",
+    "question": "Waves transfer what from one place to another?",
+    "options": [
+      "Matter",
+      "Atoms",
+      "Energy",
+      "Mass"
+    ],
+    "correctAnswer": "Energy",
+    "difficulty": "easy",
+    "topic": "Waves",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-easy-42",
+    "question": "True or False: Sound waves can travel through the vacuum of outer space.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "easy",
+    "topic": "Waves",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-easy-43",
+    "question": "Which is an example of a transverse wave?",
+    "options": [
+      "A wave on a rope shaken up and down",
+      "A sound wave in air",
+      "A wave that pushes along a spring by compressing it",
+      "The ticking of a clock"
+    ],
+    "correctAnswer": "A wave on a rope shaken up and down",
+    "difficulty": "easy",
+    "topic": "Waves",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-44",
+    "question": "What is the highest point of a wave called?",
+    "options": [
+      "Trough",
+      "Wavelength",
+      "Crest",
+      "Frequency"
+    ],
+    "correctAnswer": "Crest",
+    "difficulty": "medium",
+    "topic": "Waves",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-45",
+    "question": "In what unit is the frequency of a wave measured?",
+    "options": [
+      "Hertz (Hz)",
+      "Meters (m)",
+      "Decibels (dB)",
+      "Newtons (N)"
+    ],
+    "correctAnswer": "Hertz (Hz)",
+    "difficulty": "medium",
+    "topic": "Waves",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-46",
+    "question": "The amplitude of a wave is related to which property?",
+    "options": [
+      "Its wavelength",
+      "Its frequency",
+      "Its color",
+      "The amount of energy it carries"
+    ],
+    "correctAnswer": "The amount of energy it carries",
+    "difficulty": "medium",
+    "topic": "Waves",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-47",
+    "question": "A wave bounces off a surface and travels back. What is this called?",
+    "options": [
+      "Refraction",
+      "Reflection",
+      "Absorption",
+      "Transmission"
+    ],
+    "correctAnswer": "Reflection",
+    "difficulty": "medium",
+    "topic": "Waves",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-medium-48",
+    "question": "A light ray bends as it passes from air into water. What is this called?",
+    "options": [
+      "Reflection",
+      "Absorption",
+      "Interference",
+      "Refraction"
+    ],
+    "correctAnswer": "Refraction",
+    "difficulty": "medium",
+    "topic": "Waves",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-hard-49",
+    "question": "A wave travels at 340 m/s and has a frequency of 170 Hz. What is its wavelength?",
+    "options": [
+      "0.5 m",
+      "2 m",
+      "170 m",
+      "57,800 m"
+    ],
+    "correctAnswer": "2 m",
+    "difficulty": "hard",
+    "topic": "Waves",
+    "subject": "science",
+    "grade": "8"
+  },
+  {
+    "id": "science-8-hard-50",
+    "question": "Sound travels fastest through which material?",
+    "options": [
+      "Steel (a solid)",
+      "Air (a gas)",
+      "Water vapor (steam)",
+      "A vacuum"
+    ],
+    "correctAnswer": "Steel (a solid)",
+    "difficulty": "hard",
+    "topic": "Waves",
+    "subject": "science",
+    "grade": "8"
+  }
+]

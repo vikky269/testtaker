@@ -1,0 +1,734 @@
+[
+  {
+    "id": "science-6-easy-1",
+    "question": "Which process changes liquid water into water vapor?",
+    "options": [
+      "Condensation",
+      "Precipitation",
+      "Evaporation",
+      "Runoff"
+    ],
+    "correctAnswer": "Evaporation",
+    "difficulty": "easy",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-easy-2",
+    "question": "Which instrument measures air pressure?",
+    "options": [
+      "Barometer",
+      "Thermometer",
+      "Anemometer",
+      "Rain gauge"
+    ],
+    "correctAnswer": "Barometer",
+    "difficulty": "easy",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-easy-3",
+    "question": "True or False: Clouds form when water vapor condenses into tiny droplets.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-easy-4",
+    "question": "Which instrument measures wind speed?",
+    "options": [
+      "Barometer",
+      "Thermometer",
+      "Rain gauge",
+      "Anemometer"
+    ],
+    "correctAnswer": "Anemometer",
+    "difficulty": "easy",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-medium-5",
+    "question": "In which layer of the atmosphere does most weather occur?",
+    "options": [
+      "Stratosphere",
+      "Troposphere",
+      "Mesosphere",
+      "Thermosphere"
+    ],
+    "correctAnswer": "Troposphere",
+    "difficulty": "medium",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-medium-6",
+    "question": "What weather often happens along a cold front?",
+    "options": [
+      "Days of light drizzle with slowly rising temperatures",
+      "A full week of clear skies",
+      "No change in the weather at all",
+      "Thunderstorms and a sudden drop in temperature"
+    ],
+    "correctAnswer": "Thunderstorms and a sudden drop in temperature",
+    "difficulty": "medium",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-medium-7",
+    "question": "A high-pressure system usually brings which kind of weather?",
+    "options": [
+      "Stormy, rainy weather",
+      "Clear, calm weather",
+      "Hurricanes",
+      "Heavy snow"
+    ],
+    "correctAnswer": "Clear, calm weather",
+    "difficulty": "medium",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-medium-8",
+    "question": "True or False: Air always moves from areas of low pressure to areas of high pressure.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "medium",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-medium-9",
+    "question": "What is the main source of energy that drives the water cycle?",
+    "options": [
+      "Energy from the Sun",
+      "The Moon’s gravity",
+      "Heat from Earth’s core",
+      "Ocean tides"
+    ],
+    "correctAnswer": "Energy from the Sun",
+    "difficulty": "medium",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-hard-10",
+    "question": "A weather map shows a low-pressure system moving toward your town. What weather is most likely?",
+    "options": [
+      "Clear skies and light winds",
+      "Dry, sunny weather",
+      "Cloudy skies and a chance of storms",
+      "No change in the weather"
+    ],
+    "correctAnswer": "Cloudy skies and a chance of storms",
+    "difficulty": "hard",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-hard-11",
+    "question": "A maritime tropical air mass forms over warm ocean water. What is it like?",
+    "options": [
+      "Cold and dry",
+      "Warm and humid",
+      "Warm and dry",
+      "Cold and humid"
+    ],
+    "correctAnswer": "Warm and humid",
+    "difficulty": "hard",
+    "topic": "Weather",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-easy-12",
+    "question": "What is climate?",
+    "options": [
+      "The weather at a place today",
+      "The temperature at noon",
+      "A storm that lasts a week",
+      "The average weather of a place over many years"
+    ],
+    "correctAnswer": "The average weather of a place over many years",
+    "difficulty": "easy",
+    "topic": "Climate",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-easy-13",
+    "question": "True or False: Weather can change from day to day, but climate changes much more slowly.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Climate",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-medium-14",
+    "question": "Which factor most affects the climate of a place?",
+    "options": [
+      "The time of day",
+      "The number of people living there",
+      "Its distance from the equator (latitude)",
+      "The color of the soil"
+    ],
+    "correctAnswer": "Its distance from the equator (latitude)",
+    "difficulty": "medium",
+    "topic": "Climate",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-medium-15",
+    "question": "Why do coastal cities usually have milder temperatures than inland cities?",
+    "options": [
+      "Water heats up and cools down more slowly than land",
+      "Oceans are always warmer than land",
+      "Coastal cities get more sunlight",
+      "Wind never blows near the coast"
+    ],
+    "correctAnswer": "Water heats up and cools down more slowly than land",
+    "difficulty": "medium",
+    "topic": "Climate",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-medium-16",
+    "question": "Which of these is a greenhouse gas?",
+    "options": [
+      "Nitrogen",
+      "Oxygen",
+      "Carbon dioxide",
+      "Helium"
+    ],
+    "correctAnswer": "Carbon dioxide",
+    "difficulty": "medium",
+    "topic": "Climate",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-hard-17",
+    "question": "How do ocean currents such as the Gulf Stream affect climate?",
+    "options": [
+      "They carry warm water to cooler regions and warm the nearby land",
+      "They make all coastal areas colder",
+      "They stop rain from forming",
+      "They have no effect on climate"
+    ],
+    "correctAnswer": "They carry warm water to cooler regions and warm the nearby land",
+    "difficulty": "hard",
+    "topic": "Climate",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-hard-18",
+    "question": "Why is it usually hotter near the equator than near the poles?",
+    "options": [
+      "The equator is much closer to the Sun",
+      "Earth’s core is closer to the surface there",
+      "There is less air at the equator",
+      "Sunlight strikes the equator more directly"
+    ],
+    "correctAnswer": "Sunlight strikes the equator more directly",
+    "difficulty": "hard",
+    "topic": "Climate",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-hard-19",
+    "question": "True or False: A mountain range can create a rain shadow, leaving the side away from the wind dry.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "hard",
+    "topic": "Climate",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-easy-20",
+    "question": "What is the name of Earth’s thin, rocky outer layer?",
+    "options": [
+      "Mantle",
+      "Crust",
+      "Outer core",
+      "Inner core"
+    ],
+    "correctAnswer": "Crust",
+    "difficulty": "easy",
+    "topic": "Plate Tectonics",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-easy-21",
+    "question": "True or False: Earth’s tectonic plates move very slowly.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Plate Tectonics",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-easy-22",
+    "question": "What do we call the shaking of the ground caused by a sudden release of energy along a fault?",
+    "options": [
+      "Erosion",
+      "Flood",
+      "Drought",
+      "Earthquake"
+    ],
+    "correctAnswer": "Earthquake",
+    "difficulty": "easy",
+    "topic": "Plate Tectonics",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-easy-23",
+    "question": "Which theory says Earth’s crust is broken into large moving pieces?",
+    "options": [
+      "Continental erosion",
+      "Plate tectonics",
+      "Ocean convection",
+      "Seafloor weathering"
+    ],
+    "correctAnswer": "Plate tectonics",
+    "difficulty": "easy",
+    "topic": "Plate Tectonics",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-medium-24",
+    "question": "Which evidence supports the idea that continents were once joined together?",
+    "options": [
+      "Fossils of the same species found on different continents",
+      "Mountains are very tall",
+      "All continents have rivers",
+      "Oceans are salty"
+    ],
+    "correctAnswer": "Fossils of the same species found on different continents",
+    "difficulty": "medium",
+    "topic": "Plate Tectonics",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-medium-25",
+    "question": "What happens at a divergent plate boundary?",
+    "options": [
+      "The plates move toward each other",
+      "The plates slide past each other",
+      "The plates move apart",
+      "The plates stop moving"
+    ],
+    "correctAnswer": "The plates move apart",
+    "difficulty": "medium",
+    "topic": "Plate Tectonics",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-medium-26",
+    "question": "What can form when two continental plates collide?",
+    "options": [
+      "Mid-ocean ridges",
+      "Mountain ranges",
+      "Wide rift valleys",
+      "New oceans"
+    ],
+    "correctAnswer": "Mountain ranges",
+    "difficulty": "medium",
+    "topic": "Plate Tectonics",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-medium-27",
+    "question": "What drives the movement of tectonic plates?",
+    "options": [
+      "Ocean tides",
+      "Wind blowing across Earth",
+      "The Moon’s gravity",
+      "Convection currents in the mantle"
+    ],
+    "correctAnswer": "Convection currents in the mantle",
+    "difficulty": "medium",
+    "topic": "Plate Tectonics",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-hard-28",
+    "question": "Where is new oceanic crust formed during seafloor spreading?",
+    "options": [
+      "At a deep-ocean trench",
+      "On the continental shelf",
+      "At a mid-ocean ridge",
+      "On a coastal beach"
+    ],
+    "correctAnswer": "At a mid-ocean ridge",
+    "difficulty": "hard",
+    "topic": "Plate Tectonics",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-hard-29",
+    "question": "The “Ring of Fire” around the Pacific Ocean has many volcanoes and earthquakes. Why?",
+    "options": [
+      "It lies along several plate boundaries",
+      "It is closest to the Sun",
+      "It has the warmest water on Earth",
+      "It is the oldest part of the ocean"
+    ],
+    "correctAnswer": "It lies along several plate boundaries",
+    "difficulty": "hard",
+    "topic": "Plate Tectonics",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-hard-30",
+    "question": "True or False: Volcanoes can only form at plate boundaries.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "hard",
+    "topic": "Plate Tectonics",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-easy-31",
+    "question": "Which planet is closest to the Sun?",
+    "options": [
+      "Venus",
+      "Earth",
+      "Mercury",
+      "Mars"
+    ],
+    "correctAnswer": "Mercury",
+    "difficulty": "easy",
+    "topic": "Solar System",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-easy-32",
+    "question": "Which of these is a star?",
+    "options": [
+      "The Sun",
+      "Earth",
+      "The Moon",
+      "Jupiter"
+    ],
+    "correctAnswer": "The Sun",
+    "difficulty": "easy",
+    "topic": "Solar System",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-easy-33",
+    "question": "True or False: Earth takes about 365 days to orbit the Sun once.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Solar System",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-easy-34",
+    "question": "Which planet is known as the Red Planet?",
+    "options": [
+      "Venus",
+      "Jupiter",
+      "Saturn",
+      "Mars"
+    ],
+    "correctAnswer": "Mars",
+    "difficulty": "easy",
+    "topic": "Solar System",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-easy-35",
+    "question": "Which planet is the largest in our solar system?",
+    "options": [
+      "Saturn",
+      "Jupiter",
+      "Neptune",
+      "Earth"
+    ],
+    "correctAnswer": "Jupiter",
+    "difficulty": "easy",
+    "topic": "Solar System",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-medium-36",
+    "question": "What causes Earth’s seasons?",
+    "options": [
+      "Earth’s changing distance from the Sun",
+      "The phases of the Moon",
+      "Solar flares",
+      "The tilt of Earth’s axis"
+    ],
+    "correctAnswer": "The tilt of Earth’s axis",
+    "difficulty": "medium",
+    "topic": "Solar System",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-medium-37",
+    "question": "What causes day and night on Earth?",
+    "options": [
+      "Earth’s revolution around the Sun",
+      "Earth’s rotation on its axis",
+      "The Moon blocking the Sun",
+      "The Sun moving around Earth"
+    ],
+    "correctAnswer": "Earth’s rotation on its axis",
+    "difficulty": "medium",
+    "topic": "Solar System",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-medium-38",
+    "question": "Which force keeps the planets in orbit around the Sun?",
+    "options": [
+      "Gravity",
+      "Friction",
+      "Magnetism",
+      "Wind"
+    ],
+    "correctAnswer": "Gravity",
+    "difficulty": "medium",
+    "topic": "Solar System",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-medium-39",
+    "question": "What causes the phases of the Moon?",
+    "options": [
+      "Earth’s shadow covers part of the Moon",
+      "Clouds cover part of the Moon",
+      "We see different amounts of the Moon’s sunlit side as it orbits Earth",
+      "The Moon changes its shape each month"
+    ],
+    "correctAnswer": "We see different amounts of the Moon’s sunlit side as it orbits Earth",
+    "difficulty": "medium",
+    "topic": "Solar System",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-hard-40",
+    "question": "When does a solar eclipse occur?",
+    "options": [
+      "When Earth passes between the Sun and the Moon",
+      "When the Moon passes between the Sun and Earth",
+      "When the Sun passes between Earth and the Moon",
+      "When the Moon moves far away from Earth"
+    ],
+    "correctAnswer": "When the Moon passes between the Sun and Earth",
+    "difficulty": "hard",
+    "topic": "Solar System",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-hard-41",
+    "question": "What does a light-year measure?",
+    "options": [
+      "Time",
+      "Speed",
+      "Brightness",
+      "Distance"
+    ],
+    "correctAnswer": "Distance",
+    "difficulty": "hard",
+    "topic": "Solar System",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-hard-42",
+    "question": "Compared with Earth, a planet that is much farther from the Sun has what kind of year?",
+    "options": [
+      "A shorter year",
+      "The same length of year",
+      "A longer year",
+      "No year at all"
+    ],
+    "correctAnswer": "A longer year",
+    "difficulty": "hard",
+    "topic": "Solar System",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-easy-43",
+    "question": "Which of these is a renewable energy resource?",
+    "options": [
+      "Solar energy",
+      "Coal",
+      "Oil",
+      "Natural gas"
+    ],
+    "correctAnswer": "Solar energy",
+    "difficulty": "easy",
+    "topic": "Human Impact",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-easy-44",
+    "question": "True or False: Planting trees can help reduce the amount of carbon dioxide in the air.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Human Impact",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-easy-45",
+    "question": "Which is an example of recycling?",
+    "options": [
+      "Throwing bottles in the trash",
+      "Burning bottles",
+      "Turning used plastic bottles into new products",
+      "Burying bottles in the ground"
+    ],
+    "correctAnswer": "Turning used plastic bottles into new products",
+    "difficulty": "easy",
+    "topic": "Human Impact",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-medium-46",
+    "question": "Which human activity adds the most carbon dioxide to the atmosphere?",
+    "options": [
+      "Burning fossil fuels such as coal and oil",
+      "Planting forests",
+      "Using solar panels",
+      "Walking to school"
+    ],
+    "correctAnswer": "Burning fossil fuels such as coal and oil",
+    "difficulty": "medium",
+    "topic": "Human Impact",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-medium-47",
+    "question": "Deforestation (cutting down large areas of forest) can lead to what?",
+    "options": [
+      "More habitat for forest animals",
+      "Cleaner air in all places",
+      "Less soil erosion",
+      "Soil erosion and loss of animal habitat"
+    ],
+    "correctAnswer": "Soil erosion and loss of animal habitat",
+    "difficulty": "medium",
+    "topic": "Human Impact",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-medium-48",
+    "question": "True or False: Fossil fuels are renewable resources that quickly replace themselves.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "medium",
+    "topic": "Human Impact",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-hard-49",
+    "question": "A city wants to reduce air pollution. Which solution would help the most?",
+    "options": [
+      "Build more highways for cars",
+      "Expand public transportation and use more electric vehicles",
+      "Burn more coal for electricity",
+      "Cut down more trees"
+    ],
+    "correctAnswer": "Expand public transportation and use more electric vehicles",
+    "difficulty": "hard",
+    "topic": "Human Impact",
+    "subject": "science",
+    "grade": "6"
+  },
+  {
+    "id": "science-6-hard-50",
+    "question": "Why are coral reefs at risk as oceans absorb more carbon dioxide?",
+    "options": [
+      "The water becomes too sweet",
+      "Fish stop eating algae",
+      "Waves become much taller",
+      "The water becomes more acidic, which harms corals"
+    ],
+    "correctAnswer": "The water becomes more acidic, which harms corals",
+    "difficulty": "hard",
+    "topic": "Human Impact",
+    "subject": "science",
+    "grade": "6"
+  }
+]

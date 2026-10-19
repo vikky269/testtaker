@@ -43,6 +43,7 @@ export interface QuizQuestion {
   subject?: string;
   stimulus?: string;
   picture?: boolean;
+  grade?: string;
 }
 
 export const SECTION_SIZE = 10;
@@ -120,6 +121,7 @@ function toQuizQuestion(q: BankQuestion | QuizQuestion): QuizQuestion {
     subject: 'subject' in q ? q.subject : undefined,
     stimulus: q.stimulus,
     picture: q.picture,
+    grade: q.grade,
   };
 }
 

@@ -13,6 +13,7 @@ import QuizModals from "@/app/modals/quizModals";
 import MathHtml from "@/app/components/MathHtml";
 import QuestionDiagram, { diagramForQuestion } from "@/app/components/QuestionDiagram";
 import PicturePrompt, { isPictureQuestion, pictureLabel, usesLargePictureChoices } from "@/app/components/PicturePrompt";
+import { ChoiceFace, isPictureChoice } from "@/app/components/KinderArt";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -266,7 +267,7 @@ export default function QuizBody({
           {diagram && <QuestionDiagram spec={diagram} />}
 
           {isPictureQuestion(currentQuestion) ? (
-            <PicturePrompt stimulus={currentQuestion.stimulus} prompt={currentQuestion.question} grade={currentQuestion.grade} />
+            <PicturePrompt stimulus={currentQuestion.stimulus} prompt={currentQuestion.question} grade={currentQuestion.grade || gradeParam || undefined} />
           ) : currentQuestion.question.startsWith("https://") ? (
             <img
               src={currentQuestion.question}
@@ -303,7 +304,9 @@ export default function QuizBody({
                   >
                     {String.fromCharCode(65 + oi)}
                   </span>
-                  {largeChoice ? (
+                  {isPictureChoice(option) ? (
+                    <ChoiceFace option={option} />
+                  ) : largeChoice ? (
                     <span className="w-full text-center text-4xl leading-tight md:text-5xl">{pictureLabel(option)}</span>
                   ) : (
                     <MathHtml

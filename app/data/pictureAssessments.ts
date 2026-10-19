@@ -1,10 +1,12 @@
 ﻿/**
  * Picture assessments.
- * Pre-K, Kindergarten, and Grade 1 pools come from "new picture based.html"
- * (50 Math + 50 ELA). A quiz draws 10 of each.
+ * Pre-K and Grade 1 pools come from "new picture based.html" (50 Math + 50 ELA).
+ * Kindergarten uses the illustrated bank of 20 Math + 20 ELA.
+ * A quiz draws 10 of each.
  * Grade 2 keeps its own shorter picture pool and also draws 10 of each.
  */
 import boss from './pictureBoss.json';
+import { kindergartenVisual } from './kindergartenVisual';
 
 type Difficulty = 'easy' | 'medium' | 'hard';
 
@@ -100,5 +102,6 @@ type BossGrade = 'pre-k' | 'kindergarten' | '1';
 
 export function getPictureBank(gradeKey: BossGrade | '2') {
   if (gradeKey === '2') return grade2;
+  if (gradeKey === 'kindergarten') return kindergartenVisual;
   return boss[gradeKey] as { math: PictureQuestion[]; ela: PictureQuestion[] };
 }

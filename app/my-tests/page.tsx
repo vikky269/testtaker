@@ -18,6 +18,7 @@ import {
 import { generateReport } from '@/app/utils/generateReport';
 import { generateGedReport } from '@/app/utils/generateGedReport';
 import { generatePsatReport } from '../utils/generatepSatReport';
+import MathHtml from '@/app/components/MathHtml';
 
 const fmtDate = (d: string) =>
   new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
@@ -256,26 +257,27 @@ const handleDownloadReport = (sub: TestSubmission) => {
                             ${right ? 'bg-green-500' : 'bg-red-500'}`}>
                             {right ? '✓' : '✗'}
                           </span>
-                          <div className="min-w-0 flex-1">
-                            <p className="text-sm font-semibold text-gray-900 mb-2"
-                               dangerouslySetInnerHTML={{ __html: `${i + 1}. ${q.question}` }} />
-                                                     <p className={`text-xs ${right ? 'text-green-700' : 'text-red-600'}`}>
+                          <div className="min-w-0 flex-1 overflow-hidden">
+                            <div className="text-sm font-semibold text-gray-900 mb-2 flex gap-1.5">
+                              <span className="flex-shrink-0">{i + 1}.</span>
+                              <MathHtml as="div" text={q.question} className="min-w-0 flex-1" />
+                            </div>
+                            <p className={`text-xs ${right ? 'text-green-700' : 'text-red-600'}`}>
                               <span className="font-semibold">Your answer:</span>{' '}
                               {student
-                                ? <span dangerouslySetInnerHTML={{ __html: student }} />
+                                ? <MathHtml as="span" text={student} />
                                 : <em className="text-gray-400">no answer</em>}
                             </p>
                             {!right && (
                               <p className="text-xs text-green-700 mt-0.5">
                                 <span className="font-semibold">Correct answer:</span>{' '}
-                                <span dangerouslySetInnerHTML={{ __html: correct }} />
+                                <MathHtml as="span" text={correct} />
                               </p>
                             )}
                             {q.solution && !right && (
-                              <div className="text-[11px] text-gray-500 mt-1.5 bg-gray-50 rounded-lg px-2.5 py-1.5 flex gap-1.5">
+                              <div className="text-[11px] text-gray-500 mt-1.5 bg-gray-50 rounded-lg px-2.5 py-1.5 flex gap-1.5 min-w-0">
                                 <span>💡</span>
-                                <div className="[&_p]:inline [&_strong]:text-gray-700"
-                                     dangerouslySetInnerHTML={{ __html: q.solution }} />
+                                <MathHtml as="div" text={q.solution} className="min-w-0 [&_p]:inline [&_strong]:text-gray-700" />
                               </div>
                             )}
                           </div>

@@ -1,0 +1,738 @@
+[
+  {
+    "id": "science-2-easy-1",
+    "question": "Which word describes how something feels, such as rough or smooth?",
+    "options": [
+      "Shadow",
+      "Sound",
+      "Texture",
+      "Taste"
+    ],
+    "correctAnswer": "Texture",
+    "difficulty": "easy",
+    "topic": "Properties of Matter",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-easy-2",
+    "question": "Which of these is a solid?",
+    "options": [
+      "A rock",
+      "Milk",
+      "Air",
+      "Orange juice"
+    ],
+    "correctAnswer": "A rock",
+    "difficulty": "easy",
+    "topic": "Properties of Matter",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-easy-3",
+    "question": "Which of these is a liquid?",
+    "options": [
+      "A book",
+      "A wooden block",
+      "A rock",
+      "Orange juice"
+    ],
+    "correctAnswer": "Orange juice",
+    "difficulty": "easy",
+    "topic": "Properties of Matter",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-easy-4",
+    "question": "True or False: Water can be a solid, a liquid, or a gas.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Properties of Matter",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-easy-5",
+    "question": "Which object is flexible (it bends easily)?",
+    "options": [
+      "A rock",
+      "A rubber band",
+      "A brick",
+      "A glass marble"
+    ],
+    "correctAnswer": "A rubber band",
+    "difficulty": "easy",
+    "topic": "Properties of Matter",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-easy-6",
+    "question": "True or False: An ice cube melts when it is heated.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Properties of Matter",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-easy-7",
+    "question": "Which material would be best for making a raincoat?",
+    "options": [
+      "Paper",
+      "A soft sponge",
+      "Thin tissue",
+      "Waterproof plastic"
+    ],
+    "correctAnswer": "Waterproof plastic",
+    "difficulty": "easy",
+    "topic": "Properties of Matter",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-medium-8",
+    "question": "Which material is best for making a window you can see through?",
+    "options": [
+      "Wood",
+      "Clear glass",
+      "Metal",
+      "Cardboard"
+    ],
+    "correctAnswer": "Clear glass",
+    "difficulty": "medium",
+    "topic": "Properties of Matter",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-medium-9",
+    "question": "Which group has objects that are all soft?",
+    "options": [
+      "Cotton ball, pillow, stuffed toy",
+      "Rock, brick, glass",
+      "Spoon, fork, key",
+      "Coin, nail, stone"
+    ],
+    "correctAnswer": "Cotton ball, pillow, stuffed toy",
+    "difficulty": "medium",
+    "topic": "Properties of Matter",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-medium-10",
+    "question": "What happens to a chocolate bar left in the hot Sun?",
+    "options": [
+      "It freezes harder",
+      "It turns into a rock",
+      "It melts into a liquid",
+      "It disappears forever"
+    ],
+    "correctAnswer": "It melts into a liquid",
+    "difficulty": "medium",
+    "topic": "Properties of Matter",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-medium-11",
+    "question": "What happens to water when you put it in a freezer?",
+    "options": [
+      "It boils",
+      "It freezes into ice",
+      "It turns into sand",
+      "It becomes lighter than air"
+    ],
+    "correctAnswer": "It freezes into ice",
+    "difficulty": "medium",
+    "topic": "Properties of Matter",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-medium-12",
+    "question": "True or False: Melted ice can be frozen again to make ice.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "medium",
+    "topic": "Properties of Matter",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-medium-13",
+    "question": "A child builds a house from blocks, takes it apart, and builds a car from the same blocks. What does this show?",
+    "options": [
+      "Blocks turn into a new material",
+      "Blocks disappear when you take them apart",
+      "You need new blocks every time",
+      "Small pieces can be put together in different ways to make new objects"
+    ],
+    "correctAnswer": "Small pieces can be put together in different ways to make new objects",
+    "difficulty": "medium",
+    "topic": "Properties of Matter",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-hard-14",
+    "question": "Which change cannot be undone?",
+    "options": [
+      "Melting an ice cube into water",
+      "Freezing water into ice",
+      "Baking cake batter into a cake",
+      "Melting wax and letting it harden again"
+    ],
+    "correctAnswer": "Baking cake batter into a cake",
+    "difficulty": "hard",
+    "topic": "Properties of Matter",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-hard-15",
+    "question": "Maya wants a cup that holds hot cocoa without burning her hands. Which cup is best?",
+    "options": [
+      "A foam cup",
+      "A thin metal cup",
+      "A paper napkin",
+      "A thin glass jar"
+    ],
+    "correctAnswer": "A foam cup",
+    "difficulty": "hard",
+    "topic": "Properties of Matter",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-hard-16",
+    "question": "A spoon, a key, and a coin are all hard and shiny. What are they most likely made of?",
+    "options": [
+      "Wood",
+      "Cotton",
+      "Metal",
+      "Water"
+    ],
+    "correctAnswer": "Metal",
+    "difficulty": "hard",
+    "topic": "Properties of Matter",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-hard-17",
+    "question": "A puddle is on the sidewalk in the morning and gone by afternoon. What happened to the water?",
+    "options": [
+      "It evaporated into the air as a gas",
+      "The sidewalk drank it all",
+      "It turned into sand",
+      "It froze into ice"
+    ],
+    "correctAnswer": "It evaporated into the air as a gas",
+    "difficulty": "hard",
+    "topic": "Properties of Matter",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-hard-18",
+    "question": "How could you test to find the strongest paper towel?",
+    "options": [
+      "Pick the prettiest one",
+      "Ask a friend which one smells best",
+      "Choose the thickest one without testing",
+      "Add the same weights to each towel and see which holds the most"
+    ],
+    "correctAnswer": "Add the same weights to each towel and see which holds the most",
+    "difficulty": "hard",
+    "topic": "Properties of Matter",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-easy-19",
+    "question": "What do plants need to grow?",
+    "options": [
+      "Candy and toys",
+      "Water and sunlight",
+      "Plastic and paint",
+      "Only sand"
+    ],
+    "correctAnswer": "Water and sunlight",
+    "difficulty": "easy",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-easy-20",
+    "question": "What is a habitat?",
+    "options": [
+      "A kind of food",
+      "A type of weather",
+      "A kind of toy",
+      "A place where a plant or animal lives"
+    ],
+    "correctAnswer": "A place where a plant or animal lives",
+    "difficulty": "easy",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-easy-21",
+    "question": "True or False: Plants need sunlight to grow.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-easy-22",
+    "question": "Which animal lives in the ocean?",
+    "options": [
+      "Camel",
+      "Whale",
+      "Cow",
+      "Rabbit"
+    ],
+    "correctAnswer": "Whale",
+    "difficulty": "easy",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-easy-23",
+    "question": "Which animal lives in a hot desert?",
+    "options": [
+      "Camel",
+      "Polar bear",
+      "Penguin",
+      "Frog"
+    ],
+    "correctAnswer": "Camel",
+    "difficulty": "easy",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-easy-24",
+    "question": "Bees help flowers by carrying what from flower to flower?",
+    "options": [
+      "Rocks",
+      "Sand",
+      "Pollen",
+      "Snow"
+    ],
+    "correctAnswer": "Pollen",
+    "difficulty": "easy",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-medium-25",
+    "question": "What does biodiversity mean?",
+    "options": [
+      "Only one kind of animal in a place",
+      "Many different kinds of living things in a place",
+      "The weather in a place",
+      "The size of a place"
+    ],
+    "correctAnswer": "Many different kinds of living things in a place",
+    "difficulty": "medium",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-medium-26",
+    "question": "How can wind help some plants?",
+    "options": [
+      "It turns seeds into rocks",
+      "It turns seeds into animals",
+      "It makes plants stop growing",
+      "It can carry their seeds to new places"
+    ],
+    "correctAnswer": "It can carry their seeds to new places",
+    "difficulty": "medium",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-medium-27",
+    "question": "A plant is put in a dark closet and is never given water. What will most likely happen?",
+    "options": [
+      "It will grow faster",
+      "It will bloom in the dark",
+      "It will not grow well and may die",
+      "It will turn into a different plant"
+    ],
+    "correctAnswer": "It will not grow well and may die",
+    "difficulty": "medium",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-medium-28",
+    "question": "Which place would have the most different kinds of living things?",
+    "options": [
+      "A rainforest",
+      "A bare rock",
+      "A parking lot",
+      "A field with only one kind of plant"
+    ],
+    "correctAnswer": "A rainforest",
+    "difficulty": "medium",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-medium-29",
+    "question": "True or False: Every habitat has the same plants and animals.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "medium",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-hard-30",
+    "question": "A burr sticks to a dog’s fur and falls off far away. How does this help the plant?",
+    "options": [
+      "It gives the plant water",
+      "It makes the plant taller",
+      "It helps the plant’s seeds spread to new places",
+      "It makes the dog stronger"
+    ],
+    "correctAnswer": "It helps the plant’s seeds spread to new places",
+    "difficulty": "hard",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-hard-31",
+    "question": "A scientist counts living things in two meadows. Meadow A has 2 kinds. Meadow B has 12 kinds. Which has more biodiversity?",
+    "options": [
+      "Meadow B",
+      "Meadow A",
+      "Both are the same",
+      "Neither one"
+    ],
+    "correctAnswer": "Meadow B",
+    "difficulty": "hard",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-hard-32",
+    "question": "Plant X gets sunlight and water. Plant Y gets water but no sunlight. After two weeks, which plant is healthier?",
+    "options": [
+      "Plant Y",
+      "They look exactly the same",
+      "Neither plant changed",
+      "Plant X"
+    ],
+    "correctAnswer": "Plant X",
+    "difficulty": "hard",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-hard-33",
+    "question": "Which design would best help a plant spread its seeds using animals?",
+    "options": [
+      "Seeds with a heavy shell that stays near the plant",
+      "Seeds inside a tasty fruit that animals eat and drop elsewhere",
+      "Seeds buried under rocks",
+      "Seeds that cannot move"
+    ],
+    "correctAnswer": "Seeds inside a tasty fruit that animals eat and drop elsewhere",
+    "difficulty": "hard",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-hard-34",
+    "question": "Why is it good for a habitat to have many different kinds of living things?",
+    "options": [
+      "It makes the habitat smaller",
+      "It means animals do not need food",
+      "It makes plants stop growing",
+      "Different living things help each other and keep the habitat healthy"
+    ],
+    "correctAnswer": "Different living things help each other and keep the habitat healthy",
+    "difficulty": "hard",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-easy-35",
+    "question": "Which of these is a body of water?",
+    "options": [
+      "A mountain",
+      "A lake",
+      "A hill",
+      "A desert"
+    ],
+    "correctAnswer": "A lake",
+    "difficulty": "easy",
+    "topic": "Landforms and Water",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-easy-36",
+    "question": "Where is most of Earth’s water found?",
+    "options": [
+      "In the oceans",
+      "In rivers",
+      "In lakes",
+      "In puddles"
+    ],
+    "correctAnswer": "In the oceans",
+    "difficulty": "easy",
+    "topic": "Landforms and Water",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-easy-37",
+    "question": "True or False: A glacier is a very large mass of ice.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Landforms and Water",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-easy-38",
+    "question": "Which landform is a very tall, high area of land?",
+    "options": [
+      "Valley",
+      "Lake",
+      "Mountain",
+      "Beach"
+    ],
+    "correctAnswer": "Mountain",
+    "difficulty": "easy",
+    "topic": "Landforms and Water",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-easy-39",
+    "question": "What can wind and water do to land over time?",
+    "options": [
+      "Make rocks heavier",
+      "Wear it away and move rock and soil",
+      "Turn soil into water",
+      "Nothing at all"
+    ],
+    "correctAnswer": "Wear it away and move rock and soil",
+    "difficulty": "easy",
+    "topic": "Landforms and Water",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-medium-40",
+    "question": "Which event changes Earth’s land very quickly?",
+    "options": [
+      "A river slowly carving rock",
+      "Wind slowly wearing down a rock",
+      "Ice slowly cracking a rock",
+      "A volcano erupting"
+    ],
+    "correctAnswer": "A volcano erupting",
+    "difficulty": "medium",
+    "topic": "Landforms and Water",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-medium-41",
+    "question": "Which change to the land happens slowly?",
+    "options": [
+      "A volcano erupting",
+      "An earthquake",
+      "A river wearing away rock",
+      "A landslide"
+    ],
+    "correctAnswer": "A river wearing away rock",
+    "difficulty": "medium",
+    "topic": "Landforms and Water",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-medium-42",
+    "question": "What is erosion?",
+    "options": [
+      "Wind or water moving rock and soil from one place to another",
+      "Plants growing tall",
+      "Rain stopping",
+      "Rocks turning into metal"
+    ],
+    "correctAnswer": "Wind or water moving rock and soil from one place to another",
+    "difficulty": "medium",
+    "topic": "Landforms and Water",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-medium-43",
+    "question": "What does the color blue usually show on a map?",
+    "options": [
+      "Mountains",
+      "Roads",
+      "Water",
+      "Deserts"
+    ],
+    "correctAnswer": "Water",
+    "difficulty": "medium",
+    "topic": "Landforms and Water",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-medium-44",
+    "question": "Which of these is a source of fresh water?",
+    "options": [
+      "A river",
+      "The ocean",
+      "A salty sea",
+      "Seawater in a bay"
+    ],
+    "correctAnswer": "A river",
+    "difficulty": "medium",
+    "topic": "Landforms and Water",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-medium-45",
+    "question": "True or False: A flood can change the land quickly.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "medium",
+    "topic": "Landforms and Water",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-hard-46",
+    "question": "Heavy rain keeps washing soil off a bare hillside. What would best help stop this?",
+    "options": [
+      "Cut down the trees",
+      "Remove the grass",
+      "Dig up more soil",
+      "Plant grass and trees on the hillside"
+    ],
+    "correctAnswer": "Plant grass and trees on the hillside",
+    "difficulty": "hard",
+    "topic": "Landforms and Water",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-hard-47",
+    "question": "A beach loses sand when waves hit it. What could help protect the beach?",
+    "options": [
+      "Take away more sand",
+      "Plant dune grass or build a wall",
+      "Cut down the dune grass",
+      "Do nothing and hope it grows back"
+    ],
+    "correctAnswer": "Plant dune grass or build a wall",
+    "difficulty": "hard",
+    "topic": "Landforms and Water",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-hard-48",
+    "question": "A map shows brown areas on the left and a big blue area on the right. What does it tell you?",
+    "options": [
+      "There is only desert",
+      "The water is on top of the mountains",
+      "There are no landforms",
+      "There is high land, like mountains, next to a body of water"
+    ],
+    "correctAnswer": "There is high land, like mountains, next to a body of water",
+    "difficulty": "hard",
+    "topic": "Landforms and Water",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-hard-49",
+    "question": "Which pair shows one fast change and one slow change to land?",
+    "options": [
+      "A river carving a canyon (fast); a volcano erupting (slow)",
+      "A volcano erupting (fast); a river carving a canyon (slow)",
+      "A landslide (slow); wind wearing rock (fast)",
+      "Both changes are fast"
+    ],
+    "correctAnswer": "A volcano erupting (fast); a river carving a canyon (slow)",
+    "difficulty": "hard",
+    "topic": "Landforms and Water",
+    "subject": "science",
+    "grade": "2"
+  },
+  {
+    "id": "science-2-hard-50",
+    "question": "Why does a river valley get deeper over many years?",
+    "options": [
+      "Moving water slowly wears away rock and soil",
+      "Rocks in rivers grow downward",
+      "The Sun digs the valley",
+      "Fish dig the valley"
+    ],
+    "correctAnswer": "Moving water slowly wears away rock and soil",
+    "difficulty": "hard",
+    "topic": "Landforms and Water",
+    "subject": "science",
+    "grade": "2"
+  }
+]

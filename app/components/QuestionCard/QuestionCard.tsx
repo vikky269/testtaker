@@ -2,6 +2,7 @@
 // Single question review card with options, status badge, and solution toggle
 
 import { useState } from "react";
+import MathHtml from "@/app/components/MathHtml";
 
 interface QuestionCardProps {
   questionData: any;
@@ -26,7 +27,7 @@ export default function QuestionCard({
   const { num: numCls } = COLOR_MAP[color];
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-4 hover:shadow-md transition-shadow duration-200">
+    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-4 hover:shadow-md transition-shadow duration-200 overflow-hidden max-w-full">
 
       {/* Header row: number + global label + status */}
       <div className="flex items-center gap-3 mb-4">
@@ -61,9 +62,10 @@ export default function QuestionCard({
           className="w-full max-w-2xl mb-5 rounded-lg"
         />
       ) : (
-        <p
+        <MathHtml
+          as="div"
+          text={questionData.question}
           className="text-gray-800 text-base font-semibold mb-5 leading-relaxed"
-          dangerouslySetInnerHTML={{ __html: questionData.question }}
         />
       )}
 
@@ -87,7 +89,7 @@ export default function QuestionCard({
                 ${isCorrect ? "bg-white/30" : "bg-white/60 text-gray-500"}`}>
                 {String.fromCharCode(65 + oi)}
               </span>
-              <span dangerouslySetInnerHTML={{ __html: option }} />
+              <MathHtml as="span" text={option} />
               {isCorrect && <span className="ml-auto">✅</span>}
               {isSelected && !isCorrect && (
                 <span className="ml-auto text-xs opacity-80">(Your Answer)</span>

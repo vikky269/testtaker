@@ -1,0 +1,2252 @@
+[
+  {
+    "id": "biology-easy-1",
+    "question": "What is the simplest definition of biology?",
+    "options": [
+      "The study of matter and energy",
+      "The study of living organisms",
+      "The study of rocks and minerals",
+      "The study of the stars and planets"
+    ],
+    "correctAnswer": "The study of living organisms",
+    "difficulty": "easy",
+    "topic": "Introduction to Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-2",
+    "question": "Which of the following best describes why biology is considered relevant to everyday life?",
+    "options": [
+      "It only applies inside laboratories",
+      "It explains processes like digestion, disease, and reproduction that affect daily living",
+      "It has no connection to health or agriculture",
+      "It is limited to the study of extinct species"
+    ],
+    "correctAnswer": "It explains processes like digestion, disease, and reproduction that affect daily living",
+    "difficulty": "medium",
+    "topic": "Introduction to Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-3",
+    "question": "Biology overlaps with which combination of sciences to form fields such as biochemistry and biophysics?",
+    "options": [
+      "Geology and astronomy",
+      "Chemistry and physics",
+      "History and geography",
+      "Mathematics and economics"
+    ],
+    "correctAnswer": "Chemistry and physics",
+    "difficulty": "hard",
+    "topic": "Introduction to Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-4",
+    "question": "Which branch of biology is specifically the study of animals?",
+    "options": [
+      "Botany",
+      "Zoology",
+      "Microbiology",
+      "Geology"
+    ],
+    "correctAnswer": "Zoology",
+    "difficulty": "easy",
+    "topic": "Introduction to Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-5",
+    "question": "A scientist studying the inheritance of traits from parents to offspring is working in which branch of biology?",
+    "options": [
+      "Genetics",
+      "Botany",
+      "Marine Biology",
+      "Anatomy"
+    ],
+    "correctAnswer": "Genetics",
+    "difficulty": "medium",
+    "topic": "Introduction to Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-6",
+    "question": "Which branch of biology focuses on the structure of body parts, distinguishing it from physiology, which studies their function?",
+    "options": [
+      "Physiology",
+      "Anatomy",
+      "Ecology",
+      "Biotechnology"
+    ],
+    "correctAnswer": "Anatomy",
+    "difficulty": "hard",
+    "topic": "Introduction to Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-7",
+    "question": "In the MRS GREN mnemonic for characteristics of life, what does the 'R' stand for (appearing twice)?",
+    "options": [
+      "Respiration and Reproduction",
+      "Response and Reflection",
+      "Reaction and Recovery",
+      "Regulation and Repair"
+    ],
+    "correctAnswer": "Respiration and Reproduction",
+    "difficulty": "easy",
+    "topic": "Introduction to Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-8",
+    "question": "A dog panting to cool down on a hot day is best explained by which characteristic of living organisms?",
+    "options": [
+      "Growth",
+      "Homeostasis",
+      "Excretion",
+      "Nutrition"
+    ],
+    "correctAnswer": "Homeostasis",
+    "difficulty": "medium",
+    "topic": "Introduction to Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-9",
+    "question": "Viruses are often debated as 'non-living' primarily because they lack which characteristic outside of a host cell?",
+    "options": [
+      "The ability to mutate",
+      "An independent metabolism",
+      "A protein coat",
+      "Genetic material"
+    ],
+    "correctAnswer": "An independent metabolism",
+    "difficulty": "hard",
+    "topic": "Introduction to Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-10",
+    "question": "Which level of biological organization comes directly after 'Cell'?",
+    "options": [
+      "Organ",
+      "Tissue",
+      "Organism",
+      "Organ System"
+    ],
+    "correctAnswer": "Tissue",
+    "difficulty": "easy",
+    "topic": "Introduction to Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-11",
+    "question": "A group of the same species of deer living in one forest represents which level of organization?",
+    "options": [
+      "Community",
+      "Ecosystem",
+      "Population",
+      "Biome"
+    ],
+    "correctAnswer": "Population",
+    "difficulty": "medium",
+    "topic": "Introduction to Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-12",
+    "question": "Which sequence correctly shows the levels of organization from smallest to largest?",
+    "options": [
+      "Cell → Tissue → Organ → Organism → Ecosystem",
+      "Tissue → Cell → Organ → Ecosystem → Organism",
+      "Organ → Cell → Tissue → Biosphere → Population",
+      "Ecosystem → Organism → Organ → Tissue → Cell"
+    ],
+    "correctAnswer": "Cell → Tissue → Organ → Organism → Ecosystem",
+    "difficulty": "hard",
+    "topic": "Introduction to Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-13",
+    "question": "Who is credited with developing the modern system of binomial nomenclature used in classification?",
+    "options": [
+      "Charles Darwin",
+      "Carl Linnaeus",
+      "Aristotle",
+      "Gregor Mendel"
+    ],
+    "correctAnswer": "Carl Linnaeus",
+    "difficulty": "easy",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-14",
+    "question": "Aristotle's early classification system grouped organisms mainly based on which criterion?",
+    "options": [
+      "DNA sequences",
+      "Habitat and physical characteristics",
+      "Number of chromosomes",
+      "Geographic location only"
+    ],
+    "correctAnswer": "Habitat and physical characteristics",
+    "difficulty": "medium",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-15",
+    "question": "Modern phylogenetic classification differs from Linnaeus's original system mainly because it is based on what?",
+    "options": [
+      "Alphabetical order of names",
+      "Evolutionary relationships and shared ancestry",
+      "Size of the organism",
+      "Color patterns only"
+    ],
+    "correctAnswer": "Evolutionary relationships and shared ancestry",
+    "difficulty": "hard",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-16",
+    "question": "In the Linnaean hierarchy, which taxonomic level is the broadest (largest) grouping?",
+    "options": [
+      "Species",
+      "Genus",
+      "Kingdom",
+      "Family"
+    ],
+    "correctAnswer": "Kingdom",
+    "difficulty": "easy",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-17",
+    "question": "Using the mnemonic 'Dear King Philip Came Over For Good Soup', which level comes right after 'Kingdom'?",
+    "options": [
+      "Class",
+      "Order",
+      "Phylum",
+      "Family"
+    ],
+    "correctAnswer": "Phylum",
+    "difficulty": "medium",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-18",
+    "question": "Two organisms placed in the same Genus but different Species would be expected to show which relationship?",
+    "options": [
+      "No relationship at all",
+      "Closely related but not able to interbreed successfully",
+      "Identical genetic makeup",
+      "Members of different Kingdoms"
+    ],
+    "correctAnswer": "Closely related but not able to interbreed successfully",
+    "difficulty": "hard",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-19",
+    "question": "In binomial nomenclature, how should the genus and species names typically be written?",
+    "options": [
+      "Both lowercase and not italicized",
+      "Genus capitalized, species lowercase, both italicized",
+      "Both fully capitalized",
+      "Species capitalized, genus lowercase"
+    ],
+    "correctAnswer": "Genus capitalized, species lowercase, both italicized",
+    "difficulty": "easy",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-20",
+    "question": "What is the scientific (binomial) name for modern humans?",
+    "options": [
+      "Canis lupus",
+      "Homo sapiens",
+      "Rosa canina",
+      "Panthera leo"
+    ],
+    "correctAnswer": "Homo sapiens",
+    "difficulty": "medium",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-21",
+    "question": "Why did early taxonomists like Linnaeus choose Latin and Greek for scientific names?",
+    "options": [
+      "Because they were the only languages known at the time",
+      "To make names universal and stable across languages and regions",
+      "Because common names were considered inaccurate",
+      "Latin words are always shorter than English words"
+    ],
+    "correctAnswer": "To make names universal and stable across languages and regions",
+    "difficulty": "hard",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-22",
+    "question": "Which of these is one of the three Domains of life?",
+    "options": [
+      "Plantae",
+      "Eukarya",
+      "Fungi",
+      "Protista"
+    ],
+    "correctAnswer": "Eukarya",
+    "difficulty": "easy",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-23",
+    "question": "Which kingdom consists of organisms that are prokaryotic and typically lack a nucleus, distinguishing them from Protista?",
+    "options": [
+      "Animalia",
+      "Eubacteria",
+      "Fungi",
+      "Plantae"
+    ],
+    "correctAnswer": "Eubacteria",
+    "difficulty": "medium",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-24",
+    "question": "The separation of Archaebacteria and Eubacteria into two different domains is primarily justified by differences in what?",
+    "options": [
+      "Their overall size",
+      "Their cell wall chemistry and genetic/molecular differences",
+      "The color of their colonies",
+      "Their ability to move"
+    ],
+    "correctAnswer": "Their cell wall chemistry and genetic/molecular differences",
+    "difficulty": "hard",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-25",
+    "question": "Bacteria that are rod-shaped are classified as which type?",
+    "options": [
+      "Cocci",
+      "Spirilla",
+      "Bacilli",
+      "Vibrio"
+    ],
+    "correctAnswer": "Bacilli",
+    "difficulty": "easy",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-26",
+    "question": "A Gram stain test is primarily used to distinguish bacteria based on differences in what structure?",
+    "options": [
+      "Flagella length",
+      "Cell wall composition",
+      "Ribosome number",
+      "Nuclear membrane thickness"
+    ],
+    "correctAnswer": "Cell wall composition",
+    "difficulty": "medium",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-27",
+    "question": "The overuse of antibiotics contributing to antibiotic resistance is best explained by which evolutionary process?",
+    "options": [
+      "Genetic drift acting on a small isolated population",
+      "Natural selection favoring bacteria with resistance genes",
+      "Random mutation with no selective pressure",
+      "Artificial selection by farmers"
+    ],
+    "correctAnswer": "Natural selection favoring bacteria with resistance genes",
+    "difficulty": "hard",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-28",
+    "question": "Which of the following organisms is a well-known example from Kingdom Protista?",
+    "options": [
+      "Mushroom",
+      "Amoeba",
+      "Oak tree",
+      "E. coli"
+    ],
+    "correctAnswer": "Amoeba",
+    "difficulty": "easy",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-29",
+    "question": "Euglena is often described as showing characteristics of both plants and animals because it can do which of the following?",
+    "options": [
+      "Reproduce sexually only",
+      "Photosynthesize and also move/feed heterotrophically",
+      "Build a rigid cell wall like fungi",
+      "Form multicellular tissues"
+    ],
+    "correctAnswer": "Photosynthesize and also move/feed heterotrophically",
+    "difficulty": "medium",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-30",
+    "question": "Plasmodium, the protist responsible for malaria, is primarily transmitted to humans through which vector?",
+    "options": [
+      "Houseflies",
+      "Anopheles mosquitoes",
+      "Freshwater snails",
+      "Ticks"
+    ],
+    "correctAnswer": "Anopheles mosquitoes",
+    "difficulty": "hard",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-31",
+    "question": "Fungal cell walls are primarily composed of which substance?",
+    "options": [
+      "Cellulose",
+      "Chitin",
+      "Peptidoglycan",
+      "Keratin"
+    ],
+    "correctAnswer": "Chitin",
+    "difficulty": "easy",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-32",
+    "question": "The thread-like structures that make up the body of most fungi are called what?",
+    "options": [
+      "Mycelium strands only",
+      "Hyphae",
+      "Spores",
+      "Rhizoids"
+    ],
+    "correctAnswer": "Hyphae",
+    "difficulty": "medium",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-33",
+    "question": "Fungi's ecological role as decomposers is significant mainly because it allows them to do what?",
+    "options": [
+      "Compete with plants for sunlight",
+      "Break down organic matter and recycle nutrients into ecosystems",
+      "Convert nitrogen gas directly into protein",
+      "Produce oxygen for the atmosphere"
+    ],
+    "correctAnswer": "Break down organic matter and recycle nutrients into ecosystems",
+    "difficulty": "hard",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-34",
+    "question": "Plant cell walls are primarily made of which carbohydrate?",
+    "options": [
+      "Chitin",
+      "Cellulose",
+      "Glycogen",
+      "Peptidoglycan"
+    ],
+    "correctAnswer": "Cellulose",
+    "difficulty": "easy",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-35",
+    "question": "Which of the following is a key difference between monocots and dicots?",
+    "options": [
+      "Monocots have two seed leaves; dicots have one",
+      "Monocots typically have parallel leaf veins; dicots have net-like veins",
+      "Only dicots can photosynthesize",
+      "Monocots lack roots entirely"
+    ],
+    "correctAnswer": "Monocots typically have parallel leaf veins; dicots have net-like veins",
+    "difficulty": "medium",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-36",
+    "question": "Gymnosperms differ from angiosperms mainly in that gymnosperm seeds are how?",
+    "options": [
+      "Enclosed within a fruit",
+      "Not enclosed within an ovary (e.g., borne on cones)",
+      "Produced without pollination",
+      "Only found in aquatic plants"
+    ],
+    "correctAnswer": "Not enclosed within an ovary (e.g., borne on cones)",
+    "difficulty": "hard",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-37",
+    "question": "Which of the following is a defining characteristic of Kingdom Animalia?",
+    "options": [
+      "Cell walls made of cellulose",
+      "Autotrophic nutrition",
+      "Multicellular and heterotrophic",
+      "Presence of chlorophyll"
+    ],
+    "correctAnswer": "Multicellular and heterotrophic",
+    "difficulty": "easy",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-38",
+    "question": "Which phylum includes animals with a segmented body plan, such as earthworms?",
+    "options": [
+      "Mollusca",
+      "Annelida",
+      "Cnidaria",
+      "Echinodermata"
+    ],
+    "correctAnswer": "Annelida",
+    "difficulty": "medium",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-39",
+    "question": "Chordates are distinguished from other invertebrate phyla mainly by the presence of which structure at some life stage?",
+    "options": [
+      "An exoskeleton",
+      "A notochord",
+      "Radial symmetry",
+      "A water vascular system"
+    ],
+    "correctAnswer": "A notochord",
+    "difficulty": "hard",
+    "topic": "Classification & Taxonomy",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-40",
+    "question": "According to cell theory, what is described as the basic unit of life?",
+    "options": [
+      "The organ",
+      "The tissue",
+      "The cell",
+      "The organism"
+    ],
+    "correctAnswer": "The cell",
+    "difficulty": "easy",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-41",
+    "question": "Which scientist is credited with first observing and naming 'cells' after viewing cork under a microscope?",
+    "options": [
+      "Robert Hooke",
+      "Anton van Leeuwenhoek",
+      "Rudolf Virchow",
+      "Matthias Schleiden"
+    ],
+    "correctAnswer": "Robert Hooke",
+    "difficulty": "medium",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-42",
+    "question": "The statement 'all cells arise from pre-existing cells' is most closely associated with which scientist's contribution to cell theory?",
+    "options": [
+      "Theodor Schwann",
+      "Rudolf Virchow",
+      "Robert Hooke",
+      "Anton van Leeuwenhoek"
+    ],
+    "correctAnswer": "Rudolf Virchow",
+    "difficulty": "hard",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-43",
+    "question": "Which type of cell lacks a membrane-bound nucleus?",
+    "options": [
+      "Eukaryotic cell",
+      "Prokaryotic cell",
+      "Plant cell",
+      "Animal cell"
+    ],
+    "correctAnswer": "Prokaryotic cell",
+    "difficulty": "easy",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-44",
+    "question": "Which of the following is generally true when comparing eukaryotic cells to prokaryotic cells?",
+    "options": [
+      "Eukaryotic cells are generally smaller",
+      "Eukaryotic cells contain membrane-bound organelles while prokaryotic cells do not",
+      "Prokaryotic cells always contain mitochondria",
+      "Prokaryotic cells are more structurally complex"
+    ],
+    "correctAnswer": "Eukaryotic cells contain membrane-bound organelles while prokaryotic cells do not",
+    "difficulty": "medium",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-45",
+    "question": "Antibiotics can target bacterial (prokaryotic) cells without harming human (eukaryotic) cells largely because of differences in what?",
+    "options": [
+      "Both cell types have identical ribosomes",
+      "Structural features such as cell wall composition and ribosome structure differ between the two",
+      "Human cells have no cell membrane",
+      "Bacteria have a nucleus that human cells lack"
+    ],
+    "correctAnswer": "Structural features such as cell wall composition and ribosome structure differ between the two",
+    "difficulty": "hard",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-46",
+    "question": "Which organelle is often called the 'powerhouse of the cell' because it produces ATP?",
+    "options": [
+      "Golgi apparatus",
+      "Mitochondria",
+      "Ribosome",
+      "Lysosome"
+    ],
+    "correctAnswer": "Mitochondria",
+    "difficulty": "easy",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-47",
+    "question": "Which organelle is responsible for packaging and shipping proteins to their final destination within or outside the cell?",
+    "options": [
+      "Golgi apparatus",
+      "Nucleolus",
+      "Peroxisome",
+      "Cytoskeleton"
+    ],
+    "correctAnswer": "Golgi apparatus",
+    "difficulty": "medium",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-48",
+    "question": "A cell actively secreting large amounts of protein (such as a pancreatic cell producing enzymes) would be expected to have an abundance of which organelle?",
+    "options": [
+      "Chloroplasts",
+      "Rough endoplasmic reticulum",
+      "Vacuoles only",
+      "Cell wall"
+    ],
+    "correctAnswer": "Rough endoplasmic reticulum",
+    "difficulty": "hard",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-49",
+    "question": "The cell membrane is primarily composed of which type of molecule arranged in a bilayer?",
+    "options": [
+      "Carbohydrates",
+      "Phospholipids",
+      "Nucleic acids",
+      "Cellulose"
+    ],
+    "correctAnswer": "Phospholipids",
+    "difficulty": "easy",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-50",
+    "question": "Which type of transport requires the cell to use energy (ATP) to move substances against their concentration gradient?",
+    "options": [
+      "Diffusion",
+      "Osmosis",
+      "Active transport",
+      "Facilitated diffusion"
+    ],
+    "correctAnswer": "Active transport",
+    "difficulty": "medium",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-51",
+    "question": "A red blood cell placed in a hypertonic solution will most likely do what?",
+    "options": [
+      "Swell and possibly burst",
+      "Shrink as water leaves the cell",
+      "Remain completely unchanged",
+      "Immediately undergo mitosis"
+    ],
+    "correctAnswer": "Shrink as water leaves the cell",
+    "difficulty": "hard",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-52",
+    "question": "What are the main raw materials required for photosynthesis?",
+    "options": [
+      "Oxygen and glucose",
+      "Carbon dioxide and water",
+      "Nitrogen and water",
+      "ATP and NADPH only"
+    ],
+    "correctAnswer": "Carbon dioxide and water",
+    "difficulty": "easy",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-53",
+    "question": "Where do the light-dependent reactions of photosynthesis take place within the chloroplast?",
+    "options": [
+      "Stroma",
+      "Thylakoid membrane",
+      "Mitochondrial matrix",
+      "Cell wall"
+    ],
+    "correctAnswer": "Thylakoid membrane",
+    "difficulty": "medium",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-54",
+    "question": "If a plant is exposed only to green light, photosynthesis would proceed relatively slowly mainly because green light is what?",
+    "options": [
+      "Absorbed most efficiently by chlorophyll",
+      "Largely reflected rather than absorbed by chlorophyll",
+      "The only wavelength usable by plants",
+      "Converted directly into ATP without chlorophyll"
+    ],
+    "correctAnswer": "Largely reflected rather than absorbed by chlorophyll",
+    "difficulty": "hard",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-55",
+    "question": "What is the primary energy-carrying molecule produced by cellular respiration?",
+    "options": [
+      "Glucose",
+      "ATP",
+      "Oxygen",
+      "DNA"
+    ],
+    "correctAnswer": "ATP",
+    "difficulty": "easy",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-56",
+    "question": "Which stage of cellular respiration occurs in the cytoplasm and does not require oxygen?",
+    "options": [
+      "Krebs cycle",
+      "Electron transport chain",
+      "Glycolysis",
+      "Pyruvate oxidation"
+    ],
+    "correctAnswer": "Glycolysis",
+    "difficulty": "medium",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-57",
+    "question": "Compared to aerobic respiration, anaerobic fermentation produces significantly less ATP mainly because it lacks which stage?",
+    "options": [
+      "Glycolysis",
+      "The electron transport chain",
+      "Formation of pyruvate",
+      "Breakdown of glucose"
+    ],
+    "correctAnswer": "The electron transport chain",
+    "difficulty": "hard",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-58",
+    "question": "What is the main purpose of mitosis?",
+    "options": [
+      "To produce gametes with half the chromosome number",
+      "To produce two genetically identical daughter cells for growth and repair",
+      "To increase genetic variation",
+      "To combine genetic material from two parents"
+    ],
+    "correctAnswer": "To produce two genetically identical daughter cells for growth and repair",
+    "difficulty": "easy",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-59",
+    "question": "During which phase of mitosis do chromosomes align at the cell's equator (metaphase plate)?",
+    "options": [
+      "Prophase",
+      "Metaphase",
+      "Anaphase",
+      "Telophase"
+    ],
+    "correctAnswer": "Metaphase",
+    "difficulty": "medium",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-60",
+    "question": "Uncontrolled mitosis, which can lead to cancer, is most directly caused by what?",
+    "options": [
+      "A decrease in the rate of DNA replication",
+      "Failure of the normal checkpoints that regulate the cell cycle",
+      "An increase in apoptosis",
+      "Loss of the cell membrane"
+    ],
+    "correctAnswer": "Failure of the normal checkpoints that regulate the cell cycle",
+    "difficulty": "hard",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-61",
+    "question": "How many daughter cells are produced at the end of meiosis, and how many chromosomes does each contain relative to the parent cell?",
+    "options": [
+      "Two daughter cells with the same chromosome number",
+      "Four daughter cells with half the chromosome number",
+      "Four daughter cells with the same chromosome number",
+      "Two daughter cells with double the chromosome number"
+    ],
+    "correctAnswer": "Four daughter cells with half the chromosome number",
+    "difficulty": "easy",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-62",
+    "question": "Crossing over, which increases genetic variation, occurs during which stage of meiosis?",
+    "options": [
+      "Prophase I",
+      "Anaphase II",
+      "Telophase I",
+      "Metaphase II"
+    ],
+    "correctAnswer": "Prophase I",
+    "difficulty": "medium",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-63",
+    "question": "Why does meiosis, rather than mitosis, occur during the formation of gametes in sexually reproducing organisms?",
+    "options": [
+      "To keep the chromosome number constant across generations by halving it before fertilization restores it",
+      "Because gametes need identical genetic copies of the parent",
+      "To increase the total number of chromosomes in offspring",
+      "Because meiosis produces cells for tissue repair"
+    ],
+    "correctAnswer": "To keep the chromosome number constant across generations by halving it before fertilization restores it",
+    "difficulty": "hard",
+    "topic": "Cell Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-64",
+    "question": "Who is known as the 'father of genetics' due to his experiments on pea plants?",
+    "options": [
+      "Charles Darwin",
+      "Gregor Mendel",
+      "James Watson",
+      "Rosalind Franklin"
+    ],
+    "correctAnswer": "Gregor Mendel",
+    "difficulty": "easy",
+    "topic": "Genetics",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-65",
+    "question": "In a monohybrid cross between two heterozygous (Aa) parents, what is the expected phenotypic ratio of offspring?",
+    "options": [
+      "1:1",
+      "9:3:3:1",
+      "3:1",
+      "1:2:1 phenotypic"
+    ],
+    "correctAnswer": "3:1",
+    "difficulty": "medium",
+    "topic": "Genetics",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-66",
+    "question": "Mendel's Law of Independent Assortment states that alleles for different traits separate independently during gamete formation, which is best explained by what process?",
+    "options": [
+      "The random orientation of homologous chromosome pairs during meiosis I",
+      "The fusion of two gametes during fertilization",
+      "The replication of DNA during interphase",
+      "The pairing of sister chromatids during mitosis"
+    ],
+    "correctAnswer": "The random orientation of homologous chromosome pairs during meiosis I",
+    "difficulty": "hard",
+    "topic": "Genetics",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-67",
+    "question": "In codominance, what happens to the two alleles in a heterozygous individual?",
+    "options": [
+      "One allele completely masks the other",
+      "Both alleles are fully and separately expressed in the phenotype",
+      "The alleles blend to form an intermediate phenotype",
+      "Neither allele is expressed"
+    ],
+    "correctAnswer": "Both alleles are fully and separately expressed in the phenotype",
+    "difficulty": "easy",
+    "topic": "Genetics",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-68",
+    "question": "The ABO blood group system in humans is an example of which genetic phenomenon?",
+    "options": [
+      "Simple dominant/recessive inheritance only",
+      "Multiple alleles with codominance between certain alleles",
+      "Sex-linked inheritance",
+      "Incomplete dominance only"
+    ],
+    "correctAnswer": "Multiple alleles with codominance between certain alleles",
+    "difficulty": "medium",
+    "topic": "Genetics",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-69",
+    "question": "Red-green color blindness is more common in males than females mainly because the gene is located on which chromosome, making males hemizygous for it?",
+    "options": [
+      "Chromosome 21",
+      "The Y chromosome",
+      "The X chromosome",
+      "A mitochondrial chromosome"
+    ],
+    "correctAnswer": "The X chromosome",
+    "difficulty": "hard",
+    "topic": "Genetics",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-70",
+    "question": "According to base pairing rules, adenine (A) pairs with which base?",
+    "options": [
+      "Cytosine (C)",
+      "Guanine (G)",
+      "Thymine (T)",
+      "Uracil (U)"
+    ],
+    "correctAnswer": "Thymine (T)",
+    "difficulty": "easy",
+    "topic": "Genetics",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-71",
+    "question": "Which enzyme is primarily responsible for unwinding the DNA double helix during replication?",
+    "options": [
+      "DNA polymerase",
+      "Helicase",
+      "Ligase",
+      "RNA polymerase"
+    ],
+    "correctAnswer": "Helicase",
+    "difficulty": "medium",
+    "topic": "Genetics",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-72",
+    "question": "DNA replication is described as 'semiconservative' because each new double helix consists of what?",
+    "options": [
+      "Two completely new strands",
+      "Two original parental strands",
+      "One original (parental) strand and one newly synthesized strand",
+      "A mix of RNA and DNA strands only"
+    ],
+    "correctAnswer": "One original (parental) strand and one newly synthesized strand",
+    "difficulty": "hard",
+    "topic": "Genetics",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-73",
+    "question": "In the central dogma of molecular biology, what is the correct order of information flow?",
+    "options": [
+      "Protein → RNA → DNA",
+      "DNA → RNA → Protein",
+      "RNA → Protein → DNA",
+      "DNA → Protein → RNA"
+    ],
+    "correctAnswer": "DNA → RNA → Protein",
+    "difficulty": "easy",
+    "topic": "Genetics",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-74",
+    "question": "During translation, what is the role of tRNA?",
+    "options": [
+      "It carries the genetic code from the nucleus to the ribosome",
+      "It carries amino acids to the ribosome and matches anticodons to mRNA codons",
+      "It unwinds the DNA helix",
+      "It splices introns out of pre-mRNA"
+    ],
+    "correctAnswer": "It carries amino acids to the ribosome and matches anticodons to mRNA codons",
+    "difficulty": "medium",
+    "topic": "Genetics",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-75",
+    "question": "A frameshift mutation caused by the insertion of a single nucleotide is generally more disruptive to protein function than a missense mutation mainly because it does what?",
+    "options": [
+      "Only changes one amino acid",
+      "Shifts the reading frame and alters most of the downstream codons",
+      "Has no effect on the resulting protein",
+      "Only affects non-coding regions of DNA"
+    ],
+    "correctAnswer": "Shifts the reading frame and alters most of the downstream codons",
+    "difficulty": "hard",
+    "topic": "Genetics",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-76",
+    "question": "What does PCR stand for in biotechnology?",
+    "options": [
+      "Protein Coding Reaction",
+      "Polymerase Chain Reaction",
+      "Plasmid Cloning Recombination",
+      "Peptide Chain Replication"
+    ],
+    "correctAnswer": "Polymerase Chain Reaction",
+    "difficulty": "easy",
+    "topic": "Genetics",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-77",
+    "question": "Gel electrophoresis separates DNA fragments primarily based on what property?",
+    "options": [
+      "Their color",
+      "Their size (length), which affects migration speed through the gel",
+      "Their nitrogen content",
+      "Their temperature stability"
+    ],
+    "correctAnswer": "Their size (length), which affects migration speed through the gel",
+    "difficulty": "medium",
+    "topic": "Genetics",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-78",
+    "question": "CRISPR technology allows scientists to edit genes primarily by using what mechanism?",
+    "options": [
+      "A guide RNA that directs an enzyme (like Cas9) to cut DNA at a specific sequence",
+      "Randomly inserting genes without targeting",
+      "Only removing entire chromosomes",
+      "Heating DNA until it mutates"
+    ],
+    "correctAnswer": "A guide RNA that directs an enzyme (like Cas9) to cut DNA at a specific sequence",
+    "difficulty": "hard",
+    "topic": "Genetics",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-79",
+    "question": "Which is the outermost layer of the skin?",
+    "options": [
+      "Dermis",
+      "Hypodermis",
+      "Epidermis",
+      "Subcutaneous layer"
+    ],
+    "correctAnswer": "Epidermis",
+    "difficulty": "easy",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-80",
+    "question": "Which of the following is NOT a primary function of the integumentary system?",
+    "options": [
+      "Protection from pathogens",
+      "Thermoregulation",
+      "Vitamin D synthesis",
+      "Pumping blood through the body"
+    ],
+    "correctAnswer": "Pumping blood through the body",
+    "difficulty": "medium",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-81",
+    "question": "A first-degree burn (like a mild sunburn) differs from a third-degree burn mainly in what way?",
+    "options": [
+      "A first-degree burn affects only the epidermis, while a third-degree burn extends through the dermis and hypodermis",
+      "A first-degree burn is more severe than a third-degree burn",
+      "Only third-degree burns affect the skin at all",
+      "There is no structural difference between them"
+    ],
+    "correctAnswer": "A first-degree burn affects only the epidermis, while a third-degree burn extends through the dermis and hypodermis",
+    "difficulty": "hard",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-82",
+    "question": "How many bones are typically found in the adult human skeleton?",
+    "options": [
+      "106",
+      "206",
+      "306",
+      "26"
+    ],
+    "correctAnswer": "206",
+    "difficulty": "easy",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-83",
+    "question": "Which type of joint allows the greatest range of motion, such as the shoulder or hip joint?",
+    "options": [
+      "Fibrous joint",
+      "Cartilaginous joint",
+      "Synovial joint",
+      "Suture joint"
+    ],
+    "correctAnswer": "Synovial joint",
+    "difficulty": "medium",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-84",
+    "question": "Besides support and movement, which of the following is also a key function of the skeletal system occurring in bone marrow?",
+    "options": [
+      "Digestion of nutrients",
+      "Hematopoiesis (blood cell production)",
+      "Filtration of blood in the kidneys",
+      "Production of hormones like insulin"
+    ],
+    "correctAnswer": "Hematopoiesis (blood cell production)",
+    "difficulty": "hard",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-85",
+    "question": "Which type of muscle is found in the walls of the heart?",
+    "options": [
+      "Skeletal muscle",
+      "Smooth muscle",
+      "Cardiac muscle",
+      "Voluntary muscle only"
+    ],
+    "correctAnswer": "Cardiac muscle",
+    "difficulty": "easy",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-86",
+    "question": "According to the sliding filament theory, muscle contraction occurs when which two protein filaments slide past each other?",
+    "options": [
+      "Collagen and elastin",
+      "Actin and myosin",
+      "Keratin and chitin",
+      "Hemoglobin and myoglobin"
+    ],
+    "correctAnswer": "Actin and myosin",
+    "difficulty": "medium",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-87",
+    "question": "Muscles typically work in antagonistic pairs (e.g., biceps and triceps) mainly because muscle tissue can do what?",
+    "options": [
+      "Only contract, never push",
+      "Both contract and actively push",
+      "Expand and contract equally",
+      "Function independently of the skeleton"
+    ],
+    "correctAnswer": "Only contract, never push",
+    "difficulty": "hard",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-88",
+    "question": "Which of the following makes up the Central Nervous System (CNS)?",
+    "options": [
+      "Nerves and ganglia only",
+      "The brain and spinal cord",
+      "The skin and muscles",
+      "The heart and lungs"
+    ],
+    "correctAnswer": "The brain and spinal cord",
+    "difficulty": "easy",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-89",
+    "question": "What is the primary role of a synapse in the nervous system?",
+    "options": [
+      "To store long-term memories only",
+      "To allow transmission of nerve impulses between neurons via neurotransmitters",
+      "To generate red blood cells",
+      "To physically fuse two neurons into one"
+    ],
+    "correctAnswer": "To allow transmission of nerve impulses between neurons via neurotransmitters",
+    "difficulty": "medium",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-90",
+    "question": "During a reflex arc, such as pulling your hand away from a hot object, the response typically occurs before conscious awareness of pain mainly because the signal does what?",
+    "options": [
+      "Travels through the brain's cortex first for processing",
+      "Is processed at the level of the spinal cord, bypassing higher brain processing initially",
+      "Never reaches the brain at all",
+      "Travels exclusively through the autonomic nervous system"
+    ],
+    "correctAnswer": "Is processed at the level of the spinal cord, bypassing higher brain processing initially",
+    "difficulty": "hard",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-91",
+    "question": "How many chambers does the human heart have?",
+    "options": [
+      "Two",
+      "Three",
+      "Four",
+      "Six"
+    ],
+    "correctAnswer": "Four",
+    "difficulty": "easy",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-92",
+    "question": "Which blood vessels carry blood away from the heart?",
+    "options": [
+      "Veins",
+      "Arteries",
+      "Capillaries only",
+      "Venules"
+    ],
+    "correctAnswer": "Arteries",
+    "difficulty": "medium",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-93",
+    "question": "A person with Type O negative blood is often called the 'universal donor' mainly because their red blood cells lack which components?",
+    "options": [
+      "Plasma proteins",
+      "A and B antigens, and the Rh antigen",
+      "White blood cells",
+      "Platelets"
+    ],
+    "correctAnswer": "A and B antigens, and the Rh antigen",
+    "difficulty": "hard",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-94",
+    "question": "Where does gas exchange primarily occur in the lungs?",
+    "options": [
+      "Bronchi",
+      "Trachea",
+      "Alveoli",
+      "Larynx"
+    ],
+    "correctAnswer": "Alveoli",
+    "difficulty": "easy",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-95",
+    "question": "During inhalation, what happens to the diaphragm?",
+    "options": [
+      "It relaxes and moves upward",
+      "It contracts and moves downward, increasing chest cavity volume",
+      "It stops moving entirely",
+      "It becomes rigid and immovable"
+    ],
+    "correctAnswer": "It contracts and moves downward, increasing chest cavity volume",
+    "difficulty": "medium",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-96",
+    "question": "Chronic smoking damages the respiratory system at the cellular level primarily by doing what to the alveoli and cilia?",
+    "options": [
+      "Strengthening cilia function and increasing alveolar surface area",
+      "Destroying alveolar walls and paralyzing/damaging cilia, reducing gas exchange and mucus clearance",
+      "Having no measurable effect on lung tissue",
+      "Increasing oxygen absorption efficiency"
+    ],
+    "correctAnswer": "Destroying alveolar walls and paralyzing/damaging cilia, reducing gas exchange and mucus clearance",
+    "difficulty": "hard",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-97",
+    "question": "Which enzyme found in saliva begins the chemical digestion of starch?",
+    "options": [
+      "Pepsin",
+      "Amylase",
+      "Lipase",
+      "Trypsin"
+    ],
+    "correctAnswer": "Amylase",
+    "difficulty": "easy",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-98",
+    "question": "Where does most nutrient absorption occur in the digestive tract?",
+    "options": [
+      "Stomach",
+      "Large intestine",
+      "Small intestine",
+      "Esophagus"
+    ],
+    "correctAnswer": "Small intestine",
+    "difficulty": "medium",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-99",
+    "question": "The liver, gallbladder, and pancreas all contribute to digestion primarily by producing or storing what?",
+    "options": [
+      "Mucus only",
+      "Digestive enzymes and bile that assist in breaking down nutrients",
+      "Red blood cells",
+      "Structural proteins for muscle"
+    ],
+    "correctAnswer": "Digestive enzymes and bile that assist in breaking down nutrients",
+    "difficulty": "hard",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-100",
+    "question": "Which gland is often called the 'master gland' because it regulates other endocrine glands?",
+    "options": [
+      "Thyroid gland",
+      "Adrenal gland",
+      "Pituitary gland",
+      "Pancreas"
+    ],
+    "correctAnswer": "Pituitary gland",
+    "difficulty": "easy",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-101",
+    "question": "Type 1 diabetes is primarily caused by what underlying issue?",
+    "options": [
+      "The body's cells becoming resistant to insulin",
+      "The pancreas producing little to no insulin, often due to autoimmune destruction of beta cells",
+      "Excess production of insulin",
+      "A dietary deficiency of glucose"
+    ],
+    "correctAnswer": "The pancreas producing little to no insulin, often due to autoimmune destruction of beta cells",
+    "difficulty": "medium",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-102",
+    "question": "Blood glucose regulation through insulin and glucagon is a classic example of what physiological process?",
+    "options": [
+      "Positive feedback loop",
+      "Negative feedback loop maintaining homeostasis",
+      "Uncontrolled cell division",
+      "Simple diffusion across a membrane"
+    ],
+    "correctAnswer": "Negative feedback loop maintaining homeostasis",
+    "difficulty": "hard",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-103",
+    "question": "Which type of white blood cell is primarily responsible for producing antibodies?",
+    "options": [
+      "T cells",
+      "B cells",
+      "Red blood cells",
+      "Platelets"
+    ],
+    "correctAnswer": "B cells",
+    "difficulty": "easy",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-104",
+    "question": "What is the main difference between innate and adaptive immunity?",
+    "options": [
+      "Innate immunity is specific and slow; adaptive is general and fast",
+      "Innate immunity provides a general, immediate defense; adaptive immunity is specific and develops over time with memory",
+      "Both are identical in function",
+      "Adaptive immunity has no memory component"
+    ],
+    "correctAnswer": "Innate immunity provides a general, immediate defense; adaptive immunity is specific and develops over time with memory",
+    "difficulty": "medium",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-105",
+    "question": "Vaccination provides long-term protection against a disease primarily because it stimulates what?",
+    "options": [
+      "Only a temporary innate immune response",
+      "Immunological memory through the production of memory B and T cells",
+      "The destruction of the thymus gland",
+      "A permanent reduction in white blood cell count"
+    ],
+    "correctAnswer": "Immunological memory through the production of memory B and T cells",
+    "difficulty": "hard",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-106",
+    "question": "Where does fertilization normally occur in the human female reproductive system?",
+    "options": [
+      "Uterus",
+      "Fallopian tube (oviduct)",
+      "Ovary",
+      "Cervix"
+    ],
+    "correctAnswer": "Fallopian tube (oviduct)",
+    "difficulty": "easy",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-107",
+    "question": "Which hormone triggers ovulation during the menstrual cycle?",
+    "options": [
+      "Estrogen at baseline levels",
+      "A surge in Luteinizing Hormone (LH)",
+      "Progesterone only",
+      "Testosterone"
+    ],
+    "correctAnswer": "A surge in Luteinizing Hormone (LH)",
+    "difficulty": "medium",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-108",
+    "question": "Barrier methods of contraception, such as condoms, prevent pregnancy primarily through what mechanism, distinguishing them from hormonal methods?",
+    "options": [
+      "Physically preventing sperm from reaching the egg, rather than altering hormone levels",
+      "Stopping ovulation through hormonal changes",
+      "Permanently sterilizing the user",
+      "Increasing hormone production to block fertilization"
+    ],
+    "correctAnswer": "Physically preventing sperm from reaching the egg, rather than altering hormone levels",
+    "difficulty": "hard",
+    "topic": "Body Systems",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-109",
+    "question": "Which biome is characterized by extremely low temperatures, permafrost, and very low biodiversity?",
+    "options": [
+      "Tropical rainforest",
+      "Tundra",
+      "Grassland",
+      "Temperate forest"
+    ],
+    "correctAnswer": "Tundra",
+    "difficulty": "easy",
+    "topic": "Ecology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-110",
+    "question": "A 'biome' is best described as what?",
+    "options": [
+      "A single organism's habitat only",
+      "A large geographic area characterized by a particular climate and community of organisms",
+      "A single species population",
+      "The entire planet's living systems"
+    ],
+    "correctAnswer": "A large geographic area characterized by a particular climate and community of organisms",
+    "difficulty": "medium",
+    "topic": "Ecology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-111",
+    "question": "Desert organisms often show adaptations such as water storage and nocturnal behavior primarily because deserts are characterized by what?",
+    "options": [
+      "Consistently high rainfall and moderate temperatures",
+      "Extreme temperature fluctuations and scarce water availability",
+      "Constant freezing temperatures year-round",
+      "Dense forest canopy cover"
+    ],
+    "correctAnswer": "Extreme temperature fluctuations and scarce water availability",
+    "difficulty": "hard",
+    "topic": "Ecology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-112",
+    "question": "What term describes the maximum population size an environment can sustainably support?",
+    "options": [
+      "Biotic potential",
+      "Carrying capacity",
+      "Population density",
+      "Exponential growth rate"
+    ],
+    "correctAnswer": "Carrying capacity",
+    "difficulty": "easy",
+    "topic": "Ecology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-113",
+    "question": "A density-independent limiting factor, such as a natural disaster, affects a population's size regardless of what?",
+    "options": [
+      "The weather conditions",
+      "How crowded (dense) the population is",
+      "The species' genetic makeup",
+      "The time of year"
+    ],
+    "correctAnswer": "How crowded (dense) the population is",
+    "difficulty": "medium",
+    "topic": "Ecology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-114",
+    "question": "In a logistic growth curve, why does population growth slow down as it approaches carrying capacity (K)?",
+    "options": [
+      "Resources become unlimited near K",
+      "Competition for limited resources increases, reducing birth rates and/or increasing death rates",
+      "Predators disappear entirely near K",
+      "The population begins growing exponentially instead"
+    ],
+    "correctAnswer": "Competition for limited resources increases, reducing birth rates and/or increasing death rates",
+    "difficulty": "hard",
+    "topic": "Ecology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-115",
+    "question": "In a symbiotic relationship where one organism benefits and the other is harmed, what is this interaction called?",
+    "options": [
+      "Mutualism",
+      "Commensalism",
+      "Parasitism",
+      "Amensalism"
+    ],
+    "correctAnswer": "Parasitism",
+    "difficulty": "easy",
+    "topic": "Ecology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-116",
+    "question": "The competitive exclusion principle states that what happens when two species compete for the exact same limiting resource?",
+    "options": [
+      "They will coexist indefinitely without conflict",
+      "One species will eventually outcompete and exclude the other from that niche",
+      "Both species will always evolve to be identical",
+      "Neither species will be affected"
+    ],
+    "correctAnswer": "One species will eventually outcompete and exclude the other from that niche",
+    "difficulty": "medium",
+    "topic": "Ecology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-117",
+    "question": "The removal of a keystone species, such as wolves from Yellowstone, often triggers a trophic cascade primarily because keystone species do what?",
+    "options": [
+      "Have a disproportionately large effect on their ecosystem relative to their abundance",
+      "Have no measurable impact on other species",
+      "Only affect species within their own trophic level",
+      "Exist only in aquatic ecosystems"
+    ],
+    "correctAnswer": "Have a disproportionately large effect on their ecosystem relative to their abundance",
+    "difficulty": "hard",
+    "topic": "Ecology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-118",
+    "question": "According to the 10% rule, approximately how much energy is transferred from one trophic level to the next?",
+    "options": [
+      "100%",
+      "50%",
+      "10%",
+      "1%"
+    ],
+    "correctAnswer": "10%",
+    "difficulty": "easy",
+    "topic": "Ecology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-119",
+    "question": "Which of the following best describes the difference between a food chain and a food web?",
+    "options": [
+      "A food chain shows a single linear energy pathway, while a food web shows multiple interconnected feeding relationships",
+      "A food web only includes producers",
+      "A food chain includes decomposers only",
+      "There is no meaningful difference between them"
+    ],
+    "correctAnswer": "A food chain shows a single linear energy pathway, while a food web shows multiple interconnected feeding relationships",
+    "difficulty": "medium",
+    "topic": "Ecology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-120",
+    "question": "Human activities such as burning fossil fuels primarily disrupt which biogeochemical cycle by rapidly releasing stored carbon into the atmosphere?",
+    "options": [
+      "The water cycle",
+      "The carbon cycle",
+      "The phosphorus cycle only",
+      "The rock cycle"
+    ],
+    "correctAnswer": "The carbon cycle",
+    "difficulty": "hard",
+    "topic": "Ecology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-121",
+    "question": "Which of the following is a major threat to global biodiversity?",
+    "options": [
+      "Habitat restoration",
+      "Habitat loss and fragmentation",
+      "Establishing protected reserves",
+      "Reducing pollution"
+    ],
+    "correctAnswer": "Habitat loss and fragmentation",
+    "difficulty": "easy",
+    "topic": "Ecology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-122",
+    "question": "The three main types of biodiversity typically studied are genetic, species, and which other type?",
+    "options": [
+      "Ecosystem diversity",
+      "Chemical diversity",
+      "Mineral diversity",
+      "Atmospheric diversity"
+    ],
+    "correctAnswer": "Ecosystem diversity",
+    "difficulty": "medium",
+    "topic": "Ecology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-123",
+    "question": "Invasive species often cause significant harm to native ecosystems primarily because they do what?",
+    "options": [
+      "Always have natural predators that control their population immediately",
+      "Frequently outcompete native species for resources due to a lack of natural predators/checks in the new environment",
+      "Never reproduce successfully in new environments",
+      "Only affect ecosystems positively"
+    ],
+    "correctAnswer": "Frequently outcompete native species for resources due to a lack of natural predators/checks in the new environment",
+    "difficulty": "hard",
+    "topic": "Ecology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-124",
+    "question": "Charles Darwin developed his theory of natural selection largely based on observations made during his voyage to which islands?",
+    "options": [
+      "Hawaiian Islands",
+      "Galapagos Islands",
+      "Caribbean Islands",
+      "Fiji Islands"
+    ],
+    "correctAnswer": "Galapagos Islands",
+    "difficulty": "easy",
+    "topic": "Evolution",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-125",
+    "question": "Which of the following is one of the key requirements for natural selection to occur in a population?",
+    "options": [
+      "All individuals must be genetically identical",
+      "There must be heritable variation among individuals",
+      "The population must be completely isolated",
+      "Resources must be unlimited"
+    ],
+    "correctAnswer": "There must be heritable variation among individuals",
+    "difficulty": "medium",
+    "topic": "Evolution",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-126",
+    "question": "The peppered moth example, where dark-colored moths became more common during industrial pollution, illustrates natural selection primarily because of what mechanism?",
+    "options": [
+      "Dark moths were better camouflaged against soot-darkened trees, giving them a survival advantage over light moths",
+      "All moths changed color individually during their lifetimes",
+      "Light moths reproduced more successfully during this period",
+      "The moths deliberately chose to change their color"
+    ],
+    "correctAnswer": "Dark moths were better camouflaged against soot-darkened trees, giving them a survival advantage over light moths",
+    "difficulty": "hard",
+    "topic": "Evolution",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-127",
+    "question": "Which mechanism of evolution involves random changes in allele frequencies, especially significant in small populations?",
+    "options": [
+      "Natural selection",
+      "Genetic drift",
+      "Gene flow",
+      "Non-random mating"
+    ],
+    "correctAnswer": "Genetic drift",
+    "difficulty": "easy",
+    "topic": "Evolution",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-128",
+    "question": "A population bottleneck occurs when what happens to a population?",
+    "options": [
+      "It grows exponentially without limit",
+      "It is drastically and suddenly reduced in size, reducing genetic diversity",
+      "It migrates to a new habitat without any loss",
+      "It undergoes only positive mutations"
+    ],
+    "correctAnswer": "It is drastically and suddenly reduced in size, reducing genetic diversity",
+    "difficulty": "medium",
+    "topic": "Evolution",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-129",
+    "question": "According to the Hardy-Weinberg principle, a population is NOT evolving only if several conditions are met; which of the following would violate Hardy-Weinberg equilibrium?",
+    "options": [
+      "No mutation occurring in the population",
+      "Random mating among all individuals",
+      "Small population size subject to genetic drift",
+      "No gene flow into or out of the population"
+    ],
+    "correctAnswer": "Small population size subject to genetic drift",
+    "difficulty": "hard",
+    "topic": "Evolution",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-130",
+    "question": "Allopatric speciation occurs primarily due to what factor?",
+    "options": [
+      "Geographic separation of populations",
+      "Random mutation within a single interbreeding population",
+      "Identical environmental pressures on all members",
+      "The absence of any reproductive isolation"
+    ],
+    "correctAnswer": "Geographic separation of populations",
+    "difficulty": "easy",
+    "topic": "Evolution",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-131",
+    "question": "Darwin's finches, which evolved different beak shapes suited to different food sources on the Galapagos Islands, are a classic example of what evolutionary phenomenon?",
+    "options": [
+      "Convergent evolution",
+      "Adaptive radiation",
+      "Punctuated equilibrium only",
+      "Genetic drift alone"
+    ],
+    "correctAnswer": "Adaptive radiation",
+    "difficulty": "medium",
+    "topic": "Evolution",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-132",
+    "question": "Which of the following best distinguishes prezygotic from postzygotic reproductive isolation mechanisms?",
+    "options": [
+      "Prezygotic mechanisms prevent mating or fertilization from occurring; postzygotic mechanisms reduce the viability or fertility of hybrid offspring after fertilization",
+      "Postzygotic mechanisms occur before mating; prezygotic occur after fertilization",
+      "Both mechanisms are identical in timing and effect",
+      "Neither mechanism contributes to speciation"
+    ],
+    "correctAnswer": "Prezygotic mechanisms prevent mating or fertilization from occurring; postzygotic mechanisms reduce the viability or fertility of hybrid offspring after fertilization",
+    "difficulty": "hard",
+    "topic": "Evolution",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-133",
+    "question": "What is a cladogram primarily used to represent?",
+    "options": [
+      "The geographic distribution of a species",
+      "The evolutionary relationships and shared ancestry among organisms",
+      "The chemical composition of an organism's DNA only",
+      "The population size of different species"
+    ],
+    "correctAnswer": "The evolutionary relationships and shared ancestry among organisms",
+    "difficulty": "easy",
+    "topic": "Evolution",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-134",
+    "question": "In cladistics, shared derived characteristics used to group organisms into clades are called what?",
+    "options": [
+      "Analogous structures",
+      "Synapomorphies",
+      "Homoplasies only",
+      "Vestigial traits"
+    ],
+    "correctAnswer": "Synapomorphies",
+    "difficulty": "medium",
+    "topic": "Evolution",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-135",
+    "question": "When reading a phylogenetic tree, two species that share a more recent common ancestor (a node closer to the tips) are generally considered to be what?",
+    "options": [
+      "More distantly related than species sharing an older common ancestor",
+      "More closely related than species sharing an older common ancestor",
+      "Completely unrelated",
+      "Members of entirely different domains"
+    ],
+    "correctAnswer": "More closely related than species sharing an older common ancestor",
+    "difficulty": "hard",
+    "topic": "Evolution",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-136",
+    "question": "The lac operon in bacteria is primarily regulated in response to the presence or absence of which substance?",
+    "options": [
+      "Oxygen",
+      "Lactose",
+      "Glucose only, with no relation to lactose",
+      "Nitrogen gas"
+    ],
+    "correctAnswer": "Lactose",
+    "difficulty": "easy",
+    "topic": "Advanced Molecular Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-137",
+    "question": "Epigenetic changes, such as DNA methylation, typically affect gene expression without altering what?",
+    "options": [
+      "The chromosome number",
+      "The underlying DNA sequence itself",
+      "The organism's phenotype",
+      "The cell's ability to divide"
+    ],
+    "correctAnswer": "The underlying DNA sequence itself",
+    "difficulty": "medium",
+    "topic": "Advanced Molecular Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-138",
+    "question": "In eukaryotic gene regulation, alternative splicing allows a single gene to do what?",
+    "options": [
+      "Produce multiple different protein products from the same pre-mRNA transcript",
+      "Only ever produce one fixed protein product",
+      "Prevent transcription entirely",
+      "Duplicate itself indefinitely"
+    ],
+    "correctAnswer": "Produce multiple different protein products from the same pre-mRNA transcript",
+    "difficulty": "hard",
+    "topic": "Advanced Molecular Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-139",
+    "question": "What was the primary goal of the Human Genome Project?",
+    "options": [
+      "To clone the first human being",
+      "To sequence and map the entire human genome",
+      "To eliminate all genetic diseases immediately",
+      "To create the first genetically modified organism"
+    ],
+    "correctAnswer": "To sequence and map the entire human genome",
+    "difficulty": "easy",
+    "topic": "Advanced Molecular Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-140",
+    "question": "Proteomics differs from genomics mainly in that it focuses on the study of what?",
+    "options": [
+      "The complete set of genes in an organism",
+      "The complete set of proteins expressed by an organism, which can vary by cell type and condition",
+      "Only the mitochondrial DNA",
+      "The physical structure of chromosomes only"
+    ],
+    "correctAnswer": "The complete set of proteins expressed by an organism, which can vary by cell type and condition",
+    "difficulty": "medium",
+    "topic": "Advanced Molecular Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-141",
+    "question": "Personalized medicine uses genomic information primarily to achieve what outcome?",
+    "options": [
+      "Apply the exact same treatment to every patient regardless of genetics",
+      "Tailor treatments (e.g., cancer therapies) based on an individual's specific genetic profile",
+      "Eliminate the need for any clinical trials",
+      "Replace all diagnostic testing with genome sequencing alone"
+    ],
+    "correctAnswer": "Tailor treatments (e.g., cancer therapies) based on an individual's specific genetic profile",
+    "difficulty": "hard",
+    "topic": "Advanced Molecular Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-142",
+    "question": "Which type of stem cell has the ability to differentiate into any cell type in the body, including forming an entire organism?",
+    "options": [
+      "Multipotent stem cells",
+      "Totipotent stem cells",
+      "Unipotent stem cells",
+      "Fully differentiated somatic cells"
+    ],
+    "correctAnswer": "Totipotent stem cells",
+    "difficulty": "easy",
+    "topic": "Advanced Molecular Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-143",
+    "question": "Induced pluripotent stem cells (iPSCs) are significant mainly because they allow scientists to do what?",
+    "options": [
+      "Reprogram adult somatic cells into a pluripotent, embryonic-like state, avoiding the ethical concerns of embryonic stem cells",
+      "Only be derived directly from embryos",
+      "Permanently prevent all cell differentiation",
+      "Convert stem cells into non-living material"
+    ],
+    "correctAnswer": "Reprogram adult somatic cells into a pluripotent, embryonic-like state, avoiding the ethical concerns of embryonic stem cells",
+    "difficulty": "medium",
+    "topic": "Advanced Molecular Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-144",
+    "question": "Apoptosis, or programmed cell death, plays an important role in development primarily by doing what?",
+    "options": [
+      "Randomly destroying healthy tissue with no purpose",
+      "Eliminating unnecessary or damaged cells in a controlled way, shaping structures like fingers during embryonic development",
+      "Causing uncontrolled tumor growth",
+      "Preventing any cell from ever dying"
+    ],
+    "correctAnswer": "Eliminating unnecessary or damaged cells in a controlled way, shaping structures like fingers during embryonic development",
+    "difficulty": "hard",
+    "topic": "Advanced Molecular Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-145",
+    "question": "What is the protein coat that surrounds a virus's genetic material called?",
+    "options": [
+      "Envelope",
+      "Capsid",
+      "Cytoplasm",
+      "Cell wall"
+    ],
+    "correctAnswer": "Capsid",
+    "difficulty": "easy",
+    "topic": "Advanced Molecular Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-146",
+    "question": "In the lysogenic cycle, what happens to the viral genetic material after it enters the host cell?",
+    "options": [
+      "It immediately destroys the host cell",
+      "It integrates into the host's genome and replicates along with the host DNA, remaining dormant",
+      "It is instantly degraded by the host",
+      "It converts directly into a new host cell"
+    ],
+    "correctAnswer": "It integrates into the host's genome and replicates along with the host DNA, remaining dormant",
+    "difficulty": "medium",
+    "topic": "Advanced Molecular Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-147",
+    "question": "HIV is classified as a retrovirus mainly because it uses which enzyme to convert its RNA genome into DNA within the host cell?",
+    "options": [
+      "DNA polymerase",
+      "Reverse transcriptase",
+      "Helicase",
+      "Ligase"
+    ],
+    "correctAnswer": "Reverse transcriptase",
+    "difficulty": "hard",
+    "topic": "Advanced Molecular Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-easy-148",
+    "question": "The endosymbiotic theory proposes that mitochondria and chloroplasts originated from what?",
+    "options": [
+      "Free-living prokaryotes engulfed by an ancestral eukaryotic cell",
+      "Random mutations in the nucleus",
+      "Viral infections of ancient plant cells",
+      "Spontaneous generation within the cell membrane"
+    ],
+    "correctAnswer": "Free-living prokaryotes engulfed by an ancestral eukaryotic cell",
+    "difficulty": "easy",
+    "topic": "Advanced Molecular Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-medium-149",
+    "question": "In signal transduction pathways, a 'second messenger' such as cyclic AMP primarily functions to do what?",
+    "options": [
+      "Directly bind to DNA to initiate transcription without any other steps",
+      "Relay and amplify a signal from a receptor on the cell surface to target molecules inside the cell",
+      "Replace the need for any cell surface receptors",
+      "Serve as the primary source of cellular energy"
+    ],
+    "correctAnswer": "Relay and amplify a signal from a receptor on the cell surface to target molecules inside the cell",
+    "difficulty": "medium",
+    "topic": "Advanced Molecular Biology",
+    "subject": "biology",
+    "grade": "hs"
+  },
+  {
+    "id": "biology-hard-150",
+    "question": "Evidence supporting the endosymbiotic theory includes which of the following observations about mitochondria and chloroplasts?",
+    "options": [
+      "They contain their own circular DNA and ribosomes similar to bacteria, and have a double membrane",
+      "They are identical in structure to the nucleus",
+      "They are found only in prokaryotic cells",
+      "They lack any independent genetic material"
+    ],
+    "correctAnswer": "They contain their own circular DNA and ribosomes similar to bacteria, and have a double membrane",
+    "difficulty": "hard",
+    "topic": "Advanced Molecular Biology",
+    "subject": "biology",
+    "grade": "hs"
+  }
+]

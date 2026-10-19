@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -16,17 +14,14 @@ export default function Timer({ duration, onTimeUp, identifier = "default" }: Ti
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    // Clear any previous interval
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
     }
 
-    // Check localStorage for saved end time
     const savedEndTime = localStorage.getItem(storageKey);
     const now = Date.now();
     let endTime: number;
 
-    // If saved time is valid and in the future, use it; otherwise, reset
     if (savedEndTime && parseInt(savedEndTime) > now) {
       endTime = parseInt(savedEndTime);
     } else {
@@ -34,7 +29,6 @@ export default function Timer({ duration, onTimeUp, identifier = "default" }: Ti
       localStorage.setItem(storageKey, endTime.toString());
     }
 
-    // Start interval
     intervalRef.current = setInterval(() => {
       const currentTime = Date.now();
       const timeRemaining = Math.floor((endTime - currentTime) / 1000);
@@ -49,35 +43,20 @@ export default function Timer({ duration, onTimeUp, identifier = "default" }: Ti
       }
     }, 1000);
 
-    // Clear interval on unmount
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [duration, identifier, onTimeUp]); // Triggers re-init if quiz changes
+  }, [duration, identifier, onTimeUp, storageKey]);
 
-  // UI
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
-  const progress = ((duration - timeLeft) / duration) * 100;
 
   return (
-    <div className="w-full max-w-md mx-auto mt-4">
-      <div className="flex justify-center items-center text-sm font-medium text-gray-700 mb-2">
-        <span className="bg-[#7FB509] text-white px-2 py-1 rounded-md text-xl">
-          ⏳ Time Left: {minutes}:{seconds.toString().padStart(2, "0")}
-        </span>
-        {/* <span>{Math.round(progress)}%</span> */}
-      </div>
-    
-        {/* <div
-          className="h-full bg-[#7FB509] transition-all duration-500 ease-linear"
-          style={{ width: `${100 - progress}%` }}
-        />
-      </div> */}
-   
-    </div>
+    <span className="inline-flex items-center gap-2 rounded-full bg-[#C4A035] px-3.5 py-1.5 text-sm font-semibold text-white">
+      <span aria-hidden className="opacity-90">
+        ⏳
+      </span>
+      Time Left: {minutes}:{seconds.toString().padStart(2, "0")}
+    </span>
   );
 }
-
-
-

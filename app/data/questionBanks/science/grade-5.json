@@ -1,0 +1,736 @@
+[
+  {
+    "id": "science-5-easy-1",
+    "question": "What is all matter made of?",
+    "options": [
+      "Empty space only",
+      "Light",
+      "Tiny particles",
+      "Heat"
+    ],
+    "correctAnswer": "Tiny particles",
+    "difficulty": "easy",
+    "topic": "Matter",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-easy-2",
+    "question": "What are the three common states of matter?",
+    "options": [
+      "Solid, liquid, and gas",
+      "Solid, liquid, and light",
+      "Hot, warm, and cold",
+      "Rock, water, and sand"
+    ],
+    "correctAnswer": "Solid, liquid, and gas",
+    "difficulty": "easy",
+    "topic": "Matter",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-easy-3",
+    "question": "True or False: A gas spreads out to take the shape of its container.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Matter",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-easy-4",
+    "question": "Which state of matter has a definite shape and a definite volume?",
+    "options": [
+      "Liquid",
+      "Gas",
+      "Air",
+      "Solid"
+    ],
+    "correctAnswer": "Solid",
+    "difficulty": "easy",
+    "topic": "Matter",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-easy-5",
+    "question": "True or False: Matter is anything that has mass and takes up space.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Matter",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-easy-6",
+    "question": "What happens to water when it freezes?",
+    "options": [
+      "It changes from a liquid to a gas",
+      "It changes from a liquid to a solid",
+      "It disappears completely",
+      "It becomes a different substance with no water in it"
+    ],
+    "correctAnswer": "It changes from a liquid to a solid",
+    "difficulty": "easy",
+    "topic": "Matter",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-easy-7",
+    "question": "Which tool would you use to measure the volume of a liquid?",
+    "options": [
+      "Balance",
+      "Ruler",
+      "Thermometer",
+      "Graduated cylinder"
+    ],
+    "correctAnswer": "Graduated cylinder",
+    "difficulty": "easy",
+    "topic": "Matter",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-medium-8",
+    "question": "Which property would help you tell a copper wire from a plastic wire?",
+    "options": [
+      "Its location",
+      "Whether it conducts electricity",
+      "Its age",
+      "Its owner"
+    ],
+    "correctAnswer": "Whether it conducts electricity",
+    "difficulty": "medium",
+    "topic": "Matter",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-medium-9",
+    "question": "True or False: When sugar dissolves in water, the sugar disappears and is no longer matter.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "medium",
+    "topic": "Matter",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-medium-10",
+    "question": "A 50 g piece of ice melts completely into water. What is the mass of the water?",
+    "options": [
+      "50 g",
+      "25 g",
+      "100 g",
+      "0 g"
+    ],
+    "correctAnswer": "50 g",
+    "difficulty": "medium",
+    "topic": "Matter",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-medium-11",
+    "question": "Which of these is a mixture?",
+    "options": [
+      "Pure water",
+      "Aluminum foil",
+      "Trail mix",
+      "Oxygen gas"
+    ],
+    "correctAnswer": "Trail mix",
+    "difficulty": "medium",
+    "topic": "Matter",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-medium-12",
+    "question": "Which method can separate sand from water?",
+    "options": [
+      "Stirring it faster",
+      "Pouring the mixture through a filter",
+      "Adding more sand",
+      "Shaking it in the dark"
+    ],
+    "correctAnswer": "Pouring the mixture through a filter",
+    "difficulty": "medium",
+    "topic": "Matter",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-medium-13",
+    "question": "Which of these is a physical property of a material?",
+    "options": [
+      "Its ability to burn",
+      "Its ability to rust",
+      "Its ability to rot",
+      "Hardness"
+    ],
+    "correctAnswer": "Hardness",
+    "difficulty": "medium",
+    "topic": "Matter",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-hard-14",
+    "question": "Mixing baking soda and vinegar makes gas bubbles. What does this tell you?",
+    "options": [
+      "Only the shape of the baking soda changed",
+      "The baking soda simply dissolved",
+      "A new substance was formed",
+      "Mass was destroyed"
+    ],
+    "correctAnswer": "A new substance was formed",
+    "difficulty": "hard",
+    "topic": "Matter",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-hard-15",
+    "question": "Baking soda and vinegar are mixed in a sealed bag with a total mass of 150 g. The bag puffs up with gas. What is the total mass afterward?",
+    "options": [
+      "150 g",
+      "Less than 150 g because gas has no mass",
+      "More than 150 g",
+      "0 g"
+    ],
+    "correctAnswer": "150 g",
+    "difficulty": "hard",
+    "topic": "Matter",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-hard-16",
+    "question": "Salt dissolves in water and seems to vanish. How could you show the salt is still there?",
+    "options": [
+      "Stir the water more",
+      "Add more water",
+      "Let the water evaporate and look for the salt left behind",
+      "Shine a flashlight through the water"
+    ],
+    "correctAnswer": "Let the water evaporate and look for the salt left behind",
+    "difficulty": "hard",
+    "topic": "Matter",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-hard-17",
+    "question": "A material is hard, shiny, conducts electricity, and is attracted to a magnet. What is it most likely to be?",
+    "options": [
+      "A piece of iron",
+      "A rubber band",
+      "A wooden spoon",
+      "A glass marble"
+    ],
+    "correctAnswer": "A piece of iron",
+    "difficulty": "hard",
+    "topic": "Matter",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-easy-18",
+    "question": "What is the main source of energy for most food webs on Earth?",
+    "options": [
+      "The wind",
+      "The soil",
+      "The water",
+      "The Sun"
+    ],
+    "correctAnswer": "The Sun",
+    "difficulty": "easy",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-easy-19",
+    "question": "What do we call an organism that makes its own food?",
+    "options": [
+      "Consumer",
+      "Producer",
+      "Decomposer",
+      "Predator"
+    ],
+    "correctAnswer": "Producer",
+    "difficulty": "easy",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-easy-20",
+    "question": "True or False: A food chain shows how energy moves from one living thing to another.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-easy-21",
+    "question": "What do we call an animal that eats both plants and animals?",
+    "options": [
+      "Herbivore",
+      "Carnivore",
+      "Producer",
+      "Omnivore"
+    ],
+    "correctAnswer": "Omnivore",
+    "difficulty": "easy",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-easy-22",
+    "question": "Which of these is a decomposer?",
+    "options": [
+      "A rabbit",
+      "A mushroom",
+      "An oak tree",
+      "An eagle"
+    ],
+    "correctAnswer": "A mushroom",
+    "difficulty": "easy",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-easy-23",
+    "question": "In a food chain, which way do the arrows point?",
+    "options": [
+      "From the organism being eaten to the organism that eats it",
+      "From the eater to the food",
+      "From the biggest animal to the smallest",
+      "Away from the Sun"
+    ],
+    "correctAnswer": "From the organism being eaten to the organism that eats it",
+    "difficulty": "easy",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-easy-24",
+    "question": "True or False: Plants are consumers because they eat other living things.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "easy",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-medium-25",
+    "question": "In the food chain grass → mouse → snake → hawk, which is the top consumer?",
+    "options": [
+      "Grass",
+      "Mouse",
+      "Hawk",
+      "Snake"
+    ],
+    "correctAnswer": "Hawk",
+    "difficulty": "medium",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-medium-26",
+    "question": "What does a food web show?",
+    "options": [
+      "Only the largest animals in a place",
+      "Many connected food chains in an ecosystem",
+      "One straight chain of eating",
+      "The weather patterns of a place"
+    ],
+    "correctAnswer": "Many connected food chains in an ecosystem",
+    "difficulty": "medium",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-medium-27",
+    "question": "What do plants get from the Sun that helps them make food?",
+    "options": [
+      "Nutrients from soil",
+      "Extra water",
+      "Oxygen gas",
+      "Light energy"
+    ],
+    "correctAnswer": "Light energy",
+    "difficulty": "medium",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-medium-28",
+    "question": "True or False: Matter from dead plants and animals can become part of new living things.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "medium",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-medium-29",
+    "question": "Which shows the correct flow of energy in a food chain?",
+    "options": [
+      "Fox → rabbit → grass → Sun",
+      "Grass → Sun → rabbit → fox",
+      "Sun → grass → rabbit → fox",
+      "Sun → fox → rabbit → grass"
+    ],
+    "correctAnswer": "Sun → grass → rabbit → fox",
+    "difficulty": "medium",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-medium-30",
+    "question": "All the grass in a meadow dies from a drought. Which animals will be affected first?",
+    "options": [
+      "Rabbits that eat the grass",
+      "Hawks that eat snakes",
+      "Mushrooms in the soil",
+      "Fish in a faraway lake"
+    ],
+    "correctAnswer": "Rabbits that eat the grass",
+    "difficulty": "medium",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-hard-31",
+    "question": "Where do plants get most of the matter they use to grow?",
+    "options": [
+      "Only from the soil",
+      "Only from sunlight",
+      "From air and water",
+      "Only from fertilizer"
+    ],
+    "correctAnswer": "From air and water",
+    "difficulty": "hard",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-hard-32",
+    "question": "In a pond, algae → small fish → large fish → heron. A disease kills most of the algae. What is the most likely effect?",
+    "options": [
+      "Small fish have less food, and populations above them may decrease",
+      "Herons will immediately increase",
+      "Nothing will change",
+      "Large fish will start eating the algae"
+    ],
+    "correctAnswer": "Small fish have less food, and populations above them may decrease",
+    "difficulty": "hard",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-hard-33",
+    "question": "A hawk eats a snake that ate a mouse that ate seeds. How did the energy first enter this food chain?",
+    "options": [
+      "The hawk made it",
+      "The snake took it from the soil",
+      "The mouse made it from water",
+      "The plant that made the seeds used energy from sunlight"
+    ],
+    "correctAnswer": "The plant that made the seeds used energy from sunlight",
+    "difficulty": "hard",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-hard-34",
+    "question": "If all decomposers disappeared from a forest, what would most likely happen?",
+    "options": [
+      "Plants would grow faster",
+      "Dead plants and animals would pile up and nutrients would not return to the soil",
+      "Animals would stop needing food",
+      "The Sun would shine brighter"
+    ],
+    "correctAnswer": "Dead plants and animals would pile up and nutrients would not return to the soil",
+    "difficulty": "hard",
+    "topic": "Ecosystems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-easy-35",
+    "question": "Which sphere of Earth includes all of its water?",
+    "options": [
+      "Geosphere",
+      "Atmosphere",
+      "Biosphere",
+      "Hydrosphere"
+    ],
+    "correctAnswer": "Hydrosphere",
+    "difficulty": "easy",
+    "topic": "Earth Systems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-easy-36",
+    "question": "Which sphere of Earth is made up of the air around it?",
+    "options": [
+      "Hydrosphere",
+      "Atmosphere",
+      "Geosphere",
+      "Biosphere"
+    ],
+    "correctAnswer": "Atmosphere",
+    "difficulty": "easy",
+    "topic": "Earth Systems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-easy-37",
+    "question": "True or False: Most of Earth’s water is salt water found in the oceans.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Earth Systems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-easy-38",
+    "question": "Which sphere of Earth includes rocks, soil, and mountains?",
+    "options": [
+      "Geosphere",
+      "Atmosphere",
+      "Hydrosphere",
+      "Biosphere"
+    ],
+    "correctAnswer": "Geosphere",
+    "difficulty": "easy",
+    "topic": "Earth Systems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-easy-39",
+    "question": "Which sphere of Earth includes all living things?",
+    "options": [
+      "Geosphere",
+      "Atmosphere",
+      "Biosphere",
+      "Hydrosphere"
+    ],
+    "correctAnswer": "Biosphere",
+    "difficulty": "easy",
+    "topic": "Earth Systems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-easy-40",
+    "question": "Which star is closest to Earth?",
+    "options": [
+      "Polaris (the North Star)",
+      "The Sun",
+      "Sirius",
+      "A star in another galaxy"
+    ],
+    "correctAnswer": "The Sun",
+    "difficulty": "easy",
+    "topic": "Earth Systems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-medium-41",
+    "question": "A river carries sand to the ocean. Which two spheres are interacting?",
+    "options": [
+      "Atmosphere and biosphere",
+      "Biosphere only",
+      "None of the spheres",
+      "Hydrosphere and geosphere"
+    ],
+    "correctAnswer": "Hydrosphere and geosphere",
+    "difficulty": "medium",
+    "topic": "Earth Systems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-medium-42",
+    "question": "Which example shows the atmosphere and the biosphere interacting?",
+    "options": [
+      "A river carves a canyon",
+      "Ice melts in a glacier",
+      "Plants take in carbon dioxide from the air",
+      "A volcano makes new rock"
+    ],
+    "correctAnswer": "Plants take in carbon dioxide from the air",
+    "difficulty": "medium",
+    "topic": "Earth Systems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-medium-43",
+    "question": "Where is most of Earth’s fresh water stored?",
+    "options": [
+      "In glaciers and ice caps",
+      "In rivers",
+      "In lakes",
+      "In the atmosphere"
+    ],
+    "correctAnswer": "In glaciers and ice caps",
+    "difficulty": "medium",
+    "topic": "Earth Systems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-medium-44",
+    "question": "Why does the Sun look much brighter than other stars?",
+    "options": [
+      "It is the biggest star in the universe",
+      "It is the only star that gives off light",
+      "It is much closer to Earth",
+      "It is the hottest star in the universe"
+    ],
+    "correctAnswer": "It is much closer to Earth",
+    "difficulty": "medium",
+    "topic": "Earth Systems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-medium-45",
+    "question": "True or False: Shadows are longest in the middle of the day.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "medium",
+    "topic": "Earth Systems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-hard-46",
+    "question": "Why can we see different stars in the night sky in different seasons?",
+    "options": [
+      "Earth is in a different part of its orbit around the Sun",
+      "Stars move around Earth each season",
+      "Stars turn on and off with the weather",
+      "The Moon moves the stars"
+    ],
+    "correctAnswer": "Earth is in a different part of its orbit around the Sun",
+    "difficulty": "hard",
+    "topic": "Earth Systems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-hard-47",
+    "question": "A tree’s shadow is long in the morning, short at noon, and long in the afternoon. Why?",
+    "options": [
+      "The tree grows and shrinks during the day",
+      "The Sun gets bigger and smaller",
+      "Clouds change the shape of the tree",
+      "The Sun’s position in the sky seems to change as Earth rotates"
+    ],
+    "correctAnswer": "The Sun’s position in the sky seems to change as Earth rotates",
+    "difficulty": "hard",
+    "topic": "Earth Systems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-hard-48",
+    "question": "Which example shows the hydrosphere affecting the geosphere?",
+    "options": [
+      "Wind carries seeds to new places",
+      "Flowing water slowly wears away rock to form a canyon",
+      "Plants take in carbon dioxide",
+      "Animals breathe in oxygen"
+    ],
+    "correctAnswer": "Flowing water slowly wears away rock to form a canyon",
+    "difficulty": "hard",
+    "topic": "Earth Systems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-hard-49",
+    "question": "A town wants to protect its river. Which action would help the most?",
+    "options": [
+      "Dump waste near the river",
+      "Pave over the riverbanks",
+      "Remove all the plants along the banks",
+      "Keep trash and chemicals out of the water"
+    ],
+    "correctAnswer": "Keep trash and chemicals out of the water",
+    "difficulty": "hard",
+    "topic": "Earth Systems",
+    "subject": "science",
+    "grade": "5"
+  },
+  {
+    "id": "science-5-hard-50",
+    "question": "Mia says the Sun moves around Earth, which causes day and night. Which statement corrects her?",
+    "options": [
+      "The Moon spins around Earth each day",
+      "Earth spins on its axis, so different places face the Sun at different times",
+      "Earth moves toward and away from the Sun every day",
+      "The Sun turns off at night"
+    ],
+    "correctAnswer": "Earth spins on its axis, so different places face the Sun at different times",
+    "difficulty": "hard",
+    "topic": "Earth Systems",
+    "subject": "science",
+    "grade": "5"
+  }
+]

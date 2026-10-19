@@ -1,0 +1,2252 @@
+[
+  {
+    "id": "physics-easy-1",
+    "question": "Which branch of physics primarily studies heat and energy transfer?",
+    "options": [
+      "Optics",
+      "Thermodynamics",
+      "Electromagnetism",
+      "Quantum mechanics"
+    ],
+    "correctAnswer": "Thermodynamics",
+    "difficulty": "easy",
+    "topic": "Introduction to Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-2",
+    "question": "Physics relies on the scientific method, which begins with what step?",
+    "options": [
+      "Drawing conclusions",
+      "Making observations and asking questions",
+      "Publishing results",
+      "Building a final theory"
+    ],
+    "correctAnswer": "Making observations and asking questions",
+    "difficulty": "easy",
+    "topic": "Introduction to Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-3",
+    "question": "A physicist estimates that a bathtub holds about 200 liters of water, without using precise measuring tools. This process is best described as what?",
+    "options": [
+      "A precise measurement",
+      "An order-of-magnitude estimation",
+      "A significant figures calculation",
+      "A dimensional analysis conversion"
+    ],
+    "correctAnswer": "An order-of-magnitude estimation",
+    "difficulty": "medium",
+    "topic": "Introduction to Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-4",
+    "question": "Dimensional analysis is used in physics primarily to do what?",
+    "options": [
+      "Determine the exact numerical answer to a problem without any calculation",
+      "Check whether an equation is dimensionally consistent and to convert between units",
+      "Replace the need for any experimental data",
+      "Measure the mass of an object directly"
+    ],
+    "correctAnswer": "Check whether an equation is dimensionally consistent and to convert between units",
+    "difficulty": "hard",
+    "topic": "Introduction to Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-5",
+    "question": "Which of the following is a vector quantity?",
+    "options": [
+      "Mass",
+      "Temperature",
+      "Velocity",
+      "Time"
+    ],
+    "correctAnswer": "Velocity",
+    "difficulty": "easy",
+    "topic": "Introduction to Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-6",
+    "question": "What distinguishes a vector from a scalar quantity?",
+    "options": [
+      "A vector has both magnitude and direction; a scalar has only magnitude",
+      "A scalar has direction; a vector does not",
+      "Vectors and scalars are identical",
+      "Only scalars can be added together"
+    ],
+    "correctAnswer": "A vector has both magnitude and direction; a scalar has only magnitude",
+    "difficulty": "easy",
+    "topic": "Introduction to Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-7",
+    "question": "When adding two vectors using the component method, what must be done before adding them together?",
+    "options": [
+      "Convert each vector into its x- and y-components",
+      "Only measure the vectors' magnitudes",
+      "Ignore the direction of each vector",
+      "Multiply the vectors by a scalar"
+    ],
+    "correctAnswer": "Convert each vector into its x- and y-components",
+    "difficulty": "medium",
+    "topic": "Introduction to Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-8",
+    "question": "Two vectors of equal magnitude are added together. Under what condition will the resultant vector have the maximum possible magnitude?",
+    "options": [
+      "When the vectors point in exactly opposite directions",
+      "When the vectors point in exactly the same direction",
+      "When the vectors are perpendicular to each other",
+      "The resultant magnitude is always the same regardless of direction"
+    ],
+    "correctAnswer": "When the vectors point in exactly the same direction",
+    "difficulty": "hard",
+    "topic": "Introduction to Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-9",
+    "question": "What is the key difference between speed and velocity?",
+    "options": [
+      "Speed is a vector; velocity is a scalar",
+      "Velocity includes direction, while speed does not",
+      "They are exactly the same quantity",
+      "Speed can be negative; velocity cannot"
+    ],
+    "correctAnswer": "Velocity includes direction, while speed does not",
+    "difficulty": "easy",
+    "topic": "Kinematics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-10",
+    "question": "An object in free fall near Earth's surface accelerates at approximately what rate, ignoring air resistance?",
+    "options": [
+      "5 m/s²",
+      "9.8 m/s²",
+      "15 m/s²",
+      "0 m/s²"
+    ],
+    "correctAnswer": "9.8 m/s²",
+    "difficulty": "easy",
+    "topic": "Kinematics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-11",
+    "question": "A car accelerates uniformly from rest to 20 m/s in 5 seconds. What is its acceleration?",
+    "options": [
+      "2 m/s²",
+      "4 m/s²",
+      "5 m/s²",
+      "100 m/s²"
+    ],
+    "correctAnswer": "4 m/s²",
+    "difficulty": "medium",
+    "topic": "Kinematics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-12",
+    "question": "An object is thrown straight up into the air. At the very top of its trajectory, which statement is true about its velocity and acceleration?",
+    "options": [
+      "Both velocity and acceleration are zero",
+      "Velocity is zero, but acceleration remains equal to g, directed downward",
+      "Velocity is at its maximum, and acceleration is zero",
+      "Velocity and acceleration are both at their maximum"
+    ],
+    "correctAnswer": "Velocity is zero, but acceleration remains equal to g, directed downward",
+    "difficulty": "hard",
+    "topic": "Kinematics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-13",
+    "question": "In projectile motion, the horizontal and vertical components of motion are considered to be what?",
+    "options": [
+      "Dependent on each other",
+      "Independent of each other",
+      "Always equal in magnitude",
+      "Impossible to separate"
+    ],
+    "correctAnswer": "Independent of each other",
+    "difficulty": "easy",
+    "topic": "Kinematics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-14",
+    "question": "Centripetal acceleration in circular motion always points in what direction?",
+    "options": [
+      "Tangent to the circle",
+      "Outward, away from the center",
+      "Toward the center of the circle",
+      "In the direction of velocity"
+    ],
+    "correctAnswer": "Toward the center of the circle",
+    "difficulty": "easy",
+    "topic": "Kinematics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-15",
+    "question": "A projectile is launched horizontally from a cliff. Which factor determines the time it takes to hit the ground, assuming no air resistance?",
+    "options": [
+      "Its horizontal launch speed only",
+      "The height of the cliff and the acceleration due to gravity",
+      "The projectile's mass",
+      "The angle of launch, since it is horizontal"
+    ],
+    "correctAnswer": "The height of the cliff and the acceleration due to gravity",
+    "difficulty": "medium",
+    "topic": "Kinematics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-16",
+    "question": "A boat attempts to cross a river by pointing directly across (perpendicular to the current). Which statement best describes its resulting path?",
+    "options": [
+      "It will travel in a straight line directly across the river",
+      "It will follow a diagonal path downstream, due to the combined effect of the boat's velocity and the current",
+      "It will travel upstream, away from the current",
+      "The current has no effect on the boat's path"
+    ],
+    "correctAnswer": "It will follow a diagonal path downstream, due to the combined effect of the boat's velocity and the current",
+    "difficulty": "hard",
+    "topic": "Kinematics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-17",
+    "question": "Newton's First Law is also known as the law of what?",
+    "options": [
+      "Action-reaction",
+      "Inertia",
+      "Universal gravitation",
+      "Conservation of momentum"
+    ],
+    "correctAnswer": "Inertia",
+    "difficulty": "easy",
+    "topic": "Dynamics — Forces & Newton's Laws",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-18",
+    "question": "According to Newton's Second Law, F = ma, if the mass of an object doubles while the force stays constant, what happens to its acceleration?",
+    "options": [
+      "It doubles",
+      "It is halved",
+      "It stays the same",
+      "It becomes zero"
+    ],
+    "correctAnswer": "It is halved",
+    "difficulty": "easy",
+    "topic": "Dynamics — Forces & Newton's Laws",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-19",
+    "question": "According to Newton's Third Law, if a hammer exerts a force on a nail, what can be said about the force the nail exerts on the hammer?",
+    "options": [
+      "It is zero",
+      "It is equal in magnitude and opposite in direction",
+      "It is smaller in magnitude",
+      "It acts in the same direction as the hammer's force"
+    ],
+    "correctAnswer": "It is equal in magnitude and opposite in direction",
+    "difficulty": "medium",
+    "topic": "Dynamics — Forces & Newton's Laws",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-20",
+    "question": "A block sits on an inclined plane and remains stationary despite the incline. Which combination of forces best explains this equilibrium?",
+    "options": [
+      "Gravity alone, with no other forces acting",
+      "The component of gravity along the incline is balanced by static friction, with the normal force balancing the perpendicular component",
+      "There are no forces acting on the block",
+      "Only the normal force acts on the block"
+    ],
+    "correctAnswer": "The component of gravity along the incline is balanced by static friction, with the normal force balancing the perpendicular component",
+    "difficulty": "hard",
+    "topic": "Dynamics — Forces & Newton's Laws",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-21",
+    "question": "In an Atwood machine, two masses are connected over what device?",
+    "options": [
+      "A spring",
+      "A frictionless pulley",
+      "A rigid rod",
+      "A magnetic field"
+    ],
+    "correctAnswer": "A frictionless pulley",
+    "difficulty": "easy",
+    "topic": "Dynamics — Forces & Newton's Laws",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-22",
+    "question": "On a frictionless inclined plane, what force component causes an object to accelerate down the slope?",
+    "options": [
+      "The normal force",
+      "The component of gravity parallel to the incline",
+      "The component of gravity perpendicular to the incline",
+      "Air resistance"
+    ],
+    "correctAnswer": "The component of gravity parallel to the incline",
+    "difficulty": "easy",
+    "topic": "Dynamics — Forces & Newton's Laws",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-23",
+    "question": "In a banked curve designed for a car to safely turn without relying on friction, which force provides the centripetal force needed for circular motion?",
+    "options": [
+      "Gravity alone",
+      "A component of the normal force directed toward the center of the curve",
+      "Air resistance",
+      "The car's engine force alone"
+    ],
+    "correctAnswer": "A component of the normal force directed toward the center of the curve",
+    "difficulty": "medium",
+    "topic": "Dynamics — Forces & Newton's Laws",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-24",
+    "question": "In a system of two masses connected by a string over a pulley (an Atwood machine), the acceleration of the system depends primarily on what?",
+    "options": [
+      "Only the mass of the heavier object",
+      "The difference between the two masses relative to their total combined mass",
+      "The color of the string",
+      "The length of the string only"
+    ],
+    "correctAnswer": "The difference between the two masses relative to their total combined mass",
+    "difficulty": "hard",
+    "topic": "Dynamics — Forces & Newton's Laws",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-25",
+    "question": "According to Newton's law of universal gravitation, gravitational force between two objects is inversely proportional to what?",
+    "options": [
+      "The sum of their masses",
+      "The square of the distance between their centers",
+      "Their combined volume",
+      "Their temperature"
+    ],
+    "correctAnswer": "The square of the distance between their centers",
+    "difficulty": "easy",
+    "topic": "Dynamics — Forces & Newton's Laws",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-26",
+    "question": "As you increase your altitude above Earth's surface, what generally happens to your weight?",
+    "options": [
+      "It increases",
+      "It decreases",
+      "It stays exactly the same",
+      "It becomes negative"
+    ],
+    "correctAnswer": "It decreases",
+    "difficulty": "easy",
+    "topic": "Dynamics — Forces & Newton's Laws",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-27",
+    "question": "Escape velocity is defined as what?",
+    "options": [
+      "The speed needed to maintain a circular orbit",
+      "The minimum speed needed for an object to completely escape a planet's gravitational field",
+      "The speed at which an object falls back to the surface",
+      "The average orbital speed of all satellites"
+    ],
+    "correctAnswer": "The minimum speed needed for an object to completely escape a planet's gravitational field",
+    "difficulty": "medium",
+    "topic": "Dynamics — Forces & Newton's Laws",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-28",
+    "question": "According to Kepler's Third Law, how does the orbital period of a planet relate to its average distance from the sun?",
+    "options": [
+      "The period is inversely proportional to the distance",
+      "The square of the orbital period is proportional to the cube of the average orbital radius",
+      "The period is completely unrelated to distance",
+      "The period decreases as distance increases at a constant rate"
+    ],
+    "correctAnswer": "The square of the orbital period is proportional to the cube of the average orbital radius",
+    "difficulty": "hard",
+    "topic": "Dynamics — Forces & Newton's Laws",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-29",
+    "question": "Work done on an object is defined by which formula?",
+    "options": [
+      "W = mv",
+      "W = Fd cos θ",
+      "W = ½mv²",
+      "W = mgh"
+    ],
+    "correctAnswer": "W = Fd cos θ",
+    "difficulty": "easy",
+    "topic": "Work, Energy & Power",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-30",
+    "question": "The formula for kinetic energy is which of the following?",
+    "options": [
+      "KE = mgh",
+      "KE = ½mv²",
+      "KE = Fd",
+      "KE = P/t"
+    ],
+    "correctAnswer": "KE = ½mv²",
+    "difficulty": "easy",
+    "topic": "Work, Energy & Power",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-31",
+    "question": "According to the work-energy theorem, the net work done on an object equals what?",
+    "options": [
+      "Its change in potential energy",
+      "Its change in kinetic energy",
+      "Its total power output",
+      "Its weight multiplied by time"
+    ],
+    "correctAnswer": "Its change in kinetic energy",
+    "difficulty": "medium",
+    "topic": "Work, Energy & Power",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-32",
+    "question": "A force does zero net work on an object even though the object moves a nonzero distance. Under what condition would this occur?",
+    "options": [
+      "When the force is applied in the exact same direction as the motion",
+      "When the force is applied perpendicular to the direction of motion",
+      "When the object is at rest",
+      "This situation is never possible"
+    ],
+    "correctAnswer": "When the force is applied perpendicular to the direction of motion",
+    "difficulty": "hard",
+    "topic": "Work, Energy & Power",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-33",
+    "question": "The law of conservation of energy states that energy can be transformed but not what?",
+    "options": [
+      "Measured",
+      "Created or destroyed",
+      "Transferred between objects",
+      "Converted into different forms"
+    ],
+    "correctAnswer": "Created or destroyed",
+    "difficulty": "easy",
+    "topic": "Work, Energy & Power",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-34",
+    "question": "A pendulum at the top of its swing has maximum what type of energy, assuming no air resistance?",
+    "options": [
+      "Kinetic energy",
+      "Gravitational potential energy",
+      "Thermal energy",
+      "Elastic potential energy"
+    ],
+    "correctAnswer": "Gravitational potential energy",
+    "difficulty": "easy",
+    "topic": "Work, Energy & Power",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-35",
+    "question": "In a roller coaster system with negligible friction, as the car descends from the highest point, what happens to its kinetic and potential energy?",
+    "options": [
+      "Both increase",
+      "Potential energy increases while kinetic energy decreases",
+      "Potential energy decreases while kinetic energy increases",
+      "Both decrease"
+    ],
+    "correctAnswer": "Potential energy decreases while kinetic energy increases",
+    "difficulty": "medium",
+    "topic": "Work, Energy & Power",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-36",
+    "question": "A pendulum gradually loses height with each swing due to air resistance. This is best explained by what?",
+    "options": [
+      "Energy is being created within the system",
+      "Mechanical energy is being converted into thermal energy by a nonconservative force (air resistance)",
+      "The pendulum is gaining potential energy",
+      "Conservation of energy is being violated"
+    ],
+    "correctAnswer": "Mechanical energy is being converted into thermal energy by a nonconservative force (air resistance)",
+    "difficulty": "hard",
+    "topic": "Work, Energy & Power",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-37",
+    "question": "Linear momentum is calculated using which formula?",
+    "options": [
+      "p = mv",
+      "p = ½mv²",
+      "p = Fd",
+      "p = mgh"
+    ],
+    "correctAnswer": "p = mv",
+    "difficulty": "easy",
+    "topic": "Work, Energy & Power",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-38",
+    "question": "According to the impulse-momentum theorem, impulse is equal to what?",
+    "options": [
+      "The object's kinetic energy",
+      "The change in an object's momentum",
+      "The object's weight",
+      "The object's velocity alone"
+    ],
+    "correctAnswer": "The change in an object's momentum",
+    "difficulty": "easy",
+    "topic": "Work, Energy & Power",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-39",
+    "question": "In a perfectly inelastic collision, what happens to the two colliding objects after the collision?",
+    "options": [
+      "They bounce apart with equal and opposite velocities",
+      "They stick together and move with a common final velocity",
+      "They both come to a complete stop always",
+      "Kinetic energy is fully conserved"
+    ],
+    "correctAnswer": "They stick together and move with a common final velocity",
+    "difficulty": "medium",
+    "topic": "Work, Energy & Power",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-40",
+    "question": "A car's airbag increases the time over which a collision force acts on a passenger. According to the impulse-momentum theorem, how does this reduce injury?",
+    "options": [
+      "It increases the total impulse delivered to the passenger",
+      "It reduces the average force experienced, since impulse (roughly constant) is spread over a longer time",
+      "It has no effect on the force experienced",
+      "It decreases the passenger's momentum change"
+    ],
+    "correctAnswer": "It reduces the average force experienced, since impulse (roughly constant) is spread over a longer time",
+    "difficulty": "hard",
+    "topic": "Work, Energy & Power",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-41",
+    "question": "Angular velocity describes what about a rotating object?",
+    "options": [
+      "Its linear speed only",
+      "The rate of change of its angular displacement",
+      "Its mass distribution",
+      "Its total distance traveled"
+    ],
+    "correctAnswer": "The rate of change of its angular displacement",
+    "difficulty": "easy",
+    "topic": "Rotational Motion & Torque",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-42",
+    "question": "What is the relationship between linear velocity (v) and angular velocity (ω) for a point on a rotating object at radius r?",
+    "options": [
+      "v = r/ω",
+      "v = rω",
+      "v = ω/r",
+      "v = r + ω"
+    ],
+    "correctAnswer": "v = rω",
+    "difficulty": "easy",
+    "topic": "Rotational Motion & Torque",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-43",
+    "question": "One full revolution of a rotating object corresponds to how many radians?",
+    "options": [
+      "π radians",
+      "π/2 radians",
+      "2π radians",
+      "4π radians"
+    ],
+    "correctAnswer": "2π radians",
+    "difficulty": "medium",
+    "topic": "Rotational Motion & Torque",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-44",
+    "question": "A point near the outer edge of a rotating disk has a greater linear speed than a point near the center, even though both points share what property?",
+    "options": [
+      "The same linear speed",
+      "The same angular velocity",
+      "The same radius",
+      "The same centripetal acceleration"
+    ],
+    "correctAnswer": "The same angular velocity",
+    "difficulty": "hard",
+    "topic": "Rotational Motion & Torque",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-45",
+    "question": "Torque is calculated using which formula?",
+    "options": [
+      "τ = rF sin θ",
+      "τ = ma",
+      "τ = ½Iω²",
+      "τ = Fd"
+    ],
+    "correctAnswer": "τ = rF sin θ",
+    "difficulty": "easy",
+    "topic": "Rotational Motion & Torque",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-46",
+    "question": "The rotational equivalent of Newton's Second Law (F = ma) is which of the following?",
+    "options": [
+      "τ = Iα",
+      "p = mv",
+      "W = Fd",
+      "L = mvr"
+    ],
+    "correctAnswer": "τ = Iα",
+    "difficulty": "easy",
+    "topic": "Rotational Motion & Torque",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-47",
+    "question": "An object's moment of inertia depends on what two factors?",
+    "options": [
+      "Only its total mass",
+      "Its mass and the distribution of that mass relative to the axis of rotation",
+      "Only its shape, regardless of mass",
+      "Its temperature and velocity"
+    ],
+    "correctAnswer": "Its mass and the distribution of that mass relative to the axis of rotation",
+    "difficulty": "medium",
+    "topic": "Rotational Motion & Torque",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-48",
+    "question": "Angular momentum (L = Iω) is conserved in a system when what condition is true?",
+    "options": [
+      "A net external torque acts on the system",
+      "No net external torque acts on the system",
+      "The object's moment of inertia is constantly changing due to outside forces",
+      "The system is losing energy to friction"
+    ],
+    "correctAnswer": "No net external torque acts on the system",
+    "difficulty": "medium",
+    "topic": "Rotational Motion & Torque",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-49",
+    "question": "A figure skater spinning with arms extended pulls her arms in close to her body and spins faster. This is best explained by what principle?",
+    "options": [
+      "Conservation of linear momentum",
+      "Conservation of angular momentum: decreasing moment of inertia increases angular velocity",
+      "Newton's Third Law alone",
+      "An external torque was applied to speed her up"
+    ],
+    "correctAnswer": "Conservation of angular momentum: decreasing moment of inertia increases angular velocity",
+    "difficulty": "hard",
+    "topic": "Rotational Motion & Torque",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-50",
+    "question": "In simple harmonic motion, what type of force is responsible for the oscillation?",
+    "options": [
+      "A constant force",
+      "A restoring force proportional to displacement, directed toward equilibrium",
+      "A force with no relationship to displacement",
+      "Gravitational force only"
+    ],
+    "correctAnswer": "A restoring force proportional to displacement, directed toward equilibrium",
+    "difficulty": "easy",
+    "topic": "Oscillations & Waves",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-51",
+    "question": "For a mass-spring system undergoing SHM, the period is given by which formula?",
+    "options": [
+      "T = 2π√(m/k)",
+      "T = 2π√(k/m)",
+      "T = 2πmk",
+      "T = m/k"
+    ],
+    "correctAnswer": "T = 2π√(m/k)",
+    "difficulty": "easy",
+    "topic": "Oscillations & Waves",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-52",
+    "question": "For a simple pendulum, the period depends on which of the following factors?",
+    "options": [
+      "The mass of the bob and the length of the string",
+      "The length of the string and the acceleration due to gravity",
+      "Only the amplitude of the swing",
+      "Only the mass of the bob"
+    ],
+    "correctAnswer": "The length of the string and the acceleration due to gravity",
+    "difficulty": "medium",
+    "topic": "Oscillations & Waves",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-53",
+    "question": "In SHM, at what point does an oscillating mass-spring system have maximum kinetic energy?",
+    "options": [
+      "At maximum displacement (amplitude)",
+      "At the equilibrium position, where displacement is zero",
+      "At the point of zero velocity",
+      "Kinetic energy is constant throughout the motion"
+    ],
+    "correctAnswer": "At the equilibrium position, where displacement is zero",
+    "difficulty": "medium",
+    "topic": "Oscillations & Waves",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-54",
+    "question": "A damped oscillator gradually loses amplitude over time. This damping is primarily caused by what?",
+    "options": [
+      "An increase in the restoring force over time",
+      "Resistive forces (such as friction or air resistance) removing mechanical energy from the system",
+      "The mass of the oscillator increasing",
+      "Resonance with an external driving force"
+    ],
+    "correctAnswer": "Resistive forces (such as friction or air resistance) removing mechanical energy from the system",
+    "difficulty": "hard",
+    "topic": "Oscillations & Waves",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-55",
+    "question": "In a transverse wave, the direction of particle oscillation is related to the direction of wave travel how?",
+    "options": [
+      "Parallel to the direction of wave travel",
+      "Perpendicular to the direction of wave travel",
+      "Opposite to the direction of wave travel",
+      "There is no relationship"
+    ],
+    "correctAnswer": "Perpendicular to the direction of wave travel",
+    "difficulty": "easy",
+    "topic": "Oscillations & Waves",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-56",
+    "question": "The relationship between wave speed, frequency, and wavelength is given by which formula?",
+    "options": [
+      "v = f/λ",
+      "v = fλ",
+      "v = f + λ",
+      "v = λ/f"
+    ],
+    "correctAnswer": "v = fλ",
+    "difficulty": "easy",
+    "topic": "Oscillations & Waves",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-57",
+    "question": "When two waves meet and combine such that their amplitudes add together to form a larger wave, this is called what?",
+    "options": [
+      "Destructive interference",
+      "Constructive interference",
+      "Diffraction",
+      "Refraction"
+    ],
+    "correctAnswer": "Constructive interference",
+    "difficulty": "medium",
+    "topic": "Oscillations & Waves",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-58",
+    "question": "A standing wave is formed when two waves of the same frequency travel in what manner?",
+    "options": [
+      "In the same direction, at different speeds",
+      "In opposite directions, interfering to create fixed nodes and antinodes",
+      "Perpendicular to each other",
+      "With completely different wavelengths"
+    ],
+    "correctAnswer": "In opposite directions, interfering to create fixed nodes and antinodes",
+    "difficulty": "medium",
+    "topic": "Oscillations & Waves",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-59",
+    "question": "In a longitudinal wave, such as a sound wave, particle oscillation occurs in what direction relative to wave propagation?",
+    "options": [
+      "Perpendicular to the direction of wave travel",
+      "Parallel to the direction of wave travel, creating compressions and rarefactions",
+      "Randomly in all directions",
+      "There is no particle oscillation in longitudinal waves"
+    ],
+    "correctAnswer": "Parallel to the direction of wave travel, creating compressions and rarefactions",
+    "difficulty": "hard",
+    "topic": "Oscillations & Waves",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-60",
+    "question": "The speed of sound is generally fastest in which medium?",
+    "options": [
+      "Air (gas)",
+      "Water (liquid)",
+      "Steel (solid)",
+      "Vacuum"
+    ],
+    "correctAnswer": "Steel (solid)",
+    "difficulty": "easy",
+    "topic": "Oscillations & Waves",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-61",
+    "question": "The perceived loudness of a sound is most closely related to which property of the sound wave?",
+    "options": [
+      "Frequency",
+      "Wavelength",
+      "Amplitude (intensity)",
+      "Speed"
+    ],
+    "correctAnswer": "Amplitude (intensity)",
+    "difficulty": "easy",
+    "topic": "Oscillations & Waves",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-62",
+    "question": "The Doppler effect explains why the pitch of a siren appears to change as an ambulance approaches and then moves away. What causes this apparent pitch change?",
+    "options": [
+      "The actual frequency emitted by the siren physically changes",
+      "The relative motion between the source and observer changes the observed frequency, even though the emitted frequency stays constant",
+      "The siren's amplitude changes as it moves",
+      "Sound waves travel faster when the source moves toward the observer"
+    ],
+    "correctAnswer": "The relative motion between the source and observer changes the observed frequency, even though the emitted frequency stays constant",
+    "difficulty": "medium",
+    "topic": "Oscillations & Waves",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-63",
+    "question": "Beats are heard when two sound waves of what characteristic interfere with each other?",
+    "options": [
+      "Identical frequencies",
+      "Slightly different frequencies, creating a periodic variation in amplitude",
+      "Completely different wavelengths only",
+      "Different amplitudes but identical everything else"
+    ],
+    "correctAnswer": "Slightly different frequencies, creating a periodic variation in amplitude",
+    "difficulty": "medium",
+    "topic": "Oscillations & Waves",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-64",
+    "question": "The decibel (dB) scale used to measure sound intensity is what type of scale?",
+    "options": [
+      "Linear scale",
+      "Logarithmic scale",
+      "Inverse scale",
+      "Absolute scale with no reference point"
+    ],
+    "correctAnswer": "Logarithmic scale",
+    "difficulty": "hard",
+    "topic": "Oscillations & Waves",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-65",
+    "question": "The Zeroth Law of Thermodynamics establishes the concept of what?",
+    "options": [
+      "Energy conservation",
+      "Thermal equilibrium and the definition of temperature",
+      "Entropy",
+      "Absolute zero"
+    ],
+    "correctAnswer": "Thermal equilibrium and the definition of temperature",
+    "difficulty": "easy",
+    "topic": "Thermodynamics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-66",
+    "question": "When a metal rod is heated, it generally expands. This phenomenon is known as what?",
+    "options": [
+      "Thermal contraction",
+      "Thermal expansion",
+      "Thermal equilibrium",
+      "Conduction only"
+    ],
+    "correctAnswer": "Thermal expansion",
+    "difficulty": "medium",
+    "topic": "Thermodynamics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-67",
+    "question": "Which method of heat transfer involves the movement of a heated fluid (liquid or gas) itself?",
+    "options": [
+      "Conduction",
+      "Convection",
+      "Radiation",
+      "Insulation"
+    ],
+    "correctAnswer": "Convection",
+    "difficulty": "medium",
+    "topic": "Thermodynamics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-68",
+    "question": "Using q = mcΔT, a 100 g sample of a metal with specific heat 0.90 J/g°C absorbs 900 J of heat. What is its temperature change?",
+    "options": [
+      "5°C",
+      "10°C",
+      "90°C",
+      "1°C"
+    ],
+    "correctAnswer": "10°C",
+    "difficulty": "hard",
+    "topic": "Thermodynamics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-69",
+    "question": "The ideal gas law is expressed by which equation?",
+    "options": [
+      "PV = nRT",
+      "P = mc",
+      "E = mc²",
+      "F = ma"
+    ],
+    "correctAnswer": "PV = nRT",
+    "difficulty": "easy",
+    "topic": "Thermodynamics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-70",
+    "question": "According to kinetic molecular theory, the average kinetic energy of gas particles is directly proportional to what?",
+    "options": [
+      "The pressure of the gas only",
+      "The absolute temperature (in Kelvin) of the gas",
+      "The volume of the container",
+      "The molar mass of the gas"
+    ],
+    "correctAnswer": "The absolute temperature (in Kelvin) of the gas",
+    "difficulty": "medium",
+    "topic": "Thermodynamics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-71",
+    "question": "If the temperature of a fixed amount of gas increases at constant volume, what happens to the pressure, according to the ideal gas law?",
+    "options": [
+      "It decreases",
+      "It increases",
+      "It remains constant",
+      "It becomes zero"
+    ],
+    "correctAnswer": "It increases",
+    "difficulty": "medium",
+    "topic": "Thermodynamics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-72",
+    "question": "According to the Maxwell-Boltzmann distribution, as temperature increases, what happens to the distribution of molecular speeds in a gas?",
+    "options": [
+      "The distribution narrows and shifts to lower speeds",
+      "The distribution broadens and shifts to higher average speeds",
+      "The distribution remains completely unchanged",
+      "All molecules move at exactly the same speed"
+    ],
+    "correctAnswer": "The distribution broadens and shifts to higher average speeds",
+    "difficulty": "hard",
+    "topic": "Thermodynamics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-73",
+    "question": "The First Law of Thermodynamics is fundamentally a statement of what principle?",
+    "options": [
+      "Conservation of momentum",
+      "Conservation of energy (ΔU = Q - W)",
+      "Conservation of mass only",
+      "Entropy always increasing"
+    ],
+    "correctAnswer": "Conservation of energy (ΔU = Q - W)",
+    "difficulty": "easy",
+    "topic": "Thermodynamics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-74",
+    "question": "According to the Second Law of Thermodynamics, the total entropy of an isolated system over time tends to do what?",
+    "options": [
+      "Decrease",
+      "Increase or remain constant, never decrease",
+      "Stay exactly the same always",
+      "Reach exactly zero"
+    ],
+    "correctAnswer": "Increase or remain constant, never decrease",
+    "difficulty": "medium",
+    "topic": "Thermodynamics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-75",
+    "question": "A Carnot engine represents what type of theoretical thermodynamic cycle?",
+    "options": [
+      "The most inefficient possible heat engine",
+      "The most efficient possible heat engine operating between two temperatures",
+      "An engine with 100% efficiency in all cases",
+      "An engine that requires no heat input"
+    ],
+    "correctAnswer": "The most efficient possible heat engine operating between two temperatures",
+    "difficulty": "medium",
+    "topic": "Thermodynamics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-76",
+    "question": "In an adiabatic process, what defining characteristic distinguishes it from an isothermal process?",
+    "options": [
+      "No heat is exchanged with the surroundings (Q = 0)",
+      "The temperature remains constant throughout the process",
+      "The pressure remains constant throughout the process",
+      "The volume remains constant throughout the process"
+    ],
+    "correctAnswer": "No heat is exchanged with the surroundings (Q = 0)",
+    "difficulty": "hard",
+    "topic": "Thermodynamics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-77",
+    "question": "Like electric charges (e.g., two positive charges) exert what type of force on each other?",
+    "options": [
+      "Attractive force",
+      "Repulsive force",
+      "No force at all",
+      "A force that depends only on distance, not charge sign"
+    ],
+    "correctAnswer": "Repulsive force",
+    "difficulty": "easy",
+    "topic": "Electricity",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-78",
+    "question": "According to Coulomb's Law, if the distance between two charges is doubled, what happens to the electric force between them?",
+    "options": [
+      "It doubles",
+      "It is reduced to one-quarter of its original value",
+      "It is halved",
+      "It remains the same"
+    ],
+    "correctAnswer": "It is reduced to one-quarter of its original value",
+    "difficulty": "medium",
+    "topic": "Electricity",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-79",
+    "question": "Charging an object by induction differs from charging by conduction mainly because induction does not require what?",
+    "options": [
+      "Any change in the object's charge",
+      "Direct physical contact between the charged object and the object being charged",
+      "The presence of a charged object nearby",
+      "Any redistribution of charge"
+    ],
+    "correctAnswer": "Direct physical contact between the charged object and the object being charged",
+    "difficulty": "medium",
+    "topic": "Electricity",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-80",
+    "question": "Two point charges exert a force of 4 N on each other. If the magnitude of one charge is tripled while distance stays the same, what is the new force?",
+    "options": [
+      "4 N",
+      "8 N",
+      "12 N",
+      "36 N"
+    ],
+    "correctAnswer": "12 N",
+    "difficulty": "hard",
+    "topic": "Electricity",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-81",
+    "question": "Electric field strength at a point is defined as what?",
+    "options": [
+      "The force per unit charge at that point",
+      "The total charge at that point",
+      "The potential energy at that point",
+      "The distance from a charge"
+    ],
+    "correctAnswer": "The force per unit charge at that point",
+    "difficulty": "easy",
+    "topic": "Electricity",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-82",
+    "question": "Electric potential (voltage) due to a point charge is inversely proportional to what?",
+    "options": [
+      "The square of the distance from the charge",
+      "The distance from the charge",
+      "The charge itself",
+      "Time"
+    ],
+    "correctAnswer": "The distance from the charge",
+    "difficulty": "medium",
+    "topic": "Electricity",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-83",
+    "question": "A parallel plate capacitor's capacitance depends on which of the following factors?",
+    "options": [
+      "The plate area and separation distance, and the dielectric material between the plates",
+      "Only the voltage applied across the plates",
+      "Only the current flowing through the capacitor",
+      "The color of the plates"
+    ],
+    "correctAnswer": "The plate area and separation distance, and the dielectric material between the plates",
+    "difficulty": "medium",
+    "topic": "Electricity",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-84",
+    "question": "Equipotential surfaces around a point charge are best described as what shape, and what is true about the electric field relative to them?",
+    "options": [
+      "Flat planes; the electric field is parallel to them",
+      "Concentric spheres around the charge; the electric field is always perpendicular to these surfaces",
+      "Random curved shapes with no relation to the field",
+      "Equipotential surfaces do not exist around point charges"
+    ],
+    "correctAnswer": "Concentric spheres around the charge; the electric field is always perpendicular to these surfaces",
+    "difficulty": "hard",
+    "topic": "Electricity",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-85",
+    "question": "Ohm's Law is expressed by which equation?",
+    "options": [
+      "V = IR",
+      "P = IV",
+      "F = ma",
+      "Q = It"
+    ],
+    "correctAnswer": "V = IR",
+    "difficulty": "easy",
+    "topic": "Electricity",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-86",
+    "question": "In a series circuit, how does the total resistance compare to the individual resistances?",
+    "options": [
+      "The total resistance is less than any individual resistance",
+      "The total resistance is the sum of all individual resistances",
+      "The total resistance equals the smallest individual resistance",
+      "Total resistance cannot be determined in series circuits"
+    ],
+    "correctAnswer": "The total resistance is the sum of all individual resistances",
+    "difficulty": "medium",
+    "topic": "Electricity",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-87",
+    "question": "In a parallel circuit, what is true about the voltage across each branch?",
+    "options": [
+      "The voltage is divided unevenly among branches based on resistance only",
+      "The voltage across each parallel branch is the same",
+      "The voltage is always zero in parallel branches",
+      "The voltage depends on the current in the main circuit only"
+    ],
+    "correctAnswer": "The voltage across each parallel branch is the same",
+    "difficulty": "medium",
+    "topic": "Electricity",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-88",
+    "question": "Using Kirchhoff's junction rule, what must be true about the currents entering and leaving a junction in a circuit?",
+    "options": [
+      "The total current entering must be greater than the total current leaving",
+      "The total current entering a junction must equal the total current leaving the junction",
+      "Current is never conserved at a junction",
+      "Only voltage is conserved at junctions, not current"
+    ],
+    "correctAnswer": "The total current entering a junction must equal the total current leaving the junction",
+    "difficulty": "hard",
+    "topic": "Electricity",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-89",
+    "question": "Two resistors, 4Ω and 6Ω, are connected in parallel. What is the approximate total resistance of this combination?",
+    "options": [
+      "10 Ω",
+      "2.4 Ω",
+      "24 Ω",
+      "1.5 Ω"
+    ],
+    "correctAnswer": "2.4 Ω",
+    "difficulty": "hard",
+    "topic": "Electricity",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-90",
+    "question": "The time constant (τ) of an RC circuit is calculated using which formula?",
+    "options": [
+      "τ = R/C",
+      "τ = RC",
+      "τ = R + C",
+      "τ = C/R"
+    ],
+    "correctAnswer": "τ = RC",
+    "difficulty": "easy",
+    "topic": "Electricity",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-91",
+    "question": "When capacitors are connected in series, how does the total (equivalent) capacitance compare to the individual capacitances?",
+    "options": [
+      "The total capacitance is greater than any individual capacitance",
+      "The total capacitance is less than the smallest individual capacitance",
+      "The total capacitance equals the sum of the individual capacitances",
+      "Series connections have no effect on total capacitance"
+    ],
+    "correctAnswer": "The total capacitance is less than the smallest individual capacitance",
+    "difficulty": "medium",
+    "topic": "Electricity",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-92",
+    "question": "During the charging of an RC circuit, what happens to the current flowing through the circuit over time?",
+    "options": [
+      "It increases exponentially over time",
+      "It decreases exponentially over time, approaching zero as the capacitor becomes fully charged",
+      "It remains constant throughout charging",
+      "It immediately drops to zero at t=0"
+    ],
+    "correctAnswer": "It decreases exponentially over time, approaching zero as the capacitor becomes fully charged",
+    "difficulty": "medium",
+    "topic": "Electricity",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-93",
+    "question": "A defibrillator uses a capacitor to deliver a quick burst of electrical energy to the heart. This application relies primarily on which property of capacitors?",
+    "options": [
+      "Their ability to store and rapidly release electrical energy",
+      "Their ability to generate a magnetic field",
+      "Their ability to store energy indefinitely without discharging",
+      "Their resistance to electric current"
+    ],
+    "correctAnswer": "Their ability to store and rapidly release electrical energy",
+    "difficulty": "hard",
+    "topic": "Electricity",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-94",
+    "question": "In an RC circuit with time constant τ = RC, approximately what percentage of the maximum charge has accumulated on the capacitor after one full time constant of charging?",
+    "options": [
+      "About 37%",
+      "About 50%",
+      "About 63%",
+      "About 100%"
+    ],
+    "correctAnswer": "About 63%",
+    "difficulty": "hard",
+    "topic": "Electricity",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-95",
+    "question": "The magnetic force on a moving charge is given by which formula?",
+    "options": [
+      "F = qE",
+      "F = qvB sin θ",
+      "F = ma",
+      "F = qv/B"
+    ],
+    "correctAnswer": "F = qvB sin θ",
+    "difficulty": "easy",
+    "topic": "Magnetism & Electromagnetism",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-96",
+    "question": "A charged particle moves in a circular path when it enters a uniform magnetic field perpendicular to its velocity. This circular motion occurs because the magnetic force is always directed how?",
+    "options": [
+      "Parallel to the particle's velocity",
+      "Perpendicular to the particle's velocity, acting as a centripetal force",
+      "In the same direction as the magnetic field",
+      "Opposite to the magnetic field"
+    ],
+    "correctAnswer": "Perpendicular to the particle's velocity, acting as a centripetal force",
+    "difficulty": "medium",
+    "topic": "Magnetism & Electromagnetism",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-97",
+    "question": "The force on a current-carrying wire placed in a magnetic field is calculated using which formula?",
+    "options": [
+      "F = BIL sin θ",
+      "F = qE",
+      "F = ½mv²",
+      "F = mgh"
+    ],
+    "correctAnswer": "F = BIL sin θ",
+    "difficulty": "medium",
+    "topic": "Magnetism & Electromagnetism",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-98",
+    "question": "A mass spectrometer uses magnetic fields to separate ions based on what property?",
+    "options": [
+      "Their color",
+      "Their mass-to-charge ratio, based on the radius of their circular path in the magnetic field",
+      "Their temperature",
+      "Their electrical resistance"
+    ],
+    "correctAnswer": "Their mass-to-charge ratio, based on the radius of their circular path in the magnetic field",
+    "difficulty": "hard",
+    "topic": "Magnetism & Electromagnetism",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-99",
+    "question": "In a cyclotron, charged particles are accelerated in a spiral path using alternating electric fields and a constant magnetic field. What determines the radius of the particle's circular path at a given speed?",
+    "options": [
+      "The particle's mass, charge, speed, and the magnetic field strength",
+      "Only the particle's charge",
+      "Only the strength of the magnetic field",
+      "The color of the particle"
+    ],
+    "correctAnswer": "The particle's mass, charge, speed, and the magnetic field strength",
+    "difficulty": "hard",
+    "topic": "Magnetism & Electromagnetism",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-100",
+    "question": "Faraday's Law states that an EMF is induced in a circuit due to what?",
+    "options": [
+      "A constant magnetic field",
+      "A changing magnetic flux through the circuit",
+      "The color of the wire",
+      "The resistance of the circuit alone"
+    ],
+    "correctAnswer": "A changing magnetic flux through the circuit",
+    "difficulty": "easy",
+    "topic": "Magnetism & Electromagnetism",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-101",
+    "question": "Lenz's Law determines the direction of an induced current. It states that the induced current opposes what?",
+    "options": [
+      "The resistance of the circuit",
+      "The change in magnetic flux that produced it",
+      "The direction of the applied voltage",
+      "Nothing; the direction is random"
+    ],
+    "correctAnswer": "The change in magnetic flux that produced it",
+    "difficulty": "medium",
+    "topic": "Magnetism & Electromagnetism",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-102",
+    "question": "A step-up transformer is designed to do what to the voltage between its primary and secondary coils?",
+    "options": [
+      "Decrease the voltage",
+      "Increase the voltage",
+      "Keep the voltage exactly the same",
+      "Convert voltage into current only"
+    ],
+    "correctAnswer": "Increase the voltage",
+    "difficulty": "medium",
+    "topic": "Magnetism & Electromagnetism",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-103",
+    "question": "Motional EMF is generated when a conducting rod moves through a magnetic field. This EMF is calculated using which formula?",
+    "options": [
+      "ε = BIL",
+      "ε = BLv",
+      "ε = IR",
+      "ε = qV"
+    ],
+    "correctAnswer": "ε = BLv",
+    "difficulty": "hard",
+    "topic": "Magnetism & Electromagnetism",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-104",
+    "question": "An electric generator converts mechanical energy into electrical energy. This process relies fundamentally on what principle?",
+    "options": [
+      "Coulomb's Law",
+      "Electromagnetic induction, as a coil rotates within a magnetic field, changing magnetic flux and inducing an EMF",
+      "Ohm's Law alone",
+      "The conservation of electric charge only"
+    ],
+    "correctAnswer": "Electromagnetic induction, as a coil rotates within a magnetic field, changing magnetic flux and inducing an EMF",
+    "difficulty": "hard",
+    "topic": "Magnetism & Electromagnetism",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-105",
+    "question": "The law of reflection states that the angle of incidence equals what?",
+    "options": [
+      "The angle of refraction",
+      "The angle of reflection",
+      "90 degrees always",
+      "The focal length"
+    ],
+    "correctAnswer": "The angle of reflection",
+    "difficulty": "easy",
+    "topic": "Optics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-106",
+    "question": "A concave mirror is generally used for applications requiring what type of image formation, such as in makeup mirrors or telescopes?",
+    "options": [
+      "Always producing a virtual, reduced image",
+      "Producing a magnified image (real or virtual, depending on object distance)",
+      "Never forming any image",
+      "Producing only diminished, inverted images"
+    ],
+    "correctAnswer": "Producing a magnified image (real or virtual, depending on object distance)",
+    "difficulty": "medium",
+    "topic": "Optics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-107",
+    "question": "Using the mirror equation 1/f = 1/do + 1/di, if an object is placed at the focal point of a concave mirror, what happens to the image?",
+    "options": [
+      "It forms a real image at the same location as the object",
+      "The image forms at infinity or does not form a clear image",
+      "The image is always virtual and upright",
+      "The image is always the same size as the object"
+    ],
+    "correctAnswer": "The image forms at infinity or does not form a clear image",
+    "difficulty": "medium",
+    "topic": "Optics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-108",
+    "question": "A convex mirror is commonly used as a car's rear-view/side mirror mainly because it does what?",
+    "options": [
+      "Produces a magnified, real image that is easy to see",
+      "Produces a diminished, upright virtual image with a wider field of view",
+      "Focuses light to a single point for clarity",
+      "Produces an inverted image, which drivers find easier to interpret"
+    ],
+    "correctAnswer": "Produces a diminished, upright virtual image with a wider field of view",
+    "difficulty": "hard",
+    "topic": "Optics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-109",
+    "question": "Spherical aberration in mirrors occurs because what happens to light rays that strike far from the optical axis?",
+    "options": [
+      "They focus at the exact same point as rays near the axis",
+      "They fail to converge at the same focal point as rays closer to the optical axis, blurring the image",
+      "They are completely absorbed by the mirror",
+      "They travel faster than rays near the axis"
+    ],
+    "correctAnswer": "They fail to converge at the same focal point as rays closer to the optical axis, blurring the image",
+    "difficulty": "hard",
+    "topic": "Optics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-110",
+    "question": "Snell's Law relates the angles of incidence and refraction to what property of the two media?",
+    "options": [
+      "Their temperatures",
+      "Their indices of refraction",
+      "Their colors",
+      "Their densities only"
+    ],
+    "correctAnswer": "Their indices of refraction",
+    "difficulty": "easy",
+    "topic": "Optics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-111",
+    "question": "Total internal reflection occurs when light traveling from a denser to a less dense medium strikes the boundary at an angle greater than what?",
+    "options": [
+      "The angle of reflection",
+      "The critical angle",
+      "0 degrees",
+      "The focal angle"
+    ],
+    "correctAnswer": "The critical angle",
+    "difficulty": "medium",
+    "topic": "Optics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-112",
+    "question": "A convex (converging) lens forms a real, inverted image when the object is placed where relative to the focal point?",
+    "options": [
+      "Between the lens and the focal point",
+      "Beyond the focal point of the lens",
+      "Exactly at the lens itself",
+      "Only at infinite distance"
+    ],
+    "correctAnswer": "Beyond the focal point of the lens",
+    "difficulty": "medium",
+    "topic": "Optics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-113",
+    "question": "Fiber optic cables transmit light over long distances with minimal loss primarily by relying on what optical phenomenon?",
+    "options": [
+      "Diffraction",
+      "Total internal reflection",
+      "Simple reflection off external mirrors",
+      "Polarization"
+    ],
+    "correctAnswer": "Total internal reflection",
+    "difficulty": "hard",
+    "topic": "Optics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-114",
+    "question": "A compound microscope uses two converging lenses to achieve high magnification. What is the general role of the objective lens closest to the specimen?",
+    "options": [
+      "To directly view the final image",
+      "To form a real, magnified, inverted image of the specimen, which the eyepiece then further magnifies",
+      "To reduce the size of the image before viewing",
+      "To reflect light rather than refract it"
+    ],
+    "correctAnswer": "To form a real, magnified, inverted image of the specimen, which the eyepiece then further magnifies",
+    "difficulty": "hard",
+    "topic": "Optics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-115",
+    "question": "Young's double-slit experiment provided key evidence supporting what property of light?",
+    "options": [
+      "Light behaves only as a particle",
+      "Light exhibits wave-like behavior, producing an interference pattern",
+      "Light travels only in straight lines with no interference",
+      "Light has no measurable speed"
+    ],
+    "correctAnswer": "Light exhibits wave-like behavior, producing an interference pattern",
+    "difficulty": "easy",
+    "topic": "Optics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-116",
+    "question": "Constructive interference between two light waves occurs when the path difference between them is what?",
+    "options": [
+      "An odd multiple of half a wavelength",
+      "A whole-number multiple of the wavelength",
+      "Always zero",
+      "Unrelated to wavelength"
+    ],
+    "correctAnswer": "A whole-number multiple of the wavelength",
+    "difficulty": "medium",
+    "topic": "Optics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-117",
+    "question": "Malus's Law describes the intensity of light after passing through a polarizer. According to this law, the transmitted intensity depends on what?",
+    "options": [
+      "The wavelength of light only",
+      "The angle between the light's polarization direction and the polarizer's transmission axis",
+      "The distance traveled by the light",
+      "The color of the polarizer"
+    ],
+    "correctAnswer": "The angle between the light's polarization direction and the polarizer's transmission axis",
+    "difficulty": "hard",
+    "topic": "Optics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-118",
+    "question": "Brewster's angle is the angle of incidence at which reflected light becomes what?",
+    "options": [
+      "Completely unpolarized",
+      "Completely (or maximally) polarized",
+      "Completely absorbed",
+      "Refracted at 90 degrees"
+    ],
+    "correctAnswer": "Completely (or maximally) polarized",
+    "difficulty": "hard",
+    "topic": "Optics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-119",
+    "question": "According to Einstein's theory of special relativity, the speed of light in a vacuum is what for all observers, regardless of their relative motion?",
+    "options": [
+      "Variable, depending on the observer's speed",
+      "Constant for all observers",
+      "Only constant for stationary observers",
+      "Dependent on the light's color"
+    ],
+    "correctAnswer": "Constant for all observers",
+    "difficulty": "easy",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-120",
+    "question": "Time dilation predicts that a moving clock, as observed from a stationary reference frame, will do what compared to a stationary clock?",
+    "options": [
+      "Run faster",
+      "Run slower (appear to tick more slowly)",
+      "Run at exactly the same rate",
+      "Stop completely"
+    ],
+    "correctAnswer": "Run slower (appear to tick more slowly)",
+    "difficulty": "medium",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-121",
+    "question": "GPS satellites must account for relativistic time dilation effects to maintain accurate positioning. This is necessary because satellite clocks experience which combination of relativistic effects?",
+    "options": [
+      "No relativistic effects at all, since satellites move slowly",
+      "Both special relativistic time dilation (due to their speed) and general relativistic effects (due to weaker gravity at altitude)",
+      "Only special relativistic effects, with general relativity being irrelevant",
+      "Only general relativistic effects, with special relativity being irrelevant"
+    ],
+    "correctAnswer": "Both special relativistic time dilation (due to their speed) and general relativistic effects (due to weaker gravity at altitude)",
+    "difficulty": "hard",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-122",
+    "question": "According to mass-energy equivalence (E = mc²), a small amount of mass converted into energy would release what?",
+    "options": [
+      "A negligible, essentially undetectable amount of energy",
+      "An enormous amount of energy, since c² is an extremely large number",
+      "No energy at all",
+      "Energy only under extremely high temperatures"
+    ],
+    "correctAnswer": "An enormous amount of energy, since c² is an extremely large number",
+    "difficulty": "hard",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-123",
+    "question": "In the photoelectric effect, increasing the intensity (brightness) of light while keeping frequency constant primarily affects what?",
+    "options": [
+      "The number of photoelectrons emitted, not their individual kinetic energy",
+      "The kinetic energy of each individual photoelectron, not the number emitted",
+      "Both the number and energy of photoelectrons equally",
+      "Neither the number nor the energy of photoelectrons"
+    ],
+    "correctAnswer": "The number of photoelectrons emitted, not their individual kinetic energy",
+    "difficulty": "easy",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-124",
+    "question": "According to Einstein's explanation of the photoelectric effect, no electrons are emitted from a metal surface if the incoming light's frequency is below what threshold?",
+    "options": [
+      "The wavelength threshold",
+      "The work function threshold frequency of the metal",
+      "The intensity threshold",
+      "There is no minimum frequency requirement"
+    ],
+    "correctAnswer": "The work function threshold frequency of the metal",
+    "difficulty": "medium",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-125",
+    "question": "The de Broglie wavelength (λ = h/p) suggests that particles, such as electrons, exhibit what kind of behavior?",
+    "options": [
+      "Only particle-like behavior, with no wave properties",
+      "Wave-like behavior, in addition to their particle nature (wave-particle duality)",
+      "No measurable wavelength under any conditions",
+      "Behavior identical to macroscopic objects like baseballs"
+    ],
+    "correctAnswer": "Wave-like behavior, in addition to their particle nature (wave-particle duality)",
+    "difficulty": "hard",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-126",
+    "question": "The Heisenberg uncertainty principle states that it is fundamentally impossible to simultaneously know what two properties of a particle with perfect precision?",
+    "options": [
+      "Mass and charge",
+      "Position and momentum",
+      "Temperature and pressure",
+      "Color and frequency"
+    ],
+    "correctAnswer": "Position and momentum",
+    "difficulty": "hard",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-127",
+    "question": "In the Bohr model of the hydrogen atom, electrons are described as orbiting the nucleus in what manner?",
+    "options": [
+      "In random, unpredictable paths",
+      "In fixed, quantized energy levels (orbits)",
+      "Only outside the atom entirely",
+      "Only at the center of the nucleus"
+    ],
+    "correctAnswer": "In fixed, quantized energy levels (orbits)",
+    "difficulty": "easy",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-128",
+    "question": "When an electron in a hydrogen atom drops from a higher energy level to a lower one, what happens?",
+    "options": [
+      "The atom absorbs a photon",
+      "The atom emits a photon with energy equal to the difference between the two energy levels",
+      "The electron disappears entirely",
+      "No energy change occurs"
+    ],
+    "correctAnswer": "The atom emits a photon with energy equal to the difference between the two energy levels",
+    "difficulty": "medium",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-129",
+    "question": "The Balmer series of hydrogen's emission spectrum corresponds to electron transitions that end at which energy level?",
+    "options": [
+      "n = 1",
+      "n = 2",
+      "n = 3",
+      "n = infinity"
+    ],
+    "correctAnswer": "n = 2",
+    "difficulty": "hard",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-130",
+    "question": "The quantum number 'l' (azimuthal/angular momentum quantum number) determines what property of an electron's orbital?",
+    "options": [
+      "Its energy level only",
+      "The shape of the orbital (s, p, d, f)",
+      "Its spin direction",
+      "Its exact position in space"
+    ],
+    "correctAnswer": "The shape of the orbital (s, p, d, f)",
+    "difficulty": "hard",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-131",
+    "question": "The strong nuclear force is responsible for what within the atomic nucleus?",
+    "options": [
+      "Repelling protons away from each other",
+      "Holding protons and neutrons together within the nucleus, overcoming electrostatic repulsion",
+      "Causing electrons to orbit the nucleus",
+      "Causing radioactive decay in all cases"
+    ],
+    "correctAnswer": "Holding protons and neutrons together within the nucleus, overcoming electrostatic repulsion",
+    "difficulty": "easy",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-132",
+    "question": "The mass defect of a nucleus refers to what?",
+    "options": [
+      "The difference between the mass of the nucleus and the sum of the masses of its individual protons and neutrons",
+      "The total mass of all electrons in the atom",
+      "An error in measuring the nucleus's mass",
+      "The mass of only the neutrons in the nucleus"
+    ],
+    "correctAnswer": "The difference between the mass of the nucleus and the sum of the masses of its individual protons and neutrons",
+    "difficulty": "medium",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-133",
+    "question": "Binding energy per nucleon is a useful measure because it indicates what about a nucleus?",
+    "options": [
+      "Its electrical charge",
+      "Its overall stability; higher binding energy per nucleon generally indicates a more stable nucleus",
+      "Its rate of radioactive decay only",
+      "Its physical size only"
+    ],
+    "correctAnswer": "Its overall stability; higher binding energy per nucleon generally indicates a more stable nucleus",
+    "difficulty": "hard",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-134",
+    "question": "Nuclear fission and fusion both release energy, but involve different processes. Fission is most efficient (releases the most energy per reaction) for which type of nuclei?",
+    "options": [
+      "Very light nuclei, such as hydrogen isotopes",
+      "Very heavy nuclei, such as uranium or plutonium",
+      "Only nuclei with equal protons and neutrons",
+      "Nuclei with zero binding energy"
+    ],
+    "correctAnswer": "Very heavy nuclei, such as uranium or plutonium",
+    "difficulty": "hard",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-135",
+    "question": "According to the Standard Model, which of the following is classified as a fundamental particle (not made of smaller components)?",
+    "options": [
+      "Proton",
+      "Neutron",
+      "Quark",
+      "Atom"
+    ],
+    "correctAnswer": "Quark",
+    "difficulty": "easy",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-136",
+    "question": "Which fundamental force is responsible for holding quarks together within protons and neutrons?",
+    "options": [
+      "Gravity",
+      "The strong nuclear force",
+      "The weak nuclear force",
+      "Electromagnetism"
+    ],
+    "correctAnswer": "The strong nuclear force",
+    "difficulty": "medium",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-137",
+    "question": "The discovery of the Higgs boson at CERN was significant primarily because it confirmed what mechanism in the Standard Model?",
+    "options": [
+      "The mechanism by which fundamental particles acquire mass",
+      "The mechanism responsible for radioactive decay",
+      "The existence of dark matter directly",
+      "The unification of gravity with the other three forces"
+    ],
+    "correctAnswer": "The mechanism by which fundamental particles acquire mass",
+    "difficulty": "hard",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-138",
+    "question": "Baryons, such as protons and neutrons, are composed of how many quarks, distinguishing them from mesons?",
+    "options": [
+      "One quark",
+      "Two quarks",
+      "Three quarks",
+      "Four quarks"
+    ],
+    "correctAnswer": "Three quarks",
+    "difficulty": "hard",
+    "topic": "Modern Physics",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-139",
+    "question": "Unlike DC (direct current), AC (alternating current) is characterized by what behavior?",
+    "options": [
+      "A constant, unchanging voltage and current direction",
+      "A voltage and current that periodically reverse direction",
+      "The complete absence of current flow",
+      "Current that flows only in one direction at increasing magnitude"
+    ],
+    "correctAnswer": "A voltage and current that periodically reverse direction",
+    "difficulty": "easy",
+    "topic": "Electromagnetism & Maxwell's Equations",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-140",
+    "question": "In an AC circuit, the reactance of a capacitor (Xc) is inversely proportional to what?",
+    "options": [
+      "The resistance of the circuit",
+      "The frequency of the AC signal",
+      "The voltage amplitude",
+      "The capacitor's physical size only"
+    ],
+    "correctAnswer": "The frequency of the AC signal",
+    "difficulty": "medium",
+    "topic": "Electromagnetism & Maxwell's Equations",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-141",
+    "question": "In a series RLC circuit, resonance occurs at the frequency where what condition is met?",
+    "options": [
+      "The resistance is at its maximum value",
+      "The inductive reactance equals the capacitive reactance, minimizing total impedance",
+      "The capacitive reactance is zero at all frequencies",
+      "The circuit stops conducting entirely"
+    ],
+    "correctAnswer": "The inductive reactance equals the capacitive reactance, minimizing total impedance",
+    "difficulty": "hard",
+    "topic": "Electromagnetism & Maxwell's Equations",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-142",
+    "question": "The power factor in an AC circuit is related to what aspect of the circuit's behavior?",
+    "options": [
+      "The phase difference between the voltage and current waveforms",
+      "The total resistance of the circuit only",
+      "The frequency of the AC source only",
+      "The physical size of the components"
+    ],
+    "correctAnswer": "The phase difference between the voltage and current waveforms",
+    "difficulty": "hard",
+    "topic": "Electromagnetism & Maxwell's Equations",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-143",
+    "question": "Maxwell's equations unify which two fundamental phenomena into a single theory of electromagnetism?",
+    "options": [
+      "Gravity and magnetism",
+      "Electricity and magnetism",
+      "Heat and light",
+      "Sound and light"
+    ],
+    "correctAnswer": "Electricity and magnetism",
+    "difficulty": "easy",
+    "topic": "Electromagnetism & Maxwell's Equations",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-144",
+    "question": "According to Maxwell's theory, a changing electric field can produce what?",
+    "options": [
+      "A changing magnetic field, contributing to the propagation of electromagnetic waves",
+      "A static electric field only",
+      "No measurable effect",
+      "A gravitational field"
+    ],
+    "correctAnswer": "A changing magnetic field, contributing to the propagation of electromagnetic waves",
+    "difficulty": "medium",
+    "topic": "Electromagnetism & Maxwell's Equations",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-145",
+    "question": "The Poynting vector in electromagnetic theory represents what physical quantity?",
+    "options": [
+      "The electric field strength alone",
+      "The direction and rate of energy flow (intensity) of an electromagnetic wave",
+      "The magnetic field strength alone",
+      "The wave's frequency"
+    ],
+    "correctAnswer": "The direction and rate of energy flow (intensity) of an electromagnetic wave",
+    "difficulty": "hard",
+    "topic": "Electromagnetism & Maxwell's Equations",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-146",
+    "question": "Ampere-Maxwell's law modified the original Ampere's law by adding what term, which was essential for predicting the existence of electromagnetic waves?",
+    "options": [
+      "The gravitational force term",
+      "The displacement current term, accounting for changing electric fields",
+      "The frictional force term",
+      "The nuclear force term"
+    ],
+    "correctAnswer": "The displacement current term, accounting for changing electric fields",
+    "difficulty": "hard",
+    "topic": "Electromagnetism & Maxwell's Equations",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-easy-147",
+    "question": "Bernoulli's principle relates the speed of a fluid to what other property, in a way that explains phenomena like airplane lift?",
+    "options": [
+      "Its temperature",
+      "Its pressure, such that faster-moving fluid has lower pressure",
+      "Its color",
+      "Its viscosity only"
+    ],
+    "correctAnswer": "Its pressure, such that faster-moving fluid has lower pressure",
+    "difficulty": "easy",
+    "topic": "Electromagnetism & Maxwell's Equations",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-medium-148",
+    "question": "The continuity equation in fluid mechanics (A1v1 = A2v2) describes what principle for an incompressible fluid flowing through a pipe of varying cross-section?",
+    "options": [
+      "Conservation of energy only",
+      "Conservation of mass (volume flow rate remains constant)",
+      "Conservation of momentum only",
+      "Conservation of charge"
+    ],
+    "correctAnswer": "Conservation of mass (volume flow rate remains constant)",
+    "difficulty": "medium",
+    "topic": "Electromagnetism & Maxwell's Equations",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-149",
+    "question": "Chaos theory describes systems that are highly sensitive to what, making long-term prediction extremely difficult despite being governed by deterministic equations?",
+    "options": [
+      "Their overall size",
+      "Initial conditions, where tiny differences can lead to vastly different outcomes",
+      "Their temperature only",
+      "Their color"
+    ],
+    "correctAnswer": "Initial conditions, where tiny differences can lead to vastly different outcomes",
+    "difficulty": "hard",
+    "topic": "Electromagnetism & Maxwell's Equations",
+    "subject": "physics",
+    "grade": "hs"
+  },
+  {
+    "id": "physics-hard-150",
+    "question": "In fluid mechanics, viscosity is best described as a measure of what property of a fluid?",
+    "options": [
+      "Its density alone",
+      "Its resistance to flow (internal friction between fluid layers)",
+      "Its temperature only",
+      "Its total volume"
+    ],
+    "correctAnswer": "Its resistance to flow (internal friction between fluid layers)",
+    "difficulty": "hard",
+    "topic": "Electromagnetism & Maxwell's Equations",
+    "subject": "physics",
+    "grade": "hs"
+  }
+]

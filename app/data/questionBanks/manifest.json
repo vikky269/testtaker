@@ -1,0 +1,106 @@
+[
+  {
+    "bank": "math/grade-1",
+    "count": 750
+  },
+  {
+    "bank": "math/grade-2",
+    "count": 750
+  },
+  {
+    "bank": "math/grade-3",
+    "count": 898
+  },
+  {
+    "bank": "math/grade-4",
+    "count": 900
+  },
+  {
+    "bank": "math/grade-5",
+    "count": 898
+  },
+  {
+    "bank": "math/grade-6",
+    "count": 895
+  },
+  {
+    "bank": "math/grade-7",
+    "count": 883
+  },
+  {
+    "bank": "science/kindergarten.json",
+    "count": 50
+  },
+  {
+    "bank": "science/grade-1.json",
+    "count": 50
+  },
+  {
+    "bank": "science/grade-2.json",
+    "count": 50
+  },
+  {
+    "bank": "science/grade-3.json",
+    "count": 50
+  },
+  {
+    "bank": "science/grade-4.json",
+    "count": 50
+  },
+  {
+    "bank": "science/grade-5.json",
+    "count": 50
+  },
+  {
+    "bank": "science/grade-6.json",
+    "count": 50
+  },
+  {
+    "bank": "science/grade-7.json",
+    "count": 50
+  },
+  {
+    "bank": "science/grade-8.json",
+    "count": 50
+  },
+  {
+    "bank": "science/physics.json",
+    "count": 150
+  },
+  {
+    "bank": "science/chemistry.json",
+    "count": 150
+  },
+  {
+    "bank": "science/biology.json",
+    "count": 150
+  },
+  {
+    "bank": "ela/grade-1",
+    "count": 750
+  },
+  {
+    "bank": "ela/grade-2",
+    "count": 750
+  },
+  {
+    "bank": "ela/grade-3",
+    "count": 750
+  },
+  {
+    "bank": "ela/grade-4",
+    "count": 750
+  },
+  {
+    "bank": "ela/grade-5",
+    "count": 899
+  },
+  {
+    "bank": "ela/grade-6",
+    "count": 749
+  },
+  {
+    "bank": "ela/grade-7",
+    "count": 748
+  }
+]

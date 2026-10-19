@@ -1,0 +1,738 @@
+[
+  {
+    "id": "science-1-easy-1",
+    "question": "What do we use our ears to do?",
+    "options": [
+      "See colors",
+      "Smell flowers",
+      "Hear sounds",
+      "Taste food"
+    ],
+    "correctAnswer": "Hear sounds",
+    "difficulty": "easy",
+    "topic": "Light and Sound",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-easy-2",
+    "question": "What makes a sound?",
+    "options": [
+      "Something that is shaking back and forth (vibrating)",
+      "Something that stays perfectly still",
+      "Something that is cold",
+      "Something that is dark"
+    ],
+    "correctAnswer": "Something that is shaking back and forth (vibrating)",
+    "difficulty": "easy",
+    "topic": "Light and Sound",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-easy-3",
+    "question": "True or False: You can feel a drum shake when it makes a sound.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Light and Sound",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-easy-4",
+    "question": "Which one gives off its own light?",
+    "options": [
+      "A rock",
+      "A book",
+      "A chair",
+      "The Sun"
+    ],
+    "correctAnswer": "The Sun",
+    "difficulty": "easy",
+    "topic": "Light and Sound",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-easy-5",
+    "question": "Which tool gives light in the dark?",
+    "options": [
+      "A hammer",
+      "A flashlight",
+      "A pencil",
+      "A ruler"
+    ],
+    "correctAnswer": "A flashlight",
+    "difficulty": "easy",
+    "topic": "Light and Sound",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-easy-6",
+    "question": "True or False: We need light to see things.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Light and Sound",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-easy-7",
+    "question": "Which material lets light pass through it?",
+    "options": [
+      "A wood board",
+      "A brick wall",
+      "A metal pan",
+      "Clear glass"
+    ],
+    "correctAnswer": "Clear glass",
+    "difficulty": "easy",
+    "topic": "Light and Sound",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-medium-8",
+    "question": "Which material blocks light and makes a dark shadow?",
+    "options": [
+      "Clear plastic wrap",
+      "A wooden board",
+      "A clean window",
+      "Clear water in a glass"
+    ],
+    "correctAnswer": "A wooden board",
+    "difficulty": "medium",
+    "topic": "Light and Sound",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-medium-9",
+    "question": "A guitar string is plucked. What does the string do?",
+    "options": [
+      "It shakes back and forth",
+      "It stays perfectly still",
+      "It melts",
+      "It turns blue"
+    ],
+    "correctAnswer": "It shakes back and forth",
+    "difficulty": "medium",
+    "topic": "Light and Sound",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-medium-10",
+    "question": "Which makes a louder sound?",
+    "options": [
+      "Tapping a drum very lightly",
+      "Touching a drum without moving it",
+      "Hitting a drum hard",
+      "Covering the drum with a blanket"
+    ],
+    "correctAnswer": "Hitting a drum hard",
+    "difficulty": "medium",
+    "topic": "Light and Sound",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-medium-11",
+    "question": "True or False: A shadow forms when something blocks light.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "medium",
+    "topic": "Light and Sound",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-medium-12",
+    "question": "Which can be used to send a message to someone who is far away?",
+    "options": [
+      "A spoon",
+      "A telephone",
+      "A pillow",
+      "A rock"
+    ],
+    "correctAnswer": "A telephone",
+    "difficulty": "medium",
+    "topic": "Light and Sound",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-medium-13",
+    "question": "It is completely dark in a closet. Can you see a ball inside?",
+    "options": [
+      "Yes, because your eyes make light",
+      "Yes, because every ball glows",
+      "Yes, but only red balls",
+      "No, because there is no light"
+    ],
+    "correctAnswer": "No, because there is no light",
+    "difficulty": "medium",
+    "topic": "Light and Sound",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-hard-14",
+    "question": "Which material would make the darkest shadow?",
+    "options": [
+      "A clear glass window",
+      "Clear plastic wrap",
+      "A thick piece of cardboard",
+      "A thin sheet of waxed paper"
+    ],
+    "correctAnswer": "A thick piece of cardboard",
+    "difficulty": "hard",
+    "topic": "Light and Sound",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-hard-15",
+    "question": "You put your hand on your throat and say “ahh.” What do you feel?",
+    "options": [
+      "A shaking (vibration)",
+      "Cold wind",
+      "A flash of light",
+      "Nothing at all"
+    ],
+    "correctAnswer": "A shaking (vibration)",
+    "difficulty": "hard",
+    "topic": "Light and Sound",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-hard-16",
+    "question": "Two cups are connected with a tight string so friends can talk from far apart. How does the sound travel?",
+    "options": [
+      "Light moves through the string",
+      "The cups make the air colder",
+      "The string shakes and carries the sound",
+      "The string turns into a phone"
+    ],
+    "correctAnswer": "The string shakes and carries the sound",
+    "difficulty": "hard",
+    "topic": "Light and Sound",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-hard-17",
+    "question": "A child holds a book between a flashlight and a wall. What happens on the wall?",
+    "options": [
+      "A shadow appears",
+      "The wall gets brighter",
+      "A rainbow appears",
+      "The book starts to glow"
+    ],
+    "correctAnswer": "A shadow appears",
+    "difficulty": "hard",
+    "topic": "Light and Sound",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-hard-18",
+    "question": "Which one uses light to send a signal from far away?",
+    "options": [
+      "A drum in a closet",
+      "A whisper in your ear",
+      "A book on a shelf",
+      "A lighthouse flashing its light to ships"
+    ],
+    "correctAnswer": "A lighthouse flashing its light to ships",
+    "difficulty": "hard",
+    "topic": "Light and Sound",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-easy-19",
+    "question": "Which body part helps a bird fly?",
+    "options": [
+      "Fins",
+      "Wings",
+      "Roots",
+      "Horns"
+    ],
+    "correctAnswer": "Wings",
+    "difficulty": "easy",
+    "topic": "Traits and Behaviors",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-easy-20",
+    "question": "What do a fish’s fins help it do?",
+    "options": [
+      "Fly",
+      "Climb trees",
+      "Dig holes",
+      "Swim"
+    ],
+    "correctAnswer": "Swim",
+    "difficulty": "easy",
+    "topic": "Traits and Behaviors",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-easy-21",
+    "question": "True or False: A giraffe’s long neck helps it reach leaves high in trees.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Traits and Behaviors",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-easy-22",
+    "question": "A mother bird feeds her baby birds. Why?",
+    "options": [
+      "The babies want to fly right away",
+      "The babies need food to grow",
+      "The mother is bored",
+      "The babies need toys"
+    ],
+    "correctAnswer": "The babies need food to grow",
+    "difficulty": "easy",
+    "topic": "Traits and Behaviors",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-easy-23",
+    "question": "Baby animals usually look like their what?",
+    "options": [
+      "Parents",
+      "Toys",
+      "Shoes",
+      "Rocks"
+    ],
+    "correctAnswer": "Parents",
+    "difficulty": "easy",
+    "topic": "Traits and Behaviors",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-easy-24",
+    "question": "Which plant part holds the plant in the ground?",
+    "options": [
+      "Leaves",
+      "Flowers",
+      "Roots",
+      "Fruits"
+    ],
+    "correctAnswer": "Roots",
+    "difficulty": "easy",
+    "topic": "Traits and Behaviors",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-medium-25",
+    "question": "Why does a turtle have a hard shell?",
+    "options": [
+      "To help it fly",
+      "To protect its body",
+      "To help it jump high",
+      "To stop it from eating"
+    ],
+    "correctAnswer": "To protect its body",
+    "difficulty": "medium",
+    "topic": "Traits and Behaviors",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-medium-26",
+    "question": "Baby ducks follow their mother. How does this help them?",
+    "options": [
+      "It makes them fly faster",
+      "It stops them from swimming",
+      "It helps them hide in trees",
+      "It keeps them safe and close to her"
+    ],
+    "correctAnswer": "It keeps them safe and close to her",
+    "difficulty": "medium",
+    "topic": "Traits and Behaviors",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-medium-27",
+    "question": "A cactus has thick stems and spines. How do these help it live in the desert?",
+    "options": [
+      "Spines give it water",
+      "Thick stems help it fly",
+      "Thick stems hold water and spines keep animals away",
+      "Spines help it swim"
+    ],
+    "correctAnswer": "Thick stems hold water and spines keep animals away",
+    "difficulty": "medium",
+    "topic": "Traits and Behaviors",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-medium-28",
+    "question": "True or False: Puppies from the same parents always look exactly alike.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "difficulty": "medium",
+    "topic": "Traits and Behaviors",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-medium-29",
+    "question": "A baby cries and its parent comes to help. What does this show?",
+    "options": [
+      "Babies and parents use behaviors that help the baby survive",
+      "Parents do not care about babies",
+      "Babies cry only for fun",
+      "Parents hide from babies"
+    ],
+    "correctAnswer": "Babies and parents use behaviors that help the baby survive",
+    "difficulty": "medium",
+    "topic": "Traits and Behaviors",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-hard-30",
+    "question": "Two kittens from the same mother have different fur colors. What does this show?",
+    "options": [
+      "They cannot be from the same mother",
+      "Their fur was dyed",
+      "Offspring are alike in many ways but not exactly the same",
+      "They are different kinds of animals"
+    ],
+    "correctAnswer": "Offspring are alike in many ways but not exactly the same",
+    "difficulty": "hard",
+    "topic": "Traits and Behaviors",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-hard-31",
+    "question": "A polar bear has thick white fur. How does it help the polar bear?",
+    "options": [
+      "It keeps the bear warm and helps it hide in the snow",
+      "It helps the bear climb trees",
+      "It helps the bear fly",
+      "It helps the bear live in the desert"
+    ],
+    "correctAnswer": "It keeps the bear warm and helps it hide in the snow",
+    "difficulty": "hard",
+    "topic": "Traits and Behaviors",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-hard-32",
+    "question": "Which animal body part helps an eagle catch food?",
+    "options": [
+      "Flat teeth",
+      "Fins",
+      "Long floppy ears",
+      "Sharp claws"
+    ],
+    "correctAnswer": "Sharp claws",
+    "difficulty": "hard",
+    "topic": "Traits and Behaviors",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-hard-33",
+    "question": "A baby kangaroo (joey) stays in its mother’s pouch. How does this help?",
+    "options": [
+      "It teaches the joey to fly",
+      "It keeps the joey safe, warm, and close to food",
+      "It keeps the joey far from its mother",
+      "It makes the joey colder"
+    ],
+    "correctAnswer": "It keeps the joey safe, warm, and close to food",
+    "difficulty": "hard",
+    "topic": "Traits and Behaviors",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-hard-34",
+    "question": "A sunflower turns to face the Sun. Why is that helpful?",
+    "options": [
+      "It is looking for the Moon",
+      "It keeps the flower from falling",
+      "It scares away animals",
+      "It gets more sunlight to help it make food"
+    ],
+    "correctAnswer": "It gets more sunlight to help it make food",
+    "difficulty": "hard",
+    "topic": "Traits and Behaviors",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-hard-35",
+    "question": "A parent animal teaches its young how to hunt. Why is this important?",
+    "options": [
+      "The young will never need food",
+      "The young learn how to find food and take care of themselves",
+      "The young will stay babies forever",
+      "The young will forget their parents"
+    ],
+    "correctAnswer": "The young learn how to find food and take care of themselves",
+    "difficulty": "hard",
+    "topic": "Traits and Behaviors",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-easy-36",
+    "question": "What can we usually see in the sky at night?",
+    "options": [
+      "The Moon and stars",
+      "Only the Sun",
+      "Only clouds",
+      "Only rainbows"
+    ],
+    "correctAnswer": "The Moon and stars",
+    "difficulty": "easy",
+    "topic": "Sun and Moon",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-easy-37",
+    "question": "When can we see the most stars?",
+    "options": [
+      "At noon",
+      "In the morning",
+      "At night",
+      "At lunchtime"
+    ],
+    "correctAnswer": "At night",
+    "difficulty": "easy",
+    "topic": "Sun and Moon",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-easy-38",
+    "question": "True or False: The Sun rises in the morning.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "easy",
+    "topic": "Sun and Moon",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-easy-39",
+    "question": "What gives Earth light and warmth during the day?",
+    "options": [
+      "The Moon",
+      "The Sun",
+      "A star far away",
+      "A cloud"
+    ],
+    "correctAnswer": "The Sun",
+    "difficulty": "easy",
+    "topic": "Sun and Moon",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-easy-40",
+    "question": "At what time of day does the Sun set?",
+    "options": [
+      "In the morning",
+      "At noon",
+      "In the early morning",
+      "In the evening"
+    ],
+    "correctAnswer": "In the evening",
+    "difficulty": "easy",
+    "topic": "Sun and Moon",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-medium-41",
+    "question": "In which direction does the Sun rise?",
+    "options": [
+      "The west",
+      "Straight overhead",
+      "The east",
+      "The south"
+    ],
+    "correctAnswer": "The east",
+    "difficulty": "medium",
+    "topic": "Sun and Moon",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-medium-42",
+    "question": "What do we call the Moon when it looks like a full, round circle?",
+    "options": [
+      "Full moon",
+      "New moon",
+      "Crescent moon",
+      "Half moon"
+    ],
+    "correctAnswer": "Full moon",
+    "difficulty": "medium",
+    "topic": "Sun and Moon",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-medium-43",
+    "question": "The Moon looks different on different nights. Which is true?",
+    "options": [
+      "It changes every hour",
+      "It never changes",
+      "Its shape seems to change in a pattern over about a month",
+      "It changes only in summer"
+    ],
+    "correctAnswer": "Its shape seems to change in a pattern over about a month",
+    "difficulty": "medium",
+    "topic": "Sun and Moon",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-medium-44",
+    "question": "True or False: Summer days usually have more daylight than winter days.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True",
+    "difficulty": "medium",
+    "topic": "Sun and Moon",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-medium-45",
+    "question": "About how long does it take for the Moon to go through all of its shapes?",
+    "options": [
+      "About one month",
+      "One hour",
+      "One day",
+      "One year"
+    ],
+    "correctAnswer": "About one month",
+    "difficulty": "medium",
+    "topic": "Sun and Moon",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-hard-46",
+    "question": "In the morning the Sun is low in the sky. What will it do during the day?",
+    "options": [
+      "It will stay in the same spot",
+      "It will go underground",
+      "It will get smaller and disappear",
+      "It will seem to rise higher, then go lower again in the evening"
+    ],
+    "correctAnswer": "It will seem to rise higher, then go lower again in the evening",
+    "difficulty": "hard",
+    "topic": "Sun and Moon",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-hard-47",
+    "question": "In winter, it is already dark when school ends. What does this show?",
+    "options": [
+      "Winter has no Sun",
+      "Winter days have less daylight than summer days",
+      "The Moon blocks the Sun all day",
+      "Summer days are shorter than winter days"
+    ],
+    "correctAnswer": "Winter days have less daylight than summer days",
+    "difficulty": "hard",
+    "topic": "Sun and Moon",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-hard-48",
+    "question": "Which pattern can you predict?",
+    "options": [
+      "The Moon will turn green",
+      "The Sun will rise at night",
+      "The stars will never come out again",
+      "The Sun will rise again tomorrow morning"
+    ],
+    "correctAnswer": "The Sun will rise again tomorrow morning",
+    "difficulty": "hard",
+    "topic": "Sun and Moon",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-hard-49",
+    "question": "A student draws the shadow of a tree in the morning, at noon, and in the afternoon. Which statement is true?",
+    "options": [
+      "The shadow is longest at noon",
+      "The shadow is shortest around noon and longer in the morning and afternoon",
+      "The shadow stays the same all day",
+      "The shadow is only there at night"
+    ],
+    "correctAnswer": "The shadow is shortest around noon and longer in the morning and afternoon",
+    "difficulty": "hard",
+    "topic": "Sun and Moon",
+    "subject": "science",
+    "grade": "1"
+  },
+  {
+    "id": "science-1-hard-50",
+    "question": "Why can we see the Moon shining at night?",
+    "options": [
+      "It reflects light from the Sun",
+      "It makes its own light",
+      "Clouds light it up",
+      "The stars light it up"
+    ],
+    "correctAnswer": "It reflects light from the Sun",
+    "difficulty": "hard",
+    "topic": "Sun and Moon",
+    "subject": "science",
+    "grade": "1"
+  }
+]

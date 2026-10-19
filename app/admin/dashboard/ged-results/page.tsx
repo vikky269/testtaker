@@ -10,6 +10,7 @@ import { supabase } from '@/lib/supabaseClient';
 import { toast } from 'react-hot-toast';
 import { GED_SECTIONS, GED_SECTION_LABELS } from '@/app/data/geddata';
 import { generateGedReport } from '@/app/utils/generateGedReport';
+import MathHtml from '@/app/components/MathHtml';
 
 interface GedSubmission {
   id: string;
@@ -261,16 +262,21 @@ const handleDelete = async () => {
                                 ${right ? 'bg-green-500' : 'bg-red-500'}`}>
                                 {right ? '✓' : '✗'}
                               </span>
-                              <div className="min-w-0 flex-1">
-                                <p className="text-sm font-semibold text-gray-900 mb-1.5"
-                                   dangerouslySetInnerHTML={{ __html: `${i + 1}. ${q.question}` }} />
+                              <div className="min-w-0 flex-1 overflow-hidden">
+                                <div className="text-sm font-semibold text-gray-900 mb-1.5 flex gap-1.5">
+                                  <span className="flex-shrink-0">{i + 1}.</span>
+                                  <MathHtml as="div" text={q.question} className="min-w-0 flex-1" />
+                                </div>
                                 <p className={`text-xs ${right ? 'text-green-700' : 'text-red-600'}`}>
                                   <span className="font-semibold">Answer:</span>{' '}
-                                  {student ?? <em className="text-gray-400">no answer</em>}
+                                  {student
+                                    ? <MathHtml as="span" text={student} />
+                                    : <em className="text-gray-400">no answer</em>}
                                 </p>
                                 {!right && (
                                   <p className="text-xs text-green-700 mt-0.5">
-                                    <span className="font-semibold">Correct:</span> {correct}
+                                    <span className="font-semibold">Correct:</span>{' '}
+                                    <MathHtml as="span" text={correct} />
                                   </p>
                                 )}
                               </div>

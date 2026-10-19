@@ -6,6 +6,7 @@ import standardsData from "@/app/data/statetestdata";
 import { quizAssessmentData } from "@/app/data/quizassessmentdata";
 import { useEffect, useState, useRef } from "react";
 import { supabase, withTimeout } from "@/lib/supabaseClient";
+import { loadGeneratedAssessment } from "@/app/utils/gradeAssessmentGenerator";
 
 import { formatDuration, getFormattedTimeData } from "@/app/utils/reviewUtils";
 import { generateReport, generateReportBase64 } from "@/app/utils/generateReport"; // ← added generateReportBase64
@@ -165,7 +166,13 @@ export default function ReviewPage() {
     if (testId === "state-test" && stateParam && gradeParam) {
       quiz = standardsData[`${stateParam}-${gradeParam}`] || [];
     } else if (testId === "quiz-assessment" && gradeParam) {
-      quiz = quizAssessmentData.find((q) => normalize(q.grade) === gradeParam)?.questions || [];
+      // Prefer the drawn set from this attempt (new question banks + shuffle)
+      const generated = loadGeneratedAssessment(gradeParam);
+      if (generated?.questions?.length) {
+        quiz = generated.questions;
+      } else {
+        quiz = quizAssessmentData.find((q) => normalize(q.grade) === gradeParam)?.questions || [];
+      }
     } else {
       quiz = quizData[testId as string] || [];
     }
@@ -369,7 +376,7 @@ export default function ReviewPage() {
 
   // ── Render ──────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-gray-50 pb-16 mt-12">
+    <div className="min-h-screen bg-gray-50 pb-16 mt-12 overflow-x-hidden">
 
       {/* ── HEADER ── */}
       <div className="bg-white border-b border-gray-100 shadow-sm px-4 py-6 text-center">
@@ -397,7 +404,7 @@ export default function ReviewPage() {
         )}
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 pt-8">
+      <div className="max-w-6xl mx-auto px-4 pt-8 overflow-x-hidden">
 
         {/* ── SCORE CARDS ── */}
         {isSat ? (

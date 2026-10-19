@@ -1320,7 +1320,7 @@
     "grade": "4"
   },
   {
-    "id": "ela-4-grammar-language-and-vocabulary-easy-39",
+    "id": "ela-4-grammar-language-and-vocabulary-medium-39",
     "question": "Which word best completes “The hikers reached the ___”?",
     "options": [
       "shore",
@@ -1328,8 +1328,8 @@
       "basement",
       "summit"
     ],
-    "correctAnswer": "harbor",
-    "difficulty": "easy",
+    "correctAnswer": "summit",
+    "difficulty": "medium",
     "topic": "Grammar Language and Vocabulary",
     "subject": "ela",
     "grade": "4"

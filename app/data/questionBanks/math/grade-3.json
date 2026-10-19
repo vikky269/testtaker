@@ -2286,14 +2286,14 @@
   },
   {
     "id": "math-3-introduction-number-sense-3rd-grade-easy-6",
-    "question": "Mateo has \\68. What is \\68 rounded to the nearest ten dollars?",
+    "question": "Mateo has $68. What is $68 rounded to the nearest ten dollars?",
     "options": [
-      "\\60",
-      "\\70",
-      "\\65",
-      "\\80"
+      "$60",
+      "$70",
+      "$65",
+      "$80"
     ],
-    "correctAnswer": "\\70",
+    "correctAnswer": "$70",
     "difficulty": "easy",
     "topic": "INTRODUCTION & NUMBER SENSE (3RD GRADE)",
     "subject": "math",
@@ -2406,14 +2406,14 @@
   },
   {
     "id": "math-3-introduction-number-sense-3rd-grade-easy-14",
-    "question": "Anaya saves \\243. What is \\243 rounded to the nearest hundred dollars?",
+    "question": "Anaya saves $243. What is $243 rounded to the nearest hundred dollars?",
     "options": [
-      "\\240",
-      "\\300",
-      "\\200",
-      "\\250"
+      "$240",
+      "$300",
+      "$200",
+      "$250"
     ],
-    "correctAnswer": "\\200",
+    "correctAnswer": "$200",
     "difficulty": "easy",
     "topic": "INTRODUCTION & NUMBER SENSE (3RD GRADE)",
     "subject": "math",
@@ -3051,14 +3051,14 @@
   },
   {
     "id": "math-3-introduction-number-sense-3rd-grade-medium-57",
-    "question": "Marcus earns \\3,482 selling custom t-shirts. What is \\3,482 rounded to the nearest hundred dollars?",
+    "question": "Marcus earns $3,482 selling custom t-shirts. What is $3,482 rounded to the nearest hundred dollars?",
     "options": [
-      "\\3,400",
-      "\\3,480",
-      "\\3,500",
-      "\\4,000"
+      "$3,400",
+      "$3,480",
+      "$3,500",
+      "$4,000"
     ],
-    "correctAnswer": "\\3,500",
+    "correctAnswer": "$3,500",
     "difficulty": "medium",
     "topic": "INTRODUCTION & NUMBER SENSE (3RD GRADE)",
     "subject": "math",
@@ -3591,14 +3591,14 @@
   },
   {
     "id": "math-3-introduction-number-sense-3rd-grade-medium-93",
-    "question": "Jamal has \\4,560 saved for college. What is \\4,560 rounded to the nearest hundred dollars?",
+    "question": "Jamal has $4,560 saved for college. What is $4,560 rounded to the nearest hundred dollars?",
     "options": [
-      "\\4,500",
-      "\\4,550",
-      "\\5,000",
-      "\\4,600"
+      "$4,500",
+      "$4,550",
+      "$5,000",
+      "$4,600"
     ],
-    "correctAnswer": "\\4,600",
+    "correctAnswer": "$4,600",
     "difficulty": "medium",
     "topic": "INTRODUCTION & NUMBER SENSE (3RD GRADE)",
     "subject": "math",
@@ -3998,12 +3998,12 @@
     "id": "math-3-introduction-number-sense-3rd-grade-hard-120",
     "question": "Which expression equals 8,402?",
     "options": [
-      "80\\text{ hundreds } + 40\\text{ tens } + 2\\text{ ones}",
-      "8\\text{ thousands } + 40\\text{ tens } + 2\\text{ ones}",
-      "84\\text{ hundreds } + 20\\text{ ones}",
-      "8\\text{ thousands } + 4\\text{ tens } + 2\\text{ ones}"
+      "80 hundreds + 40 tens + 2 ones",
+      "8 thousands + 40 tens + 2 ones",
+      "84 hundreds + 20 ones",
+      "8 thousands + 4 tens + 2 ones"
     ],
-    "correctAnswer": "8\\text{ thousands } + 40\\text{ tens } + 2\\text{ ones}",
+    "correctAnswer": "8 thousands + 40 tens + 2 ones",
     "difficulty": "hard",
     "topic": "INTRODUCTION & NUMBER SENSE (3RD GRADE)",
     "subject": "math",
@@ -4041,14 +4041,14 @@
   },
   {
     "id": "math-3-introduction-number-sense-3rd-grade-hard-123",
-    "question": "Marcus has \\10,000 in game tokens. He gives away \\100. How much does he have left?",
+    "question": "Marcus has $10,000 in game tokens. He gives away $100. How much does he have left?",
     "options": [
-      "\\9,000",
-      "\\9,990",
-      "\\9,900",
-      "\\9,909"
+      "$9,000",
+      "$9,990",
+      "$9,900",
+      "$9,909"
     ],
-    "correctAnswer": "\\9,900",
+    "correctAnswer": "$9,900",
     "difficulty": "hard",
     "topic": "INTRODUCTION & NUMBER SENSE (3RD GRADE)",
     "subject": "math",
@@ -4224,11 +4224,11 @@
     "question": "Which comparison is TRUE?",
     "options": [
       "3,000 + 400 + 80 + 2 > 3,000 + 500 + 10",
-      "6\\text{ thousands } + 12\\text{ hundreds } > 7\\text{ thousands } + 1\\text{ hundred}",
+      "6 thousands + 12 hundreds > 7 thousands + 1 hundred",
       "8,090 = 8,900",
       "9,909 > 9,990"
     ],
-    "correctAnswer": "6\\text{ thousands } + 12\\text{ hundreds } > 7\\text{ thousands } + 1\\text{ hundred}",
+    "correctAnswer": "6 thousands + 12 hundreds > 7 thousands + 1 hundred",
     "difficulty": "hard",
     "topic": "INTRODUCTION & NUMBER SENSE (3RD GRADE)",
     "subject": "math",
@@ -4251,7 +4251,7 @@
   },
   {
     "id": "math-3-introduction-number-sense-3rd-grade-hard-137",
-    "question": "Dante writes a number: 5\\text{ thousands } + 17\\text{ tens } + 4\\text{ ones}. What is the standard form?",
+    "question": "Dante writes a number: 5 thousands + 17 tens + 4 ones. What is the standard form?",
     "options": [
       "5,174",
       "5,714",
@@ -4281,14 +4281,14 @@
   },
   {
     "id": "math-3-introduction-number-sense-3rd-grade-hard-139",
-    "question": "Carlos has \\2,450. He earns \\100 more each week for 4 weeks. How much money does he have after 4 weeks?",
+    "question": "Carlos has $2,450. He earns $100 more each week for 4 weeks. How much money does he have after 4 weeks?",
     "options": [
-      "\\2,750",
-      "\\2,950",
-      "\\2,850",
-      "\\3,050"
+      "$2,750",
+      "$2,950",
+      "$2,850",
+      "$3,050"
     ],
-    "correctAnswer": "\\2,850",
+    "correctAnswer": "$2,850",
     "difficulty": "hard",
     "topic": "INTRODUCTION & NUMBER SENSE (3RD GRADE)",
     "subject": "math",
@@ -9126,14 +9126,14 @@
   },
   {
     "id": "math-3-number-operations-in-base-ten-3rd-grade-easy-12",
-    "question": "Jamal earns \\410 in July and \\320 in August. How much money did he earn altogether?",
+    "question": "Jamal earns $410 in July and $320 in August. How much money did he earn altogether?",
     "options": [
-      "\\710",
-      "\\720",
-      "\\740",
-      "\\730"
+      "$710",
+      "$720",
+      "$740",
+      "$730"
     ],
-    "correctAnswer": "\\730",
+    "correctAnswer": "$730",
     "difficulty": "easy",
     "topic": "NUMBER & OPERATIONS IN BASE TEN (3RD GRADE)",
     "subject": "math",
@@ -9441,14 +9441,14 @@
   },
   {
     "id": "math-3-number-operations-in-base-ten-3rd-grade-easy-33",
-    "question": "Nia spends \\140 on clothes and \\130 on shoes. How much money did she spend in total?",
+    "question": "Nia spends $140 on clothes and $130 on shoes. How much money did she spend in total?",
     "options": [
-      "\\270",
-      "\\260",
-      "\\280",
-      "\\170"
+      "$270",
+      "$260",
+      "$280",
+      "$170"
     ],
-    "correctAnswer": "\\270",
+    "correctAnswer": "$270",
     "difficulty": "easy",
     "topic": "NUMBER & OPERATIONS IN BASE TEN (3RD GRADE)",
     "subject": "math",
@@ -9771,14 +9771,14 @@
   },
   {
     "id": "math-3-number-operations-in-base-ten-3rd-grade-medium-55",
-    "question": "Jamal has \\532. He spends \\268 on a television. How much money does he have left?",
+    "question": "Jamal has $532. He spends $268 on a television. How much money does he have left?",
     "options": [
-      "\\264",
-      "\\254",
-      "\\274",
-      "\\364"
+      "$264",
+      "$254",
+      "$274",
+      "$364"
     ],
-    "correctAnswer": "\\264",
+    "correctAnswer": "$264",
     "difficulty": "medium",
     "topic": "NUMBER & OPERATIONS IN BASE TEN (3RD GRADE)",
     "subject": "math",
@@ -10071,14 +10071,14 @@
   },
   {
     "id": "math-3-number-operations-in-base-ten-3rd-grade-medium-75",
-    "question": "Nia earned \\458 in June and \\374 in July. How much total money did she earn?",
+    "question": "Nia earned $458 in June and $374 in July. How much total money did she earn?",
     "options": [
-      "\\832",
-      "\\822",
-      "\\842",
-      "\\732"
+      "$832",
+      "$822",
+      "$842",
+      "$732"
     ],
-    "correctAnswer": "\\832",
+    "correctAnswer": "$832",
     "difficulty": "medium",
     "topic": "NUMBER & OPERATIONS IN BASE TEN (3RD GRADE)",
     "subject": "math",
@@ -10251,14 +10251,14 @@
   },
   {
     "id": "math-3-number-operations-in-base-ten-3rd-grade-medium-87",
-    "question": "Mateo buys a computer monitor for \\285 and a keyboard for \\149. How much does he spend in total?",
+    "question": "Mateo buys a computer monitor for $285 and a keyboard for $149. How much does he spend in total?",
     "options": [
-      "\\434",
-      "\\424",
-      "\\444",
-      "\\334"
+      "$434",
+      "$424",
+      "$444",
+      "$334"
     ],
-    "correctAnswer": "\\434",
+    "correctAnswer": "$434",
     "difficulty": "medium",
     "topic": "NUMBER & OPERATIONS IN BASE TEN (3RD GRADE)",
     "subject": "math",
@@ -10431,14 +10431,14 @@
   },
   {
     "id": "math-3-number-operations-in-base-ten-3rd-grade-medium-99",
-    "question": "Priya had \\724 in her bank account. She withdrew \\389. How much money remains in her account?",
+    "question": "Priya had $724 in her bank account. She withdrew $389. How much money remains in her account?",
     "options": [
-      "\\335",
-      "\\325",
-      "\\345",
-      "\\235"
+      "$335",
+      "$325",
+      "$345",
+      "$235"
     ],
-    "correctAnswer": "\\335",
+    "correctAnswer": "$335",
     "difficulty": "medium",
     "topic": "NUMBER & OPERATIONS IN BASE TEN (3RD GRADE)",
     "subject": "math",
@@ -10521,14 +10521,14 @@
   },
   {
     "id": "math-3-number-operations-in-base-ten-3rd-grade-hard-105",
-    "question": "Tanesha had \\700. She bought a television for \\438. How much money does she have left?",
+    "question": "Tanesha had $700. She bought a television for $438. How much money does she have left?",
     "options": [
-      "\\262",
-      "\\272",
-      "\\252",
-      "\\362"
+      "$262",
+      "$272",
+      "$252",
+      "$362"
     ],
-    "correctAnswer": "\\262",
+    "correctAnswer": "$262",
     "difficulty": "hard",
     "topic": "NUMBER & OPERATIONS IN BASE TEN (3RD GRADE)",
     "subject": "math",
@@ -10641,14 +10641,14 @@
   },
   {
     "id": "math-3-number-operations-in-base-ten-3rd-grade-hard-113",
-    "question": "Carlos has \\900. He spends \\615 on plane tickets for a family vacation. How much money does he have left?",
+    "question": "Carlos has $900. He spends $615 on plane tickets for a family vacation. How much money does he have left?",
     "options": [
-      "\\285",
-      "\\275",
-      "\\295",
-      "\\185"
+      "$285",
+      "$275",
+      "$295",
+      "$185"
     ],
-    "correctAnswer": "\\285",
+    "correctAnswer": "$285",
     "difficulty": "hard",
     "topic": "NUMBER & OPERATIONS IN BASE TEN (3RD GRADE)",
     "subject": "math",
@@ -10926,14 +10926,14 @@
   },
   {
     "id": "math-3-number-operations-in-base-ten-3rd-grade-hard-132",
-    "question": "Anaya had \\400. She bought a jacket for \\186. How much money does she have remaining?",
+    "question": "Anaya had $400. She bought a jacket for $186. How much money does she have remaining?",
     "options": [
-      "\\224",
-      "\\204",
-      "\\226",
-      "\\214"
+      "$224",
+      "$204",
+      "$226",
+      "$214"
     ],
-    "correctAnswer": "\\214",
+    "correctAnswer": "$214",
     "difficulty": "hard",
     "topic": "NUMBER & OPERATIONS IN BASE TEN (3RD GRADE)",
     "subject": "math",
@@ -11046,14 +11046,14 @@
   },
   {
     "id": "math-3-number-operations-in-base-ten-3rd-grade-hard-140",
-    "question": "Priya had \\300. She spent \\142 on supplies. How much money does she have left?",
+    "question": "Priya had $300. She spent $142 on supplies. How much money does she have left?",
     "options": [
-      "\\168",
-      "\\148",
-      "\\162",
-      "\\158"
+      "$168",
+      "$148",
+      "$162",
+      "$158"
     ],
-    "correctAnswer": "\\158",
+    "correctAnswer": "$158",
     "difficulty": "hard",
     "topic": "NUMBER & OPERATIONS IN BASE TEN (3RD GRADE)",
     "subject": "math",
@@ -11076,14 +11076,14 @@
   },
   {
     "id": "math-3-number-operations-in-base-ten-3rd-grade-hard-142",
-    "question": "Deshawn's elementary school aims to raise \\800 for new playground equipment. They have raised \\534 so far. How much more money do they need?",
+    "question": "Deshawn's elementary school aims to raise $800 for new playground equipment. They have raised $534 so far. How much more money do they need?",
     "options": [
-      "\\276",
-      "\\266",
-      "\\256",
-      "\\366"
+      "$276",
+      "$266",
+      "$256",
+      "$366"
     ],
-    "correctAnswer": "\\266",
+    "correctAnswer": "$266",
     "difficulty": "hard",
     "topic": "NUMBER & OPERATIONS IN BASE TEN (3RD GRADE)",
     "subject": "math",
@@ -11631,7 +11631,7 @@
   },
   {
     "id": "math-3-operations-algebraic-thinking-3rd-grade-easy-29",
-    "question": "Tanesha has 25 cents in nickels (5\\text{ cents} each). How many nickels does she have?",
+    "question": "Tanesha has 25 cents in nickels (5 cents each). How many nickels does she have?",
     "options": [
       "5",
       "4",
@@ -11871,14 +11871,14 @@
   },
   {
     "id": "math-3-operations-algebraic-thinking-3rd-grade-easy-45",
-    "question": "Diego buys 3 shirts for \\9 each. How much money does he spend in total?",
+    "question": "Diego buys 3 shirts for $9 each. How much money does he spend in total?",
     "options": [
-      "\\27",
-      "\\24",
-      "\\30",
-      "\\18"
+      "$27",
+      "$24",
+      "$30",
+      "$18"
     ],
-    "correctAnswer": "\\27",
+    "correctAnswer": "$27",
     "difficulty": "easy",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (3RD GRADE)",
     "subject": "math",
@@ -12021,14 +12021,14 @@
   },
   {
     "id": "math-3-operations-algebraic-thinking-3rd-grade-medium-55",
-    "question": "Keisha earns \\8 per hour for babysitting. She works for 5 hours and then spends \\15 on a book. How much money does she have left?",
+    "question": "Keisha earns $8 per hour for babysitting. She works for 5 hours and then spends $15 on a book. How much money does she have left?",
     "options": [
-      "\\25",
-      "\\30",
-      "\\20",
-      "\\35"
+      "$25",
+      "$30",
+      "$20",
+      "$35"
     ],
-    "correctAnswer": "\\25",
+    "correctAnswer": "$25",
     "difficulty": "medium",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (3RD GRADE)",
     "subject": "math",
@@ -12156,14 +12156,14 @@
   },
   {
     "id": "math-3-operations-algebraic-thinking-3rd-grade-medium-64",
-    "question": "Elena buys 4 books for \\7 each. She pays with a \\50 bill. How much change does she get?",
+    "question": "Elena buys 4 books for $7 each. She pays with a $50 bill. How much change does she get?",
     "options": [
-      "\\24",
-      "\\22",
-      "\\28",
-      "\\18"
+      "$24",
+      "$22",
+      "$28",
+      "$18"
     ],
-    "correctAnswer": "\\22",
+    "correctAnswer": "$22",
     "difficulty": "medium",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (3RD GRADE)",
     "subject": "math",
@@ -12201,14 +12201,14 @@
   },
   {
     "id": "math-3-operations-algebraic-thinking-3rd-grade-medium-67",
-    "question": "Tanesha saves \\9 each week for 4 weeks. Then she earns \\12 doing extra chores. How much money does she have in total?",
+    "question": "Tanesha saves $9 each week for 4 weeks. Then she earns $12 doing extra chores. How much money does she have in total?",
     "options": [
-      "\\48",
-      "\\36",
-      "\\45",
-      "\\52"
+      "$48",
+      "$36",
+      "$45",
+      "$52"
     ],
-    "correctAnswer": "\\48",
+    "correctAnswer": "$48",
     "difficulty": "medium",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (3RD GRADE)",
     "subject": "math",
@@ -12411,14 +12411,14 @@
   },
   {
     "id": "math-3-operations-algebraic-thinking-3rd-grade-medium-81",
-    "question": "Mateo earns \\5 for each car he washes. He washes 7 cars and finds \\8 in tip money. How much total money did he earn?",
+    "question": "Mateo earns $5 for each car he washes. He washes 7 cars and finds $8 in tip money. How much total money did he earn?",
     "options": [
-      "\\40",
-      "\\38",
-      "\\43",
-      "\\35"
+      "$40",
+      "$38",
+      "$43",
+      "$35"
     ],
-    "correctAnswer": "\\43",
+    "correctAnswer": "$43",
     "difficulty": "medium",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (3RD GRADE)",
     "subject": "math",
@@ -12533,12 +12533,12 @@
     "id": "math-3-operations-algebraic-thinking-3rd-grade-medium-89",
     "question": "Priya has 50 cents. She buys 4 stickers for 9 cents each. How much money does she have left?",
     "options": [
-      "12\\text{ cents}",
-      "15\\text{ cents}",
-      "14\\text{ cents}",
-      "18\\text{ cents}"
+      "12 cents",
+      "15 cents",
+      "14 cents",
+      "18 cents"
     ],
-    "correctAnswer": "14\\text{ cents}",
+    "correctAnswer": "14 cents",
     "difficulty": "medium",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (3RD GRADE)",
     "subject": "math",
@@ -12546,14 +12546,14 @@
   },
   {
     "id": "math-3-operations-algebraic-thinking-3rd-grade-medium-90",
-    "question": "Deshawn buys 3 movie tickets for \\8 each and 1 bucket of popcorn for \\6. How much does he spend in total?",
+    "question": "Deshawn buys 3 movie tickets for $8 each and 1 bucket of popcorn for $6. How much does he spend in total?",
     "options": [
-      "\\28",
-      "\\26",
-      "\\32",
-      "\\30"
+      "$28",
+      "$26",
+      "$32",
+      "$30"
     ],
-    "correctAnswer": "\\30",
+    "correctAnswer": "$30",
     "difficulty": "medium",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (3RD GRADE)",
     "subject": "math",
@@ -12636,14 +12636,14 @@
   },
   {
     "id": "math-3-operations-algebraic-thinking-3rd-grade-medium-96",
-    "question": "Dante has \\60. He buys 5 books for \\9 each. How much money does he have left?",
+    "question": "Dante has $60. He buys 5 books for $9 each. How much money does he have left?",
     "options": [
-      "\\10",
-      "\\15",
-      "\\20",
-      "\\25"
+      "$10",
+      "$15",
+      "$20",
+      "$25"
     ],
-    "correctAnswer": "\\15",
+    "correctAnswer": "$15",
     "difficulty": "medium",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (3RD GRADE)",
     "subject": "math",
@@ -12726,14 +12726,14 @@
   },
   {
     "id": "math-3-operations-algebraic-thinking-3rd-grade-hard-102",
-    "question": "Mateo earns \\6 per hour for 6 hours. He also earns \\12 in tips. He spends half of his total earnings on a video game. How much money does he have left?",
+    "question": "Mateo earns $6 per hour for 6 hours. He also earns $12 in tips. He spends half of his total earnings on a video game. How much money does he have left?",
     "options": [
-      "\\22",
-      "\\24",
-      "\\20",
-      "\\28"
+      "$22",
+      "$24",
+      "$20",
+      "$28"
     ],
-    "correctAnswer": "\\24",
+    "correctAnswer": "$24",
     "difficulty": "hard",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (3RD GRADE)",
     "subject": "math",
@@ -12801,14 +12801,14 @@
   },
   {
     "id": "math-3-operations-algebraic-thinking-3rd-grade-hard-107",
-    "question": "A school store sells notebooks for \\3 and pens for \\2. Priya buys 4 notebooks and 5 pens. She pays with a \\50 bill. How much change does she receive?",
+    "question": "A school store sells notebooks for $3 and pens for $2. Priya buys 4 notebooks and 5 pens. She pays with a $50 bill. How much change does she receive?",
     "options": [
-      "\\26",
-      "\\30",
-      "\\28",
-      "\\22"
+      "$26",
+      "$30",
+      "$28",
+      "$22"
     ],
-    "correctAnswer": "\\28",
+    "correctAnswer": "$28",
     "difficulty": "hard",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (3RD GRADE)",
     "subject": "math",
@@ -12891,14 +12891,14 @@
   },
   {
     "id": "math-3-operations-algebraic-thinking-3rd-grade-hard-113",
-    "question": "Dante earns \\40 mowing lawns. He spends \\16 on lunch and uses the remaining money to buy 4 identical comic books. How much did each comic book cost?",
+    "question": "Dante earns $40 mowing lawns. He spends $16 on lunch and uses the remaining money to buy 4 identical comic books. How much did each comic book cost?",
     "options": [
-      "\\6",
-      "\\5",
-      "\\7",
-      "\\8"
+      "$6",
+      "$5",
+      "$7",
+      "$8"
     ],
-    "correctAnswer": "\\6",
+    "correctAnswer": "$6",
     "difficulty": "hard",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (3RD GRADE)",
     "subject": "math",
@@ -12951,14 +12951,14 @@
   },
   {
     "id": "math-3-operations-algebraic-thinking-3rd-grade-hard-117",
-    "question": "Nia has \\45. She buys 3 books for \\8 each and 2 bookmarks for \\3 each. How much money does she have left?",
+    "question": "Nia has $45. She buys 3 books for $8 each and 2 bookmarks for $3 each. How much money does she have left?",
     "options": [
-      "\\15",
-      "\\12",
-      "\\18",
-      "\\10"
+      "$15",
+      "$12",
+      "$18",
+      "$10"
     ],
-    "correctAnswer": "\\15",
+    "correctAnswer": "$15",
     "difficulty": "hard",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (3RD GRADE)",
     "subject": "math",
@@ -13071,14 +13071,14 @@
   },
   {
     "id": "math-3-operations-algebraic-thinking-3rd-grade-hard-125",
-    "question": "Marcus buys 3 shirts for \\9 each and 2 pairs of socks for \\4 each. He pays with a \\50 bill. How much change does he receive?",
+    "question": "Marcus buys 3 shirts for $9 each and 2 pairs of socks for $4 each. He pays with a $50 bill. How much change does he receive?",
     "options": [
-      "\\15",
-      "\\12",
-      "\\18",
-      "\\10"
+      "$15",
+      "$12",
+      "$18",
+      "$10"
     ],
-    "correctAnswer": "\\15",
+    "correctAnswer": "$15",
     "difficulty": "hard",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (3RD GRADE)",
     "subject": "math",
@@ -13191,14 +13191,14 @@
   },
   {
     "id": "math-3-operations-algebraic-thinking-3rd-grade-hard-133",
-    "question": "Elena has \\80. She buys 4 tickets to an amusement park for \\12 each and 1 souvenir T-shirt for \\15. How much money does she have left?",
+    "question": "Elena has $80. She buys 4 tickets to an amusement park for $12 each and 1 souvenir T-shirt for $15. How much money does she have left?",
     "options": [
-      "\\17",
-      "\\15",
-      "\\20",
-      "\\18"
+      "$17",
+      "$15",
+      "$20",
+      "$18"
     ],
-    "correctAnswer": "\\17",
+    "correctAnswer": "$17",
     "difficulty": "hard",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (3RD GRADE)",
     "subject": "math",
@@ -13296,14 +13296,14 @@
   },
   {
     "id": "math-3-operations-algebraic-thinking-3rd-grade-hard-140",
-    "question": "Nia earns \\7 an hour for 8 hours of yard work. She also gets a \\14 bonus. She spends \\25 on a game and saves the rest. How much money does she save?",
+    "question": "Nia earns $7 an hour for 8 hours of yard work. She also gets a $14 bonus. She spends $25 on a game and saves the rest. How much money does she save?",
     "options": [
-      "\\42",
-      "\\48",
-      "\\50",
-      "\\45"
+      "$42",
+      "$48",
+      "$50",
+      "$45"
     ],
-    "correctAnswer": "\\45",
+    "correctAnswer": "$45",
     "difficulty": "hard",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (3RD GRADE)",
     "subject": "math",
@@ -13356,14 +13356,14 @@
   },
   {
     "id": "math-3-operations-algebraic-thinking-3rd-grade-hard-144",
-    "question": "Keisha buys 4 books for \\6 each and 3 notebooks for \\4 each. She pays with a \\50 bill. How much change does she receive?",
+    "question": "Keisha buys 4 books for $6 each and 3 notebooks for $4 each. She pays with a $50 bill. How much change does she receive?",
     "options": [
-      "\\12",
-      "\\16",
-      "\\10",
-      "\\14"
+      "$12",
+      "$16",
+      "$10",
+      "$14"
     ],
-    "correctAnswer": "\\14",
+    "correctAnswer": "$14",
     "difficulty": "hard",
     "topic": "OPERATIONS & ALGEBRAIC THINKING (3RD GRADE)",
     "subject": "math",

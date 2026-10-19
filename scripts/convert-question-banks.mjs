@@ -55,7 +55,17 @@ function letterToIndex(letter) {
 }
 
 function normalizeOption(s) {
-  return s.replace(/\s+/g, ' ').replace(/\s*✔.*$/u, '').replace(/\s*Correct Answer.*$/i, '').trim();
+  return cleanBankText(s).replace(/\s*✔.*$/u, '').replace(/\s*Correct Answer.*$/i, '').trim();
+}
+
+/** Word banks sometimes store units as \\text{ inches } and currency as \\$10. */
+function cleanBankText(s) {
+  return String(s)
+    .replace(/\\text\{([^}]*)\}/g, '$1')
+    .replace(/\\\$/g, '$')
+    .replace(/\\(?=\d)/g, '$')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function shuffleSeeded(arr) {
@@ -111,7 +121,7 @@ function parseMathDoc(text, { grade, topic, subject = 'math' }) {
         answerLetter = inlineAns[1].toUpperCase();
         raw = raw.replace(/\s*Answer\s*:\s*[A-D]\s*$/i, '');
       }
-      options.push(normalizeOption(raw.replace(/^[A-D][\)\.]\s*/, '').replace(/\$/g, '')));
+      options.push(normalizeOption(raw.replace(/^[A-D][\)\.]\s*/, '')));
       i++;
     }
 
@@ -121,7 +131,7 @@ function parseMathDoc(text, { grade, topic, subject = 'math' }) {
       i++;
     }
 
-    prompt = prompt.replace(/\$/g, '').trim();
+    prompt = cleanBankText(prompt);
 
     if (options.length >= 2 && answerLetter) {
       const idx = letterToIndex(answerLetter);

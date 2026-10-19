@@ -116,16 +116,24 @@ function parseAnswerKey(lines) {
   if (keyIdx < 0) return map;
 
   const rawAfter = lines.slice(keyIdx + 1);
-  // Join split entries like "39." + "D 40. C"
+  // Join split entries like "39." + "D" and "48. A 49." + "D 50. A"
   const after = [];
   for (let i = 0; i < rawAfter.length; i++) {
-    const line = rawAfter[i];
-    if (/^\d+\.\s*$/.test(line) && i + 1 < rawAfter.length) {
-      after.push(`${line} ${rawAfter[i + 1]}`);
+    let line = rawAfter[i];
+    const next = rawAfter[i + 1] || '';
+    if (/^\d+\.\s*$/.test(line) && next) {
+      after.push(`${line} ${next}`);
       i++;
-    } else {
-      after.push(line);
+      continue;
     }
+    if (/\d+\.\s*$/.test(line) && /^[A-D]\b/i.test(next)) {
+      const letter = next.match(/^([A-D])\b\s*(.*)$/i);
+      after.push(`${line} ${letter[1]}`);
+      if (letter[2] && letter[2].trim()) after.push(letter[2].trim());
+      i++;
+      continue;
+    }
+    after.push(line);
   }
 
   let difficulty = null;
@@ -195,13 +203,26 @@ function parseAnswerKey(lines) {
   return map;
 }
 
-function lookupAnswer(answerMap, num, difficulty) {
+function numberingMode(lines) {
+  let max = 0;
+  for (const line of lines) {
+    const m = line.match(/^(\d+)\.\s+/);
+    if (!m) continue;
+    const n = Number(m[1]);
+    if (n < max) return 'restart';
+    if (n > max) max = n;
+  }
+  return 'absolute';
+}
+
+function lookupAnswer(answerMap, num, difficulty, mode) {
   const n = String(num);
-  return (
-    answerMap.get(`${difficulty}:${n}`) ||
-    answerMap.get(n) ||
-    null
-  );
+  // Absolute banks keep one running number. A local alias such as
+  // medium:24 can belong to question 74, so the printed number wins.
+  if (mode === 'absolute') {
+    return answerMap.get(n) || answerMap.get(`${difficulty}:${n}`) || null;
+  }
+  return answerMap.get(`${difficulty}:${n}`) || answerMap.get(n) || null;
 }
 
 function looksLikePassageTitle(line, nextLine) {
@@ -225,13 +246,21 @@ function looksLikePassageTitle(line, nextLine) {
   if (line.length > 70) return false;
   if (line.endsWith('?') || line.endsWith('.')) return false;
   if (/^[a-z]/.test(line)) return false;
-  if (/^(and|or|but|the|against|from|with|for|to|of|in)\b/i.test(line)) return false;
   if (/^(Which|What|Who|Where|When|How|Why|Choose|Select|Identify)\b/i.test(line)) return false;
   // Next line shouldn't be an option or question number
   if (/^\d+\.\s/.test(nextLine) || /^[A-D][\.\)]\s/.test(nextLine)) return false;
-  // Title Case / short phrase heuristic
+  // Title Case phrase. Content words are capitalized, so
+  // "The Library Visit" counts and "The students walked..." does not.
   const words = line.split(/\s+/);
-  if (words.length > 12) return false;
+  if (words.length < 2 || words.length > 8) return false;
+  const small = new Set(['a', 'an', 'the', 'of', 'and', 'or', 'for', 'to', 'in', 'on', 'at', 'with', 'from', 'by']);
+  const titleCase = words.every((w, idx) => {
+    const core = w.replace(/[^A-Za-z0-9']/g, '');
+    if (!core) return false;
+    if (idx > 0 && small.has(core.toLowerCase())) return true;
+    return /^[A-Z0-9]/.test(core);
+  });
+  if (!titleCase) return false;
   return nextLine.length >= 40 || /[.!]/.test(nextLine);
 }
 
@@ -268,6 +297,7 @@ function parseElaDoc(text, { grade, topic }) {
   let passageTitle = null;
   let passageParts = [];
   let i = 0;
+  const numbers = numberingMode(body);
 
   const flushPassageText = () => passageParts.join(' ').replace(/\s+/g, ' ').trim();
 
@@ -336,7 +366,7 @@ function parseElaDoc(text, { grade, topic }) {
         i++;
       }
 
-      const key = lookupAnswer(answerMap, num, difficulty);
+      const key = lookupAnswer(answerMap, num, difficulty, numbers);
       const letter = key?.letter;
       const diff = (inlineDiff || key?.difficulty || difficulty || 'medium').toLowerCase();
       if (options.length >= 2 && letter) {
@@ -425,10 +455,13 @@ function writeJson(rel, data) {
 fs.mkdirSync(outRoot, { recursive: true });
 const summary = [];
 
+const onlyGrades = new Set(process.argv.slice(2).filter((a) => /^\d+$/.test(a)));
+
 for (const folder of fs.readdirSync(srcRoot)) {
   const m = folder.match(/grade\s*(\d+)/i);
   if (!m) continue;
   const gradeNum = m[1];
+  if (onlyGrades.size && !onlyGrades.has(gradeNum)) continue;
   const folderPath = path.join(srcRoot, folder);
   if (!fs.statSync(folderPath).isDirectory()) continue;
 
@@ -454,8 +487,9 @@ for (const folder of fs.readdirSync(srcRoot)) {
 const manifestPath = path.join(root, 'app', 'data', 'questionBanks', 'manifest.json');
 let manifest = [];
 try { manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8')); } catch {}
+const converted = new Set(summary.map((s) => s.bank));
 manifest = [
-  ...manifest.filter((x) => !String(x.bank || '').startsWith('ela/')),
+  ...manifest.filter((x) => !converted.has(String(x.bank || ''))),
   ...summary,
 ];
 fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));

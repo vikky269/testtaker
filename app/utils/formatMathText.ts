@@ -171,9 +171,22 @@ function formatProseWithMathIslands(text: string): string {
 /**
  * Format bank question/option text for display.
  */
+/** Word banks sometimes store units as \\text{ inches } and currency as \\10. */
+const GLUED_UNITS =
+  'thousands|thousand|hundreds|hundred|inches|inch|cents|cent|ones|one|tens|ten|feet|foot|dollars|dollar|yards|yard|miles|mile|minutes|minute|hours|hour|seconds|second|pounds|pound|ounces|ounce|grams|gram|liters|liter|cups|cup|quarts|quart|meters|meter|centimeters|centimeter';
+
+function normalizeBankArtifacts(text: string): string {
+  return text
+    .replace(/\\text\{([^}]*)\}/g, '$1')
+    .replace(/\\\$/g, '$')
+    .replace(/\\(?=\d)/g, '$')
+    .replace(new RegExp(`(\\d)(${GLUED_UNITS})\\b`, 'gi'), '$1 $2')
+    .replace(/[ \t]{2,}/g, ' ');
+}
+
 export function formatMathHtml(raw: string | null | undefined): string {
   if (!raw) return '';
-  const text = String(raw);
+  const text = normalizeBankArtifacts(String(raw));
   if (text.startsWith('http://') || text.startsWith('https://')) return escapeHtml(text);
 
   if (looksLikeRichHtml(text)) {

@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import MathHtml from "@/app/components/MathHtml";
+import QuestionDiagram, { diagramForQuestion } from "@/app/components/QuestionDiagram";
 
 interface QuestionCardProps {
   questionData: any;
@@ -25,6 +26,7 @@ export default function QuestionCard({
   const [showSolution, setShowSolution] = useState(false);
   const correct = questionData.correctAnswer || questionData.answer;
   const { num: numCls } = COLOR_MAP[color];
+  const diagram = diagramForQuestion(questionData);
 
   return (
     <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-4 hover:shadow-md transition-shadow duration-200 overflow-hidden max-w-full">
@@ -55,6 +57,8 @@ export default function QuestionCard({
       </div>
 
       {/* Question content */}
+      {diagram && <QuestionDiagram spec={diagram} />}
+
       {questionData.question.startsWith("https://res.cloudinary.com") ? (
         <img
           src={questionData.question}

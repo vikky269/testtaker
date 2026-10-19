@@ -76,10 +76,6 @@
     "count": 150
   },
   {
-    "bank": "ela/grade-1",
-    "count": 750
-  },
-  {
     "bank": "ela/grade-2",
     "count": 750
   },
@@ -88,12 +84,16 @@
     "count": 750
   },
   {
-    "bank": "ela/grade-4",
+    "bank": "ela/grade-5",
+    "count": 899
+  },
+  {
+    "bank": "ela/grade-1",
     "count": 750
   },
   {
-    "bank": "ela/grade-5",
-    "count": 899
+    "bank": "ela/grade-4",
+    "count": 750
   },
   {
     "bank": "ela/grade-6",
@@ -101,6 +101,6 @@
   },
   {
     "bank": "ela/grade-7",
-    "count": 748
+    "count": 750
   }
 ]

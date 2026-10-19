@@ -5283,12 +5283,12 @@
     "id": "math-1-measurement-data-medium-53",
     "question": "Noah has 1 quarter, 1 dime, and 1 penny. What is the total value of his coins?",
     "options": [
-      "35\\text{ cents}",
-      "31\\text{ cents}",
-      "36\\text{ cents}",
-      "26\\text{ cents}"
+      "35 cents",
+      "31 cents",
+      "36 cents",
+      "26 cents"
     ],
-    "correctAnswer": "36\\text{ cents}",
+    "correctAnswer": "36 cents",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -5341,14 +5341,14 @@
   },
   {
     "id": "math-1-measurement-data-medium-57",
-    "question": "Maya has two \\5 bills and three \\1 bills. How much money does she have in total?",
+    "question": "Maya has two $5 bills and three $1 bills. How much money does she have in total?",
     "options": [
-      "\\8",
-      "\\10",
-      "\\13",
-      "\\15"
+      "$8",
+      "$10",
+      "$13",
+      "$15"
     ],
-    "correctAnswer": "\\13",
+    "correctAnswer": "$13",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -5388,12 +5388,12 @@
     "id": "math-1-measurement-data-medium-60",
     "question": "Caleb has 2 dimes and 3 nickels. How many total cents does Caleb have?",
     "options": [
-      "23\\text{ cents}",
-      "35\\text{ cents}",
-      "25\\text{ cents}",
-      "30\\text{ cents}"
+      "23 cents",
+      "35 cents",
+      "25 cents",
+      "30 cents"
     ],
-    "correctAnswer": "35\\text{ cents}",
+    "correctAnswer": "35 cents",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -5446,14 +5446,14 @@
   },
   {
     "id": "math-1-measurement-data-medium-64",
-    "question": "Jackson wants to buy a toy airplane for \\14. He has one \\10 bill and one \\5 bill. Does he have enough money?",
+    "question": "Jackson wants to buy a toy airplane for $14. He has one $10 bill and one $5 bill. Does he have enough money?",
     "options": [
-      "No, he is short by \\1",
-      "Yes, and he will get \\1 in change",
-      "Yes, and he will get \\2 in change",
-      "No, he is short by \\4"
+      "No, he is short by $1",
+      "Yes, and he will get $1 in change",
+      "Yes, and he will get $2 in change",
+      "No, he is short by $4"
     ],
-    "correctAnswer": "Yes, and he will get \\1 in change",
+    "correctAnswer": "Yes, and he will get $1 in change",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -5476,7 +5476,7 @@
   },
   {
     "id": "math-1-measurement-data-medium-66",
-    "question": "How many nickels make 20\\text{ cents}?",
+    "question": "How many nickels make 20 cents?",
     "options": [
       "2 nickels",
       "5 nickels",
@@ -5508,12 +5508,12 @@
     "id": "math-1-measurement-data-medium-68",
     "question": "A piece of string is 14 inches long. You cut off a piece that is 6 inches long. How long is the remaining string?",
     "options": [
-      "20\\text{ inches}",
-      "8\\text{ inches}",
-      "9\\text{ inches}",
-      "7\\text{ inches}"
+      "20 inches",
+      "8 inches",
+      "9 inches",
+      "7 inches"
     ],
-    "correctAnswer": "8\\text{ inches}",
+    "correctAnswer": "8 inches",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -5521,7 +5521,7 @@
   },
   {
     "id": "math-1-measurement-data-medium-69",
-    "question": "How many dimes equal the value of 1 dollar (\\1)?",
+    "question": "How many dimes equal the value of 1 dollar ($1)?",
     "options": [
       "5 dimes",
       "20 dimes",
@@ -5551,14 +5551,14 @@
   },
   {
     "id": "math-1-measurement-data-medium-71",
-    "question": "Ethan has 3 quarters. How much more money does he need to make \\1.00 (100\\text{ cents})?",
+    "question": "Ethan has 3 quarters. How much more money does he need to make $1.00 (100 cents)?",
     "options": [
-      "25\\text{ cents} (1 quarter)",
-      "10\\text{ cents} (1 dime)",
-      "5\\text{ cents} (1 nickel)",
-      "50\\text{ cents} (2 quarters)"
+      "25 cents (1 quarter)",
+      "10 cents (1 dime)",
+      "5 cents (1 nickel)",
+      "50 cents (2 quarters)"
     ],
-    "correctAnswer": "25\\text{ cents} (1 quarter)",
+    "correctAnswer": "25 cents (1 quarter)",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -5613,12 +5613,12 @@
     "id": "math-1-measurement-data-medium-75",
     "question": "Chloe has 4 pennies, 1 nickel, and 2 dimes. What is the total value?",
     "options": [
-      "29\\text{ cents}",
-      "19\\text{ cents}",
-      "34\\text{ cents}",
-      "24\\text{ cents}"
+      "29 cents",
+      "19 cents",
+      "34 cents",
+      "24 cents"
     ],
-    "correctAnswer": "29\\text{ cents}",
+    "correctAnswer": "29 cents",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -5643,12 +5643,12 @@
     "id": "math-1-measurement-data-medium-77",
     "question": "If an object measures 5 paperclips long, and each paperclip is 1 inch long, how many inches long is the object?",
     "options": [
-      "1\\text{ inch}",
-      "10\\text{ inches}",
-      "5\\text{ inches}",
-      "6\\text{ inches}"
+      "1 inch",
+      "10 inches",
+      "5 inches",
+      "6 inches"
     ],
-    "correctAnswer": "5\\text{ inches}",
+    "correctAnswer": "5 inches",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -5671,14 +5671,14 @@
   },
   {
     "id": "math-1-measurement-data-medium-79",
-    "question": "Lucas bought a notebook for \\3 and a pack of markers for \\6. He paid with a \\10 bill. How much change should he receive?",
+    "question": "Lucas bought a notebook for $3 and a pack of markers for $6. He paid with a $10 bill. How much change should he receive?",
     "options": [
-      "\\1",
-      "\\2",
-      "\\9",
-      "\\3"
+      "$1",
+      "$2",
+      "$9",
+      "$3"
     ],
-    "correctAnswer": "\\1",
+    "correctAnswer": "$1",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -5731,14 +5731,14 @@
   },
   {
     "id": "math-1-measurement-data-medium-83",
-    "question": "Liam has four \\5 bills. How much money does Liam have in total?",
+    "question": "Liam has four $5 bills. How much money does Liam have in total?",
     "options": [
-      "\\20",
-      "\\15",
-      "\\10",
-      "\\25"
+      "$20",
+      "$15",
+      "$10",
+      "$25"
     ],
-    "correctAnswer": "\\20",
+    "correctAnswer": "$20",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -5778,12 +5778,12 @@
     "id": "math-1-measurement-data-medium-86",
     "question": "How many pennies have the exact same value as 2 dimes and 1 nickel?",
     "options": [
-      "21\\text{ pennies}",
-      "15\\text{ pennies}",
-      "30\\text{ pennies}",
-      "25\\text{ pennies}"
+      "21pennies",
+      "15pennies",
+      "30pennies",
+      "25pennies"
     ],
-    "correctAnswer": "25\\text{ pennies}",
+    "correctAnswer": "25pennies",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -5808,12 +5808,12 @@
     "id": "math-1-measurement-data-medium-88",
     "question": "A caterpillar is 4 centimeters long. It grows 3 more centimeters. How long is the caterpillar now?",
     "options": [
-      "8\\text{ cm}",
-      "7\\text{ cm}",
-      "1\\text{ cm}",
-      "12\\text{ cm}"
+      "8cm",
+      "7cm",
+      "1cm",
+      "12cm"
     ],
-    "correctAnswer": "7\\text{ cm}",
+    "correctAnswer": "7cm",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -5838,12 +5838,12 @@
     "id": "math-1-measurement-data-medium-90",
     "question": "Amelia has 1 quarter and 2 nickels. How many cents does she have?",
     "options": [
-      "27\\text{ cents}",
-      "30\\text{ cents}",
-      "40\\text{ cents}",
-      "35\\text{ cents}"
+      "27 cents",
+      "30 cents",
+      "40 cents",
+      "35 cents"
     ],
-    "correctAnswer": "35\\text{ cents}",
+    "correctAnswer": "35 cents",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -5883,12 +5883,12 @@
     "id": "math-1-measurement-data-medium-93",
     "question": "A toy train track is made of 3 pieces. Piece 1 is 4 inches, Piece 2 is 5 inches, and Piece 3 is 3 inches. How long is the whole track?",
     "options": [
-      "9\\text{ inches}",
-      "11\\text{ inches}",
-      "12\\text{ inches}",
-      "15\\text{ inches}"
+      "9 inches",
+      "11 inches",
+      "12 inches",
+      "15 inches"
     ],
-    "correctAnswer": "12\\text{ inches}",
+    "correctAnswer": "12 inches",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -5911,14 +5911,14 @@
   },
   {
     "id": "math-1-measurement-data-medium-95",
-    "question": "Noah buys a baseball for \\6 and a juice box for \\2. He hands the cashier a \\10 bill. How much money does he get back?",
+    "question": "Noah buys a baseball for $6 and a juice box for $2. He hands the cashier a $10 bill. How much money does he get back?",
     "options": [
-      "\\2",
-      "\\8",
-      "\\4",
-      "\\1"
+      "$2",
+      "$8",
+      "$4",
+      "$1"
     ],
-    "correctAnswer": "\\2",
+    "correctAnswer": "$2",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -5926,7 +5926,7 @@
   },
   {
     "id": "math-1-measurement-data-medium-96",
-    "question": "How many quarters equal the value of 1 dollar (\\1)?",
+    "question": "How many quarters equal the value of 1 dollar ($1)?",
     "options": [
       "2 quarters",
       "4 quarters",
@@ -5958,12 +5958,12 @@
     "id": "math-1-measurement-data-medium-98",
     "question": "An oak tree branch is 18 feet long. A storm breaks off a 5-foot piece. How long is the branch now?",
     "options": [
-      "23\\text{ feet}",
-      "12\\text{ feet}",
-      "14\\text{ feet}",
-      "13\\text{ feet}"
+      "23 feet",
+      "12 feet",
+      "14 feet",
+      "13 feet"
     ],
-    "correctAnswer": "13\\text{ feet}",
+    "correctAnswer": "13 feet",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -5988,12 +5988,12 @@
     "id": "math-1-measurement-data-medium-100",
     "question": "Charlotte has 2 quarters and 1 dime. How many cents does she have in total?",
     "options": [
-      "50\\text{ cents}",
-      "60\\text{ cents}",
-      "35\\text{ cents}",
-      "55\\text{ cents}"
+      "50 cents",
+      "60 cents",
+      "35 cents",
+      "55 cents"
     ],
-    "correctAnswer": "60\\text{ cents}",
+    "correctAnswer": "60 cents",
     "difficulty": "medium",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -6018,12 +6018,12 @@
     "id": "math-1-measurement-data-hard-102",
     "question": "Benjamin has 2 quarters, 3 dimes, and 4 pennies. How much total money does Benjamin have?",
     "options": [
-      "\\0.84 (84\\text{ cents})",
-      "\\0.74 (74\\text{ cents})",
-      "\\0.64 (64\\text{ cents})",
-      "\\0.94 (94\\text{ cents})"
+      "$0.84 (84 cents)",
+      "$0.74 (74 cents)",
+      "$0.64 (64 cents)",
+      "$0.94 (94 cents)"
     ],
-    "correctAnswer": "\\0.84 (84\\text{ cents})",
+    "correctAnswer": "$0.84 (84 cents)",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -6061,14 +6061,14 @@
   },
   {
     "id": "math-1-measurement-data-hard-105",
-    "question": "Harper saved three \\5 bills and two \\10 bills. She buys a bicycle helmet for \\22. How much money does Harper have remaining?",
+    "question": "Harper saved three $5 bills and two $10 bills. She buys a bicycle helmet for $22. How much money does Harper have remaining?",
     "options": [
-      "\\13",
-      "\\8",
-      "\\35",
-      "\\15"
+      "$13",
+      "$8",
+      "$35",
+      "$15"
     ],
-    "correctAnswer": "\\8",
+    "correctAnswer": "$8",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -6108,12 +6108,12 @@
     "id": "math-1-measurement-data-hard-108",
     "question": "A green yarn string is 16 inches long. A purple yarn string is 9 inches long. How many inches must you cut off the green string so it is the SAME length as the purple string?",
     "options": [
-      "6\\text{ inches}",
-      "7\\text{ inches}",
-      "8\\text{ inches}",
-      "25\\text{ inches}"
+      "6 inches",
+      "7 inches",
+      "8 inches",
+      "25 inches"
     ],
-    "correctAnswer": "7\\text{ inches}",
+    "correctAnswer": "7 inches",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -6138,12 +6138,12 @@
     "id": "math-1-measurement-data-hard-110",
     "question": "Lucas has 1 quarter, 2 dimes, 3 nickels, and 5 pennies. How much total money does he have?",
     "options": [
-      "55\\text{ cents}",
-      "60\\text{ cents}",
-      "65\\text{ cents}",
-      "62\\text{ cents}"
+      "55 cents",
+      "60 cents",
+      "65 cents",
+      "62 cents"
     ],
-    "correctAnswer": "65\\text{ cents}",
+    "correctAnswer": "65 cents",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -6198,12 +6198,12 @@
     "id": "math-1-measurement-data-hard-114",
     "question": "Mason has 3 quarters. He spends 2 dimes and 1 nickel on a pencil. How much money does he have left?",
     "options": [
-      "50\\text{ cents}",
-      "40\\text{ cents}",
-      "25\\text{ cents}",
-      "30\\text{ cents}"
+      "50 cents",
+      "40 cents",
+      "25 cents",
+      "30 cents"
     ],
-    "correctAnswer": "50\\text{ cents}",
+    "correctAnswer": "50 cents",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -6256,14 +6256,14 @@
   },
   {
     "id": "math-1-measurement-data-hard-118",
-    "question": "Ethan has \\20. He buys a book for \\8, a puzzle for \\5, and a pack of pens for \\3. How much money does Ethan have left?",
+    "question": "Ethan has $20. He buys a book for $8, a puzzle for $5, and a pack of pens for $3. How much money does Ethan have left?",
     "options": [
-      "\\6",
-      "\\5",
-      "\\3",
-      "\\4"
+      "$6",
+      "$5",
+      "$3",
+      "$4"
     ],
-    "correctAnswer": "\\4",
+    "correctAnswer": "$4",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -6301,14 +6301,14 @@
   },
   {
     "id": "math-1-measurement-data-hard-121",
-    "question": "Charlotte has 1 dollar bill (\\1.00), 1 quarter, and 2 dimes. How much money does she have in total?",
+    "question": "Charlotte has 1 dollar bill ($1.00), 1 quarter, and 2 dimes. How much money does she have in total?",
     "options": [
-      "\\1.35",
-      "\\1.25",
-      "\\1.45",
-      "\\1.50"
+      "$1.35",
+      "$1.25",
+      "$1.45",
+      "$1.50"
     ],
-    "correctAnswer": "\\1.45",
+    "correctAnswer": "$1.45",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -6363,12 +6363,12 @@
     "id": "math-1-measurement-data-hard-125",
     "question": "James has 8 nickels. Maya has 3 dimes. Who has more money and by how much?",
     "options": [
-      "James has \\0.10 (10\\text{ cents}) more",
-      "Maya has \\0.10 (10\\text{ cents}) more",
+      "James has $0.10 (10 cents) more",
+      "Maya has $0.10 (10 cents) more",
       "They have the exact same amount",
-      "James has \\0.05 (5\\text{ cents}) more"
+      "James has $0.05 (5 cents) more"
     ],
-    "correctAnswer": "James has \\0.10 (10\\text{ cents}) more",
+    "correctAnswer": "James has $0.10 (10 cents) more",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -6393,12 +6393,12 @@
     "id": "math-1-measurement-data-hard-127",
     "question": "A wooden board is 19 inches long. A carpenter saws off a piece that is 7 inches long and another piece that is 4 inches long. How long is the remaining board?",
     "options": [
-      "11\\text{ inches}",
-      "12\\text{ inches}",
-      "7\\text{ inches}",
-      "8\\text{ inches}"
+      "11 inches",
+      "12 inches",
+      "7 inches",
+      "8 inches"
     ],
-    "correctAnswer": "8\\text{ inches}",
+    "correctAnswer": "8 inches",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -6421,14 +6421,14 @@
   },
   {
     "id": "math-1-measurement-data-hard-129",
-    "question": "Noah has one \\10 bill, two \\5 bills, and four \\1 bills. How much total money does he have?",
+    "question": "Noah has one $10 bill, two $5 bills, and four $1 bills. How much total money does he have?",
     "options": [
-      "\\19",
-      "\\24",
-      "\\20",
-      "\\22"
+      "$19",
+      "$24",
+      "$20",
+      "$22"
     ],
-    "correctAnswer": "\\24",
+    "correctAnswer": "$24",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -6483,12 +6483,12 @@
     "id": "math-1-measurement-data-hard-133",
     "question": "Emma has 3 quarters, 1 dime, and 1 nickel. How much money does she have?",
     "options": [
-      "\\0.90 (90\\text{ cents})",
-      "\\0.85 (85\\text{ cents})",
-      "\\0.95 (95\\text{ cents})",
-      "\\0.80 (80\\text{ cents})"
+      "$0.90 (90 cents)",
+      "$0.85 (85 cents)",
+      "$0.95 (95 cents)",
+      "$0.80 (80 cents)"
     ],
-    "correctAnswer": "\\0.90 (90\\text{ cents})",
+    "correctAnswer": "$0.90 (90 cents)",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -6528,12 +6528,12 @@
     "id": "math-1-measurement-data-hard-136",
     "question": "A piggy bank contains 5 dimes and 10 pennies. How much total money is in the piggy bank?",
     "options": [
-      "\\0.50",
-      "\\0.15",
-      "\\0.70",
-      "\\0.60"
+      "$0.50",
+      "$0.15",
+      "$0.70",
+      "$0.60"
     ],
-    "correctAnswer": "\\0.60",
+    "correctAnswer": "$0.60",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -6558,12 +6558,12 @@
     "id": "math-1-measurement-data-hard-138",
     "question": "Rope A is 15 feet long. Rope B is 8 feet long. How many feet must be added to Rope B so that it equals Rope A?",
     "options": [
-      "6\\text{ feet}",
-      "7\\text{ feet}",
-      "8\\text{ feet}",
-      "23\\text{ feet}"
+      "6 feet",
+      "7 feet",
+      "8 feet",
+      "23 feet"
     ],
-    "correctAnswer": "7\\text{ feet}",
+    "correctAnswer": "7 feet",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -6631,14 +6631,14 @@
   },
   {
     "id": "math-1-measurement-data-hard-143",
-    "question": "Mia has three \\10 bills. She spends \\14 at the bookstore. How much money does she have remaining?",
+    "question": "Mia has three $10 bills. She spends $14 at the bookstore. How much money does she have remaining?",
     "options": [
-      "\\16",
-      "\\12",
-      "\\20",
-      "\\14"
+      "$16",
+      "$12",
+      "$20",
+      "$14"
     ],
-    "correctAnswer": "\\16",
+    "correctAnswer": "$16",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -6663,12 +6663,12 @@
     "id": "math-1-measurement-data-hard-145",
     "question": "A drinking straw is 8 inches long. A second straw is attached to make a 15-inch long straw. How long is the second straw?",
     "options": [
-      "6\\text{ inches}",
-      "7\\text{ inches}",
-      "8\\text{ inches}",
-      "23\\text{ inches}"
+      "6 inches",
+      "7 inches",
+      "8 inches",
+      "23 inches"
     ],
-    "correctAnswer": "7\\text{ inches}",
+    "correctAnswer": "7 inches",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -6693,12 +6693,12 @@
     "id": "math-1-measurement-data-hard-147",
     "question": "Sophia has 4 dimes, 2 nickels, and 8 pennies. What is the total value?",
     "options": [
-      "\\0.48 (48\\text{ cents})",
-      "\\0.50 (50\\text{ cents})",
-      "\\0.54 (54\\text{ cents})",
-      "\\0.58 (58\\text{ cents})"
+      "$0.48 (48 cents)",
+      "$0.50 (50 cents)",
+      "$0.54 (54 cents)",
+      "$0.58 (58 cents)"
     ],
-    "correctAnswer": "\\0.58 (58\\text{ cents})",
+    "correctAnswer": "$0.58 (58 cents)",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -6708,12 +6708,12 @@
     "id": "math-1-measurement-data-hard-148",
     "question": "The height of a sunflower is 14 inches. A tulip next to it is 6 inches tall. How many inches taller is the sunflower than the tulip?",
     "options": [
-      "8\\text{ inches}",
-      "20\\text{ inches}",
-      "9\\text{ inches}",
-      "7\\text{ inches}"
+      "8 inches",
+      "20 inches",
+      "9 inches",
+      "7 inches"
     ],
-    "correctAnswer": "8\\text{ inches}",
+    "correctAnswer": "8 inches",
     "difficulty": "hard",
     "topic": "MEASUREMENT & DATA",
     "subject": "math",
@@ -8821,7 +8821,7 @@
   },
   {
     "id": "math-1-number-operations-in-base-ten-hard-139",
-    "question": "Find the missing number:  + 40 = 90",
+    "question": "Find the missing number: + 40 = 90",
     "options": [
       "40",
       "60",

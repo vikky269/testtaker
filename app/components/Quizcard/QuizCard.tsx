@@ -450,14 +450,27 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
 }
 
 // ── Grid ─────────────────────────────────────────────────────
-export default function QuizCardGrid() {
+export default function QuizCardGrid({
+  tests = quizData,
+  query = '',
+}: {
+  tests?: QuizCardProps[];
+  query?: string;
+}) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 py-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-6">
-        {quizData.map((quiz, index) => (
-          <QuizCard key={index} {...quiz} />
-        ))}
-      </div>
+      {tests.length === 0 ? (
+        <div className="rounded-2xl border border-dashed border-gray-200 bg-white px-6 py-16 text-center">
+          <p className="text-base font-semibold text-gray-800">No tests match &quot;{query.trim()}&quot;</p>
+          <p className="mt-1 text-sm text-gray-500">Try a test name like SAT, PSAT, or GED.</p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-6">
+          {tests.map((quiz) => (
+            <QuizCard key={quiz.id} {...quiz} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

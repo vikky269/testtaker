@@ -189,3 +189,98 @@ blockquote.quiz-passage {
   margin: 0 0 0.5em;
   color: #1a2e05;
 }
+
+/* Visual-assessment SVG figures (blended into quiz chrome) */
+.va-figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: #3d2c24;
+}
+.va-figure .vis {
+  width: auto;
+  max-width: 100%;
+  height: clamp(150px, 28vh, 260px);
+}
+.va-figure .vis-objects,
+.va-figure .vis-groups,
+.va-figure .vis-pictograph,
+.va-figure .vis-barchart,
+.va-figure .vis-numberline,
+.va-figure .vis-queue,
+.va-figure .vis-join {
+  width: min(100%, 560px);
+  height: auto;
+  max-height: 300px;
+}
+.va-figure .vis-scene {
+  height: auto;
+  width: min(100%, 520px);
+}
+.va-figure .vis-equation,
+.va-figure .vis-numcompare,
+.va-figure .vis-tiles,
+.va-figure .vis-digital,
+.va-figure .vis-sequence,
+.va-figure .vis-textline,
+.va-figure .vis-compose,
+.va-figure .vis-shaperow {
+  width: min(100%, 480px);
+  height: auto;
+}
+.va-figure .vis-tenframe {
+  width: min(100%, 320px);
+  height: auto;
+  max-height: 240px;
+}
+.va-figure .vis-letter {
+  font-family: var(--font-main), "Trebuchet MS", sans-serif;
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  font-size: clamp(4rem, 18vw, 7rem);
+  color: #3d2c24;
+}
+.va-figure .vis-text {
+  font-weight: 800;
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  color: #3d2c24;
+}
+.va-figure .vis-text.is-big {
+  font-size: clamp(2.4rem, 10vw, 4.5rem);
+}
+.va-figure .vis-text.is-sentence {
+  font-size: clamp(1.4rem, 4.5vw, 2rem);
+}
+.va-figure-compact .vis {
+  height: clamp(72px, 14vh, 120px);
+}
+.va-figure-compact .vis-objects,
+.va-figure-compact .vis-join,
+.va-figure-compact .vis-measure,
+.va-figure-compact .vis-shaperow,
+.va-figure-compact .vis-tenframe {
+  width: 100%;
+  height: auto;
+  max-height: 130px;
+}
+.va-figure-compact .vis-letter {
+  font-size: clamp(2.4rem, 9vw, 3.8rem);
+}
+.va-figure-compact .vis-text.is-big {
+  font-size: clamp(1.8rem, 7vw, 2.8rem);
+}
+
+/* Listen button — same idea as visual-assessment .speak */
+@media (max-width: 420px) {
+  .va-listen .va-listen-label {
+    display: none;
+  }
+  .va-listen {
+    padding-left: 0.65rem;
+    padding-right: 0.65rem;
+  }
+}

@@ -15,6 +15,7 @@ import {
   hasNewElaBank,
 } from '@/app/data/questionBanks';
 import { getPictureBank } from '@/app/data/pictureAssessments';
+import { withSessionOptionOrder } from '@/app/data/visualPictureBanks';
 
 export type Difficulty = 'easy' | 'medium' | 'hard';
 
@@ -30,6 +31,19 @@ export interface BankQuestion {
   solution?: string;
   stimulus?: string;
   picture?: boolean;
+  /** Visual-assessment declarative picture spec */
+  visual?: { type: string; [key: string]: unknown } | null;
+  optionVisuals?: ({ type: string; [key: string]: unknown } | null)[];
+  optionShowLabels?: boolean[];
+  domain?: string;
+  skill?: string;
+  standard?: string;
+  story?: string;
+  passage?: string;
+  alt?: string;
+  optionLayout?: string;
+  speech?: string;
+  visualKind?: 'va';
 }
 
 export interface QuizQuestion {
@@ -44,6 +58,18 @@ export interface QuizQuestion {
   stimulus?: string;
   picture?: boolean;
   grade?: string;
+  visual?: { type: string; [key: string]: unknown } | null;
+  optionVisuals?: ({ type: string; [key: string]: unknown } | null)[];
+  optionShowLabels?: boolean[];
+  domain?: string;
+  skill?: string;
+  standard?: string;
+  story?: string;
+  passage?: string;
+  alt?: string;
+  optionLayout?: string;
+  speech?: string;
+  visualKind?: 'va';
 }
 
 export const SECTION_SIZE = 10;
@@ -122,6 +148,18 @@ function toQuizQuestion(q: BankQuestion | QuizQuestion): QuizQuestion {
     stimulus: q.stimulus,
     picture: q.picture,
     grade: q.grade,
+    visual: q.visual,
+    optionVisuals: q.optionVisuals,
+    optionShowLabels: q.optionShowLabels,
+    domain: q.domain,
+    skill: q.skill,
+    standard: q.standard,
+    story: q.story,
+    passage: q.passage,
+    alt: q.alt,
+    optionLayout: q.optionLayout,
+    speech: q.speech,
+    visualKind: q.visualKind,
   };
 }
 
@@ -318,8 +356,14 @@ export async function generateGradeAssessment(
     onProgress?.('Loading picture questions...');
     const bank = getPictureBank(key);
     onProgress?.('Drawing math and ELA pictures...');
-    const math = drawBalanced(bank.math, SECTION_SIZE).map((q) => ({ ...q, subject: 'math' as const }));
-    const ela = drawBalanced(bank.ela, SECTION_SIZE).map((q) => ({ ...q, subject: 'ela' as const }));
+    const math = drawBalanced(bank.math, SECTION_SIZE).map((q) => ({
+      ...withSessionOptionOrder(q),
+      subject: 'math' as const,
+    }));
+    const ela = drawBalanced(bank.ela, SECTION_SIZE).map((q) => ({
+      ...withSessionOptionOrder(q),
+      subject: 'ela' as const,
+    }));
     const elapsedEarly = Date.now() - started;
     if (delayMs > elapsedEarly) {
       await new Promise((r) => setTimeout(r, delayMs - elapsedEarly));

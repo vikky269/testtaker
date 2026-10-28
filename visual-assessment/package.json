@@ -1,0 +1,13 @@
+{
+  "name": "picture-quiz",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Image-based Pre-K, Kindergarten and Grade 1 math and ELA check-in. Open index.html; no build step.",
+  "scripts": {
+    "test": "node tests/validate.js && node tests/engine.test.js",
+    "test:browser": "node tests/browser-smoke.js && node tests/browser-features.js",
+    "gallery": "node tests/gallery.js",
+    "docs": "node tests/gen-docs.js"
+  },
+  "devDependencies": { "playwright": "^1.56.0" }
+}

@@ -674,6 +674,9 @@ export default function Quiz() {
           answeredCount={answeredCount}
           onGoHome={handleGoHome}
           onReview={handleReview}
+          gradeLabel={`${(gradeParam || normalizedGrade || "Grade").replace(/-/g, " ")} assessment`}
+          quizQuestions={quizQuestions}
+          answers={answers}
         />
       )}
     </div>

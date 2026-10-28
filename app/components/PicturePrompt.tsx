@@ -1,14 +1,32 @@
-import { ChoiceFace, isPictureChoice, KinderScene } from '@/app/components/KinderArt';
+'use client';
 
-export function isPictureQuestion(q: { picture?: boolean; stimulus?: string } | null | undefined) {
+import { ChoiceFace, isPictureChoice, KinderScene } from '@/app/components/KinderArt';
+import VisualFigure from '@/app/components/VisualFigure';
+import ListenButton, { showVoiceListen } from '@/app/components/ListenButton';
+
+export function isPictureQuestion(q: {
+  picture?: boolean;
+  stimulus?: string;
+  visualKind?: string;
+  visual?: unknown;
+} | null | undefined) {
+  if (q?.visualKind === 'va' && q.visual) return true;
   return Boolean(q?.picture && q?.stimulus);
+}
+
+export function isVaPictureQuestion(q: {
+  visualKind?: string;
+  visual?: unknown;
+  optionVisuals?: unknown;
+} | null | undefined) {
+  return q?.visualKind === 'va';
 }
 
 export function pictureLabel(option: string) {
   return option.replace(/\u200b/g, '');
 }
 
-/** Pre-K and Kindergarten keep the read-aloud note. Grade 1 and above do not. */
+/** Pre-K and Kindergarten keep the read-aloud note when Listen is unavailable. */
 export function showReadAloud(grade?: string) {
   const key = (grade ?? '').toLowerCase().replace(/\s+/g, '');
   return key === 'pre-k' || key === 'prek' || key === 'kindergarten' || key === 'k';
@@ -21,6 +39,17 @@ export function usesLargePictureChoices(options: string[]) {
     const text = pictureLabel(option).trim();
     return text.length > 0 && text.length <= 8 && !/\p{L}{3,}/u.test(text);
   });
+}
+
+/** Prefer a 2-col / stack layout when VA options include picture tiles. */
+export function usesVaPictureOptions(q: {
+  visualKind?: string;
+  optionVisuals?: ({ type: string } | null)[] | null;
+  optionLayout?: string;
+} | null | undefined) {
+  if (q?.visualKind !== 'va') return false;
+  if (q.optionLayout === 'stack') return false;
+  return Boolean(q.optionVisuals?.some((v) => v && v.type !== 'none'));
 }
 
 type ShapeKind = 'circle' | 'triangle' | 'rectangle' | 'square' | 'pentagon' | 'hexagon';
@@ -89,6 +118,7 @@ function ShapeIcon({ kind }: { kind: ShapeKind }) {
 
 function Stimulus({ stimulus }: { stimulus: string }) {
   if (stimulus.startsWith('kvis:')) return <KinderScene stimulus={stimulus} />;
+  if (stimulus === 'va-visual') return null;
   const tokens = stimulus.split(/\s+/).filter(Boolean);
   if (!tokens.some((token) => SHAPE_KIND[token])) {
     return <div className="max-w-full text-6xl leading-tight tracking-wide md:text-7xl">{stimulus}</div>;
@@ -112,18 +142,55 @@ export default function PicturePrompt({
   stimulus,
   prompt,
   grade,
+  visual,
+  story,
+  passage,
+  alt,
+  speech,
 }: {
   stimulus: string;
   prompt: string;
   grade?: string;
+  visual?: { type: string; [key: string]: unknown } | null;
+  story?: string;
+  passage?: string;
+  alt?: string;
+  speech?: string;
 }) {
+  const read = story || passage;
+  const isVa = Boolean(visual && visual.type && visual.type !== 'none') || stimulus === 'va-visual';
+  const voiceOn = showVoiceListen(grade);
+  // Prefer phonics-friendly speech text when the bank provides it (e.g. "buh" for /b/).
+  const questionSpeech = (speech || pictureLabel(prompt)).trim();
+
   return (
     <div className="mb-7 flex flex-col items-center text-center">
-      <Stimulus stimulus={stimulus} />
-      <p className="mt-4 max-w-xl text-lg font-semibold leading-snug text-neutral-800 md:text-xl">
-        {pictureLabel(prompt)}
-      </p>
-      {showReadAloud(grade) && (
+      <div className="flex w-full max-w-xl flex-col items-center gap-3 sm:flex-row sm:items-start sm:justify-center sm:gap-4">
+        <p className="text-lg font-semibold leading-snug text-neutral-800 md:text-xl">
+          {pictureLabel(prompt)}
+        </p>
+        {voiceOn ? (
+          <ListenButton text={questionSpeech} label="Read the question aloud" className="shrink-0" />
+        ) : null}
+      </div>
+      {read ? (
+        <div className="mt-3 flex w-full max-w-xl flex-col gap-2 rounded-2xl border border-[#d7e4c0] bg-[#f7fbe9] px-4 py-3 text-left text-base font-medium leading-relaxed text-[#1a2e05] sm:flex-row sm:items-start sm:justify-between">
+          <p className="flex-1">{read}</p>
+          {voiceOn ? (
+            <ListenButton text={read} label="Read the story aloud" className="shrink-0 self-end sm:self-start" />
+          ) : null}
+        </div>
+      ) : null}
+      {isVa ? (
+        <div className="mt-4 w-full">
+          <VisualFigure visual={visual} alt={alt} />
+        </div>
+      ) : (
+        <div className="mt-4">
+          <Stimulus stimulus={stimulus} />
+        </div>
+      )}
+      {!voiceOn && showReadAloud(grade) && (
         <p className="mt-2 text-xs font-medium uppercase tracking-[0.14em] text-neutral-400">
           An adult can read this aloud
         </p>
@@ -131,3 +198,5 @@ export default function PicturePrompt({
     </div>
   );
 }
+
+export { ChoiceFace, isPictureChoice };

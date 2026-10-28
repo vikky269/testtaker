@@ -12,8 +12,14 @@ import Timer from "@/app/components/Timer/Timer";
 import QuizModals from "@/app/modals/quizModals";
 import MathHtml from "@/app/components/MathHtml";
 import QuestionDiagram, { diagramForQuestion } from "@/app/components/QuestionDiagram";
-import PicturePrompt, { isPictureQuestion, pictureLabel, usesLargePictureChoices } from "@/app/components/PicturePrompt";
+import PicturePrompt, {
+  isPictureQuestion,
+  pictureLabel,
+  usesLargePictureChoices,
+  usesVaPictureOptions,
+} from "@/app/components/PicturePrompt";
 import { ChoiceFace, isPictureChoice } from "@/app/components/KinderArt";
+import VisualFigure from "@/app/components/VisualFigure";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -267,7 +273,16 @@ export default function QuizBody({
           {diagram && <QuestionDiagram spec={diagram} />}
 
           {isPictureQuestion(currentQuestion) ? (
-            <PicturePrompt stimulus={currentQuestion.stimulus} prompt={currentQuestion.question} grade={currentQuestion.grade || gradeParam || undefined} />
+            <PicturePrompt
+              stimulus={currentQuestion.stimulus}
+              prompt={currentQuestion.question}
+              grade={currentQuestion.grade || gradeParam || undefined}
+              visual={currentQuestion.visual}
+              story={currentQuestion.story}
+              passage={currentQuestion.passage}
+              alt={currentQuestion.alt}
+              speech={currentQuestion.speech}
+            />
           ) : currentQuestion.question.startsWith("https://") ? (
             <img
               src={currentQuestion.question}
@@ -282,17 +297,34 @@ export default function QuizBody({
             />
           )}
 
-          <div className={`grid gap-3 ${usesLargePictureChoices(currentQuestion.options) ? "grid-cols-2 sm:grid-cols-4" : "grid-cols-1 md:grid-cols-2"}`}>
+          <div
+            className={`grid gap-3 ${
+              currentQuestion.optionLayout === "stack"
+                ? "grid-cols-1"
+                : usesVaPictureOptions(currentQuestion)
+                ? currentQuestion.options.length === 4
+                  ? "grid-cols-2"
+                  : "grid-cols-2 sm:grid-cols-3"
+                : usesLargePictureChoices(currentQuestion.options)
+                ? "grid-cols-2 sm:grid-cols-4"
+                : "grid-cols-1 md:grid-cols-2"
+            }`}
+          >
             {currentQuestion.options.map((option: string, oi: number) => {
               const selected = answers[currentQuestion.question] === option;
-              const largeChoice = usesLargePictureChoices(currentQuestion.options);
+              const optionVisual = currentQuestion.optionVisuals?.[oi] || null;
+              const showOptLabel =
+                currentQuestion.optionShowLabels?.[oi] ?? !optionVisual;
+              const largeChoice =
+                usesVaPictureOptions(currentQuestion) ||
+                usesLargePictureChoices(currentQuestion.options);
               return (
                 <button
                   key={oi}
                   type="button"
                   onClick={() => onSelect(currentQuestion.question, option)}
                   className={`group relative flex gap-3 rounded-2xl border px-4 py-4 text-left transition-all duration-150 md:px-5 md:py-5 cursor-pointer
-                    ${largeChoice ? "min-h-28 flex-col items-center justify-center text-center" : "items-start"}
+                    ${largeChoice || optionVisual ? "min-h-28 flex-col items-center justify-center text-center" : "items-start"}
                     ${selected
                       ? `${theme.active} border-transparent text-white`
                       : "border-neutral-200 bg-neutral-50 text-neutral-700 hover:border-[#7FB509] hover:bg-[#f0fce8]"
@@ -304,7 +336,16 @@ export default function QuizBody({
                   >
                     {String.fromCharCode(65 + oi)}
                   </span>
-                  {isPictureChoice(option) ? (
+                  {optionVisual ? (
+                    <>
+                      <VisualFigure visual={optionVisual} compact alt={pictureLabel(option)} />
+                      {showOptLabel ? (
+                        <span className="mt-1 text-sm font-semibold leading-snug">
+                          {pictureLabel(option)}
+                        </span>
+                      ) : null}
+                    </>
+                  ) : isPictureChoice(option) ? (
                     <ChoiceFace option={option} />
                   ) : largeChoice ? (
                     <span className="w-full text-center text-4xl leading-tight md:text-5xl">{pictureLabel(option)}</span>

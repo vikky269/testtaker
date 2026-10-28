@@ -1,5 +1,6 @@
 
-
+import SkillResultsSummary from "@/app/components/SkillResultsSummary";
+import { buildSkillBreakdown } from "@/app/utils/skillBreakdown";
 
 // app/components/ResultsScreen.tsx
 // Post-submission results UI — score cards, progress bars, action buttons
@@ -266,6 +267,17 @@ interface ResultsScreenProps {
   answeredCount: number;
   onGoHome: () => void;
   onReview: () => void;
+  /** When set, grade quizzes show the skill-area summary before detailed review. */
+  gradeLabel?: string;
+  quizQuestions?: Array<{
+    question: string;
+    correctAnswer?: string;
+    answer?: string;
+    subject?: string;
+    topic?: string;
+    domain?: string;
+  }>;
+  answers?: Record<string, string>;
 }
 
 function getSatReadinessBand(correctCount: number): {
@@ -300,6 +312,9 @@ export default function ResultsScreen({
   answeredCount,
   onGoHome,
   onReview,
+  gradeLabel,
+  quizQuestions,
+  answers,
 }: ResultsScreenProps) {
 
   const satBand = isSat ? getSatReadinessBand(satCorrectCount) : null;
@@ -307,6 +322,26 @@ export default function ResultsScreen({
   const isPerfect = isGed
     ? Number(gedScores?.overall ?? 0) === 100
     : Number(calculateScore().combined) === 100;
+
+  // Grade / early-picture assessments: VA-style skill summary, then detailed review.
+  if (
+    isGrade9Or10 &&
+    !isSat &&
+    !isGed &&
+    quizQuestions &&
+    quizQuestions.length > 0 &&
+    answers
+  ) {
+    const breakdown = buildSkillBreakdown(quizQuestions, answers);
+    return (
+      <SkillResultsSummary
+        title={gradeLabel || "Grade assessment"}
+        breakdown={breakdown}
+        onReview={onReview}
+        onGoHome={onGoHome}
+      />
+    );
+  }
 
   return (
     <div className="w-full max-w-2xl mx-auto px-4 py-8">

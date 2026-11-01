@@ -427,7 +427,7 @@ export async function generateShsatReport(params: ShsatReportParams): Promise<vo
   y += 34;
 
   // ── Footer on each page ──────────────────────────────────────────────────
-  const pageCount = doc.getNumberOfPages();
+  const pageCount = (doc as any).getNumberOfPages();
   for (let p = 1; p <= pageCount; p++) {
     doc.setPage(p);
     doc.setDrawColor(226, 232, 240);

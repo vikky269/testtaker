@@ -1,0 +1,90 @@
+SHSAT ELA (Reading/Writing) → JSON extract report
+Source: SHSAT\SHSAT_Questions_1_to_50_with_Answer_Key.pdf (Form B pages ~152–196 + answer key)
+JSON: c:\Projects\testtaker\app\data\shsatElaPool.json
+Preview PNGs: c:\Projects\testtaker\SHSAT\_preview\ela\page-01.png … page-32.png
+OCR scratch: c:\Projects\testtaker\SHSAT\_preview\ela_ocr\
+Figures: c:\Projects\testtaker\public\shsat\ela\
+
+Questions extracted: 50
+needsReview: 0
+Figures saved: 3
+  - la-cocina-table.png
+  - telegraph-map.png
+  - telegraph-graph.png
+
+Method:
+- Rendered PDF via pdfjs-dist + @napi-rs/canvas at 2x scale.
+- OCR with tesseract.js; verified against vision reads of page images.
+- Answer letters mapped from provided key → option text (A–D or E–H → options[0..3]).
+- Shared passages embedded in each related question as <blockquote class="quiz-passage">…</blockquote>.
+- Poem kept in <pre class="quiz-poem">; Opportunity italicized; table/map/graph as <img src="/shsat/ela/…">.
+
+Passage structure:
+1–3   Revising/Editing Part A (standalone sentence/paragraph edits)
+4–9   Revising/Editing Part B — “The End of an Era” (Opportunity Mars rover), sentences (1)–(20)
+10–17 Reading — Excerpt from “The Food Business Incubator” (La Cocina) + qualifications table
+18–26 Reading — Excerpt from In Search of the Unknown (Robert W. Chambers; great auk)
+27–35 Reading — “Invention of the Telegraph” + British All-Red Line map + messages graph
+36–44 Reading — poem “Snowy Mountains” (John Gould Fletcher)
+45–50 Reading — Excerpt from “The Past and the Future of the Earth’s Oldest Trees” (bristlecones)
+
+Subtopic counts: Revising 9, Reading 41
+
+Answer-key mapping check (letter → first ~60 chars of correctAnswer):
+shsate_01 B Insert a comma after tempting.
+shsate_02 F sentence 2
+shsate_03 D Sentence 4: Change they start to it starts, AND insert a comma after sweet.
+shsate_04 E Despite the challenges of operating on the surface of another planet…
+shsate_05 C Meanwhile,
+shsate_06 E However, in 2018, a dust storm covered the planet, bringing the rover’s progress to a standstill.
+shsate_07 D Prior to this planet-wide dust storm, minor dust storms had periodically deposited…
+shsate_08 F at the beginning of the second paragraph (before sentence 4)
+shsate_09 B Today’s rovers continue to add to Opportunity’s discoveries…
+shsate_10 F has the ability to mentor chefs to reach the highest levels of achievement in their craft.
+shsate_11 A specifying how La Cocina helps local food entrepreneurs become successful.
+shsate_12 E showing appreciation for the vibrant diversity of La Cocina.
+shsate_13 C showing how La Cocina can help people find success…background in something different.
+shsate_14 H La Cocina does admirable work in supporting the efforts of ambitious cooks…
+shsate_15 C the lists of necessities such as business plans and city permits that La Cocina assists with
+shsate_16 F La Cocina provides legal and technical assistance to its members.
+shsate_17 D emphasizing that applicants must be willing to dedicate time to promoting…
+shsate_18 G believes that many of the animals offered are not acceptable for the zoological society.
+shsate_19 D It suggests that the professor knows that the conversation will be frustrating…
+shsate_20 E It establishes the conflict between the professor and the narrator concerning the validity of the letter.
+shsate_21 A flustered by the professor’s criticism of his logic.
+shsate_22 H It shows the narrator’s acceptance of his assignment despite his personal objections.
+shsate_23 D “I can’t get away from the idea that we are on the eve of acquiring the rarest…”
+shsate_24 E It shows that the narrator is beginning to consider the possibility of finding the great auks.
+shsate_25 C “I drew a chair up beside his desk—there was nothing to do but to obey…”
+shsate_26 F by using the conversation between the narrator and the professor to emphasize their reactions to the letter
+shsate_27 F Morse’s discouragement over his lack of knowledge of electricity prompted him to experiment…
+shsate_28 A the collaborative efforts of colleagues resulted in successful communication over a wire.
+shsate_29 F It shows how the invention of the electric telegraph depended on information and techniques discovered by others.
+shsate_30 B Morse applied for a government grant that required both houses of Congress and the president…
+shsate_31 F sense of wonder and celebration that the telegraph line was accomplished.
+shsate_32 B It provides evidence of the dramatic increase in the number of telegraph messages…
+shsate_33 G discussions of the newly invented electromagnet that sparked the idea of sending codes through wires.
+shsate_34 D Morse’s invention of the telegraph made a great stride toward better connecting people…
+shsate_35 H by showing that the Morse telegraph had a surprisingly immense influence across the world
+shsate_36 B contrasting the grandeur of the mountains with the structures in the city below them.
+shsate_37 G remain untamed through the ages.
+shsate_38 D It emphasizes that the mountains dominate the landscape.
+shsate_39 H “Plasters their cliffs with soap-advertisements,” (line 13)
+shsate_40 B by illustrating the differences among the various ways humans can affect the natural environment
+shsate_41 F “They have been here now for too long a time.” (line 9)
+shsate_42 C They reflect the speaker’s dismay that people destroy the natural landscape without understanding…
+shsate_43 G by exposing how a lack of awareness leads to nature’s ruin
+shsate_44 A gracious hosts who are untroubled by the actions of people.
+shsate_45 F It emphasizes the new tree’s ability to use resources left by prior generations of bristlecone pines.
+shsate_46 B a description of specific qualities of the bristlecone pine that make it suited to its environment.
+shsate_47 H explaining the reason for the bristlecone pine’s longevity.
+shsate_48 D The bristlecone pine can be used to gather information on changing Earth conditions because of its long life.
+shsate_49 H that the tree manages to survive even when partially fossilized.
+shsate_50 A the success of the bristlecone pine lies in its ability to resist climate change.
+
+Notes / caveats:
+- PDF is image-based; minor punctuation/ellipsis formatting may differ slightly from print.
+- Underlines in Q1/Q3 stems rendered as <u>…</u>.
+- Booklet page numbers jump (e.g. 169 → 183) because the source PDF only includes Q1–50 of Form B, not the full 57-question ELA section.
+- Q33/Q37/Q47/Q50 follow the supplied answer key even where distractors are pedagogically close; spot-check those if keys are later revised.
+- No needsReview flags: all stems/options were legible after OCR+vision cross-check.

@@ -37,12 +37,12 @@ export interface QuizCardProps {
       id: "shsat",
       imageSrc: "/imtwo.png",
       title: "SHSAT",
-      level: "Grade 8",
-      category: "Math",
+      level: "",
+      category: "ELA & Math",
       //difficulty: "Medium",
-      time: "25 min",
-      questions: 12,
-      onStart: () => console.log("Started Science Explorer")
+      time: "75 min",
+      questions: 100,
+      onStart: () => console.log("Started SHSAT")
     },
     // {
     //     id: "algebra-1-regent",

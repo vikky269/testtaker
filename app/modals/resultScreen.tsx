@@ -269,6 +269,7 @@ interface ResultsScreenProps {
   onReview: () => void;
   /** When set, grade quizzes show the skill-area summary before detailed review. */
   gradeLabel?: string;
+  studentName?: string;
   quizQuestions?: Array<{
     question: string;
     correctAnswer?: string;
@@ -313,6 +314,7 @@ export default function ResultsScreen({
   onGoHome,
   onReview,
   gradeLabel,
+  studentName,
   quizQuestions,
   answers,
 }: ResultsScreenProps) {
@@ -339,6 +341,7 @@ export default function ResultsScreen({
         breakdown={breakdown}
         onReview={onReview}
         onGoHome={onGoHome}
+        studentName={studentName}
       />
     );
   }

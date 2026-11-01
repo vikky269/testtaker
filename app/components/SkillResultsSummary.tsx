@@ -1,6 +1,8 @@
 'use client';
 
+import { useState } from 'react';
 import type { SkillBreakdown, SkillDomainRow } from '@/app/utils/skillBreakdown';
+import { downloadSkillResultsPdf } from '@/app/utils/generateSkillResultsPdf';
 
 function Ring({ percent, tone }: { percent: number; tone: 'math' | 'ela' | 'science' }) {
   const r = 42;
@@ -93,22 +95,64 @@ export default function SkillResultsSummary({
   breakdown,
   onReview,
   onGoHome,
+  studentName,
 }: {
   title: string;
   breakdown: SkillBreakdown;
   onReview: () => void;
   onGoHome: () => void;
+  studentName?: string;
 }) {
+  const [downloading, setDownloading] = useState(false);
   const mathRows = breakdown.domains.filter((d) => d.subject === 'math');
   const elaRows = breakdown.domains.filter((d) => d.subject === 'ela');
   const scienceRows = breakdown.domains.filter((d) => d.subject === 'science');
   const perfect = breakdown.percent === 100;
+
+  const resolvedName = (() => {
+    if (studentName?.trim()) return studentName.trim();
+    try {
+      const saved = localStorage.getItem('activeStudent');
+      if (saved) {
+        const p = JSON.parse(saved);
+        if (p?.fullName) return String(p.fullName);
+      }
+    } catch {
+      /* ignore */
+    }
+    return 'Student';
+  })();
+
+  const handleDownload = async () => {
+    if (downloading) return;
+    setDownloading(true);
+    try {
+      await downloadSkillResultsPdf({
+        studentName: resolvedName,
+        gradeLabel: title,
+        breakdown,
+      });
+    } catch (err) {
+      console.error('Could not download results PDF', err);
+    } finally {
+      setDownloading(false);
+    }
+  };
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
       <div className="text-center mb-6">
         <h1 className="text-3xl font-extrabold text-neutral-900 tracking-tight">All done!</h1>
         <p className="mt-1 text-sm font-semibold text-neutral-400">{title}</p>
+        <p className="mt-1 text-xs font-medium text-neutral-400">
+          {resolvedName}
+          {' · '}
+          {new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </p>
       </div>
 
       <div className="mb-5 rounded-2xl bg-indigo-600 px-6 py-6 text-center text-white shadow-md">
@@ -181,7 +225,15 @@ export default function SkillResultsSummary({
         diagnosis or placement evaluation.
       </p>
 
-      <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+      <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:flex-wrap">
+        <button
+          type="button"
+          onClick={handleDownload}
+          disabled={downloading}
+          className="rounded-full bg-indigo-600 px-8 py-3 text-sm font-bold text-white shadow-md transition hover:bg-indigo-700 disabled:cursor-wait disabled:opacity-70"
+        >
+          {downloading ? 'Preparing PDF…' : 'Download results PDF'}
+        </button>
         <button
           type="button"
           onClick={onReview}
@@ -193,7 +245,7 @@ export default function SkillResultsSummary({
           <button
             type="button"
             onClick={onGoHome}
-            className="rounded-full bg-indigo-600 px-8 py-3 text-sm font-bold text-white shadow-md transition hover:bg-indigo-700"
+            className="rounded-full border border-neutral-200 bg-white px-8 py-3 text-sm font-bold text-neutral-700 shadow-sm transition hover:bg-neutral-50"
           >
             Back to Home
           </button>

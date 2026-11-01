@@ -16,8 +16,8 @@ export const SECTION_SHORT_LABEL: Record<SHSATSectionKey, string> = {
 
 /** Seconds per section — easy to tweak later. */
 export const SECTION_TIME: Record<SHSATSectionKey, number> = {
-  ela: 60 * 60,
-  math: 60 * 60,
+  ela: 90 * 60,
+  math: 90 * 60,
 };
 
 /** Questions drawn per section from each pool. */

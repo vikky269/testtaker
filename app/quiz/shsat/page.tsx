@@ -1,6 +1,6 @@
 'use client';
 
-// SHSAT diagnostic — ELA (60 min, 50 Q) then Math (60 min, 50 Q).
+// SHSAT diagnostic — ELA (90 min, 50 Q) then Math (90 min, 50 Q).
 // Question sets drawn once per attempt and locked in localStorage.
 
 import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
@@ -421,7 +421,7 @@ export default function ShsatQuizPage() {
       setCurrentQuestionIndex={setCurrentQuestionIndex}
       answers={answers}
       timerDuration={timerDuration}
-      timerIdentifier={`shsat-${currentSection}-60m`}
+      timerIdentifier={`shsat-${currentSection}-90m`}
       onTimeUp={handleTimeUp}
       onSelect={handleSelect}
       onNext={handleNext}

@@ -149,11 +149,14 @@ li .katex {
   color: inherit;
 }
 
-/* ELA / passage HTML — keep inside the card, wrap long lines */
+/* ELA / passage HTML — keep inside the card, wrap long lines.
+   Do not set overflow:auto here — tall KaTeX fractions get a Windows
+   scrollbar that looks like tiny up/dot/down arrows beside the math. */
 .math-html-content {
   max-width: 100%;
   overflow-wrap: anywhere;
   word-break: break-word;
+  overflow: visible;
 }
 .quiz-question-html {
   max-width: 100%;

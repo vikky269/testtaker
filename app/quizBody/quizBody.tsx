@@ -14,7 +14,10 @@ import MathHtml from "@/app/components/MathHtml";
 import QuestionDiagram, { diagramForQuestion } from "@/app/components/QuestionDiagram";
 import PicturePrompt, {
   isPictureQuestion,
+  looksLikeMathOption,
+  optionImageSrc,
   pictureLabel,
+  usesImageOptions,
   usesLargePictureChoices,
   usesVaPictureOptions,
 } from "@/app/components/PicturePrompt";
@@ -130,6 +133,7 @@ function quizTitle({
   }
   if (testid === "ged") return "SmartMathz GED Readiness Diagnostic";
   if (testid === "psat") return "SmartMathz PSAT Readiness Diagnostic";
+  if (testid === "shsat") return "SmartMathz SHSAT Readiness Diagnostic";
   return `${testid} Practice Test`;
 }
 
@@ -220,7 +224,7 @@ export default function QuizBody({
     >
       {/* ── Slim sticky header ─────────────────────────────── */}
       <header className="sticky top-0 z-40 border-b border-black/5 bg-white/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 md:flex-row md:items-center md:justify-between md:px-6">
+        <div className="mx-auto flex max-w-[74rem] flex-col gap-3 px-4 py-4 md:flex-row md:items-center md:justify-between md:px-6">
           <div className="min-w-0 text-center md:text-left">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-400">
               SmartMathz Assessment
@@ -248,7 +252,7 @@ export default function QuizBody({
       </header>
 
       {/* ── MAIN LAYOUT ────────────────────────────────────── */}
-      <main className="mx-auto grid max-w-6xl gap-5 px-4 py-6 md:px-6 lg:grid-cols-[minmax(0,1fr)_280px] lg:py-8">
+      <main className="mx-auto grid max-w-[74rem] gap-5 px-4 py-6 md:px-6 lg:grid-cols-[minmax(0,1fr)_260px] lg:py-8">
         {/* ── LEFT: Question card ──────────────────────────── */}
         <section className="min-w-0 rounded-3xl border border-black/[0.04] bg-white p-5 md:p-8">
           <div className="mb-6 flex items-center gap-3">
@@ -305,8 +309,10 @@ export default function QuizBody({
                 ? currentQuestion.options.length === 4
                   ? "grid-cols-2"
                   : "grid-cols-2 sm:grid-cols-3"
+                : usesImageOptions(currentQuestion.options)
+                ? "grid-cols-1 sm:grid-cols-2"
                 : usesLargePictureChoices(currentQuestion.options)
-                ? "grid-cols-2 sm:grid-cols-4"
+                ? "grid-cols-2"
                 : "grid-cols-1 md:grid-cols-2"
             }`}
           >
@@ -315,6 +321,7 @@ export default function QuizBody({
               const optionVisual = currentQuestion.optionVisuals?.[oi] || null;
               const showOptLabel =
                 currentQuestion.optionShowLabels?.[oi] ?? !optionVisual;
+              const imageSrc = optionImageSrc(option);
               const largeChoice =
                 usesVaPictureOptions(currentQuestion) ||
                 usesLargePictureChoices(currentQuestion.options);
@@ -324,7 +331,7 @@ export default function QuizBody({
                   type="button"
                   onClick={() => onSelect(currentQuestion.question, option)}
                   className={`group relative flex gap-3 rounded-2xl border px-4 py-4 text-left transition-all duration-150 md:px-5 md:py-5 cursor-pointer
-                    ${largeChoice || optionVisual ? "min-h-28 flex-col items-center justify-center text-center" : "items-start"}
+                    ${largeChoice || optionVisual || imageSrc ? "min-h-28 flex-col items-center justify-center text-center" : "items-start"}
                     ${selected
                       ? `${theme.active} border-transparent text-white`
                       : "border-neutral-200 bg-neutral-50 text-neutral-700 hover:border-[#7FB509] hover:bg-[#f0fce8]"
@@ -345,15 +352,25 @@ export default function QuizBody({
                         </span>
                       ) : null}
                     </>
+                  ) : imageSrc ? (
+                    <img
+                      src={imageSrc}
+                      alt={`Option ${String.fromCharCode(65 + oi)}`}
+                      className="w-full max-h-40 object-contain rounded-lg bg-white"
+                    />
                   ) : isPictureChoice(option) ? (
                     <ChoiceFace option={option} />
-                  ) : largeChoice ? (
+                  ) : largeChoice && !looksLikeMathOption(option) ? (
                     <span className="w-full text-center text-4xl leading-tight md:text-5xl">{pictureLabel(option)}</span>
                   ) : (
                     <MathHtml
                       as="span"
                       text={option}
-                      className="text-base font-medium leading-snug md:text-[17px]"
+                      className={`font-medium leading-snug ${
+                        looksLikeMathOption(option)
+                          ? "text-2xl md:text-3xl"
+                          : "text-base md:text-[17px]"
+                      }`}
                     />
                   )}
                   {selected && (

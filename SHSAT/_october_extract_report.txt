@@ -1,0 +1,76 @@
+SHSAT October PDF → JSON extract report
+Source: SHSAT Mock Assessment (October).pdf
+JSON: c:\Projects\testtaker\app\data\shsatMathPool.october.json
+Questions extracted: 45 (MC 63–107; grid-in 58–62 skipped)
+Images saved to public/shsat/math/october: 15
+needsReview: 0
+
+Method:
+- Rendered 14 PDF pages via pdf-to-img (png, scale 2.5) to SHSAT/_preview/october/.
+- Read page images with vision; odd Qs options A–D, even Qs E–H.
+- Mapped answer-key letters to option TEXT for correctAnswer.
+- Cropped stem/option figures to public/shsat/math/october/.
+
+Image files:
+- q100-figure.png
+- q101-numberline.png
+- q103-figure.png
+- q106-table.png
+- q107-optA.png
+- q107-optB.png
+- q107-optC.png
+- q107-optD.png
+- q64-figure.png
+- q66-table.png
+- q75-table.png
+- q80-numberline.png
+- q89-table.png
+- q92-figure.png
+- q95-table.png
+
+Per-question:
+shsatm_o_63: D → 207 | If x = 9 and y = −7, what is the value of x(x − 2y)?
+shsatm_o_64: E → 60° | In the figure above, PQRS is a parallelogram. The measure of ∠PQT is 5
+shsatm_o_65: D → R | M = 3N = P/4 = Q + 5 = R/7 > 0 Based on the statement above, which var
+shsatm_o_66: F → 30% | The table above shows the number of times that different desserts were
+shsatm_o_67: C → 69 | To make party invitations, Macie could buy a package of paper for $10.
+shsatm_o_68: F → −10° | At 1:00 p.m. one day, the temperature was 8 degrees above zero. During
+shsatm_o_69: D → 45:11 | A bag contains 75 marbles that are red, blue, or green. The ratio of r
+shsatm_o_70: G → 13 | A roofing contractor uses shingles at a rate of 3 bundles for every 96
+shsatm_o_71: C → 72 | What is the least common multiple of 24, 6, and 18?
+shsatm_o_72: F → 23 | One day, the Early Bird Restaurant used 15 dozen eggs for 200 breakfas
+shsatm_o_73: C → 9/14 | A cooler contains three types of beverages: 5 bottles of apple juice, 
+shsatm_o_74: H → 300π sq cm | A large circular dinner plate has a radius of 20 centimeters. A smalle
+shsatm_o_75: D → 17 1/2 pages | The table above shows prices for newspaper advertising. A store purcha
+shsatm_o_76: F → 14 | How many positive odd numbers satisfy the inequality 3x + 8 ≤ 92?
+shsatm_o_77: A → 3 | If 36/y = 4x, what is the value of x when y = 3?
+shsatm_o_78: H → 32 cm | Points X, Y, and Z are on a straight line, and Y is between X and Z. L
+shsatm_o_79: C → $15.12 | Bryana bought 1 3/4 yards of cloth at $8.00 per yard. If there was an 
+shsatm_o_80: F → −4 1/2 | On the number line above, MN = 5 5/6. What is the position of point M?
+shsatm_o_81: B → 0.48 g | A United States presidential coin is made from an alloy of four metals
+shsatm_o_82: G → 18 | Jack scored a mean of 15 points per game in his first 3 basketball gam
+shsatm_o_83: B → 2.88 | A cylindrical oil drum can hold 4,320 liters when it is completely ful
+shsatm_o_84: F → 40 yr | Nicole's age now is three times Carmen's age. If Carmen will be 17 in 
+shsatm_o_85: C → 64% | A chemical decays in such a way that the amount left at the end of eac
+shsatm_o_86: G → 2w − 2 | If w − 1 is an odd integer, which one of the following must be an even
+shsatm_o_87: B → 6 | Three students stand at the starting line of a running track and begin
+shsatm_o_88: F → 23 − 11x | Simplify this expression: 4(7 − 3x) − (5 − x)
+shsatm_o_89: D → 3/10 | Amy surveyed students at her school about the number of pets they have
+shsatm_o_90: E → 14 | A large container is partially filled with n liters of water. Ito adds
+shsatm_o_91: B → 5,039.01 | 5x³ + 3x + 9 + 1/x² If x = 10, what is the value of the expression abo
+shsatm_o_92: E → 9 sq cm | R, S, and T are midpoints of the sides of square MNPQ, as shown above.
+shsatm_o_93: D → $18,500 | The Chens spend $5 of every $8 they earn on planned expenses. If the f
+shsatm_o_94: G → 63 | A pizza shop offers a choice of 3 sizes (small, medium, and large) and
+shsatm_o_95: D → 20% | The table above shows the number of cats per family in 100 households 
+shsatm_o_96: H → 81 cu ft | A wooden box has a square base. The height of this box is 3 times the 
+shsatm_o_97: B → 5 | On a bike trip, Rajiv traveled 65 kilometers in 5 hours, while Shaina 
+shsatm_o_98: G → 3 | Points P, Q, R, and S represent −3, −1, 0, and 2, respectively, on a n
+shsatm_o_99: D → 1,000,000 | There are 1,000 cubic centimeters in 1 liter, and 1,000 cubic millimet
+shsatm_o_100: E → x − 1 | In the quarter circle above, what is y in terms of x?
+shsatm_o_101: C → 11/40 | The hash marks on the number line above are evenly spaced. What is the
+shsatm_o_102: H → 500 | Phan chose an Internet service that charges $18.00 per month plus $0.0
+shsatm_o_103: C → 2(n − m) | What is the area of the shaded triangle shown above?
+shsatm_o_104: E → 3 | The decimal 0.06 can be written as the fraction x/50. What is the valu
+shsatm_o_105: B → 16/25 | In a sample of 50 cars at a local dealership, there are 12 red cars an
+shsatm_o_106: F → dog | The cards in the table above are mixed in a box. Which animal pictured
+shsatm_o_107: C → [img option] | Which number line below shows the solution set for 2x − 2 ≤ y ≤ 4x + 1

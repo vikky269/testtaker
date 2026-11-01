@@ -6,7 +6,10 @@ import MathHtml from "@/app/components/MathHtml";
 import QuestionDiagram, { diagramForQuestion } from "@/app/components/QuestionDiagram";
 import PicturePrompt, {
   isPictureQuestion,
+  looksLikeMathOption,
+  optionImageSrc,
   pictureLabel,
+  usesImageOptions,
   usesLargePictureChoices,
   usesVaPictureOptions,
 } from "@/app/components/PicturePrompt";
@@ -99,8 +102,10 @@ export default function QuestionCard({
             ? "grid-cols-1"
             : usesVaPictureOptions(questionData)
             ? "grid-cols-2 sm:grid-cols-3"
+            : usesImageOptions(questionData.options)
+            ? "grid-cols-1 sm:grid-cols-2"
             : usesLargePictureChoices(questionData.options)
-            ? "grid-cols-2 sm:grid-cols-4"
+            ? "grid-cols-2"
             : "grid-cols-1 sm:grid-cols-2"
         }`}
       >
@@ -110,6 +115,7 @@ export default function QuestionCard({
           const noAnswer   = !selectedAnswer;
           const optionVisual = questionData.optionVisuals?.[oi] || null;
           const showOptLabel = questionData.optionShowLabels?.[oi] ?? !optionVisual;
+          const imageSrc = optionImageSrc(option);
           const largeChoice =
             usesVaPictureOptions(questionData) ||
             usesLargePictureChoices(questionData.options);
@@ -118,7 +124,7 @@ export default function QuestionCard({
             <li
               key={oi}
               className={`p-3 rounded-xl border text-sm font-semibold flex gap-2 transition-all
-                ${largeChoice || optionVisual ? "min-h-24 flex-col items-center justify-center text-center" : "items-center"}
+                ${largeChoice || optionVisual || imageSrc ? "min-h-24 flex-col items-center justify-center text-center" : "items-center"}
                 ${isCorrect && noAnswer  ? "bg-green-50 border-green-200 text-green-800"
                 : isCorrect             ? "bg-green-500 border-green-500 text-white"
                 : isSelected            ? "bg-red-500 border-red-500 text-white"
@@ -135,12 +141,22 @@ export default function QuestionCard({
                     <span className="mt-1 text-xs font-semibold">{pictureLabel(option)}</span>
                   ) : null}
                 </>
+              ) : imageSrc ? (
+                <img
+                  src={imageSrc}
+                  alt={`Option ${String.fromCharCode(65 + oi)}`}
+                  className="w-full max-h-36 object-contain rounded-lg bg-white"
+                />
               ) : isPictureChoice(option) ? (
                 <ChoiceFace option={option} />
-              ) : largeChoice ? (
+              ) : largeChoice && !looksLikeMathOption(option) ? (
                 <span className="text-4xl leading-tight">{pictureLabel(option)}</span>
               ) : (
-                <MathHtml as="span" text={option} />
+                <MathHtml
+                  as="span"
+                  text={option}
+                  className={looksLikeMathOption(option) ? "text-xl font-semibold" : undefined}
+                />
               )}
               {isCorrect && <span className="ml-auto">✅</span>}
               {isSelected && !isCorrect && (

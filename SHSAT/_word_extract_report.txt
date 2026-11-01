@@ -1,0 +1,69 @@
+SHSAT Word → JSON extract report
+Source: Aliyah SHSAT Mock.docx
+JSON: c:\Projects\testtaker\app\data\shsatMathPool.word.json
+Questions extracted: 50
+Images saved to public/shsat/math/word: 21
+needsReview: 2
+needsReview ids: shsatm_w_10, shsatm_w_44
+
+Method:
+- Parsed word/document.xml; option sets = contiguous paras sharing numId (>=2), length 4.
+- Correct answer = sole bold option (w:b, paragraph rPr bold, OMML m:sty bi, or bold image run).
+- No invented answers; missing/ambiguous bold → needsReview: true, correctAnswer: "".
+- OMML → plain fraction text; superscript 0 → degree symbol; images → /shsat/math/word/.
+
+Content caveats (source doc):
+- Some stems lost inline fractions (em dashes / broken runs), e.g. James pages, colored-pencils probability.
+- Box-plot image choices have no bold mark → needsReview.
+
+Per-question:
+shsatm_w_01: 250 | The table above shows the number of each type of vehicle sold at a dealership la
+shsatm_w_02: 13.5 | In a scaled drawing of rectangular garden, the length is 15 inches and the width
+shsatm_w_03: 12 | A kindergarten teacher has 72 crayons, 60 pencils, and 84 sheets of paper to dis
+shsatm_w_04: 8 | Mr. Smith opened a retirement account with a deposit of $900. This account earns
+shsatm_w_05: 7 | Solve the equation for x: ((21)(14)x)/((49)(48))=0.875
+shsatm_w_06: 6 1/12 | What is the value of 3 1/4-1 2/3-(-4 1/2)
+shsatm_w_07: 7 | On Fran’s map, 2 centimeters represents 3 kilometers. The points on this map tha
+shsatm_w_08: x=(y-4)/2 | Solve for x in terms of y if 2x + 4 = y
+shsatm_w_09: 1/20 | Bryan completed a 100- meter race in 11.74 seconds. Luis completed the same race
+shsatm_w_10: NEEDS_REVIEW | A total of 24 students in a math class took a 100- point test: • None of the stu
+shsatm_w_11: 11/5 | n=0.13+207/100 What is the value of n expressed as a fraction?
+shsatm_w_12: 96 sq cm | In the pyramid above, each triangular face has the same area, and the base MNPQ 
+shsatm_w_13: 153 cm by 102 cm | The perimeter of a rectangle is 510 centimeters. The ratio of the length to the 
+shsatm_w_14: [img][img][img] | Which number line below shows the solution to the inequality —4 < x/2 < 2?
+shsatm_w_15: 20 | The sum of the numbers x, y, and z is 50. The ratio of x to y is 1:4, and the ra
+shsatm_w_16: 15 | A box of colored pencils contains exactly 6 red pencils. The probability of choo
+shsatm_w_17: $52 | 1 dollar = 7 lorgs 1 dollar = 0.5 dalt Kevin has 140 lorgs and 16 dalts. If he e
+shsatm_w_18: 0.5 square unit | What is the area of the shaded region in the graph above?
+shsatm_w_19: 16% | In Centerville, 45% of the population is female, and 60% of the population commu
+shsatm_w_20: $2.80 | Mrs. Cranston bought five bottles of water for $0.90 each and 8 pounds of meat. 
+shsatm_w_21: 2/15 | In a sample of 10 cards, 4 are red and 6 are blue. If 2 cards are selected at ra
+shsatm_w_22: plunk | 1 Sind = 4 lorgs 2 plunks 5 dalts 5 sinds = 2 harps 1 plunk 3 harps A nation has
+shsatm_w_23: 2,022 | The faculty Of a certain four-year college consists Of 179 teachers. There are 6
+shsatm_w_24: 2, 700 | How many more people in Center City walk to work than ride their bicycle to work
+shsatm_w_25: 35 | Which of the following numbers has factors that include the smallest factor (oth
+shsatm_w_26: 48 ft | In a scale drawing of a triangular banner, one side measures 16 centimeters and 
+shsatm_w_27: 77 | What is the mean score of the 10 students in the table above?
+shsatm_w_28: I+2 | The least of 5 consecutive integers is l, and the greatest is g. What is the val
+shsatm_w_29: 5184 cubic mm | Beth makes a bead in the shape of a cube with side length 18 millimeters. She cu
+shsatm_w_30: 43° | In the right triangle shown above, what is the measure of the smallest angle?
+shsatm_w_31: 19 | P is the center of the circle above, and R, S, and T are points on the circle. W
+shsatm_w_32: 42 | James must read 84 pages of a book for a class assignment. If he reads — of the 
+shsatm_w_33: 10 | A bus trip takes 9 hours if the mean speed is 50 miles per hour. How many hours 
+shsatm_w_34: 16 | A birdseed mixture is 2/5 sunflower seeds. The cost of the sunflower seeds is $0
+shsatm_w_35: 3 | A robot moves forward at the rate of 9 steps every 6 seconds. If each step is x 
+shsatm_w_36: 4 ½ | There were 36 people at Emily's party. If each person at the party drank 2 cups 
+shsatm_w_37: ¼ | A student reads 1/12 of a book in 1/3 hour. What fraction of the book can the st
+shsatm_w_38: 3:2 | The perimeter of square W is twice the perimeter of equilateral triangle X. What
+shsatm_w_39: 8/15 | A recipe uses 2/3 cup of sugar for every 1 ¼ cups of flour. A cook wants to incr
+shsatm_w_40: 18.0% | Over a two-week period, students are assigned a total of 250 pages to read from 
+shsatm_w_41: 400 | A box contains an unknown number of green marbles. An experimenter adds 100 red 
+shsatm_w_42: 22 | The table above shows temperatures for a one-week period during the winter in Ch
+shsatm_w_43: 11 | A total of 26 job applicants took a computer-competency test, and the number of 
+shsatm_w_44: NEEDS_REVIEW | Last week, Emily rode the bus to school on 3 of the 5 mornings and rode the bus 
+shsatm_w_45: -9 | If m = 5 and t = −1 , what is the value of (6-8(2-t))/(2m+4(3-m))
+shsatm_w_46: 248 | In the parallelogram above, what is the value of x + y?
+shsatm_w_47: 4 | On the number line above, point L (not shown) is located on line segment JK so t
+shsatm_w_48: 1,500 | Josef and Mai divided some stamps between themselves. Josef got 60% of the stamp
+shsatm_w_49: 18:1 | A scientist mixed three chemicals, R, S, and T, in a glass container. The amount
+shsatm_w_50: The interquartile range and the median a | The manager of a shipping company recorded the weights, in pounds, of the last 9

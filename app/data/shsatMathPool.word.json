@@ -1,0 +1,854 @@
+[
+  {
+    "id": "shsatm_w_01",
+    "question": "<div><img src=\"/shsat/math/word/q01-stem.png\" alt=\"Question 1 figure\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /><p>The table above shows the number of each type of vehicle sold at a dealership last year. If 1,000 vehicles will be sold next month, what is the best estimate (based on last year’s sales) of the number of two- door cars that will be sold?</p></div>",
+    "options": [
+      "120",
+      "250",
+      "300",
+      "200"
+    ],
+    "correctAnswer": "250",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 1
+  },
+  {
+    "id": "shsatm_w_02",
+    "question": "In a scaled drawing of rectangular garden, the length is 15 inches and the width is 9 inches. In the drawing, 2 inches represents 3 yards. What is the width of the actual garden, in yards?",
+    "options": [
+      "13.5",
+      "12.5",
+      "15",
+      "16.5"
+    ],
+    "correctAnswer": "13.5",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 2
+  },
+  {
+    "id": "shsatm_w_03",
+    "question": "A kindergarten teacher has 72 crayons, 60 pencils, and 84 sheets of paper to distribute to the children in her class. If each child receives an equal number of each item and there are no items remaining, what is the greatest possible number of children in the class?",
+    "options": [
+      "18",
+      "16",
+      "12",
+      "10"
+    ],
+    "correctAnswer": "12",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 3
+  },
+  {
+    "id": "shsatm_w_04",
+    "question": "Mr. Smith opened a retirement account with a deposit of $900. This account earns 5% simple interest annually. How many years will it take for his $900 deposit to earn $360 interest?",
+    "options": [
+      "3",
+      "2",
+      "5",
+      "8"
+    ],
+    "correctAnswer": "8",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 4
+  },
+  {
+    "id": "shsatm_w_05",
+    "question": "Solve the equation for x: ((21)(14)x)/((49)(48))=0.875",
+    "options": [
+      "5",
+      "3",
+      "7",
+      "4"
+    ],
+    "correctAnswer": "7",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 5
+  },
+  {
+    "id": "shsatm_w_06",
+    "question": "What is the value of 3 1/4-1 2/3-(-4 1/2)",
+    "options": [
+      "-3 1/12",
+      "-2 11/12",
+      "6 1/12",
+      "9 5/12"
+    ],
+    "correctAnswer": "6 1/12",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 6
+  },
+  {
+    "id": "shsatm_w_07",
+    "question": "On Fran’s map, 2 centimeters represents 3 kilometers. The points on this map that represent Fran’s home and Bryant State Park are 4.5 centimeters apart. How many kilometers apart are Fran’s home and Bryant State Park, to the nearest kilometer?",
+    "options": [
+      "3",
+      "5",
+      "7",
+      "9"
+    ],
+    "correctAnswer": "7",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 7
+  },
+  {
+    "id": "shsatm_w_08",
+    "question": "Solve for x in terms of y if 2x + 4 = y",
+    "options": [
+      "x=(y-4)/2",
+      "x=2(y+4)",
+      "x=(y+4)/2",
+      "x=2(4-y)"
+    ],
+    "correctAnswer": "x=(y-4)/2",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 8
+  },
+  {
+    "id": "shsatm_w_09",
+    "question": "Bryan completed a 100- meter race in 11.74 seconds. Luis completed the same race in 11.69 seconds. What was the difference between their times, expressed as a fraction of a second?",
+    "options": [
+      "1/20",
+      "1/10",
+      "3/20",
+      "1/5"
+    ],
+    "correctAnswer": "1/20",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 9
+  },
+  {
+    "id": "shsatm_w_10",
+    "question": "A total of 24 students in a math class took a 100- point test: • None of the students scored 100 points. • 75% of the students scored less than 82 points. • The lowest score in the class was 54 points. Which box plot best represents the test scores from this math class?",
+    "options": [
+      "<div><img src=\"/shsat/math/word/q10-opt-a.png\" alt=\"Question 10 option A\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /></div>",
+      "<div><img src=\"/shsat/math/word/q10-opt-b.png\" alt=\"Question 10 option B\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /></div>",
+      "<div><img src=\"/shsat/math/word/q10-opt-c.png\" alt=\"Question 10 option C\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /></div>",
+      "<div><img src=\"/shsat/math/word/q10-opt-d.png\" alt=\"Question 10 option D\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /></div>"
+    ],
+    "correctAnswer": "",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 10,
+    "needsReview": true
+  },
+  {
+    "id": "shsatm_w_11",
+    "question": "n=0.13+207/100 What is the value of n expressed as a fraction?",
+    "options": [
+      "1/3",
+      "11/5",
+      "9/4",
+      "23/10"
+    ],
+    "correctAnswer": "11/5",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 11
+  },
+  {
+    "id": "shsatm_w_12",
+    "question": "<div><img src=\"/shsat/math/word/q12-stem.png\" alt=\"Question 12 figure\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /><p>In the pyramid above, each triangular face has the same area, and the base MNPQ is a square that measures 8 centimeters on each side. If the length of RS 6 centimeters, what is the surface area of the pyramid excluding the base?</p></div>",
+    "options": [
+      "48 sq cm",
+      "96 sq cm",
+      "128 sq cm",
+      "160 sq cm"
+    ],
+    "correctAnswer": "96 sq cm",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 12
+  },
+  {
+    "id": "shsatm_w_13",
+    "question": "The perimeter of a rectangle is 510 centimeters. The ratio of the length to the width is 3:2. What are the dimensions of this rectangle?",
+    "options": [
+      "150 cm by 105 cm",
+      "153 cm by 102 cm",
+      "158 cm by 97 cm",
+      "165 cm by 90 cm"
+    ],
+    "correctAnswer": "153 cm by 102 cm",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 13
+  },
+  {
+    "id": "shsatm_w_14",
+    "question": "Which number line below shows the solution to the inequality —4 < x/2 < 2?",
+    "options": [
+      "<div><img src=\"/shsat/math/word/q14-opt-a.png\" alt=\"Question 14 option A\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /></div>",
+      "<div><img src=\"/shsat/math/word/q14-opt-b.png\" alt=\"Question 14 option B\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /></div>",
+      "<div><img src=\"/shsat/math/word/q14-opt-c.png\" alt=\"Question 14 option C\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /></div>",
+      "<div><img src=\"/shsat/math/word/q14-opt-d.png\" alt=\"Question 14 option D\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /></div>"
+    ],
+    "correctAnswer": "<div><img src=\"/shsat/math/word/q14-opt-d.png\" alt=\"Question 14 option D\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /></div>",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 14
+  },
+  {
+    "id": "shsatm_w_15",
+    "question": "The sum of the numbers x, y, and z is 50. The ratio of x to y is 1:4, and the ratio of y to z is 4:5. What is the value of y? Kevin has 140 lorgs and 16 dalts. If he exchanges the lorgs and dalts for dollars according to the rates above, how many dollars will he receive?",
+    "options": [
+      "4",
+      "8",
+      "10",
+      "20"
+    ],
+    "correctAnswer": "20",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 15
+  },
+  {
+    "id": "shsatm_w_16",
+    "question": "A box of colored pencils contains exactly 6 red pencils. The probability of choosing a 2 red pencil from the box is How many 7 of the pencils in the box are not red?",
+    "options": [
+      "5",
+      "15",
+      "21",
+      "3"
+    ],
+    "correctAnswer": "15",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 16
+  },
+  {
+    "id": "shsatm_w_17",
+    "question": "1 dollar = 7 lorgs\n1 dollar = 0.5 dalt\nKevin has 140 lorgs and 16 dalts. If he exchanges the lorgs and dalts for dollars according to the rates above, how many dollars will he receive?",
+    "options": [
+      "$28",
+      "$52",
+      "$182",
+      "$282"
+    ],
+    "correctAnswer": "$52",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 17
+  },
+  {
+    "id": "shsatm_w_18",
+    "question": "<div><img src=\"/shsat/math/word/q18-stem.png\" alt=\"Question 18 figure\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /><p>What is the area of the shaded region in the graph above?</p></div>",
+    "options": [
+      "0.25 square unit",
+      "0.5 square unit",
+      "1 square unit",
+      "1.5 square units"
+    ],
+    "correctAnswer": "0.5 square unit",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 18
+  },
+  {
+    "id": "shsatm_w_19",
+    "question": "In Centerville, 45% of the population is female, and 60% of the population commutes to work daily. Of the total Centerville population, 21% are females who commute to work daily. What percentage of the total Centerville population are males who do not commute to work daily?",
+    "options": [
+      "15%",
+      "16%",
+      "24%",
+      "39%"
+    ],
+    "correctAnswer": "16%",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 19
+  },
+  {
+    "id": "shsatm_w_20",
+    "question": "Mrs. Cranston bought five bottles of water for $0.90 each and 8 pounds of meat. She paid a total of $26.90 for these items, not including tax. What was the price per pound of the meat?",
+    "options": [
+      "$2.80",
+      "$3.25",
+      "$14.40",
+      "$22.40"
+    ],
+    "correctAnswer": "$2.80",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 20
+  },
+  {
+    "id": "shsatm_w_21",
+    "question": "In a sample of 10 cards, 4 are red and 6 are blue. If 2 cards are selected at random from the sample, one at a time without replacement, what is the probability that both cards are not blue?",
+    "options": [
+      "2/15",
+      "4/25",
+      "3/10",
+      "1/3"
+    ],
+    "correctAnswer": "2/15",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 21
+  },
+  {
+    "id": "shsatm_w_22",
+    "question": "1 Sind = 4 lorgs\n2 plunks = 5 dalts\n5 sinds = 2 harps\n1 plunk = 3 harps\nA nation has five types of coins: sinds, dalts, lorgs, harps, and plunks. The relationship between the coins is shown above. Which coin is most valuable?",
+    "options": [
+      "sind",
+      "dalt",
+      "harp",
+      "plunk"
+    ],
+    "correctAnswer": "plunk",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 22
+  },
+  {
+    "id": "shsatm_w_23",
+    "question": "The faculty Of a certain four-year college consists Of 179 teachers. There are 663 first-year students. The student-to- faculty ratio for the entire college is 15 to 1. What is the total number Of second-, third-, and fourth-year students?",
+    "options": [
+      "1,989",
+      "2,022",
+      "2,652",
+      "2,685"
+    ],
+    "correctAnswer": "2,022",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 23
+  },
+  {
+    "id": "shsatm_w_24",
+    "question": "<div><img src=\"/shsat/math/word/q24-stem.png\" alt=\"Question 24 figure\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /><p>How many more people in Center City walk to work than ride their bicycle to work?</p></div>",
+    "options": [
+      "2,500",
+      "2,700",
+      "2,800",
+      "3,000"
+    ],
+    "correctAnswer": "2,700",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 24
+  },
+  {
+    "id": "shsatm_w_25",
+    "question": "Which of the following numbers has factors that include the smallest factor (other than 1) of 91?",
+    "options": [
+      "30",
+      "35",
+      "39",
+      "4"
+    ],
+    "correctAnswer": "35",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 25
+  },
+  {
+    "id": "shsatm_w_26",
+    "question": "In a scale drawing of a triangular banner, one side measures 16 centimeters and the other two sides each measure 12 centimeters. On the actual banner, these two sides each measure 36 feet. What is the length of the remaining side of the actual banner?",
+    "options": [
+      "16 ft",
+      "32 ft",
+      "40 ft",
+      "48 ft"
+    ],
+    "correctAnswer": "48 ft",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 26
+  },
+  {
+    "id": "shsatm_w_27",
+    "question": "<div><img src=\"/shsat/math/word/q27-stem.png\" alt=\"Question 27 figure\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /><p>What is the mean score of the 10 students in the table above?</p></div>",
+    "options": [
+      "22.5",
+      "75",
+      "77",
+      "85"
+    ],
+    "correctAnswer": "77",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 27
+  },
+  {
+    "id": "shsatm_w_28",
+    "question": "The least of 5 consecutive integers is l, and the greatest is g. What is the value of (l+g)/2 in terms of l?",
+    "options": [
+      "2l",
+      "3l",
+      "l+2",
+      "l+5"
+    ],
+    "correctAnswer": "l+2",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 28
+  },
+  {
+    "id": "shsatm_w_29",
+    "question": "<div><img src=\"/shsat/math/word/q29-stem.png\" alt=\"Question 29 figure\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /><p>Beth makes a bead in the shape of a cube with side length 18 millimeters. She cuts a hole in the shape of a square prism out of the center of the cube so that the bead will fit on a string. The base of the square prism has a side length of 6 millimeters. After the hole is cut out, what is the volume of the bead in cubic millimeters?</p></div>",
+    "options": [
+      "5184 cubic mm",
+      "5234 cubic mm",
+      "6134 cubic mm",
+      "5280 cubic mm"
+    ],
+    "correctAnswer": "5184 cubic mm",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 29
+  },
+  {
+    "id": "shsatm_w_30",
+    "question": "<div><img src=\"/shsat/math/word/q30-stem.png\" alt=\"Question 30 figure\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /><p>In the right triangle shown above, what is the measure of the smallest angle?</p></div>",
+    "options": [
+      "43°",
+      "44°",
+      "46°",
+      "47°"
+    ],
+    "correctAnswer": "43°",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 30
+  },
+  {
+    "id": "shsatm_w_31",
+    "question": "<div><img src=\"/shsat/math/word/q31-stem.png\" alt=\"Question 31 figure\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /><p>P is the center of the circle above, and R, S, and T are points on the circle. What is the value of x?</p></div>",
+    "options": [
+      "12",
+      "15",
+      "17",
+      "19"
+    ],
+    "correctAnswer": "19",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 31
+  },
+  {
+    "id": "shsatm_w_32",
+    "question": "James must read 84 pages of a book for a class assignment. If he reads — of the pages in the morning and — of the remaining pages in the afternoon, how many pages will he still need to read?",
+    "options": [
+      "35",
+      "42",
+      "45",
+      "56"
+    ],
+    "correctAnswer": "42",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 32
+  },
+  {
+    "id": "shsatm_w_33",
+    "question": "A bus trip takes 9 hours if the mean speed is 50 miles per hour. How many hours would this trip take if the mean speed was 45 miles per hour?",
+    "options": [
+      "8",
+      "10",
+      "12",
+      "14"
+    ],
+    "correctAnswer": "10",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 33
+  },
+  {
+    "id": "shsatm_w_34",
+    "question": "A birdseed mixture is 2/5 sunflower seeds. The cost of the sunflower seeds is $0.10 per ounce. At this rate, what is the cost of the sunflower seeds in 25 pounds of this birdseed? (Note: 1 lb = 16 oz.)",
+    "options": [
+      "10",
+      "16",
+      "40",
+      "160"
+    ],
+    "correctAnswer": "16",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 34
+  },
+  {
+    "id": "shsatm_w_35",
+    "question": "A robot moves forward at the rate of 9 steps every 6 seconds. If each step is x feet long, what must x be in order for the robot to travel exactly 270 feet per minute?",
+    "options": [
+      "3",
+      "5",
+      "27",
+      "30"
+    ],
+    "correctAnswer": "3",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 35
+  },
+  {
+    "id": "shsatm_w_36",
+    "question": "There were 36 people at Emily's party. If each person at the party drank 2 cups of juice, how many gallons of juice did they drink altogether? Note: 1 gallon = 4 quarts; 1 quart = 4 cups.",
+    "options": [
+      "2 1/4",
+      "4 1/2",
+      "9",
+      "72"
+    ],
+    "correctAnswer": "4 1/2",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 36
+  },
+  {
+    "id": "shsatm_w_37",
+    "question": "A student reads 1/12 of a book in 1/3 hour. What fraction of the book can the student read in 1 hour?",
+    "options": [
+      "1/36",
+      "1/4",
+      "5/12",
+      "12/3"
+    ],
+    "correctAnswer": "1/4",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 37
+  },
+  {
+    "id": "shsatm_w_38",
+    "question": "The perimeter of square W is twice the perimeter of equilateral triangle X. What is the ratio of the length of one side of square W to the length of one side of equilateral triangle X?",
+    "options": [
+      "3:8",
+      "2:3",
+      "3:2",
+      "2:1"
+    ],
+    "correctAnswer": "3:2",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 38
+  },
+  {
+    "id": "shsatm_w_39",
+    "question": "A recipe uses 2/3 cup of sugar for every 1 1/4 cups of flour. A cook wants to increase the recipe. How many cups of sugar are needed for each cup of flour?",
+    "options": [
+      "8/15",
+      "5/6",
+      "1 7/8",
+      "3 2/3"
+    ],
+    "correctAnswer": "8/15",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 39
+  },
+  {
+    "id": "shsatm_w_40",
+    "question": "<div><img src=\"/shsat/math/word/q40-stem.png\" alt=\"Question 40 figure\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /><p>Over a two-week period, students are assigned a total of 250 pages to read from a science textbook. The table above shows the first three reading assignments within the larger assignment. What percentage of the 250 pages is the total number of pages in these first three assignments?</p></div>",
+    "options": [
+      "16.8%",
+      "18.0%",
+      "22.8%",
+      "24.0%"
+    ],
+    "correctAnswer": "18.0%",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 40
+  },
+  {
+    "id": "shsatm_w_41",
+    "question": "A box contains an unknown number of green marbles. An experimenter adds 100 red marbles to the box, mixes the marbles thoroughly, and then draws out 10 marbles at random. Assume that this sample is representative of the proportion in the box. If there are 2 red marbles and 8 green marbles in this sample, approximately how many green marbles are in the box?",
+    "options": [
+      "80",
+      "300",
+      "400",
+      "500"
+    ],
+    "correctAnswer": "400",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 41
+  },
+  {
+    "id": "shsatm_w_42",
+    "question": "<div><img src=\"/shsat/math/word/q42-stem.png\" alt=\"Question 42 figure\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /><p>The table above shows temperatures for a one-week period during the winter in Chicago. What is the range of temperatures shown in the table?</p></div>",
+    "options": [
+      "12",
+      "17",
+      "22",
+      "27"
+    ],
+    "correctAnswer": "22",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 42
+  },
+  {
+    "id": "shsatm_w_43",
+    "question": "<div><img src=\"/shsat/math/word/q43-stem.png\" alt=\"Question 43 figure\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /><p>A total of 26 job applicants took a computer-competency test, and the number of errors (x) was recorded for each applicant. The graph above shows how many applicants made x errors, for each value of x. How many applicants made fewer than 3 errors?</p></div>",
+    "options": [
+      "6",
+      "11",
+      "12",
+      "26"
+    ],
+    "correctAnswer": "11",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 43
+  },
+  {
+    "id": "shsatm_w_44",
+    "question": "Last week, Emily rode the bus to school on 3 of the 5 mornings and rode the bus home on 4 of the 5 afternoons. Based on last week's events, what is the probability that Emily will ride the bus in the morning and the afternoon next Monday?",
+    "options": [
+      "1/5",
+      "7/25",
+      "12/25",
+      "7/10"
+    ],
+    "correctAnswer": "",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 44,
+    "needsReview": true
+  },
+  {
+    "id": "shsatm_w_45",
+    "question": "If m = 5 and t = −1 , what is the value of (6-8(2-t))/(2m+4(3-m))",
+    "options": [
+      "-9",
+      "-1",
+      "1",
+      "9"
+    ],
+    "correctAnswer": "-9",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 45
+  },
+  {
+    "id": "shsatm_w_46",
+    "question": "<div><img src=\"/shsat/math/word/q46-stem.png\" alt=\"Question 46 figure\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /><p>In the parallelogram above, what is the value of x + y?</p></div>",
+    "options": [
+      "112",
+      "124",
+      "148",
+      "248"
+    ],
+    "correctAnswer": "248",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 46
+  },
+  {
+    "id": "shsatm_w_47",
+    "question": "<div><img src=\"/shsat/math/word/q47-stem.png\" alt=\"Question 47 figure\" class=\"w-full max-w-xl mx-auto mb-3 rounded-lg\" /><p>On the number line above, point L (not shown) is located on line segment JK so that JL= 2/3 LK, what is the position of point L?</p></div>",
+    "options": [
+      "-2",
+      "0",
+      "2",
+      "4"
+    ],
+    "correctAnswer": "4",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 47
+  },
+  {
+    "id": "shsatm_w_48",
+    "question": "Josef and Mai divided some stamps between themselves. Josef got 60% of the stamps. If Josef received 500 more stamps than Mai, how many stamps did Josef receive?",
+    "options": [
+      "300",
+      "800",
+      "1,500",
+      "2,500"
+    ],
+    "correctAnswer": "1,500",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 48
+  },
+  {
+    "id": "shsatm_w_49",
+    "question": "A scientist mixed three chemicals, R, S, and T, in a glass container. The amount of R is 3 times the amount of S, and the amount of T is 1/6 the amount of S. What is the ratio of the amount of R to the amount of T?",
+    "options": [
+      "1:18",
+      "2:1",
+      "3:1",
+      "18:1"
+    ],
+    "correctAnswer": "18:1",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 49
+  },
+  {
+    "id": "shsatm_w_50",
+    "question": "The manager of a shipping company recorded the weights, in pounds, of the last 9 packages the company shipped. The manager displayed the distribution of the weights in a box plot with the five- number summary shown below: • minimum: 29 • first quartile: 31 • median: 42 • third quartile: 73 • maximum: 98 Which statement about the distribution of weights is supported by the box plot the manager created?",
+    "options": [
+      "The minimum, 29, is an outlier.",
+      "The maximum, 98, is an outlier.",
+      "The interquartile range of the data is 11.",
+      "The interquartile range and the median are equal"
+    ],
+    "correctAnswer": "The interquartile range and the median are equal",
+    "solution": "",
+    "domain": "Math",
+    "subtopic": "General",
+    "difficulty": "medium",
+    "source": "aliyah-word",
+    "sourceNumber": 50
+  }
+]

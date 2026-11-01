@@ -28,6 +28,7 @@ const NAV_ITEMS = [
   { href: '/admin/dashboard/programs', icon: BookOpen, label: 'Programs' },
   { href: '/admin/dashboard/ged-results', icon: GraduationCap, label: 'GED Assessments' },
   { href: '/admin/dashboard/psat-results', icon: FileCheck2, label: 'PSAT Assessments' },
+  { href: '/admin/dashboard/shsat-results', icon: FileText, label: 'SHSAT Assessments' },
   { href: '/admin/dashboard/analytics',             icon: BarChart2,       label: 'Analytics'            },
 ];
 

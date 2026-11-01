@@ -675,6 +675,17 @@ export default function Quiz() {
           onGoHome={handleGoHome}
           onReview={handleReview}
           gradeLabel={`${(gradeParam || normalizedGrade || "Grade").replace(/-/g, " ")} assessment`}
+          studentName={
+            studentInfoRef.current?.fullName ||
+            (() => {
+              try {
+                const saved = localStorage.getItem("activeStudent");
+                return saved ? JSON.parse(saved)?.fullName : undefined;
+              } catch {
+                return undefined;
+              }
+            })()
+          }
           quizQuestions={quizQuestions}
           answers={answers}
         />

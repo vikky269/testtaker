@@ -3,6 +3,7 @@
 import { ChoiceFace, isPictureChoice, KinderScene } from '@/app/components/KinderArt';
 import VisualFigure from '@/app/components/VisualFigure';
 import ListenButton, { showVoiceListen } from '@/app/components/ListenButton';
+import { expandVulgarFractions } from '@/app/utils/formatMathText';
 
 export function isPictureQuestion(q: {
   picture?: boolean;
@@ -32,9 +33,38 @@ export function showReadAloud(grade?: string) {
   return key === 'pre-k' || key === 'prek' || key === 'kindergarten' || key === 'k';
 }
 
+/** Extract image URL from an option that is an <img> tag or bare /shsat/ path. */
+export function optionImageSrc(option: string): string | null {
+  const text = pictureLabel(option).trim();
+  if (!text) return null;
+  const tagged = text.match(/<img\b[^>]*\bsrc=["']([^"']+)["'][^>]*\/?>/i);
+  if (tagged?.[1]) return tagged[1];
+  if (/^https?:\/\//i.test(text) || text.startsWith('/shsat/')) return text;
+  return null;
+}
+
+export function usesImageOptions(options: string[]) {
+  return options.length > 0 && options.every((o) => Boolean(optionImageSrc(o)));
+}
+
+/** True when an option should go through KaTeX (stacked fractions, etc.). */
+export function looksLikeMathOption(option: string) {
+  // Expand ¼ → 1/4 so unicode vulgar fractions take the KaTeX path.
+  const text = expandVulgarFractions(pictureLabel(option).trim());
+  if (!text || /<img\b/i.test(text)) return false;
+  // Mixed numbers / fractions: 6 1/12, -2 11/12, 3/4, (l+g)/2, x=(y-4)/2
+  if (/-?\d+\s+\d+\s*\/\s*\d+/.test(text)) return true;
+  if (/-?\d+\s*\/\s*-?\d+/.test(text)) return true;
+  if (/\([^)]+\)\s*\/\s*(?:\([^)]+\)|-?\d+|[A-Za-z])/.test(text)) return true;
+  if (/[A-Za-z0-9)\]]\s*=\s*.*\//.test(text)) return true;
+  return false;
+}
+
 /** Giant tiles are for symbols and short numbers. Words and sentences stay regular text. */
 export function usesLargePictureChoices(options: string[]) {
   if (options.length > 0 && options.every(isPictureChoice)) return true;
+  // Fraction / mixed-number choices must use MathHtml so they match stacked question math.
+  if (options.some((option) => looksLikeMathOption(option))) return false;
   return options.every((option) => {
     const text = pictureLabel(option).trim();
     return text.length > 0 && text.length <= 8 && !/\p{L}{3,}/u.test(text);

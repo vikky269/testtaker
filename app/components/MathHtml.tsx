@@ -24,7 +24,7 @@ export default function MathHtml({ text, className, as = 'span' }: MathHtmlProps
 
   return (
     <Tag
-      className={`math-html-content break-words max-w-full overflow-x-auto ${className ?? ''}`}
+      className={`math-html-content break-words max-w-full ${className ?? ''}`}
       data-math-rendered={html.includes('katex') ? '1' : '0'}
       dangerouslySetInnerHTML={{ __html: html }}
     />

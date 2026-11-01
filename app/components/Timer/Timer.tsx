@@ -11,42 +11,63 @@ interface TimerProps {
 export default function Timer({ duration, onTimeUp, identifier = "default" }: TimerProps) {
   const [timeLeft, setTimeLeft] = useState(duration);
   const storageKey = `quiz-end-time-${identifier}`;
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const budgetKey = `quiz-timer-budget-${identifier}`;
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const onTimeUpRef = useRef(onTimeUp);
+
+  useEffect(() => {
+    onTimeUpRef.current = onTimeUp;
+  }, [onTimeUp]);
 
   useEffect(() => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
+      intervalRef.current = null;
     }
 
-    const savedEndTime = localStorage.getItem(storageKey);
     const now = Date.now();
+    const savedEnd = localStorage.getItem(storageKey);
+    const savedBudget = localStorage.getItem(budgetKey);
+    const prevBudget = savedBudget ? parseInt(savedBudget, 10) : NaN;
     let endTime: number;
 
-    if (savedEndTime && parseInt(savedEndTime) > now) {
-      endTime = parseInt(savedEndTime);
+    if (savedEnd && parseInt(savedEnd, 10) > now) {
+      endTime = parseInt(savedEnd, 10);
+      // Only extend when the allotted section length actually grew (config change),
+      // never because the parent re-rendered with the same remaining budget.
+      if (Number.isFinite(prevBudget) && duration > prevBudget + 1) {
+        endTime += (duration - prevBudget) * 1000;
+        localStorage.setItem(storageKey, String(endTime));
+        localStorage.setItem(budgetKey, String(duration));
+      }
     } else {
       endTime = now + duration * 1000;
-      localStorage.setItem(storageKey, endTime.toString());
+      localStorage.setItem(storageKey, String(endTime));
+      localStorage.setItem(budgetKey, String(duration));
     }
 
-    intervalRef.current = setInterval(() => {
-      const currentTime = Date.now();
-      const timeRemaining = Math.floor((endTime - currentTime) / 1000);
-
-      if (timeRemaining <= 0) {
-        clearInterval(intervalRef.current!);
+    const tick = () => {
+      const remaining = Math.floor((endTime - Date.now()) / 1000);
+      if (remaining <= 0) {
+        if (intervalRef.current) clearInterval(intervalRef.current);
+        intervalRef.current = null;
         localStorage.removeItem(storageKey);
+        localStorage.removeItem(budgetKey);
         setTimeLeft(0);
-        onTimeUp();
+        onTimeUpRef.current();
       } else {
-        setTimeLeft(timeRemaining);
+        setTimeLeft(remaining);
       }
-    }, 1000);
+    };
+
+    tick(); // show correct remaining immediately (don't wait 1s)
+    intervalRef.current = setInterval(tick, 1000);
 
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [duration, identifier, onTimeUp, storageKey]);
+    // Intentionally omit onTimeUp — use ref so answering a question doesn't restart the clock.
+  }, [duration, identifier, storageKey, budgetKey]);
 
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;

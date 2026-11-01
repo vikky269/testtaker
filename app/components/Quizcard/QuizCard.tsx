@@ -303,8 +303,8 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
               <p className="text-sm text-gray-500 mb-4">Before you begin, here&apos;s what to expect:</p>
               <div className="space-y-2.5 mb-5">
                 {[
-                  { label: "English Language Arts", meta: "50 questions · 60 min" },
-                  { label: "Mathematics", meta: "50 questions · 60 min" },
+                  { label: "English Language Arts", meta: "50 questions · 90 min" },
+                  { label: "Mathematics", meta: "50 questions · 90 min" },
                 ].map((s) => (
                   <div key={s.label} className="flex items-center justify-between bg-gray-50 rounded-xl px-4 py-2.5">
                     <span className="text-sm font-semibold text-gray-800">{s.label}</span>

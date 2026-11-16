@@ -148,7 +148,11 @@ footer{text-align:center;margin-top:16px}
     <div class="success-tick" aria-hidden="true">✓</div>
     <h2 tabindex="-1">Thank you for your feedback!</h2>
     <p>Your response has been saved for the SmartMathz team. Thank you for helping us improve each learner’s experience.</p>
-    <p class="muted">INSPIRE. LEARN. ACHIEVE.</p>
+    <p class="muted" style="margin:14px 0 18px">If you have another child enrolled with SmartMathz, you can submit a separate response for them.</p>
+    <div class="bar" style="justify-content:center;margin-top:0">
+      <button type="button" id="another" class="primary" style="margin-left:0">Submit for another child</button>
+    </div>
+    <p class="muted" style="text-align:center;margin-top:14px">INSPIRE. LEARN. ACHIEVE.</p>
   </div>
 
   <footer class="muted">SmartMathz · Parent Feedback</footer>
@@ -341,6 +345,23 @@ form.addEventListener('submit', async (e) => {
     submitBtn.textContent = 'Submit feedback';
   }
 });
+
+by('another').onclick = () => {
+  form.reset();
+  by('parent').setCustomValidity('');
+  by('contactName').setCustomValidity('');
+  by('contactEmail').setCustomValidity('');
+  by('contactFields').hidden = true;
+  by('contactName').required = false;
+  by('contactEmail').required = false;
+  by('error').style.display = 'none';
+  by('submit').disabled = false;
+  by('submit').textContent = 'Submit feedback';
+  by('thanks').hidden = true;
+  form.hidden = false;
+  document.querySelector('.steps').hidden = false;
+  go(0);
+};
 
 show(0);
 </script>

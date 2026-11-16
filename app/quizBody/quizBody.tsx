@@ -57,6 +57,15 @@ interface QuizBodyProps {
   timerDuration: number;
   timerIdentifier: string;
   onTimeUp: () => void;
+  timerPaused?: boolean;
+  onTimerRemainingChange?: (seconds: number) => void;
+  timerResumeFromSeconds?: number | null;
+  timerResumeToken?: number | null;
+
+  // Live evaluation pause controls (optional)
+  livePauseStatus?: "active" | "pause_requested" | "paused" | null;
+  onRequestPause?: () => void;
+  onCancelPauseRequest?: () => void;
 
   // Handlers
   onSelect: (question: string, option: string) => void;
@@ -170,6 +179,13 @@ export default function QuizBody({
   activeQuestions, currentQuestionIndex, setCurrentQuestionIndex,
   answers,
   timerDuration, timerIdentifier, onTimeUp,
+  timerPaused = false,
+  onTimerRemainingChange,
+  timerResumeFromSeconds = null,
+  timerResumeToken = null,
+  livePauseStatus = null,
+  onRequestPause,
+  onCancelPauseRequest,
   onSelect, onNext, onPrev, onSubmit,
   unansweredCount,
   showConfirmModal, showConfirmElaModal, showConfirmSubmissionModal,
@@ -246,15 +262,95 @@ export default function QuizBody({
             <span className="rounded-full bg-neutral-100 px-3 py-1.5 text-sm font-medium text-neutral-600">
               {answeredCount} / {activeQuestions.length} answered
             </span>
-            <Timer duration={timerDuration} onTimeUp={onTimeUp} identifier={timerIdentifier} />
+            {onRequestPause && livePauseStatus === "active" && (
+              <button
+                type="button"
+                onClick={onRequestPause}
+                className="inline-flex items-center gap-1.5 rounded-full border border-amber-300 bg-amber-50 px-3 py-1.5 text-sm font-semibold text-amber-800 hover:bg-amber-100 cursor-pointer"
+              >
+                Request pause
+              </button>
+            )}
+            {onCancelPauseRequest && livePauseStatus === "pause_requested" && (
+              <button
+                type="button"
+                onClick={onCancelPauseRequest}
+                className="inline-flex items-center gap-1.5 rounded-full border border-sky-300 bg-sky-50 px-3 py-1.5 text-sm font-semibold text-sky-800 hover:bg-sky-100 cursor-pointer"
+              >
+                Cancel pause request
+              </button>
+            )}
+            <Timer
+              duration={timerDuration}
+              onTimeUp={onTimeUp}
+              identifier={timerIdentifier}
+              paused={timerPaused}
+              onRemainingChange={onTimerRemainingChange}
+              resumeFromSeconds={timerResumeFromSeconds}
+              resumeToken={timerResumeToken}
+            />
           </div>
         </div>
       </header>
 
+      {(livePauseStatus === "pause_requested" || livePauseStatus === "paused") && (
+        <div
+          className={`sticky top-[73px] z-30 border-b backdrop-blur-sm ${
+            livePauseStatus === "paused"
+              ? "border-amber-200 bg-amber-50/95"
+              : "border-sky-200 bg-sky-50/95"
+          }`}
+        >
+          <div className="mx-auto flex max-w-[74rem] flex-col gap-1 px-4 py-3 sm:flex-row sm:items-center sm:justify-between md:px-6">
+            <div>
+              <p
+                className={`text-sm font-bold ${
+                  livePauseStatus === "paused" ? "text-amber-900" : "text-sky-900"
+                }`}
+              >
+                {livePauseStatus === "paused"
+                  ? "Assessment paused by admin"
+                  : "Pause requested — waiting for admin approval"}
+              </p>
+              <p
+                className={`text-xs ${
+                  livePauseStatus === "paused" ? "text-amber-800/80" : "text-sky-800/80"
+                }`}
+              >
+                {livePauseStatus === "paused"
+                  ? "Your timer is frozen. An admin will resume when you are ready — you will not lose time."
+                  : "Your timer is still running until an admin grants the pause. You can keep answering or cancel the request."}
+              </p>
+            </div>
+            {livePauseStatus === "pause_requested" && onCancelPauseRequest && (
+              <button
+                type="button"
+                onClick={onCancelPauseRequest}
+                className="self-start rounded-xl border border-sky-300 bg-white px-3 py-1.5 text-xs font-semibold text-sky-900 cursor-pointer"
+              >
+                Cancel request
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* ── MAIN LAYOUT ────────────────────────────────────── */}
       <main className="mx-auto grid max-w-[74rem] gap-5 px-4 py-6 md:px-6 lg:grid-cols-[minmax(0,1fr)_260px] lg:py-8">
         {/* ── LEFT: Question card ──────────────────────────── */}
-        <section className="min-w-0 rounded-3xl border border-black/[0.04] bg-white p-5 md:p-8">
+        <section
+          className={`relative min-w-0 rounded-3xl border border-black/[0.04] bg-white p-5 md:p-8 ${
+            timerPaused ? "pointer-events-none select-none opacity-60" : ""
+          }`}
+        >
+          {timerPaused && (
+            <div className="absolute inset-0 z-10 flex items-center justify-center rounded-3xl bg-white/50">
+              <div className="rounded-2xl border border-amber-200 bg-white px-5 py-4 text-center shadow-sm">
+                <p className="text-sm font-bold text-amber-900">Timer paused</p>
+                <p className="mt-1 text-xs text-neutral-500">Waiting for admin to resume</p>
+              </div>
+            </div>
+          )}
           <div className="mb-6 flex items-center gap-3">
             <span
               className={`flex h-10 w-10 items-center justify-center rounded-2xl text-sm font-bold text-white ${theme.active}`}

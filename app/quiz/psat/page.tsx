@@ -19,6 +19,7 @@ import { drawFullAttempt, lookupByIds, idsOf, type PSATQuestion } from "@/app/ut
 import { calculateArrayScore } from "@/app/utils/ScoreUtils";
 import QuizBody from "@/app/quizBody/quizBody";
 import ResultsScreen from "@/app/modals/resultScreen";
+import { useLiveEvaluation } from "@/app/hooks/useLiveEvaluation";
 
 const SESSION_ID = typeof crypto !== "undefined" && crypto.randomUUID
   ? crypto.randomUUID()
@@ -328,11 +329,16 @@ export default function PsatQuizPage() {
     if (subError) console.error("PSAT test sheet save error:", subError);
   };
 
+  const [timerResumeFrom, setTimerResumeFrom] = useState<number | null>(null);
+  const [timerResumeToken, setTimerResumeToken] = useState<number | null>(null);
+  const liveEndRef = useRef<(() => Promise<void>) | null>(null);
+
   const finalizeSubmit = () => {
     recordModuleEnd(currentModule);
     setTransitionModal(null);
     setUnansweredModal(null);
     setSubmitted(true);
+    void liveEndRef.current?.();
 
     if (attemptIdRef.current) {
       supabase.from("psat_attempts")
@@ -353,6 +359,33 @@ export default function PsatQuizPage() {
   const handleReview = () => {
     router.push("/quiz/psat/review");
   };
+
+  const psatTimerDuration = Math.max(
+    30,
+    MODULE_TIME[currentModule] - (moduleDurationRef.current[currentModule] ?? 0)
+  );
+  const answeredForLive = Object.keys(answers).filter((k) =>
+    activeQuestions.find((q) => q.question === k)
+  ).length;
+  const live = useLiveEvaluation({
+    enabled: !restoring && !locked && !submitted && !!moduleQuestions,
+    assessmentType: "psat",
+    assessmentLabel: "PSAT Readiness Diagnostic",
+    grade: "psat",
+    section: currentModule,
+    testId: "psat",
+    totalQuestions: activeQuestions.length || 1,
+    timerTotalSeconds: psatTimerDuration,
+    questionsAttempted: answeredForLive,
+    currentQuestionIndex,
+    answersCount: Object.keys(answers).length,
+    student: studentInfoRef.current,
+    onAdminResume: (secs) => {
+      setTimerResumeFrom(secs);
+      setTimerResumeToken(Date.now());
+    },
+  });
+  liveEndRef.current = live.endSession;
 
   // ── Guards ─────────────────────────────────────────────────────────────
   if (restoring || !moduleQuestions) {
@@ -432,9 +465,22 @@ export default function PsatQuizPage() {
       currentQuestionIndex={currentQuestionIndex}
       setCurrentQuestionIndex={setCurrentQuestionIndex}
       answers={answers}
-      timerDuration={MODULE_TIME[currentModule] - (moduleDurationRef.current[currentModule] ?? 0)}
+      timerDuration={psatTimerDuration}
       timerIdentifier={`psat-${currentModule}`}
       onTimeUp={handleTimeUp}
+      timerPaused={live.timerFrozen}
+      onTimerRemainingChange={live.setRemaining}
+      timerResumeFromSeconds={timerResumeFrom}
+      timerResumeToken={timerResumeToken}
+      livePauseStatus={
+        live.status === "active" ||
+        live.status === "pause_requested" ||
+        live.status === "paused"
+          ? live.status
+          : null
+      }
+      onRequestPause={() => live.requestPause()}
+      onCancelPauseRequest={() => live.cancelPauseRequest()}
       onSelect={handleSelect}
       onNext={handleNext}
       onPrev={handlePrev}

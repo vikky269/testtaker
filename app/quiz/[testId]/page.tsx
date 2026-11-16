@@ -11,6 +11,7 @@ import { useQuiz } from "@/app/context/QuizContext";
 
 import { calculateScore, calculateSectionScore } from "@/app/utils/ScoreUtils";
 import { useQuizTimer } from "@/app/hooks/useQuizTimer";
+import { useLiveEvaluation } from "@/app/hooks/useLiveEvaluation";
 import QuizBody from "@/app/quizBody/quizBody";
 import ResultsScreen from "@/app/modals/resultScreen";
 import { supabase, withTimeout } from "@/lib/supabaseClient";
@@ -62,8 +63,11 @@ export default function Quiz() {
   const [isGenerating, setIsGenerating]                             = useState(false);
   const [generateStatus, setGenerateStatus]                         = useState("");
 
+  const [timerResumeFrom, setTimerResumeFrom] = useState<number | null>(null);
+  const [timerResumeToken, setTimerResumeToken] = useState<number | null>(null);
   const questionRef = useRef<HTMLDivElement | null>(null);
   const hasSavedRef = useRef(false);
+  const liveEndRef = useRef<(() => Promise<void>) | null>(null);
 
   const isSat = ["sat", "ssat"].includes(normalizedGrade);
   const isEarlyPicture = isEarlyPictureGrade(gradeParam);
@@ -510,6 +514,7 @@ export default function Quiz() {
       // ─────────────────────────────────────────────────────────────────
 
       setSubmitted(true);
+      void liveEndRef.current?.();
       localStorage.removeItem("quizState");
       localStorage.removeItem("quiz-end-time");
       localStorage.removeItem("quiz-end-time-sat-reading");
@@ -590,6 +595,34 @@ export default function Quiz() {
     ? `grade-${normalizedGrade}-${quizSection}`
     : "regular";
 
+  const answeredForLive = Object.keys(answers).filter((k) =>
+    activeQuestions.find((q) => q.question === k)
+  ).length;
+
+  const live = useLiveEvaluation({
+    enabled: !submitted && quizQuestions.length > 0 && !isGenerating,
+    assessmentType: isSat ? "sat" : testid === "state-test" ? "state-test" : "grade",
+    assessmentLabel: isSat
+      ? `${normalizedGrade.toUpperCase()} Assessment`
+      : testid === "state-test"
+        ? `${(stateParam || "").toUpperCase()} ${gradeParam || ""} Practice Test`
+        : `Grade Assessment — ${(gradeParam || "").replace(/-/g, " ")}`,
+    grade: gradeParam,
+    section: isSATQuiz ? satSection : quizSection,
+    testId: testid,
+    totalQuestions: activeQuestions.length || quizQuestions.length,
+    timerTotalSeconds: timerDuration,
+    questionsAttempted: answeredForLive,
+    currentQuestionIndex,
+    answersCount: Object.keys(answers).length,
+    student: studentInfoRef.current,
+    onAdminResume: (secs) => {
+      setTimerResumeFrom(secs);
+      setTimerResumeToken(Date.now());
+    },
+  });
+  liveEndRef.current = live.endSession;
+
   if (isGenerating) {
     return (
       <div className="min-h-[70vh] flex items-center justify-center px-4">
@@ -639,6 +672,19 @@ export default function Quiz() {
           timerDuration={timerDuration}
           timerIdentifier={timerIdentifier}
           onTimeUp={handletimeupSubmit}
+          timerPaused={live.timerFrozen}
+          onTimerRemainingChange={live.setRemaining}
+          timerResumeFromSeconds={timerResumeFrom}
+          timerResumeToken={timerResumeToken}
+          livePauseStatus={
+            live.status === "active" ||
+            live.status === "pause_requested" ||
+            live.status === "paused"
+              ? live.status
+              : null
+          }
+          onRequestPause={() => live.requestPause()}
+          onCancelPauseRequest={() => live.cancelPauseRequest()}
           onSelect={handleSelect}
           onNext={handleNext}
           onPrev={handlePrev}

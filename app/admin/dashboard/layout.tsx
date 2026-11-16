@@ -9,7 +9,7 @@ import Link from 'next/link';
 import {
   LayoutDashboard, Users, FileText, ClipboardList,
   BarChart2, LogOut, X, Menu, Shield, Settings, GraduationCap, FileCheck2, BookOpen,
-  MessageSquareHeart,
+  MessageSquareHeart, Radio,
 } from 'lucide-react';
 
 const ADMIN_EMAIL = 'info@smartmathz.com';
@@ -21,6 +21,7 @@ const NAV_SECTIONS: {
   {
     items: [
       { href: '/admin/dashboard', icon: LayoutDashboard, label: 'Overview' },
+      { href: '/admin/dashboard/live-evaluations', icon: Radio, label: 'Live Evaluations' },
       { href: '/admin/dashboard/students', icon: Users, label: 'Students' },
       { href: '/admin/dashboard/results', icon: FileText, label: 'Pending Evaluations' },
       { href: '/admin/dashboard/completed-recommendations', icon: FileCheck2, label: 'Completed Evaluations' },
@@ -59,6 +60,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [checking, setChecking] = useState(true);
   const [pendingCount, setPendingCount] = useState<number | null>(null);
+  const [pauseRequestCount, setPauseRequestCount] = useState(0);
 
   const fetchPendingCount = async () => {
     const [lb, done] = await Promise.all([
@@ -70,14 +72,27 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     setPendingCount(lb.data.filter((r) => r.id && !doneSet.has(String(r.id))).length);
   };
 
+  const fetchPauseRequests = async () => {
+    const { data, error } = await supabase
+      .from('live_evaluation_sessions')
+      .select('id')
+      .eq('status', 'pause_requested');
+    if (!error) setPauseRequestCount(data?.length ?? 0);
+  };
+
   useEffect(() => {
     fetchPendingCount();
+    fetchPauseRequests();
   }, [pathname]);
 
   useEffect(() => {
     const handler = () => fetchPendingCount();
     window.addEventListener('pending-evals-changed', handler);
-    return () => window.removeEventListener('pending-evals-changed', handler);
+    const pausePoll = setInterval(fetchPauseRequests, 5000);
+    return () => {
+      window.removeEventListener('pending-evals-changed', handler);
+      clearInterval(pausePoll);
+    };
   }, []);
 
   useEffect(() => {
@@ -193,6 +208,19 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                                     }`}
                       >
                         {pendingCount! > 99 ? '99+' : pendingCount}
+                      </span>
+                    )}
+                    {href === '/admin/dashboard/live-evaluations' && pauseRequestCount > 0 && (
+                      <span
+                        className={`min-w-[20px] h-5 px-1.5 rounded-full text-[10px] font-bold
+                                    flex items-center justify-center flex-shrink-0
+                                    ${
+                                      pathname === href || pathname.startsWith(href + '/')
+                                        ? 'bg-white text-[#3a5a09]'
+                                        : 'bg-amber-500 text-white'
+                                    }`}
+                      >
+                        {pauseRequestCount > 99 ? '99+' : pauseRequestCount}
                       </span>
                     )}
                   </Link>

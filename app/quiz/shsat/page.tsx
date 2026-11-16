@@ -29,6 +29,7 @@ import { calculateArrayScore } from '@/app/utils/ScoreUtils';
 import { annotateShsatQuestionsForSkills } from '@/app/utils/shsatSkillAreas';
 import QuizBody from '@/app/quizBody/quizBody';
 import ResultsScreen from '@/app/modals/resultScreen';
+import { useLiveEvaluation } from '@/app/hooks/useLiveEvaluation';
 
 type SectionDurations = Record<SHSATSectionKey, number>;
 const EMPTY_DURATIONS: SectionDurations = { ela: 0, math: 0 };
@@ -330,12 +331,17 @@ export default function ShsatQuizPage() {
     if (subError) console.error('SHSAT test sheet save error:', subError);
   };
 
+  const [timerResumeFrom, setTimerResumeFrom] = useState<number | null>(null);
+  const [timerResumeToken, setTimerResumeToken] = useState<number | null>(null);
+  const liveEndRef = useRef<(() => Promise<void>) | null>(null);
+
   const finalizeSubmit = () => {
     recordSectionEnd(currentSection);
     setTransitionModal(null);
     setUnansweredModal(null);
     setSubmitted(true);
     clearShsatAttempt();
+    void liveEndRef.current?.();
     setTimeout(() => {
       saveToLeaderboard({ ...sectionDurationRef.current });
     }, 100);
@@ -350,6 +356,35 @@ export default function ShsatQuizPage() {
   const handleReview = () => {
     router.push('/quiz/shsat/review');
   };
+
+  const elapsedForLive = sectionDurationRef.current[currentSection] ?? 0;
+  const timerDurationForLive = Math.max(
+    30,
+    SECTION_TIME[currentSection] - elapsedForLive
+  );
+  const answeredForLive = Object.keys(answers).filter((k) =>
+    activeQuestions.find((q) => q.question === k)
+  ).length;
+
+  const live = useLiveEvaluation({
+    enabled: !restoring && !submitted && !!sectionQuestions,
+    assessmentType: 'shsat',
+    assessmentLabel: 'SHSAT Readiness Diagnostic',
+    grade: 'shsat',
+    section: currentSection,
+    testId: 'shsat',
+    totalQuestions: activeQuestions.length || 50,
+    timerTotalSeconds: timerDurationForLive,
+    questionsAttempted: answeredForLive,
+    currentQuestionIndex,
+    answersCount: Object.keys(answers).length,
+    student: studentInfoRef.current,
+    onAdminResume: (secs) => {
+      setTimerResumeFrom(secs);
+      setTimerResumeToken(Date.now());
+    },
+  });
+  liveEndRef.current = live.endSession;
 
   if (restoring || !sectionQuestions) {
     return (
@@ -398,8 +433,7 @@ export default function ShsatQuizPage() {
     );
   }
 
-  const elapsed = sectionDurationRef.current[currentSection] ?? 0;
-  const timerDuration = Math.max(30, SECTION_TIME[currentSection] - elapsed);
+  const timerDuration = timerDurationForLive;
 
   return (
     <QuizBody
@@ -423,6 +457,19 @@ export default function ShsatQuizPage() {
       timerDuration={timerDuration}
       timerIdentifier={`shsat-${currentSection}-90m`}
       onTimeUp={handleTimeUp}
+      timerPaused={live.timerFrozen}
+      onTimerRemainingChange={live.setRemaining}
+      timerResumeFromSeconds={timerResumeFrom}
+      timerResumeToken={timerResumeToken}
+      livePauseStatus={
+        live.status === 'active' ||
+        live.status === 'pause_requested' ||
+        live.status === 'paused'
+          ? live.status
+          : null
+      }
+      onRequestPause={() => live.requestPause()}
+      onCancelPauseRequest={() => live.cancelPauseRequest()}
       onSelect={handleSelect}
       onNext={handleNext}
       onPrev={handlePrev}

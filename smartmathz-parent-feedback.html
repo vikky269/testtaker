@@ -12,7 +12,7 @@
 const by=id=>document.getElementById(id), form=by('survey'), sections=[...form.querySelectorAll('section')], steps=[...document.querySelectorAll('.steps li')];
 const subjects=['Math','English / ELA','Science','Coding','Test prep','Other'];
 by('subjects').innerHTML=subjects.map(s=>'<label class="option"><input type="checkbox" name="subject" value="'+s+'">'+s+'</label>').join('');
-const sat=['Very dissatisfied','Dissatisfied','Neither satisfied nor dissatisfied','Satisfied','Very satisfied'];
+const sat=['Very satisfied','Satisfied','Neither satisfied nor dissatisfied','Dissatisfied','Very dissatisfied'];
 const ratings=[['Tutoring quality','How satisfied are you with the quality of tutoring?',sat],['Learning progress','What change have you seen in your child’s learning?',['Fallen behind','No noticeable change','Some improvement','Significant improvement','Too soon to tell']],['Communication and support','How satisfied are you with communication and support?', [...sat,'Not enough experience to say']],['Overall experience','Overall, how satisfied are you with SmartMathz?',sat]];
 by('ratings').innerHTML=ratings.map(([title,q,opts],i)=>'<div class="row"><label class="title" for="rating'+i+'">'+q+'</label><select id="rating'+i+'" required><option value="">Choose an answer</option>'+opts.map(o=>'<option>'+o+'</option>').join('')+'</select></div>').join('');
 let step=0;

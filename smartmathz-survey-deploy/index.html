@@ -85,7 +85,7 @@ footer{text-align:center;margin-top:16px}
       <h2 tabindex="-1">Your child</h2>
       <p class="muted intro">This survey is anonymous. If your children have different experiences, complete one survey per child.</p>
       <fieldset>
-        <legend>Which subjects does your child take? <span class="muted small">(optional)</span></legend>
+        <legend>Which subjects does your child take?</legend>
         <div id="subjects" class="options"></div>
       </fieldset>
     </section>
@@ -158,8 +158,28 @@ const steps = [...document.querySelectorAll('.steps li')];
 
 const subjects = ['Math', 'English / ELA', 'Science', 'Coding', 'Test prep', 'Other'];
 by('subjects').innerHTML = subjects
-  .map((s) => `<label class="option"><input type="checkbox" name="subject" value="${s}">${s}</label>`)
+  .map(
+    (s, i) =>
+      `<label class="option"><input type="checkbox" name="subject" value="${s}"${i === 0 ? ' data-checkgroup="subject"' : ''}>${s}</label>`
+  )
   .join('');
+
+function syncSubjectRequired() {
+  const boxes = [...form.querySelectorAll('input[name="subject"]')];
+  const any = boxes.some((b) => b.checked);
+  boxes.forEach((b) => {
+    b.required = false;
+    b.setCustomValidity('');
+  });
+  if (!any && boxes[0]) {
+    boxes[0].required = true;
+    boxes[0].setCustomValidity('Select at least one subject.');
+  }
+}
+form.addEventListener('change', (e) => {
+  if (e.target && e.target.name === 'subject') syncSubjectRequired();
+});
+syncSubjectRequired();
 
 const sat = [
   'Very satisfied',
@@ -246,6 +266,7 @@ by('contactName').addEventListener('input', () => by('contactName').setCustomVal
 by('contactEmail').addEventListener('input', () => by('contactEmail').setCustomValidity(''));
 
 function advance() {
+  if (step === 0) syncSubjectRequired();
   if (step === 2 && by('contact').checked) {
     if (!by('contactName').value.trim()) {
       by('contactName').setCustomValidity('Please enter your name for follow-up.');
@@ -333,6 +354,7 @@ by('another').onclick = () => {
   by('contactFields').hidden = true;
   by('contactName').required = false;
   by('contactEmail').required = false;
+  syncSubjectRequired();
   by('error').style.display = 'none';
   by('submit').disabled = false;
   by('submit').textContent = 'Submit feedback';

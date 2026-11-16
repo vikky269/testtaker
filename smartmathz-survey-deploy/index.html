@@ -70,7 +70,7 @@ footer{text-align:center;margin-top:16px}
       <span class="brand">SmartMathz</span>
     </div>
     <h1>Parent feedback</h1>
-    <p>Tell us what’s working for your child and how we can better support them.</p>
+    <p>Tell us what’s working for your child and how we can better support them. Responses are anonymous unless you choose to leave contact details for a follow-up.</p>
     <p><strong>About 2 minutes</strong> · 3 short steps</p>
   </header>
 
@@ -83,17 +83,7 @@ footer{text-align:center;margin-top:16px}
   <form class="card" id="survey">
     <section>
       <h2 tabindex="-1">Your child</h2>
-      <p class="muted intro">If your children have different experiences, complete one survey per child.</p>
-      <div class="grid">
-        <div class="row">
-          <label class="title" for="parent">Parent or guardian name</label>
-          <input id="parent" name="parentName" autocomplete="name" required maxlength="100">
-        </div>
-        <div class="row">
-          <label class="title" for="student">Student name <span class="muted small">(optional)</span></label>
-          <input id="student" name="studentName" maxlength="100">
-        </div>
-      </div>
+      <p class="muted intro">This survey is anonymous. If your children have different experiences, complete one survey per child.</p>
       <fieldset>
         <legend>Which subjects does your child take? <span class="muted small">(optional)</span></legend>
         <div id="subjects" class="options"></div>
@@ -124,9 +114,9 @@ footer{text-align:center;margin-top:16px}
       </div>
       <label class="option"><input id="contact" name="followup" type="checkbox" value="Yes"> SmartMathz may follow up with me about my feedback.</label>
       <div class="contact-fields" id="contactFields" hidden>
-        <p class="muted" style="margin-top:0">Please confirm how we can reach you.</p>
+        <p class="muted" style="margin-top:0">Please share your name and email so we can follow up.</p>
         <div class="row">
-          <label class="title" for="contactName">Name</label>
+          <label class="title" for="contactName">Your name</label>
           <input id="contactName" name="contactName" maxlength="100" autocomplete="name">
         </div>
         <div class="row" style="margin-bottom:0">
@@ -241,27 +231,21 @@ function go(i) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-by('parent').addEventListener('input', () => by('parent').setCustomValidity(''));
-
 function syncContactFields() {
   const on = by('contact').checked;
   by('contactFields').hidden = !on;
   by('contactName').required = on;
   by('contactEmail').required = on;
-  if (on && !by('contactName').value.trim()) {
-    by('contactName').value = by('parent').value.trim();
-  }
   if (!on) {
     by('contactName').setCustomValidity('');
     by('contactEmail').setCustomValidity('');
   }
 }
 by('contact').addEventListener('change', syncContactFields);
+by('contactName').addEventListener('input', () => by('contactName').setCustomValidity(''));
+by('contactEmail').addEventListener('input', () => by('contactEmail').setCustomValidity(''));
 
 function advance() {
-  if (step === 0 && !by('parent').value.trim()) {
-    by('parent').setCustomValidity('Please enter your name.');
-  }
   if (step === 2 && by('contact').checked) {
     if (!by('contactName').value.trim()) {
       by('contactName').setCustomValidity('Please enter your name for follow-up.');
@@ -302,16 +286,12 @@ form.addEventListener('submit', async (e) => {
   try {
     if (!supabaseClient) throw new Error('Supabase not configured');
 
-    const student = by('student').value.trim();
     const followup = by('contact').checked;
-    const parentName = followup
-      ? by('contactName').value.trim() || by('parent').value.trim()
-      : by('parent').value.trim();
 
     const payload = {
-      parent_name: parentName || null,
+      parent_name: followup ? by('contactName').value.trim() || null : null,
       parent_email: followup ? by('contactEmail').value.trim() || null : null,
-      student_names: student ? [student] : [],
+      student_names: [],
       subjects: [...form.querySelectorAll('input[name="subject"]:checked')].map((el) => el.value),
       tutoring_quality: by('rating0').value || null,
       learning_progress: by('rating1').value || null,
@@ -348,7 +328,6 @@ form.addEventListener('submit', async (e) => {
 
 by('another').onclick = () => {
   form.reset();
-  by('parent').setCustomValidity('');
   by('contactName').setCustomValidity('');
   by('contactEmail').setCustomValidity('');
   by('contactFields').hidden = true;

@@ -38,6 +38,7 @@ import {
   matchSubscriptions,
   wantsFollowUp,
 } from '../shared';
+import { TrackBar, cardClass } from '../../ui';
 
 function RatingBars({
   ratings,
@@ -47,26 +48,19 @@ function RatingBars({
   labels: Record<string, string>;
 }) {
   return (
-    <div className="space-y-3">
+    <div className="space-y-3.5">
       {Object.keys(labels).map((key) => {
         const v = ratings?.[key];
         const low = typeof v === 'number' && v <= 2;
         return (
-          <div key={key} className="flex items-center gap-3">
-            <span className="text-xs text-gray-600 w-40 flex-shrink-0">{labels[key]}</span>
-            <div className="flex-1 bg-gray-100 rounded-full h-4 overflow-hidden">
-              <div
-                className={`h-full rounded-full ${low ? 'bg-red-500' : 'bg-[#123d35]'}`}
-                style={{
-                  width: `${typeof v === 'number' ? (v / 5) * 100 : 0}%`,
-                  minWidth: typeof v === 'number' && v > 0 ? '8px' : 0,
-                }}
-              />
-            </div>
-            <span className={`text-xs font-bold w-8 text-right ${low ? 'text-red-600' : 'text-gray-700'}`}>
-              {v ?? '—'}
-            </span>
-          </div>
+          <TrackBar
+            key={key}
+            label={labels[key]}
+            right={v != null ? String(v) : '—'}
+            value={typeof v === 'number' ? v : 0}
+            max={5}
+            color={low ? '#ef4444' : '#123d35'}
+          />
         );
       })}
     </div>
@@ -75,8 +69,8 @@ function RatingBars({
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm space-y-3 print:shadow-none print:border-[#d5e0d4] print:rounded-lg print:break-inside-avoid">
-      <h3 className="text-sm font-bold text-[#123d35] print:text-[12pt] print:border-b print:border-[#7FB509] print:pb-1">
+    <section className={`${cardClass} p-5 space-y-3 print:shadow-none print:border-[#d5e0d4] print:rounded-lg print:break-inside-avoid`}>
+      <h3 className="text-sm font-bold text-[#1a2e05] print:text-[12pt] print:border-b print:border-[#7FB509] print:pb-1">
         {title}
       </h3>
       {children}

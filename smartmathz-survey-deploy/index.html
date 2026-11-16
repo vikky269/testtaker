@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#123d35">
+<meta name="description" content="Share your experience with SmartMathz. Your feedback helps us support every learner.">
+<link rel="icon" href="smartmathz-logo.png" type="image/png">
+<link rel="shortcut icon" href="smartmathz-logo.png" type="image/png">
+<link rel="apple-touch-icon" href="smartmathz-logo.png">
+<title>SmartMathz | Parent Feedback</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#edf4f0;color:#17352f;font:16px/1.5 system-ui,sans-serif}
+main{max-width:720px;margin:auto;padding:24px 18px 48px}
+header{background:#123d35;color:white;border-radius:24px;padding:clamp(22px,5vw,42px);margin:14px 0 20px;position:relative;overflow:hidden}
+.logo-row{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.logo-row img{height:42px;width:auto;background:#fff;border-radius:10px;padding:4px}
+h1{font-size:clamp(32px,6vw,50px);letter-spacing:-.045em;line-height:1.03;margin:14px 0}
+p{margin:8px 0}
+.brand{font-weight:850;font-size:21px}
+.badge{margin-left:auto;font-size:12px;padding:4px 9px;background:#d9f0a9;color:#15382f;border-radius:20px;font-weight:700}
+.muted{color:#506963;font-size:14px}
+.card{background:white;border:1px solid #d5e2db;border-radius:20px;padding:clamp(16px,4vw,30px)}
+.steps{display:flex;gap:8px;list-style:none;padding:0;margin:0 0 12px}
+.steps li{flex:1;border-top:4px solid #dae6df;padding:7px 1px;font-size:13px;font-weight:650;color:#506963}
+.steps li[aria-current],.steps li.done{border-color:#33755f;color:#143f34}
+.steps li[aria-current]{font-weight:800}
+fieldset{border:0;padding:0;min-width:0;margin:0 0 21px}
+legend,label.title{font-weight:700;margin-bottom:8px;display:block}
+h2{margin:0 0 5px;font-size:25px;letter-spacing:-.02em}
+.intro{margin:0 0 20px}
+input:not([type=radio],[type=checkbox]),textarea,select{display:block;width:100%;font:inherit;padding:11px;background:#fcfefc;color:inherit;border:1px solid #a9bfb4;border-radius:10px}
+textarea{resize:vertical}
+.row{margin-bottom:18px}
+.options{display:flex;flex-wrap:wrap;gap:7px}
+.option{display:flex;align-items:center;gap:6px;border:1px solid #bacdc3;border-radius:9px;padding:8px 10px;min-height:44px;cursor:pointer}
+.option:has(input:checked){background:#e4f2d6;border-color:#33755f}
+.option input{accent-color:#24644f;margin:0}
+.nps{display:grid;grid-template-columns:repeat(11,minmax(0,1fr));gap:6px}
+.nps label{position:relative;cursor:pointer}
+.nps input{position:absolute;opacity:0;width:1px;height:1px}
+.nps span{display:grid;place-items:center;min-height:44px;border:1px solid #bacdc3;border-radius:9px;font-weight:700;color:#174938;background:#fcfefc}
+.nps input:checked+span{background:#174938;color:#fff;border-color:#174938}
+.nps input:focus-visible+span{outline:3px solid #256fbc;outline-offset:2px}
+.nps-legend{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:#506963;margin-top:6px}
+.contact-fields{margin-top:14px;padding:14px;border:1px dashed #a9bfb4;border-radius:12px;background:#f7fbf8}
+.bar{display:flex;justify-content:space-between;gap:12px;margin-top:9px}
+button{font:inherit;font-weight:750;padding:10px 16px;border-radius:10px;cursor:pointer;border:1px solid #24644f;background:white;color:#174938;min-height:44px}
+button.primary{background:#174938;color:white;margin-left:auto}
+button:hover{filter:brightness(.93)}
+button:disabled{opacity:.65;cursor:not-allowed}
+:focus-visible{outline:3px solid #256fbc;outline-offset:3px}
+footer{text-align:center;margin-top:16px}
+.small{font-size:13px;font-weight:400}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.error{display:none;color:#9d3026;font-size:.9rem;margin:8px 0 0}
+.success-tick{width:56px;height:56px;border-radius:50%;background:#e4f2d6;color:#174938;display:grid;place-items:center;font-size:1.6rem;margin:0 auto 12px}
+@media(max-width:560px){
+  .grid{grid-template-columns:1fr}
+  .nps{grid-template-columns:repeat(6,minmax(0,1fr))}
+}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="logo-row">
+      <img src="smartmathz-logo.png" alt="SmartMathz">
+      <span class="brand">SmartMathz</span>
+    </div>
+    <h1>Parent feedback</h1>
+    <p>Tell us what’s working for your child and how we can better support them.</p>
+    <p><strong>About 2 minutes</strong> · 3 short steps</p>
+  </header>
+
+  <ol class="steps" aria-label="Survey progress">
+    <li aria-current="step">1 · Your child</li>
+    <li>2 · Your experience</li>
+    <li>3 · Feedback</li>
+  </ol>
+
+  <form class="card" id="survey">
+    <section>
+      <h2 tabindex="-1">Your child</h2>
+      <p class="muted intro">If your children have different experiences, complete one survey per child.</p>
+      <div class="grid">
+        <div class="row">
+          <label class="title" for="parent">Parent or guardian name</label>
+          <input id="parent" name="parentName" autocomplete="name" required maxlength="100">
+        </div>
+        <div class="row">
+          <label class="title" for="student">Student name <span class="muted small">(optional)</span></label>
+          <input id="student" name="studentName" maxlength="100">
+        </div>
+      </div>
+      <fieldset>
+        <legend>Which subjects does your child take? <span class="muted small">(optional)</span></legend>
+        <div id="subjects" class="options"></div>
+      </fieldset>
+    </section>
+
+    <section hidden>
+      <h2 tabindex="-1">Your experience</h2>
+      <p class="muted intro">Choose one answer per question.</p>
+      <div id="ratings"></div>
+      <div class="row">
+        <label class="title">How likely are you to recommend SmartMathz to another parent? <span class="muted small">(0 = Not at all · 10 = Extremely likely)</span></label>
+        <div class="nps" role="radiogroup" aria-label="Recommendation likelihood" id="nps"></div>
+        <div class="nps-legend"><span>Not at all likely</span><span>Extremely likely</span></div>
+      </div>
+    </section>
+
+    <section hidden>
+      <h2 tabindex="-1">Tell us more</h2>
+      <p class="muted intro">Answer either question, both, or skip this step.</p>
+      <div class="row">
+        <label class="title" for="works">What’s working well? <span class="muted small">(optional)</span></label>
+        <textarea id="works" name="worksWell" rows="2" maxlength="500"></textarea>
+      </div>
+      <div class="row">
+        <label class="title" for="improve">What’s one thing we could improve? <span class="muted small">(optional)</span></label>
+        <textarea id="improve" name="improve" rows="2" maxlength="500"></textarea>
+      </div>
+      <label class="option"><input id="contact" name="followup" type="checkbox" value="Yes"> SmartMathz may follow up with me about my feedback.</label>
+      <div class="contact-fields" id="contactFields" hidden>
+        <p class="muted" style="margin-top:0">Please confirm how we can reach you.</p>
+        <div class="row">
+          <label class="title" for="contactName">Name</label>
+          <input id="contactName" name="contactName" maxlength="100" autocomplete="name">
+        </div>
+        <div class="row" style="margin-bottom:0">
+          <label class="title" for="contactEmail">Email</label>
+          <input id="contactEmail" name="parentEmail" type="email" maxlength="120" autocomplete="email">
+        </div>
+      </div>
+    </section>
+
+    <div class="error" id="error" role="alert"></div>
+    <div class="bar">
+      <button type="button" id="back" hidden>Back</button>
+      <button type="button" id="next" class="primary">Continue</button>
+      <button type="submit" id="submit" class="primary" hidden>Submit feedback</button>
+    </div>
+  </form>
+
+  <div class="card" id="thanks" hidden>
+    <div class="success-tick" aria-hidden="true">✓</div>
+    <h2 tabindex="-1">Thank you for your feedback!</h2>
+    <p>Your response has been saved for the SmartMathz team. Thank you for helping us improve each learner’s experience.</p>
+    <p class="muted">INSPIRE. LEARN. ACHIEVE.</p>
+  </div>
+
+  <footer class="muted">SmartMathz · Parent Feedback</footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script>
+const by = (id) => document.getElementById(id);
+const form = by('survey');
+const sections = [...form.querySelectorAll('section')];
+const steps = [...document.querySelectorAll('.steps li')];
+
+const subjects = ['Math', 'English / ELA', 'Science', 'Coding', 'Test prep', 'Other'];
+by('subjects').innerHTML = subjects
+  .map((s) => `<label class="option"><input type="checkbox" name="subject" value="${s}">${s}</label>`)
+  .join('');
+
+const sat = [
+  'Very dissatisfied',
+  'Dissatisfied',
+  'Neither satisfied nor dissatisfied',
+  'Satisfied',
+  'Very satisfied',
+];
+const ratings = [
+  ['tutoring_quality', 'How satisfied are you with the quality of tutoring?', sat],
+  [
+    'learning_progress',
+    'What change have you seen in your child’s learning?',
+    ['Fallen behind', 'No noticeable change', 'Some improvement', 'Significant improvement', 'Too soon to tell'],
+  ],
+  [
+    'communication_support',
+    'How satisfied are you with communication and support?',
+    [...sat, 'Not enough experience to say'],
+  ],
+  ['overall', 'Overall, how satisfied are you with SmartMathz?', sat],
+];
+
+by('ratings').innerHTML = ratings
+  .map(
+    ([name, q], i) =>
+      `<div class="row"><label class="title" for="rating${i}">${q}</label>` +
+      `<select id="rating${i}" name="${name}" required>` +
+      `<option value="">Choose an answer</option>` +
+      ratings[i][2].map((o) => `<option value="${o}">${o}</option>`).join('') +
+      `</select></div>`
+  )
+  .join('');
+
+by('nps').innerHTML = Array.from({ length: 11 }, (_, n) => {
+  return `<label><input type="radio" name="nps" value="${n}" required><span>${n}</span></label>`;
+}).join('');
+
+const cfg = window.SMARTMATHZ_SUPABASE || {};
+const supabaseClient =
+  window.supabase && cfg.url && cfg.anonKey
+    ? window.supabase.createClient(cfg.url, cfg.anonKey)
+    : null;
+
+let step = 0;
+
+function show(i) {
+  step = i;
+  sections.forEach((s, j) => {
+    s.hidden = j !== i;
+    s.querySelectorAll('input,select,textarea').forEach((el) => {
+      el.disabled = j !== i;
+    });
+  });
+  steps.forEach((s, j) => {
+    s.classList.toggle('done', j < i);
+    if (j === i) s.setAttribute('aria-current', 'step');
+    else s.removeAttribute('aria-current');
+  });
+  by('back').hidden = i === 0;
+  by('next').hidden = i === 2;
+  by('submit').hidden = i !== 2;
+  by('error').style.display = 'none';
+}
+
+function go(i) {
+  show(i);
+  sections[i].querySelector('h2').focus();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+by('parent').addEventListener('input', () => by('parent').setCustomValidity(''));
+
+function syncContactFields() {
+  const on = by('contact').checked;
+  by('contactFields').hidden = !on;
+  by('contactName').required = on;
+  by('contactEmail').required = on;
+  if (on && !by('contactName').value.trim()) {
+    by('contactName').value = by('parent').value.trim();
+  }
+  if (!on) {
+    by('contactName').setCustomValidity('');
+    by('contactEmail').setCustomValidity('');
+  }
+}
+by('contact').addEventListener('change', syncContactFields);
+
+function advance() {
+  if (step === 0 && !by('parent').value.trim()) {
+    by('parent').setCustomValidity('Please enter your name.');
+  }
+  if (step === 2 && by('contact').checked) {
+    if (!by('contactName').value.trim()) {
+      by('contactName').setCustomValidity('Please enter your name for follow-up.');
+    } else by('contactName').setCustomValidity('');
+    if (!by('contactEmail').value.trim()) {
+      by('contactEmail').setCustomValidity('Please enter your email for follow-up.');
+    } else by('contactEmail').setCustomValidity('');
+  }
+  if (form.reportValidity()) go(step + 1);
+}
+
+by('next').onclick = advance;
+by('back').onclick = () => go(step - 1);
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (step < 2) {
+    advance();
+    return;
+  }
+
+  syncContactFields();
+  if (by('contact').checked) {
+    if (!by('contactName').value.trim()) {
+      by('contactName').setCustomValidity('Please enter your name for follow-up.');
+    } else by('contactName').setCustomValidity('');
+    if (!by('contactEmail').value.trim()) {
+      by('contactEmail').setCustomValidity('Please enter your email for follow-up.');
+    } else by('contactEmail').setCustomValidity('');
+  }
+  if (!form.reportValidity()) return;
+
+  const submitBtn = by('submit');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Submitting…';
+  by('error').style.display = 'none';
+
+  try {
+    if (!supabaseClient) throw new Error('Supabase not configured');
+
+    const student = by('student').value.trim();
+    const followup = by('contact').checked;
+    const parentName = followup
+      ? by('contactName').value.trim() || by('parent').value.trim()
+      : by('parent').value.trim();
+
+    const payload = {
+      parent_name: parentName || null,
+      parent_email: followup ? by('contactEmail').value.trim() || null : null,
+      student_names: student ? [student] : [],
+      subjects: [...form.querySelectorAll('input[name="subject"]:checked')].map((el) => el.value),
+      tutoring_quality: by('rating0').value || null,
+      learning_progress: by('rating1').value || null,
+      communication_support: by('rating2').value || null,
+      overall: by('rating3').value || null,
+      nps: Number(form.querySelector('input[name="nps"]:checked')?.value ?? NaN),
+      works_well: by('works').value.trim() || null,
+      improve: by('improve').value.trim() || null,
+      followup: followup ? 'Yes' : 'No',
+      status: 'new',
+      // Keep older admin fields populated where useful
+      progress: by('rating1').value || null,
+      strength: by('works').value.trim() || null,
+    };
+    if (Number.isNaN(payload.nps)) payload.nps = null;
+
+    const { error } = await supabaseClient.from('parent_feedback').insert([payload]);
+    if (error) throw error;
+
+    form.hidden = true;
+    document.querySelector('.steps').hidden = true;
+    by('thanks').hidden = false;
+    by('thanks').querySelector('h2').focus();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch (err) {
+    console.error(err);
+    by('error').textContent =
+      'We could not submit your feedback just now. Please check your connection and try again.';
+    by('error').style.display = 'block';
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit feedback';
+  }
+});
+
+show(0);
+</script>
+</body>
+</html>

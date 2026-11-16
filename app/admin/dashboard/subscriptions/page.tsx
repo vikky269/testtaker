@@ -364,6 +364,13 @@ export default function SubscriptionsPage() {
 
   useEffect(() => { loadSubs(); }, []);
 
+  // Deep-link from Parent Feedback linked enrollments (?q=Student Name)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const q = new URLSearchParams(window.location.search).get('q');
+    if (q) setSearch(q);
+  }, []);
+
   useEffect(() => {
     let out = [...subs];
     if (pkgFilter !== 'All') out = out.filter(s => s.programme_package.includes(pkgFilter));

@@ -13,6 +13,7 @@ import Link from 'next/link';
 import {
   LayoutDashboard, Users, FileText, ClipboardList,
   BarChart2, LogOut, X, Menu, Shield, Settings, GraduationCap, FileCheck2, BookOpen,
+  MessageSquareHeart,
 } from 'lucide-react';
 
 const ADMIN_EMAIL = 'info@smartmathz.com';
@@ -29,6 +30,7 @@ const NAV_ITEMS = [
   { href: '/admin/dashboard/ged-results', icon: GraduationCap, label: 'GED Assessments' },
   { href: '/admin/dashboard/psat-results', icon: FileCheck2, label: 'PSAT Assessments' },
   { href: '/admin/dashboard/shsat-results', icon: FileText, label: 'SHSAT Assessments' },
+  { href: '/admin/dashboard/parent-feedback',        icon: MessageSquareHeart, label: 'Parent Feedback'   },
   { href: '/admin/dashboard/analytics',             icon: BarChart2,       label: 'Analytics'            },
 ];
 
@@ -105,7 +107,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
       {/* ── SIDEBAR ── */}
       <aside className={`fixed lg:static inset-y-0 left-0 z-30 w-64 bg-[#1a2e05] flex flex-col
-                         transition-transform duration-300 lg:translate-x-0
+                         transition-transform duration-300 lg:translate-x-0 print:hidden
                          ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
 
         {/* Logo */}
@@ -187,7 +189,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
         {/* Top bar */}
         <header className="bg-white border-b border-gray-100 px-4 lg:px-6 h-14 flex items-center
-                           justify-between sticky top-0 z-10">
+                           justify-between sticky top-0 z-10 print:hidden">
           <button onClick={() => setSidebarOpen(true)}
             className="lg:hidden text-gray-600 hover:text-[#3a5a09] cursor-pointer p-1">
             <Menu size={18} />

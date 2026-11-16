@@ -22,6 +22,7 @@ import {
   isLowRisk,
   wantsFollowUp,
 } from './shared';
+import { KpiCard, PageHeader, Panel, TrackBar, cardClass } from '../ui';
 
 function countByValues(rows: ParentFeedback[], getter: (r: ParentFeedback) => string | null | undefined) {
   const map: Record<string, number> = {};
@@ -56,24 +57,16 @@ function BarList({
     return <p className="text-sm text-gray-400 text-center py-6">No data yet</p>;
   }
   return (
-    <div className="space-y-2.5">
+    <div className="space-y-3.5">
       {items.map(([label, count]) => (
-        <div key={label} className="flex items-center gap-3">
-          <span className="text-xs text-gray-600 w-44 truncate flex-shrink-0" title={label}>
-            {label}
-          </span>
-          <div className="flex-1 bg-gray-100 rounded-full h-4 overflow-hidden">
-            <div
-              className="h-full rounded-full transition-all duration-500"
-              style={{
-                width: `${max ? (count / max) * 100 : 0}%`,
-                backgroundColor: color,
-                minWidth: count > 0 ? '6px' : '0',
-              }}
-            />
-          </div>
-          <span className="text-xs text-gray-500 w-8 text-right font-medium">{count}</span>
-        </div>
+        <TrackBar
+          key={label}
+          label={label}
+          right={String(count)}
+          value={count}
+          max={max}
+          color={color}
+        />
       ))}
     </div>
   );
@@ -270,41 +263,36 @@ export default function ParentFeedbackPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-            <MessageSquareHeart className="w-6 h-6 text-[#123d35]" />
-            Parent Feedback
-          </h1>
-          <p className="text-sm text-gray-500 mt-0.5">
-            Analytics from the 3-step parent survey. Click a row for full details.
-          </p>
-        </div>
-        <div className="relative w-full sm:w-80">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
-          <input
-            value={search}
-            onChange={(e) => {
-              setSearch(e.target.value);
-              syncUrl({ q: e.target.value });
-            }}
-            placeholder="Search name, students, tags…"
-            className="border border-gray-200 rounded-xl pl-9 pr-9 py-2 text-sm w-full focus:outline-none focus:ring-2 focus:ring-[#7FB509] bg-white"
-          />
-          {search && (
-            <button
-              type="button"
-              onClick={() => {
-                setSearch('');
-                syncUrl({ q: '' });
+      <PageHeader
+        title="Parent Feedback"
+        subtitle="Analytics from the 3-step parent survey. Click a row for full details."
+        action={
+          <div className="relative w-full sm:w-80">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+            <input
+              value={search}
+              onChange={(e) => {
+                setSearch(e.target.value);
+                syncUrl({ q: e.target.value });
               }}
-              className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-700 cursor-pointer"
-            >
-              <X className="w-3.5 h-3.5" />
-            </button>
-          )}
-        </div>
-      </div>
+              placeholder="Search name, students, tags…"
+              className="border border-[#e4ebe0] rounded-xl pl-9 pr-9 py-2 text-sm w-full focus:outline-none focus:ring-2 focus:ring-[#7FB509]/25 bg-white shadow-sm"
+            />
+            {search && (
+              <button
+                type="button"
+                onClick={() => {
+                  setSearch('');
+                  syncUrl({ q: '' });
+                }}
+                className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-700 cursor-pointer"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            )}
+          </div>
+        }
+      />
 
       {loadError && (
         <div className="rounded-xl border border-amber-200 bg-amber-50 text-amber-900 text-sm px-4 py-3">
@@ -313,63 +301,58 @@ export default function ParentFeedbackPage() {
       )}
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        {[
-          { label: 'Responses', val: String(stats.total), color: '#123d35' },
-          {
-            label: 'NPS',
-            val: stats.nps == null ? '—' : String(stats.nps),
-            sub: stats.nps == null ? undefined : `${stats.promoters} promoters · ${stats.detractors} detractors`,
-            color: '#0f766e',
-          },
-          {
-            label: 'Avg recommend',
-            val: stats.avgNps == null ? '—' : `${stats.avgNps}/10`,
-            color: '#3a5a09',
-          },
-          {
-            label: 'Follow-up Yes',
-            val: String(stats.followupYes),
-            color: '#4f46e5',
-          },
-        ].map(({ label, val, color, sub }) => (
-          <div key={label} className="bg-white rounded-2xl border border-gray-100 p-4 shadow-sm">
-            <p className="text-xs font-bold uppercase tracking-wide text-gray-400 mb-1">{label}</p>
-            <p className="text-3xl font-extrabold" style={{ color }}>{val}</p>
-            {sub && <p className="text-[11px] text-gray-400 mt-1">{sub}</p>}
-          </div>
-        ))}
+        <KpiCard
+          label="Responses"
+          value={stats.total}
+          color="#123d35"
+          iconBg="bg-[#e8f0ee]"
+          icon={<MessageSquareHeart className="w-4 h-4 text-[#123d35]" />}
+        />
+        <KpiCard
+          label="NPS"
+          value={stats.nps == null ? '—' : stats.nps}
+          sub={stats.nps == null ? undefined : `${stats.promoters} promoters · ${stats.detractors} detractors`}
+          color="#0f766e"
+          iconBg="bg-teal-50"
+        />
+        <KpiCard
+          label="Avg recommend"
+          value={stats.avgNps == null ? '—' : `${stats.avgNps}/10`}
+          color="#3a5a09"
+          iconBg="bg-[#e8f5c0]"
+        />
+        <KpiCard
+          label="Follow-up Yes"
+          value={stats.followupYes}
+          color="#4f46e5"
+          iconBg="bg-indigo-50"
+        />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-        <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-          <h3 className="text-sm font-bold text-gray-700 mb-4">Overall satisfaction</h3>
+        <Panel title="Overall satisfaction" subtitle="How parents rate the experience">
           <BarList items={stats.overallBreakdown} max={stats.maxOverall} />
-        </div>
-        <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-          <h3 className="text-sm font-bold text-gray-700 mb-4">Tutoring quality</h3>
+        </Panel>
+        <Panel title="Tutoring quality" subtitle="Satisfaction with tutoring">
           <BarList items={stats.tutoringBreakdown} max={stats.maxTutoring} color="#059669" />
-        </div>
-        <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-          <h3 className="text-sm font-bold text-gray-700 mb-4">Learning progress</h3>
+        </Panel>
+        <Panel title="Learning progress" subtitle="Perceived student progress">
           <BarList items={stats.progressBreakdown} max={stats.maxProgress} color="#d97706" />
-        </div>
-        <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-          <h3 className="text-sm font-bold text-gray-700 mb-4">Communication & support</h3>
+        </Panel>
+        <Panel title="Communication & support" subtitle="How supported parents feel">
           <BarList items={stats.commBreakdown} max={stats.maxComm} color="#4f46e5" />
-        </div>
-        <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-          <h3 className="text-sm font-bold text-gray-700 mb-4">Subjects</h3>
+        </Panel>
+        <Panel title="Subjects" subtitle="Most requested / mentioned">
           <BarList items={stats.subjectBreakdown} max={stats.maxSubjects} color="#0284c7" />
-        </div>
-        <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-          <h3 className="text-sm font-bold text-gray-700 mb-4">Responses over time</h3>
+        </Panel>
+        <Panel title="Responses over time" subtitle="Last 8 months">
           {stats.monthly.length ? (
             <div className="flex items-end gap-3 h-36">
               {stats.monthly.map(([month, count]) => (
-                <div key={month} className="flex-1 flex flex-col items-center gap-1">
-                  <span className="text-[10px] text-gray-500">{count}</span>
+                <div key={month} className="flex-1 flex flex-col items-center gap-1.5">
+                  <span className="text-[10px] font-semibold text-gray-500">{count}</span>
                   <div
-                    className="w-full bg-[#7FB509] rounded-t-lg"
+                    className="w-full rounded-t-lg bg-gradient-to-t from-[#5f8a08] to-[#9fd12a] transition-all duration-700"
                     style={{ height: `${(count / stats.maxMonthly) * 100}px`, minHeight: '4px' }}
                   />
                   <span className="text-[10px] text-gray-400">{month}</span>
@@ -379,18 +362,21 @@ export default function ParentFeedbackPage() {
           ) : (
             <p className="text-sm text-gray-400 text-center py-8">No submissions yet</p>
           )}
-        </div>
+        </Panel>
       </div>
 
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-        <div className="px-5 py-4 border-b border-gray-100 space-y-3">
+      <div className={`${cardClass} overflow-hidden`}>
+        <div className="px-5 py-4 border-b border-[#eef2ea] space-y-3">
           <div className="flex items-center justify-between gap-3 flex-wrap">
-            <h3 className="text-sm font-bold text-gray-700">All responses ({filtered.length})</h3>
+            <div>
+              <h3 className="text-sm font-bold text-[#1a2e05]">All responses ({filtered.length})</h3>
+              <p className="text-xs text-gray-400 mt-0.5">Click a row for full details</p>
+            </div>
             <button
               type="button"
               onClick={exportCsv}
               disabled={!rows.length}
-              className="inline-flex items-center gap-1.5 rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold text-[#123d35] cursor-pointer disabled:opacity-50"
+              className="inline-flex items-center gap-1.5 rounded-xl border border-[#e4ebe0] px-3 py-2 text-xs font-semibold text-[#123d35] cursor-pointer disabled:opacity-50 hover:bg-[#f7faf5]"
             >
               <Download className="w-3.5 h-3.5" /> Export Excel (CSV)
             </button>
@@ -402,7 +388,7 @@ export default function ParentFeedbackPage() {
                 setStatusFilter(e.target.value);
                 syncUrl({ status: e.target.value });
               }}
-              className="border border-gray-200 rounded-xl px-3 py-1.5 text-xs cursor-pointer"
+              className="border border-[#e4ebe0] rounded-xl px-3 py-1.5 text-xs cursor-pointer bg-white"
             >
               <option value="all">All statuses</option>
               {STATUS_OPTIONS.map((s) => (
@@ -417,7 +403,7 @@ export default function ParentFeedbackPage() {
                 syncUrl({ followup: next });
               }}
               className={`text-xs font-semibold rounded-xl px-3 py-1.5 border cursor-pointer ${
-                followUpOnly ? 'bg-violet-100 border-violet-200 text-violet-900' : 'bg-white border-gray-200 text-gray-600'
+                followUpOnly ? 'bg-violet-100 border-violet-200 text-violet-900' : 'bg-white border-[#e4ebe0] text-gray-600'
               }`}
             >
               Follow-up Yes ({stats.followupYes})
@@ -430,7 +416,7 @@ export default function ParentFeedbackPage() {
                 syncUrl({ attention: next });
               }}
               className={`text-xs font-semibold rounded-xl px-3 py-1.5 border cursor-pointer inline-flex items-center gap-1 ${
-                attentionOnly ? 'bg-red-100 border-red-200 text-red-800' : 'bg-white border-gray-200 text-gray-600'
+                attentionOnly ? 'bg-red-100 border-red-200 text-red-800' : 'bg-white border-[#e4ebe0] text-gray-600'
               }`}
             >
               <AlertTriangle className="w-3 h-3" /> Needs attention ({stats.attentionCount})
@@ -441,9 +427,9 @@ export default function ParentFeedbackPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="bg-gray-50">
+              <tr className="bg-[#f7faf5]">
                 {['Date', 'Parent', 'Student', 'Overall', 'NPS', 'Progress', 'Status', 'Flags', ''].map((h) => (
-                  <th key={h || 'a'} className="px-3 py-2.5 text-left text-xs font-bold text-gray-400 uppercase tracking-wide">
+                  <th key={h || 'a'} className="px-3 py-2.5 text-left text-[10px] font-bold text-gray-400 uppercase tracking-wider">
                     {h}
                   </th>
                 ))}
@@ -456,10 +442,10 @@ export default function ParentFeedbackPage() {
                   <tr
                     key={r.id}
                     onClick={() => openDetails(r)}
-                    className="border-t border-gray-50 hover:bg-[#f7faf5] cursor-pointer"
+                    className="border-t border-[#eef2ea] hover:bg-[#f9fbf7] cursor-pointer transition-colors"
                   >
                     <td className="px-3 py-2.5 text-xs text-gray-500 whitespace-nowrap">{fmtDate(r.created_at)}</td>
-                    <td className="px-3 py-2.5 text-xs font-medium text-gray-800">{r.parent_name || '—'}</td>
+                    <td className="px-3 py-2.5 text-xs font-medium text-[#1a2e05]">{r.parent_name || '—'}</td>
                     <td className="px-3 py-2.5 text-xs text-gray-600 max-w-[140px] truncate">
                       {(r.student_names ?? []).filter(Boolean).join(', ') || '—'}
                     </td>

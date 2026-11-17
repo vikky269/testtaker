@@ -1051,14 +1051,14 @@
   },
   {
     "id": "math-7-expressions-equations-7th-grade-medium-71",
-    "question": "Factor out the coefficient of the variable: 1/2 x - 4",
+    "question": "Factor out the coefficient of the variable: (1/2)x - 4",
     "options": [
-      "1/2(x - 2)",
-      "1/2(x - 8)",
-      "1/2(x - 4)",
+      "(1/2)(x - 2)",
+      "(1/2)(x - 8)",
+      "(1/2)(x - 4)",
       "2(x - 8)"
     ],
-    "correctAnswer": "1/2(x - 8)",
+    "correctAnswer": "(1/2)(x - 8)",
     "difficulty": "medium",
     "topic": "EXPRESSIONS & EQUATIONS (7TH GRADE)",
     "subject": "math",

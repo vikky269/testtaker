@@ -96,21 +96,34 @@ export default function SkillResultsSummary({
   onReview,
   onGoHome,
   studentName,
+  variant = 'student',
+  testDate,
+  showReview = true,
+  showHome = true,
+  showDownload = true,
 }: {
   title: string;
   breakdown: SkillBreakdown;
-  onReview: () => void;
-  onGoHome: () => void;
+  onReview?: () => void;
+  onGoHome?: () => void;
   studentName?: string;
+  /** Admin view mirrors the student skill breakdown with softer CTAs */
+  variant?: 'student' | 'admin';
+  testDate?: string;
+  showReview?: boolean;
+  showHome?: boolean;
+  showDownload?: boolean;
 }) {
   const [downloading, setDownloading] = useState(false);
   const mathRows = breakdown.domains.filter((d) => d.subject === 'math');
   const elaRows = breakdown.domains.filter((d) => d.subject === 'ela');
   const scienceRows = breakdown.domains.filter((d) => d.subject === 'science');
   const perfect = breakdown.percent === 100;
+  const isAdmin = variant === 'admin';
 
   const resolvedName = (() => {
     if (studentName?.trim()) return studentName.trim();
+    if (isAdmin) return 'Student';
     try {
       const saved = localStorage.getItem('activeStudent');
       if (saved) {
@@ -122,6 +135,14 @@ export default function SkillResultsSummary({
     }
     return 'Student';
   })();
+
+  const dateLabel =
+    testDate ||
+    new Date().toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
 
   const handleDownload = async () => {
     if (downloading) return;
@@ -140,18 +161,16 @@ export default function SkillResultsSummary({
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <div className={`w-full max-w-5xl mx-auto ${isAdmin ? 'px-0 py-0' : 'px-4 py-8 sm:px-6 lg:px-8'}`}>
       <div className="text-center mb-6">
-        <h1 className="text-3xl font-extrabold text-neutral-900 tracking-tight">All done!</h1>
+        <h1 className="text-3xl font-extrabold text-neutral-900 tracking-tight">
+          {isAdmin ? 'Performance breakdown' : 'All done!'}
+        </h1>
         <p className="mt-1 text-sm font-semibold text-neutral-400">{title}</p>
         <p className="mt-1 text-xs font-medium text-neutral-400">
           {resolvedName}
           {' · '}
-          {new Date().toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })}
+          {dateLabel}
         </p>
       </div>
 
@@ -225,32 +244,38 @@ export default function SkillResultsSummary({
         diagnosis or placement evaluation.
       </p>
 
-      <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:flex-wrap">
-        <button
-          type="button"
-          onClick={handleDownload}
-          disabled={downloading}
-          className="rounded-full bg-indigo-600 px-8 py-3 text-sm font-bold text-white shadow-md transition hover:bg-indigo-700 disabled:cursor-wait disabled:opacity-70"
-        >
-          {downloading ? 'Preparing PDF…' : 'Download results PDF'}
-        </button>
-        <button
-          type="button"
-          onClick={onReview}
-          className="rounded-full bg-emerald-500 px-8 py-3 text-sm font-bold text-white shadow-md transition hover:bg-emerald-600"
-        >
-          View detailed review
-        </button>
-        {perfect ? (
-          <button
-            type="button"
-            onClick={onGoHome}
-            className="rounded-full border border-neutral-200 bg-white px-8 py-3 text-sm font-bold text-neutral-700 shadow-sm transition hover:bg-neutral-50"
-          >
-            Back to Home
-          </button>
-        ) : null}
-      </div>
+      {(showDownload || (showReview && onReview) || (showHome && onGoHome && (perfect || isAdmin))) && (
+        <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:flex-wrap">
+          {showDownload && (
+            <button
+              type="button"
+              onClick={handleDownload}
+              disabled={downloading}
+              className="rounded-full bg-indigo-600 px-8 py-3 text-sm font-bold text-white shadow-md transition hover:bg-indigo-700 disabled:cursor-wait disabled:opacity-70"
+            >
+              {downloading ? 'Preparing PDF…' : 'Download results PDF'}
+            </button>
+          )}
+          {showReview && onReview && (
+            <button
+              type="button"
+              onClick={onReview}
+              className="rounded-full bg-emerald-500 px-8 py-3 text-sm font-bold text-white shadow-md transition hover:bg-emerald-600"
+            >
+              {isAdmin ? 'Jump to question review' : 'View detailed review'}
+            </button>
+          )}
+          {showHome && onGoHome && (perfect || isAdmin) ? (
+            <button
+              type="button"
+              onClick={onGoHome}
+              className="rounded-full border border-neutral-200 bg-white px-8 py-3 text-sm font-bold text-neutral-700 shadow-sm transition hover:bg-neutral-50"
+            >
+              {isAdmin ? 'Back to results' : 'Back to Home'}
+            </button>
+          ) : null}
+        </div>
+      )}
     </div>
   );
 }

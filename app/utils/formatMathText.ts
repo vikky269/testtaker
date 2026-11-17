@@ -161,7 +161,12 @@ function convertSlashFractions(s: string): string {
         }
       } else if (k < out.length && /[A-Za-z0-9.]/.test(out[k])) {
         denStart = k;
-        while (k < out.length && /[A-Za-z0-9.]/.test(out[k])) k++;
+        // Numeric denominator: stop before a trailing variable ("1/2x" → den "2", not "2x")
+        if (/\d/.test(out[k])) {
+          while (k < out.length && /[0-9.]/.test(out[k])) k++;
+        } else {
+          while (k < out.length && /[A-Za-z0-9.]/.test(out[k])) k++;
+        }
         denEnd = k - 1;
         const token = out.slice(denStart, denEnd + 1);
         if (/[A-Za-z]{2,}/.test(token) && !/^\d/.test(token)) {
@@ -221,10 +226,9 @@ export function plainMathToLatex(input: string): string {
   s = s.replace(/\)\s*[xX]\s*\(/g, ') \\times (');
   s = s.replace(/\)\(/g, ') \\times ('); // (21)(14) → (21) \times (14)
   s = s.replace(/\)\s*[xX]\s+(?=\d|\{)/g, ') \\times ');
-  s = s.replace(/(?<=\d|\})\s+[xX]\s+(?=\d|\(|\{)/g, ' \\times ');
-  s = s.replace(/\s+[xX]\s+/g, ' \\times ');
-  // (14)x → (14) x as multiplication when letter follows ) 
-  s = s.replace(/\)([A-Za-z])\b/g, ') $1');
+  // Only treat spaced "x" as × when BOTH neighbors are numeric/paren groups.
+  // Do NOT convert algebraic variables: "1/2 x - 4" must stay (1/2)x − 4.
+  s = s.replace(/(?<=\d|\))\s+[xX]\s+(?=\d|\()/g, ' \\times ');
 
   const curls: string[] = [];
   s = s.replace(/\{([^{}]*)\}/g, (_m, inner) => {
@@ -232,6 +236,7 @@ export function plainMathToLatex(input: string): string {
     return `<<CURL${curls.length - 1}>>`;
   });
 
+  // Fractions first — so "1/2 x" becomes "\frac{1}{2} x", never "\frac{1}{2x}".
   s = convertSlashFractions(s);
 
   s = s.replace(/\^\((-?\d+)\)/g, '^{($1)}');
@@ -249,6 +254,13 @@ export function plainMathToLatex(input: string): string {
 
   s = s.replace(/\[/g, '\\left[').replace(/\]/g, '\\right]');
   s = s.replace(/<<CURL(\d+)>>/g, (_m, i) => `\\left\\{${curls[Number(i)]}\\right\\}`);
+
+  // After fractions: glue coefficient to a following single-letter variable.
+  // "\frac{1}{2} x" → "\frac{1}{2}x", "3 y" → "3y" (never multi-letter words).
+  s = s.replace(/(\\frac\{[^}]+\}\{[^}]+\})\s+([a-zA-Z])(?![a-zA-Z])/g, '$1$2');
+  s = s.replace(/(\\left\([^)]+\\right\))\s*([a-zA-Z])(?![a-zA-Z])/g, '$1$2');
+  s = s.replace(/(\))\s*([a-zA-Z])(?![a-zA-Z])/g, '$1$2');
+  s = s.replace(/(?<![A-Za-z\\])(\d)\s+([a-zA-Z])(?![a-zA-Z])/g, '$1$2');
 
   return s.replace(/\s+/g, ' ').trim();
 }

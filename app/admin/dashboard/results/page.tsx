@@ -9,9 +9,17 @@ import { PACKAGES, CUSTOM_PACKAGE_SUBJECTS, ADDITIONAL_PROGRAMS, getSuggestedPac
 import { getPricingTable, computePrice, type ComputedPrice, type GradePricing } from '@/app/utils/pricingData';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { toast } from 'react-hot-toast';
-
+import { PageHeader, cardClass, cardHoverClass } from '../ui';
 
 const COMMENT_MAX = 750; // max characters for evaluator's comment (renders well on PDF)
+
+const CAT_ACCENT: Record<LearningCategory['name'], string> = {
+  WHIZZES: '#16a34a',
+  ACES: '#15803d',
+  EXPLORERS: '#2563eb',
+  RISERS: '#d97706',
+  ADAPTERS: '#7c3aed',
+};
 
 
 // ── Time helpers — used by the modal AND when saving the recommendation ──────
@@ -320,7 +328,7 @@ export default function ResultsPage() {
   const [editingTimes, setEditingTimes] = useState<any | null>(null);
   const [saving, setSaving]             = useState(false);
   const [deleteTarget, setDeleteTarget] = useState<StudentResult | null>(null);
-  const [rowMenu, setRowMenu] = useState<{ id: string; x: number; y: number } | null>(null);
+  const [actionsTarget, setActionsTarget] = useState<StudentResult | null>(null);
   const [deleting, setDeleting]         = useState(false);
 
   // Pricing adjusters — ALL start at zero
@@ -365,18 +373,6 @@ export default function ResultsPage() {
     setFiltered(out);
   }, [results, search, gradeFilter, catFilter, completedIds]);
 
-
-//use effect to close action buttons
-useEffect(() => {
-    if (!rowMenu) return;
-    const close = () => setRowMenu(null);
-    document.addEventListener('click', close);
-    window.addEventListener('scroll', close, true);
-    return () => {
-      document.removeEventListener('click', close);
-      window.removeEventListener('scroll', close, true);
-    };
-  }, [rowMenu]);
 
 // Edit deep-link — pre-populates the modal when arriving from the completed page:
 
@@ -474,15 +470,37 @@ useEffect(() => {
     setCustomProgramText('');
   };
 
-  // When package changes, reset all adjusters to zero
+  // When package changes, reset adjusters. Custom defaults from Package III.
   const handlePackageChange = (pkg: PackageOption) => {
     setSelectedPackage(pkg);
-    if (pkg.id !== 'custom') setCustomSubjects([]);
     setAdjuster(0);
     setSessionDelta(0);
     setParentBudget(0);
     setNewProgram('');
     setCustomProgramText('');
+
+    if (pkg.id === 'custom') {
+      const pkgIII = PACKAGES.find((p) => p.id === 'III')!;
+      const weeklyHours = pkgIII.hoursPerWeek ?? 5; // Package III = 5hrs/wk · 20hrs/mo
+      const stdRate = pricingTable?.packageIII.standardHourlyRate ?? 41;
+      setCustomStdRate(stdRate);
+
+      // Seed subjects like Package III: Math + up to 2 additional programs
+      const extras = [...additionalPrograms].slice(0, 2);
+      const fallbacks = ['English Language Arts', 'Science', 'Coding'];
+      for (const name of fallbacks) {
+        if (extras.length >= 2) break;
+        if (!extras.includes(name)) extras.push(name);
+      }
+      const extraHoursEach = 1;
+      const mathHours = Math.max(1, weeklyHours - extras.length * extraHoursEach);
+      setCustomSubjects([
+        { name: 'Mathematics', hours: mathHours },
+        ...extras.map((name) => ({ name, hours: extraHoursEach })),
+      ]);
+    } else {
+      setCustomSubjects([]);
+    }
   };
 
 // handle delete function to delete entries by admin
@@ -516,7 +534,10 @@ useEffect(() => {
 
   // Header subtitle for the pricing table
   const packageSubtitle =
-    selectedPackage.id === 'custom' ? 'Customized Program'
+    selectedPackage.id === 'custom'
+      ? customSubjects.length > 0
+        ? `Customized from Package III · ${customSubjects.map((s) => s.name).join(' + ')}`
+        : 'Customized Program (defaults from Package III)'
     : selectedPackage.id === 'I'    ? 'Math Tutoring Only'
     : `Math Tutoring + ${
         additionalPrograms.length > 0
@@ -598,136 +619,327 @@ useEffect(() => {
   };
 
 
-  if (loading) return <div className="p-8 text-gray-500">Loading results...</div>;
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <div className="w-8 h-8 border-4 border-[#7FB509] border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
+  }
 
   return (
-    <div className="overflow-x-hidden max-w-7xl">
+    <div className="space-y-6 overflow-x-hidden">
 
-      {/* Page header */}
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Results & Recommendations</h1>
-        <p className="text-sm text-gray-500 mt-1">View student results, learning categories, and generate personalised programme recommendations.</p>
+      <PageHeader
+        title="Results & Recommendations"
+        subtitle="View student results, learning categories, and generate personalised programme recommendations."
+      />
+
+      <div>
+        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-gray-400 mb-2">
+          Learning categories
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+          {categoryCounts.map((c) => {
+            const active = catFilter === c.name;
+            return (
+              <button
+                key={c.name}
+                type="button"
+                onClick={() => setCatFilter(active ? 'All Categories' : c.name)}
+                className={`${cardClass} ${cardHoverClass} relative overflow-hidden p-4 text-left cursor-pointer ${
+                  active ? 'ring-2 ring-[#7FB509]/50 border-[#cfe39a]' : ''
+                }`}
+              >
+                <div
+                  className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl"
+                  style={{ backgroundColor: CAT_ACCENT[c.name] }}
+                />
+                <p className={`text-[11px] font-bold uppercase tracking-wide ${c.color}`}>{c.name}</p>
+                <p className="text-2xl font-extrabold text-[#1a2e05] mt-1">{c.count}</p>
+                <p className="text-[11px] text-gray-400 mt-0.5">{c.range} · students</p>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
-      {/* Category summary cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
-        {categoryCounts.map(c => (
-          <button key={c.name} onClick={() => setCatFilter(p => p === c.name ? 'All Categories' : c.name)}
-            className={`rounded-2xl p-4 text-center border transition-all cursor-pointer
-              ${catFilter === c.name ? `${c.bgColor} border-current shadow-sm` : 'bg-white border-gray-100 hover:border-gray-200'}`}>
-            <p className={`text-xs font-bold uppercase tracking-widest mb-1 ${c.color}`}>{c.name}</p>
-            <p className={`text-2xl font-extrabold ${c.color}`}>{c.count}</p>
-            <p className="text-xs text-gray-400 mt-0.5">students</p>
-          </button>
-        ))}
-      </div>
-
-      {/* Filters */}
-      <div className="flex flex-col sm:flex-row gap-3 mb-5">
+      <div className="flex flex-col sm:flex-row gap-3">
         <div className="relative flex-1">
-          <input type="text" placeholder="Search by name or email..." value={search}
-            onChange={e => setSearch(e.target.value)}
-            className="w-full pl-9 pr-4 py-2.5 text-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 bg-white" />
-          <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <input
+            type="text"
+            placeholder="Search by name or email..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full pl-9 pr-4 py-2.5 text-sm border border-[#e4ebe0] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#7FB509]/25 bg-white shadow-sm"
+          />
+          <svg
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
         </div>
-        <select value={gradeFilter} onChange={e => setGradeFilter(e.target.value)}
-          className="px-3 py-2.5 text-sm border border-gray-200 rounded-xl bg-white focus:outline-none cursor-pointer">
-          {allGrades.map(g => <option key={g}>{g}</option>)}
+        <select
+          value={gradeFilter}
+          onChange={(e) => setGradeFilter(e.target.value)}
+          className="px-3 py-2.5 text-sm border border-[#e4ebe0] rounded-xl bg-white focus:outline-none cursor-pointer shadow-sm"
+        >
+          {allGrades.map((g) => (
+            <option key={g}>{g}</option>
+          ))}
         </select>
-        <select value={catFilter} onChange={e => setCatFilter(e.target.value)}
-          className="px-3 py-2.5 text-sm border border-gray-200 rounded-xl bg-white focus:outline-none cursor-pointer">
-          {['All Categories', ...LEARNING_CATEGORIES.map(c => c.name)].map(c => <option key={c}>{c}</option>)}
+        <select
+          value={catFilter}
+          onChange={(e) => setCatFilter(e.target.value)}
+          className="px-3 py-2.5 text-sm border border-[#e4ebe0] rounded-xl bg-white focus:outline-none cursor-pointer shadow-sm"
+        >
+          {['All Categories', ...LEARNING_CATEGORIES.map((c) => c.name)].map((c) => (
+            <option key={c}>{c}</option>
+          ))}
         </select>
-        <span className="hidden sm:flex items-center text-xs text-gray-400 whitespace-nowrap">{filtered.length} results</span>
+        <span className="hidden sm:flex items-center text-xs text-gray-400 whitespace-nowrap">
+          {filtered.length} results
+        </span>
       </div>
 
-      {/* Results table */}
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+      <div className={`${cardClass} overflow-hidden`}>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
             <thead>
-              <tr className="bg-gray-50 border-b border-gray-100">
-                {['#','STUDENT','GRADE','OVERALL','MATH','ELA','SCIENCE','CATEGORY','SUGGESTED','ACTIONS'].map(h => (
-                  <th key={h} className="px-4 py-3 text-left text-[11px] font-medium uppercase tracking-wide text-gray-400 whitespace-nowrap">{h}</th>
-                ))}
+              <tr className="bg-[#f7faf5] border-b border-[#eef2ea]">
+                {['#', 'STUDENT', 'GRADE', 'OVERALL', 'MATH', 'ELA', 'SCIENCE', 'CATEGORY', 'SUGGESTED', 'ACTIONS'].map(
+                  (h) => (
+                    <th
+                      key={h}
+                      className="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-wider text-gray-400 whitespace-nowrap"
+                    >
+                      {h}
+                    </th>
+                  )
+                )}
               </tr>
             </thead>
             <tbody>
               {filtered.length === 0 ? (
-                <tr><td colSpan={10} className="text-center py-12 text-gray-400 text-sm">No results found</td></tr>
-              ) : filtered.map((r, idx) => {
-                const cat  = getLearningCategory(r.overall_score);
-                const sugg = getSuggestedPackage({ math: r.math_score, ela: r.ela_score, science: r.science_score });
-                return (
-                  <tr key={idx} className="border-b border-gray-50 hover:bg-gray-50 transition-colors">
-                    <td className="px-4 py-3 text-gray-400 text-xs">{idx + 1}</td>
-                    <td className="px-4 py-3">
-                      <div className="flex items-center gap-2.5">
-                        <div className="w-8 h-8 rounded-full bg-green-100 text-green-800 text-xs font-bold flex items-center justify-center flex-shrink-0">
-                          {r.full_name.charAt(0).toUpperCase()}
+                <tr>
+                  <td colSpan={10} className="text-center py-12 text-gray-400 text-sm">
+                    No results found
+                  </td>
+                </tr>
+              ) : (
+                filtered.map((r, idx) => {
+                  const cat = getLearningCategory(r.overall_score);
+                  const sugg = getSuggestedPackage({
+                    math: r.math_score,
+                    ela: r.ela_score,
+                    science: r.science_score,
+                  });
+                  const stripe = idx % 2 === 0 ? 'bg-white' : 'bg-[#f9fbf7]';
+                  return (
+                    <tr
+                      key={r.id ?? idx}
+                      onClick={() => setActionsTarget(r)}
+                      className={`${stripe} border-b border-[#eef2ea] hover:bg-[#eef8d4]/35 transition-colors cursor-pointer`}
+                    >
+                      <td className="px-4 py-3 text-gray-400 text-xs">{idx + 1}</td>
+                      <td className="px-4 py-3">
+                        <div className="flex items-center gap-2.5">
+                          <div
+                            className="w-8 h-8 rounded-xl text-xs font-bold flex items-center justify-center flex-shrink-0 text-white"
+                            style={{ backgroundColor: CAT_ACCENT[cat.name] }}
+                          >
+                            {r.full_name.charAt(0).toUpperCase()}
+                          </div>
+                          <div>
+                            <p className="font-semibold text-[#1a2e05] text-sm truncate max-w-[140px]">
+                              {r.full_name}
+                            </p>
+                            <p className="text-xs text-gray-400 truncate max-w-[140px]">{r.email}</p>
+                          </div>
                         </div>
-                        <div>
-                          <p className="font-semibold text-gray-900 text-sm truncate max-w-[140px]">{r.full_name}</p>
-                          <p className="text-xs text-gray-400 truncate max-w-[140px]">{r.email}</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-4 py-3"><span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">{r.grade}</span></td>
-                    <td className="px-4 py-3 font-bold text-gray-900">{Math.round(r.overall_score)}%</td>
-                    <td className="px-4 py-3"><ScorePill value={r.math_score} /></td>
-                    <td className="px-4 py-3"><ScorePill value={r.ela_score} /></td>
-                    <td className="px-4 py-3"><ScorePill value={r.science_score} /></td>
-                    <td className="px-4 py-3"><CategoryBadge cat={cat} /></td>
-                    <td className="px-4 py-3">
-                      <span className="text-xs bg-blue-50 text-blue-700 font-semibold px-2 py-0.5 rounded-full">{sugg.label}</span>
-                    </td>
-                   <td className="px-4 py-3">
-                      <button onClick={e => {
-                          e.stopPropagation();
-                          const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
-                          const MENU_H = 100; // 2-item menu
-                          const openUp = rect.bottom + MENU_H > window.innerHeight - 8;
-                          setRowMenu(prev => prev?.id === String(r.id ?? idx) ? null : {
-                            id: String(r.id ?? idx),
-                            x: Math.max(8, rect.right - 180),
-                            y: openUp ? rect.top - MENU_H - 6 : rect.bottom + 6,
-                          });
-                        }}
-                        className={`w-8 h-8 flex items-center justify-center rounded-lg cursor-pointer transition-colors
-                          ${rowMenu?.id === String(r.id ?? idx) ? 'bg-gray-100 text-gray-700' : 'text-gray-400 hover:text-gray-700 hover:bg-gray-100'}`}>
-                        <svg className="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24">
-                          <circle cx="12" cy="5" r="1.8" /><circle cx="12" cy="12" r="1.8" /><circle cx="12" cy="19" r="1.8" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
+                      </td>
+                      <td className="px-4 py-3">
+                        <span className="text-[11px] bg-[#f0f4ec] text-gray-600 px-2 py-0.5 rounded-lg font-medium">
+                          {r.grade}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 font-bold text-[#1a2e05]">
+                        {Math.round(r.overall_score)}%
+                      </td>
+                      <td className="px-4 py-3">
+                        <ScorePill value={r.math_score} />
+                      </td>
+                      <td className="px-4 py-3">
+                        <ScorePill value={r.ela_score} />
+                      </td>
+                      <td className="px-4 py-3">
+                        <ScorePill value={r.science_score} />
+                      </td>
+                      <td className="px-4 py-3">
+                        <CategoryBadge cat={cat} />
+                      </td>
+                      <td className="px-4 py-3">
+                        <span className="text-xs bg-blue-50 text-blue-700 font-semibold px-2 py-0.5 rounded-full ring-1 ring-blue-100">
+                          {sugg.label}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3">
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setActionsTarget(r);
+                          }}
+                          className="inline-flex items-center gap-1.5 rounded-xl border border-[#e4ebe0] bg-white px-2.5 py-1.5 text-xs font-semibold text-[#1a2e05] hover:bg-[#f7faf5] hover:border-[#cfd9c8] cursor-pointer transition-colors"
+                        >
+                          Actions
+                          <svg className="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })
+              )}
             </tbody>
           </table>
         </div>
       </div>
-     
 
-     {/* ══════════ ROW ACTION MENU ══════════ */}
-      {rowMenu && (() => {
-        const row = filtered.find((r, i) => String(r.id ?? i) === rowMenu.id);
-        if (!row) return null;
+      {/* Actions modal */}
+      {actionsTarget && (() => {
+        const row = actionsTarget;
+        const cat = getLearningCategory(row.overall_score);
+        const sugg = getSuggestedPackage({
+          math: row.math_score,
+          ela: row.ela_score,
+          science: row.science_score,
+        });
+        const actions = [
+          {
+            key: 'view',
+            title: 'View Test Result',
+            desc: 'Topic breakdown and question review',
+            icon: '📊',
+            tone: 'bg-[#eef8d4] border-[#d8e8b8] hover:bg-[#e4f3b8]',
+            onClick: () => {
+              setActionsTarget(null);
+              if (row.id) router.push(`/admin/dashboard/results/${row.id}`);
+              else toast.error('This result has no saved id yet.');
+            },
+          },
+          {
+            key: 'recommend',
+            title: 'Recommend',
+            desc: 'Create or update a programme recommendation',
+            icon: '📄',
+            tone: 'bg-sky-50 border-sky-100 hover:bg-sky-100',
+            onClick: () => {
+              openModal(row);
+              setActionsTarget(null);
+            },
+          },
+          {
+            key: 'delete',
+            title: 'Delete',
+            desc: 'Permanently remove this result',
+            icon: '🗑️',
+            tone: 'bg-rose-50 border-rose-100 hover:bg-rose-100',
+            danger: true,
+            onClick: () => {
+              setDeleteTarget(row);
+              setActionsTarget(null);
+            },
+          },
+        ] as const;
+
         return (
-          <div className="fixed z-[70] bg-white rounded-xl shadow-xl border border-gray-100 py-1.5 w-[180px]"
-            style={{ left: rowMenu.x, top: rowMenu.y }}
-            onClick={e => e.stopPropagation()}>
-            <button onClick={() => { openModal(row); setRowMenu(null); }}
-              className="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer">
-              📄 Recommend
-            </button>
-            <hr className="my-1 border-gray-100" />
-            <button onClick={() => { setDeleteTarget(row); setRowMenu(null); }}
-              className="w-full text-left px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 cursor-pointer">
-              🗑️ Delete
-            </button>
+          <div
+            className="fixed inset-0 z-[70] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/50 backdrop-blur-sm"
+            onClick={() => setActionsTarget(null)}
+          >
+            <div
+              className="bg-white w-full sm:max-w-md sm:rounded-3xl rounded-t-3xl shadow-2xl overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="px-5 pt-5 pb-4 border-b border-[#eef2ea]">
+                <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-gray-200 sm:hidden" />
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-start gap-3 min-w-0">
+                    <div
+                      className="w-11 h-11 rounded-2xl text-sm font-bold flex items-center justify-center text-white flex-shrink-0"
+                      style={{ backgroundColor: CAT_ACCENT[cat.name] }}
+                    >
+                      {row.full_name.charAt(0).toUpperCase()}
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-[11px] font-bold uppercase tracking-wide text-gray-400">
+                        Result actions
+                      </p>
+                      <h2 className="text-lg font-bold text-[#1a2e05] truncate">{row.full_name}</h2>
+                      <div className="mt-1.5 flex flex-wrap gap-1.5">
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${cat.bgColor} ${cat.color}`}>
+                          {cat.name}
+                        </span>
+                        <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#f0f4ec] text-gray-600">
+                          {row.grade}
+                        </span>
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-50 text-blue-700">
+                          {sugg.label}
+                        </span>
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#e8f5c0] text-[#3a5a09]">
+                          {Math.round(row.overall_score)}%
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setActionsTarget(null)}
+                    className="w-8 h-8 rounded-full hover:bg-gray-100 text-gray-400 cursor-pointer flex items-center justify-center flex-shrink-0"
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+
+              <div className="p-4 space-y-2.5">
+                {actions.map((a) => (
+                  <button
+                    key={a.key}
+                    type="button"
+                    onClick={a.onClick}
+                    className={`w-full flex items-start gap-3 rounded-2xl border px-4 py-3.5 text-left cursor-pointer transition-all ${a.tone}`}
+                  >
+                    <span className="text-xl leading-none mt-0.5">{a.icon}</span>
+                    <span className="min-w-0">
+                      <span
+                        className={`block text-sm font-bold ${
+                          'danger' in a && a.danger ? 'text-rose-700' : 'text-[#1a2e05]'
+                        }`}
+                      >
+                        {a.title}
+                      </span>
+                      <span className="block text-xs text-gray-500 mt-0.5">{a.desc}</span>
+                    </span>
+                  </button>
+                ))}
+              </div>
+
+              <div className="px-4 pb-5">
+                <button
+                  type="button"
+                  onClick={() => setActionsTarget(null)}
+                  className="w-full py-2.5 rounded-xl border border-[#e4ebe0] text-sm font-semibold text-gray-600 hover:bg-[#f7faf5] cursor-pointer"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
           </div>
         );
       })()}
@@ -996,6 +1208,14 @@ useEffect(() => {
                 {/* ── Custom package ── */}
                 {selectedPackage.id === 'custom' && (
                   <div className="space-y-4">
+                    <div className="rounded-xl border border-[#d8e8b8] bg-[#f7fbe9] px-3 py-2 text-xs text-[#3a5a09]">
+                      <span className="font-bold">Defaults from Package III</span>
+                      {' — '}
+                      {pricingTable
+                        ? `${pricingTable.packageIII.monthlyHours}hrs/month · $${pricingTable.packageIII.standardHourlyRate}/hr standard rate`
+                        : '5hrs/week · 20hrs/month'}
+                      . Edit subjects and rates freely below.
+                    </div>
                     <div className="bg-blue-50 border border-blue-100 rounded-2xl p-4 space-y-3">
                       <p className="text-sm font-semibold text-gray-700">Set Pricing for Custom Package</p>
                       <div className="grid grid-cols-2 gap-3">

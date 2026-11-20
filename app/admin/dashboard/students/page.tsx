@@ -137,7 +137,10 @@ export default function StudentsPage() {
     doc.text('STUDENT INFORMATION', margin + 4, y + 6);
     doc.setTextColor(30, 30, 30); doc.setFont('helvetica', 'normal'); doc.setFontSize(8.5);
     const col1x = margin + 4, col2x = pageW / 2 + 2;
-    const testLabel = s.test_type === 'state-test' ? 'State Test' : s.test_type === 'quiz-assessment' ? 'Evaluation' : (s.test_type || 'Evaluation');
+    const testLabel = s.test_type === 'state-test' ? 'State Test'
+      : s.test_type === 'quiz-assessment' ? 'Evaluation'
+      : s.test_type === 'uk-quiz-assessment' ? 'UK Evaluation'
+      : (s.test_type || 'Evaluation');
 
     doc.setFont('helvetica', 'bold');   doc.text('Name:',  col1x, y + 13);
     doc.setFont('helvetica', 'normal'); doc.text(s.full_name || 'Student', col1x + 18, y + 13);

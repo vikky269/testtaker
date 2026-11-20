@@ -81,18 +81,31 @@ export default function QuestionCard({
           alt={questionData.alt}
           speech={questionData.speech}
         />
-      ) : questionData.question.startsWith("https://res.cloudinary.com") ? (
-        <img
-          src={questionData.question}
-          alt={`Question ${globalIndex + 1}`}
-          className="w-full max-w-2xl mb-5 rounded-lg"
-        />
       ) : (
-        <MathHtml
-          as="div"
-          text={questionData.question}
-          className="text-gray-800 text-base font-semibold mb-5 leading-relaxed"
-        />
+        <>
+          {(questionData.passage || questionData.story) && (
+            <div className="mb-4 w-full rounded-2xl border border-[#d7e4c0] bg-[#f7fbe9] px-4 py-3 text-left text-sm font-medium leading-relaxed text-[#1a2e05]">
+              <MathHtml
+                as="div"
+                text={questionData.passage || questionData.story}
+                className="quiz-passage-block"
+              />
+            </div>
+          )}
+          {questionData.question.startsWith("https://res.cloudinary.com") ? (
+            <img
+              src={questionData.question}
+              alt={`Question ${globalIndex + 1}`}
+              className="w-full max-w-2xl mb-5 rounded-lg"
+            />
+          ) : (
+            <MathHtml
+              as="div"
+              text={questionData.question}
+              className="text-gray-800 text-base font-semibold mb-5 leading-relaxed"
+            />
+          )}
+        </>
       )}
 
       {/* Options */}

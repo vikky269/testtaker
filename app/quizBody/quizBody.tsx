@@ -140,6 +140,9 @@ function quizTitle({
   if (testid === "quiz-assessment" && gradeParam) {
     return `Quiz Assessment — ${gradeParam.replace(/-/g, " ").toUpperCase()}`;
   }
+  if (testid === "uk-quiz-assessment" && gradeParam) {
+    return `UK Quiz Assessment — ${gradeParam.replace(/-/g, " ").toUpperCase()}`;
+  }
   if (testid === "ged") return "SmartMathz GED Readiness Diagnostic";
   if (testid === "psat") return "SmartMathz PSAT Readiness Diagnostic";
   if (testid === "shsat") return "SmartMathz SHSAT Readiness Diagnostic";
@@ -383,18 +386,31 @@ export default function QuizBody({
               alt={currentQuestion.alt}
               speech={currentQuestion.speech}
             />
-          ) : currentQuestion.question.startsWith("https://") ? (
-            <img
-              src={currentQuestion.question}
-              alt={`Question ${currentQuestionIndex + 1}`}
-              className="mb-6 w-full max-w-2xl rounded-2xl"
-            />
           ) : (
-            <MathHtml
-              as="div"
-              text={currentQuestion.question}
-              className="katex-question mb-7 text-xl font-semibold leading-snug tracking-tight text-neutral-900 md:text-2xl"
-            />
+            <>
+              {(currentQuestion.passage || currentQuestion.story) && (
+                <div className="mb-5 w-full rounded-2xl border border-[#d7e4c0] bg-[#f7fbe9] px-4 py-3 text-left text-sm font-medium leading-relaxed text-[#1a2e05] md:text-base">
+                  <MathHtml
+                    as="div"
+                    text={currentQuestion.passage || currentQuestion.story}
+                    className="quiz-passage-block"
+                  />
+                </div>
+              )}
+              {currentQuestion.question.startsWith("https://") ? (
+                <img
+                  src={currentQuestion.question}
+                  alt={`Question ${currentQuestionIndex + 1}`}
+                  className="mb-6 w-full max-w-2xl rounded-2xl"
+                />
+              ) : (
+                <MathHtml
+                  as="div"
+                  text={currentQuestion.question}
+                  className="katex-question mb-7 text-xl font-semibold leading-snug tracking-tight text-neutral-900 md:text-2xl"
+                />
+              )}
+            </>
           )}
 
           <div

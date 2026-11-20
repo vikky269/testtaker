@@ -64,7 +64,8 @@ export default function ReviewPage() {
   // ── Derived ─────────────────────────────────────────────
   const isSat = ["sat", "ssat"].includes(gradeParam ?? "");
 
-  const isGrade9Or10 = [
+  const isUkAssessment = testId === "uk-quiz-assessment";
+  const isGrade9Or10 = isUkAssessment || [
     "9th-grade","10th-grade","8th-grade","7th-grade","6th-grade",
     "5th-grade","4th-grade","3rd-grade","11th-grade","12th-grade",
     "2nd-grade","1st-grade","pre-k","kindergarten","year-7",
@@ -165,13 +166,15 @@ export default function ReviewPage() {
 
     if (testId === "state-test" && stateParam && gradeParam) {
       quiz = standardsData[`${stateParam}-${gradeParam}`] || [];
-    } else if (testId === "quiz-assessment" && gradeParam) {
+    } else if ((testId === "quiz-assessment" || testId === "uk-quiz-assessment") && gradeParam) {
       // Prefer the drawn set from this attempt (new question banks + shuffle)
       const generated = loadGeneratedAssessment(gradeParam);
       if (generated?.questions?.length) {
         quiz = generated.questions;
-      } else {
+      } else if (testId === "quiz-assessment") {
         quiz = quizAssessmentData.find((q) => normalize(q.grade) === gradeParam)?.questions || [];
+      } else {
+        quiz = [];
       }
     } else {
       quiz = quizData[testId as string] || [];
@@ -390,6 +393,8 @@ export default function ReviewPage() {
             ? `State Test · ${stateParam.toUpperCase()} · ${gradeParam.toUpperCase()}`
             : testId === "quiz-assessment"
             ? `Assessment · ${gradeParam?.toUpperCase()}`
+            : testId === "uk-quiz-assessment"
+            ? `UK Assessment · ${gradeParam?.toUpperCase()}`
             : isSat
             ? `SAT Practice · ${gradeParam?.toUpperCase()}`
             : `Test Review`}

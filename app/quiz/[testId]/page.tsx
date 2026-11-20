@@ -18,6 +18,8 @@ import { supabase, withTimeout } from "@/lib/supabaseClient";
 import toast from "react-hot-toast";
 import {
   generateGradeAssessment,
+  generateUkGradeAssessment,
+  hasUkBanksReady,
   isEarlyPictureGrade,
   questionsForSection,
   saveGeneratedAssessment,
@@ -62,6 +64,7 @@ export default function Quiz() {
   const [unansweredCount, setUnansweredCount]                       = useState(0);
   const [isGenerating, setIsGenerating]                             = useState(false);
   const [generateStatus, setGenerateStatus]                         = useState("");
+  const [ukComingSoon, setUkComingSoon]                             = useState(false);
 
   const [timerResumeFrom, setTimerResumeFrom] = useState<number | null>(null);
   const [timerResumeToken, setTimerResumeToken] = useState<number | null>(null);
@@ -71,7 +74,9 @@ export default function Quiz() {
 
   const isSat = ["sat", "ssat"].includes(normalizedGrade);
   const isEarlyPicture = isEarlyPictureGrade(gradeParam);
-  const isGrade9Or10 = [
+  const isUkAssessment = testid === "uk-quiz-assessment";
+  const isUsAssessment = testid === "quiz-assessment";
+  const isGrade9Or10 = isUkAssessment || [
     "9th-grade","10th-grade","8th-grade","7th-grade","6th-grade",
     "5th-grade","4th-grade","3rd-grade","11th-grade","12th-grade",
     "2nd-grade","1st-grade","pre-k","kindergarten",
@@ -171,13 +176,25 @@ export default function Quiz() {
           standardsData[`${stateParam}-${gradeParam.toLowerCase().replace(/\s+/g, "")}`] || []
         );
         setIsGenerating(false);
-      } else if (testid === "quiz-assessment" && gradeParam) {
+      } else if ((isUsAssessment || isUkAssessment) && gradeParam) {
+        if (isUkAssessment && !hasUkBanksReady(gradeParam)) {
+          if (!cancelled) {
+            setUkComingSoon(true);
+            setQuizQuestions([]);
+            setIsGenerating(false);
+            setGenerateStatus("");
+          }
+          return;
+        }
+
         // Resume mid-attempt with the same drawn set (refresh during a test)
         if (sameAttempt) {
           const existing = loadGeneratedAssessment(gradeParam);
-          const earlyCountOk = !isEarlyPictureGrade(gradeParam) || existing?.questions?.length === 20;
+          const earlyCountOk =
+            isUkAssessment || !isEarlyPictureGrade(gradeParam) || existing?.questions?.length === 20;
           if (existing?.questions?.length && earlyCountOk) {
             if (!cancelled) {
+              setUkComingSoon(false);
               setQuizQuestions(existing.questions);
               setIsGenerating(false);
               setGenerateStatus("");
@@ -188,17 +205,25 @@ export default function Quiz() {
 
         // Fresh attempt — pool & shuffle from the question banks
         if (!cancelled) {
+          setUkComingSoon(false);
           setIsGenerating(true);
           setGenerateStatus("Pooling questions from the question bank...");
         }
 
         try {
-          const generated = await generateGradeAssessment(gradeParam, {
-            delayMs: 350,
-            onProgress: (msg) => {
-              if (!cancelled) setGenerateStatus(msg);
-            },
-          });
+          const generated = isUkAssessment
+            ? await generateUkGradeAssessment(gradeParam, {
+                delayMs: 350,
+                onProgress: (msg) => {
+                  if (!cancelled) setGenerateStatus(msg);
+                },
+              })
+            : await generateGradeAssessment(gradeParam, {
+                delayMs: 350,
+                onProgress: (msg) => {
+                  if (!cancelled) setGenerateStatus(msg);
+                },
+              });
           // Ignore stale results from a cancelled Strict-Mode / re-run effect
           if (cancelled) return;
           saveGeneratedAssessment(generated);
@@ -211,7 +236,12 @@ export default function Quiz() {
           localStorage.removeItem("elaSkipped");
         } catch (err) {
           console.error("Failed to generate assessment:", err);
-          toast.error("Could not generate questions. Please try again.");
+          const msg = String(err);
+          if (isUkAssessment && (msg.includes("UK_BANKS_UNAVAILABLE") || msg.includes("UK_BANKS_INCOMPLETE"))) {
+            if (!cancelled) setUkComingSoon(true);
+          } else {
+            toast.error("Could not generate questions. Please try again.");
+          }
           if (!cancelled) setQuizQuestions([]);
         } finally {
           // Always clear the spinner for this run's UI state when still mounted
@@ -242,7 +272,7 @@ export default function Quiz() {
     // that made Strict Mode remounts think a prior attempt existed and
     // left the generating spinner stuck.
     if (isGenerating) return;
-    if (!quizQuestions.length && testid === "quiz-assessment") return;
+    if (!quizQuestions.length && (isUsAssessment || isUkAssessment)) return;
     localStorage.setItem("quizState", JSON.stringify({
       testid, gradeParam, answers, currentQuestionIndex,
       submitted, satSection, quizSection,
@@ -536,7 +566,7 @@ export default function Quiz() {
   const handleReview = () => {
     const url = new URLSearchParams();
     if (testid === "state-test" && stateParam && gradeParam) { url.append("state", stateParam); url.append("grade", gradeParam); }
-    else if (testid === "quiz-assessment" && gradeParam) url.append("grade", gradeParam);
+    else if ((isUsAssessment || isUkAssessment) && gradeParam) url.append("grade", gradeParam);
 
     const mathScore    = calculateSectionScore("math",    quizQuestions, answers);
     const elaScore     = calculateSectionScore("ela",     quizQuestions, answers);
@@ -606,6 +636,8 @@ export default function Quiz() {
       ? `${normalizedGrade.toUpperCase()} Assessment`
       : testid === "state-test"
         ? `${(stateParam || "").toUpperCase()} ${gradeParam || ""} Practice Test`
+        : isUkAssessment
+        ? `UK Assessment — ${(gradeParam || "").replace(/-/g, " ")}`
         : `Grade Assessment — ${(gradeParam || "").replace(/-/g, " ")}`,
     grade: gradeParam,
     section: isSATQuiz ? satSection : quizSection,
@@ -637,6 +669,27 @@ export default function Quiz() {
               ? `Drawing picture-based Math and ELA for ${gradeParam?.replace(/-/g, ' ')}.`
               : `Drawing a balanced mix of Math, ELA, and Science for ${gradeParam?.replace(/-/g, ' ')}.`}
           </p>
+        </div>
+      </div>
+    );
+  }
+
+  if (ukComingSoon) {
+    return (
+      <div className="min-h-[70vh] flex items-center justify-center px-4">
+        <div className="max-w-md w-full text-center rounded-2xl border border-[#d9e8b8] bg-gradient-to-b from-[#f7fbe9] to-white shadow-sm px-8 py-10">
+          <p className="text-xs font-bold uppercase tracking-widest text-[#7FB509] mb-2">SmartMathz UK</p>
+          <p className="text-2xl font-bold text-[#1a2e05]">Coming soon</p>
+          <p className="mt-3 text-sm text-gray-600">
+            Question banks for {(gradeParam || "this year").replace(/-/g, " ")} are still being prepared.
+            The UK assessment will use the same Maths → ELA → Science flow as the US evaluation.
+          </p>
+          <button
+            onClick={() => router.push("/")}
+            className="mt-6 w-full py-3 text-sm font-bold bg-[#7FB509] hover:bg-[#6a9a07] text-white rounded-xl cursor-pointer transition-colors"
+          >
+            Back to home
+          </button>
         </div>
       </div>
     );

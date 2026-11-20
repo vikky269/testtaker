@@ -14,8 +14,17 @@ import {
   hasNewMathBank,
   hasNewElaBank,
 } from '@/app/data/questionBanks';
+import {
+  getUkMathBank,
+  getUkElaBank,
+  getUkScienceBank,
+  hasUkBanksReady,
+  parseUkYear,
+} from '@/app/data/questionBanks/uk';
 import { getPictureBank } from '@/app/data/pictureAssessments';
 import { withSessionOptionOrder } from '@/app/data/visualPictureBanks';
+
+export { hasUkBanksReady, parseUkYear } from '@/app/data/questionBanks/uk';
 
 export type Difficulty = 'easy' | 'medium' | 'hard';
 
@@ -474,6 +483,65 @@ export async function generateGradeAssessment(
       mathSource,
       elaSource,
       scienceSource,
+      generatedAt: Date.now(),
+    },
+  };
+}
+
+/**
+ * Build a UK Year 1–11 assessment: 10 Math + 10 ELA + 10 Science.
+ * Throws if banks for that year are not ready yet.
+ */
+export async function generateUkGradeAssessment(
+  gradeParam: string,
+  opts?: { delayMs?: number; onProgress?: GenerateProgress }
+): Promise<GeneratedAssessment> {
+  const delayMs = opts?.delayMs ?? 400;
+  const onProgress = opts?.onProgress;
+  const started = Date.now();
+
+  const year = parseUkYear(gradeParam);
+  if (!year || !hasUkBanksReady(gradeParam)) {
+    throw new Error('UK_BANKS_UNAVAILABLE');
+  }
+
+  onProgress?.('Loading UK math question bank...');
+  let math = drawBalanced(await getUkMathBank(year), SECTION_SIZE).map((q) => ({
+    ...q,
+    subject: 'math' as const,
+  }));
+  onProgress?.('Loading UK ELA question bank...');
+  let ela = drawBalanced(await getUkElaBank(year), SECTION_SIZE).map((q) => ({
+    ...q,
+    subject: 'ela' as const,
+  }));
+  onProgress?.('Loading UK science question bank...');
+  let science = drawBalanced(await getUkScienceBank(year), SECTION_SIZE).map((q) => ({
+    ...q,
+    subject: 'science' as const,
+  }));
+
+  if (math.length < SECTION_SIZE || ela.length < SECTION_SIZE || science.length < SECTION_SIZE) {
+    throw new Error('UK_BANKS_INCOMPLETE');
+  }
+
+  math = math.slice(0, SECTION_SIZE);
+  ela = ela.slice(0, SECTION_SIZE);
+  science = science.slice(0, SECTION_SIZE);
+
+  onProgress?.('Shuffling your personalized UK assessment...');
+  const elapsed = Date.now() - started;
+  if (delayMs > elapsed) {
+    await new Promise((r) => setTimeout(r, delayMs - elapsed));
+  }
+
+  return {
+    gradeParam: `year-${year}`,
+    questions: [...math, ...ela, ...science],
+    meta: {
+      mathSource: 'new',
+      elaSource: 'new',
+      scienceSource: 'new-grade',
       generatedAt: Date.now(),
     },
   };

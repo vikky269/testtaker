@@ -10,7 +10,7 @@ import { Clock, FileText, Star, Lock, ChevronRight, X } from "lucide-react";
 import { quizData, QuizCardProps } from "../../data/mockdata";
 import { Lato } from "next/font/google";
 import { FaChild, FaSchool, FaGraduationCap, FaBook } from "react-icons/fa";
-import { beginFreshAssessment } from "@/app/utils/gradeAssessmentGenerator";
+import { beginFreshAssessment, hasUkBanksReady } from "@/app/utils/gradeAssessmentGenerator";
 
 
 const lato = Lato({ subsets: ["latin"], variable: "--font-lato", weight: ["400", "700"] });
@@ -22,10 +22,15 @@ const quizassesmentOptions = [
   "5th Grade", "6th Grade", "7th Grade", "8th Grade", "9th Grade", "10th Grade",
   "11th Grade", "12th Grade", "SSAT", "ALGEBRA 1", "GEOMETRY", "ALGEBRA 2", "SAT",
 ];
+const ukYearOptions = [
+  "Year 1", "Year 2", "Year 3", "Year 4", "Year 5", "Year 6",
+  "Year 7", "Year 8", "Year 9", "Year 10", "Year 11",
+];
 
 function generatePasscode(grade: string): string {
   let normalized = grade.toLowerCase().trim().replace(/\s+/g, "-");
-  if (normalized === "year-7")     return "SMTT7";
+  const ukYear = normalized.match(/^year-(\d+)$/);
+  if (ukYear) return `SMUK${ukYear[1]}`;
   if (normalized === "algebra-1")  return "SMTTA1";
   if (normalized === "algebra-2")  return "SMTTA2";
   if (normalized === "kindergarten") return "SMTTK";
@@ -42,11 +47,17 @@ function generatePasscode(grade: string): string {
 
 function getGradeIcon(grade: string) {
   const g = grade.toLowerCase();
-  if (g.includes("pre") || g.includes("1st") || g.includes("2nd"))
+  if (g.includes("pre") || g.includes("1st") || g.includes("2nd") || g === "year 1" || g === "year 2")
     return <FaChild className="text-base" />;
-  if (g.includes("6th") || g.includes("7th") || g.includes("8th") || g.includes("year 7"))
+  if (
+    g.includes("6th") || g.includes("7th") || g.includes("8th") ||
+    g === "year 6" || g === "year 7" || g === "year 8"
+  )
     return <FaSchool className="text-base" />;
-  if (g.includes("9th") || g.includes("10th") || g.includes("11th") || g.includes("12th"))
+  if (
+    g.includes("9th") || g.includes("10th") || g.includes("11th") || g.includes("12th") ||
+    g === "year 9" || g === "year 10" || g === "year 11"
+  )
     return <FaGraduationCap className="text-base" />;
   return <FaBook className="text-base" />;
 }
@@ -62,6 +73,7 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
   const [selectedTest, setSelectedTest]     = useState<string | null>(null);
   const [isStateTest, setIsStateTest]       = useState(false);
   const [isQuizAssessment, setIsQuizAssessment] = useState(false);
+  const [isUkQuizAssessment, setIsUkQuizAssessment] = useState(false);
   const [selectedState, setSelectedState]   = useState<string | null>(null);
   const [selectedGrade, setSelectedGrade]   = useState<string | null>(null);
   const [step, setStep]                     = useState<1 | 2 | 3>(1);
@@ -70,14 +82,23 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
   const [showGedIntro, setShowGedIntro] = useState(false);
   const [showPSatIntro, setShowPSatIntro] = useState(false);
   const [showShsatIntro, setShowShsatIntro] = useState(false);
+  const [showUkComingSoon, setShowUkComingSoon] = useState(false);
   const router = useRouter();
+
+  const gradePickerOptions = isUkQuizAssessment
+    ? ukYearOptions
+    : isStateTest
+    ? gradeOptions
+    : quizassesmentOptions;
 
   const handleTestClick = (testId: string) => {
     if (testId === "state-test") {
-      setIsStateTest(true); setIsQuizAssessment(false); setStep(1);
+      setIsStateTest(true); setIsQuizAssessment(false); setIsUkQuizAssessment(false); setStep(1);
     } else if (testId === "quiz-assessment") {
-      setIsQuizAssessment(true); setIsStateTest(false); setStep(2);
-        } else if (testId === "ged") {
+      setIsQuizAssessment(true); setIsUkQuizAssessment(false); setIsStateTest(false); setStep(2);
+    } else if (testId === "uk-quiz-assessment") {
+      setIsUkQuizAssessment(true); setIsQuizAssessment(false); setIsStateTest(false); setStep(2);
+    } else if (testId === "ged") {
       setSelectedGrade("GED"); setShowGedIntro(true); return;
     } else if (testId === "psat") {
       setSelectedGrade("PSAT"); setShowPSatIntro(true); return;
@@ -87,13 +108,20 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
       setSelectedGrade("SAT"); setStep(3); setSelectedTest(testId); return;
     } else
       {
-      setIsStateTest(false); setIsQuizAssessment(false);
+      setIsStateTest(false); setIsQuizAssessment(false); setIsUkQuizAssessment(false);
     }
     setSelectedTest(testId);
   };
 
- 
-
+  const tryStartUkOrShowComingSoon = (gradeSlug: string) => {
+    if (!hasUkBanksReady(gradeSlug)) {
+      setShowUkComingSoon(true);
+      return false;
+    }
+    beginFreshAssessment();
+    router.push(`/quiz/uk-quiz-assessment?grade=${gradeSlug}`);
+    return true;
+  };
 
     const validatePasscodeAndStart = () => {
     if (!selectedGrade) return;
@@ -109,6 +137,10 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
        if (selectedGrade === "SAT") { router.push(`/quiz/sat`); return; }
       const gradeSlug = selectedGrade.toLowerCase().replace(/\s+/g, "-");
       const stateSlug = selectedState?.toLowerCase().replace(/\s+/g, "-");
+      if (isUkQuizAssessment) {
+        tryStartUkOrShowComingSoon(gradeSlug);
+        return;
+      }
       // Fresh start from home → new random draw (don't resume a prior hung attempt)
       if (isQuizAssessment) {
         beginFreshAssessment();
@@ -124,18 +156,21 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
   };
 
   const resetSelection = () => {
-    setSelectedTest(null); setIsStateTest(false); setIsQuizAssessment(false);
+    setSelectedTest(null); setIsStateTest(false); setIsQuizAssessment(false); setIsUkQuizAssessment(false);
     setSelectedState(null); setSelectedGrade(null);
     setPasscodeInput(""); setPasscodeError(""); setStep(1);
+    setShowUkComingSoon(false);
   };
 
   const handleStartTest = () => {
     if (isStateTest && selectedState && selectedGrade) {
       router.push(`/quiz/state-test?state=${selectedState.toLowerCase().replace(/\s/g, "-")}&grade=${selectedGrade.toLowerCase().replace(" ", "-")}`);
+    } else if (isUkQuizAssessment && selectedGrade) {
+      tryStartUkOrShowComingSoon(selectedGrade.toLowerCase().replace(/\s+/g, "-"));
     } else if (isQuizAssessment && selectedGrade) {
       beginFreshAssessment();
       router.push(`/quiz/quiz-assessment?grade=${selectedGrade.toLowerCase().replace(/\s+/g, "-")}`);
-    } else if (!isStateTest && !isQuizAssessment && selectedTest) {
+    } else if (!isStateTest && !isQuizAssessment && !isUkQuizAssessment && selectedTest) {
       router.push(`/quiz/${selectedTest}`);
     }
   };
@@ -333,6 +368,35 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
         </div>
       )}
 
+      {showUkComingSoon && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden">
+            <div className="bg-[#1a2e05] px-6 py-5 text-white">
+              <p className="text-xs font-bold uppercase tracking-widest text-[#a3d926] mb-1">SmartMathz</p>
+              <h2 className="text-xl font-bold">UK Quiz Assessment</h2>
+            </div>
+            <div className="px-6 py-6 text-center">
+              <p className="text-2xl font-bold text-gray-900 mb-2">Coming soon</p>
+              <p className="text-sm text-gray-500 mb-2">
+                {selectedGrade
+                  ? `Question banks for ${selectedGrade} are being prepared.`
+                  : "UK question banks are being prepared."}
+              </p>
+              <p className="text-sm text-gray-500 mb-6">
+                The UK assessment will follow the same Maths → ELA → Science flow as the US evaluation.
+                Check back once your year&apos;s bank is ready.
+              </p>
+              <button
+                onClick={() => { setShowUkComingSoon(false); resetSelection(); }}
+                className="w-full py-3 text-sm font-bold bg-[#7FB509] hover:bg-[#6a9a07] text-white rounded-xl cursor-pointer transition-colors"
+              >
+                Got it
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* ── Modal ── */}
       {selectedTest && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
@@ -352,10 +416,10 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
                 )}
                 <div>
                   <p className="text-xs font-bold uppercase tracking-widest text-[#7FB509]">
-                                      Step {step} of {isStateTest || isQuizAssessment ? 3 : selectedGrade === "GED" ? 1 : 1}
+                                      Step {step} of {isStateTest || isQuizAssessment || isUkQuizAssessment ? 3 : selectedGrade === "GED" ? 1 : 1}
                   </p>
                   <h2 className="text-lg font-bold text-gray-900">
-                    {step === 1 ? "Select State" : step === 2 ? "Select Grade" : "Enter Passcode"}
+                    {step === 1 ? "Select State" : step === 2 ? (isUkQuizAssessment ? "Select Year" : "Select Grade") : "Enter Passcode"}
                   </h2>
                 </div>
               </div>
@@ -396,29 +460,49 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
                 </div>
               )}
 
-              {/* ── Step 2: Grade ── */}
+              {/* ── Step 2: Grade / Year ── */}
               {step === 2 && (
                 <div>
-                  <p className="text-sm text-gray-500 mb-4">Choose your grade level to continue.</p>
+                  <p className="text-sm text-gray-500 mb-4">
+                    {isUkQuizAssessment
+                      ? "Choose your UK year group to continue."
+                      : "Choose your grade level to continue."}
+                  </p>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5 mb-6">
-                    {(isStateTest ? gradeOptions : quizassesmentOptions).map((grade) => (
-                      <button
-                        key={grade}
-                        onClick={() => setSelectedGrade(grade)}
-                        className={`flex items-center justify-center gap-2 py-3 px-3 rounded-xl border text-sm font-semibold
-                                    cursor-pointer transition-all duration-150 hover:scale-[1.02]
-                          ${selectedGrade === grade
-                            ? "bg-[#7FB509] text-white border-[#7FB509] shadow-md"
-                            : "bg-gray-50 border-gray-200 text-gray-700 hover:border-[#7FB509] hover:bg-green-50"
-                          }`}
-                      >
-                        {getGradeIcon(grade)}
-                        <span className="truncate">{grade}</span>
-                      </button>
-                    ))}
+                    {gradePickerOptions.map((grade) => {
+                      const yearReady = !isUkQuizAssessment || hasUkBanksReady(grade);
+                      return (
+                        <button
+                          key={grade}
+                          onClick={() => setSelectedGrade(grade)}
+                          className={`relative flex items-center justify-center gap-2 py-3 px-3 rounded-xl border text-sm font-semibold
+                                      cursor-pointer transition-all duration-150 hover:scale-[1.02]
+                            ${selectedGrade === grade
+                              ? "bg-[#7FB509] text-white border-[#7FB509] shadow-md"
+                              : "bg-gray-50 border-gray-200 text-gray-700 hover:border-[#7FB509] hover:bg-green-50"
+                            }`}
+                        >
+                          {getGradeIcon(grade)}
+                          <span className="truncate">{grade}</span>
+                          {isUkQuizAssessment && !yearReady && (
+                            <span className={`absolute -top-1.5 -right-1.5 text-[9px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded-full
+                              ${selectedGrade === grade ? "bg-white text-[#7FB509]" : "bg-amber-100 text-amber-700"}`}>
+                              Soon
+                            </span>
+                          )}
+                        </button>
+                      );
+                    })}
                   </div>
                   <button
-                    onClick={() => selectedGrade && setStep(3)}
+                    onClick={() => {
+                      if (!selectedGrade) return;
+                      if (isUkQuizAssessment && !hasUkBanksReady(selectedGrade)) {
+                        setShowUkComingSoon(true);
+                        return;
+                      }
+                      setStep(3);
+                    }}
                     disabled={!selectedGrade}
                     className="w-full py-3 text-sm font-bold rounded-xl cursor-pointer transition-all duration-150
                                bg-[#7FB509] hover:bg-[#6b970a] text-white disabled:opacity-40 disabled:cursor-not-allowed"
@@ -463,7 +547,7 @@ function QuizCard({ id, imageSrc, title, level, category,  time, questions }: Qu
               )}
 
               {/* ── Direct start (non-assessment tests) ── */}
-              {!isStateTest && !isQuizAssessment &&  selectedGrade !== "GED" && selectedGrade !== "SAT" && selectedGrade !== "PSAT" && selectedGrade !== "SHSAT" &&    (
+              {!isStateTest && !isQuizAssessment && !isUkQuizAssessment && selectedGrade !== "GED" && selectedGrade !== "SAT" && selectedGrade !== "PSAT" && selectedGrade !== "SHSAT" &&    (
                 <div className="text-center py-4">
                   <p className="text-gray-600 text-sm mb-6">
                     Ready to take the{" "}

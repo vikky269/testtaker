@@ -78,6 +78,7 @@ const buildDoc = (params: ReportParams): jsPDF => {
   doc.setFont("helvetica", "normal");
   const testLabel = testId === "state-test" ? "State Test"
     : testId === "quiz-assessment" ? "Evaluation"
+    : testId === "uk-quiz-assessment" ? "UK Evaluation"
     : isSat ? "SAT Practice" : String(testId);
   doc.text(testLabel, col2x + 14, y + 19);
 

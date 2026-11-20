@@ -25,6 +25,9 @@
 *.pem
 .tmp-docx/
 
+# Local UK source PDFs / crop tooling (app uses app/data/questionBanks/uk + public/uk)
+/UK QUESTION BANK/
+
 # debug
 npm-debug.log*
 yarn-debug.log*
